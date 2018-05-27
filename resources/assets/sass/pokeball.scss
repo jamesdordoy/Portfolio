@@ -1,0 +1,64 @@
+
+.pokeball {
+
+  box-sizing: border-box;
+  border: 10px solid #262122;
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  margin: 10px auto;
+  background: linear-gradient( 150deg, #BA0C2F 0%, #BA0C2F 48%, #262122 48%, #262122 52%, #FFF 52%, #FFF 100%);
+}
+
+.pokeball:before,
+.pokeball:after {
+  content: " ";
+  border-radius: 100%;
+  display: block;
+  position: absolute;
+}
+
+.pokeball:before {
+  background: #262122;
+  width: 40px;
+  height: 40px;
+  margin-top: 45px;
+  margin-left: 45px;
+}
+
+.pokeball:after {
+  background: #fff;
+  width: 25px;
+  height: 25px;
+  margin-top: 45px;
+  margin-left: 45px;
+  border: double 20px #262122;
+}
+
+.pokeball-animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-name: shake;
+}
+
+@keyframes shake {
+  from {
+    transform: none;
+  }
+  20% {
+    transform: translate3d(-20%, 0, 0) rotate3d(0, 0, 1, -10deg);
+  }
+  40% {
+    transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 5deg);
+  }
+  50% {
+    transform: translate3d(-10%, 0, 0) rotate3d(0, 0, 1, -10deg);
+  }
+  60% {
+    transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 50deg);
+  }
+  to {
+    transform: none;
+  }
+}
