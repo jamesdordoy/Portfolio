@@ -22,14 +22,11 @@ class CreateExampleCodeTable extends Migration
             $table->text('code')->nullable(false);
             $table->timestamps();
 
-           
-        });
-
-        Schema::table('code_examples', function(Blueprint $table)
-        {
             $table->foreign('example_id')
             ->references('id')
             ->on('examples');
+
+           
         });
     }
     /**

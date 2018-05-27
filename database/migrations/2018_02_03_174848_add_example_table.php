@@ -18,11 +18,7 @@ class AddExampleTable extends Migration
             $table->text('name')->nullable(false);
             $table->boolean('completed')->default(0);
             $table->timestamps();
-        });
 
-        Schema::table('examples', function(Blueprint $table)
-        {
-            //Ref's
             $table->foreign('language_id')
             ->references('id')
             ->on('languages'); 
