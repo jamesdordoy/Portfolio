@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Project;
+use App\Models\Project;
 
-use App\Language;
+use App\Models\Language;
 
-use App\Dependencies;
+use App\Models\Examples\Dependencies;
 
 use Illuminate\Http\Request;
 

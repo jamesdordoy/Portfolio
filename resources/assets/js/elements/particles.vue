@@ -60,14 +60,10 @@ export default {
   template: '#particles-template',
   props: [''],
   data: function(){
-    return {
-
-    };
+    return {};
   },
   created: function(){
-    particlesJS.load('particles', '/particles.json', function(){
-      console.log("particles loaded");
-    });
+    particlesJS.load('particles', '/particles.json', function(){});
   },
 };
 

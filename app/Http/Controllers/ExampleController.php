@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Example;
+use App\Models\Examples\Example;
 
 class ExampleController extends Controller
 {

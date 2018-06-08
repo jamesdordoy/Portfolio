@@ -21,9 +21,11 @@
     },
     "dependencies": {
         "acorn": "^5.4.1",
+        "bootstrap-vue": "^2.0.0-rc.11",
         "chartjs": "^0.3.24",
         "datatables": "^1.10.13",
         "moment": "^2.20.1",
-        "particles.js": "^2.0.0"
+        "particles.js": "^2.0.0",
+        "vue2-selectize": "^1.1.4"
     }
 }

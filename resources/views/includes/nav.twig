@@ -8,13 +8,11 @@
 		<li><a href="#social"><i class="fa fa-user"></i> About Me</a></li>
 		<li><a href="#contact"><i class="fa fa-phone"></i> Contact Me</a></li>
 
-		@if (Route::has('login'))
-			@auth
+		{% if auth_user %}
 				<li><a class='clickLogin' href='/dash'><i class="fa fa-tachometer" aria-hidden="true"></i> Dash</a></li>
 				<li><a class='clickLogin' href='{{ url('/logout') }}'><i class='fa fa-sign-out' aria-hidden='true'></i> Logout</a></li>
-			@else
+		{% else %}
 				<li><a class='clickLogin' href='/login'><i class='fa fa-sign-in' aria-hidden='true'></i> Login</a></li>
-			@endauth
-        @endif
+        {% endif %}
 	</ul>
 </nav>
