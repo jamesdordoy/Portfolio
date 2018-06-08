@@ -6,12 +6,10 @@
  */
 
 require('./bootstrap');
-
+require('particles.js');
 window.Vue = require('vue');
+window.moment = require('moment');
 
-window.Moment = require('moment');
-
-console.log(window.Moment);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

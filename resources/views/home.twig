@@ -1,15 +1,13 @@
-@extends('layouts.layout2017')
+{% extends "layouts.layout2017.twig" %}
 
-@section('hello')
+{% block hello %}
+<p></p>
+{% endblock %}
 
+{% block main %}
+ <particles-view></particles-view>
 
-@endsection
-
-@section('main')
-
-    <particles-view></particles-view>
-
-    <projects projects="{{ json_encode($projects) }}"></projects>
+    <projects projects="{{ projects|json_encode }}"></projects>
 
     <div class="social">
       <span class="anchor" id="social"></span>
@@ -31,7 +29,7 @@
       </section>
       <div class="textFloat"></div>
 
-      <tweets tweets="{{ json_encode($tweets) }}"></tweets>
+      <tweets tweets="{{ tweets|json_encode }}"></tweets>
 
       <div style="clear:both;"></div>
     </div>
@@ -49,10 +47,9 @@
       <div style="clear:both;"></div>
     </section>
 
-@endsection
+{% endblock %}
 
-@section('scripts')
-
+{% block scripts %}
 <!-- P5 JS Graphics Libary CDN -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.14/p5.min.js"></script>
 
@@ -81,5 +78,4 @@ function draw() {
 }
 
 </script>
-
-@endsection
+{% endblock %}

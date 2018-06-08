@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Project;
+use App\Models\Project;
 
-use App\Language;
+use App\Models\Language;
 
 use App\Services\TwitterService;
 use App\Interfaces\TwitterInterface;

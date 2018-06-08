@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ app()->getLocale() }}">
+<html lang="">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,18 +24,17 @@
     <body>
         <div class='warpper fullscreen' id="app">
 
-            @include('includes.nav')
+            {% include 'includes.nav' %}
+            {% block hello %}{% endblock %}
 
-            @yield('hello')
+            {% block main %}{% endblock %}
 
-            @yield('main')
-
-            @include('includes.footer')
+            {% include 'includes.footer' %}
 
         </div>
 
 
-        @yield('scripts')
+        {% block scripts %}{% endblock %}
         <script src="/js/app.js"></script>
 
     </body>
