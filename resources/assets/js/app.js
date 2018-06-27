@@ -17,19 +17,22 @@ window.moment = require('moment');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+//Elements
+Vue.component('particles-view',    require('./elements/particles.vue'));
 
-Vue.component('tweets', require('./components/TwitterTimeline.vue'));
-Vue.component('tweets-table', require('./components/TweetsTable.vue'));
-Vue.component('projects', require('./components/Projects.vue'));
-Vue.component('languages', require('./components/Languages.vue'));
-Vue.component('contact-form', require('./components/ContactForm.vue'));
 
-Vue.component('projects-table', require('./components/ProjectsTable.vue'));
-Vue.component('languages-table', require('./components/LanguagesTable.vue'));
+//Front
+Vue.component('contact-form',      require('./components/front/contact/ContactForm.vue'));
+Vue.component('languages',         require('./components/front/language/Languages.vue'));
+Vue.component('projects',          require('./components/front/project/Projects.vue'));
+Vue.component('tweets',            require('./components/front/twitter/TwitterTimeline.vue'));
 
-Vue.component('repository-table', require('./components/RepositoryTable.vue'));
+//Back
+Vue.component('languages-table',   require('./components/back/language/LanguagesTable.vue'));
+Vue.component('projects-table',    require('./components/back/project/ProjectsTable.vue'));
+Vue.component('repository-table',  require('./components/back/repository/RepositoryTable.vue'));
+Vue.component('tweets-table',      require('./components/back/twitter/TweetsTable.vue'));
 
-Vue.component('particles-view', require('./elements/particles.vue'));
 
 
 const app = new Vue({
