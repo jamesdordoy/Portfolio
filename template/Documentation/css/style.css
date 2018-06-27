@@ -1,0 +1,212 @@
+/* Documentation CSS */
+
+* {
+    padding:0px;
+    border:0px;
+    margin:0px;
+    text-decoration:none;
+    font-family: 'Open Sans', sans-serif;
+}
+body {
+    background: #eee;
+}
+a {
+    color: #f34343;
+    text-decoration: none;
+}
+pre {
+    border: 1px solid #fd9898;
+    border-radius: 0px;
+    background: #fff;
+}
+a:hover {
+    color: #f34343;
+    text-decoration: underline;
+}
+.clear {
+    clear: both;
+}
+h1 {
+    margin-top: 30px;
+    font-size: 21px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0px #fff;
+    margin-bottom: 20px;
+    border: 1px solid #a6a6a6;
+    box-shadow: 0px 0px 2px #fff;
+    padding: 4px 15px 5px;
+    background: #fff;
+}
+p {
+    color: #262626;
+    margin: 0px 0px 15px 0px;
+    text-shadow: 0px 1px 0px #fff;
+}
+p b {
+    color: #444;
+}
+.section {
+    padding-top: 50px;
+}
+.tt_content img {
+    box-shadow: 0px 0px 2px #fff;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+}
+.go_top {
+    margin-right: 10px;
+    display: block;
+    float: right;
+    margin-top: -61px; 
+}
+.go_top a {
+    padding: 4px 10px;
+    background: url('../images/but_bg.png') repeat-x;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    display: block;
+    color: #333;
+    font-size: 12px;
+}
+.go_top a:hover {
+    background: #f5f5f5;
+    text-decoration: none;
+}
+.tt_top_line {
+    background: url('../images/top_bg.png') repeat-x;
+    border-bottom: 1px solid #111;
+    text-shadow: 1px 1px 0px #222;
+    font-size: 14px;
+    color: #aaa;
+    position: fixed;
+    display: block;
+    z-index: 2;
+    width: 100%;
+    font-weight: 300;
+}
+.tt_top_line .top {
+    margin-left: 20px;
+    padding-top: 13px;
+}
+.tt_menu_first {
+    margin: 0px;
+    padding: 0px;
+}
+.tt_menu_first li {
+    list-style: none;
+    float: left;
+}
+.tt_menu_first li a {
+    padding: 10px 21px;
+    display: block;
+}
+.tt_menu_first li a:hover {
+    background: #1e1e1e;
+    padding: 10px 20px;
+    border-left: 1px solid #141414; 
+    border-right: 1px solid #141414;
+}
+.tt_menu_first li:hover {
+    background: #1e1e1e;
+    box-shadow: 0px 0px 1px #fff;
+}
+.tt_menu_first li.top:hover {
+    background: none;
+    box-shadow: 0px 0px 0px #fff;
+}
+.tt_menu_first li.top a {
+    display: inline;
+    padding: 0px;
+    margin: 0px;
+    background: none;
+}
+.tt_menu_first li.top a:hover {
+    border: none;
+}
+.tt_menu_first li:hover .tt_menu  {
+    display: block;
+} 
+.tt_menu_first li:hover .tt_menu li {
+    box-shadow: 0px 0px 0px #fff;
+}
+.tt_menu_first li .tt_menu {
+    position: absolute;
+    display: none;
+    padding: 10px;
+    background: #1e1e1e;
+    border-left: 1px solid #141414; 
+    border-right: 1px solid #141414; 
+    border-bottom: 1px solid #141414; 
+    margin: 0px;
+    width: 199px;
+    border-radius: 0px 0px 5px 5px;
+}
+.tt_menu_first li .tt_menu li {
+    list-style: none;
+    float: none;
+}
+.tt_menu_first li .tt_menu li a {
+    display: block;
+    text-decoration: none;
+    color: #999;
+    padding: 10px 20px;
+    font-size: 13px;
+    text-shadow: 0px 1px 0px #000;
+}
+.tt_menu_first li .tt_menu li a:hover {
+    background: #333;
+    border-radius: 4px;
+    display: block;
+    text-decoration: none;
+    text-shadow: 0px 0px 0px #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+}
+.tt_content {
+    padding-bottom: 50px;
+} 
+.tt_content ul {
+    margin-bottom: 15px;
+}
+.tt_content ul li {
+    margin-bottom: 5px;
+}
+.tt_content .thx {
+    box-shadow: 0px -1px 0px #fff;
+    border-top: 1px solid #ccc;
+    margin: 30px auto 20px;
+    padding-top: 15px;
+}
+.tt_content .terms {
+    float: left;
+    width: 520px;
+    height: 103px;
+    padding: 15px;
+    background: #fff;
+    margin-left: 16px;
+    box-shadow: 0px 0px 2px #fff;
+    border: 1px solid #ccc;
+    overflow-y: auto;
+}
+.tt_content img {
+    max-width: 100%;
+}
+.created {
+    height: 123px;
+    float: left;
+    margin: 0px 0px 20px 0px;
+    width: 350px;
+    padding: 10px 10px 0px;
+    background: #fff;
+    border: 1px solid #ccc;
+}
+.created li {
+    list-style: none;
+    border-bottom: 1px solid #e1e1e1;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+.created li.last {
+    border-bottom: none;
+}
