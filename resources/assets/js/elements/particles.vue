@@ -57,11 +57,6 @@
 <script>
 
 export default {
-  template: '#particles-template',
-  props: [''],
-  data: function(){
-    return {};
-  },
   created: function(){
     particlesJS.load('particles', '/particles.json', function(){});
   },

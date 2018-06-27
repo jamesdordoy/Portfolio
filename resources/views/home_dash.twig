@@ -1,6 +1,6 @@
-@extends('layouts.dash')
+{% extends "layouts.dash" %}
 
-@section('content')
+{% block content %}
 
     <h1>main dash</h1>
 
@@ -12,7 +12,7 @@
                     <p>Complete Projects: </p>
                 </div>
                 <div class="panel-body">
-                    <h2 class="text-center">{{ $projectCompleteCount }}</h2>
+                    <h2 class="text-center">{{ projectCompleteCount }}</h2>
                 </div>
                 <div class="panel-footer">
                     <p>Projects</p>
@@ -25,7 +25,7 @@
                     <p>Incomplete Projects: </p>
                 </div>
                 <div class="panel-body">
-                    <h2 class="text-center">{{ $projectIncompleteCount }}</h2>
+                    <h2 class="text-center">{{ projectIncompleteCount }}</h2>
                 </div>
                 <div class="panel-footer">
                     <p>Projects</p>
@@ -38,7 +38,7 @@
                     <p>Incomplete Projects: </p>
                 </div>
                 <div class="panel-body">
-                    <h2 class="text-center">{{ $projectIncompleteCount + $projectCompleteCount }}</h2>
+                    <h2 class="text-center">{{ projectIncompleteCount + projectCompleteCount }}</h2>
                 </div>
                 <div class="panel-footer">
                     <p>Projects</p>
@@ -56,7 +56,7 @@
                     <p>Language Count: </p>
                 </div>
                 <div class="panel-body">
-                    <h2 class="text-center">{{ $languages }}</h2>
+                    <h2 class="text-center">{{ languages }}</h2>
                 </div>
                 <div class="panel-footer">
                     <p>Projects</p>
@@ -64,13 +64,8 @@
             </div>
         </div>
     </div>
-
-
-
-
-@endsection
-
-@section('scripts')
+{% endblock %}
+{% block scripts %}
 
   <!-- Particles JS Libary CDN -->
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
@@ -82,4 +77,4 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/3.3.6/scrollreveal.js"></script>
 
 
-@endsection
+{% endblock %}

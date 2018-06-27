@@ -36,9 +36,12 @@ class HomeController extends Controller
         $projects = Project::latest()->get();
         $tweets = $this->twitter->getStatuses();
 
+        $auth = \Auth::user();
+
         return view(
             'home', 
             [
+                'auth' => $auth,
                 'projects' => $projects, 
                 'tweets' => $tweets,
                 'languages' => $languages,
