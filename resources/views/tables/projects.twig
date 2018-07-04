@@ -1,12 +1,10 @@
-@extends('layouts.dash')
 
-@section('content')
+{% extends "layouts.dash" %}
+
+{% block main %}
+
 
     <div class="row">
-
-        @if ($errors)
-
-        @endif
 
         <button
             data-toggle="modal"
@@ -19,7 +17,7 @@
         </button>
 
         <projects-table
-            projects="{{ json_encode($projects) }}">
+            projects="{{ projects|json_encode }}">
         </projects-table>
     </div>
 
@@ -37,9 +35,9 @@
             <form method="POST" action="/dash/projects" enctype="multipart/form-data">
 
                 <div class="form-group">
-                    {{ csrf_field() }}
+  
                     <label for="id">#</label>
-                    <input type="number" name="id" value="{{ $id }}" class="form-control" required/>
+                    <input type="number" name="id" value="" class="form-control" required/>
 
                     <label for="name">Name</label>
                     <input type="text" name="name" placeholder="Name" class="form-control" required/>
@@ -80,9 +78,9 @@
         </div>
       </div>
     </div>
-@endsection
+{% endblock %}
 
-@section('scripts')
+{% block scripts %}
 
 <!-- Scroll Reveal Libary CDN -->
 <script src="/js/FakeForm.js"></script>
@@ -105,4 +103,4 @@ window.onload = function(e)
 
 </script>
 
-@endsection
+{% endblock %}
