@@ -1,13 +1,11 @@
 <template id="particles-template" class="fullscreen">
-    <div class="fullscreen">
-        <div class="fullscreen" id="name">
-          <div id="particles"></div>
+  <div id="name">
+    <div id="particles"></div>
 
-          <div class="heading-content">
-              <slot></slot>
-          </div>
-        </div>
+    <div class="heading-content">
+      <slot></slot>
     </div>
+  </div>
 </template>
 
 <style scoped>
