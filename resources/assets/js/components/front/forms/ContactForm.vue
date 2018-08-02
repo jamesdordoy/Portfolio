@@ -40,16 +40,10 @@
 </template>
 <script>
     export default{
-        props: {
-
-        },
         data: function(){
             return {
                 list: '',
             };
-        },
-        created: function(){
-
         },
         computed: {
             csrf_token:  function(){

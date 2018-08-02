@@ -13,26 +13,21 @@ class CreateExampleCodeTable extends Migration
      */
     public function up()
     {
-        if (!Schema::hasTable('examples')) {
-            //
-            Schema::create('code_examples', function (Blueprint $table) {
+        Schema::create('code_examples', function (Blueprint $table) {
 
-                $table->increments('id')->unsigned();
-                $table->integer('example_id')->unsigned();
-    
-                $table->text('type')->nullable(false);
-                $table->text('code')->nullable(false);
-                $table->timestamps();
-    
-                $table->foreign('example_id')
-                ->references('id')
-                ->on('examples');
-    
-               
-            });
-        }
-        
-        
+            $table->increments('id')->unsigned();
+            $table->integer('example_id')->unsigned();
+
+            $table->text('type')->nullable(false);
+            $table->text('code')->nullable(false);
+            $table->timestamps();
+
+            $table->foreign('example_id')
+            ->references('id')
+            ->on('examples');
+
+           
+        });
     }
     /**
      * Reverse the migrations.
