@@ -5,7 +5,7 @@
       <h2>Programming Languages, Libaries &amp; Frameworks I Like</h2>
 
       <div class="row">
-          <div class="col-sm-2" v-for="language in this.list">
+          <div class="col-sm-2" v-for="language in this.list" :key="language.id">
               <h2>Title: {{ language.name }}</h2>
           </div>
       </div>

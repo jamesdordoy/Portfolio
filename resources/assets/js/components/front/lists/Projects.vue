@@ -4,7 +4,7 @@
       <span class="anchor" id="projects"></span>
       <h2>Projects</h2>
       <ul class="project-thumbs">
-          <li v-for="project in this.list">
+          <li v-for="project in this.list" :key="project.id">
 
               <h2>Title: {{ project.name }}</h2>
               <img :src='"/images/projects/" + project.icon' />

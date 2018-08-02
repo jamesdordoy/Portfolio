@@ -19,15 +19,13 @@ window.moment = require('moment');
 
 //Elements
 
-Vue.component('home-view',         require('./views/Home.vue'));
-
 Vue.component('particles-view',    require('./elements/particles.vue'));
 
 //Front
-Vue.component('contact-form',      require('./components/front/contact/ContactForm.vue'));
-Vue.component('languages',         require('./components/front/language/Languages.vue'));
-Vue.component('projects',          require('./components/front/project/Projects.vue'));
-Vue.component('tweets',            require('./components/front/twitter/TwitterTimeline.vue'));
+Vue.component('contact-form',      require('./components/front/forms/ContactForm.vue'));
+Vue.component('languages',         require('./components/front/lists/Languages.vue'));
+Vue.component('projects',          require('./components/front/lists/Projects.vue'));
+Vue.component('tweets',            require('./components/front/lists/TwitterTimeline.vue'));
 
 //Back
 Vue.component('languages-table',   require('./components/back/language/LanguagesTable.vue'));
@@ -37,13 +35,7 @@ Vue.component('repository-table',  require('./components/back/repository/Reposit
 Vue.component('tweets-table',      require('./components/back/twitter/TweetsTable.vue'));
 
 //Views
-Vue.component('home-view',         require('./views/Home.vue'));
 Vue.component('coming-soon',       require('./views/ComingSoon.vue'));
-
-
-
-
-
 
 const app = new Vue({
     el: '#app'
