@@ -61421,7 +61421,7 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, "\n.particles-js-canvas-el[data-v-3dcf12c7]{\n  margin: 0;\n  height: 100%\n}\n#particles[data-v-3dcf12c7]{\n\theight: 100%;\n\twidth: 100%;\n\tbackground: #263138;\n    padding-left: 50px;\n    text-align: center;\n}\n#name[data-v-3dcf12c7]{\n  text-align: center;\n}\n.heading-content[data-v-3dcf12c7]{\n  text-align: center;\n\tz-index: 9999;\n  position: absolute;\n  top:0;\n  bottom:0;\n  left: 0;\n  right: 0;\n  margin: 200px 0 auto auto;\n  border-radius: 30px;\n}\n@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {\n#defaultCanvas0[data-v-3dcf12c7] {\n    top:0;\n    bottom:0;\n    margin: auto;\n    left: 50%;\n    -webkit-transform: translateX(50%);\n            transform: translateX(50%);\n}\n}\n\n", ""]);
+exports.push([module.i, "\n.particles-js-canvas-el[data-v-3dcf12c7]{\n  margin: 0;\n  height: 100%\n}\n#particles[data-v-3dcf12c7]{\n\theight: 100%;\n\twidth: 100%;\n\tbackground: #263138;\n    padding-left: 50px;\n    text-align: center;\n}\n#name[data-v-3dcf12c7]{\n  text-align: center;\n  height: 100%;\n}\n.heading-content[data-v-3dcf12c7]{\n  text-align: center;\n\tz-index: 9999;\n  position: absolute;\n  top:0;\n  bottom:0;\n  left: 0;\n  right: 0;\n  margin: 200px 0 auto auto;\n  border-radius: 30px;\n}\n@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {\n#defaultCanvas0[data-v-3dcf12c7] {\n    top:0;\n    bottom:0;\n    margin: auto;\n    left: 50%;\n    -webkit-transform: translateX(50%);\n            transform: translateX(50%);\n}\n}\n\n", ""]);
 
 // exports
 
@@ -61520,7 +61520,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -61537,12 +61536,10 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "fullscreen" }, [
-    _c("div", { staticClass: "fullscreen", attrs: { id: "name" } }, [
-      _c("div", { attrs: { id: "particles" } }),
-      _vm._v(" "),
-      _c("div", { staticClass: "heading-content" }, [_vm._t("default")], 2)
-    ])
+  return _c("div", { attrs: { id: "name" } }, [
+    _c("div", { attrs: { id: "particles" } }),
+    _vm._v(" "),
+    _c("div", { staticClass: "heading-content" }, [_vm._t("default")], 2)
   ])
 }
 var staticRenderFns = []

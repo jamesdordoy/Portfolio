@@ -2,7 +2,6 @@
 
     <section class="twitter">
       home
-
     </section>
 
   <projects projects="{{ projects|json_encode }}"></projects>

@@ -25,6 +25,7 @@
 
 #name{
   text-align: center;
+  height: 100%;
 }
 
 .heading-content{

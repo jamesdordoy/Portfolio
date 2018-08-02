@@ -1,31 +1,21 @@
 
 
-function SteeringBehavior(){
+function SteeringBehavior(name){
 
   this.font = null;
   this.vehicles = [];
+  this.name = name;
 
   this.preload = function(){
     this.font = loadFont('/fonts/AvenirNextLTPro-Demi.otf')
   };
 
   this.setup = function(){
-    var str = '';
-    var w = 0;
-
-    if (typeof window.orientation !== 'undefined') {
-      str = 'JD';
-      w = 300;
-    }else{
-      str = 'J Dordoy';
-      w = 730;
-    }
-
-    var canvas = createCanvas(w, 300);
+    var canvas = createCanvas(width, 300);
     background('#36454f');
     canvas.parent('name');
 
-    var points = steeringBehavior.font.textToPoints(str, 100, 200, 160, {
+    var points = steeringBehavior.font.textToPoints(this.name, 100, 200, 160, {
       sampleFactor: 0.25
     });
 

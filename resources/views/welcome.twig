@@ -8,9 +8,13 @@
 
 @section('main')
 
-    <projects projects="{{ json_encode($projects) }}"></projects>
+    <projects
+      :projects="{{ $projects }}">
+    </projects>
 
-    <languages languages="{{ json_encode($langauges) }}"></languages>
+    <languages
+      :languages="{{ $langauges }}">
+    </languages>
 
     <div class="social">
       <span class="anchor" id="social"></span>
@@ -26,7 +30,6 @@
           <p>Before attending University, i also was creating small WordPress websites for customers and my own amusement. After my first year i became captivated by PHP and was using the language for all web projects in L.A.M.P. environments. </p><br>
 
           <p>I have used PHP for many different projects throughout my programming career including creating a simple Forward Chaining Engine &amp; Composable MySQL Tables Written in PHP which is like a ORM. </p>
-
         </div><br><br>
 
       </section>
