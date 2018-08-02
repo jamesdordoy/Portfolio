@@ -37,13 +37,9 @@ Route::get('/dash/dependencies', 'DependenciesController@index');
 
 //Examples
 Route::get('/dash/examples', 'ExampleController@index');
-
 Route::get('/dash/twitter', 'TwitterController@index');
-
 Route::get('/dash/contact', 'ContactController@index');
-
 Route::get('/dash/github', 'GitHubController@index');
-
 Route::get('/dash/bitbucket/callback', 'BitBucketController@callback');
 Route::get('/dash/bitbucket', 'BitBucketController@index');
 
