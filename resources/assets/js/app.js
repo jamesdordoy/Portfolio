@@ -18,8 +18,10 @@ window.moment = require('moment');
  */
 
 //Elements
-Vue.component('particles-view',    require('./elements/particles.vue'));
 
+Vue.component('home-view',         require('./views/Home.vue'));
+
+Vue.component('particles-view',    require('./elements/particles.vue'));
 
 //Front
 Vue.component('contact-form',      require('./components/front/contact/ContactForm.vue'));
@@ -33,7 +35,13 @@ Vue.component('projects-table',    require('./components/back/project/ProjectsTa
 Vue.component('project-create',    require('./components/back/project/Create.vue'));
 Vue.component('repository-table',  require('./components/back/repository/RepositoryTable.vue'));
 Vue.component('tweets-table',      require('./components/back/twitter/TweetsTable.vue'));
+
+//Views
 Vue.component('home-view',         require('./views/Home.vue'));
+Vue.component('coming-soon',       require('./views/ComingSoon.vue'));
+
+
+
 
 
 
