@@ -68,21 +68,15 @@
 </style>
 
 <script>
-
 export default{
-
     props: ['languages'],
-
     data: function(){
         return {
             list: '',
         };
     },
-
     created: function(){
         this.list = JSON.parse(this.languages);
     }
-
 }
-
 </script>
