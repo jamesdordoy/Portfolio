@@ -11,7 +11,7 @@
 |
 */
 
-/******** PUBLIC ROUTES ********/
+/******** Public Routes ********/
 Route::get('/', 'HomeController@index');
 Route::post('/contact', 'ContactController@store');
 
