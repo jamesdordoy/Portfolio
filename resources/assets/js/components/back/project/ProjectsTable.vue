@@ -18,7 +18,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="project in this.list">
+        <tr v-for="project in projects" :key="project.id">
           <th scope="row">{{ project.id }}</th>
           <td>{{ project.name }}</td>
           <td>{{ project.description }}</td>
@@ -49,40 +49,19 @@
       </tbody>
     </table>
 </div>
-
 </template>
-
-<style>
-
-</style>
-
 <script>
-
 export default{
-
     props: {
         projects: {
-          type: String,
+          type: Array,
           default: ''
         },
     },
-
-    data: function(){
-        return {
-            list: '',
-        };
-    },
-
-    created: function(){
-        this.list = JSON.parse(this.projects);
-    },
-
     computed: {
         csrf_token:  function(){
             return $('meta[name="csrf-token"]').attr('content')
         }
     }
-
 }
-
 </script>

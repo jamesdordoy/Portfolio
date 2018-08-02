@@ -30,6 +30,7 @@ Vue.component('tweets',            require('./components/front/twitter/TwitterTi
 //Back
 Vue.component('languages-table',   require('./components/back/language/LanguagesTable.vue'));
 Vue.component('projects-table',    require('./components/back/project/ProjectsTable.vue'));
+Vue.component('project-create',    require('./components/back/project/Create.vue'));
 Vue.component('repository-table',  require('./components/back/repository/RepositoryTable.vue'));
 Vue.component('tweets-table',      require('./components/back/twitter/TweetsTable.vue'));
 

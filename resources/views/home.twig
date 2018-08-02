@@ -1,53 +1,16 @@
-{% extends "layouts.layout2017.twig" %}
-
-{% block hello %}
-<p></p>
-{% endblock %}
+{% extends "layouts.layout2018.twig" %}
 
 {% block main %}
-  
   <div class="fullscreen">
     <particles-view></particles-view>
   </div>
 {% endblock %}
 
 {% block scripts %}
-<!-- P5 JS Graphics Libary CDN -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.14/p5.min.js"></script>
-
-<!-- Scroll Reveal Libary CDN -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/3.3.6/scrollreveal.js"></script>
-
-<!-- Scroll Reveal Libary CDN -->
-<script src="/js/SteeringBehavior.js"></script>
-
-<script>
-
-let str;
-let width;
-
-if (typeof window.orientation !== 'undefined') {
-  str = 'JD';
-  width = 300;
-}else{
-  str = 'Coming Soon';
-  width = 1060;
-}
-
-// P5 JS Libary
-var steeringBehavior = new SteeringBehavior(str, width);
-
-function preload() {
-  steeringBehavior.preload();
-}
-
-function setup() {
-  steeringBehavior.setup();
-}
-
-function draw() {
-  steeringBehavior.draw();
-}
-
-</script>
+  <!-- P5 JS Graphics Libary CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.14/p5.min.js"></script>
+  <!-- Scroll Reveal Libary CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/3.3.6/scrollreveal.js"></script>
+  <!-- Setup for moving particle system -->
+  <script src="/js/SteeringBehavior.js"></script>
 {% endblock %}

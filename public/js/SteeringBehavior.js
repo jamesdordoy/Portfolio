@@ -103,3 +103,29 @@ Vehicle.prototype.flee = function(target) {
     return createVector(0, 0);
   }
 }
+
+let str;
+let width;
+
+if (typeof window.orientation !== 'undefined') {
+  str = 'JD';
+  width = 300;
+} else {
+  str = 'Coming Soon';
+  width = 1060;
+}
+
+// P5 JS Libary
+var steeringBehavior = new SteeringBehavior(str, width);
+
+function preload() {
+  steeringBehavior.preload();
+}
+
+function setup() {
+  steeringBehavior.setup();
+}
+
+function draw() {
+  steeringBehavior.draw();
+}
