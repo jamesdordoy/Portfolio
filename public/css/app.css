@@ -131,11 +131,13 @@ nav ul li:first-child :hover{
 	visibility: hidden;
 }
 footer{
-	padding:1%;
+	padding:20px;
 	background-color:#263138;
 	color:#fff;
 	position:relative;
 	font-family: 'Raleway', sans-serif;
+	-webkit-box-shadow: 0px 0px 10px #fff !important;
+	        box-shadow: 0px 0px 10px #fff !important;
 }
 
 footer a{

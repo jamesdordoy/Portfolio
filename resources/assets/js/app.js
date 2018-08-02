@@ -33,6 +33,7 @@ Vue.component('projects-table',    require('./components/back/project/ProjectsTa
 Vue.component('project-create',    require('./components/back/project/Create.vue'));
 Vue.component('repository-table',  require('./components/back/repository/RepositoryTable.vue'));
 Vue.component('tweets-table',      require('./components/back/twitter/TweetsTable.vue'));
+Vue.component('home-view',         require('./views/Home.vue'));
 
 
 
