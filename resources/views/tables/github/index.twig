@@ -1,13 +1,8 @@
-@extends('layouts.dash')
+{% extends "layouts.dash" %}
 
-@section('content')
+{% block main %}
 
     <div class="row">
-
-        @if ($errors)
-
-        @endif
-
         <button
             data-toggle="modal"
             data-target="#myModal"
@@ -17,10 +12,13 @@
             <i class="fa fa-plus" aria-hidden="true"></i>
             Add New Repo
         </button>
-
-        <repository-table
-            repos="{{ json_encode($repositories) }}">
-        </repository-table>
+        <div class="col-lg-12">
+            <div class="container">
+            <repository-table
+                :repositories="{{ repositories|json_encode }}">
+            </repository-table>
+        </div>      
+        </div>     
     </div>
 
     <!-- Modal -->
@@ -80,9 +78,9 @@
         </div>
       </div>
     </div>
-@endsection
+{% endblock %}
 
-@section('scripts')
+{% block scripts %}
 
 <!-- Scroll Reveal Libary CDN -->
 <script src="/js/FakeForm.js"></script>
@@ -99,4 +97,4 @@ window.onload = function(e)
 
 </script>
 
-@endsection
+{% endblock %}

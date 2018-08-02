@@ -18,15 +18,15 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="repo in this.list">
-          <th scope="row">{{ repo.id }}</th>
-          <td>{{ repo.name }}</td>
-          <td>{{ repo.description }}</td>
-          <td>{{ repo.owner.login }}</td>
-          <td>{{ repo.url }}</td>
-          <td> {{ repo.private }} </td>
-          <td>{{ repo.created_at }}</td>
-          <td>{{ repo.updated_at }}</td>
+        <tr v-for="repository in repositories" :key="repository.id">
+          <th scope="row">{{ repository.id }}</th>
+          <td>{{ repository.name }}</td>
+          <td>{{ repository.description }}</td>
+          <td>{{ repository.owner.login }}</td>
+          <td>{{ repository.url }}</td>
+          <td> {{ repository.private }} </td>
+          <td>{{ repository.created_at }}</td>
+          <td>{{ repository.updated_at }}</td>
           <td><a :href="'/dash/projects/'">
                 <button class="btn btn-primary">
                     <i class="fa fa-refresh" aria-hidden="true"></i>
@@ -61,20 +61,14 @@
 export default{
 
     props: {
-        repos: {
-          type: String,
+        repositories: {
+          type: Array,
           default: ''
         },
     },
 
     data: function(){
-        return {
-            list: '',
-        };
-    },
-
-    created: function(){
-        this.list = JSON.parse(this.repos);
+        return {};
     },
 
     computed: {

@@ -36,7 +36,7 @@ Vue.component('tweets-table',      require('./components/back/twitter/TweetsTabl
 
 //Views
 Vue.component('coming-soon',       require('./views/ComingSoon.vue'));
-
+Vue.component('home-view',       require('./views/HomeView.vue'));
 const app = new Vue({
     el: '#app'
 });
