@@ -24,7 +24,7 @@
           <td>{{ repository.description }}</td>
           <td>{{ repository.owner.login }}</td>
           <td>{{ repository.url }}</td>
-          <td> {{ repository.private }} </td>
+          <td>{{ repository.private }} </td>
           <td>{{ repository.created_at }}</td>
           <td>{{ repository.updated_at }}</td>
           <td><a :href="'/dash/projects/'">
