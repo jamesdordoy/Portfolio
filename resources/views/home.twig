@@ -1,7 +1,8 @@
 {% extends "layouts.layout2018" %}
 
 {% block main %}
-  <home-view>
+  <home-view
+    :projects="{{ projects|json_encode }}">
   </home-view>
 {% endblock %}
 

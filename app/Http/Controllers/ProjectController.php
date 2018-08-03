@@ -32,7 +32,7 @@ class ProjectController extends Controller
     {
         $file = $request->file("thumbnail");
 
-        $imageName = $request->input("id") .'.'. $file->getClientOriginalExtension();
+        $imageName =  str_replace(' ', '', $request->input("name")) .'.'. $file->getClientOriginalExtension();
 
         $file->move( base_path() . '/public/images/projects/', $imageName );
 

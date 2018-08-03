@@ -245,7 +245,7 @@ footer a{
 	border-radius: 10px;
 }
 
-.project-thumbs li:hover{
+.project-thumbs li img:hover{
 	-webkit-box-shadow: 3px 3px 10px #000;
 	        box-shadow: 3px 3px 10px #000;
 }
