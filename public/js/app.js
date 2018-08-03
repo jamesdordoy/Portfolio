@@ -62428,7 +62428,7 @@ var render = function() {
         _c(
           "tbody",
           _vm._l(this.list, function(language) {
-            return _c("tr", [
+            return _c("tr", { key: language.id }, [
               _c("th", { attrs: { scope: "row" } }, [
                 _vm._v(_vm._s(language.id))
               ]),

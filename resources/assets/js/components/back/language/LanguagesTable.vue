@@ -15,7 +15,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="language in this.list">
+        <tr v-for="language in this.list" :key="language.id">
           <th scope="row">{{ language.id }}</th>
           <td>{{ language.name }}</td>
           <td>{{ language.description }}</td>
