@@ -15,7 +15,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="language in this.list" :key="language.id">
+        <tr v-for="language in languages" :key="language.id">
           <th scope="row">{{ language.id }}</th>
           <td>{{ language.name }}</td>
           <td>{{ language.description }}</td>
@@ -53,30 +53,17 @@
 <script>
 
 export default{
-
     props: {
         languages: {
-          type: String,
-          default: ''
+          type: Array,
+          default: []
         },
     },
-
-    data: function(){
-        return {
-            list: '',
-        };
-    },
-
-    created: function(){
-        this.list = JSON.parse(this.languages);
-    },
-
     computed: {
         csrf_token:  function(){
             return $('meta[name="csrf-token"]').attr('content')
         }
     }
-
 }
 
 </script>

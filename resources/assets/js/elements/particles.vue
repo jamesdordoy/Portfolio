@@ -1,7 +1,6 @@
 <template id="particles-template" class="fullscreen">
   <div id="name">
     <div id="particles"></div>
-
     <div class="heading-content">
       <slot></slot>
     </div>
@@ -57,7 +56,7 @@
 
 export default {
   created: function(){
-    particlesJS.load('particles', '/particles.json', function(){});
+    particlesJS.load('particles', '/particles.json', () => {});
   },
 };
 
