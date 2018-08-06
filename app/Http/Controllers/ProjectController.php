@@ -25,7 +25,9 @@ class ProjectController extends Controller
         $projects = Project::orderBy('id', 'ASC')->get();
         $id = Project::max('id') + 1;
 
-        return view('tables.projects', compact('projects', 'id'));
+        return view('tables.projects', [
+            'projects' => $projects,
+        ]);
     }
 
     public function store(ProjectRequest $request)
