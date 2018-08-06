@@ -2,7 +2,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h3 class="modal-title">Add New Project</h3>
+          <h3 class="modal-title">Add New Language</h3>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -10,11 +10,8 @@
         <div class="modal-body">
           <form method="POST" action="/dash/languages" enctype="multipart/form-data">
 
-              <div class="form-group">
-                  {{ csrf_field() }}
-                  <label for="id">#</label>
-                  <input type="number" name="id" value="{{ $id }}" class="form-control" required/>
-              </div>
+                {{ csrf_field() }}
+
               <div class="form-group">
                   <label for="name">Name</label>
                   <input type="text" name="name" placeholder="Name" class="form-control" required/>

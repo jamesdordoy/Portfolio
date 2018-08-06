@@ -13,6 +13,11 @@
 
 <script>
     export default{
-        props: ['projects'],
+        props: {
+            projects: {
+            type: Array,
+            default: []
+            },
+        },
     }
 </script>

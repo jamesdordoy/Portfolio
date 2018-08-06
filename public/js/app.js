@@ -61524,7 +61524,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -61948,19 +61947,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['languages'],
-    data: function data() {
-        return {
-            list: ''
-        };
-    },
-    created: function created() {
-        this.list = JSON.parse(this.languages);
-    }
+    props: ['languages']
 });
 
 /***/ }),
@@ -61974,14 +61963,16 @@ var render = function() {
   return _c("section", { staticClass: "code" }, [
     _c("span", { staticClass: "anchor", attrs: { id: "code" } }),
     _vm._v(" "),
-    _c("h2", [_vm._v("Programming Languages, Libaries & Frameworks I Like")]),
+    _c("h2", [_vm._v("Programming Languages, Libraries & Frameworks I Like")]),
     _vm._v(" "),
     _c(
-      "div",
-      { staticClass: "row" },
-      _vm._l(this.list, function(language) {
-        return _c("div", { key: language.id, staticClass: "col-sm-2" }, [
-          _c("h2", [_vm._v("Title: " + _vm._s(language.name))])
+      "ul",
+      { staticClass: "libary" },
+      _vm._l(_vm.languages, function(language) {
+        return _c("li", { key: language.id }, [
+          _c("h2", [_vm._v("Title: " + _vm._s(language.name))]),
+          _vm._v(" "),
+          _c("img", { attrs: { src: "/images/languages/" + language.icon } })
         ])
       })
     )
@@ -62066,7 +62057,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['projects']
+    props: {
+        projects: {
+            type: Array,
+            default: []
+        }
+    }
 });
 
 /***/ }),
@@ -62382,30 +62378,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-
     props: {
         languages: {
-            type: String,
-            default: ''
+            type: Array,
+            default: []
         }
     },
-
-    data: function data() {
-        return {
-            list: ''
-        };
-    },
-
-    created: function created() {
-        this.list = JSON.parse(this.languages);
-    },
-
     computed: {
         csrf_token: function csrf_token() {
             return $('meta[name="csrf-token"]').attr('content');
         }
     }
-
 });
 
 /***/ }),
@@ -62427,7 +62410,7 @@ var render = function() {
         _vm._v(" "),
         _c(
           "tbody",
-          _vm._l(this.list, function(language) {
+          _vm._l(_vm.languages, function(language) {
             return _c("tr", { key: language.id }, [
               _c("th", { attrs: { scope: "row" } }, [
                 _vm._v(_vm._s(language.id))
@@ -63802,9 +63785,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['projects']
+  props: ['projects', 'languages']
 });
 
 /***/ }),
@@ -63821,7 +63807,9 @@ var render = function() {
     [
       _c("coming-soon"),
       _vm._v(" "),
-      _c("projects", { attrs: { projects: _vm.projects } })
+      _c("projects", { attrs: { projects: _vm.projects } }),
+      _vm._v(" "),
+      _c("languages", { attrs: { languages: _vm.languages } })
     ],
     1
   )
