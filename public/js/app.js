@@ -61966,10 +61966,10 @@ var render = function() {
     _c("h2", [_vm._v("Programming Languages, Libraries & Frameworks I Like")]),
     _vm._v(" "),
     _c(
-      "div",
-      { staticClass: "row" },
+      "ul",
+      { staticClass: "libary" },
       _vm._l(_vm.languages, function(language) {
-        return _c("div", { key: language.id, staticClass: "col-sm-2" }, [
+        return _c("li", { key: language.id }, [
           _c("h2", [_vm._v("Title: " + _vm._s(language.name))]),
           _vm._v(" "),
           _c("img", { attrs: { src: "/images/languages/" + language.icon } })

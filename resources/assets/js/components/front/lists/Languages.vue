@@ -2,12 +2,12 @@
   <section class="code">
     <span class="anchor" id="code"></span>
     <h2>Programming Languages, Libraries &amp; Frameworks I Like</h2>
-    <div class="row">
-      <div class="col-sm-2" v-for="language in languages" :key="language.id">
+    <ul class="libary">
+      <li v-for="language in languages" :key="language.id"> 
         <h2>Title: {{ language.name }}</h2>
         <img :src='"/images/languages/" + language.icon' />
-      </div>
-    </div>
+      </li>
+    </ul>
   </section>
 </template>
 
