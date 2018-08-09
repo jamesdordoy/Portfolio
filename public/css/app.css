@@ -83,6 +83,11 @@ nav ul li a{
 	color:#fff;
 	-webkit-transition: 0.4s;
 	transition: 0.4s;
+	
+}
+
+nav ul li a:hover{
+	text-decoration: none !important;
 }
 
 nav ul li:hover{

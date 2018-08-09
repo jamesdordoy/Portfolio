@@ -1,6 +1,7 @@
-@extends('layouts.dash')
+{% extends "layouts.dash" %}
 
-@section('content')
+{% block content %}
+
 
     <div class="row">
 
@@ -17,8 +18,6 @@
             <i class="fa fa-plus" aria-hidden="true"></i>
             Add New Project
         </button>
-
-
     </div>
 
     <!-- Modal -->
@@ -78,9 +77,9 @@
         </div>
       </div>
     </div>
-@endsection
+{% endblock %}
 
-@section('scripts')
+{% block scripts %}
 
 <!-- Scroll Reveal Libary CDN -->
 <script src="/js/FakeForm.js"></script>
@@ -103,4 +102,4 @@ window.onload = function(e)
 
 </script>
 
-@endsection
+{% endblock %}

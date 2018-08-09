@@ -1,12 +1,8 @@
-@extends('layouts.dash')
+{% extends "layouts.dash" %}
 
-@section('content')
+{% block content %}
 
     <div class="row">
-
-        @if ($errors)
-
-        @endif
 
         <button
             data-toggle="modal"
@@ -15,13 +11,9 @@
             type="button"
             class="btn-success">
             <i class="fa fa-plus" aria-hidden="true"></i>
-            Add New Tweet
+            Add New Project
         </button>
-
-        <tweets-table tweets="{{ json_encode($tweets) }}"></tweets-table>
     </div>
-
-    <!-- Modal -->
     <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -78,9 +70,9 @@
         </div>
       </div>
     </div>
-@endsection
+{% endblock %}
 
-@section('scripts')
+{% block scripts %}
 
 <!-- Scroll Reveal Libary CDN -->
 <script src="/js/FakeForm.js"></script>
@@ -103,4 +95,4 @@ window.onload = function(e)
 
 </script>
 
-@endsection
+{% endblock %}

@@ -1,12 +1,8 @@
-@extends('layouts.dash')
+{% extends "layouts.dash" %}
 
-@section('content')
+{% block content %}
 
     <div class="row">
-
-        @if ($errors)
-
-        @endif
 
         <button
             data-toggle="modal"
@@ -19,15 +15,16 @@
         </button>
 
         <examples-table
-            examples="{{ json_encode($examples) }}">
+            examples="">
         </examples-table>
 
     </div>
 
-    @include('forms.add_language')
-@endsection
+    {% include 'forms.add_language' %}
+{% endblock %}
 
-@section('scripts')
+{% block scripts %}
+
 
 <!-- Scroll Reveal Libary CDN -->
 <script src="/js/FakeForm.js"></script>
@@ -50,4 +47,4 @@ window.onload = function(e)
 
 </script>
 
-@endsection
+{% endblock %}
