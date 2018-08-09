@@ -1,8 +1,13 @@
-{% extends "layouts.dash" %}
+{% extends "back.layout" %}
 
 {% block content %}
 
+
     <div class="row">
+
+        @if ($errors)
+
+        @endif
 
         <button
             data-toggle="modal"
@@ -14,6 +19,8 @@
             Add New Project
         </button>
     </div>
+
+    <!-- Modal -->
     <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
         <div class="modal-content">

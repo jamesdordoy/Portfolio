@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Back;
 
 use App\Models\Project;
 
 use App\Models\Language;
 
 use App\Models\Examples\Dependencies;
-
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class DashboardController extends Controller
+class IndexController extends Controller
 {
     /**
      * Show the application dashboard.
@@ -27,7 +27,7 @@ class DashboardController extends Controller
         $deps = Dependencies::count();
 
         return view(
-            'home_dash',
+            'back.home',
             compact(
                 'projectCompleteCount',
                 'projectIncompleteCount',

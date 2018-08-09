@@ -1,11 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Back;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use GrahamCampbell\GitHub\Facades\GitHub;
 
-class DependenciesController extends Controller
+use GrahamCampbell\Bitbucket\Facades\Bitbucket;
+
+class GitHubController extends Controller
 {
+
     /**
      * Create a new controller instance.
      *
@@ -16,6 +21,7 @@ class DependenciesController extends Controller
         $this->middleware('auth');
     }
 
+
     /**
      * Display a listing of the resource.
      *
@@ -23,8 +29,14 @@ class DependenciesController extends Controller
      */
     public function index()
     {
-        //
-        return view('tables.dependencies');
+        $repositories = GitHub::me()->repositories();
+
+         return view(
+            'back.tables.github.index',
+            compact(
+                'repositories'
+            )
+        );
     }
 
     /**

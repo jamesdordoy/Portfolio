@@ -1,17 +1,18 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Front;
 
 use Illuminate\Http\Request;
 
 use App\Models\Project;
 
 use App\Models\Language;
+use App\Http\Controllers\Controller;
 
 use App\Services\TwitterService;
 use App\Interfaces\TwitterInterface;
 
-class HomeController extends Controller
+class IndexController extends Controller
 {
     private $twitter;
 
@@ -39,7 +40,7 @@ class HomeController extends Controller
         $auth = \Auth::user();
 
         return view(
-            'home', 
+            'front.home', 
             [
                 'auth' => $auth,
                 'projects' => $projects, 

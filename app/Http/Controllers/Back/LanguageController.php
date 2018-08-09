@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Back;
 
 use App\Models\Language;
-
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class LanguageController extends Controller
@@ -29,7 +29,7 @@ class LanguageController extends Controller
          $languages = Language::orderBy('id', 'ASC')->get();
          $id = Language::max('id') + 1;
 
-         return view('tables.languages', compact('languages', 'id'));
+         return view('back.tables.languages', compact('languages', 'id'));
      }
 
     /**

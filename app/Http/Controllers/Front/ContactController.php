@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Front;
 
 use Illuminate\Http\Request;
 
-use GrahamCampbell\GitHub\Facades\GitHub;
+use App\Models\Contact;
 
-use GrahamCampbell\Bitbucket\Facades\Bitbucket;
+use App\Http\Requests\ContactRequest;
 
-class GitHubController extends Controller
+class ContactController extends Controller
 {
 
     /**
@@ -21,7 +21,6 @@ class GitHubController extends Controller
         $this->middleware('auth');
     }
 
-
     /**
      * Display a listing of the resource.
      *
@@ -29,24 +28,9 @@ class GitHubController extends Controller
      */
     public function index()
     {
-        $repositories = GitHub::me()->repositories();
+        $contacts = Contact::orderBy('id', 'ASC')->get();
 
-         return view(
-            'tables.github.index',
-            compact(
-                'repositories'
-            )
-        );
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return view('tables.contact', compact('contacts'));
     }
 
     /**
@@ -55,20 +39,17 @@ class GitHubController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ContactRequest $request)
     {
-        //
-    }
+        $contact = new Contact;
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+        $contact->name = $request->input("name");
+        $contact->email = $request->input("email");
+        $contact->message = $request->input("message");
+
+        if ($contact->save()) {
+            return redirect("/")->with("success", " Created");
+        }
     }
 
     /**

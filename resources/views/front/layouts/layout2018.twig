@@ -19,10 +19,10 @@
     </head>
     <body>
         <div class='warpper fullscreen' id="app">
-            {% include 'includes.nav' %}
+            {% include 'front.includes.nav' %}
             {% block hello %}{% endblock %}
             {% block main %}{% endblock %}
-            {% include 'includes.footer' %}
+            {% include 'front.includes.footer' %}
         </div>
         {% block scripts %}{% endblock %}
         <script src="{{ mix("/js/app.js") }}"></script>

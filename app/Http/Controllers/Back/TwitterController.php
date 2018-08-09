@@ -1,24 +1,26 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Back;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Services\TwitterService;
+use App\Interfaces\TwitterInterface;
 
-use App\Models\Contact;
-
-use App\Http\Requests\ContactRequest;
-
-class ContactController extends Controller
+class TwitterController extends Controller
 {
+
+    private $twitter;
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(TwitterInterface $twitter)
     {
         $this->middleware('auth');
+        $this->twitter = $twitter;
     }
 
     /**
@@ -28,9 +30,20 @@ class ContactController extends Controller
      */
     public function index()
     {
-        $contacts = Contact::orderBy('id', 'ASC')->get();
+        //
+        $tweets = $this->twitter->getStatuses();
 
-        return view('tables.contact', compact('contacts'));
+        return view('back.tables.twitter.tweets', compact('tweets'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
     }
 
     /**
@@ -39,17 +52,20 @@ class ContactController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ContactRequest $request)
+    public function store(Request $request)
     {
-        $contact = new Contact;
+        //
+    }
 
-        $contact->name = $request->input("name");
-        $contact->email = $request->input("email");
-        $contact->message = $request->input("message");
-
-        if ($contact->save()) {
-            return redirect("/")->with("success", " Created");
-        }
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
     }
 
     /**

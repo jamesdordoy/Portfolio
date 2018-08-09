@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Back;
 
 use App\Models\Project;
-
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Http\Requests\ProjectRequest;
@@ -25,7 +25,7 @@ class ProjectController extends Controller
         $projects = Project::orderBy('id', 'ASC')->get();
         $id = Project::max('id') + 1;
 
-        return view('tables.projects', [
+        return view('back.tables.projects', [
             'projects' => $projects,
         ]);
     }

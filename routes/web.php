@@ -10,38 +10,41 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-/******** Public Routes ********/
-Route::get('/', 'HomeController@index');
+Route::get('/', 'Front\IndexController@index');
 Route::post('/contact', 'ContactController@store');
 
-/******** AUTH ROUTES ********/
-Route::get('/dash', 'DashboardController@index');
 
-//Projects
-Route::get('/dash/projects', 'ProjectController@index');
-Route::get('/dash/projects/{id}', 'ProjectController@edit');
-Route::put('/dash/projects/{id}', 'ProjectController@update');
-Route::post('/dash/projects', 'ProjectController@store');
-Route::delete('/dash/projects/{id}', 'ProjectController@destroy');
+Route::namespace('Back')->prefix('back')->group(function () {
+    Route::middleware('auth')->group(function () {
 
-//Languages
-Route::get('/dash/languages', 'LanguageController@index');
-Route::get('/dash/languages/{id}', 'LanguageController@edit');
-Route::put('/dash/languages/{id}', 'LanguageController@update');
-Route::post('/dash/languages', 'LanguageController@store');
-Route::delete('/dash/languages/{id}', 'LanguageController@destroy');
+        Route::get('/', 'IndexController@index');
 
-//Dependencies
-Route::get('/dash/dependencies', 'DependenciesController@index');
+        //Projects
+        Route::get('/projects', 'ProjectController@index');
+        Route::get('/projects/{id}', 'ProjectController@edit');
+        Route::put('/projects/{id}', 'ProjectController@update');
+        Route::post('/projects', 'ProjectController@store');
+        Route::delete('/projects/{id}', 'ProjectController@destroy');
 
-//Examples
-Route::get('/dash/examples', 'ExampleController@index');
-Route::get('/dash/twitter', 'TwitterController@index');
-Route::get('/dash/contact', 'ContactController@index');
-Route::get('/dash/github', 'GitHubController@index');
-Route::get('/dash/bitbucket/callback', 'BitBucketController@callback');
-Route::get('/dash/bitbucket', 'BitBucketController@index');
+        //Languages
+        Route::get('/languages', 'LanguageController@index');
+        Route::get('/languages/{id}', 'LanguageController@edit');
+        Route::put('/languages/{id}', 'LanguageController@update');
+        Route::post('/languages', 'LanguageController@store');
+        Route::delete('/languages/{id}', 'LanguageController@destroy');
+
+        //Dependencies
+        Route::get('/dependencies', 'DependenciesController@index');
+
+        //Examples
+        Route::get('/examples', 'ExampleController@index');
+        Route::get('/twitter', 'TwitterController@index');
+        Route::get('/contact', 'ContactController@index');
+        Route::get('/github', 'GitHubController@index');
+        Route::get('/bitbucket/callback', 'BitBucketController@callback');
+        Route::get('/bitbucket', 'BitBucketController@index');
+    });
+});
 
 // Login
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

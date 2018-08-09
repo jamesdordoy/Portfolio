@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Back;
 
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\Controller;
 use App\Models\Examples\Example;
 
 class ExampleController extends Controller
@@ -28,6 +28,6 @@ class ExampleController extends Controller
         $examples = Example::orderBy('id', 'ASC')->get();
         $id = Example::max('id') + 1;
 
-        return view('tables.examples', compact('examples', 'id'));
+        return view('back.tables.examples', compact('examples', 'id'));
      }
 }

@@ -1,15 +1,22 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Back;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-
-use GrahamCampbell\Bitbucket\Facades\Bitbucket;
-
-
-class BitBucketController extends Controller
+class DependenciesController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -17,27 +24,7 @@ class BitBucketController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    public function callback()
-    {
-
-
-        //dd(
-//Bitbucket::connection('oauth2')->api('Repositories\Repository')->get('jamesdordoy', 'portfolio'));
-
-
-
-        //dd(get_class_methods(Bitbucket::connection('alternative')->api('Repositories\Repository')->api('repositories')->all()));
-
-        $repos = Bitbucket::connection('alternative')->api('Repositories\Repository')->api('repositories');
-
-
-        dd($repos);
-
-
-        //return redirect('https://bitbucket.org/site/oauth2/authorize');
+        return view('back.tables.dependencies');
     }
 
     /**

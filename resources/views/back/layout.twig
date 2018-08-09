@@ -20,19 +20,19 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     </head>
     <body>
-        {% include 'includes.dash_header' %}
+        {% include 'back.includes.header' %}
         <div class='warpper container-fluid' id="app">
             <div class="row">
 
                 <div class="col-sm-2" style="padding: 0; margin:0;">
-                    {% include 'includes.dash_nav' %}
+                    {% include 'back.includes.nav' %}
                 </div>
 
                 <div class="col-sm-10" style="padding: 20px 40px;">
                     {% block content %}{% endblock %}
                 </div>
             </div>
-            {% include 'includes.dash_footer' %}
+            {% include 'back.includes.footer' %}
         </div>
 
         <script src="{{ mix("/js/app.js") }}"></script>

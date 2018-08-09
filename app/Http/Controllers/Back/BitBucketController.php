@@ -1,28 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Back;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-use App\Services\TwitterService;
-use App\Interfaces\TwitterInterface;
+use GrahamCampbell\Bitbucket\Facades\Bitbucket;
 
-class TwitterController extends Controller
+
+class BitBucketController extends Controller
 {
-
-    private $twitter;
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct(TwitterInterface $twitter)
-    {
-        $this->middleware('auth');
-        $this->twitter = $twitter;
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -31,9 +18,26 @@ class TwitterController extends Controller
     public function index()
     {
         //
-        $tweets = $this->twitter->getStatuses();
+    }
 
-        return view('tables.twitter.tweets', compact('tweets'));
+    public function callback()
+    {
+
+
+        //dd(
+//Bitbucket::connection('oauth2')->api('Repositories\Repository')->get('jamesdordoy', 'portfolio'));
+
+
+
+        //dd(get_class_methods(Bitbucket::connection('alternative')->api('Repositories\Repository')->api('repositories')->all()));
+
+        $repos = Bitbucket::connection('alternative')->api('Repositories\Repository')->api('repositories');
+
+
+        dd($repos);
+
+
+        //return redirect('https://bitbucket.org/site/oauth2/authorize');
     }
 
     /**
