@@ -2,6 +2,9 @@
   <div class="fullscreen">
       <coming-soon>
       </coming-soon>
+      <projects
+        :projects="projects">
+      </projects>
     </div>
 </template>
 

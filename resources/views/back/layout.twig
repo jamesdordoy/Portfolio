@@ -1,0 +1,42 @@
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+
+		<meta name="keywords" content="Portfolio Backend">
+		<meta name="description" content="James Ryan Dordoy - Portfolio">
+        <meta name="author" content="James Dordoy">
+
+        <!-- FONTAWESOME INCLUDE -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="{{ mix("/css/app.css") }}">
+        <link rel="stylesheet" href="/css/main.css">
+
+    	<title>James Dordoy</title>
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        {% include 'back.includes.header' %}
+        <div class='warpper container-fluid' id="app">
+            <div class="row">
+
+                <div class="col-sm-2" style="padding: 0; margin:0;">
+                    {% include 'back.includes.nav' %}
+                </div>
+
+                <div class="col-sm-10" style="padding: 20px 40px;">
+                    {% block content %}{% endblock %}
+                </div>
+            </div>
+            {% include 'back.includes.footer' %}
+        </div>
+
+        <script src="{{ mix("/js/app.js") }}"></script>
+
+        {% block scripts %}{% endblock %}
+    </body>
+</html>

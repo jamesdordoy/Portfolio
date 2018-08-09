@@ -34,6 +34,11 @@ nav ul li a{
 	-moz-transition:t 0.4s;
 	-o-transition: 0.4s;
 	transition: 0.4s;
+	
+}
+
+nav ul li a:hover{
+	text-decoration: none !important;
 }
 
 nav ul li:hover{

@@ -1,0 +1,17 @@
+{% extends "front.layouts.layout2018" %}
+
+{% block main %}
+  <home-view
+    :projects="{{ projects|json_encode }}"
+    :languages="{{ languages|json_encode }}">
+  </home-view>
+{% endblock %}
+
+{% block scripts %}
+  <!-- P5 JS Graphics Libary CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.14/p5.min.js"></script>
+  <!-- Scroll Reveal Libary CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/3.3.6/scrollreveal.js"></script>
+  <!-- Setup for moving particle system -->
+  <script src="/js/SteeringBehavior.js"></script>
+{% endblock %}
