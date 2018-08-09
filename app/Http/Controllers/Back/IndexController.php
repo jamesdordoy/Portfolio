@@ -35,4 +35,11 @@ class IndexController extends Controller
             )
         );
     }
+
+    public function playground()
+    {
+        return view(
+            'back.playground.index'
+        );
+    }
 }

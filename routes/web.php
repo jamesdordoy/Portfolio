@@ -18,6 +18,7 @@ Route::namespace('Back')->prefix('back')->group(function () {
     Route::middleware('auth')->group(function () {
 
         Route::get('/', 'IndexController@index');
+        Route::get('/playground', 'IndexController@playground');
 
         //Projects
         Route::get('/projects', 'ProjectController@index');
