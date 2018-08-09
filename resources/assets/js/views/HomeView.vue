@@ -5,9 +5,6 @@
       <projects
         :projects="projects">
       </projects>
-      <languages
-        :languages="languages">
-      </languages>
     </div>
 </template>
 
