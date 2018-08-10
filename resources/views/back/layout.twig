@@ -12,29 +12,22 @@
         <!-- FONTAWESOME INCLUDE -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        <link rel="stylesheet" href="{{ mix("/css/app.css") }}">
-        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="{{ mix("/css/back.css") }}">
+        {# <link rel="stylesheet" href="/css/main.css"> #}
 
     	<title>James Dordoy</title>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     </head>
     <body>
-        {% include 'back.includes.header' %}
-        <div class='warpper container-fluid' id="app">
-            <div class="row">
-
-                <div class="col-sm-2" style="padding: 0; margin:0;">
-                    {% include 'back.includes.nav' %}
-                </div>
-
-                <div class="col-sm-10" style="padding: 20px 40px;">
-                    {% block content %}{% endblock %}
-                </div>
+        <div id="app">
+            <back-nav>
+            </back-nav>
+            <div class='warpper container-fluid' >
+                {% block content %}{% endblock %}
+                {% include 'back.includes.footer' %}
             </div>
-            {% include 'back.includes.footer' %}
         </div>
-
         <script src="{{ mix("/js/app.js") }}"></script>
 
         {% block scripts %}{% endblock %}

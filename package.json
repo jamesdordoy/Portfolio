@@ -21,6 +21,7 @@
         "vue-template-compiler": "^2.5.13"
     },
     "dependencies": {
+        "@vue/ui": "^0.5.2",
         "acorn": "^5.4.1",
         "bootstrap-vue": "^2.0.0-rc.11",
         "chartjs": "^0.3.24",
