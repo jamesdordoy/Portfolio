@@ -6,20 +6,16 @@
  */
 
 require('./bootstrap');
-require('particles.js');
+
 window.Vue = require('vue');
 window.moment = require('moment');
 
 import VueUi from '@vue/ui'
-
 Vue.use(VueUi)
-import '@vue/ui/dist/vue-ui.css'
 
 import BootstrapVue from 'bootstrap-vue'
 
 Vue.use(BootstrapVue);
-
-import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
