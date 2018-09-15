@@ -8350,3 +8350,11 @@ button.close {
   }
 }
 
+.container {
+  margin-top: 10px;
+}
+
+body.modal-open div.modal-backdrop {
+  z-index: 0;
+}
+

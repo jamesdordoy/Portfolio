@@ -2,12 +2,10 @@
 
 <div>
     <table class="table table-striped table-hover table-responsive">
-      <caption>List of Project's</caption>
       <thead>
         <tr>
           <th scope="col">#</th>
           <th scope="col">Name</th>
-          <th scope="col">Description</th>
           <th scope="col">Owner</th>
           <th scope="col">Completed</th>
           <th scope="col">Links</th>
@@ -21,7 +19,6 @@
         <tr v-for="project in projects" :key="project.id">
           <th scope="row">{{ project.id }}</th>
           <td>{{ project.name }}</td>
-          <td>{{ project.description }}</td>
           <td>{{ project.owner }}</td>
           <td>{{ project.completed }}</td>
           <td>{{ project.link }}</td>
@@ -50,12 +47,18 @@
     </table>
 </div>
 </template>
+
+<style scoped>
+table {
+  color:#ccc;
+}
+</style>
 <script>
 export default{
     props: {
         projects: {
           type: Array,
-          default: ''
+          default: () => ([])
         },
     },
     computed: {

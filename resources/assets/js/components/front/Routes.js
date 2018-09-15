@@ -1,8 +1,11 @@
-import VueRouter from 'vue-router';
-
-let routes = [
+export default [
     {
-        path: '/user/:id',
-        component: User
+        path: '/dashboard', component: require('./screens/dashboard/Index.vue')
+    },
+    {
+        path: '/clients', component: require('./screens/clients/Index.vue')
+    },
+    {
+        path: '/projects', component: require('./screens/projects/Index.vue')
     },
 ];

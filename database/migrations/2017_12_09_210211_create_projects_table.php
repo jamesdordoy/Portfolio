@@ -18,8 +18,8 @@ class CreateProjectsTable extends Migration
             $table->text('name')->nullable(false);
             $table->text('description')->nullable(false);
             $table->text('owner')->nullable(false);
-            $table->text('link')->nullable(false);
-            $table->text('icon')->nullable(false);
+            $table->text('link')->nullable(true);
+            $table->text('icon')->nullable(true);
             $table->boolean('completed')->default(0);
             $table->timestamps();
         });

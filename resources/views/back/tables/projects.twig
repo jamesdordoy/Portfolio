@@ -7,7 +7,7 @@
             <div class="col-lg-12">
                  <button
                     data-toggle="modal"
-                    data-target="#myModal"
+                    data-target="#createProjectModal"
                     type="button"
                     class="btn-success pull-right">
                     <i class="fa fa-plus" aria-hidden="true"></i>
@@ -20,11 +20,12 @@
                  <projects-table
                     :projects="{{ projects|json_encode }}">
                 </projects-table>
+                    <project-create>
+                    </project-create>
+
             </div>
         </div>
     </div>
-    <project-create>
-    </project-create>
 {% endblock %}
 
 {% block scripts %}

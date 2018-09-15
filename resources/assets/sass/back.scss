@@ -1,3 +1,11 @@
 // Bootstrap
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
 
+.container {
+    margin-top:10px;
+}
+
+body.modal-open div.modal-backdrop { 
+    z-index: 0; 
+}
+

@@ -1,5 +1,5 @@
 <template>
-<b-navbar toggleable="md" type="dark" variant="info">
+<b-navbar toggleable="md" type="dark" variant="dark">
 
   <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
@@ -67,7 +67,6 @@
   width: 100% !important;
   margin: 0 !important;
   border-radius: 0;
-  margin-bottom: 15px !important;
 }
 
 </style>

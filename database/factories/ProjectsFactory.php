@@ -13,13 +13,12 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(App\Project::class, function (Faker $faker) {
+$factory->define(App\Models\Project::class, function (Faker $faker) {
 
     return [
         'name' => $faker->name,
         'description' => $faker->text,
         'owner' => $faker->name,
-        'link' => $faker->name,
-        'icon' => $faker->name,
+        'link' => $faker->url(),
     ];
 });
