@@ -1,6 +1,14 @@
 // Bootstrap
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
 
+html, body, #app, .wrapper {
+    min-height: 100%;
+}
+
+.wrapper {
+    padding-top: 56px;
+}
+
 .container {
     margin-top:10px;
 }
@@ -9,3 +17,6 @@ body.modal-open div.modal-backdrop {
     z-index: 0; 
 }
 
+.backend-jumbletron {
+    margin-top: 20px;
+}

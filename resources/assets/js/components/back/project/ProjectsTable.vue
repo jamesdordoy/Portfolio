@@ -24,7 +24,7 @@
           <td>{{ project.link }}</td>
           <td>{{ project.created_at }}</td>
           <td>{{ project.updated_at }}</td>
-          <td><a :href="'/dash/projects/' + project.id">
+          <td><a :href="'/back/projects/' + project.id">
                 <button class="btn btn-primary">
                     <i class="fa fa-refresh" aria-hidden="true"></i>
                     Update
@@ -32,7 +32,7 @@
               </a>
           </td>
           <td>
-            <a :href="'/dash/projects/' + project.id"
+            <a :href="'/back/projects/' + project.id"
                data-method="delete"
                :data-token="csrf_token"
                data-confirm="Are you sure?">

@@ -1,10 +1,10 @@
 nav{
-	position: fixed;
-	top:0;
-	left:0;
-	right:0;
-	z-index: 9000;
-	overflow: hidden;
+	position: fixed !important;
+	top:0 !important;
+	left:0 !important;
+	right:-40px !important;
+	z-index: 9000 !important;
+	overflow: hidden !important;
 }
 
 nav ul{
@@ -53,6 +53,11 @@ nav ul li:first-child{
 
 nav ul li:first-child :hover{
 	background:#11161a;
+}
+
+nav {
+	margin-left: -15px !important;
+	margin-right: -40px !important;
 }
 
 .handle {

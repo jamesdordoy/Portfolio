@@ -7,7 +7,7 @@
             <div class="col-lg-12">
                  <button
                     data-toggle="modal"
-                    data-target="#createProjectModal"
+                    data-target="createProjectModal"
                     type="button"
                     class="btn-success pull-right">
                     <i class="fa fa-plus" aria-hidden="true"></i>
@@ -20,18 +20,14 @@
                  <projects-table
                     :projects="{{ projects|json_encode }}">
                 </projects-table>
-                    <project-create>
-                    </project-create>
-
+                <project-create>
+                </project-create>
             </div>
         </div>
     </div>
 {% endblock %}
 
 {% block scripts %}
-
-<!-- Scroll Reveal Libary CDN -->
-<script src="/js/FakeForm.js"></script>
 
   <!-- Particles JS Libary CDN -->
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>

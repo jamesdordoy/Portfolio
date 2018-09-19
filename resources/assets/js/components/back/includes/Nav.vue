@@ -1,5 +1,5 @@
 <template>
-<b-navbar toggleable="md" type="dark" variant="dark">
+<b-navbar fixed="top" toggleable="md" type="dark" variant="dark">
 
   <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
@@ -50,6 +50,11 @@
 
 <style scoped>
 
+nav {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
 .navbar-brand{
   padding-top: 17px;
 }
@@ -67,6 +72,10 @@
   width: 100% !important;
   margin: 0 !important;
   border-radius: 0;
+}
+
+.nav-item a{
+  font-size: 1.4em;
 }
 
 </style>

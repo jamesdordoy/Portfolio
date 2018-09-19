@@ -18,7 +18,6 @@
 	height: 100%;
 	width: 100%;
 	background: #263138;
-    padding-left: 50px;
     text-align: center;
 }
 
@@ -35,7 +34,7 @@
   bottom:0;
   left: 0;
   right: 0;
-  margin: 200px 0 auto auto;
+  margin: 800px 0 auto auto;
   border-radius: 30px;
 
 }
