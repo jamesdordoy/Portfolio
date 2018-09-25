@@ -84136,42 +84136,12 @@ var render = function() {
     [
       _c("coming-soon"),
       _vm._v(" "),
-      _c("projects", { attrs: { projects: _vm.projects } }),
-      _vm._v(" "),
-      _c("languages", { attrs: { languages: _vm.languages } }),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass: "col-md-12",
-          staticStyle: { padding: "40px", background: "#ececec" }
-        },
-        [
-          _c("h2", { staticClass: "text-center" }, [_vm._v("About Me")]),
-          _vm._v(" "),
-          _vm._m(0),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-6" }, [_c("playground-form")], 1)
-        ]
-      )
+      _c("projects", { attrs: { projects: _vm.projects } })
     ],
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-6" }, [
-      _c("div", { staticClass: "facebook" }, [_c("h2", [_vm._v("Facebook")])]),
-      _vm._v(" "),
-      _c("div", { staticClass: "twitter" }),
-      _vm._v(" "),
-      _c("div", { staticClass: "linkedin" })
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
