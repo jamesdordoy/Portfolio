@@ -5,6 +5,9 @@
       <projects
         :projects="projects">
       </projects>
+      <languages
+        :languages="languages">
+      </languages>
       <div class="col-md-12" style="padding: 40px; background: #ececec;">
 
         <h2 class="text-center">About Me</h2>

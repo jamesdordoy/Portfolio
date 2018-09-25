@@ -5,7 +5,7 @@
       <ul class="project-thumbs">
           <li v-for="project in this.projects" :key="project.id">
               <h2>{{ project.name }}</h2>
-              <!-- <img :src='"/images/projects/" + project.icon' /> -->
+              <img :src='"/images/projects/" + project.icon' />
           </li>
       </ul>
     </section>
