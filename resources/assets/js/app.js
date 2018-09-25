@@ -7,14 +7,19 @@
 
 require('./bootstrap');
 
+import VueRouter from 'vue-router';
+import routes from './routes.js';
+
 window.Vue = require('vue');
 window.moment = require('moment');
 
-// import VueUi from '@vue/ui';
-// Vue.use(VueUi);
+Vue.use(VueRouter);
 
-import BootstrapVue from 'bootstrap-vue';
-Vue.use(BootstrapVue);
+const router = new VueRouter({
+    mode: "history",
+    base: "/",
+    routes
+  });
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

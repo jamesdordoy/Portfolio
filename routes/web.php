@@ -10,6 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+//Testing
+
+Route::get('/testing', 'Front\IndexController@testing');
+
+
+
+
 Route::get('/', 'Front\IndexController@index');
 Route::post('/contact', 'ContactController@store');
 
@@ -56,3 +64,4 @@ Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm'
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+

@@ -49,4 +49,8 @@ class IndexController extends Controller
             ]
         );
     }
+
+    public function testing() {
+        return view('front.testing');
+    }
 }
