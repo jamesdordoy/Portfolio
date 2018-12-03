@@ -11,6 +11,11 @@ class ProjectsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Models\Project::class, 10)->create();
+        factory(\App\Models\Project::class)->create([
+            'name' => "Portfolio",
+            'description' => "My Website Portfolio",
+            'owner' => "Me",
+            'link' => "https://www.jamesdordoy.co.uk",
+        ]);
     }
 }

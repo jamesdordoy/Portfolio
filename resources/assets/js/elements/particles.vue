@@ -1,6 +1,8 @@
 <template id="particles-template" class="fullscreen">
   <div id="name">
-    <div class="h-100" id="particles"></div>
+    <div class="h-100" id="particles">
+      
+    </div>
     <div class="heading-content">
       <slot></slot>
     </div>

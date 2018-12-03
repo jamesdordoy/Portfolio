@@ -1,0 +1,9 @@
+nav plus other content: #3a4145
+
+text-light: #e1ddd1
+
+bgcoloru: #cdc8c6
+
+another colour: #525252
+
+a: #294e67

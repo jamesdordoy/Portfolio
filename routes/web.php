@@ -15,6 +15,7 @@
 
 Route::get('/testing', 'Front\IndexController@testing');
 
+Auth::routes();
 
 
 
@@ -22,7 +23,7 @@ Route::get('/', 'Front\IndexController@index');
 Route::post('/contact', 'ContactController@store');
 
 
-Route::namespace('Back')->prefix('back')->group(function () {
+Route::namespace('Back')->prefix('back')->group(function() {
     Route::middleware('auth')->group(function () {
 
         Route::get('/', 'IndexController@index');

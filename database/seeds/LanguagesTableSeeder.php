@@ -11,6 +11,10 @@ class LanguagesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Models\Language::class, 10)->create();
+        factory(App\Models\Language::class)->create([
+            'name' => "HTML",
+            'description' => "HyperText Markup Language",
+            'icon' => "html.jpg",
+        ]);
     }
 }
