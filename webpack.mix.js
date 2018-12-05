@@ -13,8 +13,8 @@ var tailwindcss = require('tailwindcss');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
-    .sass('resources/assets/sass/front.scss', 'public/css')
-    .sass('resources/assets/sass/back.scss', 'public/css')
+    // .sass('resources/assets/sass/front.scss', 'public/css')
+    // .sass('resources/assets/sass/back.scss', 'public/css')
     .postCss('resources/assets/css/main.css', 'public/css', [
         tailwindcss('./tailwind.js'),
     ]);

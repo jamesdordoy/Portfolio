@@ -1,3 +1,6 @@
+text-link:hover {
+  color: #294e67;
+}
 /**
  * This injects Tailwind's base styles, which is a combination of
  * Normalize.css and some additional base styles.
@@ -1017,6 +1020,22 @@ table {
   background-color: #ffebef;
 }
 
+.bg-nav {
+  background-color: #3a4145;
+}
+
+.bg-bg-col {
+  background-color: #cdc8c6;
+}
+
+.bg-footer {
+  background-color: #3a4145;
+}
+
+.bg-link {
+  background-color: #294e67;
+}
+
 .hover\:bg-transparent:hover {
   background-color: transparent;
 }
@@ -1309,6 +1328,22 @@ table {
   background-color: #ffebef;
 }
 
+.hover\:bg-nav:hover {
+  background-color: #3a4145;
+}
+
+.hover\:bg-bg-col:hover {
+  background-color: #cdc8c6;
+}
+
+.hover\:bg-footer:hover {
+  background-color: #3a4145;
+}
+
+.hover\:bg-link:hover {
+  background-color: #294e67;
+}
+
 .focus\:bg-transparent:focus {
   background-color: transparent;
 }
@@ -1599,6 +1634,22 @@ table {
 
 .focus\:bg-pink-lightest:focus {
   background-color: #ffebef;
+}
+
+.focus\:bg-nav:focus {
+  background-color: #3a4145;
+}
+
+.focus\:bg-bg-col:focus {
+  background-color: #cdc8c6;
+}
+
+.focus\:bg-footer:focus {
+  background-color: #3a4145;
+}
+
+.focus\:bg-link:focus {
+  background-color: #294e67;
 }
 
 .bg-bottom {
@@ -1965,6 +2016,22 @@ table {
   border-color: #ffebef;
 }
 
+.border-nav {
+  border-color: #3a4145;
+}
+
+.border-bg-col {
+  border-color: #cdc8c6;
+}
+
+.border-footer {
+  border-color: #3a4145;
+}
+
+.border-link {
+  border-color: #294e67;
+}
+
 .hover\:border-transparent:hover {
   border-color: transparent;
 }
@@ -2257,6 +2324,22 @@ table {
   border-color: #ffebef;
 }
 
+.hover\:border-nav:hover {
+  border-color: #3a4145;
+}
+
+.hover\:border-bg-col:hover {
+  border-color: #cdc8c6;
+}
+
+.hover\:border-footer:hover {
+  border-color: #3a4145;
+}
+
+.hover\:border-link:hover {
+  border-color: #294e67;
+}
+
 .focus\:border-transparent:focus {
   border-color: transparent;
 }
@@ -2547,6 +2630,22 @@ table {
 
 .focus\:border-pink-lightest:focus {
   border-color: #ffebef;
+}
+
+.focus\:border-nav:focus {
+  border-color: #3a4145;
+}
+
+.focus\:border-bg-col:focus {
+  border-color: #cdc8c6;
+}
+
+.focus\:border-footer:focus {
+  border-color: #3a4145;
+}
+
+.focus\:border-link:focus {
+  border-color: #294e67;
 }
 
 .rounded-none {
@@ -5384,6 +5483,22 @@ table {
   color: #ffebef;
 }
 
+.text-nav {
+  color: #3a4145;
+}
+
+.text-bg-col {
+  color: #cdc8c6;
+}
+
+.text-footer {
+  color: #3a4145;
+}
+
+.text-link {
+  color: #294e67;
+}
+
 .hover\:text-transparent:hover {
   color: transparent;
 }
@@ -5676,6 +5791,22 @@ table {
   color: #ffebef;
 }
 
+.hover\:text-nav:hover {
+  color: #3a4145;
+}
+
+.hover\:text-bg-col:hover {
+  color: #cdc8c6;
+}
+
+.hover\:text-footer:hover {
+  color: #3a4145;
+}
+
+.hover\:text-link:hover {
+  color: #294e67;
+}
+
 .focus\:text-transparent:focus {
   color: transparent;
 }
@@ -5966,6 +6097,22 @@ table {
 
 .focus\:text-pink-lightest:focus {
   color: #ffebef;
+}
+
+.focus\:text-nav:focus {
+  color: #3a4145;
+}
+
+.focus\:text-bg-col:focus {
+  color: #cdc8c6;
+}
+
+.focus\:text-footer:focus {
+  color: #3a4145;
+}
+
+.focus\:text-link:focus {
+  color: #294e67;
 }
 
 .text-xs {
@@ -6712,6 +6859,22 @@ table {
     background-color: #ffebef;
   }
 
+  .sm\:bg-nav {
+    background-color: #3a4145;
+  }
+
+  .sm\:bg-bg-col {
+    background-color: #cdc8c6;
+  }
+
+  .sm\:bg-footer {
+    background-color: #3a4145;
+  }
+
+  .sm\:bg-link {
+    background-color: #294e67;
+  }
+
   .sm\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -7004,6 +7167,22 @@ table {
     background-color: #ffebef;
   }
 
+  .sm\:hover\:bg-nav:hover {
+    background-color: #3a4145;
+  }
+
+  .sm\:hover\:bg-bg-col:hover {
+    background-color: #cdc8c6;
+  }
+
+  .sm\:hover\:bg-footer:hover {
+    background-color: #3a4145;
+  }
+
+  .sm\:hover\:bg-link:hover {
+    background-color: #294e67;
+  }
+
   .sm\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -7294,6 +7473,22 @@ table {
 
   .sm\:focus\:bg-pink-lightest:focus {
     background-color: #ffebef;
+  }
+
+  .sm\:focus\:bg-nav:focus {
+    background-color: #3a4145;
+  }
+
+  .sm\:focus\:bg-bg-col:focus {
+    background-color: #cdc8c6;
+  }
+
+  .sm\:focus\:bg-footer:focus {
+    background-color: #3a4145;
+  }
+
+  .sm\:focus\:bg-link:focus {
+    background-color: #294e67;
   }
 
   .sm\:bg-bottom {
@@ -7652,6 +7847,22 @@ table {
     border-color: #ffebef;
   }
 
+  .sm\:border-nav {
+    border-color: #3a4145;
+  }
+
+  .sm\:border-bg-col {
+    border-color: #cdc8c6;
+  }
+
+  .sm\:border-footer {
+    border-color: #3a4145;
+  }
+
+  .sm\:border-link {
+    border-color: #294e67;
+  }
+
   .sm\:hover\:border-transparent:hover {
     border-color: transparent;
   }
@@ -7944,6 +8155,22 @@ table {
     border-color: #ffebef;
   }
 
+  .sm\:hover\:border-nav:hover {
+    border-color: #3a4145;
+  }
+
+  .sm\:hover\:border-bg-col:hover {
+    border-color: #cdc8c6;
+  }
+
+  .sm\:hover\:border-footer:hover {
+    border-color: #3a4145;
+  }
+
+  .sm\:hover\:border-link:hover {
+    border-color: #294e67;
+  }
+
   .sm\:focus\:border-transparent:focus {
     border-color: transparent;
   }
@@ -8234,6 +8461,22 @@ table {
 
   .sm\:focus\:border-pink-lightest:focus {
     border-color: #ffebef;
+  }
+
+  .sm\:focus\:border-nav:focus {
+    border-color: #3a4145;
+  }
+
+  .sm\:focus\:border-bg-col:focus {
+    border-color: #cdc8c6;
+  }
+
+  .sm\:focus\:border-footer:focus {
+    border-color: #3a4145;
+  }
+
+  .sm\:focus\:border-link:focus {
+    border-color: #294e67;
   }
 
   .sm\:rounded-none {
@@ -11055,6 +11298,22 @@ table {
     color: #ffebef;
   }
 
+  .sm\:text-nav {
+    color: #3a4145;
+  }
+
+  .sm\:text-bg-col {
+    color: #cdc8c6;
+  }
+
+  .sm\:text-footer {
+    color: #3a4145;
+  }
+
+  .sm\:text-link {
+    color: #294e67;
+  }
+
   .sm\:hover\:text-transparent:hover {
     color: transparent;
   }
@@ -11347,6 +11606,22 @@ table {
     color: #ffebef;
   }
 
+  .sm\:hover\:text-nav:hover {
+    color: #3a4145;
+  }
+
+  .sm\:hover\:text-bg-col:hover {
+    color: #cdc8c6;
+  }
+
+  .sm\:hover\:text-footer:hover {
+    color: #3a4145;
+  }
+
+  .sm\:hover\:text-link:hover {
+    color: #294e67;
+  }
+
   .sm\:focus\:text-transparent:focus {
     color: transparent;
   }
@@ -11637,6 +11912,22 @@ table {
 
   .sm\:focus\:text-pink-lightest:focus {
     color: #ffebef;
+  }
+
+  .sm\:focus\:text-nav:focus {
+    color: #3a4145;
+  }
+
+  .sm\:focus\:text-bg-col:focus {
+    color: #cdc8c6;
+  }
+
+  .sm\:focus\:text-footer:focus {
+    color: #3a4145;
+  }
+
+  .sm\:focus\:text-link:focus {
+    color: #294e67;
   }
 
   .sm\:text-xs {
@@ -12366,6 +12657,22 @@ table {
     background-color: #ffebef;
   }
 
+  .md\:bg-nav {
+    background-color: #3a4145;
+  }
+
+  .md\:bg-bg-col {
+    background-color: #cdc8c6;
+  }
+
+  .md\:bg-footer {
+    background-color: #3a4145;
+  }
+
+  .md\:bg-link {
+    background-color: #294e67;
+  }
+
   .md\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -12658,6 +12965,22 @@ table {
     background-color: #ffebef;
   }
 
+  .md\:hover\:bg-nav:hover {
+    background-color: #3a4145;
+  }
+
+  .md\:hover\:bg-bg-col:hover {
+    background-color: #cdc8c6;
+  }
+
+  .md\:hover\:bg-footer:hover {
+    background-color: #3a4145;
+  }
+
+  .md\:hover\:bg-link:hover {
+    background-color: #294e67;
+  }
+
   .md\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -12948,6 +13271,22 @@ table {
 
   .md\:focus\:bg-pink-lightest:focus {
     background-color: #ffebef;
+  }
+
+  .md\:focus\:bg-nav:focus {
+    background-color: #3a4145;
+  }
+
+  .md\:focus\:bg-bg-col:focus {
+    background-color: #cdc8c6;
+  }
+
+  .md\:focus\:bg-footer:focus {
+    background-color: #3a4145;
+  }
+
+  .md\:focus\:bg-link:focus {
+    background-color: #294e67;
   }
 
   .md\:bg-bottom {
@@ -13306,6 +13645,22 @@ table {
     border-color: #ffebef;
   }
 
+  .md\:border-nav {
+    border-color: #3a4145;
+  }
+
+  .md\:border-bg-col {
+    border-color: #cdc8c6;
+  }
+
+  .md\:border-footer {
+    border-color: #3a4145;
+  }
+
+  .md\:border-link {
+    border-color: #294e67;
+  }
+
   .md\:hover\:border-transparent:hover {
     border-color: transparent;
   }
@@ -13598,6 +13953,22 @@ table {
     border-color: #ffebef;
   }
 
+  .md\:hover\:border-nav:hover {
+    border-color: #3a4145;
+  }
+
+  .md\:hover\:border-bg-col:hover {
+    border-color: #cdc8c6;
+  }
+
+  .md\:hover\:border-footer:hover {
+    border-color: #3a4145;
+  }
+
+  .md\:hover\:border-link:hover {
+    border-color: #294e67;
+  }
+
   .md\:focus\:border-transparent:focus {
     border-color: transparent;
   }
@@ -13888,6 +14259,22 @@ table {
 
   .md\:focus\:border-pink-lightest:focus {
     border-color: #ffebef;
+  }
+
+  .md\:focus\:border-nav:focus {
+    border-color: #3a4145;
+  }
+
+  .md\:focus\:border-bg-col:focus {
+    border-color: #cdc8c6;
+  }
+
+  .md\:focus\:border-footer:focus {
+    border-color: #3a4145;
+  }
+
+  .md\:focus\:border-link:focus {
+    border-color: #294e67;
   }
 
   .md\:rounded-none {
@@ -16709,6 +17096,22 @@ table {
     color: #ffebef;
   }
 
+  .md\:text-nav {
+    color: #3a4145;
+  }
+
+  .md\:text-bg-col {
+    color: #cdc8c6;
+  }
+
+  .md\:text-footer {
+    color: #3a4145;
+  }
+
+  .md\:text-link {
+    color: #294e67;
+  }
+
   .md\:hover\:text-transparent:hover {
     color: transparent;
   }
@@ -17001,6 +17404,22 @@ table {
     color: #ffebef;
   }
 
+  .md\:hover\:text-nav:hover {
+    color: #3a4145;
+  }
+
+  .md\:hover\:text-bg-col:hover {
+    color: #cdc8c6;
+  }
+
+  .md\:hover\:text-footer:hover {
+    color: #3a4145;
+  }
+
+  .md\:hover\:text-link:hover {
+    color: #294e67;
+  }
+
   .md\:focus\:text-transparent:focus {
     color: transparent;
   }
@@ -17291,6 +17710,22 @@ table {
 
   .md\:focus\:text-pink-lightest:focus {
     color: #ffebef;
+  }
+
+  .md\:focus\:text-nav:focus {
+    color: #3a4145;
+  }
+
+  .md\:focus\:text-bg-col:focus {
+    color: #cdc8c6;
+  }
+
+  .md\:focus\:text-footer:focus {
+    color: #3a4145;
+  }
+
+  .md\:focus\:text-link:focus {
+    color: #294e67;
   }
 
   .md\:text-xs {
@@ -18020,6 +18455,22 @@ table {
     background-color: #ffebef;
   }
 
+  .lg\:bg-nav {
+    background-color: #3a4145;
+  }
+
+  .lg\:bg-bg-col {
+    background-color: #cdc8c6;
+  }
+
+  .lg\:bg-footer {
+    background-color: #3a4145;
+  }
+
+  .lg\:bg-link {
+    background-color: #294e67;
+  }
+
   .lg\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -18312,6 +18763,22 @@ table {
     background-color: #ffebef;
   }
 
+  .lg\:hover\:bg-nav:hover {
+    background-color: #3a4145;
+  }
+
+  .lg\:hover\:bg-bg-col:hover {
+    background-color: #cdc8c6;
+  }
+
+  .lg\:hover\:bg-footer:hover {
+    background-color: #3a4145;
+  }
+
+  .lg\:hover\:bg-link:hover {
+    background-color: #294e67;
+  }
+
   .lg\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -18602,6 +19069,22 @@ table {
 
   .lg\:focus\:bg-pink-lightest:focus {
     background-color: #ffebef;
+  }
+
+  .lg\:focus\:bg-nav:focus {
+    background-color: #3a4145;
+  }
+
+  .lg\:focus\:bg-bg-col:focus {
+    background-color: #cdc8c6;
+  }
+
+  .lg\:focus\:bg-footer:focus {
+    background-color: #3a4145;
+  }
+
+  .lg\:focus\:bg-link:focus {
+    background-color: #294e67;
   }
 
   .lg\:bg-bottom {
@@ -18960,6 +19443,22 @@ table {
     border-color: #ffebef;
   }
 
+  .lg\:border-nav {
+    border-color: #3a4145;
+  }
+
+  .lg\:border-bg-col {
+    border-color: #cdc8c6;
+  }
+
+  .lg\:border-footer {
+    border-color: #3a4145;
+  }
+
+  .lg\:border-link {
+    border-color: #294e67;
+  }
+
   .lg\:hover\:border-transparent:hover {
     border-color: transparent;
   }
@@ -19252,6 +19751,22 @@ table {
     border-color: #ffebef;
   }
 
+  .lg\:hover\:border-nav:hover {
+    border-color: #3a4145;
+  }
+
+  .lg\:hover\:border-bg-col:hover {
+    border-color: #cdc8c6;
+  }
+
+  .lg\:hover\:border-footer:hover {
+    border-color: #3a4145;
+  }
+
+  .lg\:hover\:border-link:hover {
+    border-color: #294e67;
+  }
+
   .lg\:focus\:border-transparent:focus {
     border-color: transparent;
   }
@@ -19542,6 +20057,22 @@ table {
 
   .lg\:focus\:border-pink-lightest:focus {
     border-color: #ffebef;
+  }
+
+  .lg\:focus\:border-nav:focus {
+    border-color: #3a4145;
+  }
+
+  .lg\:focus\:border-bg-col:focus {
+    border-color: #cdc8c6;
+  }
+
+  .lg\:focus\:border-footer:focus {
+    border-color: #3a4145;
+  }
+
+  .lg\:focus\:border-link:focus {
+    border-color: #294e67;
   }
 
   .lg\:rounded-none {
@@ -22363,6 +22894,22 @@ table {
     color: #ffebef;
   }
 
+  .lg\:text-nav {
+    color: #3a4145;
+  }
+
+  .lg\:text-bg-col {
+    color: #cdc8c6;
+  }
+
+  .lg\:text-footer {
+    color: #3a4145;
+  }
+
+  .lg\:text-link {
+    color: #294e67;
+  }
+
   .lg\:hover\:text-transparent:hover {
     color: transparent;
   }
@@ -22655,6 +23202,22 @@ table {
     color: #ffebef;
   }
 
+  .lg\:hover\:text-nav:hover {
+    color: #3a4145;
+  }
+
+  .lg\:hover\:text-bg-col:hover {
+    color: #cdc8c6;
+  }
+
+  .lg\:hover\:text-footer:hover {
+    color: #3a4145;
+  }
+
+  .lg\:hover\:text-link:hover {
+    color: #294e67;
+  }
+
   .lg\:focus\:text-transparent:focus {
     color: transparent;
   }
@@ -22945,6 +23508,22 @@ table {
 
   .lg\:focus\:text-pink-lightest:focus {
     color: #ffebef;
+  }
+
+  .lg\:focus\:text-nav:focus {
+    color: #3a4145;
+  }
+
+  .lg\:focus\:text-bg-col:focus {
+    color: #cdc8c6;
+  }
+
+  .lg\:focus\:text-footer:focus {
+    color: #3a4145;
+  }
+
+  .lg\:focus\:text-link:focus {
+    color: #294e67;
   }
 
   .lg\:text-xs {
@@ -23674,6 +24253,22 @@ table {
     background-color: #ffebef;
   }
 
+  .xl\:bg-nav {
+    background-color: #3a4145;
+  }
+
+  .xl\:bg-bg-col {
+    background-color: #cdc8c6;
+  }
+
+  .xl\:bg-footer {
+    background-color: #3a4145;
+  }
+
+  .xl\:bg-link {
+    background-color: #294e67;
+  }
+
   .xl\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -23966,6 +24561,22 @@ table {
     background-color: #ffebef;
   }
 
+  .xl\:hover\:bg-nav:hover {
+    background-color: #3a4145;
+  }
+
+  .xl\:hover\:bg-bg-col:hover {
+    background-color: #cdc8c6;
+  }
+
+  .xl\:hover\:bg-footer:hover {
+    background-color: #3a4145;
+  }
+
+  .xl\:hover\:bg-link:hover {
+    background-color: #294e67;
+  }
+
   .xl\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -24256,6 +24867,22 @@ table {
 
   .xl\:focus\:bg-pink-lightest:focus {
     background-color: #ffebef;
+  }
+
+  .xl\:focus\:bg-nav:focus {
+    background-color: #3a4145;
+  }
+
+  .xl\:focus\:bg-bg-col:focus {
+    background-color: #cdc8c6;
+  }
+
+  .xl\:focus\:bg-footer:focus {
+    background-color: #3a4145;
+  }
+
+  .xl\:focus\:bg-link:focus {
+    background-color: #294e67;
   }
 
   .xl\:bg-bottom {
@@ -24614,6 +25241,22 @@ table {
     border-color: #ffebef;
   }
 
+  .xl\:border-nav {
+    border-color: #3a4145;
+  }
+
+  .xl\:border-bg-col {
+    border-color: #cdc8c6;
+  }
+
+  .xl\:border-footer {
+    border-color: #3a4145;
+  }
+
+  .xl\:border-link {
+    border-color: #294e67;
+  }
+
   .xl\:hover\:border-transparent:hover {
     border-color: transparent;
   }
@@ -24906,6 +25549,22 @@ table {
     border-color: #ffebef;
   }
 
+  .xl\:hover\:border-nav:hover {
+    border-color: #3a4145;
+  }
+
+  .xl\:hover\:border-bg-col:hover {
+    border-color: #cdc8c6;
+  }
+
+  .xl\:hover\:border-footer:hover {
+    border-color: #3a4145;
+  }
+
+  .xl\:hover\:border-link:hover {
+    border-color: #294e67;
+  }
+
   .xl\:focus\:border-transparent:focus {
     border-color: transparent;
   }
@@ -25196,6 +25855,22 @@ table {
 
   .xl\:focus\:border-pink-lightest:focus {
     border-color: #ffebef;
+  }
+
+  .xl\:focus\:border-nav:focus {
+    border-color: #3a4145;
+  }
+
+  .xl\:focus\:border-bg-col:focus {
+    border-color: #cdc8c6;
+  }
+
+  .xl\:focus\:border-footer:focus {
+    border-color: #3a4145;
+  }
+
+  .xl\:focus\:border-link:focus {
+    border-color: #294e67;
   }
 
   .xl\:rounded-none {
@@ -28017,6 +28692,22 @@ table {
     color: #ffebef;
   }
 
+  .xl\:text-nav {
+    color: #3a4145;
+  }
+
+  .xl\:text-bg-col {
+    color: #cdc8c6;
+  }
+
+  .xl\:text-footer {
+    color: #3a4145;
+  }
+
+  .xl\:text-link {
+    color: #294e67;
+  }
+
   .xl\:hover\:text-transparent:hover {
     color: transparent;
   }
@@ -28309,6 +29000,22 @@ table {
     color: #ffebef;
   }
 
+  .xl\:hover\:text-nav:hover {
+    color: #3a4145;
+  }
+
+  .xl\:hover\:text-bg-col:hover {
+    color: #cdc8c6;
+  }
+
+  .xl\:hover\:text-footer:hover {
+    color: #3a4145;
+  }
+
+  .xl\:hover\:text-link:hover {
+    color: #294e67;
+  }
+
   .xl\:focus\:text-transparent:focus {
     color: transparent;
   }
@@ -28599,6 +29306,22 @@ table {
 
   .xl\:focus\:text-pink-lightest:focus {
     color: #ffebef;
+  }
+
+  .xl\:focus\:text-nav:focus {
+    color: #3a4145;
+  }
+
+  .xl\:focus\:text-bg-col:focus {
+    color: #cdc8c6;
+  }
+
+  .xl\:focus\:text-footer:focus {
+    color: #3a4145;
+  }
+
+  .xl\:focus\:text-link:focus {
+    color: #294e67;
   }
 
   .xl\:text-xs {

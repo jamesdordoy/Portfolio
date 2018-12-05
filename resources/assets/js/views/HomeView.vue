@@ -1,5 +1,5 @@
 <template>
-  <div class="fullscreen">
+  <div class="bg-bg-col">
 
       <projects
         :projects="projects">

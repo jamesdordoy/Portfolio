@@ -39,6 +39,7 @@ Vue.component('playground-form',    require('./components/back/playground/form.v
 Vue.component('repository-table',  require('./components/back/repository/RepositoryTable.vue'));
 Vue.component('tweets-table',      require('./components/back/twitter/TweetsTable.vue'));
 // Vue.component('coming-soon',       require('./views/ComingSoon.vue'));
+Vue.component('front-nav',       require('./components/front/generic/Nav.vue'));
 Vue.component('home-view',       require('./views/HomeView.vue'));
 
 const app = new Vue({
