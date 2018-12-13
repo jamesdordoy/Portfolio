@@ -58,7 +58,7 @@
 export default {
     computed: {
         csrf_token:  function(){
-            return $('meta[name="csrf-token"]').attr('content')
+            // return $('meta[name="csrf-token"]').attr('content')
         }
     }
 }

@@ -1,28 +1,37 @@
 <template>
-    <nav class="flex items-center justify-between flex-wrap bg-nav p-6">
-        <div class="flex items-center flex-no-shrink text-white mr-6">
+    <nav class="flex items-center justify-between flex-wrap p-6 bg-nav fixed">
+        <div class="flex items-center flex-no-shrink text-teal mr-6">
             <svg class="fill-current h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"/></svg>
-            <span class="font-semibold text-xl tracking-tight">James Dordoy</span>
+            <span class="font-semibold text-xl tracking-tight text-white">James Dordoy</span>
         </div>
         <div class="block lg:hidden">
             <button class="flex items-center px-3 py-2 border rounded text-teal-lighter border-teal-light hover:text-white hover:border-white">
-            <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+                <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
             </button>
         </div>
         <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
             <div class="text-sm lg:flex-grow">
-            <a href="#responsive-header" class="block lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4">
-                Docs
-            </a>
-            <a href="#responsive-header" class="block lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4">
-                Examples
-            </a>
-            <a href="#responsive-header" class="block lg:inline-block lg:mt-0 text-teal-lighter hover:text-white">
-                Blog
-            </a>
+                <a href="/" class="block uppercase no-underline lg:inline-block lg:mt-0 text-teal hover:text-teal-lighter mr-4">
+                    Home
+                </a>
+                <a href="#responsive-header" class="block uppercase no-underline lg:inline-block lg:mt-0 text-teal hover:text-teal-lighter mr-4">
+                    About Me
+                </a>
+                <a href="#responsive-header" class="block uppercase no-underline lg:inline-block lg:mt-0 text-teal hover:text-teal-lighter mr-4">
+                    Projects
+                </a>
+                <a href="#responsive-header" class="block uppercase no-underline lg:inline-block lg:mt-0 text-teal hover:text-teal-lighter mr-4">
+                    Languages &amp; Frameworks
+                </a>
+                <a href="#responsive-header" class="block uppercase no-underline lg:inline-block lg:mt-0 text-teal hover:text-teal-lighter mr-4">
+                    Contact
+                </a>
             </div>
             <div>
-            <a href="#" class="inline-block text-sm px-4 py-2 leading-none border rounded text-link hover:text-link border-white hover:border-transparent hover:text-teal hover:bg-white lg:mt-0">Download</a>
+                <a href="/login" class="bg-transparent hover:bg-teal text-teal font-semibold hover:text-nav py-2 px-4 border border-teal hover:border-transparent rounded">
+                    <i class="fa fa-sign-in" aria-hidden="true"></i>
+                    Login
+                </a>
             </div>
         </div>
         </nav>
@@ -34,6 +43,12 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+nav {
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 255;
+}
 
 </style>

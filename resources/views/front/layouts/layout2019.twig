@@ -12,18 +12,17 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
         <link rel="stylesheet" href="{{ mix("/css/main.css") }}">
-        {# <link rel="stylesheet" href="/css/main.css"> #}
 
     	<title>James Dordoy</title>
     </head>
-    <body>
-        <div class='warpper fullscreen' id="app">
+    <body class='h-full'>
+        <div class='h-full' id="app">
             {% include 'front.includes.nav' %}
             {% block hello %}{% endblock %}
             {% block main %}{% endblock %}
-            {% include 'front.includes.footer' %}
         </div>
         {% block scripts %}{% endblock %}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script>
         <script src="{{ mix("/js/app.js") }}"></script>
     </body>
 </html>

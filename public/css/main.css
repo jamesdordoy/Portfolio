@@ -6543,6 +6543,10 @@ table {
 .dordoy {
 }
 
+html {
+  height: 100%;
+}
+
 @media (min-width: 576px) {
   .sm\:list-reset {
     list-style: none;

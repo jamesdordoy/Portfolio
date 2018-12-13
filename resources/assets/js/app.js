@@ -20,6 +20,7 @@ const router = new VueRouter({
     base: "/",
     routes
   });
+  
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -34,13 +35,12 @@ Vue.component('tweets',            require('./components/front/lists/TwitterTime
 Vue.component('languages-table',   require('./components/back/language/LanguagesTable.vue'));
 Vue.component('projects-table',    require('./components/back/project/ProjectsTable.vue'));
 Vue.component('project-create',    require('./components/back/project/Create.vue'));
-Vue.component('back-nav',         require('./components/back/includes/Nav.vue'));
-Vue.component('playground-form',    require('./components/back/playground/form.vue'));
 Vue.component('repository-table',  require('./components/back/repository/RepositoryTable.vue'));
 Vue.component('tweets-table',      require('./components/back/twitter/TweetsTable.vue'));
-// Vue.component('coming-soon',       require('./views/ComingSoon.vue'));
-Vue.component('front-nav',       require('./components/front/generic/Nav.vue'));
-Vue.component('home-view',       require('./views/HomeView.vue'));
+Vue.component('front-nav',         require('./components/front/generic/Nav.vue'));
+Vue.component('particles',         require('./components/front/generic/Particles.vue'));
+Vue.component('home-view',         require('./views/HomeView.vue'));
+Vue.component('login-view',         require('./views/Login.vue'));
 
 const app = new Vue({
     el: '#app'

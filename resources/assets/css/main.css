@@ -67,3 +67,7 @@
   .dordoy {
       
   }
+
+  html {
+    @apply h-full;
+  }
