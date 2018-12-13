@@ -41,6 +41,8 @@ Vue.component('particles',         require('./components/front/generic/Particles
 Vue.component('home-view',         require('./views/HomeView.vue'));
 Vue.component('login-view',         require('./views/Login.vue'));
 
+Vue.component('text-input',         require('./components/vuedordoy/forms/inputs/TextInput.vue'));
+
 const app = new Vue({
     el: '#app'
 });

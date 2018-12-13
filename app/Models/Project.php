@@ -10,4 +10,9 @@ class Project extends Model
     {
         return $this->hasMany('App\Dependencies');
     }
+
+    public function scopePublicProjects($query)
+    {
+        return $query->where('private', 1);
+    }
 }

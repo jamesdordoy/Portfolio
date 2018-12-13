@@ -6,14 +6,14 @@
         <div style="background: rgba(0, 0, 0, 0.4); text-shadow: 0px 0px 2px #131415;" class="border-teal-light border pin-none rounded p-8 mt-20 text-center text-white">
           <h1 class="varela text-5xl">James Dordoy</h1>
           <h2 class="varela">Full Stack Developer</h2>
-          <p  class="varela">From Essex</p>
+          <p class="varela">From Essex</p>
         </div>
       </particles>
     </div>
 
     <div class="w-full">
       <div class="w-full p-10 bg-teal-lightest" id="about">
-        <h1 class="text-center">About Me</h1>
+        <h2 class="text-center varela ">About Me</h2>
         <p>{{ about.me }}</p>
       </div>
 
@@ -27,6 +27,12 @@
         <languages
           :languages="languages">
         </languages>
+      </div>
+
+      <div class="w-full p-10 bg-nav" id="newsletter">
+        <form action="/newsletter" method="POST">
+          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline" id="email" type="text" placeholder="Email" name="email">
+        </form>
       </div>
     </div>
     

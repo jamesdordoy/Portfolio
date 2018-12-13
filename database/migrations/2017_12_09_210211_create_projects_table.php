@@ -21,6 +21,7 @@ class CreateProjectsTable extends Migration
             $table->text('link')->nullable(true);
             $table->text('icon')->nullable(true);
             $table->boolean('completed')->default(0);
+            $table->boolean('private')->default(0);
             $table->timestamps();
         });
     }

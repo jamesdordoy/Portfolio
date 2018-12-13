@@ -37,7 +37,7 @@ class IndexController extends Controller
         $about = json_decode($contents, 1);
 
         $languages = Language::get();
-        $projects = Project::latest()->get();
+        $projects = Project::publicProjects()->latest()->get();
         $tweets = $this->twitter->getStatuses();
 
         $auth = \Auth::user();
@@ -52,9 +52,5 @@ class IndexController extends Controller
                 'about' => $about
             ]
         );
-    }
-
-    public function testing() {
-        return view('front.testing');
     }
 }

@@ -22,8 +22,10 @@ class ProjectController extends Controller
 
     public function index()
     {
-        $projects = Project::orderBy('id', 'ASC')->get();
+        $projects = Project::where('private', 1)->orderBy('id', 'ASC')->get();
         $id = Project::max('id') + 1;
+
+
 
         return view('back.tables.projects', [
             'projects' => $projects,
