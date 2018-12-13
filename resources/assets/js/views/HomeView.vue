@@ -13,7 +13,7 @@
     <div class="w-full">
       <div class="w-full p-10 bg-teal-lightest">
         <h1 class="text-center">About Me</h1>
-        <p>I am a full stack developer</p>
+        <p>{{ about.me }}</p>
       </div>
 
       <div class="w-full p-10 bg-nav">
@@ -65,6 +65,6 @@
 
 <script>    
     export default {
-      props: ['projects', 'languages']
+      props: ['projects', 'languages', 'about']
     }
 </script>

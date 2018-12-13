@@ -38600,7 +38600,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['projects', 'languages']
+  props: ['projects', 'languages', 'about']
 });
 
 /***/ }),
@@ -38641,7 +38641,11 @@ var render = function() {
     ),
     _vm._v(" "),
     _c("div", { staticClass: "w-full" }, [
-      _vm._m(0),
+      _c("div", { staticClass: "w-full p-10 bg-teal-lightest" }, [
+        _c("h1", { staticClass: "text-center" }, [_vm._v("About Me")]),
+        _vm._v(" "),
+        _c("p", [_vm._v(_vm._s(_vm.about.me))])
+      ]),
       _vm._v(" "),
       _c(
         "div",
@@ -38659,18 +38663,7 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "w-full p-10 bg-teal-lightest" }, [
-      _c("h1", { staticClass: "text-center" }, [_vm._v("About Me")]),
-      _vm._v(" "),
-      _c("p", [_vm._v("I am a full stack developer")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {

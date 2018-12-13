@@ -33,6 +33,10 @@ class IndexController extends Controller
      */
     public function index()
     {
+
+        $contents = \Storage::get('about.json');
+        $about = json_decode($contents, 1);
+
         $languages = Language::get();
         $projects = Project::latest()->get();
         $tweets = $this->twitter->getStatuses();
@@ -46,6 +50,7 @@ class IndexController extends Controller
                 'projects' => $projects, 
                 'tweets' => $tweets,
                 'languages' => $languages,
+                'about' => $about
             ]
         );
     }
