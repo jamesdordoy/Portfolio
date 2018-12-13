@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-bg-col">
+  <section>
     <span class="anchor" id="code"></span>
     <h2>Programming Languages, Libraries &amp; Frameworks I Like</h2>
     <ul class="libary">

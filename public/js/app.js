@@ -17746,7 +17746,6 @@ var router = new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-Vue.component('particles-view', __webpack_require__(170));
 Vue.component('contact-form', __webpack_require__(175));
 Vue.component('languages', __webpack_require__(178));
 Vue.component('projects', __webpack_require__(183));
@@ -38593,6 +38592,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['projects', 'languages']
@@ -38606,49 +38611,61 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "h-full bg-nav" },
-    [
-      _c(
-        "div",
-        { staticClass: "h-full" },
-        [
-          _c("particles", [
-            _c(
-              "div",
-              {
-                staticClass:
-                  "border-teal-light border pin-none rounded p-8 text-center text-white"
-              },
-              [_c("h1", [_vm._v("Full Stack Developer")])]
-            )
-          ])
-        ],
-        1
-      ),
-      _vm._v(" "),
+  return _c("div", { staticClass: "h-full bg-nav" }, [
+    _c(
+      "div",
+      { staticClass: "h-full" },
+      [
+        _c("particles", [
+          _c(
+            "div",
+            {
+              staticClass:
+                "border-teal-light border pin-none rounded p-8 mt-20 text-center text-white",
+              staticStyle: {
+                background: "rgba(0, 0, 0, 0.4)",
+                "text-shadow": "0px 0px 2px #131415"
+              }
+            },
+            [
+              _c("h1", { staticClass: "varela" }, [
+                _vm._v("Full Stack Developer")
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "varela" }, [_vm._v("From Essex")])
+            ]
+          )
+        ])
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "w-full" }, [
       _vm._m(0),
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "w-full bg-nav" },
+        { staticClass: "w-full p-10 bg-nav" },
         [_c("projects", { attrs: { projects: _vm.projects } })],
         1
       ),
       _vm._v(" "),
-      _c("languages", { attrs: { languages: _vm.languages } })
-    ],
-    1
-  )
+      _c(
+        "div",
+        { staticClass: "w-full p-10 bg-teal-lightest" },
+        [_c("languages", { attrs: { languages: _vm.languages } })],
+        1
+      )
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "w-full bg-bg-col" }, [
-      _c("h1", [_vm._v("About Me")]),
+    return _c("div", { staticClass: "w-full p-10 bg-teal-lightest" }, [
+      _c("h1", { staticClass: "text-center" }, [_vm._v("About Me")]),
       _vm._v(" "),
       _c("p", [_vm._v("I am a full stack developer")])
     ])
@@ -50129,190 +50146,11 @@ module.exports = webpackContext;
 webpackContext.id = 169;
 
 /***/ }),
-/* 170 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(171)
-}
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(173)
-/* template */
-var __vue_template__ = __webpack_require__(174)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = "data-v-3dcf12c7"
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/elements/particles.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-3dcf12c7", Component.options)
-  } else {
-    hotAPI.reload("data-v-3dcf12c7", Component.options)
-' + '  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 171 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(172);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(4)("bdb3bb96", content, false);
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3dcf12c7\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./particles.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3dcf12c7\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./particles.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 172 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(3)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n.particles-js-canvas-el[data-v-3dcf12c7]{\n  margin: 0;\n  height: 100%\n}\n#particles[data-v-3dcf12c7]{\n\twidth: 100%;\n\tbackground: #263138;\n    text-align: center;\n}\n#name[data-v-3dcf12c7]{\n  text-align: center;\n  height: 100%;\n}\n.heading-content[data-v-3dcf12c7]{\n  text-align: center;\n\tz-index: 9999;\n  position: absolute;\n  top:0;\n  bottom:0;\n  left: 0;\n  right: 0;\n  margin: 800px 0 auto auto;\n  border-radius: 30px;\n}\n@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {\n#defaultCanvas0[data-v-3dcf12c7] {\n    top:0;\n    bottom:0;\n    margin: auto;\n    left: 50%;\n    -webkit-transform: translateX(50%);\n            transform: translateX(50%);\n}\n}\n\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 173 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  created: function created() {
-    particlesJS.load('particles', '/particles.json', function () {});
-  }
-});
-
-/***/ }),
-/* 174 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { attrs: { id: "name" } }, [
-    _c("div", { staticClass: "h-100", attrs: { id: "particles" } }),
-    _vm._v(" "),
-    _c("div", { staticClass: "heading-content" }, [_vm._t("default")], 2)
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-3dcf12c7", module.exports)
-  }
-}
-
-/***/ }),
+/* 170 */,
+/* 171 */,
+/* 172 */,
+/* 173 */,
+/* 174 */,
 /* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -50666,7 +50504,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("section", { staticClass: "bg-bg-col" }, [
+  return _c("section", [
     _c("span", { staticClass: "anchor", attrs: { id: "code" } }),
     _vm._v(" "),
     _c("h2", [_vm._v("Programming Languages, Libraries & Frameworks I Like")]),
@@ -52554,7 +52392,7 @@ var render = function() {
     "nav",
     {
       staticClass:
-        "flex items-center justify-between flex-wrap p-6 bg-nav fixed"
+        "flex items-center justify-between flex-wrap p-6 bg-nav fixed clearfix"
     },
     [
       _c(
@@ -52584,18 +52422,21 @@ var render = function() {
           _vm._v(" "),
           _c(
             "span",
-            { staticClass: "font-semibold text-xl tracking-tight text-white" },
+            {
+              staticClass:
+                "font-semibold text-xl tracking-tight text-white varela"
+            },
             [_vm._v("James Dordoy")]
           )
         ]
       ),
       _vm._v(" "),
-      _c("div", { staticClass: "block lg:hidden" }, [
+      _c("div", { staticClass: "block lg:hidden " }, [
         _c(
           "button",
           {
             staticClass:
-              "flex items-center px-3 py-2 border rounded text-teal-lighter border-teal-light hover:text-white hover:border-white"
+              "flex items-center px-3 py-2 border rounded text-teal-lighter border-teal-light hover:text-white hover:border-white "
           },
           [
             _c(
@@ -52630,7 +52471,8 @@ var staticRenderFns = [
     return _c(
       "div",
       {
-        staticClass: "w-full block flex-grow lg:flex lg:items-center lg:w-auto"
+        staticClass:
+          "w-full block flex-grow lg:flex lg:items-center  lg:w-auto "
       },
       [
         _c("div", { staticClass: "text-sm lg:flex-grow" }, [
@@ -52857,7 +52699,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             'value': '#4DC0B5'
           },
           'shape': {
-            'type': 'star',
+            'type': 'circle',
             'stroke': {
               'width': 0,
               'color': '#000000'

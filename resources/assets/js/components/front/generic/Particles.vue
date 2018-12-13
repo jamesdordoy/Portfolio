@@ -37,7 +37,7 @@ export default {
             'value': '#4DC0B5'
           },
           'shape': {
-            'type': 'star',
+            'type': 'circle',
             'stroke': {
               'width': 0,
               'color': '#000000'

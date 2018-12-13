@@ -3,27 +3,33 @@
 
     <div class="h-full">
       <particles>
-        <div class="border-teal-light border pin-none rounded p-8 text-center text-white">
-          <h1>Full Stack Developer</h1>
+        <div style="background: rgba(0, 0, 0, 0.4); text-shadow: 0px 0px 2px #131415;" class="border-teal-light border pin-none rounded p-8 mt-20 text-center text-white">
+          <h1 class="varela">Full Stack Developer</h1>
+          <p  class="varela">From Essex</p>
         </div>
       </particles>
     </div>
-    
 
-    <div class="w-full bg-bg-col">
-        <h1>About Me</h1>
+    <div class="w-full">
+      <div class="w-full p-10 bg-teal-lightest">
+        <h1 class="text-center">About Me</h1>
         <p>I am a full stack developer</p>
       </div>
 
-      <div class="w-full bg-nav">
+      <div class="w-full p-10 bg-nav">
         <projects
           :projects="projects">
         </projects>
       </div>
 
-      <languages
-        :languages="languages">
-      </languages>
+      <div class="w-full p-10 bg-teal-lightest">
+        <languages
+          :languages="languages">
+        </languages>
+      </div>
+    </div>
+    
+    
       <!-- <div class="col-md-12" style="padding: 40px; background: #ececec;">
 
         <h2 class="text-center">About Me</h2>

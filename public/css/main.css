@@ -3364,6 +3364,10 @@ table {
   font-weight: 900;
 }
 
+.h-0 {
+  height: 0px;
+}
+
 .h-1 {
   height: .25rem;
 }
@@ -3398,6 +3402,14 @@ table {
 
 .h-12 {
   height: 3rem;
+}
+
+.h-14 {
+  height: 3.5rem;
+}
+
+.h-15 {
+  height: 3.6rem;
 }
 
 .h-16 {
@@ -6547,6 +6559,14 @@ html {
   height: 100%;
 }
 
+.lg:overflow-none {
+  overflow: none;
+}
+
+.varela {
+  font-family: 'Varela Round', sans-serif;
+}
+
 @media (min-width: 576px) {
   .sm\:list-reset {
     list-style: none;
@@ -9199,6 +9219,10 @@ html {
     font-weight: 900;
   }
 
+  .sm\:h-0 {
+    height: 0px;
+  }
+
   .sm\:h-1 {
     height: .25rem;
   }
@@ -9233,6 +9257,14 @@ html {
 
   .sm\:h-12 {
     height: 3rem;
+  }
+
+  .sm\:h-14 {
+    height: 3.5rem;
+  }
+
+  .sm\:h-15 {
+    height: 3.6rem;
   }
 
   .sm\:h-16 {
@@ -14997,6 +15029,10 @@ html {
     font-weight: 900;
   }
 
+  .md\:h-0 {
+    height: 0px;
+  }
+
   .md\:h-1 {
     height: .25rem;
   }
@@ -15031,6 +15067,14 @@ html {
 
   .md\:h-12 {
     height: 3rem;
+  }
+
+  .md\:h-14 {
+    height: 3.5rem;
+  }
+
+  .md\:h-15 {
+    height: 3.6rem;
   }
 
   .md\:h-16 {
@@ -20795,6 +20839,10 @@ html {
     font-weight: 900;
   }
 
+  .lg\:h-0 {
+    height: 0px;
+  }
+
   .lg\:h-1 {
     height: .25rem;
   }
@@ -20829,6 +20877,14 @@ html {
 
   .lg\:h-12 {
     height: 3rem;
+  }
+
+  .lg\:h-14 {
+    height: 3.5rem;
+  }
+
+  .lg\:h-15 {
+    height: 3.6rem;
   }
 
   .lg\:h-16 {
@@ -26593,6 +26649,10 @@ html {
     font-weight: 900;
   }
 
+  .xl\:h-0 {
+    height: 0px;
+  }
+
   .xl\:h-1 {
     height: .25rem;
   }
@@ -26627,6 +26687,14 @@ html {
 
   .xl\:h-12 {
     height: 3rem;
+  }
+
+  .xl\:h-14 {
+    height: 3.5rem;
+  }
+
+  .xl\:h-15 {
+    height: 3.6rem;
   }
 
   .xl\:h-16 {

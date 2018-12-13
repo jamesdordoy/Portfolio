@@ -522,6 +522,7 @@ module.exports = {
   height: {
     'auto': 'auto',
     'px': '1px',
+    '0': '0px',
     '1': '0.25rem',
     '2': '0.5rem',
     '3': '0.75rem',
@@ -531,6 +532,8 @@ module.exports = {
     '8': '2rem',
     '10': '2.5rem',
     '12': '3rem',
+    '14': '3.5rem',
+    '15': '3.60rem',
     '16': '4rem',
     '24': '6rem',
     '32': '8rem',

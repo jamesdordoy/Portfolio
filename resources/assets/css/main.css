@@ -71,3 +71,11 @@
   html {
     @apply h-full;
   }
+
+  .lg:overflow-none{
+    overflow: none;
+  }
+
+  .varela{
+    font-family: 'Varela Round', sans-serif;
+  }
