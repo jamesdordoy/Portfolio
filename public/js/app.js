@@ -52727,7 +52727,7 @@ var staticRenderFns = [
         {
           staticClass:
             "no-underline block mt-4 uppercase md:inline-block lg:mt-0 text-teal hover:text-teal-lighter mr-4",
-          attrs: { href: "#responsive-header" }
+          attrs: { href: "/" }
         },
         [_vm._v("\n                        Home\n                    ")]
       ),

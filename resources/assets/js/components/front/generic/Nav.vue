@@ -13,7 +13,7 @@
             </div>
             <div :class="open ? 'block': 'hidden'" class="w-full flex-grow lg:flex lg:items-center lg:w-auto">
                 <div class="text-sm sm:flex-grow">
-                    <a href="#responsive-header" class="no-underline block mt-4 uppercase md:inline-block lg:mt-0 text-teal hover:text-teal-lighter mr-4">
+                    <a href="/" class="no-underline block mt-4 uppercase md:inline-block lg:mt-0 text-teal hover:text-teal-lighter mr-4">
                         Home
                     </a>
                     <a href="#about" class="block uppercase no-underline lg:inline-block lg:mt-0 text-teal hover:text-teal-lighter mr-4">
