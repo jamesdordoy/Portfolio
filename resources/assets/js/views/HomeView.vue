@@ -4,25 +4,26 @@
     <div class="h-full">
       <particles>
         <div style="background: rgba(0, 0, 0, 0.4); text-shadow: 0px 0px 2px #131415;" class="border-teal-light border pin-none rounded p-8 mt-20 text-center text-white">
-          <h1 class="varela">Full Stack Developer</h1>
+          <h1 class="varela text-5xl">James Dordoy</h1>
+          <h2 class="varela">Full Stack Developer</h2>
           <p  class="varela">From Essex</p>
         </div>
       </particles>
     </div>
 
     <div class="w-full">
-      <div class="w-full p-10 bg-teal-lightest">
+      <div class="w-full p-10 bg-teal-lightest" id="about">
         <h1 class="text-center">About Me</h1>
         <p>{{ about.me }}</p>
       </div>
 
-      <div class="w-full p-10 bg-nav">
+      <div class="w-full p-10 bg-nav" id="projects">
         <projects
           :projects="projects">
         </projects>
       </div>
 
-      <div class="w-full p-10 bg-teal-lightest">
+      <div class="w-full p-10 bg-teal-lightest" id="langauges">
         <languages
           :languages="languages">
         </languages>
@@ -65,6 +66,6 @@
 
 <script>    
     export default {
-      props: ['projects', 'languages', 'about']
+      props: ['projects', 'languages', 'about', 'auth']
     }
 </script>

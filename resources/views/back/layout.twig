@@ -12,8 +12,7 @@
         <!-- FONTAWESOME INCLUDE -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        <link rel="stylesheet" href="{{ mix("/css/back.css") }}">
-        {# <link rel="stylesheet" href="/css/main.css"> #}
+        <link rel="stylesheet" href="/css/main.css">
 
     	<title>James Dordoy</title>
         <!-- Fonts -->
@@ -23,13 +22,11 @@
         <div id="app">
             <back-nav>
             </back-nav>
-            <div style="background: #131313;" class='wrapper container-fluid' >
+            <div>
                 {% block content %}{% endblock %}
-                {% include 'back.includes.footer' %}
+
             </div>
         </div>
         <script src="{{ mix("/js/app.js") }}"></script>
-
-        {% block scripts %}{% endblock %}
     </body>
 </html>

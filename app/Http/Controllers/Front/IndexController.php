@@ -33,7 +33,6 @@ class IndexController extends Controller
      */
     public function index()
     {
-
         $contents = \Storage::get('about.json');
         $about = json_decode($contents, 1);
 

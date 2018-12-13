@@ -11,13 +11,7 @@
 |
 */
 
-//Testing
-
-Route::get('/testing', 'Front\IndexController@testing');
-
 Auth::routes();
-
-
 
 Route::get('/', 'Front\IndexController@index');
 Route::post('/contact', 'ContactController@store');
@@ -56,13 +50,4 @@ Route::namespace('Back')->prefix('back')->group(function() {
     });
 });
 
-// Login
-Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
-Route::post('login', 'Auth\LoginController@login');
-Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
-
-Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
-Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
-Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
