@@ -13,6 +13,6 @@ class Project extends Model
 
     public function scopePublicProjects($query)
     {
-        return $query->where('private', 1);
+        return $query->where('private', 0);
     }
 }

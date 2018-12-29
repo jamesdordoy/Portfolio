@@ -1,16 +1,10 @@
 export default [
     {
         path: '/',
-        component: require('./views/HomeView.vue').default,
-        meta: {
-            requiresAuth: true
-        }
+        component: require('./components/front/views/LoginView.vue')
     },
     {
-        path: '/login',
-        component: require('./views/Login.vue').default,
-        meta: {
-            requiresGuest: true
-        }
+        path: '/portal',
+        component: require('./components/back/views/PortalView.vue')
     },
 ];

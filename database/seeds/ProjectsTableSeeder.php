@@ -17,5 +17,13 @@ class ProjectsTableSeeder extends Seeder
             'owner' => "Me",
             'link' => "https://www.jamesdordoy.co.uk",
         ]);
+
+        factory(\App\Models\Project::class)->create([
+            'name' => "Shopping Application",
+            'description' => "VueFire SPA, Vue Cli 3, Tailwind.css.",
+            'owner' => "Me",
+            'link' => "https://shopping.jamesdordoy.co.uk",
+            "private" => 0,
+        ]);
     }
 }

@@ -6,6 +6,7 @@
  */
 
 require('./bootstrap');
+require('./helpers.js');
 
 import VueRouter from 'vue-router';
 import routes from './routes.js';
@@ -17,10 +18,9 @@ Vue.use(VueRouter);
 
 const router = new VueRouter({
     mode: "history",
-    base: "/",
+    base: "/back",
     routes
-  });
-  
+});  
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -38,11 +38,12 @@ Vue.component('repository-table',  require('./components/back/repository/Reposit
 Vue.component('tweets-table',      require('./components/back/twitter/TweetsTable.vue'));
 Vue.component('front-nav',         require('./components/front/generic/Nav.vue'));
 Vue.component('particles',         require('./components/front/generic/Particles.vue'));
-Vue.component('home-view',         require('./views/HomeView.vue'));
-Vue.component('login-view',         require('./views/Login.vue'));
+Vue.component('home-view',         require('./components/front/views/HomeView.vue'));
+Vue.component('login-view',         require('./components/front/views/LoginView.vue'));
 
 Vue.component('text-input',         require('./components/vuedordoy/forms/inputs/TextInput.vue'));
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    router
 });
