@@ -9,8 +9,7 @@ use App\Models\Project;
 use App\Models\Language;
 use App\Http\Controllers\Controller;
 
-use App\Services\TwitterService;
-use App\Interfaces\TwitterInterface;
+use App\Contracts\Services\TwitterServiceContract;
 
 class IndexController extends Controller
 {
@@ -21,7 +20,7 @@ class IndexController extends Controller
      *
      * @return void
      */
-    public function __construct(TwitterInterface $twitter)
+    public function __construct(TwitterServiceContract $twitter)
     {
         $this->twitter = $twitter;
     }

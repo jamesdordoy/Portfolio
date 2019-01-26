@@ -4,9 +4,9 @@ namespace App\Services;
 
 use Abraham\TwitterOAuth\TwitterOAuth;
 
-use App\Interfaces\TwitterInterface;
+use App\Contracts\Services\TwitterServiceContract;
 
-class TwitterService implements TwitterInterface
+class TwitterService extends Service implements TwitterServiceContract
 {
 
     private $accessToken;

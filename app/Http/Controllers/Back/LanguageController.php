@@ -6,16 +6,20 @@ use App\Models\Language;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use App\Contracts\Services\LanguageServiceContract;
+
 class LanguageController extends Controller
 {
+    protected $languageService;
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(LanguageServiceContract $languageService)
     {
+        $this->languageService = $languageService;
         $this->middleware('auth');
     }
 
@@ -26,7 +30,7 @@ class LanguageController extends Controller
      */
     public function index()
     {
-        return Language::orderBy('id', 'ASC')->get();
+        return $this->languageService->all();
     }
 
     /**

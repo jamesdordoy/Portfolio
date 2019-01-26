@@ -43,6 +43,9 @@ Vue.component('login-view',         require('./components/front/views/LoginView.
 
 Vue.component('back-nav',          require('./components/back/includes/Nav.vue'));
 Vue.component('back-nav-link',     require('./components/back/generic/NavLink.vue'));
+Vue.component('back-modal',         require('./components/back/generic/Modal.vue'));
+
+Vue.component('languages-create-modal',   require('./components/back/language/CreateLanguageModal.vue'));
 
 Vue.component('text-input',         require('./components/vuedordoy/forms/inputs/TextInput.vue'));
 

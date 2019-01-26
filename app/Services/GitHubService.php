@@ -2,9 +2,9 @@
 
 namespace App\Services;
 
-use App\Interfaces\GitHubInterface;
+use App\Contracts\Services\GitHubServiceContract;
 
-class GitHubService implements GitHubInterface
+class GitHubService extends Service implements GitHubServiceContract
 {
 
     public function __construct()

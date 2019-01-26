@@ -23,14 +23,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
-        $models = array(
-            'Twitter',
-            'GitHub',
+        $services = array(
+            'TwitterService' => 'TwitterServiceContract',
+            'GitHubService' => 'GithubServiceContract',
+            'LanguageService' => 'LanguageServiceContract',
         );
 
-        foreach ($models as $model) {
-            $this->app->bind("App\\Interfaces\\{$model}Interface", "App\\Services\\{$model}Service");
+        foreach ($services as $service => $contract) {
+            $this->app->bind("App\\Contracts\\Services\\{$contract}", "App\\Services\\{$service}");
         }
     }
 }
