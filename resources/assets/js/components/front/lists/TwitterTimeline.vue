@@ -1,26 +1,101 @@
 <template>
-    <section class="twitter">
+    <section class="flex content-start">
       <h3>My Twitter Feed  <i class="fa fa-arrow-down fa-1x"></i></h3>
-      <ul class="twitter-feed">
-          <li v-for="tweet in this.list" :key="tweet.id">
-              <p>
-                  {{ tweet.text }}
-              </p>
-          </li>
-      </ul>
+
+      <div class="twitter-feed bg-white max-w-md mx-auto my-8 border border-grey-light">
+        <div class="flex pt-4 px-4" v-for="tweet in this.tweets" :key="tweet.id">
+        <div class="w-16 mr-2">
+            <img class="p-2 rounded rounded-full" src="https://scontent-frt3-1.cdninstagram.com/t51.2885-19/s150x150/22638783_1031626323645160_6412994168498421760_n.jpg">
+        </div>
+        <div class="px-2 pt-2 flex-grow">
+            <header>
+            <a href="#" class="text-black no-underline">
+                <span class="font-medium">Rathes Sachchithananthan</span>
+                <span class="font-normal text-grey">@rathes</span>
+            </a>
+            <div class="text-xs text-grey flex items-center my-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mr-1 feather feather-calendar">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                <span>2 hours ago</span>
+            </div>
+            </header>
+            <article class="py-4 text-grey-darkest">
+            {{ tweet.text }}
+            </article>
+            <footer class="border-t border-grey-lighter text-sm flex">
+            <a href="#" class="block no-underline text-blue flex px-4 py-2 items-center hover:bg-grey-lighter">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-thumbs-up h-6 w-6 mr-1 stroke-current">
+                <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
+                </svg>
+                <span>Liked</span>
+            </a>
+            <a href="#" class="block no-underline text-black flex px-4 py-2 items-center hover:bg-grey-lighter">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-circle h-6 w-6 mr-1">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                </svg>
+                <span>Reply</span>
+            </a>
+            </footer>
+        </div>
+        </div>
+        <div class="bg-grey-lightest p-4 pl-8 flex border-t border-grey-lighter">
+        <div class="w-12 mr-2 flex-no-shrink">
+            <img class="p-2 rounded rounded-full" src="https://scontent-frt3-1.cdninstagram.com/t51.2885-19/s150x150/22638783_1031626323645160_6412994168498421760_n.jpg">
+        </div>
+        <div class="p-2 flex-grow">
+            <header>
+            <a href="#" class="text-black no-underline">
+                <span class="font-medium">Moritz Mustermann</span>
+                <span class="font-normal text-grey">@mo</span>
+            </a>
+            <div class="text-xs text-grey flex items-center my-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mr-1 feather feather-calendar">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                <span>Just now</span>
+            </div>
+            </header>
+            <article class="py-4 text-grey-darkest leading-normal">
+            <a class="no-underline text-blue" href="#">@max_the_great</a> Lorem ipsum no lo se dolores ametandum no come,
+            astare pero canime perferme
+            </article>
+            <footer class="border-t border-grey-lighter text-sm flex">
+            <a href="#" class="block no-underline text-blue flex px-4 py-2 items-center hover:bg-grey-lighter">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-thumbs-up h-6 w-6 mr-1 stroke-current">
+                <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
+                </svg>
+                <span>Liked</span>
+            </a>
+            <a href="#" class="block no-underline text-black flex mr-4 px-4 py-2 items-center hover:bg-grey-lighter">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-circle h-6 w-6 mr-1">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                </svg>
+                <span>Reply</span>
+            </a>
+            </footer>
+        </div>
+        </div>
+    </div>
     </section>
 </template>
 
 <script>
 export default{
     props: ['tweets'],
-    data: function(){
-        return {
-            list: '',
-        };
-    },
-    created: function(){
-        this.list = JSON.parse(this.tweets);
-    }
 }
 </script>
+
+<style>
+.twitter-feed{
+    max-height: 600px;
+    overflow-y: scroll;
+}
+
+</style>

@@ -29,7 +29,15 @@
         </languages>
       </div>
 
-      <footer class="bg-footer w-full flex p-2">
+      <div class="w-full p-10 bg-nav flex content-start" id="projects">
+        <tweets
+          :tweets="tweets">
+        </tweets>
+        <contact-form>
+          </contact-form>
+      </div>
+
+      <footer class="bg-footer w-full flex p-6">
        
           <div class="w-1/3">
             <p>
@@ -87,6 +95,6 @@
 
 <script>    
     export default {
-      props: ['projects', 'languages', 'about', 'auth']
+      props: ['projects', 'languages', 'about', 'auth', 'tweets'],
     }
 </script>

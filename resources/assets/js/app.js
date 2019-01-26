@@ -42,6 +42,7 @@ Vue.component('home-view',         require('./components/front/views/HomeView.vu
 Vue.component('login-view',         require('./components/front/views/LoginView.vue'));
 
 Vue.component('back-nav',          require('./components/back/includes/Nav.vue'));
+Vue.component('back-nav-link',     require('./components/back/generic/NavLink.vue'));
 
 Vue.component('text-input',         require('./components/vuedordoy/forms/inputs/TextInput.vue'));
 

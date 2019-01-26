@@ -24,13 +24,10 @@ class LanguageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-     public function index()
-     {
-         $languages = Language::orderBy('id', 'ASC')->get();
-         $id = Language::max('id') + 1;
-
-         return view('back.tables.languages', compact('languages', 'id'));
-     }
+    public function index()
+    {
+        return Language::orderBy('id', 'ASC')->get();
+    }
 
     /**
      * Store a newly created resource in storage.

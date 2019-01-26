@@ -11,4 +11,8 @@ export default [
         path: '/back/github',
         component: require('./components/back/views/GitHubView.vue')
     },
+    {
+        path: '/back/languages',
+        component: require('./components/back/views/LanguagesView.vue')
+    },
 ];

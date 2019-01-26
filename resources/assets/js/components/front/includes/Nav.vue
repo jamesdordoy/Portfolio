@@ -38,7 +38,7 @@
                         Backend
                     </a>
                     <a v-show="auth" href="#" @click="logout" class="bg-transparent hover:bg-teal text-teal font-semibold hover:text-nav py-2 px-4 border border-teal hover:border-transparent rounded">
-                        <i class="fa fa-sign-in" aria-hidden="true"></i>
+                        <i class="fa fa-sign-out" aria-hidden="true"></i>
                         Logout
                     </a>
                     <form method="POST" id="logout-form" action="/logout" class="hidden">
