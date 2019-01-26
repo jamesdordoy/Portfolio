@@ -1,7 +1,9 @@
 <template>
-    <div class="flex flex-col">
+    <div class="flex bg-nav flex-col">
         <back-nav>
         </back-nav>
+        <repository-table>
+        </repository-table>
     </div>
 </template>
 

@@ -1,10 +1,14 @@
 export default [
     {
         path: '/',
-        component: require('./components/front/views/LoginView.vue')
+        component: require('./components/front/views/HomeView.vue')
     },
     {
-        path: '/portal',
+        path: '/back',
         component: require('./components/back/views/PortalView.vue')
+    },
+    {
+        path: '/back/github',
+        component: require('./components/back/views/GitHubView.vue')
     },
 ];

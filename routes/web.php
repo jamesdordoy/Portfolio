@@ -13,16 +13,25 @@
 
 Auth::routes();
 
+Route::middleware('auth')->group(function () {
+
+    Route::namespace('Back')->group(function() {
+        Route::prefix('back')->group(function() {
+            Route::get('/', 'IndexController@index');
+        });
+    
+        Route::prefix('api')->group(function() {
+            Route::get('/github', 'GitHubController@index');
+        });
+    });
+
+    Route::get('/back/{wildcard}', function () {
+        return view('back/home');
+    })->where('wildcard', '.*');
+});
+
 Route::get('/', 'Front\IndexController@index');
 Route::post('/contact', 'ContactController@store');
-
-Route::get('/back', 'Back\IndexController@index');
-
-
-Route::get('/back/{wildcard}', function () {
-    return view('back/home');
-})->where('wildcard', '.*');
-
 
 // Route::namespace('Back')->prefix('back')->group(function() {
 //     Route::middleware('auth')->group(function () {

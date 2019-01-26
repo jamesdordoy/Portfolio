@@ -18,7 +18,7 @@ class GitHubController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
 
@@ -29,14 +29,7 @@ class GitHubController extends Controller
      */
     public function index()
     {
-        $repositories = GitHub::me()->repositories();
-
-         return view(
-            'back.tables.github.index',
-            compact(
-                'repositories'
-            )
-        );
+        return GitHub::me()->repositories();
     }
 
     /**

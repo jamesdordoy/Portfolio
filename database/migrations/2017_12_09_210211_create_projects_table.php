@@ -15,9 +15,9 @@ class CreateProjectsTable extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->increments('id')->unsigned();
-            $table->text('name')->nullable(false);
-            $table->text('description')->nullable(false);
-            $table->text('owner')->nullable(false);
+            $table->string('name')->nullable(false);
+            $table->string('description')->nullable(false);
+            $table->string('owner')->nullable(false);
             $table->text('link')->nullable(true);
             $table->text('icon')->nullable(true);
             $table->boolean('completed')->default(0);

@@ -18,7 +18,7 @@ Vue.use(VueRouter);
 
 const router = new VueRouter({
     mode: "history",
-    base: "/back",
+    base: "/",
     routes
 });  
 
@@ -36,10 +36,12 @@ Vue.component('projects-table',    require('./components/back/project/ProjectsTa
 Vue.component('project-create',    require('./components/back/project/Create.vue'));
 Vue.component('repository-table',  require('./components/back/repository/RepositoryTable.vue'));
 Vue.component('tweets-table',      require('./components/back/twitter/TweetsTable.vue'));
-Vue.component('front-nav',         require('./components/front/generic/Nav.vue'));
+Vue.component('front-nav',         require('./components/front/includes/Nav.vue'));
 Vue.component('particles',         require('./components/front/generic/Particles.vue'));
 Vue.component('home-view',         require('./components/front/views/HomeView.vue'));
 Vue.component('login-view',         require('./components/front/views/LoginView.vue'));
+
+Vue.component('back-nav',          require('./components/back/includes/Nav.vue'));
 
 Vue.component('text-input',         require('./components/vuedordoy/forms/inputs/TextInput.vue'));
 

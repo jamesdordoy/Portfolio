@@ -37,7 +37,6 @@ class generateAbout extends Command
      */
     public function handle()
     {
-        //
         \Storage::disk('local')->put('about.json', '{
             "me": ""
         }');
