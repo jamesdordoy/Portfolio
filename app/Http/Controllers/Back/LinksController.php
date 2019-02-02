@@ -10,7 +10,7 @@ use App\Models\Examples\Dependencies;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class IndexController extends Controller
+class LinksController extends Controller
 {
     /**
      * Show the application dashboard.
