@@ -53,8 +53,7 @@ Vue.component('form-group',         require('./components/back/generic/FormGroup
 Vue.component('textarea-input',         require('./components/back/generic/TextareaInput.vue'));
 Vue.component('outline-button',         require('./components/back/generic/OutlineButton.vue'));
 
-
 const app = new Vue({
-    el: '#app',
-    router
-});
+    router,
+    render: h => h(app)
+  }).$mount('#app')
