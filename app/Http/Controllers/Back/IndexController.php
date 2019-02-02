@@ -25,8 +25,6 @@ class IndexController extends Controller
 
         $languages = Language::count();
 
-        dd($languages);
-
         $deps = Dependencies::count();
 
         return view(
