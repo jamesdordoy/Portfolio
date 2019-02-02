@@ -19,11 +19,13 @@ class IndexController extends Controller
      */
     public function index()
     {
-        dump("hello");
+        
         $projectCompleteCount = Project::where('completed', true)->count();
         $projectIncompleteCount = Project::where('completed', false)->count();
 
         $languages = Language::count();
+
+        dd($languages);
 
         $deps = Dependencies::count();
 
