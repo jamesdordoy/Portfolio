@@ -17,10 +17,7 @@ Route::middleware('auth')->group(function () {
 
     Route::namespace('Back')->group(function() {
         Route::prefix('back')->group(function() {
-            Route::get('/', function () {
-                echo "hey";
-                // 'IndexController@index'
-            });
+            Route::get('/', 'IndexController@index');
         });
     
         Route::prefix('api')->group(function() {
