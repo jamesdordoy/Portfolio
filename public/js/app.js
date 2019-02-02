@@ -56147,7 +56147,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -56213,12 +56212,22 @@ var render = function() {
                 attrs: { url: "/back/languages", text: "Languages" }
               }),
               _vm._v(" "),
-              _c("back-nav-link", {
-                attrs: {
-                  url: "https://server.jamesdordoy.co.uk/goaccess",
-                  text: "Server Statistics"
-                }
-              })
+              _c(
+                "a",
+                {
+                  staticClass:
+                    "no-underline text-grey-dark border-b xl:border-0 hover:bg-grey-lightest xl:hover:bg-transparent xl:hover:text-blue ml-2",
+                  attrs: {
+                    href: "https://server.jamesdordoy.co.uk/goaccess",
+                    target: "_blank"
+                  }
+                },
+                [
+                  _vm._v(
+                    "\n                        Server Statistics\n                    "
+                  )
+                ]
+              )
             ],
             1
           )

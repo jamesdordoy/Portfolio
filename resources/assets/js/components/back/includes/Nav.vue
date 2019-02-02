@@ -22,10 +22,9 @@
                             :url="'/back/languages'"
                             :text="'Languages'">
                         </back-nav-link>
-                        <back-nav-link
-                            :url="'https://server.jamesdordoy.co.uk/goaccess'"
-                            :text="'Server Statistics'">
-                        </back-nav-link>
+                        <a href="https://server.jamesdordoy.co.uk/goaccess" target="_blank" class="no-underline text-grey-dark border-b xl:border-0 hover:bg-grey-lightest xl:hover:bg-transparent xl:hover:text-blue ml-2">
+                            Server Statistics
+                        </a>
                     </ul>
                 </div>
                 <div class="w-1/6 md:w-auto md:flex text-right">
