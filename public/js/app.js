@@ -17726,11 +17726,9 @@ Vue.component('textarea-input', __webpack_require__(268));
 Vue.component('outline-button', __webpack_require__(273));
 
 var app = new Vue({
-  router: router,
-  render: function render(h) {
-    return h(app);
-  }
-}).$mount('#app');
+  el: '#app',
+  router: router
+});
 
 /***/ }),
 /* 136 */

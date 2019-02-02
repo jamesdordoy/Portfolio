@@ -54,6 +54,6 @@ Vue.component('textarea-input',         require('./components/back/generic/Texta
 Vue.component('outline-button',         require('./components/back/generic/OutlineButton.vue'));
 
 const app = new Vue({
-    router,
-    render: h => h(app)
-  }).$mount('#app')
+    el: '#app',
+    router
+});
