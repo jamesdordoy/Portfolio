@@ -17,7 +17,6 @@ Route::middleware('auth')->group(function () {
 
     Route::namespace('Back')->group(function() {
         Route::prefix('back')->group(function() {
-            dump("Working");
             Route::get('/', 'IndexController@index');
         });
     
