@@ -36,8 +36,12 @@ class IndexController extends Controller
         $about = json_decode($contents, 1);
 
         $languages = Language::get();
+
+
         $projects = Project::publicProjects()->latest()->get();
         $tweets = $this->twitter->getStatuses();
+
+        dd($projects);
 
         $auth = \Auth::user();
 
