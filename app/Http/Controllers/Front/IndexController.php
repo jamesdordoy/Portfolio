@@ -41,7 +41,6 @@ class IndexController extends Controller
         $projects = Project::publicProjects()->latest()->get();
         $tweets = $this->twitter->getStatuses();
 
-        dd($projects);
 
         $auth = \Auth::user();
 
