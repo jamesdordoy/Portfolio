@@ -56216,7 +56216,7 @@ var render = function() {
                 "a",
                 {
                   staticClass:
-                    "no-underline text-grey-dark border-b xl:border-0 hover:bg-grey-lightest xl:hover:bg-transparent xl:hover:text-blue ml-2",
+                    "text-grey-dark border-b xl:border-0 hover:bg-grey-lightest xl:hover:bg-transparent xl:hover:text-blue ml-2",
                   attrs: {
                     href: "https://server.jamesdordoy.co.uk/goaccess",
                     target: "_blank"

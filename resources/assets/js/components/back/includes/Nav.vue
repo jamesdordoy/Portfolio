@@ -22,7 +22,7 @@
                             :url="'/back/languages'"
                             :text="'Languages'">
                         </back-nav-link>
-                        <a href="https://server.jamesdordoy.co.uk/goaccess" target="_blank" class="no-underline text-grey-dark border-b xl:border-0 hover:bg-grey-lightest xl:hover:bg-transparent xl:hover:text-blue ml-2">
+                        <a href="https://server.jamesdordoy.co.uk/goaccess" target="_blank" class="text-grey-dark border-b xl:border-0 hover:bg-grey-lightest xl:hover:bg-transparent xl:hover:text-blue ml-2">
                             Server Statistics
                         </a>
                     </ul>
