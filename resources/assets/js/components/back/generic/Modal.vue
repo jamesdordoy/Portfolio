@@ -1,8 +1,8 @@
 |<template>
-    <div class="modal-mask" @click="close" v-show="show" transition="modal">
+    <div class="modal-mask" v-show="show" transition="modal">
 
-        <div class="modal-container relative" :class="sizeClass" @click="close">
-            <button class="absolute close-btn">X</button>
+        <div class="modal-container relative" :class="sizeClass" >
+            <button @click="close" class="absolute close-btn">X</button>
             <div class="modal-header">
                 <slot name="header">
                     default header
@@ -39,6 +39,11 @@
 <script>
 
 export default {
+    data() {
+        return {
+            
+        };
+    },
     props: {
         show: {
             type: Boolean,
@@ -50,8 +55,8 @@ export default {
         }
     },
     methods: {
+
         close() {
-            
             this.$emit("close");
         },
         submit() {

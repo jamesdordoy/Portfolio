@@ -41,6 +41,8 @@ class LanguageController extends Controller
      */
     public function store(Request $request)
     {
+
+        $this->languageService->store();
         $file = $request->file("icon");
 
         $imageName = str_replace(" ", "", $request->input("name")) .'.'. $file->getClientOriginalExtension();

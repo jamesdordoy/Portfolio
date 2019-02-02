@@ -2,10 +2,7 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Tag extends Model
+class Tag extends EloquentModel
 {
-    protected $guarded = [];
     
 }

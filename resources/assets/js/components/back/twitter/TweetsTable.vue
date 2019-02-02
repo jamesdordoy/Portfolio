@@ -16,7 +16,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="tweet in this.list">
+        <tr v-for="tweet in this.list" :key="tweet.id">
           <th scope="row">{{ tweet.id }}</th>
           <td>{{ tweet.text }}</td>
           <td>{{ tweet.favorite_count }}</td>

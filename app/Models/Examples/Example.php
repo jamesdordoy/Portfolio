@@ -2,9 +2,9 @@
 
 namespace App\Models\Examples;
 
-use Illuminate\Database\Eloquent\Model;
+use App\Models\EloquentModel;
 
-class Example extends Model
+class Example extends EloquentModel
 {
     //
     public function languages()

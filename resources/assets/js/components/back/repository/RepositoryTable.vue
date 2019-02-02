@@ -1,7 +1,7 @@
 <template>
     <div class="flex justify-center w-full">
         <table class="text-left w-full">
-            <thead class="bg-grey text-grey-dark text-white w-full">
+            <thead class="bg-grey-darkest text-grey-dark text-white w-full">
                 <tr class="flex w-full text-grey-dark">
                     <th class="p-2 w-1/5">#</th>
                     <th class="p-2 w-1/5">Name</th>
@@ -15,7 +15,7 @@
                     <th class="p-2 w-1/5">Delete</th>
                 </tr>
             </thead>
-            <tbody class="flex flex-col items-center justify-between w-full border-l border-r border-b border-grey-darkest rounded-b">
+            <tbody class="flex flex-col items-center justify-between w-full border-l border-r border-b border-grey-darkest rounded-b bg-nav">
                 <tr v-for="repository in repositories" :key="repository.id" class="flex w-full mb-4">
                     <td class="p-2 w-1/5">{{ repository.id }}</td>
                     <td class="p-2 w-1/5">{{ repository.name }}</td>

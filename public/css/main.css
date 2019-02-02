@@ -6567,6 +6567,24 @@ html {
   font-family: 'Varela Round', sans-serif;
 }
 
+.input-generic {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  display: block;
+  width: 100%;
+  background-color: #f1f5f8;
+  color: #606f7b;
+  border-width: 1px;
+  border-radius: .25rem;
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-bottom: .75rem;
+  line-height: 1.25;
+}
+
 @media (min-width: 576px) {
   .sm\:list-reset {
     list-style: none;

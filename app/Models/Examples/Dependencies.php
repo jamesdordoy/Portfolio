@@ -2,9 +2,9 @@
 
 namespace App\Models\Examples;
 
-use Illuminate\Database\Eloquent\Model;
+use App\Models\EloquentModel;
 
-class Dependencies extends Model
+class Dependencies extends EloquentModel
 {
     //
 

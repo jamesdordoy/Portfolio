@@ -2,9 +2,9 @@
 
 namespace App\Models\Examples;
 
-use Illuminate\Database\Eloquent\Model;
+use App\Models\EloquentModel;
 
-class CodeExample extends Model
+class CodeExample extends EloquentModel
 {
     //
     public function codeExamples()
