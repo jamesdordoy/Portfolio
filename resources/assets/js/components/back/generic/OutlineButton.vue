@@ -2,7 +2,7 @@
     <button
         @click="onClick"
         :class="classes"
-        class="">
+        class="bg-transparent hover:bg-blue text-blue-dark font-semibold hover:text-white py-2 px-4 border border-blue hover:border-transparent rounded">
         {{ title }}
     </button>
 </template>

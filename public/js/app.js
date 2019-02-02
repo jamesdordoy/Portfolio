@@ -52940,7 +52940,7 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -52951,18 +52951,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -53071,41 +53059,46 @@ var render = function() {
             "tr",
             { key: repository.id, staticClass: "flex w-full mb-4" },
             [
-              _c("td", { staticClass: "p-2 w-1/5" }, [
+              _c("td", { staticClass: "p-2 w-1/10" }, [
                 _vm._v(_vm._s(repository.id))
               ]),
               _vm._v(" "),
-              _c("td", { staticClass: "p-2 w-1/5" }, [
+              _c("td", { staticClass: "p-2 w-1/10" }, [
                 _vm._v(_vm._s(repository.name))
               ]),
               _vm._v(" "),
-              _c("td", { staticClass: "p-2 w-1/5" }, [
+              _c("td", { staticClass: "p-2 w-1/10" }, [
                 _vm._v(_vm._s(repository.description))
               ]),
               _vm._v(" "),
-              _c("td", { staticClass: "p-2 w-1/5" }, [
+              _c("td", { staticClass: "p-2 w-1/10" }, [
                 _vm._v(_vm._s(repository.owner.login))
               ]),
               _vm._v(" "),
-              _c("td", { staticClass: "p-2 w-1/5" }, [
-                _c("a", { attrs: { href: repository.url } }, [
-                  _vm._v(_vm._s(repository.url))
-                ])
+              _c("td", { staticClass: "p-2 w-1/10" }, [
+                _c(
+                  "a",
+                  {
+                    staticStyle: { "word-wrap": "break-word" },
+                    attrs: { href: repository.url }
+                  },
+                  [_vm._v("api link")]
+                )
               ]),
               _vm._v(" "),
-              _c("td", { staticClass: "p-2 w-1/5" }, [
-                _vm._v(_vm._s(repository.private) + " ")
+              _c("td", { staticClass: "p-2 w-1/10" }, [
+                _vm._v(_vm._s(repository.private ? "yes" : "no") + " ")
               ]),
               _vm._v(" "),
-              _c("td", { staticClass: "p-2 w-1/5" }, [
+              _c("td", { staticClass: "p-2 w-1/10" }, [
                 _vm._v(_vm._s(repository.created_at))
               ]),
               _vm._v(" "),
-              _c("td", { staticClass: "p-2 w-1/5" }, [
+              _c("td", { staticClass: "p-2 w-1/10" }, [
                 _vm._v(_vm._s(repository.updated_at))
               ]),
               _vm._v(" "),
-              _c("td", { staticClass: "p-2 w-1/5" }, [
+              _c("td", { staticClass: "p-2 w-1/10" }, [
                 _c("a", { attrs: { href: "/dash/projects/" } }, [
                   _c(
                     "button",
@@ -53136,21 +53129,6 @@ var render = function() {
                     ]
                   )
                 ])
-              ]),
-              _vm._v(" "),
-              _c("td", [
-                _c(
-                  "a",
-                  {
-                    attrs: {
-                      href: "/dash/projects/",
-                      "data-method": "delete",
-                      "data-token": _vm.csrf_token,
-                      "data-confirm": "Are you sure?"
-                    }
-                  },
-                  [_vm._m(1, true)]
-                )
               ])
             ]
           )
@@ -53169,37 +53147,26 @@ var staticRenderFns = [
       { staticClass: "bg-grey-darkest text-grey-dark text-white w-full" },
       [
         _c("tr", { staticClass: "flex w-full text-grey-dark" }, [
-          _c("th", { staticClass: "p-2 w-1/5" }, [_vm._v("#")]),
+          _c("th", { staticClass: "p-2 w-1/10" }, [_vm._v("#")]),
           _vm._v(" "),
-          _c("th", { staticClass: "p-2 w-1/5" }, [_vm._v("Name")]),
+          _c("th", { staticClass: "p-2 w-1/10" }, [_vm._v("Name")]),
           _vm._v(" "),
-          _c("th", { staticClass: "p-2 w-1/5" }, [_vm._v("Description")]),
+          _c("th", { staticClass: "p-2 w-1/10" }, [_vm._v("Description")]),
           _vm._v(" "),
-          _c("th", { staticClass: "p-2 w-1/5" }, [_vm._v("Owner")]),
+          _c("th", { staticClass: "p-2 w-1/10" }, [_vm._v("Owner")]),
           _vm._v(" "),
-          _c("th", { staticClass: "p-2 w-1/5" }, [_vm._v("Links")]),
+          _c("th", { staticClass: "p-2 w-1/10" }, [_vm._v("Links")]),
           _vm._v(" "),
-          _c("th", { staticClass: "p-2 w-1/5" }, [_vm._v("Private")]),
+          _c("th", { staticClass: "p-2 w-1/10" }, [_vm._v("Private")]),
           _vm._v(" "),
-          _c("th", { staticClass: "p-2 w-1/5" }, [_vm._v("Created At")]),
+          _c("th", { staticClass: "p-2 w-1/10" }, [_vm._v("Created At")]),
           _vm._v(" "),
-          _c("th", { staticClass: "p-2 w-1/5" }, [_vm._v("Updated At")]),
+          _c("th", { staticClass: "p-2 w-1/10" }, [_vm._v("Updated At")]),
           _vm._v(" "),
-          _c("th", { staticClass: "p-2 w-1/5" }, [_vm._v("Update")]),
-          _vm._v(" "),
-          _c("th", { staticClass: "p-2 w-1/5" }, [_vm._v("Delete")])
+          _c("th", { staticClass: "p-2 w-1/10" }, [_vm._v("Update")])
         ])
       ]
     )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("button", { staticClass: "btn btn-danger" }, [
-      _c("i", { staticClass: "fa fa-times", attrs: { "aria-hidden": "true" } }),
-      _vm._v("\n                            Delete\n                        ")
-    ])
   }
 ]
 render._withStripped = true
@@ -56868,6 +56835,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 
@@ -56968,6 +56938,18 @@ var render = function() {
             _c("div", { staticClass: "w-full flex" }, [
               _c(
                 "div",
+                { staticClass: "w-1/2 p-6" },
+                [
+                  _c("file-input", {
+                    attrs: { name: "icon" },
+                    on: { change: _vm.getFile }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
                 { staticClass: "w-1/2" },
                 [
                   _c(
@@ -56982,30 +56964,22 @@ var render = function() {
                   )
                 ],
                 1
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "w-1/2 p-6" },
-                [
-                  _c("file-input", {
-                    attrs: { name: "icon" },
-                    on: { change: _vm.getFile }
-                  })
-                ],
-                1
               )
             ]),
             _vm._v(" "),
-            _c("button", { attrs: { type: "submit" } }, [
-              _vm._v("\n            Save\n        ")
-            ])
+            _c("outline-button", {
+              attrs: { title: "Submit", classes: "float-right " }
+            })
           ],
           1
         )
       ]),
       _vm._v(" "),
-      _c("div", { attrs: { slot: "footer" }, slot: "footer" })
+      _c("div", {
+        staticClass: "mb-8",
+        attrs: { slot: "footer" },
+        slot: "footer"
+      })
     ]
   )
 }
@@ -57836,9 +57810,16 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("button", { class: _vm.classes, on: { click: _vm.onClick } }, [
-    _vm._v("\n    " + _vm._s(_vm.title) + "\n")
-  ])
+  return _c(
+    "button",
+    {
+      staticClass:
+        "bg-transparent hover:bg-blue text-blue-dark font-semibold hover:text-white py-2 px-4 border border-blue hover:border-transparent rounded",
+      class: _vm.classes,
+      on: { click: _vm.onClick }
+    },
+    [_vm._v("\n    " + _vm._s(_vm.title) + "\n")]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

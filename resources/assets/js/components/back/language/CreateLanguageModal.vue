@@ -18,6 +18,14 @@
             </form-group>
 
             <div class="w-full flex">
+                
+                <div class="w-1/2 p-6">
+                    <file-input
+                        @change="getFile"
+                        name="icon">
+                    </file-input>
+                </div>
+
                 <div class="w-1/2">
                     <form-group
                         title="Icon URL">
@@ -27,21 +35,16 @@
                         </text-input>
                     </form-group>
                 </div>  
-
-                <div class="w-1/2 p-6">
-                    <file-input
-                        @change="getFile"
-                        name="icon">
-                    </file-input>
-                </div>
             </div>
-            <button type="submit">
-                Save
-            </button>
+
+            <outline-button
+                title="Submit"
+                classes="float-right ">
+            </outline-button>
         </form>
         
       </div>
-        <div slot="footer">
+        <div slot="footer" class="mb-8">
 
         </div>
     </back-modal>
