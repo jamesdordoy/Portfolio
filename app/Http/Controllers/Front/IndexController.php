@@ -2,14 +2,11 @@
 
 namespace App\Http\Controllers\Front;
 
-use Illuminate\Http\Request;
-
 use App\Models\Project;
-
 use App\Models\Language;
 use App\Http\Controllers\Controller;
-
 use App\Contracts\Services\TwitterServiceContract;
+use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
