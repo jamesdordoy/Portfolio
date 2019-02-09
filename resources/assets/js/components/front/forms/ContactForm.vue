@@ -1,34 +1,47 @@
 <template>
-    <form class="w-full p-6">
-      <div class="flex flex-wrap -mx-3 mb-6">
-        <div class="w-full px-3 mb-6 md:mb-0">
-          <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-first-name">
-            Name:
-          </label>
-          <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Jane">
+    <form :method="method" :url="url" class="w-full py-8 pl-6">
+        <input type="hidden" name="_token" :value="csrfToken">
+        <div class="flex flex-wrap -mx-3 mb-6">
+            <div class="w-full px-3 mb-6 md:mb-0">
+                <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">
+                    Name:
+                </label>
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Jeffery Billings"
+                    class="appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
+            </div>
         </div>
-      </div>
-      <div class="flex flex-wrap -mx-3 mb-6">
-        <div class="w-full px-3 mb-6 md:mb-0">
-          <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-first-name">
-            Email:
-          </label>
-          <input
-            type="email"
-            class="appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-            id="grid-first-name"
-            placeholder="jeff@example.com">
+        <div class="flex flex-wrap -mx-3 mb-6">
+            <div class="w-full px-3 mb-6 md:mb-0">
+                <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">
+                  Email:
+                </label>
+                <input
+                    type="email"
+                    class="appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    placeholder="jeff@example.com">
+            </div>
         </div>
-      </div>
-      <div class="flex flex-wrap -mx-3 mb-6">
-        <div class="w-full px-3">
-          <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-password">
-            Message:
-          </label>
-          <textarea rows="10" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey">
-          </textarea>
+        <div class="flex flex-wrap -mx-3 mb-6">
+            <div class="w-full px-3">
+                <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">
+                  Message:
+                </label>
+                <textarea
+                    rows="10"
+                    placeholder="Hello, World!"
+                    class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey">
+                </textarea>
+            </div>
         </div>
-      </div>
+        <div class="flex flex-wrap -mx-3 mb-6 pl-3">
+            <outline-button
+                type="submit"
+                title="Submit">
+            </outline-button>
+        </div>
     </form>
 </template>
 <script>
@@ -38,10 +51,20 @@
                 list: '',
             };
         },
-        computed: {
-            csrf_token:  function(){
-                //return $('meta[name="csrf-token"]').attr('content')
+        props: {
+            url: {
+                type: String,
+                default: "/"
+            },
+            method: {
+                type: String,
+                default: "GET"
             }
+        },
+        computed: {
+            csrfToken() {
+                return document.head.querySelector('meta[name="csrf-token"]').content;
+            },
         }
     }
 </script>

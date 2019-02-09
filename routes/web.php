@@ -32,7 +32,11 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/', 'Front\IndexController@index');
-Route::post('/contact', 'ContactController@store');
+
+Route::post('/contact', [
+    'as' => 'front.post.contact',
+    'uses' => 'ContactController@store',
+]);
 
 // Route::namespace('Back')->prefix('back')->group(function() {
 //     Route::middleware('auth')->group(function () {

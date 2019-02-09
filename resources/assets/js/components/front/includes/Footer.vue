@@ -1,7 +1,7 @@
 <template>
-    <footer class="bg-footer w-full flex p-6">
-       
-        <div class="w-1/3">
+
+    <div class="flex flex-wrap bg-footer p-10">
+        <div class="w-full lg:w-1/3">
             <p>
                 <a href="https://www.facebook.com/dordoy" target="_blank">
                     <i class="fa fa-facebook fa-2x text-white hover:text-blue"></i>
@@ -24,29 +24,32 @@
                 </a>
             </p>
         </div>
-        <div class="w-1/3 text-center varela text-white pt-2">
+        <div class="w-full lg:w-1/3 text-center varela text-white pt-2">
             <h4>&copy; James Dordoy</h4>
         </div>
-        <div class="w-1/3">
-        
+        <div class="w-full lg:w-1/3">
             <div id="newsletter">
                 <form action="/newsletter" method="POST">
-
                     <div class="md:flex md:items-center">
                         <div class="md:w-1/2">
-                        <label class="block text-grey font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
-                            News Letter Signup
-                        </label>
+                            <label class="block text-grey font-bold md:text-right mb-1 md:mb-0 pr-4">
+                                News Letter Signup
+                            </label>
                         </div>
                         <div class="md:w-1/2">
-                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="Email" name="email">
+                            <input
+                                id="email"
+                                name="email"
+                                type="email"
+                                placeholder="jeff@example.com" 
+                                class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline">
                         </div>
                     </div>
-                
                 </form>
             </div>
         </div>
-    </footer>
+    </div>
+
 </template>
 
 <script>

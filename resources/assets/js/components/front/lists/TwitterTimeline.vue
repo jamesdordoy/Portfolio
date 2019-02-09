@@ -1,7 +1,6 @@
 <template>
     <section class="flex content-start">
       
-
       <div class="twitter-feed bg-white w-full mx-auto my-8 border border-grey-light">
         <div class="flex pt-4 px-4" v-for="tweet in this.tweets" :key="tweet.id">
             <div class="w-16 mr-2">

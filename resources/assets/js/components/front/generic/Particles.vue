@@ -1,10 +1,11 @@
 <template>
-  <div class="h-100">
-    <div id='particles-js'></div>
-    <div class="overlay">
-      <slot></slot>
+    <div class="h-100">
+        <div id='particles-js'>
+        </div>
+        <div class="overlay">
+            <slot></slot>
+        </div>
     </div>
-  </div>
 </template>
 
 <script>

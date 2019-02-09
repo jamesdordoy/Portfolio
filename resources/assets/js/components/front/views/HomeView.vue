@@ -12,12 +12,13 @@
     </div>
 
     <div class="w-full">
-      <div class="w-full p-10 bg-white" id="about">
+      <div class="w-full p-10 bg-grey-lighter">
+        <span class="anchor" id="about"></span>
         <h2 class="text-center varela mb-8">About Me</h2>
-        <p class="text-center">{{ about.me }}</p>
+        <p class="text-center text-lg">{{ about.me }}</p>
       </div>
 
-      <div class="w-full p-10 bg-nav" id="projects">
+      <div class="w-full p-10 bg-nav">
         <span class="anchor" id="projects"></span>
         <h2 class="varela text-center text-white mb-8">Projects</h2>
         <projects
@@ -25,9 +26,9 @@
         </projects>
       </div>
 
-      <div class="w-full p-10 bg-white" id="langauges">
+      <div class="w-full p-10 bg-grey-lighter">
         <div class="flex flex-col">
-          <span class="anchor" id="code"></span>
+          <span class="anchor" id="languages"></span>
           <h2 class="varela text-center text-header mb-8">Programming Languages, Libraries &amp; Frameworks I Like</h2>
         </div>
         <languages
@@ -36,33 +37,26 @@
       </div>
 
       <div class="flex flex-wrap p-10 bg-nav content-start">
+        <span class="anchor" id="contact"></span>
         <div class="w-full lg:w-1/2">
           <tweets
-              :tweets="tweets">
-            </tweets>
+            :tweets="tweets">
+          </tweets>
         </div>
         <div class="w-full lg:w-1/2">
           <contact-form>
-            </contact-form>
+          </contact-form>
         </div>
       </div>
 
-     <front-footer>
-       </front-footer>
+      <front-footer>
+      </front-footer>
     </div>    
   </div>
 </template>
 
-<style>
-
-.facebook {
-  background: #00ffff;
-}
-
-</style>
-
 <script>    
-    export default {
-      props: ['projects', 'languages', 'about', 'auth', 'tweets'],
-    }
+  export default {
+    props: ['projects', 'languages', 'about', 'auth', 'tweets'],
+  }
 </script>

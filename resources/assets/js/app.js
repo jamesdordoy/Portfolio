@@ -28,6 +28,8 @@ const router = new VueRouter({
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 Vue.component('contact-form',      require('./components/front/forms/ContactForm.vue'));
+Vue.component('login-form',        require('./components/front/forms/LoginForm.vue'));
+
 Vue.component('languages',         require('./components/front/lists/Languages.vue'));
 Vue.component('projects',          require('./components/front/lists/Projects.vue'));
 Vue.component('tweets',            require('./components/front/lists/TwitterTimeline.vue'));
@@ -37,22 +39,22 @@ Vue.component('project-create',    require('./components/back/project/Create.vue
 Vue.component('repository-table',  require('./components/back/repository/RepositoryTable.vue'));
 Vue.component('tweets-table',      require('./components/back/twitter/TweetsTable.vue'));
 Vue.component('front-nav',         require('./components/front/includes/Nav.vue'));
-Vue.component('front-footer',         require('./components/front/includes/Footer.vue'));
+Vue.component('front-footer',      require('./components/front/includes/Footer.vue'));
 Vue.component('particles',         require('./components/front/generic/Particles.vue'));
 Vue.component('home-view',         require('./components/front/views/HomeView.vue'));
-Vue.component('login-view',         require('./components/front/views/LoginView.vue'));
+Vue.component('login-view',        require('./components/front/views/LoginView.vue'));
 
 Vue.component('back-nav',          require('./components/back/includes/Nav.vue'));
 Vue.component('back-nav-link',     require('./components/back/generic/NavLink.vue'));
-Vue.component('back-modal',         require('./components/back/generic/Modal.vue'));
+Vue.component('back-modal',        require('./components/back/generic/Modal.vue'));
 
 Vue.component('languages-create-modal',   require('./components/back/language/CreateLanguageModal.vue'));
 
-Vue.component('text-input',         require('./components/back/generic/TextInput.vue'));
-Vue.component('file-input',         require('./components/back/generic/FileInput.vue'));
-Vue.component('form-group',         require('./components/back/generic/FormGroup.vue'));
-Vue.component('textarea-input',         require('./components/back/generic/TextareaInput.vue'));
-Vue.component('outline-button',         require('./components/back/generic/OutlineButton.vue'));
+Vue.component('text-input',             require('./components/generic/TextInput.vue'));
+Vue.component('file-input',             require('./components/generic/FileInput.vue'));
+Vue.component('form-group',             require('./components/generic/FormGroup.vue'));
+Vue.component('textarea-input',         require('./components/generic/TextareaInput.vue'));
+Vue.component('outline-button',         require('./components/generic/OutlineButton.vue'));
 
 const app = new Vue({
     el: '#app',
