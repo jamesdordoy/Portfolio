@@ -5,22 +5,11 @@ namespace App\Http\Controllers\Front;
 use Illuminate\Http\Request;
 
 use App\Models\Contact;
-
+use App\Http\Controllers\Controller;
 use App\Http\Requests\ContactRequest;
 
 class ContactController extends Controller
 {
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -48,7 +37,7 @@ class ContactController extends Controller
         $contact->message = $request->input("message");
 
         if ($contact->save()) {
-            return redirect("/")->with("success", " Created");
+            return redirect(route('front.get.index'))->with("success", " Created");
         }
     }
 

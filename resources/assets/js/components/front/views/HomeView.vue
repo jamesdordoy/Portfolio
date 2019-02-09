@@ -12,7 +12,7 @@
     </div>
 
     <div class="w-full">
-      <div class="w-full p-10 bg-grey-lighter">
+      <div class="w-full p-10 bg-grey">
         <span class="anchor" id="about"></span>
         <h2 class="text-center varela mb-8">About Me</h2>
         <p class="text-center text-lg">{{ about.me }}</p>
@@ -26,7 +26,7 @@
         </projects>
       </div>
 
-      <div class="w-full p-10 bg-grey-lighter">
+      <div class="w-full p-10 bg-grey">
         <div class="flex flex-col">
           <span class="anchor" id="languages"></span>
           <h2 class="varela text-center text-header mb-8">Programming Languages, Libraries &amp; Frameworks I Like</h2>
@@ -44,7 +44,9 @@
           </tweets>
         </div>
         <div class="w-full lg:w-1/2">
-          <contact-form>
+          <contact-form
+            :url="contactFormUrl"
+            :method="'POST'">
           </contact-form>
         </div>
       </div>
@@ -57,6 +59,6 @@
 
 <script>    
   export default {
-    props: ['projects', 'languages', 'about', 'auth', 'tweets'],
+    props: ['projects', 'languages', 'about', 'auth', 'tweets', 'contactFormUrl'],
   }
 </script>

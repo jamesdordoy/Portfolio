@@ -5,7 +5,8 @@
     :projects="{{ projects|json_encode }}"
     :about="{{ about|json_encode }}"
     :tweets="{{ tweets|json_encode }}"
-    :languages="{{ languages|json_encode }}">
+    :languages="{{ languages|json_encode }}"
+    contact-form-url="{{ route('front.post.contact') }}">
   </home-view>
 {% endblock %}
 

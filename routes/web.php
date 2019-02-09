@@ -31,12 +31,19 @@ Route::middleware('auth')->group(function () {
     })->where('wildcard', '.*');
 });
 
-Route::get('/', 'Front\IndexController@index');
+Route::namespace('Front')->group(function() {
+    Route::get('/', [
+        'as' => 'front.get.index',
+        'uses' => 'IndexController@index',
+    ]);
+    
+    Route::post('/contact', [
+        'as' => 'front.post.contact',
+        'uses' => 'ContactController@store',
+    ]);
+});
 
-Route::post('/contact', [
-    'as' => 'front.post.contact',
-    'uses' => 'ContactController@store',
-]);
+
 
 // Route::namespace('Back')->prefix('back')->group(function() {
 //     Route::middleware('auth')->group(function () {

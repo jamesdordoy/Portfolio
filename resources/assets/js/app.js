@@ -45,16 +45,18 @@ Vue.component('home-view',         require('./components/front/views/HomeView.vu
 Vue.component('login-view',        require('./components/front/views/LoginView.vue'));
 
 Vue.component('back-nav',          require('./components/back/includes/Nav.vue'));
-Vue.component('back-nav-link',     require('./components/back/generic/NavLink.vue'));
-Vue.component('back-modal',        require('./components/back/generic/Modal.vue'));
+
 
 Vue.component('languages-create-modal',   require('./components/back/language/CreateLanguageModal.vue'));
 
+Vue.component('back-modal',             require('./components/generic/Modal.vue'));
+Vue.component('back-nav-link',          require('./components/generic/NavLink.vue'));
 Vue.component('text-input',             require('./components/generic/TextInput.vue'));
 Vue.component('file-input',             require('./components/generic/FileInput.vue'));
 Vue.component('form-group',             require('./components/generic/FormGroup.vue'));
 Vue.component('textarea-input',         require('./components/generic/TextareaInput.vue'));
 Vue.component('outline-button',         require('./components/generic/OutlineButton.vue'));
+
 
 const app = new Vue({
     el: '#app',
