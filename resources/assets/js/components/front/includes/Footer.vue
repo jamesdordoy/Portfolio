@@ -26,13 +26,14 @@
         </div>
         <div class="w-full lg:w-1/3 text-center varela text-white pt-2">
             <h4>&copy; James Dordoy</h4>
+            <p><a class="text-teal hover:text-teal-lighter mt-4 block" href="/privacy">Privacy Policy</a></p>
         </div>
         <div class="w-full lg:w-1/3">
             <div id="newsletter">
                 <form action="/newsletter" method="POST">
                     <div class="md:flex md:items-center">
                         <div class="md:w-1/2">
-                            <label class="block text-grey font-bold md:text-right mb-1 md:mb-0 pr-4">
+                            <label class="block text-white font-bold md:text-right mb-1 md:mb-0 pr-4">
                                 News Letter Signup
                             </label>
                         </div>

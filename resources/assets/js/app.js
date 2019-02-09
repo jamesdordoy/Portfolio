@@ -45,7 +45,7 @@ Vue.component('home-view',         require('./components/front/views/HomeView.vu
 Vue.component('login-view',        require('./components/front/views/LoginView.vue'));
 
 Vue.component('back-nav',          require('./components/back/includes/Nav.vue'));
-
+Vue.component('privacy-policy-view',        require('./components/front/views/PrivacyPolicyView'));
 
 Vue.component('languages-create-modal',   require('./components/back/language/CreateLanguageModal.vue'));
 

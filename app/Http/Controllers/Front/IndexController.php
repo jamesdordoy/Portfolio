@@ -57,4 +57,14 @@ class IndexController extends Controller
             ]
         );
     }
+
+    /**
+     * Show the Home Page
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function privacyPolicy()
+    {
+        return view('front.privacy-policy');
+    }
 }

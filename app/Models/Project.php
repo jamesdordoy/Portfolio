@@ -2,8 +2,12 @@
 
 namespace App\Models;
 
+use App\Traits\Taggable;
+
 class Project extends EloquentModel
 {
+    use Taggable;
+
     public function dependencies()
     {
         return $this->hasMany('App\Dependencies');
@@ -12,13 +16,5 @@ class Project extends EloquentModel
     public function scopePublicProjects($query)
     {
         return $query->where('private', 0);
-    }
-
-    /**
-     * Get all of the tags for the post.
-     */
-    public function tags()
-    {
-        return $this->morphToMany(Tag::class, 'taggables');
     }
 }

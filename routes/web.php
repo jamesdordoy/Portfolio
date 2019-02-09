@@ -36,6 +36,11 @@ Route::namespace('Front')->group(function() {
         'as' => 'front.get.index',
         'uses' => 'IndexController@index',
     ]);
+
+    Route::get('/privacy', [
+        'as' => 'front.get.privacy',
+        'uses' => 'IndexController@privacyPolicy',
+    ]);
     
     Route::post('/contact', [
         'as' => 'front.post.contact',
