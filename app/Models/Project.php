@@ -13,4 +13,12 @@ class Project extends EloquentModel
     {
         return $query->where('private', 0);
     }
+
+    /**
+     * Get all of the tags for the post.
+     */
+    public function tags()
+    {
+        return $this->morphToMany(Tag::class, 'taggables');
+    }
 }

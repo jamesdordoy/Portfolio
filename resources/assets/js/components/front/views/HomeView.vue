@@ -12,75 +12,43 @@
     </div>
 
     <div class="w-full">
-      <div class="w-full p-10 bg-teal-lighter" id="about">
-        <h2 class="text-center varela ">About Me</h2>
-        <p>{{ about.me }}</p>
+      <div class="w-full p-10 bg-white" id="about">
+        <h2 class="text-center varela mb-8">About Me</h2>
+        <p class="text-center">{{ about.me }}</p>
       </div>
 
       <div class="w-full p-10 bg-nav" id="projects">
+        <span class="anchor" id="projects"></span>
+        <h2 class="varela text-center text-white mb-8">Projects</h2>
         <projects
           :projects="projects">
         </projects>
       </div>
 
-      <div class="w-full p-10 bg-teal-lighter" id="langauges">
+      <div class="w-full p-10 bg-white" id="langauges">
+        <div class="flex flex-col">
+          <span class="anchor" id="code"></span>
+          <h2 class="varela text-center text-header mb-8">Programming Languages, Libraries &amp; Frameworks I Like</h2>
+        </div>
         <languages
           :languages="languages">
         </languages>
       </div>
 
-      <div class="w-full p-10 bg-nav flex content-start" id="projects">
-        <tweets
-          :tweets="tweets">
-        </tweets>
-        <contact-form>
-          </contact-form>
+      <div class="flex flex-wrap p-10 bg-nav content-start">
+        <div class="w-full lg:w-1/2">
+          <tweets
+              :tweets="tweets">
+            </tweets>
+        </div>
+        <div class="w-full lg:w-1/2">
+          <contact-form>
+            </contact-form>
+        </div>
       </div>
 
-      <footer class="bg-footer w-full flex p-6">
-       
-          <div class="w-1/3">
-            <p>
-              <a href="https://www.facebook.com/dordoy" target="_blank">
-                <i class="fa fa-facebook fa-2x text-white"></i>
-              </a> -
-              <a href="https://twitter.com/JDordoy" target="_blank">
-                <i class="fa fa-twitter fa-2x text-white"></i>
-              </a> -
-              <a href="https://plus.google.com/u/0/108820602359020977660" target="_blank">
-                <i class="fa fa-google-plus fa-2x text-white"></i>
-              </a> -
-              <a href="https://github.com/jamesdordoy" target="_blank">
-                <i class="fa fa-github fa-2x text-white"></i>
-              </a> -
-              <a href="https://jsfiddle.net/user/JamesDordoy/fiddles/" target="_blank">
-                <i class="fa fa-jsfiddle fa-2x text-white" aria-hidden="true"></i>
-              </a>
-            </p>
-          </div>
-          <div class="w-1/3 text-center varela text-white pt-2">
-            <h4>&copy; James Dordoy</h4>
-          </div>
-          <div class="w-1/3">
-            
-            <div id="newsletter">
-              <form action="/newsletter" method="POST">
-
-                <div class="md:flex md:items-center">
-                  <div class="md:w-1/2">
-                    <label class="block text-grey font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
-                      News Letter Signup
-                    </label>
-                  </div>
-                  <div class="md:w-1/2">
-                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="Email" name="email">
-                  </div>
-                </div>
-                
-              </form>
-            </div>
-          </div>
-      </footer>
+     <front-footer>
+       </front-footer>
     </div>    
   </div>
 </template>

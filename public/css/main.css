@@ -1036,6 +1036,10 @@ table {
   background-color: #294e67;
 }
 
+.bg-header {
+  background-color: #424a4d;
+}
+
 .hover\:bg-transparent:hover {
   background-color: transparent;
 }
@@ -1344,6 +1348,10 @@ table {
   background-color: #294e67;
 }
 
+.hover\:bg-header:hover {
+  background-color: #424a4d;
+}
+
 .focus\:bg-transparent:focus {
   background-color: transparent;
 }
@@ -1650,6 +1658,10 @@ table {
 
 .focus\:bg-link:focus {
   background-color: #294e67;
+}
+
+.focus\:bg-header:focus {
+  background-color: #424a4d;
 }
 
 .bg-bottom {
@@ -2032,6 +2044,10 @@ table {
   border-color: #294e67;
 }
 
+.border-header {
+  border-color: #424a4d;
+}
+
 .hover\:border-transparent:hover {
   border-color: transparent;
 }
@@ -2340,6 +2356,10 @@ table {
   border-color: #294e67;
 }
 
+.hover\:border-header:hover {
+  border-color: #424a4d;
+}
+
 .focus\:border-transparent:focus {
   border-color: transparent;
 }
@@ -2646,6 +2666,10 @@ table {
 
 .focus\:border-link:focus {
   border-color: #294e67;
+}
+
+.focus\:border-header:focus {
+  border-color: #424a4d;
 }
 
 .rounded-none {
@@ -5511,6 +5535,10 @@ table {
   color: #294e67;
 }
 
+.text-header {
+  color: #424a4d;
+}
+
 .hover\:text-transparent:hover {
   color: transparent;
 }
@@ -5819,6 +5847,10 @@ table {
   color: #294e67;
 }
 
+.hover\:text-header:hover {
+  color: #424a4d;
+}
+
 .focus\:text-transparent:focus {
   color: transparent;
 }
@@ -6125,6 +6157,10 @@ table {
 
 .focus\:text-link:focus {
   color: #294e67;
+}
+
+.focus\:text-header:focus {
+  color: #424a4d;
 }
 
 .text-xs {
@@ -6921,6 +6957,10 @@ html {
     background-color: #294e67;
   }
 
+  .sm\:bg-header {
+    background-color: #424a4d;
+  }
+
   .sm\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -7229,6 +7269,10 @@ html {
     background-color: #294e67;
   }
 
+  .sm\:hover\:bg-header:hover {
+    background-color: #424a4d;
+  }
+
   .sm\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -7535,6 +7579,10 @@ html {
 
   .sm\:focus\:bg-link:focus {
     background-color: #294e67;
+  }
+
+  .sm\:focus\:bg-header:focus {
+    background-color: #424a4d;
   }
 
   .sm\:bg-bottom {
@@ -7909,6 +7957,10 @@ html {
     border-color: #294e67;
   }
 
+  .sm\:border-header {
+    border-color: #424a4d;
+  }
+
   .sm\:hover\:border-transparent:hover {
     border-color: transparent;
   }
@@ -8217,6 +8269,10 @@ html {
     border-color: #294e67;
   }
 
+  .sm\:hover\:border-header:hover {
+    border-color: #424a4d;
+  }
+
   .sm\:focus\:border-transparent:focus {
     border-color: transparent;
   }
@@ -8523,6 +8579,10 @@ html {
 
   .sm\:focus\:border-link:focus {
     border-color: #294e67;
+  }
+
+  .sm\:focus\:border-header:focus {
+    border-color: #424a4d;
   }
 
   .sm\:rounded-none {
@@ -11372,6 +11432,10 @@ html {
     color: #294e67;
   }
 
+  .sm\:text-header {
+    color: #424a4d;
+  }
+
   .sm\:hover\:text-transparent:hover {
     color: transparent;
   }
@@ -11680,6 +11744,10 @@ html {
     color: #294e67;
   }
 
+  .sm\:hover\:text-header:hover {
+    color: #424a4d;
+  }
+
   .sm\:focus\:text-transparent:focus {
     color: transparent;
   }
@@ -11986,6 +12054,10 @@ html {
 
   .sm\:focus\:text-link:focus {
     color: #294e67;
+  }
+
+  .sm\:focus\:text-header:focus {
+    color: #424a4d;
   }
 
   .sm\:text-xs {
@@ -12735,6 +12807,10 @@ html {
     background-color: #294e67;
   }
 
+  .md\:bg-header {
+    background-color: #424a4d;
+  }
+
   .md\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -13043,6 +13119,10 @@ html {
     background-color: #294e67;
   }
 
+  .md\:hover\:bg-header:hover {
+    background-color: #424a4d;
+  }
+
   .md\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -13349,6 +13429,10 @@ html {
 
   .md\:focus\:bg-link:focus {
     background-color: #294e67;
+  }
+
+  .md\:focus\:bg-header:focus {
+    background-color: #424a4d;
   }
 
   .md\:bg-bottom {
@@ -13723,6 +13807,10 @@ html {
     border-color: #294e67;
   }
 
+  .md\:border-header {
+    border-color: #424a4d;
+  }
+
   .md\:hover\:border-transparent:hover {
     border-color: transparent;
   }
@@ -14031,6 +14119,10 @@ html {
     border-color: #294e67;
   }
 
+  .md\:hover\:border-header:hover {
+    border-color: #424a4d;
+  }
+
   .md\:focus\:border-transparent:focus {
     border-color: transparent;
   }
@@ -14337,6 +14429,10 @@ html {
 
   .md\:focus\:border-link:focus {
     border-color: #294e67;
+  }
+
+  .md\:focus\:border-header:focus {
+    border-color: #424a4d;
   }
 
   .md\:rounded-none {
@@ -17186,6 +17282,10 @@ html {
     color: #294e67;
   }
 
+  .md\:text-header {
+    color: #424a4d;
+  }
+
   .md\:hover\:text-transparent:hover {
     color: transparent;
   }
@@ -17494,6 +17594,10 @@ html {
     color: #294e67;
   }
 
+  .md\:hover\:text-header:hover {
+    color: #424a4d;
+  }
+
   .md\:focus\:text-transparent:focus {
     color: transparent;
   }
@@ -17800,6 +17904,10 @@ html {
 
   .md\:focus\:text-link:focus {
     color: #294e67;
+  }
+
+  .md\:focus\:text-header:focus {
+    color: #424a4d;
   }
 
   .md\:text-xs {
@@ -18549,6 +18657,10 @@ html {
     background-color: #294e67;
   }
 
+  .lg\:bg-header {
+    background-color: #424a4d;
+  }
+
   .lg\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -18857,6 +18969,10 @@ html {
     background-color: #294e67;
   }
 
+  .lg\:hover\:bg-header:hover {
+    background-color: #424a4d;
+  }
+
   .lg\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -19163,6 +19279,10 @@ html {
 
   .lg\:focus\:bg-link:focus {
     background-color: #294e67;
+  }
+
+  .lg\:focus\:bg-header:focus {
+    background-color: #424a4d;
   }
 
   .lg\:bg-bottom {
@@ -19537,6 +19657,10 @@ html {
     border-color: #294e67;
   }
 
+  .lg\:border-header {
+    border-color: #424a4d;
+  }
+
   .lg\:hover\:border-transparent:hover {
     border-color: transparent;
   }
@@ -19845,6 +19969,10 @@ html {
     border-color: #294e67;
   }
 
+  .lg\:hover\:border-header:hover {
+    border-color: #424a4d;
+  }
+
   .lg\:focus\:border-transparent:focus {
     border-color: transparent;
   }
@@ -20151,6 +20279,10 @@ html {
 
   .lg\:focus\:border-link:focus {
     border-color: #294e67;
+  }
+
+  .lg\:focus\:border-header:focus {
+    border-color: #424a4d;
   }
 
   .lg\:rounded-none {
@@ -23000,6 +23132,10 @@ html {
     color: #294e67;
   }
 
+  .lg\:text-header {
+    color: #424a4d;
+  }
+
   .lg\:hover\:text-transparent:hover {
     color: transparent;
   }
@@ -23308,6 +23444,10 @@ html {
     color: #294e67;
   }
 
+  .lg\:hover\:text-header:hover {
+    color: #424a4d;
+  }
+
   .lg\:focus\:text-transparent:focus {
     color: transparent;
   }
@@ -23614,6 +23754,10 @@ html {
 
   .lg\:focus\:text-link:focus {
     color: #294e67;
+  }
+
+  .lg\:focus\:text-header:focus {
+    color: #424a4d;
   }
 
   .lg\:text-xs {
@@ -24363,6 +24507,10 @@ html {
     background-color: #294e67;
   }
 
+  .xl\:bg-header {
+    background-color: #424a4d;
+  }
+
   .xl\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -24671,6 +24819,10 @@ html {
     background-color: #294e67;
   }
 
+  .xl\:hover\:bg-header:hover {
+    background-color: #424a4d;
+  }
+
   .xl\:focus\:bg-transparent:focus {
     background-color: transparent;
   }
@@ -24977,6 +25129,10 @@ html {
 
   .xl\:focus\:bg-link:focus {
     background-color: #294e67;
+  }
+
+  .xl\:focus\:bg-header:focus {
+    background-color: #424a4d;
   }
 
   .xl\:bg-bottom {
@@ -25351,6 +25507,10 @@ html {
     border-color: #294e67;
   }
 
+  .xl\:border-header {
+    border-color: #424a4d;
+  }
+
   .xl\:hover\:border-transparent:hover {
     border-color: transparent;
   }
@@ -25659,6 +25819,10 @@ html {
     border-color: #294e67;
   }
 
+  .xl\:hover\:border-header:hover {
+    border-color: #424a4d;
+  }
+
   .xl\:focus\:border-transparent:focus {
     border-color: transparent;
   }
@@ -25965,6 +26129,10 @@ html {
 
   .xl\:focus\:border-link:focus {
     border-color: #294e67;
+  }
+
+  .xl\:focus\:border-header:focus {
+    border-color: #424a4d;
   }
 
   .xl\:rounded-none {
@@ -28814,6 +28982,10 @@ html {
     color: #294e67;
   }
 
+  .xl\:text-header {
+    color: #424a4d;
+  }
+
   .xl\:hover\:text-transparent:hover {
     color: transparent;
   }
@@ -29122,6 +29294,10 @@ html {
     color: #294e67;
   }
 
+  .xl\:hover\:text-header:hover {
+    color: #424a4d;
+  }
+
   .xl\:focus\:text-transparent:focus {
     color: transparent;
   }
@@ -29428,6 +29604,10 @@ html {
 
   .xl\:focus\:text-link:focus {
     color: #294e67;
+  }
+
+  .xl\:focus\:text-header:focus {
+    color: #424a4d;
   }
 
   .xl\:text-xs {

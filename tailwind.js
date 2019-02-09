@@ -130,7 +130,8 @@ let colors = {
   'nav': '#3a4145',
   'bg-col': '#cdc8c6',
   'footer': '#3a4145',
-  'link': '#294e67'
+  'link': '#294e67',
+  'header': '#424a4d'
 }
 
 module.exports = {

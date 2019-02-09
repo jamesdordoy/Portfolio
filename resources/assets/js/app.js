@@ -37,6 +37,7 @@ Vue.component('project-create',    require('./components/back/project/Create.vue
 Vue.component('repository-table',  require('./components/back/repository/RepositoryTable.vue'));
 Vue.component('tweets-table',      require('./components/back/twitter/TweetsTable.vue'));
 Vue.component('front-nav',         require('./components/front/includes/Nav.vue'));
+Vue.component('front-footer',         require('./components/front/includes/Footer.vue'));
 Vue.component('particles',         require('./components/front/generic/Particles.vue'));
 Vue.component('home-view',         require('./components/front/views/HomeView.vue'));
 Vue.component('login-view',         require('./components/front/views/LoginView.vue'));

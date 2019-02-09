@@ -38,7 +38,9 @@ class IndexController extends Controller
         $languages = Language::get();
 
 
-        $projects = Project::publicProjects()->latest()->get();
+        $projects = Project::publicProjects()->with("tags")->latest()->get();
+
+
         $tweets = $this->twitter->getStatuses();
 
 
