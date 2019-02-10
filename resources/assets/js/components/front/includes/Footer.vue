@@ -1,6 +1,6 @@
 <template>
 
-    <div class="flex flex-wrap bg-footer p-10">
+    <div class="flex flex-wrap bg-black p-10">
         <div class="w-full lg:w-1/3">
             <p>
                 <a href="https://www.facebook.com/dordoy" target="_blank">

@@ -19,6 +19,7 @@
                   Email:
                 </label>
                 <input
+                    name="email"
                     type="email"
                     class="appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                     placeholder="jeff@example.com">
@@ -31,6 +32,7 @@
                 </label>
                 <textarea
                     rows="10"
+                    name="message"
                     placeholder="Hello, World!"
                     class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey">
                 </textarea>
@@ -39,6 +41,7 @@
         <div class="flex flex-wrap -mx-3 mb-6 pl-3">
             <outline-button
                 type="submit"
+                classes="hover:text-nav"
                 title="Submit">
             </outline-button>
         </div>

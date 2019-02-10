@@ -14,6 +14,12 @@ return [
     |
     */
 
+    'jamesdordoy' => [
+        'TwitterService' => 'TwitterServiceContract',
+        'GitHubService' => 'GithubServiceContract',
+        'LanguageService' => 'LanguageServiceContract',
+    ],
+
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),
         'secret' => env('MAILGUN_SECRET'),

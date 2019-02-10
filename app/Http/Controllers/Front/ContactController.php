@@ -8,6 +8,8 @@ use App\Models\Contact;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ContactRequest;
 
+use App\Mail\ContactMeMail;
+
 class ContactController extends Controller
 {
     /**
@@ -31,12 +33,12 @@ class ContactController extends Controller
     public function store(ContactRequest $request)
     {
         $contact = new Contact;
-
         $contact->name = $request->input("name");
         $contact->email = $request->input("email");
         $contact->message = $request->input("message");
 
         if ($contact->save()) {
+            \Mail::to($contact->email)->send(new ContactMeMail());
             return redirect(route('front.get.index'))->with("success", " Created");
         }
     }

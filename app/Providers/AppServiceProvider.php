@@ -2,10 +2,14 @@
 
 namespace App\Providers;
 
+use App\Traits\Serviceable;
+
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
+    use Serviceable;
+
     /**
      * Bootstrap any application services.
      *
@@ -23,14 +27,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $services = array(
-            'TwitterService' => 'TwitterServiceContract',
-            'GitHubService' => 'GithubServiceContract',
-            'LanguageService' => 'LanguageServiceContract',
-        );
-
-        foreach ($services as $service => $contract) {
-            $this->app->bind("App\\Contracts\\Services\\{$contract}", "App\\Services\\{$service}");
-        }
+        $this->registerServices();
     }
 }

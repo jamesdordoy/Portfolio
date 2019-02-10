@@ -41,6 +41,15 @@ Route::namespace('Front')->group(function() {
         'as' => 'front.get.privacy',
         'uses' => 'IndexController@privacyPolicy',
     ]);
+
+    Route::get('/sparkpost', function () {
+        \Mail::send('emails.test', [], function ($message) {
+          $message
+            ->from('from@yourdomain.com', 'Your Name')
+            ->to('to@otherdomain.com', 'Receiver Name')
+            ->subject('From SparkPost with ❤');
+        });
+      });
     
     Route::post('/contact', [
         'as' => 'front.post.contact',
