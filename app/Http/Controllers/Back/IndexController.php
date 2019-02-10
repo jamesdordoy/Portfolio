@@ -5,8 +5,6 @@ namespace App\Http\Controllers\Back;
 use App\Models\Project;
 
 use App\Models\Language;
-
-use App\Models\Examples\Dependencies;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -24,8 +22,6 @@ class IndexController extends Controller
         $projectIncompleteCount = Project::where('completed', false)->count();
 
         $languages = Language::count();
-
-        $deps = Dependencies::count();
 
         return view(
             'back.home',
