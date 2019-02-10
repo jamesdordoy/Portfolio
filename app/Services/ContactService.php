@@ -2,19 +2,22 @@
 
 namespace App\Services;
 
-use App\Models\Language;
+use App\Models\Contact;
+use App\Mail\ContactMeMail;
 use App\Contracts\Services\ContactServiceContract;
 
 class ContactService extends Service implements ContactServiceContract
 {
-
-    public function __construct()
+    public function store(array $data)
     {
+        $contact = new Contact;
+        $contact->name = $data['name'];
+        $contact->email = $data['email'];
+        $contact->message = $data['message'];
 
-    }
-
-    public function store()
-    {
-        
+        if ($contact->save()) {
+            \Mail::to($contact->email)->send(new ContactMeMail($contact));
+            return $contact;
+        }
     }
 }

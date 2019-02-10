@@ -9,9 +9,7 @@ trait Serviceable {
      */
     public function registerServices()
     {
-        $services = config('services.jamesdordoy');
-
-        foreach ($services as $service => $contract) {
+        foreach (config('services.jamesdordoy') as $service => $contract) {
             $this->app->bind("App\\Contracts\\Services\\{$contract}", "App\\Services\\{$service}");
         }
     }

@@ -1,17 +1,29 @@
 <?php
 
-namespace App\Http\Controllers\Front;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
 use App\Models\Contact;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ContactRequest;
+use App\Contracts\Services\ContactServiceContract;
 
-use App\Mail\ContactMeMail;
 
 class ContactController extends Controller
 {
+    private $contact;
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct(ContactServiceContract $contact)
+    {
+        $this->contact = $contact;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -32,13 +44,10 @@ class ContactController extends Controller
      */
     public function store(ContactRequest $request)
     {
-        $contact = new Contact;
-        $contact->name = $request->input("name");
-        $contact->email = $request->input("email");
-        $contact->message = $request->input("message");
+        $data = $request->all();
+        $contact = $this->contact->store($data);
 
-        if ($contact->save()) {
-            \Mail::to($contact->email)->send(new ContactMeMail());
+        if ($contact) {
             return redirect(route('front.get.index'))->with("success", " Created");
         }
     }

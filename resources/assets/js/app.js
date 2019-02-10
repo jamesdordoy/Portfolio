@@ -8,6 +8,7 @@
 require('./bootstrap');
 require('./helpers.js');
 
+import VueLoader from './component-autoload';
 import VueRouter from 'vue-router';
 import routes from './routes.js';
 
@@ -20,7 +21,9 @@ const router = new VueRouter({
     mode: "history",
     base: "/",
     routes
-});  
+});
+
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -43,6 +46,8 @@ Vue.component('front-footer',      require('./components/front/includes/Footer.v
 Vue.component('particles',         require('./components/front/generic/Particles.vue'));
 Vue.component('home-view',         require('./components/front/views/HomeView.vue'));
 Vue.component('login-view',        require('./components/front/views/LoginView.vue'));
+
+Vue.component('contact-view',      require('./components/back/views/ContactView.vue'));
 
 Vue.component('back-nav',          require('./components/back/includes/Nav.vue'));
 Vue.component('privacy-policy-view',        require('./components/front/views/PrivacyPolicyView'));

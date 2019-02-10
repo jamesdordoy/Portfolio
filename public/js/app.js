@@ -17664,8 +17664,9 @@ module.exports = __webpack_require__(288);
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_router__ = __webpack_require__(158);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__routes_js__ = __webpack_require__(159);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__component_autoload__ = __webpack_require__(300);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(158);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__routes_js__ = __webpack_require__(159);
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -17679,15 +17680,16 @@ __webpack_require__(157);
 
 
 
+
 window.Vue = __webpack_require__(178);
 window.moment = __webpack_require__(0);
 
-Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]);
+Vue.use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
 
-var router = new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
+var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
   mode: "history",
   base: "/",
-  routes: __WEBPACK_IMPORTED_MODULE_1__routes_js__["a" /* default */]
+  routes: __WEBPACK_IMPORTED_MODULE_2__routes_js__["a" /* default */]
 });
 
 /**
@@ -17711,6 +17713,8 @@ Vue.component('front-footer', __webpack_require__(229));
 Vue.component('particles', __webpack_require__(234));
 Vue.component('home-view', __webpack_require__(14));
 Vue.component('login-view', __webpack_require__(240));
+
+Vue.component('contact-view', __webpack_require__(297));
 
 Vue.component('back-nav', __webpack_require__(243));
 Vue.component('privacy-policy-view', __webpack_require__(248));
@@ -56054,6 +56058,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -56110,6 +56118,10 @@ var render = function() {
             { staticClass: "list-reset flex" },
             [
               _c("back-nav-link", { attrs: { url: "/back", text: "Dash" } }),
+              _vm._v(" "),
+              _c("back-nav-link", {
+                attrs: { url: "/back/github", text: "GitHub" }
+              }),
               _vm._v(" "),
               _c("back-nav-link", {
                 attrs: { url: "/back/github", text: "GitHub" }
@@ -58000,6 +58012,118 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 289 */,
+/* 290 */,
+/* 291 */,
+/* 292 */,
+/* 293 */,
+/* 294 */,
+/* 295 */,
+/* 296 */,
+/* 297 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(298)
+/* template */
+var __vue_template__ = __webpack_require__(299)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/back/views/ContactView.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-785ba653", Component.options)
+  } else {
+    hotAPI.reload("data-v-785ba653", Component.options)
+' + '  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 298 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+/* 299 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", {})
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-785ba653", module.exports)
+  }
+}
+
+/***/ }),
+/* 300 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var components = {
+  path: './components/',
+  front: {
+    path: 'front/',
+    forms: {
+      path: 'forms/'
+
+    }
+  },
+  back: {
+    path: 'back/'
+  }
+};
+
+/* unused harmony default export */ var _unused_webpack_default_export = (components);
 
 /***/ })
 /******/ ]);

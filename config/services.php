@@ -18,6 +18,7 @@ return [
         'TwitterService' => 'TwitterServiceContract',
         'GitHubService' => 'GithubServiceContract',
         'LanguageService' => 'LanguageServiceContract',
+        'ContactService' => 'ContactServiceContract',
     ],
 
     'mailgun' => [
