@@ -14,5 +14,21 @@ class TagsTableSeeder extends Seeder
         factory(\App\Models\Tag::class)->create([
             'name' => "Web Application",
         ]);
+
+        factory(\App\Models\Tag::class)->create([
+            'name' => "Vue",
+        ]);
+
+        factory(\App\Models\Tag::class)->create([
+            'name' => "Firebase",
+        ]);
+
+        factory(\App\Models\Tag::class)->create([
+            'name' => "VueFire",
+        ]);
+
+        factory(\App\Models\Tag::class)->create([
+            'name' => "Tailwind.css",
+        ]);
     }
 }

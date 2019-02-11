@@ -27,6 +27,11 @@
 
 <script>
 export default{
-    props: ['languages'],
+    props: {
+        languages: {
+            type: Array,
+            default: []
+        },
+    }
 }
 </script>

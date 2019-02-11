@@ -15,8 +15,8 @@
                             :text="'Dash'">
                         </back-nav-link>
                         <back-nav-link
-                            :url="'/back/github'"
-                            :text="'GitHub'">
+                            :url="'/back/contact'"
+                            :text="'Contact'">
                         </back-nav-link>
                         <back-nav-link
                             :url="'/back/github'"
@@ -26,9 +26,12 @@
                             :url="'/back/languages'"
                             :text="'Languages'">
                         </back-nav-link>
-                        <a href="https://server.jamesdordoy.co.uk/goaccess" target="_blank" class="text-grey-dark border-b xl:border-0 hover:bg-grey-lightest xl:hover:bg-transparent xl:hover:text-blue ml-2">
-                            Server Statistics
-                        </a>
+                        <li>
+                            <a href="https://server.jamesdordoy.co.uk/goaccess" target="_blank" class="no-underline p-4 text-grey-dark border-b xl:border-0 hover:bg-grey-lightest xl:hover:bg-transparent xl:hover:text-blue ml-2">
+                                Server Statistics
+                            </a>
+                        </li>
+                        
                     </ul>
                 </div>
                 <div class="w-1/6 md:w-auto md:flex text-right">
@@ -64,7 +67,7 @@ export default {
 
 <style scoped>
 .dropdown {
-    top: 100px;
+    top: 60px;
     right: 10px;
 }
 

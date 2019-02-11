@@ -9,7 +9,7 @@
                 <input
                     type="text"
                     name="name"
-                    placeholder="Jeffery Billings"
+                    placeholder="John Smith"
                     class="appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
             </div>
         </div>
@@ -22,7 +22,7 @@
                     name="email"
                     type="email"
                     class="appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                    placeholder="jeff@example.com">
+                    placeholder="john@example.com">
             </div>
         </div>
         <div class="flex flex-wrap -mx-3 mb-6">

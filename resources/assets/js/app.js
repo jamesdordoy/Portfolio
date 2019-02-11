@@ -8,7 +8,7 @@
 require('./bootstrap');
 require('./helpers.js');
 
-import VueLoader from './component-autoload';
+import Components from './components';
 import VueRouter from 'vue-router';
 import routes from './routes.js';
 
@@ -24,12 +24,11 @@ const router = new VueRouter({
 });
 
 
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
+// /**
+//  * Next, we will create a fresh Vue application instance and attach it to
+//  * the page. Then, you may begin adding components to this application
+//  * or customize the JavaScript scaffolding to fit your unique needs.
+//  */
 Vue.component('contact-form',      require('./components/front/forms/ContactForm.vue'));
 Vue.component('login-form',        require('./components/front/forms/LoginForm.vue'));
 
@@ -62,6 +61,16 @@ Vue.component('form-group',             require('./components/generic/FormGroup.
 Vue.component('textarea-input',         require('./components/generic/TextareaInput.vue'));
 Vue.component('outline-button',         require('./components/generic/OutlineButton.vue'));
 
+Vue.filter('format-moment-dd/mm/yyyy', (value) => {
+    if (!value) return '';
+    return moment(value).isValid() ? moment(value).format("DD/MM/YYYY") : '';
+});
+
+Vue.filter('capitalize', function (value) {
+    if (!value) return ''
+    value = value.toString()
+    return value.charAt(0).toUpperCase() + value.slice(1)
+});
 
 const app = new Vue({
     el: '#app',

@@ -16,6 +16,10 @@
         <span class="anchor" id="about"></span>
         <h2 class="text-center varela mb-8">About Me</h2>
         <p class="text-center text-lg">{{ about.me }}</p>
+        <div class="flex justify-center items-center pt-6">
+          <img src="/images/me.jpeg" class="rounded-full"/>
+        </div>
+        
       </div>
 
       <div class="w-full p-10 bg-nav">
