@@ -22,7 +22,7 @@ class ProjectsTableSeeder extends Seeder
             'name' => "Shopping Application",
             'description' => "VueFire SPA, Vue Cli 3, Tailwind.css.",
             'owner' => "Me",
-            'icon' => "/images/me.jpeg",
+            'icon' => "/images/projects/simple-shopping.png",
             'link' => "https://shopping.jamesdordoy.co.uk",
             "private" => 0,
         ]);
