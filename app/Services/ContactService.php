@@ -16,8 +16,12 @@ class ContactService extends Service implements ContactServiceContract
         $contact->message = $data['message'];
 
         if ($contact->save()) {
-            \Mail::to($contact->email)->send(new ContactMeMail($contact));
             return $contact;
         }
+    }
+
+    public function sendContactEmail(Contact $contact)
+    {
+        \Mail::to($contact->email)->send(new ContactMeMail($contact));
     }
 }

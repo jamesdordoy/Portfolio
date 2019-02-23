@@ -55,6 +55,7 @@
                 type="submit"
                 classes="hover:text-nav"
                 title="Submit">
+                <i class="fa fa-check" aria-hidden="true"></i>
             </outline-button>
         </div>
     </form>

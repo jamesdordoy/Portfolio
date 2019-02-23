@@ -2407,6 +2407,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -42109,7 +42110,8 @@ var render = function() {
       attrs: { type: _vm.type },
       on: { click: _vm.onClick }
     },
-    [_vm._v("\n    " + _vm._s(_vm.title) + "\n")]
+    [_vm._t("default"), _vm._v(" " + _vm._s(_vm.title) + "\n")],
+    2
   )
 }
 var staticRenderFns = []
@@ -43009,13 +43011,22 @@ var render = function() {
         "div",
         { staticClass: "flex flex-wrap -mx-3 pl-3" },
         [
-          _c("outline-button", {
-            attrs: {
-              type: "submit",
-              classes: "hover:text-nav",
-              title: "Submit"
-            }
-          })
+          _c(
+            "outline-button",
+            {
+              attrs: {
+                type: "submit",
+                classes: "hover:text-nav",
+                title: "Submit"
+              }
+            },
+            [
+              _c("i", {
+                staticClass: "fa fa-check",
+                attrs: { "aria-hidden": "true" }
+              })
+            ]
+          )
         ],
         1
       )

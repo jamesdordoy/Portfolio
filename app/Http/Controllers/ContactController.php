@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Jobs\SendContactConfirmationEmailJob;
 use App\Models\Contact;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ContactRequest;
@@ -48,6 +49,7 @@ class ContactController extends Controller
         $contact = $this->contact->store($data);
 
         if ($contact) {
+            SendContactConfirmationEmailJob::dispatch($contact);
             return redirect(route('front.get.index'))->with("success", " Created");
         }
     }

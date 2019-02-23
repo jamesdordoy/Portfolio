@@ -4,7 +4,7 @@
         :class="classes"
         :type="type"
         class="bg-transparent hover:bg-teal text-teal-dark font-semibold py-2 px-4 border border-teal hover:border-transparent rounded">
-        {{ title }}
+        <slot></slot>&nbsp;{{ title }}
     </button>
 </template>
 

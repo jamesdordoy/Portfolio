@@ -12,6 +12,8 @@ class ContactMeMail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    protected $contact;
+
     /**
      * Create a new message instance.
      *
@@ -19,7 +21,7 @@ class ContactMeMail extends Mailable
      */
     public function __construct(Contact $contact)
     {
-        
+        $this->contact = $contact;
     }
 
     /**
