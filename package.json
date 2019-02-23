@@ -23,6 +23,7 @@
     "dependencies": {
         "@vue/ui": "^0.5.2",
         "acorn": "^5.4.1",
+        "animate.css": "^3.7.0",
         "chartjs": "^0.3.24",
         "datatables": "^1.10.13",
         "moment": "^2.20.1",

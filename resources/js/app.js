@@ -63,6 +63,7 @@ Vue.use(VueSweetalert2, options);
     Vue.component('text-input',             require('./components/generic/TextInput.vue'));
     Vue.component('file-input',             require('./components/generic/FileInput.vue'));
     Vue.component('form-group',             require('./components/generic/FormGroup.vue'));
+    Vue.component('form-error',             require('./components/generic/FormError.vue'));
     Vue.component('textarea-input',         require('./components/generic/TextareaInput.vue'));
     Vue.component('outline-button',         require('./components/generic/OutlineButton.vue'));
 

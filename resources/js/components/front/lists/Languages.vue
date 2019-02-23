@@ -1,7 +1,7 @@
 <template>
     <section class="flex flex-col">
         <div class="flex">
-            <div class="max-w-sm rounded overflow-hidden shadow-lg mr-4 bg-white" v-for="language in languages" :key="language.id">
+            <div class="max-w-sm rounded overflow-hidden shadow-lg mr-4 bg-nav" v-for="language in languages" :key="language.id">
                 <img class="w-full" :src='language.icon' alt="Sunset in the mountains">
                 <div class="px-6 py-4">
                     <div class="font-bold text-xl mb-2">

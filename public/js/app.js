@@ -17780,6 +17780,7 @@ Vue.component('back-nav-link', __webpack_require__(259));
 Vue.component('text-input', __webpack_require__(264));
 Vue.component('file-input', __webpack_require__(269));
 Vue.component('form-group', __webpack_require__(274));
+Vue.component('form-error', __webpack_require__(309));
 Vue.component('textarea-input', __webpack_require__(277));
 Vue.component('outline-button', __webpack_require__(282));
 
@@ -38625,6 +38626,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['projects', 'languages', 'about', 'auth', 'tweets', 'contactFormUrl']
@@ -38675,18 +38680,22 @@ var render = function() {
       "div",
       { staticClass: "w-full" },
       [
-        _c("div", { staticClass: "w-full p-10 bg-grey" }, [
+        _c("div", { staticClass: "w-full p-10 bg-black" }, [
           _c("span", { staticClass: "anchor", attrs: { id: "about" } }),
           _vm._v(" "),
-          _c("h2", { staticClass: "text-center varela mb-8" }, [
+          _c("h2", { staticClass: "text-center varela mb-8 text-grey" }, [
             _vm._v("About Me")
           ]),
           _vm._v(" "),
-          _c("p", { staticClass: "text-center text-lg" }, [
+          _c("p", { staticClass: "varela text-center text-xl text-grey" }, [
             _vm._v(_vm._s(_vm.about.me))
           ]),
           _vm._v(" "),
-          _vm._m(0)
+          _vm._m(0),
+          _vm._v(" "),
+          _c("h2", { staticClass: "text-center varela mb-8 text-grey" }, [
+            _vm._v("Experiance")
+          ])
         ]),
         _vm._v(" "),
         _c(
@@ -38695,7 +38704,7 @@ var render = function() {
           [
             _c("span", { staticClass: "anchor", attrs: { id: "projects" } }),
             _vm._v(" "),
-            _c("h2", { staticClass: "varela text-center text-white mb-8" }, [
+            _c("h2", { staticClass: "varela text-center text-grey mb-8" }, [
               _vm._v("Projects")
             ]),
             _vm._v(" "),
@@ -38706,7 +38715,7 @@ var render = function() {
         _vm._v(" "),
         _c(
           "div",
-          { staticClass: "w-full p-10 bg-grey" },
+          { staticClass: "w-full p-10 bg-black" },
           [
             _vm._m(1),
             _vm._v(" "),
@@ -38720,15 +38729,25 @@ var render = function() {
           _vm._v(" "),
           _c(
             "div",
-            { staticClass: "w-full lg:w-1/2" },
-            [_c("tweets", { attrs: { tweets: _vm.tweets } })],
+            { staticClass: "w-full lg:w-1/2 py-8" },
+            [
+              _c("h2", { staticClass: "varela mb-4 text-grey" }, [
+                _vm._v("Twitter Timeline")
+              ]),
+              _vm._v(" "),
+              _c("tweets", { attrs: { tweets: _vm.tweets } })
+            ],
             1
           ),
           _vm._v(" "),
           _c(
             "div",
-            { staticClass: "w-full lg:w-1/2" },
+            { staticClass: "w-full lg:w-1/2 py-8 pl-6" },
             [
+              _c("h2", { staticClass: "varela mb-4 text-grey" }, [
+                _vm._v("Contact Me")
+              ]),
+              _vm._v(" "),
               _c("contact-form", {
                 attrs: { url: _vm.contactFormUrl, method: "POST" }
               })
@@ -38748,7 +38767,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "flex justify-center items-center pt-6" }, [
+    return _c("div", { staticClass: "flex justify-center items-center py-6" }, [
       _c("img", {
         staticClass: "rounded-full",
         attrs: { src: "/images/me.jpeg" }
@@ -38762,7 +38781,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "flex flex-col" }, [
       _c("span", { staticClass: "anchor", attrs: { id: "languages" } }),
       _vm._v(" "),
-      _c("h2", { staticClass: "varela text-center text-header mb-8" }, [
+      _c("h2", { staticClass: "varela text-center text-grey mb-8" }, [
         _vm._v("Programming Languages, Libraries & Frameworks I Like")
       ])
     ])
@@ -50759,6 +50778,16 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mixins_FormError__ = __webpack_require__(312);
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -50812,6 +50841,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
+
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
@@ -50821,8 +50853,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 email: '',
                 message: ''
             }
+
         };
     },
+    mixins: [__WEBPACK_IMPORTED_MODULE_0__mixins_FormError__["a" /* default */]],
     props: {
         url: {
             type: String,
@@ -50837,12 +50871,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         submitContactForm: function submitContactForm() {
             var _this = this;
 
+            this.resetErrors();
+
             axios.post(this.url, this.payload).then(function (response) {
                 if (response.status == 200) {
                     _this.$swal('Message Received!');
                     _this.resetPayload();
                 }
-            }).catch(function (error) {});
+            }).catch(function (error) {
+                _this.errors = error.response.data.errors;
+            });
         },
         resetPayload: function resetPayload() {
             this.payload = {
@@ -50870,7 +50908,7 @@ var render = function() {
   return _c(
     "form",
     {
-      staticClass: "w-full py-8 pl-6",
+      staticClass: "w-full",
       attrs: { method: _vm.method, action: _vm.url },
       on: {
         submit: function($event) {
@@ -50886,124 +50924,155 @@ var render = function() {
       }),
       _vm._v(" "),
       _c("div", { staticClass: "flex flex-wrap -mx-3 mb-6" }, [
-        _c("div", { staticClass: "w-full px-3 mb-6 md:mb-0" }, [
-          _c(
-            "label",
-            {
-              staticClass:
-                "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
-            },
-            [_vm._v("\n                Name:\n            ")]
-          ),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.payload.name,
-                expression: "payload.name"
-              }
-            ],
-            staticClass:
-              "appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
-            attrs: { type: "text", name: "name", placeholder: "John Smith" },
-            domProps: { value: _vm.payload.name },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
+        _c(
+          "div",
+          { staticClass: "w-full px-3 mb-6 md:mb-0 " },
+          [
+            _c("div", { staticClass: "border-b border-b-2 border-teal" }, [
+              _c(
+                "label",
+                {
+                  staticClass:
+                    "block uppercase tracking-wide text-grey text-xs font-bold mb-2"
+                },
+                [_vm._v("\n                Name:\n            ")]
+              ),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.payload.name,
+                    expression: "payload.name"
+                  }
+                ],
+                staticClass:
+                  "appearance-none block w-full bg-nav text-grey py-3 px-4 leading-tight focus:outline-none focus:bg-black",
+                attrs: {
+                  type: "text",
+                  name: "name",
+                  placeholder: "John Smith"
+                },
+                domProps: { value: _vm.payload.name },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.payload, "name", $event.target.value)
+                  }
                 }
-                _vm.$set(_vm.payload, "name", $event.target.value)
-              }
-            }
-          })
-        ])
+              })
+            ]),
+            _vm._v(" "),
+            _c("form-error", { attrs: { errors: _vm.checkError("name") } })
+          ],
+          1
+        )
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "flex flex-wrap -mx-3 mb-6" }, [
-        _c("div", { staticClass: "w-full px-3 mb-6 md:mb-0" }, [
-          _c(
-            "label",
-            {
-              staticClass:
-                "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
-            },
-            [_vm._v("\n              Email:\n            ")]
-          ),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.payload.email,
-                expression: "payload.email"
-              }
-            ],
-            staticClass:
-              "appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white",
-            attrs: {
-              name: "email",
-              type: "email",
-              placeholder: "john@example.com"
-            },
-            domProps: { value: _vm.payload.email },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
+        _c(
+          "div",
+          { staticClass: "w-full px-3 mb-6 md:mb-0" },
+          [
+            _c("div", { staticClass: "border-b border-b-2 border-teal" }, [
+              _c(
+                "label",
+                {
+                  staticClass:
+                    "block uppercase tracking-wide text-grey text-xs font-bold mb-2"
+                },
+                [_vm._v("\n                Email:\n                ")]
+              ),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.payload.email,
+                    expression: "payload.email"
+                  }
+                ],
+                staticClass:
+                  "appearance-none block w-full bg-nav text-grey py-3 px-4 leading-tight focus:outline-none focus:bg-black",
+                attrs: {
+                  name: "email",
+                  type: "email",
+                  placeholder: "john@example.com"
+                },
+                domProps: { value: _vm.payload.email },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.payload, "email", $event.target.value)
+                  }
                 }
-                _vm.$set(_vm.payload, "email", $event.target.value)
-              }
-            }
-          })
-        ])
+              })
+            ]),
+            _vm._v(" "),
+            _c("form-error", { attrs: { errors: _vm.checkError("email") } })
+          ],
+          1
+        )
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "flex flex-wrap -mx-3 mb-6" }, [
-        _c("div", { staticClass: "w-full px-3" }, [
-          _c(
-            "label",
-            {
-              staticClass:
-                "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
-            },
-            [_vm._v("\n              Message:\n            ")]
-          ),
-          _vm._v(" "),
-          _c("textarea", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.payload.message,
-                expression: "payload.message"
-              }
-            ],
-            staticClass:
-              "appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey",
-            attrs: {
-              rows: "10",
-              name: "message",
-              placeholder: "Hello, World!"
-            },
-            domProps: { value: _vm.payload.message },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
+        _c(
+          "div",
+          { staticClass: "w-full px-3" },
+          [
+            _c("div", { staticClass: "border-b border-b-2 border-teal" }, [
+              _c(
+                "label",
+                {
+                  staticClass:
+                    "block uppercase tracking-wide text-grey text-xs font-bold mb-2"
+                },
+                [_vm._v("\n                Message:\n                ")]
+              ),
+              _vm._v(" "),
+              _c("textarea", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.payload.message,
+                    expression: "payload.message"
+                  }
+                ],
+                staticClass:
+                  "appearance-none block w-full bg-nav text-grey py-3 px-4 leading-tight focus:outline-none focus:bg-black",
+                attrs: {
+                  rows: "10",
+                  name: "message",
+                  placeholder: "Hello, World!"
+                },
+                domProps: { value: _vm.payload.message },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.payload, "message", $event.target.value)
+                  }
                 }
-                _vm.$set(_vm.payload, "message", $event.target.value)
-              }
-            }
-          })
-        ])
+              })
+            ]),
+            _vm._v(" "),
+            _c("form-error", { attrs: { errors: _vm.checkError("message") } })
+          ],
+          1
+        )
       ]),
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "flex flex-wrap -mx-3 mb-6 pl-3" },
+        { staticClass: "flex flex-wrap -mx-3 pl-3" },
         [
           _c("outline-button", {
             attrs: {
@@ -51334,7 +51403,7 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, "\nnav[data-v-3816da20] {\n    top: 0;\n    right: 0;\n    left: 0;\n    z-index: 255;\n}\n\n", ""]);
+exports.push([module.i, "\nnav[data-v-3816da20] {\n    top: 0;\n    right: 0;\n    left: 0;\n    z-index: 255;\n}\n\n/* Enter and leave animations can use different */\n/* durations and timing functions.              */\n.slide-fade-enter-active[data-v-3816da20] {\n  transition: all .3s ease;\n}\n.slide-fade-leave-active[data-v-3816da20] {\n  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);\n}\n.slide-fade-enter[data-v-3816da20], .slide-fade-leave-to[data-v-3816da20]\n/* .slide-fade-leave-active below version 2.1.8 */ {\n  transform: translateX(10px);\n  opacity: 0;\n}\n\n", ""]);
 
 // exports
 
@@ -51435,7 +51504,7 @@ var render = function() {
       "nav",
       {
         staticClass:
-          "flex items-center justify-between flex-wrap py-6 px-10 bg-nav fixed"
+          "flex items-center justify-between flex-wrap py-4 px-10 bg-nav fixed"
       },
       [
         _c(
@@ -51506,13 +51575,14 @@ var render = function() {
         _c(
           "div",
           {
-            staticClass: "w-full flex-grow lg:flex lg:items-center lg:w-auto",
-            class: _vm.open ? "block" : "hidden"
+            staticClass:
+              "animated w-full flex-grow lg:flex lg:items-center lg:w-auto",
+            class: { "fadeIn ": _vm.open, hidden: !_vm.open }
           },
           [
             _vm._m(0),
             _vm._v(" "),
-            _c("div", { staticClass: "md:mt-0 mt-6 " }, [
+            _c("div", { staticClass: "lg:mt-0 mt-6 " }, [
               _c(
                 "a",
                 {
@@ -51620,7 +51690,7 @@ var staticRenderFns = [
         "a",
         {
           staticClass:
-            "no-underline block mt-4 uppercase md:inline-block lg:mt-0 text-teal hover:text-teal-lighter mr-4",
+            "no-underline block py-4 mt-4 uppercase md:inline-block md:w-full lg:w-auto lg:mt-0 text-teal hover:text-teal-lighter mr-4 cursor",
           attrs: { href: "/" }
         },
         [_vm._v("\n                    Home\n                ")]
@@ -51630,7 +51700,7 @@ var staticRenderFns = [
         "a",
         {
           staticClass:
-            "block uppercase no-underline lg:inline-block lg:mt-0 text-teal hover:text-teal-lighter mr-4",
+            "block uppercase py-4  no-underline lg:inline-block lg:mt-0 text-teal hover:text-teal-lighter mr-4 cursor",
           attrs: { href: "/#about" }
         },
         [_vm._v("\n                    About Me\n                ")]
@@ -51640,7 +51710,7 @@ var staticRenderFns = [
         "a",
         {
           staticClass:
-            "block uppercase no-underline lg:inline-block lg:mt-0 text-teal hover:text-teal-lighter mr-4",
+            "block uppercase py-4  no-underline lg:inline-block lg:mt-0 text-teal hover:text-teal-lighter mr-4 cursor",
           attrs: { href: "/#projects" }
         },
         [_vm._v("\n                    Projects\n                ")]
@@ -51650,7 +51720,7 @@ var staticRenderFns = [
         "a",
         {
           staticClass:
-            "block uppercase no-underline lg:inline-block lg:mt-0 text-teal hover:text-teal-lighter mr-4",
+            "block uppercase py-4  no-underline lg:inline-block lg:mt-0 text-teal hover:text-teal-lighter mr-4 cursor",
           attrs: { href: "/#languages" }
         },
         [
@@ -51664,7 +51734,7 @@ var staticRenderFns = [
         "a",
         {
           staticClass:
-            "block uppercase no-underline lg:inline-block lg:mt-0 text-teal hover:text-teal-lighter mr-4",
+            "block uppercase py-4  no-underline lg:inline-block lg:mt-0 text-teal hover:text-teal-lighter mr-4 cursor",
           attrs: { href: "/#contact" }
         },
         [_vm._v("\n                    Contact\n                ")]
@@ -51768,7 +51838,7 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -51779,6 +51849,10 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
 //
 //
 //
@@ -51860,7 +51934,10 @@ var staticRenderFns = [
     return _c("div", { staticClass: "flex flex-wrap bg-black p-10" }, [
       _c(
         "div",
-        { staticClass: "w-full lg:w-1/3 mt-2 border-b border-b-2 border-teal" },
+        {
+          staticClass:
+            "w-full lg:w-1/3 mt-2 border-b border-b-2 border-teal py-2"
+        },
         [
           _c("p", { staticClass: "mt-4" }, [
             _c(
@@ -51873,7 +51950,8 @@ var staticRenderFns = [
               },
               [
                 _c("i", {
-                  staticClass: "fa fa-facebook fa-3x text-white hover:text-blue"
+                  staticClass:
+                    "fa fa-facebook fa-3x text-grey-darker hover:text-blue"
                 })
               ]
             ),
@@ -51890,7 +51968,7 @@ var staticRenderFns = [
               [
                 _c("i", {
                   staticClass:
-                    "fa fa-twitter fa-3x text-white hover:text-blue-light"
+                    "fa fa-twitter fa-3x text-grey-darker hover:text-blue-light"
                 })
               ]
             ),
@@ -51908,7 +51986,7 @@ var staticRenderFns = [
               [
                 _c("i", {
                   staticClass:
-                    "fa fa-google-plus fa-3x text-white hover:text-red"
+                    "fa fa-google-plus fa-3x text-grey-darker hover:text-red"
                 })
               ]
             ),
@@ -51926,7 +52004,7 @@ var staticRenderFns = [
               [
                 _c("i", {
                   staticClass:
-                    "fa fa-github fa-3x text-white hover:text-grey-dark"
+                    "fa fa-github fa-3x text-grey-darker hover:text-grey-dark"
                 })
               ]
             ),
@@ -51944,7 +52022,7 @@ var staticRenderFns = [
               [
                 _c("i", {
                   staticClass:
-                    "fa fa-jsfiddle fa-3x text-white hover:text-yellow",
+                    "fa fa-jsfiddle fa-3x text-grey-darker hover:text-yellow",
                   attrs: { "aria-hidden": "true" }
                 })
               ]
@@ -51957,7 +52035,7 @@ var staticRenderFns = [
         "div",
         {
           staticClass:
-            "w-full lg:w-1/3 lg:text-center sm:py-6 lg:py-0 varela text-white lg:pt-2"
+            "w-full lg:w-1/3 lg:text-center sm:py-6 lg:py-0 varela text-grey lg:pt-2"
         },
         [
           _c("h4", [_vm._v("© James Dordoy")]),
@@ -51978,11 +52056,19 @@ var staticRenderFns = [
       _c("div", { staticClass: "w-full lg:w-1/3" }, [
         _c("div", { attrs: { id: "newsletter" } }, [
           _c("form", { attrs: { action: "/newsletter", method: "POST" } }, [
-            _c("div", { staticClass: "md:flex md:items-center  pt-2" }, [
+            _c("div", { staticClass: "md:flex md:items-center pt-2" }, [
               _c(
                 "h4",
-                { staticClass: "text-white md:text-right mb-1 md:mb-0 pr-4" },
-                [_vm._v("News Letter Signup")]
+                { staticClass: "text-grey md:text-right mb-1 md:mb-0 pr-4" },
+                [
+                  _c("i", {
+                    staticClass: "fa fa-newspaper-o",
+                    attrs: { "aria-hidden": "true" }
+                  }),
+                  _vm._v(
+                    "\n                         News Letter Signup:\n                    "
+                  )
+                ]
               )
             ]),
             _vm._v(" "),
@@ -51993,7 +52079,7 @@ var staticRenderFns = [
                     "div",
                     {
                       staticClass:
-                        "flex items-center border-b border-b-2 border-teal py-2"
+                        "flex items-center border-b border-b-2 border-teal py-4"
                     },
                     [
                       _c("input", {
@@ -52014,6 +52100,10 @@ var staticRenderFns = [
                           attrs: { type: "button" }
                         },
                         [
+                          _c("i", {
+                            staticClass: "fa fa-check",
+                            attrs: { "aria-hidden": "true" }
+                          }),
                           _vm._v(
                             "\n                                    Sign Up\n                                "
                           )
@@ -53980,7 +54070,7 @@ var render = function() {
     "span",
     {
       staticClass:
-        "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2 cursor-pointer hover:bg-grey-light"
+        "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2 cursor-pointer hover:bg-grey-light mt-2"
     },
     [_vm._v("\n    #" + _vm._s(_vm.name) + "\n")]
   )
@@ -54153,7 +54243,7 @@ var render = function() {
           {
             key: language.id,
             staticClass:
-              "max-w-sm rounded overflow-hidden shadow-lg mr-4 bg-white"
+              "max-w-sm rounded overflow-hidden shadow-lg mr-4 bg-nav"
           },
           [
             _c("img", {
@@ -54276,6 +54366,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: {
@@ -54305,11 +54396,12 @@ var render = function() {
           {
             key: project.id,
             staticClass:
-              "max-w-sm rounded overflow-hidden shadow-lg mr-4 bg-white"
+              "max-w-sm rounded overflow-hidden shadow-lg mr-4 bg-black",
+            staticStyle: { "object-fit": "cover", height: "100%" }
           },
           [
             _c("a", { attrs: { href: project.link, target: "_blank" } }, [
-              _c("img", { attrs: { src: project.icon } })
+              _c("img", { staticClass: "w-full", attrs: { src: project.icon } })
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "px-6 py-4" }, [
@@ -54438,7 +54530,7 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, "\n.twitter-feed{\n    max-height: 600px;\n    overflow-y: scroll;\n}\n\n", ""]);
+exports.push([module.i, "\n.twitter-feed{\n    max-height: 600px;\n    overflow-y: scroll;\n}\n\n\n\n", ""]);
 
 // exports
 
@@ -54449,9 +54541,6 @@ exports.push([module.i, "\n.twitter-feed{\n    max-height: 600px;\n    overflow-
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
 //
 //
 //
@@ -54517,17 +54606,12 @@ var render = function() {
   return _c("section", { staticClass: "flex content-start" }, [
     _c(
       "div",
-      {
-        staticClass:
-          "twitter-feed bg-white w-full mx-auto my-8 border border-grey-light"
-      },
+      { staticClass: "twitter-feed  w-full" },
       _vm._l(_vm.tweets, function(tweet) {
         return _c("div", { key: tweet.id, staticClass: "flex pt-4 px-4" }, [
-          _vm._m(0, true),
-          _vm._v(" "),
           _c("div", { staticClass: "px-2 pt-2 flex-grow" }, [
             _c("header", [
-              _vm._m(1, true),
+              _vm._m(0, true),
               _vm._v(" "),
               _c(
                 "div",
@@ -54580,7 +54664,7 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c("article", { staticClass: "py-4 text-grey-darkest" }, [
+            _c("article", { staticClass: "py-4 text-grey" }, [
               _vm._v("\n            " + _vm._s(tweet.text) + "\n            ")
             ]),
             _vm._v(" "),
@@ -54631,7 +54715,7 @@ var render = function() {
                   "a",
                   {
                     staticClass:
-                      "block no-underline text-black flex px-4 py-2 items-center hover:bg-grey-lighter",
+                      "block no-underline text-grey flex px-4 py-2 items-center hover:bg-grey-lighter",
                     attrs: { href: "#" }
                   },
                   [
@@ -54678,17 +54762,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "w-16 mr-2" }, [
-      _c("img", { staticClass: "p-2 rounded rounded-full", attrs: { src: "" } })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c(
       "a",
-      { staticClass: "text-black no-underline", attrs: { href: "#" } },
+      { staticClass: "text-teal no-underline", attrs: { href: "#" } },
       [
         _c("span", { staticClass: "font-medium" }, [
           _vm._v("Rathes Sachchithananthan")
@@ -58991,6 +59067,157 @@ exports.push([module.i, "@-webkit-keyframes swal2-show{0%{-webkit-transform:scal
 
 // exports
 
+
+/***/ }),
+/* 306 */,
+/* 307 */,
+/* 308 */,
+/* 309 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(310)
+/* template */
+var __vue_template__ = __webpack_require__(311)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/generic/FormError.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-2c3616de", Component.options)
+  } else {
+    hotAPI.reload("data-v-2c3616de", Component.options)
+' + '  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 310 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: {
+        errors: {
+            type: Array,
+            default: function _default() {
+                return [];
+            }
+        }
+    }
+});
+
+/***/ }),
+/* 311 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "text-left text-grey" },
+    [
+      _vm.errors.length
+        ? [
+            _vm._l(_vm.errors, function(error) {
+              return _c("span", { key: error }, [
+                _c("i", {
+                  staticClass: "fa fa-exclamation-triangle",
+                  attrs: { "aria-hidden": "true" }
+                }),
+                _vm._v("\n            " + _vm._s(error) + "\n        ")
+              ])
+            }),
+            _vm._v(" "),
+            _c("br")
+          ]
+        : _vm._e()
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-2c3616de", module.exports)
+  }
+}
+
+/***/ }),
+/* 312 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = ({
+    data: function data() {
+        return {
+            errors: {}
+        };
+    },
+    methods: {
+        checkError: function checkError(field) {
+            if (this.errors) {
+                if (this.errors[field]) {
+                    return this.errors[field];
+                }
+            }
+            return [];
+        },
+        setErrors: function setErrors(error) {
+            this.errors = error.response.data.errors;
+        },
+        resetErrors: function resetErrors() {
+            this.errors = {};
+        }
+    }
+});
 
 /***/ })
 /******/ ]);

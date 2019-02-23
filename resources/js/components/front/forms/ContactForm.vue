@@ -1,9 +1,10 @@
 <template>
-    <form @submit.prevent="submitContactForm" :method="method" :action="url" class="w-full py-8 pl-6">
+    <form @submit.prevent="submitContactForm" :method="method" :action="url" class="w-full">
         <input type="hidden" name="_token" :value="csrfToken">
         <div class="flex flex-wrap -mx-3 mb-6">
-            <div class="w-full px-3 mb-6 md:mb-0">
-                <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">
+            <div class="w-full px-3 mb-6 md:mb-0 ">
+                <div class="border-b border-b-2 border-teal">
+                    <label class="block uppercase tracking-wide text-grey text-xs font-bold mb-2">
                     Name:
                 </label>
                 <input
@@ -11,37 +12,45 @@
                     v-model="payload.name"
                     name="name"
                     placeholder="John Smith"
-                    class="appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
+                    class="appearance-none block w-full bg-nav text-grey py-3 px-4 leading-tight focus:outline-none focus:bg-black">
+                </div>
+                <form-error :errors="checkError('name')"></form-error>
             </div>
         </div>
         <div class="flex flex-wrap -mx-3 mb-6">
             <div class="w-full px-3 mb-6 md:mb-0">
-                <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">
-                  Email:
-                </label>
-                <input
-                    name="email"
-                    type="email"
-                    v-model="payload.email"
-                    class="appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                    placeholder="john@example.com">
+                <div class="border-b border-b-2 border-teal">
+                    <label class="block uppercase tracking-wide text-grey text-xs font-bold mb-2">
+                    Email:
+                    </label>
+                    <input
+                        name="email"
+                        type="email"
+                        v-model="payload.email"
+                        class="appearance-none block w-full bg-nav text-grey py-3 px-4 leading-tight focus:outline-none focus:bg-black"
+                        placeholder="john@example.com">
+                </div>
+                <form-error :errors="checkError('email')"></form-error>
             </div>
         </div>
         <div class="flex flex-wrap -mx-3 mb-6">
             <div class="w-full px-3">
-                <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">
-                  Message:
-                </label>
-                <textarea
-                    rows="10"
-                    name="message"
-                    v-model="payload.message"
-                    placeholder="Hello, World!"
-                    class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey">
-                </textarea>
+                <div class="border-b border-b-2 border-teal">
+                    <label class="block uppercase tracking-wide text-grey text-xs font-bold mb-2">
+                    Message:
+                    </label>
+                    <textarea
+                        rows="10"
+                        name="message"
+                        v-model="payload.message"
+                        placeholder="Hello, World!"
+                        class="appearance-none block w-full bg-nav text-grey py-3 px-4 leading-tight focus:outline-none focus:bg-black">
+                    </textarea>
+                </div>
+                <form-error :errors="checkError('message')"></form-error>
             </div>
         </div>
-        <div class="flex flex-wrap -mx-3 mb-6 pl-3">
+        <div class="flex flex-wrap -mx-3 pl-3">
             <outline-button
                 type="submit"
                 classes="hover:text-nav"
@@ -51,6 +60,9 @@
     </form>
 </template>
 <script>
+
+    import FormErrors from '../../../mixins/FormError';
+
     export default{
         data: function(){
             return {
@@ -59,9 +71,11 @@
                     name: '',
                     email: '',
                     message: '',
-                }
+                },
+                
             };
         },
+        mixins: [FormErrors],
         props: {
             url: {
                 type: String,
@@ -74,16 +88,19 @@
         },
         methods: {
             submitContactForm(){
-               axios.post(this.url, this.payload)
-               .then(response => {
+
+                this.resetErrors();
+
+                axios.post(this.url, this.payload)
+                .then(response => {
                     if (response.status == 200) {
                         this.$swal('Message Received!');
                         this.resetPayload();
                     }
-               })
-               .catch(error => {
-
-               });
+                })
+                .catch(error => {
+                    this.errors = error.response.data.errors;
+                });
             },
             resetPayload() {
                 this.payload = {
