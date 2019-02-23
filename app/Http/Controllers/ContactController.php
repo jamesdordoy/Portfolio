@@ -49,7 +49,7 @@ class ContactController extends Controller
         $contact = $this->contact->store($data);
 
         if ($contact) {
-            SendContactConfirmationEmailJob::dispatch($contact);
+            $this->contact->sendContactEmail($contact);
             return redirect(route('front.get.index'))->with("success", " Created");
         }
     }

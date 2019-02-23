@@ -2770,8 +2770,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -3816,7 +3814,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -42549,44 +42547,43 @@ var staticRenderFns = [
             _vm._v(" "),
             _c("div", { staticClass: "md:flex md:items-center" }, [
               _c("div", { staticClass: "md:w-full" }, [
-                _c("form", { staticClass: "w-full" }, [
-                  _c(
-                    "div",
-                    {
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "flex items-center border-b border-b-2 border-teal py-4"
+                  },
+                  [
+                    _c("input", {
                       staticClass:
-                        "flex items-center border-b border-b-2 border-teal py-4"
-                    },
-                    [
-                      _c("input", {
+                        "appearance-none rounded bg-transparent border-none w-full text-grey-darker mr-3 py-1 px-2 leading-tight focus:outline-none",
+                      attrs: {
+                        type: "email",
+                        name: "email",
+                        placeholder: "john@example.com",
+                        "aria-label": "Email"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
                         staticClass:
-                          "appearance-none bg-transparent border-none w-full text-grey-darker mr-3 py-1 px-2 leading-tight focus:outline-none",
-                        attrs: {
-                          type: "email",
-                          placeholder: "john@example.com",
-                          "aria-label": "Email"
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass:
-                            "flex-no-shrink bg-transparent hover:bg-teal text-teal font-semibold hover:text-nav py-2 px-4 border mr-4 border-teal hover:border-transparent rounded",
-                          attrs: { type: "button" }
-                        },
-                        [
-                          _c("i", {
-                            staticClass: "fa fa-check",
-                            attrs: { "aria-hidden": "true" }
-                          }),
-                          _vm._v(
-                            "\n                                    Sign Up\n                                "
-                          )
-                        ]
-                      )
-                    ]
-                  )
-                ])
+                          "flex-no-shrink bg-transparent hover:bg-teal text-teal font-semibold hover:text-nav py-2 px-4 border mr-4 border-teal hover:border-transparent rounded",
+                        attrs: { type: "button" }
+                      },
+                      [
+                        _c("i", {
+                          staticClass: "fa fa-check",
+                          attrs: { "aria-hidden": "true" }
+                        }),
+                        _vm._v(
+                          "\n                                Sign Up\n                            "
+                        )
+                      ]
+                    )
+                  ]
+                )
               ])
             ])
           ])
@@ -42659,9 +42656,14 @@ var render = function() {
             _vm._v(" "),
             _c("div", { staticClass: "px-6 py-4" }, [
               _c("div", { staticClass: "font-bold text-xl mb-2" }, [
-                _c("a", { attrs: { href: project.link, target: "_blank" } }, [
-                  _vm._v(_vm._s(project.name))
-                ])
+                _c(
+                  "a",
+                  {
+                    staticClass: "visted:color-teal",
+                    attrs: { href: project.link, target: "_blank" }
+                  },
+                  [_vm._v(_vm._s(project.name))]
+                )
               ]),
               _vm._v(" "),
               _c("p", { staticClass: "text-grey-darker text-base" }, [

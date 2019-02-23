@@ -6,7 +6,7 @@
                 
                 <div class="px-6 py-4">
                     <div class="font-bold text-xl mb-2">
-                        <a :href="project.link" target="_blank">{{ project.name }}</a>
+                        <a :href="project.link" class="visted:color-teal" target="_blank">{{ project.name }}</a>
                     </div>
                     <p class="text-grey-darker text-base">
                         {{ project.description }}

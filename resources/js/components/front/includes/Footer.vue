@@ -38,21 +38,19 @@
                         </h4>
                     </div>
                     <div class="md:flex md:items-center">
-
                         <div class="md:w-full">
-                            <form class="w-full">
-                                <div class="flex items-center border-b border-b-2 border-teal py-4">
-                                    <input
-                                        type="email"
-                                        placeholder="john@example.com"
-                                        aria-label="Email"
-                                        class="appearance-none bg-transparent border-none w-full text-grey-darker mr-3 py-1 px-2 leading-tight focus:outline-none">
-                                    <button class="flex-no-shrink bg-transparent hover:bg-teal text-teal font-semibold hover:text-nav py-2 px-4 border mr-4 border-teal hover:border-transparent rounded" type="button">
-                                        <i class="fa fa-check" aria-hidden="true"></i>
-                                        Sign Up
-                                    </button>
-                                </div>
-                            </form>
+                            <div class="flex items-center border-b border-b-2 border-teal py-4">
+                                <input
+                                    type="email"
+                                    name="email"
+                                    placeholder="john@example.com"
+                                    aria-label="Email"
+                                    class="appearance-none rounded bg-transparent border-none w-full text-grey-darker mr-3 py-1 px-2 leading-tight focus:outline-none">
+                                <button class="flex-no-shrink bg-transparent hover:bg-teal text-teal font-semibold hover:text-nav py-2 px-4 border mr-4 border-teal hover:border-transparent rounded" type="button">
+                                    <i class="fa fa-check" aria-hidden="true"></i>
+                                    Sign Up
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </form>
