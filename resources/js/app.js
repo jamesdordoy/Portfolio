@@ -14,12 +14,21 @@ import Components from './components';
 import VueRouter from 'vue-router';
 import routes from './routes.js';
 
+// Plugins
+import VueSweetalert2 from 'vue-sweetalert2';
+
 // Window attachments
 window.Vue = require('vue');
 window.moment = require('moment');
 
+const options = {
+    confirmButtonColor: '#41b882',
+    cancelButtonColor: '#ff7674'
+};
+
 // Vue use statements
 Vue.use(VueRouter);
+Vue.use(VueSweetalert2, options);
 
 // Frontend
     // Forms

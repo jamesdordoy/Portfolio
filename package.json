@@ -26,6 +26,7 @@
         "chartjs": "^0.3.24",
         "datatables": "^1.10.13",
         "moment": "^2.20.1",
+        "vue-sweetalert2": "^1.6.4",
         "vue2-selectize": "^1.1.4"
     }
 }
