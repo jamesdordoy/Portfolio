@@ -1,5 +1,5 @@
 <template>
-    <form :method="method" :action="url" class="w-full py-8 pl-6">
+    <form @submit.prevent="submitContactForm" :method="method" :action="url" class="w-full py-8 pl-6">
         <input type="hidden" name="_token" :value="csrfToken">
         <div class="flex flex-wrap -mx-3 mb-6">
             <div class="w-full px-3 mb-6 md:mb-0">
@@ -8,6 +8,7 @@
                 </label>
                 <input
                     type="text"
+                    v-model="payload.name"
                     name="name"
                     placeholder="John Smith"
                     class="appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
@@ -21,6 +22,7 @@
                 <input
                     name="email"
                     type="email"
+                    v-model="payload.email"
                     class="appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                     placeholder="john@example.com">
             </div>
@@ -33,6 +35,7 @@
                 <textarea
                     rows="10"
                     name="message"
+                    v-model="payload.message"
                     placeholder="Hello, World!"
                     class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey">
                 </textarea>
@@ -52,6 +55,11 @@
         data: function(){
             return {
                 list: '',
+                payload: {
+                    name: '',
+                    email: '',
+                    message: '',
+                }
             };
         },
         props: {
@@ -62,6 +70,27 @@
             method: {
                 type: String,
                 default: "GET"
+            }
+        },
+        methods: {
+            submitContactForm(){
+               axios.post(this.url, this.payload)
+               .then(response => {
+                    if (response.status == 200) {
+                        this.$swal('Message Received!');
+                        this.resetPayload();
+                    }
+               })
+               .catch(error => {
+
+               });
+            },
+            resetPayload() {
+                this.payload = {
+                    name: '',
+                    email: '',
+                    message: '',
+                };
             }
         },
         computed: {
