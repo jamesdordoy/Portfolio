@@ -8,13 +8,18 @@
                         {{ language.name }}
                     </div>
                     <p class="text-grey-darker text-base">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia,
+                        nulla! Maiores et perferendis eaque,
+                        exercitationem praesentium nihil.
                     </p>
                 </div>
                 <div class="px-6 py-4">
-                    <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">#photography</span>
-                    <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">#travel</span>
-                    <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">#winter</span>
+                    <tag>
+                    </tag>
+                    <tag>
+                    </tag>
+                    <tag>
+                    </tag>
                 </div>
             </div>
         </div>

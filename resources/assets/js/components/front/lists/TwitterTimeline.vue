@@ -4,7 +4,7 @@
       <div class="twitter-feed bg-white w-full mx-auto my-8 border border-grey-light">
         <div class="flex pt-4 px-4" v-for="tweet in tweets" :key="tweet.id">
             <div class="w-16 mr-2">
-                <img class="p-2 rounded rounded-full" src="https://scontent-frt3-1.cdninstagram.com/t51.2885-19/s150x150/22638783_1031626323645160_6412994168498421760_n.jpg">
+                <img class="p-2 rounded rounded-full" src="">
             </div>
             <div class="px-2 pt-2 flex-grow">
                 <header>

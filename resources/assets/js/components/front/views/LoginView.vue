@@ -3,7 +3,7 @@
         <particles>
             <login-form>
             </login-form>
-        </particles>
+        </particles>  
     </div>
 </template>
 

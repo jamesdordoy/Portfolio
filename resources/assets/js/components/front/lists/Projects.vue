@@ -12,9 +12,9 @@
                     </p>
                 </div>
                 <div class="px-6 py-4">
-                    <span v-for="tag in project.tags" :key="tag.id" class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">
-                        #{{ tag.name }}
-                    </span>
+                    <tag v-for="tag in project.tags" :key="tag.id"
+                        :name="tag.name">
+                    </tag>
                 </div>
             </div>
         </div>

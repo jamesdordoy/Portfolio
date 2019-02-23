@@ -1,31 +1,38 @@
 <template>
-    <div class="pin-none rounded p-8 text-center text-white mt-20">
+    <div class="pin-none rounded p-8 text-white mt-20">
         <div class="w-full mx-auto">
-            <form method="POST" action="/login" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 border-teal border">
+            <form method="POST" action="/login" style="background: rgba(0, 0, 0, 0.4); text-shadow: 0px 0px 2px #131415;" class="border-teal-light border pin-none rounded p-8 mt-20 text-lg login-form">
                 <input type="hidden" name="_token" :value="csrfToken">
                 <div class="mb-4">
-                    <label class="block text-grey-darker text-sm font-bold mb-2" for="email">
-                        Username
+                    <label class="login-form-label" for="email">
+                        Email
                     </label>
-                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline" id="email" type="text" placeholder="Email" name="email">
+                    <input
+                        id="email"
+                        type="text"
+                        name="email"
+                        placeholder="example@gmail.com"
+                        class="login-input focus:outline-none focus:shadow-outline">
                 </div>
                 <div class="mb-6">
-                    <label class="block text-grey-darker text-sm font-bold mb-2" for="password">
+                    <label class="login-form-label" for="password">
                         Password
                     </label>
-                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" name="password" placeholder="******************">
+                    <input
+                        id="password"
+                        type="password"
+                        name="password"
+                        placeholder="******************"
+                        class="login-input focus:outline-none focus:shadow-outline">
                 </div>
                 <div class="flex items-center justify-between">
-                    <button class="bg-teal hover:bg-teal-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                    <button class="bg-teal text-white font-bold py-2 px-4 rounded hover:bg-teal-dark focus:outline-none focus:shadow-outline">
                         Sign In
                     </button>
-                    <a class="inline-block align-baseline font-bold text-sm text-teal hover:text-teal-darker" href="#">
-                        Forgot Password?
-                    </a>
                 </div>
             </form>
             <p class="text-center text-grey text-xs">
-                ©2018 James Dordoy.
+                &copy; {{ year }} James Dordoy.
             </p>
         </div>
     </div>
@@ -37,6 +44,9 @@ export default {
         csrfToken() {
             return document.head.querySelector('meta[name="csrf-token"]').content;
         },
+        year() {
+            return moment().format("Y");
+        }
     }
 }
 </script>
