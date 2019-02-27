@@ -89,11 +89,11 @@ Vue.filter('capitalize', function (value) {
 const router = new VueRouter({
     mode: "history",
     base: "/",
-    routes
+    routes,
 });
 
 // Vue App
 const app = new Vue({
     el: '#app',
-    router
+    router,
 });

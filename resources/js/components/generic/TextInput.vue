@@ -1,16 +1,15 @@
 <template>
     <input
+        :id="id"
+        type="text"
+        :name="name"
         @input="onInput"
         v-model="inputValue"
-        class="input-generic focus:outline-none focus:bg-white"
-        :id="id"
-        :name="name"
-        type="text"
-        :placeholder="placeholder">
+        :placeholder="placeholder"
+        class="input-generic focus:outline-none focus:bg-white">
 </template>
 
 <style>
-
 
 </style>
 

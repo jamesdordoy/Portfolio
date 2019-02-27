@@ -15,6 +15,6 @@ class Project extends EloquentModel
 
     public function scopePublicProjects($query)
     {
-        return $query->where('private', 0);
+        return $query->where('private', 0)->with("tags")->latest();
     }
 }

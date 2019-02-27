@@ -1,16 +1,15 @@
 <template>
     <textarea
-        @input="onInput"
-        v-model="inputValue"
-        class="input-generic focus:outline-none focus:bg-white"
         :id="id"
         :rows="rows"
-        :placeholder="placeholder">
+        @input="onInput"
+        v-model="inputValue"
+        :placeholder="placeholder"
+        class="input-generic focus:outline-none focus:bg-white">
     </textarea>
 </template>
 
 <style>
-
 
 </style>
 

@@ -8,13 +8,11 @@
                     default header
                 </slot>
             </div>
-
             <div class="modal-body">
                 <slot name="body">
                     default body
                 </slot>
             </div>
-
             <div class="modal-footer">
                 <slot name="footer">
                     <div class="clearfix">
@@ -52,16 +50,15 @@ export default {
         size: {
             type: String,
             default: 'md',
-        }
+        },
     },
     methods: {
-
         close() {
             this.$emit("close");
         },
         submit() {
             this.$emit("submit");
-        }
+        },
     },
     ready() {
         document.addEventListener("keydown", (e) => {
@@ -80,8 +77,8 @@ export default {
                 'modal-lg' : size == 'lg',
                 'modal-xl' : size == 'xl',
             }
-        }
-    }
+        },
+    },
 }
 
 </script>
@@ -157,6 +154,5 @@ export default {
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
-
 
 </style>

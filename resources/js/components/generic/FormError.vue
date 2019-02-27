@@ -1,5 +1,5 @@
 <template>
-    <div class="text-left text-grey">
+    <div class="text-left text-grey mt-2">
         <template v-if="errors.length">
             <span v-for="error in errors" :key="error">
                 <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
@@ -11,14 +11,16 @@
 </template>
 
 <script>
-    export default {
-        props: {
-            errors: {
-                type: Array,
-                default() {
-                    return [];
-                }
-            }
-        }
-    }
+
+export default {
+    props: {
+        errors: {
+            type: Array,
+            default() {
+                return [];
+            },
+        },
+    },
+}
+
 </script>

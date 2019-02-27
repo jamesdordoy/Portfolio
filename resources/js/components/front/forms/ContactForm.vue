@@ -73,7 +73,6 @@
                     email: '',
                     message: '',
                 },
-                
             };
         },
         mixins: [FormErrors],

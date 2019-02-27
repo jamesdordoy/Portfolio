@@ -1,8 +1,8 @@
 <template>
     <button
-        @click="onClick"
-        :class="classes"
         :type="type"
+        :class="classes"
+        @click="onClick"
         class="bg-transparent hover:bg-teal text-teal-dark font-semibold py-2 px-4 border border-teal hover:border-transparent rounded">
         <slot></slot>&nbsp;{{ title }}
     </button>
@@ -33,7 +33,7 @@ export default {
     methods: {
         onClick() {
             this.$emit("click");
-        }
+        },
     },
 }
 

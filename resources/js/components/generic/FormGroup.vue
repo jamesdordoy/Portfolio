@@ -10,10 +10,10 @@
 
 <script>
 export default {
-  name: 'FormGroup',
-  props: {
-    title: String,
-    forId: String,
-  }
+    name: 'FormGroup',
+    props: {
+        title: String,
+        forId: String,
+    },
 }
 </script>

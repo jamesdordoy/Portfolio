@@ -2,8 +2,8 @@
 
 namespace App\Traits;
 
-trait Serviceable {
-
+trait Serviceable
+{
     /**
      * Get all of the Tags for the Project.
      */

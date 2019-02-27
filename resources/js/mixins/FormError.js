@@ -18,6 +18,6 @@ export default {
         },
         resetErrors() {
             this.errors = {};
-        }
-    }
+        },
+    },
 }

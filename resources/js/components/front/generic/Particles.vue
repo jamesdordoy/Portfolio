@@ -137,20 +137,18 @@ export default {
       })
     }
   }
-
 }
 
 </script>
 
 <style scoped>
 
-  #particles-js {
+#particles-js {
   position: absolute;
   width: 100%;
   height: 99%;
 	background: #3a4145;
 }
-
 
 .overlay {
 	position: absolute;

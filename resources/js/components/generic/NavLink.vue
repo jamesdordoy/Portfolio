@@ -17,7 +17,7 @@ export default {
         },
         text: {
             type: String,
-        }
+        },
     }
 }
 </script>

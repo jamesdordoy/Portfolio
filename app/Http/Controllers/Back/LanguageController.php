@@ -20,7 +20,6 @@ class LanguageController extends Controller
     public function __construct(LanguageServiceContract $languageService)
     {
         $this->languageService = $languageService;
-        $this->middleware('auth');
     }
 
     /**
@@ -56,7 +55,7 @@ class LanguageController extends Controller
         $language->icon = $imageName;
 
         if ($language->save()) {
-            return redirect("/dash/languages")->with("success", "Language Created");
+            return 200;
         }
 
         return redirect("/dash/languages")->with("error", "Language Not Created");
@@ -70,7 +69,6 @@ class LanguageController extends Controller
      */
     public function edit($id)
     {
-        //
         if (!$id) {
             throw new HttpException(400, "Invalid id");
         }

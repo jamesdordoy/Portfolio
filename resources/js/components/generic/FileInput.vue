@@ -9,6 +9,7 @@
 </template>
 
 <script>
+
 export default {
     data() {
         return {
@@ -36,9 +37,10 @@ export default {
     methods: {
         emitChange(event) {
             this.$emit("change", event.target.files)
-        }
-    }
+        },
+    },
 }
+
 </script>
 
 <style>

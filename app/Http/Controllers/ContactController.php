@@ -8,6 +8,7 @@ use App\Jobs\SendContactConfirmationEmailJob;
 use App\Models\Contact;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ContactRequest;
+use App\Http\Requests\NewsletterRequest;
 use App\Contracts\Services\ContactServiceContract;
 
 
@@ -86,5 +87,16 @@ class ContactController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * Sign up for the Dordoy newsletter
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function newsletter(NewsletterRequest $request)
+    {
+        
     }
 }

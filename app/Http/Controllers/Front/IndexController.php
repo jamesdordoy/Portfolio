@@ -32,7 +32,7 @@ class IndexController extends Controller
         $contents = \Storage::get('about.json');
         $about = json_decode($contents, 1);
         $languages = Language::get();
-        $projects = Project::publicProjects()->with("tags")->latest()->get();
+        $projects = Project::publicProjects()->get();
         $tweets = $this->twitter->getStatuses();
         $auth = \Auth::user();
 

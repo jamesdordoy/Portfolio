@@ -30,11 +30,12 @@
         </div>
         <div class="w-full lg:w-1/3">
             <div id="newsletter">
-                <form action="/newsletter" method="POST">
+                <form @submit.prevent="submitNewsletterForm" action="/newsletter" method="POST">
+                    <input type="hidden" name="_token" :value="csrfToken">
                     <div class="md:flex md:items-center pt-2">
                         <h4 class="text-grey md:text-right mb-1 md:mb-0 pr-4">
                             <i class="fa fa-newspaper-o" aria-hidden="true"></i>
-                            &nbsp;News Letter Signup:
+                            &nbsp;Newsletter Signup:
                         </h4>
                     </div>
                     <div class="md:flex md:items-center">
@@ -43,10 +44,11 @@
                                 <input
                                     type="email"
                                     name="email"
+                                    v-model="payload.email"
                                     placeholder="john@example.com"
                                     aria-label="Email"
                                     class="appearance-none rounded bg-transparent border-none w-full text-grey-darker mr-3 py-1 px-2 leading-tight focus:outline-none">
-                                <button class="flex-no-shrink bg-transparent hover:bg-teal text-teal font-semibold hover:text-nav py-2 px-4 border mr-4 border-teal hover:border-transparent rounded" type="button">
+                                <button type="submit" class="flex-no-shrink bg-transparent hover:bg-teal text-teal font-semibold hover:text-nav py-2 px-4 border mr-4 border-teal hover:border-transparent rounded">
                                     <i class="fa fa-check" aria-hidden="true"></i>
                                     Sign Up
                                 </button>
@@ -61,8 +63,51 @@
 </template>
 
 <script>
-export default {
 
+import FormErrors from '../../../mixins/FormError';
+
+export default {
+    data: function(){
+        return {
+            payload: {
+                email: '',
+            },
+        };
+    },
+    mixins: [FormErrors],
+    props: {
+        newsletterFormUrl: {
+            type: String,
+            default: "/",
+        },
+    },
+    methods: {
+        submitNewsletterForm(){
+
+            this.resetErrors();
+
+            axios.post(this.newsletterFormUrl, this.payload)
+            .then(response => {
+                if (response.status == 200) {
+                    this.$swal('Message Received!');
+                    this.resetPayload();
+                }
+            })
+            .catch(error => {
+                this.errors = error.response.data.errors;
+            });
+        },
+        resetPayload() {
+            this.payload = {
+                email: '',
+            };
+        }
+    },
+    computed: {
+        csrfToken() {
+            return document.head.querySelector('meta[name="csrf-token"]').content;
+        },
+    }
 }
 </script>
 

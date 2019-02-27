@@ -17,15 +17,13 @@ class ProjectController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+
     }
 
     public function index()
     {
         $projects = Project::where('private', 1)->orderBy('id', 'ASC')->get();
         $id = Project::max('id') + 1;
-
-
 
         return view('back.tables.projects', [
             'projects' => $projects,
@@ -41,7 +39,6 @@ class ProjectController extends Controller
         $file->move( base_path() . '/public/images/projects/', $imageName );
 
         $project = new Project;
-
         $project->name = $request->input("name");
         $project->description = $request->input("description");
         $project->owner = $request->input("owner");

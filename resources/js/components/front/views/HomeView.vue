@@ -12,7 +12,7 @@
     </div>
 
     <div class="w-full">
-      <div class="w-full p-10 bg-black">
+      <div class="w-full px-10 py-24 bg-black">
         <span class="anchor" id="about"></span>
         <h2 class="text-center varela mb-8 text-grey">About Me</h2>
         <p class="varela text-center text-xl text-grey">{{ about.me }}</p>
@@ -20,11 +20,11 @@
           <img src="/images/me.jpeg" class="rounded-full"/>
         </div>
 
-        <h2 class="text-center varela mb-8 text-grey">Experiance</h2>
-        
+        <h2 class="text-center varela mb-8 text-grey">Experience</h2>
+        <p></p>
       </div>
 
-      <div class="w-full p-10 bg-nav">
+      <div class="w-full px-10 py-24 bg-nav">
         <span class="anchor" id="projects"></span>
         <h2 class="varela text-center text-grey mb-8">Projects</h2>
         <projects
@@ -32,7 +32,7 @@
         </projects>
       </div>
 
-      <div class="w-full p-10 bg-black">
+      <div class="w-full px-10 py-24 bg-black">
         <div class="flex flex-col">
           <span class="anchor" id="languages"></span>
           <h2 class="varela text-center text-grey mb-8">Programming Languages, Libraries &amp; Frameworks I Like</h2>
@@ -42,16 +42,16 @@
         </languages>
       </div>
 
-      <div class="flex flex-wrap p-10 bg-nav content-start">
+      <div class="flex flex-wrap px-10 py-24 bg-nav content-start">
         <span class="anchor" id="contact"></span>
         <div class="w-full lg:w-1/2 py-8">
-          <h2 class="varela mb-4 text-grey">Twitter Timeline</h2>
+          <h2 class="varela  py-4 px-2 text-grey">Twitter Timeline</h2>
           <tweets
             :tweets="tweets">
           </tweets>
         </div>
         <div class="w-full lg:w-1/2 py-8 pl-6">
-          <h2 class="varela mb-4 text-grey">Contact Me</h2>
+          <h2 class="varela mb-4 py-4 px-2  text-grey">Contact Me</h2>
           <contact-form
             :url="contactFormUrl"
             :method="'POST'">
@@ -59,7 +59,8 @@
         </div>
       </div>
 
-      <front-footer>
+      <front-footer
+        :newsletter-form-url="newsletterFormUrl">
       </front-footer>
     </div>    
   </div>
@@ -67,6 +68,6 @@
 
 <script>    
   export default {
-    props: ['projects', 'languages', 'about', 'auth', 'tweets', 'contactFormUrl'],
+    props: ['projects', 'languages', 'about', 'auth', 'tweets', 'contactFormUrl', 'newsletterFormUrl'],
   }
 </script>

@@ -19,7 +19,6 @@ class TwitterController extends Controller
      */
     public function __construct(TwitterInterface $twitter)
     {
-        $this->middleware('auth');
         $this->twitter = $twitter;
     }
 
@@ -30,10 +29,9 @@ class TwitterController extends Controller
      */
     public function index()
     {
-        //
-        $tweets = $this->twitter->getStatuses();
-
-        return view('back.tables.twitter.tweets', compact('tweets'));
+        return view('back.tables.twitter.tweets', [
+            'tweets' => $this->twitter->getStatuses(),
+        ]);
     }
 
     /**

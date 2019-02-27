@@ -18,6 +18,11 @@ Route::post('/contact', [
     'uses' => 'ContactController@store',
 ]);
 
+Route::post('/newsletter', [
+    'as' => 'front.post.newsletter',
+    'uses' => 'ContactController@newsletter',
+]);
+
 Route::middleware('auth')->group(function () {
 
     Route::namespace('Back')->group(function() {

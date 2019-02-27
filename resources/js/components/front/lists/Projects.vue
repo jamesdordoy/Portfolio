@@ -1,7 +1,7 @@
 <template>
     <section class="flex flex-col">
         <div class="flex">
-            <div class="max-w-sm rounded overflow-hidden shadow-lg mr-4 bg-black" style="object-fit: cover; height: 100%;" v-for="project in this.projects" :key="project.id">
+            <div class="w-1/4 rounded overflow-hidden shadow-lg mr-4 bg-black" style="object-fit: cover; height: 100%;" v-for="project in this.projects" :key="project.id">
                 <a :href="project.link" target="_blank"><img class="w-full" :src='project.icon'/></a>
                 
                 <div class="px-6 py-4">
@@ -32,6 +32,6 @@
         },
         created() {
             
-        }
+        },
     }
 </script>

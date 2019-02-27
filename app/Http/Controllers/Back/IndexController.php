@@ -17,7 +17,6 @@ class IndexController extends Controller
      */
     public function index()
     {
-        
         $projectCompleteCount = Project::where('completed', true)->count();
         $projectIncompleteCount = Project::where('completed', false)->count();
 
