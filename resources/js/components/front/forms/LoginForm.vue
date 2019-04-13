@@ -13,6 +13,7 @@
                     </label>
                     <input
                         id="email"
+                        :value="oldEmail"
                         type="text"
                         name="email"
                         placeholder="example@gmail.com"
@@ -51,6 +52,12 @@ export default {
         },
         year() {
             return moment().format("Y");
+        }
+    },
+    props: {
+        oldEmail: {
+            type: String,
+            default: ""
         }
     }
 }

@@ -1,7 +1,8 @@
 <template>
     <div class="h-full bg-nav">
         <particles>
-            <login-form>
+            <login-form
+                :old-email="oldEmail">
             </login-form>
         </particles>  
     </div>
@@ -9,6 +10,16 @@
 
 <script>
 export default {
-    
+    props: {
+        old: {
+            type: Object,
+            default: () => ({})
+        }
+    },
+    computed: {
+        oldEmail() {
+            return this.old['email'] ? this.old['email'] : '';
+        }
+    }
 }
 </script>

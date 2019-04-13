@@ -33,6 +33,7 @@ Route::middleware('auth')->group(function () {
         Route::prefix('api')->group(function() {
             Route::get('/github', 'GitHubController@index');
             Route::get('/languages', 'LanguageController@index');
+            Route::get('/contacts', 'ContactController@index');
         });
     });
 

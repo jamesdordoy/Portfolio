@@ -1,6 +1,7 @@
 {% extends "front.layouts.layout2019.twig" %}
 
 {% block hello %}
-    <login-view>
+    <login-view
+        :old="{{ old()|json_encode }}">
     </login-view>
 {% endblock %}

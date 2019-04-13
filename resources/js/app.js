@@ -51,6 +51,7 @@ Vue.use(VueSweetalert2, options);
         Vue.component('languages-create-modal',   require('./components/back/language/CreateLanguageModal.vue'));
     // Tables
         Vue.component('languages-table',   require('./components/back/language/LanguagesTable.vue'));
+        Vue.component('contacts-table',    require('./components/back/contact/ContactTable.vue'));
         Vue.component('projects-table',    require('./components/back/project/ProjectsTable.vue'));
         Vue.component('repository-table',  require('./components/back/repository/RepositoryTable.vue'));
         Vue.component('tweets-table',      require('./components/back/twitter/TweetsTable.vue'));
