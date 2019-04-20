@@ -10,15 +10,17 @@ export default {
         },
         value: {
             type: Object,
+            default: () => ({}),
         },
         clickEvent: {
             type: Function,
         },
+        classes: {
+
+        }
     },
     data() {
-        return {
-
-        };
+        return {};
     },
     render(createElement) {
 
@@ -29,6 +31,9 @@ export default {
                     name: this.name,
                     click: this.clickEvent,
                 },
+                attrs: {
+                    classes: this.classes
+                }
             })
         }
         
@@ -36,7 +41,3 @@ export default {
     }
 }
 </script>
-
-<style>
-
-</style>

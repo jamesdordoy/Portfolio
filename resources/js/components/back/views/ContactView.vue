@@ -4,12 +4,11 @@
         </back-nav>
         <div class="container mx-auto">
             <data-table
-                url="/api/projects"
+                url="/api/contacts"
                 :per-page="perPage"
                 :columns="columns">
             </data-table>
         </div>
-        
     </div>
 </template>
 
@@ -23,13 +22,10 @@
             return {
                 perPage: ['15', '50', '100'],
                 columns: [
-                    { label: 'ID', name: 'id' },
-                    { label: 'Name', name: 'name' },
-                    { label: 'Owner', name: 'owner' },
-                    { label: 'Complete', name: 'completed' },
-                    { label: 'Private', name: 'private' },
-                    { label: 'Link', name: 'link', component: DataTableAnchorCell, click: this.alertHi },
-                    { label: 'Update', name: 'updated_at', component: DataTableButtonCell, click: this.alertHi, 'align': 'center' }
+                    {label: 'ID', name: 'id' },
+                    {label: 'Name', name: 'name' },
+                    {label: 'Email', name: 'email' },
+                    {label: 'Update', name: 'updated_at', component: DataTableButtonCell, click: this.alertHi }
                 ]
             }
         },

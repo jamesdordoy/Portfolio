@@ -19,6 +19,10 @@
                             :text="'Projects'">
                         </back-nav-link>
                         <back-nav-link
+                            :url="'/back/contact'"
+                            :text="'Contact'">
+                        </back-nav-link>
+                        <back-nav-link
                             :url="'/back/github'"
                             :text="'GitHub'">
                         </back-nav-link>

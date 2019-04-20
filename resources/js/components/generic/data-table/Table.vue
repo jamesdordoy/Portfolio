@@ -4,7 +4,9 @@
             <thead class="bg-grey-darkest text-grey-dark text-white w-full">
                 <tr class="w-full text-grey-dark">
                     <th v-for="column in columns" :key="column.name" @click="$emit('sort', column.name)"
-                        :class="'p-2 w-1/' + columns.length">
+                        :class="'p-3 w-1/' + columns.length + ' text-' + column.align"
+                        class="border">
+                        <i class="fa fa-sort text-white" aria-hidden="true"></i>
                         {{column.label}}
                     </th>
                 </tr>
@@ -32,3 +34,9 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+th {
+    cursor: pointer;
+}
+</style>

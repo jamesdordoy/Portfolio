@@ -67,6 +67,7 @@ Vue.use(VueSweetalert2, options);
     Vue.component('form-group',             require('./components/generic/FormGroup.vue'));
     Vue.component('form-error',             require('./components/generic/FormError.vue'));
     Vue.component('textarea-input',         require('./components/generic/TextareaInput.vue'));
+    Vue.component('small-button',         require('./components/generic/SmallButton.vue'));
     Vue.component('outline-button',         require('./components/generic/OutlineButton.vue'));
     Vue.component('vue-table',                  require('./components/generic/data-table/Table.vue'));
     Vue.component('data-table',                  require('./components/generic/data-table/DataTable.vue'));

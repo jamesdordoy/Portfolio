@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Back;
 use App\Models\Project;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Resources\ProjectsResource;
+use App\Http\Resources\DataTableCollectionResource;
 
 use App\Http\Requests\ProjectRequest;
 
@@ -47,27 +47,14 @@ class ProjectController extends Controller
      */
     public function ajax(Request $request)
     {   
-        $columns = ['id', 'name', 'link'];
         $length = $request->input('length');
         $column = $request->input('column'); //Index
         $dir = $request->input('dir');
         $searchValue = $request->input('search');
-        $query = null;
 
-        if (isset($columns[$column])) {
-            $query = Project::orderBy($columns[$column], $dir);
-        } else {
-            $query = Project::orderBy("id", "asc");
-        }
+        $data = Project::dataTableQuery($column, $dir, $length, $searchValue);
 
-        if ($searchValue) {
-            $query->where(function($query) use ($searchValue) {
-                $query->where('name', 'like', '%' . $searchValue . '%')
-                    ->orWhere('link', 'like', '%' . $searchValue . '%');
-            });
-        }
-
-        return new ProjectsResource($query->paginate($length));
+        return new DataTableCollectionResource($data);
     }
 
     /**

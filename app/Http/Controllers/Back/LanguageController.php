@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Contracts\Services\LanguageServiceContract;
+use App\Http\Resources\DataTableCollectionResource;
 
 class LanguageController extends Controller
 {
@@ -27,9 +28,16 @@ class LanguageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return $this->languageService->all();
+        $limit = $request->input('length');
+        $index = $request->input('column');
+        $orderBy = $request->input('dir');
+        $search = $request->input('search');
+
+        return new DataTableCollectionResource(
+            Language::dataTableQuery($index, $orderBy, $limit, $search)
+        );
     }
 
     /**
@@ -40,14 +48,12 @@ class LanguageController extends Controller
      */
     public function store(Request $request)
     {
-        $this->languageService->store();
+        // $this->languageService->store();
 
         $file = $request->file("icon");
-
         $imageName = str_replace(" ", "", $request->input("name")) .'.'. $file->getClientOriginalExtension();
-
         $file->move(base_path() . '/public/images/languages/', $imageName);
-
+        
         $language = new Language;
         $language->name = $request->input("name");
         $language->description = $request->input("description");
@@ -56,8 +62,6 @@ class LanguageController extends Controller
         if ($language->save()) {
             return 200;
         }
-
-        return redirect("/dash/languages")->with("error", "Language Not Created");
     }
 
     public function nameImage()

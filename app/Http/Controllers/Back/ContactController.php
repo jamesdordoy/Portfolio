@@ -5,16 +5,25 @@ namespace App\Http\Controllers\Back;
 use App\Models\Contact;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Resources\DataTableCollectionResource;
 
 class ContactController extends Controller
 {
     /**
-     * Show the application dashboard.
+     * GET show data.
      *
-     * @return \Illuminate\Http\Response
+     * @param  Request $request
+     * @return Response
      */
     public function index(Request $request)
-    {
-        return Contact::paginate();
+    {   
+        $limit = $request->input('length');
+        $index = $request->input('column');
+        $orderBy = $request->input('dir');
+        $search = $request->input('search');
+
+        return new DataTableCollectionResource(
+            Contact::dataTableQuery($index, $orderBy, $limit, $search)
+        );
     }
 }

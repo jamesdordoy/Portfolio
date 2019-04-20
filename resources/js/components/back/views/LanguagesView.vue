@@ -1,40 +1,57 @@
 <template>
-    <div class="">
+    <div class="bg-black">
         <back-nav>
         </back-nav>
-        <div class="flex flex-col p-6 bg-black">
-            <div class="flex w-full justify-end">
-                <outline-button
-                    @click="createModal.show = !createModal.show"
-                    title="Add Language"
-                    classes="bg-transparent hover:bg-blue text-blue-dark font-semibold hover:text-white py-2 px-4 border border-blue hover:border-transparent rounded">
-                </outline-button>
-            </div>
+        <div class="container mx-auto">
+            <div class="flex flex-col py-6 bg-black">
+                <ul class="list-reset text-white hidden md:flex">
+                    <li><span class="font-bold text-lg px-2">Backend</span></li>
+                    <li><span class="border-l border-blue-lighter px-2 text-sm">Languages</span></li>
+                    <li><span class="border-l border-blue-lighter px-2 text-sm ml-2">View</span></li>
+                </ul>
+                <div class="flex flex-col p-6">
+                    <div class="flex w-full justify-end">
+                        <outline-button
+                            @click="createModal.show = !createModal.show"
+                            title="Add Language"
+                            classes="bg-transparent hover:bg-blue text-blue-dark font-semibold hover:text-white py-2 px-4 border border-blue hover:border-transparent rounded">
+                        </outline-button>
+                    </div>
             
-            <div class="flex mt-4">
-                <languages-table
-                    :languages="languages">
-                </languages-table>
+                    <data-table
+                        url="/api/languages"
+                        :per-page="perPage"
+                        :columns="columns">
+                    </data-table>
+                </div>
             </div>
-
-            <languages-create-modal
-                :show="createModal.show"
-                @close="createModal.show = false">
-            </languages-create-modal>
         </div>
+        <languages-create-modal
+            :show="createModal.show"
+            @close="createModal.show = false">
+        </languages-create-modal>
     </div>
-
-    
 </template>
 
 <script>
+
+import DataTableAnchorCell from '../../generic/data-table/generic/DataTableAnchorCell';
+import DataTableButtonCell from '../../generic/data-table/generic/DataTableButtonCell';
+
 export default {
     data() {
         return {
             languages: [],
             createModal: {
                 show: false,
-            }
+            },
+            perPage: ['15', '50', '100'],
+            columns: [
+                {label: 'ID', name: 'id' },
+                {label: 'Name', name: 'name' },
+                {label: 'Description', name: 'description' },
+                {label: 'Update', name: 'updated_at', component: DataTableButtonCell, click: this.alertHi }
+            ]
         };
     },
     created() {
@@ -48,7 +65,9 @@ export default {
         });
     },
     methods: {
-
+        alertHi() {
+            alert("hi")
+        }
     }
 }
 </script>

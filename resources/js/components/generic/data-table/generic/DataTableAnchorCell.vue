@@ -1,5 +1,5 @@
 <template>
-    <a @click="this.click" :href="'#'">{{ data[name] }}</a>
+    <a :href="data.link">{{ data[name] }}</a>
 </template>
 
 <script>
@@ -12,6 +12,16 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+
+/* mouse over link */
+a:hover {
+  color: #4dc0b5;
+}
+
+/* selected link */
+a {
+  color: #3490dc;
+}
 
 </style>

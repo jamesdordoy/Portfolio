@@ -1,7 +1,7 @@
 <template>
     <div class="flex w-full">
         <div class="flex mt-4 w-1/2">
-            <div class="inline-block relative w-64">
+            <div class="inline-block relative w-32">
                 <select
                     @change="getData()"
                     v-model="tableData.length"
@@ -18,13 +18,16 @@
                 </div>
             </div>
         </div>
-        <div class="flex mt-4 w-1/2">
-            <text-input
-                name="name"
-                @input="getData()"
-                v-model="tableData.search"
-                placeholder="Search Table">
-            </text-input>
+        <div class="flex mt-4 w-1/2 justify-end">
+            <div class="flex w-1/2 justify-end"></div>
+            <div class="flex w-1/2 justify-end">
+                <text-input
+                    name="name"
+                    @input="getData()"
+                    v-model="tableData.search"
+                    placeholder="Search Table">
+                </text-input>
+            </div>
         </div>
     </div>
 </template>

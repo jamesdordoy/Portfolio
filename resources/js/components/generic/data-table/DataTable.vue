@@ -1,6 +1,6 @@
 <template>
-    <div class="flex flex-col p-6 bg-black">
-        <div class="w-full mt-4">
+    <div class="flex flex-col">
+        <div class="w-full">
             <data-table-filters
                 :tableData="tableData"
                 :per-page="perPage"
@@ -19,10 +19,11 @@
                         <td 
                             :key="column.name"
                             v-for="column in columns"
-                            :class="'p-2 w-1/' + columns.length">
+                            :class="'p-3 w-1/' + columns.length">
                             <data-table-cell
                                 :value="item"
                                 :name="column.name"
+                                :classes="'text-' + column.align"
                                 :click-event="column.click"
                                 :comp="column.component">
                             </data-table-cell>
@@ -55,10 +56,9 @@ export default {
             data: [],
             sortKey: 'id',
             sortOrders: {},
-            perPage: ['10', '20', '30'],
             tableData: {
                 draw: 0,
-                length: 10,
+                length: this.perPage[0],
                 search: '',
                 column: 0,
                 dir: 'asc',
@@ -72,6 +72,10 @@ export default {
             default: "/"
         },
         columns: {
+            type: Array,
+            default: () => ([])
+        },
+        perPage: {
             type: Array,
             default: () => ([])
         }
@@ -112,3 +116,11 @@ export default {
     }
 }
 </script>
+
+<style>
+
+tr {
+    border-bottom: 1px solid grey;
+}
+
+</style>
