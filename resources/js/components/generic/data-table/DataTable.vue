@@ -20,7 +20,12 @@
                             :key="column.name"
                             v-for="column in columns"
                             :class="'p-2 w-1/' + columns.length">
-                            {{ item[column.name] }}
+                            <data-table-cell
+                                :value="item"
+                                :name="column.name"
+                                :click-event="column.click"
+                                :comp="column.component">
+                            </data-table-cell>
                         </td>
                     </tr>
                 </tbody>
@@ -40,13 +45,16 @@ export default {
     created() {
         this.getData();
     },
+    mounted() {
+        this.columns.forEach((column) => {
+           this.sortOrders[column.name] = -1;
+        });
+    },
     data() {
-        let sortOrders = {};
-
         return {
             data: [],
-            sortKey: 'deadline',
-            sortOrders: sortOrders,
+            sortKey: 'id',
+            sortOrders: {},
             perPage: ['10', '20', '30'],
             tableData: {
                 draw: 0,
@@ -71,17 +79,18 @@ export default {
     methods: {
         getData(url = this.url) {
             this.tableData.draw++;
+            
             axios.get(url, this.getRequestPayload)
-                .then(response => {
-                    let data = response.data;
-                    if (this.tableData.draw == data.payload.draw) {
-                        this.data = data.data;
-                        this.pagination = data;
-                    }
-                })
-                .catch(errors => {
-                    console.log(errors);
-                });
+            .then(response => {
+                let data = response.data;
+                if (this.tableData.draw == data.payload.draw) {
+                    this.data = data.data;
+                    this.pagination = data;
+                }
+            })
+            .catch(errors => {
+                console.log(errors);
+            });
         },
         sortBy(key) {
             this.sortKey = key;

@@ -70,6 +70,9 @@ Vue.use(VueSweetalert2, options);
     Vue.component('outline-button',         require('./components/generic/OutlineButton.vue'));
     Vue.component('vue-table',                  require('./components/generic/data-table/Table.vue'));
     Vue.component('data-table',                  require('./components/generic/data-table/DataTable.vue'));
+    // Vue.component('data-table-anchor-cell',       require('./components/generic/data-table/generic/DataTableAnchorCell.vue'));
+    
+    Vue.component('data-table-cell',                  require('./components/generic/data-table/DataTableCell.vue'));
     Vue.component('data-table-filters',                  require('./components/generic/data-table/DataTableFilters.vue'));
     Vue.component('pagination',             require('./components/generic/data-table/Pagination.vue'));
 
