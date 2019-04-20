@@ -15,6 +15,6 @@ class ContactController extends Controller
      */
     public function index(Request $request)
     {
-        return Contact::get();
+        return Contact::paginate();
     }
 }

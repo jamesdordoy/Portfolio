@@ -20,7 +20,7 @@ class ContactService extends Service implements ContactServiceContract
         }
     }
 
-    public function sendContactEmail(Contact $contact)
+    public function sendContactMeEmail(Contact $contact)
     {
         \Mail::to($contact->email)->send(new ContactMeMail($contact));
     }

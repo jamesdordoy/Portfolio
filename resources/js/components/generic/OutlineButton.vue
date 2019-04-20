@@ -3,6 +3,7 @@
         :type="type"
         :class="classes"
         @click="onClick"
+        :disabled:="disabled"
         class="bg-transparent hover:bg-teal text-teal-dark font-semibold py-2 px-4 border border-teal hover:border-transparent rounded">
         <slot></slot>&nbsp;{{ title }}
     </button>
@@ -29,6 +30,10 @@ export default {
             type: String,
             default: '',
         },
+        disabled: {
+            type: Boolean,
+            default: false,
+        }
     },
     methods: {
         onClick() {

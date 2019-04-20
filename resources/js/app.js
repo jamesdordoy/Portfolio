@@ -17,6 +17,7 @@ import routes from './routes.js';
 // Plugins
 import VueSweetalert2 from 'vue-sweetalert2';
 
+
 // Window attachments
 window.Vue = require('vue');
 window.moment = require('moment');
@@ -67,11 +68,14 @@ Vue.use(VueSweetalert2, options);
     Vue.component('form-error',             require('./components/generic/FormError.vue'));
     Vue.component('textarea-input',         require('./components/generic/TextareaInput.vue'));
     Vue.component('outline-button',         require('./components/generic/OutlineButton.vue'));
+    Vue.component('vue-table',                  require('./components/generic/data-table/Table.vue'));
+    Vue.component('data-table',                  require('./components/generic/data-table/DataTable.vue'));
+    Vue.component('data-table-filters',                  require('./components/generic/data-table/DataTableFilters.vue'));
+    Vue.component('pagination',             require('./components/generic/data-table/Pagination.vue'));
 
 Vue.component('project-create',    require('./components/back/project/Create.vue'));
 Vue.component('home-view',         require('./components/front/views/HomeView.vue'));
 Vue.component('login-view',        require('./components/front/views/LoginView.vue'));
-Vue.component('contact-view',      require('./components/back/views/ContactView.vue'));
 Vue.component('privacy-policy-view',        require('./components/front/views/PrivacyPolicyView'));
 
 // Filters

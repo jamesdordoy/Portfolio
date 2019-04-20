@@ -40,16 +40,15 @@ class LanguageController extends Controller
      */
     public function store(Request $request)
     {
-
         $this->languageService->store();
+
         $file = $request->file("icon");
 
         $imageName = str_replace(" ", "", $request->input("name")) .'.'. $file->getClientOriginalExtension();
 
-        $file->move( base_path() . '/public/images/languages/', $imageName );
+        $file->move(base_path() . '/public/images/languages/', $imageName);
 
         $language = new Language;
-
         $language->name = $request->input("name");
         $language->description = $request->input("description");
         $language->icon = $imageName;
@@ -59,6 +58,11 @@ class LanguageController extends Controller
         }
 
         return redirect("/dash/languages")->with("error", "Language Not Created");
+    }
+
+    public function nameImage()
+    {
+        
     }
 
     /**

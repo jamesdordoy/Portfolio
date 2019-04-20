@@ -46,11 +46,10 @@ class ContactController extends Controller
      */
     public function store(ContactRequest $request)
     {
-        $data = $request->all();
-        $contact = $this->contact->store($data);
+        $contact = $this->contact->store($request->all());
 
         if ($contact) {
-            $this->contact->sendContactEmail($contact);
+            $this->contact->sendContactMeEmail($contact);
             return redirect(route('front.get.index'))->with("success", " Created");
         }
     }

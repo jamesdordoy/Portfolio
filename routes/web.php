@@ -34,6 +34,8 @@ Route::middleware('auth')->group(function () {
             Route::get('/github', 'GitHubController@index');
             Route::get('/languages', 'LanguageController@index');
             Route::get('/contacts', 'ContactController@index');
+            Route::get('/projects', 'ProjectController@ajax');
+            
         });
     });
 

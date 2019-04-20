@@ -32,6 +32,11 @@ class IndexController extends Controller
         );
     }
 
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function playground()
     {
         return view(
