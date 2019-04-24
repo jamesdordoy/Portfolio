@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Back;
 use App\Models\Contact;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Resources\DataTableCollectionResource;
+use JamesDordoy\LaravelVueDatatable\Http\Resources\DataTableCollectionResource;
 
 class ContactController extends Controller
 {

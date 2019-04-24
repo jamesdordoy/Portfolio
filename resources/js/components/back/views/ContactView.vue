@@ -31,8 +31,8 @@
         },
         components: { DataTableAnchorCell, DataTableButtonCell },
         methods: {
-            alertHi() {
-                alert("hi")
+            alertHi(item) {
+                console.log(item)
             }
         }
     }

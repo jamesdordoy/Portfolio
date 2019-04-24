@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Contracts\Services\LanguageServiceContract;
-use App\Http\Resources\DataTableCollectionResource;
+use JamesDordoy\LaravelVueDatatable\Http\Resources\DataTableCollectionResource;
 
 class LanguageController extends Controller
 {

@@ -3,13 +3,13 @@
         <back-nav>
         </back-nav>
         <div class="container mx-auto">
-            <div class="flex flex-col py-6 bg-black">
-                <ul class="list-reset text-white hidden md:flex">
+            <div class="flex flex-col pb-6 bg-black">
+                <!-- <ul class="list-reset text-white hidden md:flex">
                     <li><span class="font-bold text-lg px-2">Backend</span></li>
                     <li><span class="border-l border-blue-lighter px-2 text-sm">Languages</span></li>
                     <li><span class="border-l border-blue-lighter px-2 text-sm ml-2">View</span></li>
-                </ul>
-                <div class="flex flex-col p-6">
+                </ul> -->
+                <div class="flex flex-col pt-4">
                     <div class="flex w-full justify-end">
                         <outline-button
                             @click="createModal.show = !createModal.show"
@@ -66,12 +66,8 @@ export default {
     },
     methods: {
         alertHi() {
-            alert("hi")
+            this.createModal.show = true;
         }
     }
 }
 </script>
-
-<style>
-
-</style>

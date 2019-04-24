@@ -22,6 +22,8 @@ import VueSweetalert2 from 'vue-sweetalert2';
 window.Vue = require('vue');
 window.moment = require('moment');
 
+require('./assets/jamesdordoy/laravelvuedatatable/app.js')
+
 const options = {
     confirmButtonColor: '#41b882',
     cancelButtonColor: '#ff7674'
@@ -69,13 +71,6 @@ Vue.use(VueSweetalert2, options);
     Vue.component('textarea-input',         require('./components/generic/TextareaInput.vue'));
     Vue.component('small-button',         require('./components/generic/SmallButton.vue'));
     Vue.component('outline-button',         require('./components/generic/OutlineButton.vue'));
-    Vue.component('vue-table',                  require('./components/generic/data-table/Table.vue'));
-    Vue.component('data-table',                  require('./components/generic/data-table/DataTable.vue'));
-    // Vue.component('data-table-anchor-cell',       require('./components/generic/data-table/generic/DataTableAnchorCell.vue'));
-    
-    Vue.component('data-table-cell',                  require('./components/generic/data-table/DataTableCell.vue'));
-    Vue.component('data-table-filters',                  require('./components/generic/data-table/DataTableFilters.vue'));
-    Vue.component('pagination',             require('./components/generic/data-table/Pagination.vue'));
 
 Vue.component('project-create',    require('./components/back/project/Create.vue'));
 Vue.component('home-view',         require('./components/front/views/HomeView.vue'));

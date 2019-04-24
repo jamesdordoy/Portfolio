@@ -29,7 +29,8 @@
             "database/factories"
         ],
         "psr-4": {
-            "App\\": "app/"
+            "App\\": "app/",
+            "JamesDordoy\\LaravelVueDatatable\\":  "packages/jamesdordoy/laravelvuedatatable/src"
         }
     },
     "autoload-dev": {
