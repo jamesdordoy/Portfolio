@@ -9,19 +9,21 @@
                 :columns="columns">
             </data-table>
         </div>
+        <div class="h-64">
+            </div>
         
     </div>
 </template>
 
 <script>
 
-    import DataTableAnchorCell from '../../generic/data-table/generic/DataTableAnchorCell';
-    import DataTableButtonCell from '../../generic/data-table/generic/DataTableButtonCell';
+    import DataTableButtonCell from '../../../packages/jamesdordoy/laravelvuedatatable/components/generic/DataTableButtonCell';
+    import DataTableAnchorCell from '../../../packages/jamesdordoy/laravelvuedatatable/components/generic/DataTableAnchorCell';
 
     export default {
         data() {
             return {
-                perPage: ['15', '50', '100'],
+                perPage: ['10', '50', '100'],
                 columns: [
                     { label: 'ID', name: 'id' },
                     { label: 'Name', name: 'name' },

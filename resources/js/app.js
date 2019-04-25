@@ -22,7 +22,7 @@ import VueSweetalert2 from 'vue-sweetalert2';
 window.Vue = require('vue');
 window.moment = require('moment');
 
-require('./assets/jamesdordoy/laravelvuedatatable/app.js')
+require('./packages/jamesdordoy/laravelvuedatatable/app.js');
 
 const options = {
     confirmButtonColor: '#41b882',

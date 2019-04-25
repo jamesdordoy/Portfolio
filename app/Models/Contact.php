@@ -2,11 +2,11 @@
 
 namespace App\Models;
 
-use App\Traits\DatatableTrait;
+use JamesDordoy\LaravelVueDatatable\Traits\LaravelVueDatatableTrait;
 
 class Contact extends EloquentModel
 {
-    use DatatableTrait;
+    use LaravelVueDatatableTrait;
 
     protected $dataTableColumns = [
         'id' => [

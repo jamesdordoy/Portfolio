@@ -14,8 +14,8 @@
 
 <script>
 
-    import DataTableAnchorCell from '../../generic/data-table/generic/DataTableAnchorCell';
-    import DataTableButtonCell from '../../generic/data-table/generic/DataTableButtonCell';
+    import DataTableButtonCell from '../../../packages/jamesdordoy/laravelvuedatatable/components/generic/DataTableButtonCell';
+    import DataTableAnchorCell from '../../../packages/jamesdordoy/laravelvuedatatable/components/generic/DataTableAnchorCell';
 
     export default {
         data() {

@@ -35,39 +35,39 @@
 
 <script>
 
-import DataTableAnchorCell from '../../generic/data-table/generic/DataTableAnchorCell';
-import DataTableButtonCell from '../../generic/data-table/generic/DataTableButtonCell';
-
-export default {
-    data() {
-        return {
-            languages: [],
-            createModal: {
-                show: false,
-            },
-            perPage: ['15', '50', '100'],
-            columns: [
-                {label: 'ID', name: 'id' },
-                {label: 'Name', name: 'name' },
-                {label: 'Description', name: 'description' },
-                {label: 'Update', name: 'updated_at', component: DataTableButtonCell, click: this.alertHi }
-            ]
-        };
-    },
-    created() {
-        axios.get('/api/languages')
-        .then(response => {
-            this.languages = response.data;
-        })
-        .catch(function (error) {
-            // handle error
-            console.log(error);
-        });
-    },
-    methods: {
-        alertHi() {
-            this.createModal.show = true;
+    import DataTableButtonCell from '../../../packages/jamesdordoy/laravelvuedatatable/components/generic/DataTableButtonCell';
+    import DataTableAnchorCell from '../../../packages/jamesdordoy/laravelvuedatatable/components/generic/DataTableAnchorCell';
+    
+    export default {
+        data() {
+            return {
+                languages: [],
+                createModal: {
+                    show: false,
+                },
+                perPage: ['15', '50', '100'],
+                columns: [
+                    {label: 'ID', name: 'id' },
+                    {label: 'Name', name: 'name' },
+                    {label: 'Description', name: 'description' },
+                    {label: 'Update', name: 'updated_at', component: DataTableButtonCell, click: this.alertHi }
+                ]
+            };
+        },
+        created() {
+            axios.get('/api/languages')
+            .then(response => {
+                this.languages = response.data;
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            });
+        },
+        methods: {
+            alertHi() {
+                this.createModal.show = true;
+            }
         }
     }
-}
 </script>
