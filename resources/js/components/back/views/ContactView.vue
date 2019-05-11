@@ -6,6 +6,17 @@
             <data-table
                 :url="url"
                 :per-page="perPage"
+                :classes="{
+                    'table-container': {
+                        'justify-center': true,
+                        'w-full': true,
+                        'flex': true,
+                    },
+                    table: {
+                        'text-left': true,
+                        'w-full': true,
+                    }
+                }"
                 :columns="columns">
 
                 <span slot="filters" slot-scope="{ tableData, perPage }">
