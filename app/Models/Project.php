@@ -3,11 +3,11 @@
 namespace App\Models;
 
 use App\Traits\Taggable;
-use App\Traits\DatatableTrait;
+use JamesDordoy\LaravelVueDatatable\Traits\LaravelVueDatatableTrait;
 
 class Project extends EloquentModel
 {
-    use Taggable, DatatableTrait;
+    use Taggable, LaravelVueDatatableTrait;
 
     protected $dataTableColumns = [
         'id' => [
