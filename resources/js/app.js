@@ -17,17 +17,20 @@ import routes from './routes.js';
 // Plugins
 import VueSweetalert2 from 'vue-sweetalert2';
 
+require('./packages/jamesdordoy/laravelvuedatatable/app.js');
+
 
 // Window attachments
 window.Vue = require('vue');
 window.moment = require('moment');
 
-require('./packages/jamesdordoy/laravelvuedatatable/app.js');
-
 const options = {
     confirmButtonColor: '#41b882',
     cancelButtonColor: '#ff7674'
 };
+
+import DataTable from 'laravel-vue-datatable';
+Vue.use(DataTable);
 
 // Vue use statements
 Vue.use(VueRouter);

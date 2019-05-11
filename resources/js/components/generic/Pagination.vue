@@ -1,13 +1,13 @@
 <template>
     <nav class="flex mt-4" v-if="!client">
         <div class="w-1/2">
-            <span class="text-white">Showing {{ pagination.from }} to {{ pagination.to }} of {{ pagination.total }} Entries</span>
+            <span class="text-white">Showing {{ meta.from }} to {{ meta.to }} of {{ meta.total }} Entries</span>
         </div>
         <div class="flex w-1/2 justify-end">
             <small-button
                 classes="mr-4"
                 v-if="links.prev"
-                @click="$emit('prev');">
+                @click="$emit('prev', links.prev);">
                 <i class="fa fa-chevron-left" aria-hidden="true"></i>
                 &nbsp;Prev
             </small-button>
@@ -20,7 +20,7 @@
             </small-button>
             <small-button
                 v-if="links.next"
-                @click="$emit('next');">
+                @click="$emit('next', links.next);">
                 Next&nbsp;
                 <i class="fa fa-chevron-right" aria-hidden="true"></i>
             </small-button>
@@ -37,7 +37,7 @@
 <script>
     export default {
         props: {
-            pagination: {
+            meta: {
                 default: () => ({
 
                 })

@@ -4,9 +4,25 @@
         </back-nav>
         <div class="container mx-auto">
             <data-table
-                url="/api/contacts"
+                :url="url"
                 :per-page="perPage"
                 :columns="columns">
+
+                <span slot="filters" slot-scope="{ tableData, perPage }">
+                    <data-table-filters
+                        :table-data="tableData"
+                        :per-page="perPage">
+                    </data-table-filters>
+                </span>
+
+                <span slot="pagination" slot-scope="{ links, meta }">
+                    <paginator 
+                        @next="updateUrl"
+                        @prev="updateUrl"
+                        :meta="meta"
+                        :links="links">
+                    </paginator>
+                </span>
             </data-table>
         </div>
     </div>
@@ -14,12 +30,15 @@
 
 <script>
 
+    import Paginator from '../../generic/Pagination';
+    import DataTableFilters from '../../generic/DataTableFilters';
     import DataTableButtonCell from '../../../packages/jamesdordoy/laravelvuedatatable/components/generic/DataTableButtonCell';
-    import DataTableAnchorCell from '../../../packages/jamesdordoy/laravelvuedatatable/components/generic/DataTableAnchorCell';
+    import DataTableAnchorCell from '../../../packages/jamesdordoy/laravelvuedatatable/components/generic/DataTableAnchorCell';    
 
     export default {
         data() {
             return {
+                url: '/api/contacts',
                 perPage: ['15', '50', '100'],
                 columns: [
                     {label: 'ID', name: 'id' },
@@ -29,10 +48,13 @@
                 ]
             }
         },
-        components: { DataTableAnchorCell, DataTableButtonCell },
+        components: { DataTableAnchorCell, DataTableButtonCell, Paginator, DataTableFilters },
         methods: {
             alertHi(item) {
                 console.log(item)
+            },
+            updateUrl(url) {
+                this.url = url;
             }
         }
     }
