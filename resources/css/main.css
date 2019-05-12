@@ -94,10 +94,6 @@
     max-width: 1400px;
   }
 
-  .stripped-table {
-    @apply bg-grey-darkest;
-  }
-
   .stripped-table:nth-child(even) {
-    background-color: #22292f;
+    @apply bg-black;
   }

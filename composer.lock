@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b3922218805378852bc16f1d8eac5e37",
+    "content-hash": "0861e31a2a1b7af555260d5037429f1e",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -1174,16 +1174,16 @@
         },
         {
             "name": "jamesdordoy/laravelvuedatatable",
-            "version": "1.0.4",
+            "version": "1.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jamesdordoy/Laravel-Vue-Datatables.git",
-                "reference": "871908efb1324a8bbaf15912bf56c2e3f8a15f3e"
+                "reference": "91bccf4d5b4a16456e9d763adec37494fce74bbe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jamesdordoy/Laravel-Vue-Datatables/zipball/871908efb1324a8bbaf15912bf56c2e3f8a15f3e",
-                "reference": "871908efb1324a8bbaf15912bf56c2e3f8a15f3e",
+                "url": "https://api.github.com/repos/jamesdordoy/Laravel-Vue-Datatables/zipball/91bccf4d5b4a16456e9d763adec37494fce74bbe",
+                "reference": "91bccf4d5b4a16456e9d763adec37494fce74bbe",
                 "shasum": ""
             },
             "type": "library",
@@ -1202,7 +1202,7 @@
                     "email": "jamesdordoy@gmail.com"
                 }
             ],
-            "time": "2019-05-11T16:07:51+00:00"
+            "time": "2019-05-12T16:48:59+00:00"
         },
         {
             "name": "knplabs/github-api",

@@ -30,7 +30,8 @@ export default {
                     
                 },
                 "t-body-tr": {
-                    'stripped-table': true
+                    'stripped-table': true,
+                    'bg-grey-darkest': true,
                 },
                 "td": {
                     'py-4': true,
