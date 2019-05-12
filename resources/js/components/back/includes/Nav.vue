@@ -49,7 +49,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="absolute dropdown p-6 bg-nav" :class="{ 'hidden': !dropdown }">
+                <div class="absolute dropdown p-6 bg-nav animated cursor-pointer" :class="{'fadeInDown ': dropdown, 'hidden': !dropdown, 'fadeOut': !dropdown}">
                     <a href="/" class="no-underline text-grey-dark border-b xl:border-0 hover:bg-grey-lightest xl:hover:bg-transparent xl:hover:text-blue">
                         Home
                     </a>

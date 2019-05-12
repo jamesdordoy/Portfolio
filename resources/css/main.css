@@ -68,6 +68,7 @@
   @import "~animate.css/source/_base.css";
   @import "~animate.css/source/fading_entrances/fadeIn.css";
   @import "~animate.css/source/fading_exits/fadeOut.css";
+  @import "~animate.css/source/fading_entrances/fadeInDown.css";
 
   .dordoy {
       
@@ -91,4 +92,12 @@
 
   .container {
     max-width: 1400px;
+  }
+
+  .stripped-table {
+    @apply bg-grey-darkest;
+  }
+
+  .stripped-table:nth-child(even) {
+    background-color: #22292f;
   }

@@ -152,6 +152,38 @@ text-link:hover {
   -webkit-animation-name: fadeOut;
           animation-name: fadeOut;
 }
+@-webkit-keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+          animation-name: fadeInDown;
+}
 /**
  * This injects Tailwind's base styles, which is a combination of
  * Normalize.css and some additional base styles.
@@ -6790,6 +6822,14 @@ html {
 
 .container {
   max-width: 1400px;
+}
+
+.stripped-table {
+  background-color: #3d4852;
+}
+
+.stripped-table:nth-child(even) {
+  background-color: #22292f;
 }
 
 @media (min-width: 576px) {

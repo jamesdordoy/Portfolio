@@ -17,19 +17,20 @@ export default {
                 },
                 't-head': {
                     'text-grey-dark': true,
-                    'bg-grey-darkest': true,
+                    'bg-black': true,
                     'border-grey-light': true,
                     'py-4': true,
                     'px-6': true,
                 },
                 "t-body": {
+                    'bg-grey-darkest': true,
                     
                 },
                 "t-head-tr": {
                     
                 },
                 "t-body-tr": {
-                    'hover:bg-black': true,
+                    'stripped-table': true
                 },
                 "td": {
                     'py-4': true,
@@ -41,7 +42,6 @@ export default {
                 "th": {
                     'py-4': true,
                     'px-6': true,
-                    'bg-grey-lightest': true,
                     'font-bold': true,
                     'uppercase': true,
                     'text-sm': true,

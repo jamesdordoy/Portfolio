@@ -47223,7 +47223,7 @@ var render = function() {
           "div",
           {
             staticClass:
-              "pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker"
+              "pointer-events-none absolute pin-y pin-r flex items-center px-2 pb-3 text-grey-darker"
           },
           [
             _c(
@@ -47451,7 +47451,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "bg-black pb-4" },
+    { staticClass: "pb-4", staticStyle: { background: "#5e717d" } },
     [
       _c("back-nav"),
       _vm._v(" "),
@@ -47642,8 +47642,12 @@ var render = function() {
         _c(
           "div",
           {
-            staticClass: "absolute dropdown p-6 bg-nav",
-            class: { hidden: !_vm.dropdown }
+            staticClass: "absolute dropdown p-6 bg-nav animated cursor-pointer",
+            class: {
+              "fadeInDown ": _vm.dropdown,
+              hidden: !_vm.dropdown,
+              fadeOut: !_vm.dropdown
+            }
           },
           [
             _c(
@@ -48343,7 +48347,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "bg-black" },
+    { staticStyle: { background: "#5e717d" } },
     [
       _c("back-nav"),
       _vm._v(" "),
@@ -49501,7 +49505,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "bg-black pb-4" },
+    { staticClass: "pb-4", staticStyle: { background: "#5e717d" } },
     [
       _c("back-nav"),
       _vm._v(" "),
@@ -67993,15 +67997,18 @@ module.exports = Component.exports
                 },
                 't-head': {
                     'text-grey-dark': true,
-                    'bg-grey-darkest': true,
+                    'bg-black': true,
                     'border-grey-light': true,
                     'py-4': true,
                     'px-6': true
                 },
-                "t-body": {},
+                "t-body": {
+                    'bg-grey-darkest': true
+
+                },
                 "t-head-tr": {},
                 "t-body-tr": {
-                    'hover:bg-black': true
+                    'stripped-table': true
                 },
                 "td": {
                     'py-4': true,
@@ -68013,7 +68020,6 @@ module.exports = Component.exports
                 "th": {
                     'py-4': true,
                     'px-6': true,
-                    'bg-grey-lightest': true,
                     'font-bold': true,
                     'uppercase': true,
                     'text-sm': true,

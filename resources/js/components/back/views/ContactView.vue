@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-black pb-4">
+    <div style="background: #5e717d;" class="pb-4">
         <back-nav>
         </back-nav>
         <div class="container mx-auto">
