@@ -6,21 +6,12 @@
             <data-table
                 :url="url"
                 :per-page="perPage"
-                :classes="{
-                    'table-container': {
-                        'justify-center': true,
-                        'w-full': true,
-                        'flex': true,
-                    },
-                    table: {
-                        'text-left': true,
-                        'w-full': true,
-                    }
-                }"
+                :classes="classes"
                 :columns="columns">
 
                 <span slot="filters" slot-scope="{ tableData, perPage }">
                     <data-table-filters
+                        
                         :table-data="tableData"
                         :per-page="perPage">
                     </data-table-filters>
@@ -41,7 +32,7 @@
 
 <script>
 
-    
+    import TableClasses from '../../../mixins/DataTableClasses';
     // import DataTableButtonCell from '../../../packages/jamesdordoy/laravelvuedatatable/components/generic/DataTableButtonCell';
     // import DataTableAnchorCell from '../../../packages/jamesdordoy/laravelvuedatatable/components/generic/DataTableAnchorCell';    
 
@@ -49,7 +40,7 @@
         data() {
             return {
                 url: '/api/contacts',
-                perPage: ['15', '50', '100'],
+                perPage: ['10', '50', '100'],
                 columns: [
                     {label: 'ID', name: 'id' },
                     {label: 'Name', name: 'name' },
@@ -58,6 +49,9 @@
                 ]
             }
         },
+        mixins: [
+            TableClasses
+        ],
         // components: { DataTableAnchorCell, DataTableButtonCell },
         methods: {
             alertHi(item) {

@@ -1174,16 +1174,16 @@
         },
         {
             "name": "jamesdordoy/laravelvuedatatable",
-            "version": "1.0.2",
+            "version": "1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jamesdordoy/Laravel-Vue-Datatables.git",
-                "reference": "cbbe099172809465d485b6d39c68e4d3fde303e9"
+                "reference": "871908efb1324a8bbaf15912bf56c2e3f8a15f3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jamesdordoy/Laravel-Vue-Datatables/zipball/cbbe099172809465d485b6d39c68e4d3fde303e9",
-                "reference": "cbbe099172809465d485b6d39c68e4d3fde303e9",
+                "url": "https://api.github.com/repos/jamesdordoy/Laravel-Vue-Datatables/zipball/871908efb1324a8bbaf15912bf56c2e3f8a15f3e",
+                "reference": "871908efb1324a8bbaf15912bf56c2e3f8a15f3e",
                 "shasum": ""
             },
             "type": "library",
@@ -1202,7 +1202,7 @@
                     "email": "jamesdordoy@gmail.com"
                 }
             ],
-            "time": "2019-05-11T09:12:42+00:00"
+            "time": "2019-05-11T16:07:51+00:00"
         },
         {
             "name": "knplabs/github-api",

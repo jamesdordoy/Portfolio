@@ -31,6 +31,6 @@ class CreateQueueJobsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jobs');
+        Schema::dropIfExists('queue_jobs');
     }
 }

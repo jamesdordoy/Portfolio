@@ -1,8 +1,18 @@
 <template>
     <section class="flex flex-col">
-        <div class="flex">
-            <div class="w-1/4 rounded overflow-hidden shadow-lg mr-4 bg-black" style="object-fit: cover; height: 100%;" v-for="project in this.projects" :key="project.id">
-                <a :href="project.link" target="_blank"><img class="w-full" :src='project.icon'/></a>
+
+        <div class="flex mt-10" v-for="(group, index) in projectGroups" :key="index">
+            <div
+                class="w-1/4 rounded overflow-hidden shadow-lg mr-4 bg-black"
+                style="object-fit: cover; height: 100%;"
+                :key="project.id"
+                v-for="project in projects.slice(index * itemsPerRow, (index + 1) * itemsPerRow)">
+                <a
+                    :href="project.link"
+                    target="_blank">
+                    <img class="w-full"
+                        :src='project.icon ? project.icon : "/images/projects/simple-shopping.png"'/>
+                </a>
                 
                 <div class="px-6 py-4">
                     <div class="font-bold text-xl mb-2">
@@ -24,14 +34,21 @@
 
 <script>
     export default{
+        data() {
+            return {
+                itemsPerRow: 4,
+            };
+        },
         props: {
             projects: {
                 type: Array,
                 default: []
             },
         },
-        created() {
-            
+        computed: {
+            projectGroups () {
+                return Array.from(Array(Math.ceil(this.projects.length / this.itemsPerRow)).keys())
+            }
         },
     }
 </script>

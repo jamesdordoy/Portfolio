@@ -1,6 +1,6 @@
 <template>
-    <div class="flex w-full">
-        <div class="flex mt-4 w-1/2">
+    <div class="flex w-full mt-4">
+        <div class="flex  w-1/2">
             <div class="inline-block relative w-32">
                 <select
                     @change="getData()"
@@ -18,7 +18,7 @@
                 </div>
             </div>
         </div>
-        <div class="flex mt-4 w-1/2 justify-end">
+        <div class="flex w-1/2 justify-end">
             <div class="flex w-1/2 justify-end"></div>
             <div class="flex w-1/2 justify-end">
                 <text-input

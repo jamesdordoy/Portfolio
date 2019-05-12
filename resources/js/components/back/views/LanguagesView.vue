@@ -50,10 +50,8 @@
 </template>
 
 <script>
+    import TableClasses from '../../../mixins/DataTableClasses';
 
-    // import DataTableButtonCell from '../../../packages/jamesdordoy/laravelvuedatatable/components/generic/DataTableButtonCell';
-    // import DataTableAnchorCell from '../../../packages/jamesdordoy/laravelvuedatatable/components/generic/DataTableAnchorCell';
-    
     export default {
         data() {
             return {
@@ -63,38 +61,38 @@
                 },
                 perPage: ['15', '50', '100'],
                 columns: [
-                    {label: 'ID', name: 'id' },
-                    {label: 'Name', name: 'name' },
-                    {label: 'Description', name: 'description' },
+                    {
+                        label: 'ID',
+                        name: 'id',
+                        filterable: true,
+                        width: 10,
+                    },
+                    {   
+                        label: 'Name',
+                        name: 'name',
+                        filterable: true,
+                        width: 10,
+                    },
+                    {   
+                        label: 'Description',
+                        name: 'description',
+                        filterable: true,
+                        width: 10,
+                    },
                     // {label: 'Update', name: 'updated_at', component: DataTableButtonCell, click: this.alertHi }
                 ],
-                classes: {
-                    'table-container': {
-                        'justify-center': true,
-                        'w-full': true,
-                        'flex': true,
-                    },
-                    table: {
-                        'text-left': true,
-                        'w-full': true,
-                    },
-                    't-head': {
-                        'text-white': true,
-                        'border': true,
-                        'border-grey-light': true,
-                        'bg-grey-dark': true,
-                    }
-                }
             };
         },
+        mixins: [
+            TableClasses
+        ],
         created() {
             axios.get('/api/languages')
             .then(response => {
                 this.languages = response.data;
             })
             .catch(function (error) {
-                // handle error
-                console.log(error);
+
             });
         },
         methods: {
