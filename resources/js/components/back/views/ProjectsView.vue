@@ -17,8 +17,8 @@
 
 <script>
 
-    import DataTableButtonCell from '../../../packages/jamesdordoy/laravelvuedatatable/components/generic/DataTableButtonCell';
-    import DataTableAnchorCell from '../../../packages/jamesdordoy/laravelvuedatatable/components/generic/DataTableAnchorCell';
+    // import DataTableButtonCell from '../../../packages/jamesdordoy/laravelvuedatatable/components/generic/DataTableButtonCell';
+    // import DataTableAnchorCell from '../../../packages/jamesdordoy/laravelvuedatatable/components/generic/DataTableAnchorCell';
 
     export default {
         data() {
@@ -30,12 +30,12 @@
                     { label: 'Owner', name: 'owner' },
                     { label: 'Complete', name: 'completed' },
                     { label: 'Private', name: 'private' },
-                    { label: 'Link', name: 'link', component: DataTableAnchorCell, click: this.alertHi },
-                    { label: 'Update', name: 'updated_at', component: DataTableButtonCell, click: this.alertHi, 'align': 'center' }
+                    // { label: 'Link', name: 'link', component: DataTableAnchorCell, click: this.alertHi },
+                    // { label: 'Update', name: 'updated_at', component: DataTableButtonCell, click: this.alertHi, 'align': 'center' }
                 ]
             }
         },
-        components: { DataTableAnchorCell, DataTableButtonCell },
+        // components: { DataTableAnchorCell, DataTableButtonCell },
         methods: {
             alertHi() {
                 alert("hi")

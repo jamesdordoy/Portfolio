@@ -41,10 +41,9 @@
 
 <script>
 
-    import Paginator from '../../generic/Pagination';
-    import DataTableFilters from '../../generic/DataTableFilters';
-    import DataTableButtonCell from '../../../packages/jamesdordoy/laravelvuedatatable/components/generic/DataTableButtonCell';
-    import DataTableAnchorCell from '../../../packages/jamesdordoy/laravelvuedatatable/components/generic/DataTableAnchorCell';    
+    
+    // import DataTableButtonCell from '../../../packages/jamesdordoy/laravelvuedatatable/components/generic/DataTableButtonCell';
+    // import DataTableAnchorCell from '../../../packages/jamesdordoy/laravelvuedatatable/components/generic/DataTableAnchorCell';    
 
     export default {
         data() {
@@ -55,11 +54,11 @@
                     {label: 'ID', name: 'id' },
                     {label: 'Name', name: 'name' },
                     {label: 'Email', name: 'email' },
-                    {label: 'Update', name: 'updated_at', component: DataTableButtonCell, click: this.alertHi }
+                    // {label: 'Update', name: 'updated_at', component: DataTableButtonCell, click: this.alertHi }
                 ]
             }
         },
-        components: { DataTableAnchorCell, DataTableButtonCell, Paginator, DataTableFilters },
+        // components: { DataTableAnchorCell, DataTableButtonCell },
         methods: {
             alertHi(item) {
                 console.log(item)

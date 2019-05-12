@@ -26,7 +26,7 @@
         "animate.css": "^3.7.0",
         "chartjs": "^0.3.24",
         "datatables": "^1.10.18",
-        "laravel-vue-datatable": "^0.1.15",
+        "laravel-vue-datatable": "^0.1.19",
         "moment": "^2.24.0",
         "vue-sweetalert2": "^1.6.4",
         "vue2-selectize": "^1.1.7"

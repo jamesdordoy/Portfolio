@@ -1,24 +1,13 @@
 
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
 // Requires statements
 require('./bootstrap');
-require('./helpers.js');
 
 // Imports statements
-import Components from './components';
 import VueRouter from 'vue-router';
 import routes from './routes.js';
 
 // Plugins
 import VueSweetalert2 from 'vue-sweetalert2';
-
-require('./packages/jamesdordoy/laravelvuedatatable/app.js');
-
 
 // Window attachments
 window.Vue = require('vue');
@@ -83,6 +72,9 @@ Vue.component('project-create',    require('./components/back/project/Create.vue
 Vue.component('home-view',         require('./components/front/views/HomeView.vue'));
 Vue.component('login-view',        require('./components/front/views/LoginView.vue'));
 Vue.component('privacy-policy-view',        require('./components/front/views/PrivacyPolicyView'));
+
+Vue.component('paginator',        require('./components/generic/Pagination'));
+Vue.component('data-table-filters',        require('./components/generic/DataTableFilters'));
 
 // Filters
 Vue.filter('format-moment-dd/mm/yyyy', (value) => {

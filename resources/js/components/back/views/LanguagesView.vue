@@ -20,8 +20,24 @@
             
                     <data-table
                         url="/api/languages"
+                        :classes="classes"
                         :per-page="perPage"
                         :columns="columns">
+                        <span slot="filters" slot-scope="{ tableData, perPage }">
+                            <data-table-filters
+                                :table-data="tableData"
+                                :per-page="perPage">
+                            </data-table-filters>
+                        </span>
+
+                        <span slot="pagination" slot-scope="{ links, meta }">
+                            <paginator 
+                                @next="updateUrl"
+                                @prev="updateUrl"
+                                :meta="meta"
+                                :links="links">
+                            </paginator>
+                        </span>
                     </data-table>
                 </div>
             </div>
@@ -35,8 +51,8 @@
 
 <script>
 
-    import DataTableButtonCell from '../../../packages/jamesdordoy/laravelvuedatatable/components/generic/DataTableButtonCell';
-    import DataTableAnchorCell from '../../../packages/jamesdordoy/laravelvuedatatable/components/generic/DataTableAnchorCell';
+    // import DataTableButtonCell from '../../../packages/jamesdordoy/laravelvuedatatable/components/generic/DataTableButtonCell';
+    // import DataTableAnchorCell from '../../../packages/jamesdordoy/laravelvuedatatable/components/generic/DataTableAnchorCell';
     
     export default {
         data() {
@@ -50,8 +66,25 @@
                     {label: 'ID', name: 'id' },
                     {label: 'Name', name: 'name' },
                     {label: 'Description', name: 'description' },
-                    {label: 'Update', name: 'updated_at', component: DataTableButtonCell, click: this.alertHi }
-                ]
+                    // {label: 'Update', name: 'updated_at', component: DataTableButtonCell, click: this.alertHi }
+                ],
+                classes: {
+                    'table-container': {
+                        'justify-center': true,
+                        'w-full': true,
+                        'flex': true,
+                    },
+                    table: {
+                        'text-left': true,
+                        'w-full': true,
+                    },
+                    't-head': {
+                        'text-white': true,
+                        'border': true,
+                        'border-grey-light': true,
+                        'bg-grey-dark': true,
+                    }
+                }
             };
         },
         created() {
@@ -67,6 +100,9 @@
         methods: {
             alertHi() {
                 this.createModal.show = true;
+            },
+            updateUrl(url) {
+                this.url = url;
             }
         }
     }

@@ -8,6 +8,7 @@
         "php": ">=7.1.0",
         "abraham/twitteroauth": "^0.7.4",
         "artesaos/laravel-linkedin": "^1.3",
+        "barryvdh/laravel-cors": "^0.11.3",
         "fideloper/proxy": "^4.0",
         "graham-campbell/github": "^7.6",
         "guzzlehttp/guzzle": "^6.3",
