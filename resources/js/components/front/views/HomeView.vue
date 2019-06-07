@@ -15,7 +15,6 @@
       <div class="w-full px-10 py-24 bg-black">
         <span class="anchor" id="about"></span>
         <h2 class="text-center varela mb-8 text-grey">About Me</h2>
-        <p class="varela text-center text-xl text-grey">{{ about.me }}</p>
         <div class="flex justify-center items-center py-6">
           <img src="/images/me.jpeg" class="rounded-full"/>
         </div>

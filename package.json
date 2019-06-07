@@ -10,12 +10,12 @@
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
     },
     "devDependencies": {
-        "animate.css": "^3.7.0",
+        "animate.css": "^3.7.2",
         "axios": "^0.17",
         "chartjs": "^0.3.24",
         "cross-env": "^5.2.0",
         "laravel-mix": "^1.0",
-        "laravel-vue-datatable": "^0.1.22",
+        "laravel-vue-datatable": "^0.1.25",
         "lodash": "^4.17.11",
         "moment": "^2.24.0",
         "particles.js": "^2.0.0",
