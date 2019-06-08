@@ -29,7 +29,7 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $exists = Storage::exists('about.json');
+        $exists = \Storage::exists('about.json');
 
         $about = '';
 
