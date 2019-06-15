@@ -23,7 +23,7 @@ class ContactController extends Controller
         $search = $request->input('search');
 
         return new DataTableCollectionResource(
-            Contact::dataTableQuery($index, $orderBy, $limit, $search)
+            Contact::dataTableQuery($index, $orderBy, $search)->paginate($limit)
         );
     }
 }

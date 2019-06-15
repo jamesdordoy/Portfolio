@@ -36,7 +36,7 @@ class LanguageController extends Controller
         $search = $request->input('search');
 
         return new DataTableCollectionResource(
-            Language::dataTableQuery($index, $orderBy, $limit, $search)
+            Language::dataTableQuery($index, $orderBy, $search)->paginate($limit)
         );
     }
 

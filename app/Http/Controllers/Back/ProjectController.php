@@ -47,12 +47,13 @@ class ProjectController extends Controller
      */
     public function ajax(Request $request)
     {   
-        $length = $request->input('length');
+        $limit = $request->input('length');
         $column = $request->input('column'); //Index
         $dir = $request->input('dir');
         $searchValue = $request->input('search');
 
-        $data = Project::dataTableQuery($column, $dir, $length, $searchValue);
+        $data = Project::dataTableQuery($column, $dir, $searchValue)
+            ->paginate($limit);
 
         return new DataTableCollectionResource($data);
     }
