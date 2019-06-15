@@ -41,7 +41,7 @@
         </languages>
       </div>
 
-      <div class="flex flex-wrap px-10 py-24 bg-nav content-start">
+      <div class="flex flex-wrap px-10 py-2 bg-nav content-start">
         <span class="anchor" id="contact"></span>
         <div class="w-full lg:w-1/2 py-8">
           <h2 class="varela  py-4 px-2 text-grey">Twitter Timeline</h2>

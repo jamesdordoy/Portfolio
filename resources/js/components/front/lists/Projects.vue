@@ -3,7 +3,7 @@
 
         <div class="flex mt-10" v-for="(group, index) in projectGroups" :key="index">
             <div
-                class="w-1/4 rounded overflow-hidden shadow-lg mr-4 bg-black"
+                class="lg:w-1/4 md:w-full rounded overflow-hidden shadow-lg mr-4 bg-black"
                 style="object-fit: cover; height: 100%;"
                 :key="project.id"
                 v-for="project in projects.slice(index * itemsPerRow, (index + 1) * itemsPerRow)">
