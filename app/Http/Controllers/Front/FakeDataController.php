@@ -27,7 +27,7 @@ class FakeDataController extends Controller
         $query = DatatableFakeUser::dataTableQuery($column, $dir, $searchValue);
         
         if (isset($isAdmin) && ! empty($isAdmin)) {
-            $query->where("type", $isAdmin);
+            $query->whereType($isAdmin);
         }
             
         $data = $query->paginate($length);
