@@ -16,5 +16,7 @@ class DatabaseSeeder extends Seeder
         $this->call(LanguagesTableSeeder::class);
         $this->call(TagsTableSeeder::class);
         $this->call(LinksTableSeeder::class);
+
+        factory(\App\Models\DatatableFakeUser::class, 100)->create();
     }
 }

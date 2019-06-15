@@ -16,6 +16,7 @@ class CreateDatatableFakeUsersTable extends Migration
         Schema::create('datatable_fake_users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('type');
             $table->string('email')->unique();
             $table->string('password');
             $table->rememberToken();

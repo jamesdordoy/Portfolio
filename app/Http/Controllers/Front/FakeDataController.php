@@ -17,13 +17,21 @@ class FakeDataController extends Controller
      */
     public function users(Request $request)
     {
-        $limit = $request->input('length');
-        $index = $request->input('column');
-        $orderBy = $request->input('dir');
-        $search = $request->input('search');
+        $length = $request->input('length');
+        $column = $request->input('column');
+        $dir = $request->input('dir', 'asc');
+        $searchValue = $request->input('search');
 
-        return new DataTableCollectionResource(
-            DatatableFakeUser::dataTableQuery($index, $orderBy, $limit, $search)
-        );
+        $isAdmin = $request->input('isAdmin');
+
+        $query = DatatableFakeUser::dataTableQuery($column, $dir, $searchValue);
+        
+        if (isset($isAdmin) && ! empty($isAdmin)) {
+            $query->where("type", $isAdmin);
+        }
+            
+        $data = $query->paginate($length);
+
+        return new DataTableCollectionResource($data);
     }
 }
