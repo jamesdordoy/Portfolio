@@ -1,47 +1,38 @@
 <template>
-    <div style="background: #5e717d;">
-        <back-nav>
-        </back-nav>
-        <div class="container mx-auto">
-            <div class="flex flex-col pb-6 bg-black">
-                <!-- <ul class="list-reset text-white hidden md:flex">
-                    <li><span class="font-bold text-lg px-2">Backend</span></li>
-                    <li><span class="border-l border-blue-lighter px-2 text-sm">Languages</span></li>
-                    <li><span class="border-l border-blue-lighter px-2 text-sm ml-2">View</span></li>
-                </ul> -->
-                <div class="flex flex-col pt-4">
-                    <div class="flex w-full justify-end">
-                        <outline-button
-                            @click="createModal.show = !createModal.show"
-                            title="Add Language"
-                            classes="bg-transparent hover:bg-blue text-blue-dark font-semibold hover:text-white py-2 px-4 border border-blue hover:border-transparent rounded">
-                        </outline-button>
-                    </div>
-            
-                    <data-table
-                        url="/api/languages"
-                        :classes="classes"
-                        :per-page="perPage"
-                        :columns="columns">
-                        <span slot="filters" slot-scope="{ tableData, perPage }">
-                            <data-table-filters
-                                :table-data="tableData"
-                                :per-page="perPage">
-                            </data-table-filters>
-                        </span>
+    <div>
+        <layout
+            title="Langauges">
+            <span slot="buttons">
+                <outline-button
+                    @click="exampleModalShowing = true">
+                    Show Modal
+                </outline-button>
+            </span>
+            <div slot="content">
+                <data-table
+                    url="/api/languages"
+                    :classes="classes"
+                    :per-page="perPage"
+                    :columns="columns">
+                    <span slot="filters" slot-scope="{ tableData, perPage }">
+                        <data-table-filters
+                            :table-data="tableData"
+                            :per-page="perPage">
+                        </data-table-filters>
+                    </span>
 
-                        <span slot="pagination" slot-scope="{ links, meta }">
-                            <paginator 
-                                @next="updateUrl"
-                                @prev="updateUrl"
-                                :meta="meta"
-                                :links="links">
-                            </paginator>
-                        </span>
-                    </data-table>
-                </div>
+                    <span slot="pagination" slot-scope="{ links, meta }">
+                        <paginator 
+                            @next="updateUrl"
+                            @prev="updateUrl"
+                            :meta="meta"
+                            :links="links">
+                        </paginator>
+                    </span>
+                </data-table>
             </div>
-        </div>
+        </layout>
+
         <languages-create-modal
             :show="createModal.show"
             @close="createModal.show = false">
@@ -51,7 +42,7 @@
 
 <script>
     import TableClasses from '../../../mixins/DataTableClasses';
-
+    import DataTableButtonCell from '../../generic/DataTableButtonCell';
     export default {
         data() {
             return {
@@ -65,21 +56,30 @@
                         label: 'ID',
                         name: 'id',
                         filterable: true,
-                        width: 10,
+                        width: 25,
                     },
                     {   
                         label: 'Name',
                         name: 'name',
                         filterable: true,
-                        width: 10,
+                        width: 25,
                     },
                     {   
                         label: 'Description',
                         name: 'description',
                         filterable: true,
-                        width: 10,
+                        width: 25,
                     },
-                    // {label: 'Update', name: 'updated_at', component: DataTableButtonCell, click: this.alertHi }
+                    { 
+                        classes: {
+                            'back-outline-btn': true
+                        },
+                        width: 25,
+                        label: 'Update',
+                        name: 'updated_at',
+                        component: DataTableButtonCell,
+                        click: this.alertHi,
+                    }
                 ],
             };
         },

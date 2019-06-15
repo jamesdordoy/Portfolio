@@ -1,8 +1,23 @@
 <template>
-    <div class="pb-4" style="background: #5e717d;">
-        <back-nav>
-        </back-nav>
-        <div class="container mx-auto">
+    <layout
+        title="Projects">
+
+        <span slot="buttons">
+            <outline-button
+                @click="exampleModalShowing = true">
+                Show Modal
+            </outline-button>
+            <outline-button
+                @click="exampleModalShowing = true">
+                Show Modal
+            </outline-button>
+            <outline-button
+                @click="exampleModalShowing = true">
+                Show Modal
+            </outline-button>
+        </span>
+
+        <div slot="content">
             <data-table
                 :classes="classes"
                 :url="url"
@@ -25,15 +40,13 @@
                     </paginator>
                 </span>
             </data-table>
-        </div>       
-    </div>
+        </div>
+    </layout>  
 </template>
 
 <script>
 
     import TableClasses from '../../../mixins/DataTableClasses';
-    // import DataTableButtonCell from '../../../packages/jamesdordoy/laravelvuedatatable/components/generic/DataTableButtonCell';
-    // import DataTableAnchorCell from '../../../packages/jamesdordoy/laravelvuedatatable/components/generic/DataTableAnchorCell';
 
     export default {
         data() {
@@ -46,15 +59,12 @@
                     { label: 'Owner', name: 'owner' },
                     { label: 'Complete', name: 'completed' },
                     { label: 'Private', name: 'private' },
-                    // { label: 'Link', name: 'link', component: DataTableAnchorCell, click: this.alertHi },
-                    // { label: 'Update', name: 'updated_at', component: DataTableButtonCell, click: this.alertHi, 'align': 'center' }
                 ]
             }
         },
         mixins: [
             TableClasses
         ],
-        // components: { DataTableAnchorCell, DataTableButtonCell },
         methods: {
             alertHi() {
                 alert("hi")

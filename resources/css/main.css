@@ -63,6 +63,7 @@
 
 
   @import "text.css";
+  @import "buttons.css";
   @import "login-form.css";
 
   @import "~animate.css/source/_base.css";

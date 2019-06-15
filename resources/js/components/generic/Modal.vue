@@ -1,5 +1,5 @@
 |<template>
-    <div class="modal-mask" v-show="show" transition="modal">
+    <div class="modal-mask" v-if="show" transition="modal">
 
         <div class="modal-container relative" :class="sizeClass" >
             <button @click="close" class="absolute close-btn">X</button>

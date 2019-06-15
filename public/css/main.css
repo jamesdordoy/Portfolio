@@ -1,6 +1,18 @@
 text-link:hover {
   color: #294e67;
 }
+.back-outline-btn {
+  background-color: transparent;
+  color: #38a89d;
+  font-weight: 600;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-width: 1px;
+  border-color: #4dc0b5;
+  border-radius: .25rem;
+}
 .login-input {
   -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
           box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);

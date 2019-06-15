@@ -54,6 +54,8 @@
 <script>
 "use strict";
 
+import LanguageService from '../../../services/LanguageService';
+
 export default {
     data() {
         return {
@@ -81,7 +83,7 @@ export default {
         },
         submit() {
 
-            axios.post('/api/languages', this.getFormData)
+            LanguageService.create(this.getFormData)
             .then(response => {
                 this.languages = response.data;
             })

@@ -18,13 +18,13 @@
                         <line x1="8" y1="2" x2="8" y2="6"></line>
                         <line x1="3" y1="10" x2="21" y2="10"></line>
                         </svg>
-                        <span>{{ tweet.created_at }}</span>
+                        <span>{{ tweet.created_at|format-moment-dd/mm/yyyy }}</span>
                     </div>
                 </header>
                 <article class="py-4 text-grey border-b border-teal">
                 {{ tweet.text }}
                 </article>
-                <footer class="text-sm flex">
+                <!-- <footer class="text-sm flex">
                     <a href="#" class="block no-underline text-blue flex px-4 py-2 items-center hover:bg-blue hover:text-nav">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-thumbs-up h-6 w-6 mr-1 stroke-current">
                         <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
@@ -37,7 +37,7 @@
                         </svg>
                         <span>Reply</span>
                     </a>
-                </footer>
+                </footer> -->
             </div>
         </div>
     </div>

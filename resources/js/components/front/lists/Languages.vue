@@ -2,7 +2,7 @@
     <section class="flex flex-col">
         <div class="flex mt-10" v-for="(group, index) in languageGroups" :key="index">
             <div
-                class="w-1/4 rounded overflow-hidden shadow-lg mr-4 bg-black"
+                class="sm:w-full lg:w-1/4 rounded overflow-hidden shadow-lg mr-4 bg-black"
                 :key="language.id"
                 v-for="language in languages.slice(index * itemsPerRow, (index + 1) * itemsPerRow)">
                 <img class="w-full" :src='language.icon ? language.icon : "/images/projects/PointsofInterest.png"'>

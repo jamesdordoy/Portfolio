@@ -67,7 +67,10 @@ Vue.use(VueSweetalert2, options);
     Vue.component('textarea-input',         require('./components/generic/TextareaInput.vue'));
     Vue.component('small-button',         require('./components/generic/SmallButton.vue'));
     Vue.component('outline-button',         require('./components/generic/OutlineButton.vue'));
+    Vue.component('tailwind-select',         require('./components/generic/TailwindSelect.vue'));
+    
 
+Vue.component('layout',         require('./components/back/views/Layout.vue'));
 Vue.component('project-create',    require('./components/back/project/Create.vue'));
 Vue.component('home-view',         require('./components/front/views/HomeView.vue'));
 Vue.component('login-view',        require('./components/front/views/LoginView.vue'));
