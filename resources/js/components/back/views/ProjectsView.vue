@@ -7,14 +7,6 @@
                 @click="exampleModalShowing = true">
                 Show Modal
             </outline-button>
-            <outline-button
-                @click="exampleModalShowing = true">
-                Show Modal
-            </outline-button>
-            <outline-button
-                @click="exampleModalShowing = true">
-                Show Modal
-            </outline-button>
         </span>
 
         <div slot="content">

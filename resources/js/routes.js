@@ -8,10 +8,6 @@ export default [
         component: require('./components/back/views/PortalView.vue')
     },
     {
-        path: '/back/github',
-        component: require('./components/back/views/GitHubView.vue')
-    },
-    {
         path: '/back/projects',
         component: require('./components/back/views/ProjectsView.vue')
     },

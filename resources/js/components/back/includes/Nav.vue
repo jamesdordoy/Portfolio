@@ -23,10 +23,6 @@
                             :text="'Contact'">
                         </back-nav-link>
                         <back-nav-link
-                            :url="'/back/github'"
-                            :text="'GitHub'">
-                        </back-nav-link>
-                        <back-nav-link
                             :url="'/back/languages'"
                             :text="'Languages'">
                         </back-nav-link>

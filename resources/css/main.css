@@ -98,3 +98,7 @@
   .stripped-table:nth-child(even) {
     @apply bg-black;
   }
+
+  .stripped-table:last-of-type {
+    border-bottom: none;
+  }

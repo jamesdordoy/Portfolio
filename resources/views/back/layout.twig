@@ -20,9 +20,7 @@
     </head>
     <body class="bg-black font-sans font-normal">
         <div id="app" class="h-full">
-            <div class="h-full">
-                {% block content %}{% endblock %}
-            </div>
+            {% block content %}{% endblock %}
         </div>
         <script src="{{ mix("/js/app.js") }}"></script>
     </body>

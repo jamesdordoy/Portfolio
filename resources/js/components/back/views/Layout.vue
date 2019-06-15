@@ -5,22 +5,19 @@
         </back-nav>
         <div class="p-8 bg-grey-darkest text-grey-dark shadow">
             <div>
-                <div>
-                    <div class="flex">
-                        <div class="w-1/2 text-lg">
-                            {{ title }}
-                        </div>
-                        <div class="w-1/2 text-right">
-                            <slot
-                                name="buttons">
+                <div class="flex">
+                    <div class="w-1/2 text-3xl">
+                        {{ title }}
+                    </div>
+                    <div class="w-1/2 text-right">
+                        <slot
+                            name="buttons">
 
-                            </slot>
-                        </div>
+                        </slot>
                     </div>
                 </div>
             </div>
-            <hr>
-            <div class="flex flex-wrap mt-6 text-grey-dark">
+            <div class="flex flex-wrap text-grey-dark">
                 <div class="w-full">
                     <slot name="content">
                     </slot>
