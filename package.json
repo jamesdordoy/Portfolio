@@ -15,7 +15,7 @@
         "chartjs": "^0.3.24",
         "cross-env": "^5.2.0",
         "laravel-mix": "^1.0",
-        "laravel-vue-datatable": "^0.1.25",
+        "laravel-vue-datatable": "^0.1.27",
         "lodash": "^4.17.11",
         "moment": "^2.24.0",
         "particles.js": "^2.0.0",
