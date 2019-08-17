@@ -38,7 +38,7 @@ class IndexController extends Controller
             $about = json_decode($contents, 1);
         }
 
-        $languages = Language::get();
+        $languages = Language::with('image')->get();
         $projects = Project::publicProjects()->get();
         $tweets = $this->twitter->getStatuses();
         $auth = \Auth::user();
@@ -55,8 +55,23 @@ class IndexController extends Controller
         );
     }
 
+    public function languages()
+    {
+        return Language::with('image')->get();
+    }
+
+    public function projects()
+    {
+        
+    }
+
+    public function tweets()
+    {
+
+    }
+
     /**
-     * Show the Home Page
+     * Show the Privacy Page
      *
      * @return \Illuminate\Http\Response
      */

@@ -4,12 +4,13 @@
             title="Langauges">
             <span slot="buttons">
                 <outline-button
-                    @click="exampleModalShowing = true">
-                    Show Modal
+                    @click="createModal.show = true">
+                    Add a Language
                 </outline-button>
             </span>
             <div slot="content">
                 <data-table
+                    ref="languageTable"
                     url="/api/languages"
                     :classes="classes"
                     :per-page="perPage"
@@ -34,6 +35,7 @@
         </layout>
 
         <languages-create-modal
+            @created="languageCreated"
             :show="createModal.show"
             @close="createModal.show = false">
         </languages-create-modal>
@@ -75,11 +77,10 @@
                             'back-outline-btn': true
                         },
                         width: 25,
-                        label: 'Update',
-                        name: 'updated_at',
+                        name: 'View',
                         component: DataTableButtonCell,
-                        click: this.alertHi,
-                    }
+                        click: this.viewLanguage,
+                    },
                 ],
             };
         },
@@ -87,7 +88,7 @@
             TableClasses
         ],
         created() {
-            axios.get('/api/languages')
+            axios.get(`/api/languages`)
             .then(response => {
                 this.languages = response.data;
             })
@@ -96,11 +97,14 @@
             });
         },
         methods: {
-            alertHi() {
-                this.createModal.show = true;
+            viewLanguage(data) {
+                this.$router.push({ path: `/back/languages/${data.id}`})
             },
             updateUrl(url) {
                 this.url = url;
+            },
+            languageCreated() {
+                this.$refs.languageTable.getData();
             }
         }
     }

@@ -18,6 +18,5 @@ $factory->define(\App\Models\Language::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
         'description' => $faker->text,
-        'icon' => $faker->name,
     ];
 });

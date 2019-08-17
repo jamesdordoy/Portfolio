@@ -5,7 +5,11 @@
                 class="sm:w-full lg:w-1/4 rounded overflow-hidden shadow-lg mr-4 bg-black"
                 :key="language.id"
                 v-for="language in languages.slice(index * itemsPerRow, (index + 1) * itemsPerRow)">
-                <img class="w-full" :src='language.icon ? language.icon : "/images/projects/PointsofInterest.png"'>
+                <div class="img-container">
+                    <img
+                        class="w-full language-img"
+                        :src='language.image ? language.image.url : "/images/projects/PointsofInterest.png"'>
+                </div>
                 <div class="px-6 py-4">
                     <div class="font-bold text-xl mb-2">
                         {{ language.name }}
@@ -28,6 +32,17 @@
 </template>
 
 <style>
+
+.language-img {
+    height: 100%;
+    max-width: 100%;
+    display: block;
+    margin: auto;
+}
+
+.img-container {
+    height: 240px;
+}
 
 </style>
 

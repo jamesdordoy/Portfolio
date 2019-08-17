@@ -24,4 +24,9 @@ class Language extends EloquentModel
     {
         return $this->hasMany('App\Example');
     }
+
+    public function image()
+    {
+        return $this->morphOne(Asset::class, 'assetable');
+    }
 }

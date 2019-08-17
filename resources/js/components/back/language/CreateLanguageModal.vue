@@ -20,6 +20,10 @@
                 </form-group>
 
                 <div class="w-full flex">
+
+                    <file-input-display
+                        :src="imageSrc">
+                    </file-input-display>
                     
                     <div class="w-1/2 p-6">
                         <file-input
@@ -27,22 +31,12 @@
                             name="icon">
                         </file-input>
                     </div>
-
-                    <div class="w-1/2">
-                        <form-group
-                            title="Icon URL">
-                            <text-input
-                                name="icon_url"
-                                placeholder="Icon URL">
-                            </text-input>
-                        </form-group>
-                    </div>  
                 </div>
 
                 <outline-button
                     title="Submit"
                     type="submit"
-                    classes="float-right ">
+                    classes="float-right">
                 </outline-button>
             </form>
             
@@ -62,9 +56,9 @@ export default {
             payload: {
                 name: '',
                 description: '',
-                icon_url: '',
-                icon: {},
-            }
+                image: {},
+            },
+            imageSrc: '',
         }
     },
     props: {
@@ -82,19 +76,28 @@ export default {
             this.$emit("close");
         },
         submit() {
-
             LanguageService.create(this.getFormData)
             .then(response => {
-                this.languages = response.data;
+                this.close()
+                this.$swal("Language Created");
+                this.$emit("created");
             })
-            .catch(function (error) {
-                // handle error
-                console.log(error);
+            .catch(error => {
+                
             });
         },
-        getFile(files) {
-            console.log(files);
-            this.payload.icon = files[0]
+        getFile(file) {
+            this.payload.image = file;
+            this.renderImage(file);
+        },
+        renderImage(file) {
+            let reader = new FileReader;
+
+            reader.onload = (e) => {
+                this.imageSrc = e.target.result;
+            }
+            
+            reader.readAsDataURL(file);
         }
     },
     computed: {

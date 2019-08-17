@@ -66,7 +66,35 @@
 </template>
 
 <script>    
+
+  import IndexService from '../../../services/IndexService';
+
   export default {
-    props: ['projects', 'languages', 'about', 'auth', 'tweets', 'contactFormUrl', 'newsletterFormUrl'],
+    data() {
+      return {
+        auth: {},
+        about: '',
+        projects: {},
+        languages: [],
+        tweets: {},
+        contactFormUrl: '',
+        newsletterFormUrl: '',
+      };
+    },
+    created() {
+      this.getLanguages();
+    },  
+    methods: {
+      getLanguages() {
+        IndexService.languages()
+        .then(response => {
+          console.log(response);
+          this.languages = response.data;
+        })
+        .catch(error => {
+
+        })
+      }
+    },
   }
 </script>

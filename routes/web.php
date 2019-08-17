@@ -33,6 +33,8 @@ Route::middleware('auth')->group(function () {
         Route::prefix('api')->group(function() {
             Route::get('/github', 'GitHubController@index');
             Route::get('/languages', 'LanguageController@index');
+            Route::get('/languages/{id}', 'LanguageController@find');
+            Route::post('/languages/{id}', 'LanguageController@update');
             Route::post('/languages', 'LanguageController@store');
             Route::get('/contacts', 'ContactController@index');
             Route::get('/projects', 'ProjectController@ajax');
@@ -49,6 +51,21 @@ Route::namespace('Front')->group(function() {
     Route::get('/', [
         'as' => 'front.get.index',
         'uses' => 'IndexController@index',
+    ]);
+
+    Route::get('/languages', [
+        'as' => 'front.get.languages',
+        'uses' => 'IndexController@languages',
+    ]);
+
+    Route::get('/projects', [
+        'as' => 'front.get.projects',
+        'uses' => 'IndexController@projects',
+    ]);
+
+    Route::get('/tweets', [
+        'as' => 'front.get.tweets',
+        'uses' => 'IndexController@tweets',
     ]);
 
     Route::get('/privacy', [

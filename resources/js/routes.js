@@ -19,4 +19,8 @@ export default [
         path: '/back/languages',
         component: require('./components/back/views/LanguagesView.vue')
     },
+    {
+        path: '/back/languages/:id',
+        component: require('./components/back/views/LanguageView.vue')
+    },
 ];

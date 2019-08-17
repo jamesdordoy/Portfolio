@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Back;
 
 use App\Models\Language;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\Controller;
+use App\Http\Resources\LanguageResource;
 use App\Contracts\Services\LanguageServiceContract;
 use JamesDordoy\LaravelVueDatatable\Http\Resources\DataTableCollectionResource;
 
@@ -46,44 +46,29 @@ class LanguageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function find(Request $request, int $id)
     {
-        // $this->languageService->store();
-
-        $file = $request->file("icon");
-        $imageName = str_replace(" ", "", $request->input("name")) .'.'. $file->getClientOriginalExtension();
-        $file->move(base_path() . '/public/images/languages/', $imageName);
-        
-        $language = new Language;
-        $language->name = $request->input("name");
-        $language->description = $request->input("description");
-        $language->icon = $imageName;
-
-        if ($language->save()) {
-            return 200;
-        }
-    }
-
-    public function nameImage()
-    {
-        
+        return Language::with("image")->find($id);
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Store a newly created resource in storage.
      *
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function store(Request $request)
     {
-        if (!$id) {
-            throw new HttpException(400, "Invalid id");
+        $image = $request->file("image");
+        $payload = $request->only("name", "description");
+
+        $language = $this->languageService->store($payload, $image);
+
+        if (! is_null($language)) {
+            return new LanguageResource($language);
         }
-  
-        $language = Language::findOrFail($id);
-  
-        return view('forms.edit_language', compact('language'));
+
+        throw new HttpException(400, "Invalid data");
     }
 
     /**
@@ -98,23 +83,14 @@ class LanguageController extends Controller
         if (!$id) {
             throw new HttpException(400, "Invalid id");
         }
- 
-        $language = Language::findOrFail($id);
- 
-        $file = $request->file("thumbnail");
- 
-        $imageName = $request->input("id") .'.'. $file->getClientOriginalExtension();
- 
-        $file->move( base_path() . '/public/images/language/', $imageName );
- 
-        $language->name = $request->input("name");
-        $language->description = $request->input("description");
-        $language->icon = $imageName;
-        
-        if ($language->save()) {
-            return view('forms.edit_language', compact('language'));
+
+        $payload = $request->only("name", "description");
+        $language = $this->languageService->update($id, $payload, $request->image);
+
+        if (! is_null($language)) {
+            return new LanguageResource($language);
         }
- 
+    
         throw new HttpException(400, "Invalid data");
     }
 
@@ -132,7 +108,7 @@ class LanguageController extends Controller
 
         $language = Language::findOrFail($id);
 
-        if($language->delete()) {
+        if ($language->delete()) {
             return redirect("/dash/languages")->with("success", "Language $id Removed");
         }
     }

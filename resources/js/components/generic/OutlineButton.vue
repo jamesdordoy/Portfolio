@@ -5,7 +5,7 @@
         @click="onClick"
         :disabled:="disabled"
         class="bg-transparent hover:bg-teal text-teal-dark font-semibold py-2 px-4 border border-teal hover:border-transparent rounded">
-        <slot></slot>&nbsp;{{ title }}
+        <slot></slot><span v-if='hasSlot'>&nbsp;</span>{{ title }}
     </button>
 </template>
 
@@ -40,6 +40,11 @@ export default {
             this.$emit("click");
         },
     },
+    computed: {
+        hasSlot() {
+            return !! this.$slots.default;
+        }
+    }
 }
 
 </script>

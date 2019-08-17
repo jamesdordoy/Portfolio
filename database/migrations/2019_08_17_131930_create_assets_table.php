@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLangugesTable extends Migration
+class CreateAssetsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,15 @@ class CreateLangugesTable extends Migration
      */
     public function up()
     {
-        Schema::create('languages', function (Blueprint $table) {
-            $table->increments('id')->unsigned();
+        Schema::create('assets', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('assetable_id');
+            $table->string('assetable_type');
             $table->string('name');
-            $table->string('description');
+            $table->string('file_name');
+            $table->string('url')->nullable();
+            $table->string('mime_type');
+            $table->integer('size');
             $table->timestamps();
         });
     }
@@ -28,6 +33,6 @@ class CreateLangugesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('languages');
+        Schema::dropIfExists('assets');
     }
 }

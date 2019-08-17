@@ -1,16 +1,6 @@
 {% extends "front.layouts.layout2019" %}
 
 {% block main %}
-  <home-view
-    :projects="{{ projects|json_encode }}"
-    :about="{{ about|json_encode }}"
-    :tweets="{{ tweets|json_encode }}"
-    :languages="{{ languages|json_encode }}"
-    contact-form-url="{{ route('front.post.contact') }}"
-    newsletter-form-url="{{ route('front.post.newsletter') }}">
-  </home-view>
-{% endblock %}
-
-{% block scripts %}
-
+  <router-view>
+  </router-view>
 {% endblock %}

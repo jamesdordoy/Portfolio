@@ -55,7 +55,7 @@ class TwitterService extends Service implements TwitterServiceContract
      *
      * @return array
      */
-    public function getStatuses() : array
+    public function getStatuses()
     {
         return $this->conn->get(
             "statuses/user_timeline",
