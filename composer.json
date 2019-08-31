@@ -12,6 +12,7 @@
         "fideloper/proxy": "^4.0",
         "graham-campbell/github": "^7.6",
         "guzzlehttp/guzzle": "^6.3",
+        "intervention/image": "^2.5",
         "jamesdordoy/laravelvuedatatable": "1.1.*",
         "laravel/framework": "5.7.*",
         "laravel/tinker": "~1.0",

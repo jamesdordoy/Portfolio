@@ -2,7 +2,10 @@
     <div >
         <layout
             :title="payload.name">
-            <form @submit.prevent="updateLanguage" slot="content" class="w-1/2 mx-auto">
+
+
+
+            <form @submit.prevent="updateLanguage" slot="content" class="w-1/2 mx-auto mt-4">
                 <div class="w-full flex">
                     <div class="w-full">
                         <form-group

@@ -168,6 +168,7 @@ return [
          * Package Service Providers...
          */
         JamesDordoy\LaravelVueDatatable\Providers\LaravelVueDatatableServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
         Barryvdh\Cors\ServiceProvider::class,
 
         /*
@@ -232,7 +233,7 @@ return [
         'GitHub' => GrahamCampbell\GitHub\Facades\GitHub::class,
         'Bitbucket' => GrahamCampbell\Bitbucket\Facades\Bitbucket::class,
         'LinkedIn'  => \Artesaos\LinkedIn\Facades\LinkedIn::class,
-
+        'Image' => Intervention\Image\Facades\Image::class,
     ],
 
 ];

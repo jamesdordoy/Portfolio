@@ -85,8 +85,18 @@ class LanguageService extends Service implements LanguageServiceContract
     public function uploadImage($image, $imageName)
     {
         if (! is_null($image)) {
-            $imagePath = base_path() . '/public/images/languages/';
-            $image->move($imagePath, $imageName);
+            $image = \Image::make(
+                $image->getRealPath()
+            )
+            ->resize(
+                340,
+                340,
+                function ($constraint) {
+                    $constraint->aspectRatio();
+                }
+            );
+
+            $image->save(public_path("images/languages/{$imageName}"));
         }
     }
 }

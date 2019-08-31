@@ -16,6 +16,7 @@
                         </slot>
                     </div>
                 </div>
+                <hr class="hr-header">
             </div>
             <div class="flex flex-wrap text-grey-dark">
                 <div class="w-full">
@@ -29,6 +30,14 @@
         </div>
     </div>
 </template>
+<style lang="">
+    
+hr.hr-header {
+    margin-top:20px;
+    border-top: 1px solid #ccc;
+}
+
+</style>
 
 <script>
 

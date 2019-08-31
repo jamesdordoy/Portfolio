@@ -4,14 +4,16 @@
             title="Langauges">
             <span slot="buttons">
                 <outline-button
+                    title="Add a Language"
                     @click="createModal.show = true">
-                    Add a Language
+                    <i class="fa fa-plus" aria-hidden="true"></i>
                 </outline-button>
             </span>
             <div slot="content">
                 <data-table
                     ref="languageTable"
                     url="/api/languages"
+                    :add-filters-to-url="true"
                     :classes="classes"
                     :per-page="perPage"
                     :columns="columns">
@@ -35,7 +37,7 @@
         </layout>
 
         <languages-create-modal
-            @created="languageCreated"
+            @submit="languageModalSubmit"
             :show="createModal.show"
             @close="createModal.show = false">
         </languages-create-modal>
@@ -43,6 +45,8 @@
 </template>
 
 <script>
+
+    import LanguageService from '../../../services/LanguageService';
     import TableClasses from '../../../mixins/DataTableClasses';
     import DataTableButtonCell from '../../generic/DataTableButtonCell';
     export default {
@@ -79,7 +83,8 @@
                         width: 25,
                         name: 'View',
                         component: DataTableButtonCell,
-                        click: this.viewLanguage,
+                        event: 'click',
+                        handler: this.viewLanguage,
                     },
                 ],
             };
@@ -88,12 +93,12 @@
             TableClasses
         ],
         created() {
-            axios.get(`/api/languages`)
+            LanguageService.all()
             .then(response => {
                 this.languages = response.data;
             })
-            .catch(function (error) {
-
+            .catch(error => {
+                this.$swal("Failed to get Languages");
             });
         },
         methods: {
@@ -103,8 +108,19 @@
             updateUrl(url) {
                 this.url = url;
             },
-            languageCreated() {
-                this.$refs.languageTable.getData();
+            languageModalSubmit(payload, callback) {
+                LanguageService.create(payload)
+                .then(response => {
+                    this.$swal("Language Created");
+                    this.$refs.languageTable.getData();
+
+                    if (!! callback) {
+                        callback();
+                    }
+                })
+                .catch(error => {
+                    this.$swal("Something went wrong");
+                });
             }
         }
     }

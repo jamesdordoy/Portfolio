@@ -4,6 +4,10 @@ import AbstractService from './AbstractService.js';
 
 class LanguageService extends AbstractService {
 
+    all() {
+        return this.client.get(`/api/languages`);
+    }
+
     find(id) {
         return this.client.get(`/api/languages/${id}`);
     }

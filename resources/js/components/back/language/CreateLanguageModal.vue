@@ -20,11 +20,9 @@
                 </form-group>
 
                 <div class="w-full flex">
-
                     <file-input-display
                         :src="imageSrc">
                     </file-input-display>
-                    
                     <div class="w-1/2 p-6">
                         <file-input
                             @change="getFile"
@@ -39,7 +37,6 @@
                     classes="float-right">
                 </outline-button>
             </form>
-            
         </div>
         <div slot="footer" class="mb-8"></div>
     </back-modal>
@@ -47,8 +44,6 @@
 
 <script>
 "use strict";
-
-import LanguageService from '../../../services/LanguageService';
 
 export default {
     data() {
@@ -76,15 +71,16 @@ export default {
             this.$emit("close");
         },
         submit() {
-            LanguageService.create(this.getFormData)
-            .then(response => {
-                this.close()
-                this.$swal("Language Created");
-                this.$emit("created");
-            })
-            .catch(error => {
-                
+            this.$emit("submit", this.getFormData, () => {
+                this.close();
+                this.resetPayload();
             });
+        },
+        resetPayload() {
+            this.payload.name = '';
+            this.payload.description = '';
+            this.payload.image = {};
+            this.imageSrc = '';
         },
         getFile(file) {
             this.payload.image = file;
