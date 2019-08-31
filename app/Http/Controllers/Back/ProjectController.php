@@ -49,7 +49,7 @@ class ProjectController extends Controller
     {   
         $limit = $request->input('length');
         $column = $request->input('column'); //Index
-        $dir = $request->input('dir');
+        $dir = $request->input('dir', 'asc');
         $searchValue = $request->input('search');
 
         $data = Project::dataTableQuery($column, $dir, $searchValue)

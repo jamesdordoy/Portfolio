@@ -25,10 +25,6 @@ Vue.use(DataTable);
 Vue.use(VueRouter);
 Vue.use(VueSweetalert2, options);
 
-
-// const files = require.context('./', true, /\.vue$/i);
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
-
 // Frontend
     // Forms
         Vue.component('contact-form',      require('./components/front/forms/ContactForm.vue'));
@@ -39,7 +35,7 @@ Vue.use(VueSweetalert2, options);
         Vue.component('front-footer',      require('./components/front/includes/Footer.vue'));
     //Generic
         Vue.component('particles',         require('./components/front/generic/Particles.vue'));
-        Vue.component('tag',               require('./components/front/generic/Tag.vue'));
+        Vue.component('tag',               require('./components/generic/Tag.vue'));
     //Lists
         Vue.component('languages',          require('./components/front/lists/Languages.vue'));
         Vue.component('projects',          require('./components/front/lists/Projects.vue'));
@@ -57,6 +53,7 @@ Vue.use(VueSweetalert2, options);
     // Includes
         Vue.component('back-nav',          require('./components/back/includes/Nav.vue'));
     // Generic
+        Vue.component('posts',             require('./components/back/blog/elements/Posts.vue'));
 // Generic
     Vue.component('back-modal',             require('./components/generic/Modal.vue'));
     Vue.component('back-nav-link',          require('./components/generic/NavLink.vue'));

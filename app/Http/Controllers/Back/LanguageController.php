@@ -32,7 +32,7 @@ class LanguageController extends Controller
     {
         $limit = $request->input('length');
         $index = $request->input('column');
-        $orderBy = $request->input('dir');
+        $orderBy = $request->input('dir', "asc");
         $search = $request->input('search');
 
         return new DataTableCollectionResource(

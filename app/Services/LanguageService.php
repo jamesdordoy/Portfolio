@@ -17,11 +17,6 @@ class LanguageService extends Service implements LanguageServiceContract
         $this->assetService = $assetService;
     }
 
-    public function all()
-    {
-        return Language::orderBy('id', 'ASC')->get();
-    }
-
     public function store($payload, $image = null)
     {
         $language = new Language;
@@ -31,10 +26,10 @@ class LanguageService extends Service implements LanguageServiceContract
         if ($language->save()) {
 
             if (! is_null($image)) {
-                $imageName = $language->id .'.'. $image->getClientOriginalExtension();
 
                 $asset = null;
-                $imageUrl = config('app.url')."/images/languages/".$imageName."?stamp=".Carbon::now()->timestamp;
+                $imageName = $this->imageName($language->id, $image);
+                $imageUrl = $this->imageUrl($imageName);
 
                 $asset = $this->assetService->store(
                     $language->id,
@@ -61,10 +56,10 @@ class LanguageService extends Service implements LanguageServiceContract
         if ($language->save()) {
 
             if (! is_null($image)) {
-                $imageName = $id .'.'. $image->getClientOriginalExtension();
 
                 $asset = null;
-                $imageUrl = config('app.url')."/images/languages/".$imageName."?stamp=".Carbon::now()->timestamp;
+                $imageName = $this->imageName($id, $image);
+                $imageUrl = $this->imageUrl($imageName);
 
                 $asset = $this->assetService->store(
                     $language->id,
@@ -80,6 +75,16 @@ class LanguageService extends Service implements LanguageServiceContract
         }
 
         return null;
+    }
+
+    public function imageName($id, $image)
+    {
+        return $id .'.'. $image->getClientOriginalExtension();
+    }
+
+    public function imageUrl($imageName)
+    {
+        return config('app.url')."/images/languages/".$imageName."?stamp=".Carbon::now()->timestamp;
     }
 
     public function uploadImage($image, $imageName)

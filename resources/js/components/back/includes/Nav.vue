@@ -13,21 +13,31 @@
                         <back-nav-link
                             :url="'/back'"
                             :text="'Dash'">
+                            <i class="fa fa-tachometer" aria-hidden="true"></i>
                         </back-nav-link>
                         <back-nav-link
                             :url="'/back/projects'"
                             :text="'Projects'">
+                            <i class="fa fa-github" aria-hidden="true"></i>
                         </back-nav-link>
                         <back-nav-link
                             :url="'/back/contact'"
                             :text="'Contact'">
+                            <i class="fa fa-phone" aria-hidden="true"></i>
+                        </back-nav-link>
+                        <back-nav-link
+                            :url="'/back/blog'"
+                            :text="'Blog'">
+                            <i class="fa fa-book" aria-hidden="true"></i>
                         </back-nav-link>
                         <back-nav-link
                             :url="'/back/languages'"
                             :text="'Languages'">
+                            <i class="fa fa-language" aria-hidden="true"></i>
                         </back-nav-link>
                         <li>
                             <a href="https://server.jamesdordoy.co.uk/goaccess" target="_blank" class="no-underline p-4 text-grey-dark border-b xl:border-0 hover:bg-grey-lightest xl:hover:bg-transparent xl:hover:text-blue ml-2">
+                                <i class="fa fa-server" aria-hidden="true"></i>
                                 Server Statistics
                             </a>
                         </li>

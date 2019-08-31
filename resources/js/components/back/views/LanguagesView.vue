@@ -1,7 +1,7 @@
 <template>
     <div>
         <layout
-            title="Langauges">
+            title="Languages">
             <span slot="buttons">
                 <outline-button
                     title="Add a Language"
@@ -23,7 +23,6 @@
                             :per-page="perPage">
                         </data-table-filters>
                     </span>
-
                     <span slot="pagination" slot-scope="{ links, meta }">
                         <paginator 
                             @next="updateUrl"
@@ -46,9 +45,10 @@
 
 <script>
 
-    import LanguageService from '../../../services/LanguageService';
     import TableClasses from '../../../mixins/DataTableClasses';
+    import LanguageService from '../../../services/LanguageService';
     import DataTableButtonCell from '../../generic/DataTableButtonCell';
+
     export default {
         data() {
             return {
@@ -96,31 +96,29 @@
             LanguageService.all()
             .then(response => {
                 this.languages = response.data;
-            })
-            .catch(error => {
-                this.$swal("Failed to get Languages");
-            });
+            }).catch(this.displayError);
         },
         methods: {
-            viewLanguage(data) {
-                this.$router.push({ path: `/back/languages/${data.id}`})
-            },
             updateUrl(url) {
                 this.url = url;
+            },
+            viewLanguage(data) {
+                this.$router.push({ path: `/back/languages/${data.id}`})
             },
             languageModalSubmit(payload, callback) {
                 LanguageService.create(payload)
                 .then(response => {
                     this.$swal("Language Created");
                     this.$refs.languageTable.getData();
-
+                    
                     if (!! callback) {
                         callback();
                     }
-                })
-                .catch(error => {
-                    this.$swal("Something went wrong");
-                });
+                    
+                }).catch(this.displayError);
+            },
+            displayError(error) {
+                alert(error.response.data.message);
             }
         }
     }

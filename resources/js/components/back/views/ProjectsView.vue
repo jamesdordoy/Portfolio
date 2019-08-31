@@ -11,8 +11,10 @@
 
         <div slot="content">
             <data-table
+                url="/api/projects"
                 :classes="classes"
-                :url="url"
+                ref="languageTable"
+                :add-filters-to-url="true"
                 :per-page="perPage"
                 :columns="columns">
                 <span slot="filters" slot-scope="{ tableData, perPage }">
@@ -43,7 +45,7 @@
     export default {
         data() {
             return {
-                url: '/api/projects',
+                url: '',
                 perPage: ['10', '50', '100'],
                 columns: [
                     { label: 'ID', name: 'id' },

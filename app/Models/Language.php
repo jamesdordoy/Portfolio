@@ -29,4 +29,9 @@ class Language extends EloquentModel
     {
         return $this->morphOne(Asset::class, 'assetable');
     }
+
+    public function scopeOrdered($query)
+    {
+        return $query->orderBy('id', 'ASC');
+    }
 }

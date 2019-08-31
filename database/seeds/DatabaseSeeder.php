@@ -19,5 +19,6 @@ class DatabaseSeeder extends Seeder
 
         factory(\App\Models\DatatableFakeUser::class, 100)->create();
         factory(\App\Models\Project::class, 100)->create();
+        factory(\App\Models\Post::class, 20)->create();
     }
 }

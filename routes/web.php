@@ -38,6 +38,7 @@ Route::middleware('auth')->group(function () {
             Route::post('/languages', 'LanguageController@store');
             Route::get('/contacts', 'ContactController@index');
             Route::get('/projects', 'ProjectController@ajax');
+            Route::get('/posts', 'PostController@index');
             
         });
     });
