@@ -74,11 +74,11 @@
       return {
         auth: {},
         about: '',
-        projects: {},
+        projects: [],
         languages: [],
-        tweets: {},
-        contactFormUrl: '',
-        newsletterFormUrl: '',
+        tweets: [],
+        contactFormUrl: '/contact',
+        newsletterFormUrl: '/newsletter',
       };
     },
     created() {
@@ -88,12 +88,9 @@
       getLanguages() {
         IndexService.languages()
         .then(response => {
-          console.log(response);
           this.languages = response.data;
         })
-        .catch(error => {
-
-        })
+        .catch(console.log)
       }
     },
   }

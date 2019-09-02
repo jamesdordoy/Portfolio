@@ -25,6 +25,15 @@ Vue.use(DataTable);
 Vue.use(VueRouter);
 Vue.use(VueSweetalert2, options);
 
+import * as Sentry from '@sentry/browser';
+import * as Integrations from '@sentry/integrations';
+
+Sentry.init({
+  dsn: 'https://fa1a336bb87745c38b45c778226ca712@sentry.io/1549074',
+  integrations: [new Integrations.Vue({Vue, attachProps: true})],
+});
+
+
 // Frontend
     // Forms
         Vue.component('contact-form',      require('./components/front/forms/ContactForm.vue'));

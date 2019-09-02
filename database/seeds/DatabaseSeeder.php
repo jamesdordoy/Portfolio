@@ -18,7 +18,6 @@ class DatabaseSeeder extends Seeder
         $this->call(LinksTableSeeder::class);
 
         factory(\App\Models\DatatableFakeUser::class, 100)->create();
-        factory(\App\Models\Project::class, 100)->create();
         factory(\App\Models\Post::class, 20)->create();
     }
 }
