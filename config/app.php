@@ -180,7 +180,6 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         GrahamCampbell\GitHub\GitHubServiceProvider::class,
-        Artesaos\LinkedIn\LinkedinServiceProvider::class,
 
     ],
 
@@ -232,7 +231,6 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'GitHub' => GrahamCampbell\GitHub\Facades\GitHub::class,
         'Bitbucket' => GrahamCampbell\Bitbucket\Facades\Bitbucket::class,
-        'LinkedIn'  => \Artesaos\LinkedIn\Facades\LinkedIn::class,
         'Image' => Intervention\Image\Facades\Image::class,
     ],
 
