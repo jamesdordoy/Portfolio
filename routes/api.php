@@ -17,3 +17,9 @@ Route::get('/fake-users', [
     'as' => 'front.get.api.fake.users',
     'uses' => 'Front\FakeDataController@users',
 ]);
+
+Route::get('/fake-search', [
+    'as' => 'front.get.api.fake.search',
+    'uses' => 'Front\FakeDataController@search',
+]);
+

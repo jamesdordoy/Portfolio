@@ -34,4 +34,17 @@ class FakeDataController extends Controller
 
         return new DataTableCollectionResource($data);
     }
+
+    /**
+     *
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function search(Request $request) {
+        $searchValue = $request->input('search');
+
+        $users = DatatableFakeUser::where("name", "like", "%" . $searchValue . "%")->get();
+        
+        return $users;
+    }
 }
