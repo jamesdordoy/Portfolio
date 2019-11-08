@@ -6846,6 +6846,30 @@ html {
   border-bottom: none;
 }
 
+.about-me {
+  color: #b8c2cc;
+  text-align: center;
+}
+
+.projects {
+}
+
+.projects .project:last-child {
+  margin-right: 0;
+}
+
+.project {
+  border-radius: .25rem;
+  overflow: hidden;
+  -webkit-box-shadow: 0 15px 30px 0 rgba(0, 0, 0, .11), 0 5px 15px 0 rgba(0, 0, 0, .08);
+          box-shadow: 0 15px 30px 0 rgba(0, 0, 0, .11), 0 5px 15px 0 rgba(0, 0, 0, .08);
+  background-color: #22292f;
+  margin-right: 1rem !important;
+}
+
+.project:last-of-type {
+}
+
 @media (min-width: 576px) {
   .sm\:list-reset {
     list-style: none;

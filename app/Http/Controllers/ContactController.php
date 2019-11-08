@@ -4,13 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Jobs\SendContactConfirmationEmailJob;
 use App\Models\Contact;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ContactRequest;
 use App\Http\Requests\NewsletterRequest;
+use App\Jobs\SendContactConfirmationEmailJob;
 use App\Contracts\Services\ContactServiceContract;
-
 
 class ContactController extends Controller
 {

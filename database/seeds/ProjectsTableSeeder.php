@@ -27,19 +27,36 @@ class ProjectsTableSeeder extends Seeder
                 'owner' => "Me",
                 'icon' => "/images/projects/simple-shopping.png",
                 'link' => "https://shopping.jamesdordoy.co.uk",
-                "private" => 0,
             ]
         );
 
-        factory(\App\Models\Project::class)->create(
+        $project = factory(\App\Models\Project::class)->create(
             [
                 'name' => "Laravel Vue Datatables",
                 'description' => "A Vue.js datatable component for Laravel that works with Bootstrap.",
                 'owner' => "Me",
                 'icon' => "/images/projects/bootstrap-datatable.png",
-                'link' => "https://jamesdordoy.github.io/vue-datatable/",
+                'link' => "https://github.com/jamesdordoy/laravel-vue-datatable",
                 "private" => 0,
             ]
         );
+
+        DB::table('taggables')->insert([
+            'tag_id' => 2,
+            'taggables_id' => $project->id,
+            'taggables_type' => 'App\Models\Project',
+        ]);
+
+        DB::table('taggables')->insert([
+            'tag_id' => 3,
+            'taggables_id' => $project->id,
+            'taggables_type' => 'App\Models\Project',
+        ]);
+
+        DB::table('taggables')->insert([
+            'tag_id' => 4,
+            'taggables_id' => $project->id,
+            'taggables_type' => 'App\Models\Project',
+        ]);
     }
 }

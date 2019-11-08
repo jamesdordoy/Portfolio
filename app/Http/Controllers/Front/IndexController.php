@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Front;
 
 use App\Models\Project;
 use App\Models\Language;
-use App\Http\Controllers\Controller;
-use App\Contracts\Services\TwitterServiceContract;
+use App\Models\Timeline;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Resources\TimelineResource;
+use App\Contracts\Services\TwitterServiceContract;
 
 class IndexController extends Controller
 {
@@ -29,28 +31,18 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $exists = \Storage::exists('about.json');
-
-        $about = '';
-
-        if ($exists) {
-            $contents = \Storage::get('about.json');
-            $about = json_decode($contents, 1);
-        }
-
-        $languages = Language::with('image')->get();
-        $projects = Project::publicProjects()->get();
-        $tweets = $this->twitter->getStatuses();
         $auth = \Auth::user();
+        $timeline = Timeline::get();
+        $languages = Language::with('image')->get();
+        $projects = Project::get();
 
         return view(
             'front.home', 
             [
                 'auth' => $auth,
                 'projects' => $projects, 
-                'tweets' => $tweets,
                 'languages' => $languages,
-                'about' => $about
+                'timeline' => $timeline,
             ]
         );
     }
@@ -62,12 +54,17 @@ class IndexController extends Controller
 
     public function projects()
     {
-        
+        return Project::with("tags")->get();
     }
 
     public function tweets()
     {
 
+    }
+
+    public function timeline()
+    {
+        return TimelineResource::collection(Timeline::get());
     }
 
     /**

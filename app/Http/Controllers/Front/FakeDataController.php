@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Front;
 
-use App\Models\DatatableFakeUser;
 use App\Models\Language;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\DatatableFakeUser;
+use App\Http\Controllers\Controller;
 use JamesDordoy\LaravelVueDatatable\Http\Resources\DataTableCollectionResource;
 
 class FakeDataController extends Controller
@@ -21,7 +21,6 @@ class FakeDataController extends Controller
         $column = $request->input('column');
         $dir = $request->input('dir', 'asc');
         $searchValue = $request->input('search');
-
         $isAdmin = $request->input('isAdmin');
 
         $query = DatatableFakeUser::dataTableQuery($column, $dir, $searchValue);

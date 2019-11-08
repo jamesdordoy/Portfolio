@@ -69,6 +69,11 @@ Route::namespace('Front')->group(function() {
         'uses' => 'IndexController@tweets',
     ]);
 
+    Route::get('/timeline', [
+        'as' => 'front.get.timeline',
+        'uses' => 'IndexController@timeline',
+    ]);
+
     Route::get('/privacy', [
         'as' => 'front.get.privacy',
         'uses' => 'IndexController@privacyPolicy',

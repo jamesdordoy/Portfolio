@@ -15,6 +15,10 @@ class IndexService extends AbstractService {
     tweets() {
         return this.client.get(`/tweets`);
     }
+
+    timeline() {
+        return this.client.get(`/timeline`);
+    }
 };
 
 //Create absoulute Singleton

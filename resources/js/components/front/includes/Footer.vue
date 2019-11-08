@@ -1,30 +1,30 @@
 <template>
 
-    <div class="flex flex-wrap bg-black p-10">
+    <div class="flex flex-wrap bg-black p-6 lg:p-10">
         <div class="w-full lg:w-1/3 mt-2 border-b border-b-2 border-teal py-2">
             <p class="mt-4">
                 <a href="https://www.facebook.com/dordoy" target="_blank">
-                    <i class="fa fa-facebook fa-3x text-grey-darker hover:text-blue"></i>
+                    <i class="fa fa-facebook text-4xl lg:text-5xl text-grey-darker hover:text-blue"></i>
                 </a>
                 <span class="text-teal p-2 inline-block">-</span>
                 <a href="https://twitter.com/JDordoy" target="_blank">
-                    <i class="fa fa-twitter fa-3x text-grey-darker hover:text-blue-light"></i>
+                    <i class="fa fa-twitter text-4xl lg:text-5xl text-grey-darker hover:text-blue-light"></i>
                 </a>
                 <span class="text-teal p-2">-</span>
                 <a href="https://plus.google.com/u/0/108820602359020977660" target="_blank">
-                    <i class="fa fa-google-plus fa-3x text-grey-darker hover:text-red"></i>
+                    <i class="fa fa-google-plus text-4xl lg:text-5xl text-grey-darker hover:text-red"></i>
                 </a>
                 <span class="text-teal p-2">-</span>
                 <a href="https://github.com/jamesdordoy" target="_blank">
-                    <i class="fa fa-github fa-3x text-grey-darker hover:text-grey-dark"></i>
+                    <i class="fa fa-github text-4xl lg:text-5xl text-grey-darker hover:text-grey-dark"></i>
                 </a>
                 <span class="text-teal p-2">-</span>
                 <a href="https://jsfiddle.net/user/JamesDordoy/fiddles/" target="_blank">
-                    <i class="fa fa-jsfiddle fa-3x text-grey-darker hover:text-yellow" aria-hidden="true"></i>
+                    <i class="fa fa-jsfiddle text-4xl lg:text-5xl text-grey-darker hover:text-yellow" aria-hidden="true"></i>
                 </a>
             </p>
         </div>
-        <div class="w-full lg:w-1/3 lg:text-center sm:py-6 lg:py-0 varela text-grey lg:pt-2">
+        <div class="w-full lg:w-1/3 lg:text-center py-6 lg:py-0 varela text-grey lg:pt-2">
             <h4>&copy; James Dordoy</h4>
             <p><a class="text-teal hover:text-teal-lighter mt-4 block" href="/privacy">Privacy Policy</a></p>
         </div>

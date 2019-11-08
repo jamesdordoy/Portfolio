@@ -68,13 +68,14 @@ Sentry.init({
     Vue.component('back-nav-link',          require('./components/generic/NavLink.vue'));
     Vue.component('text-input',             require('./components/generic/TextInput.vue'));
     Vue.component('file-input',             require('./components/generic/FileInput.vue'));
-    Vue.component('file-input-display',         require('./components/generic/FileInputDisplay.vue'));
+    Vue.component('file-input-display',     require('./components/generic/FileInputDisplay.vue'));
     Vue.component('form-group',             require('./components/generic/FormGroup.vue'));
     Vue.component('form-error',             require('./components/generic/FormError.vue'));
     Vue.component('textarea-input',         require('./components/generic/TextareaInput.vue'));
-    Vue.component('small-button',         require('./components/generic/SmallButton.vue'));
+    Vue.component('small-button',           require('./components/generic/SmallButton.vue'));
     Vue.component('outline-button',         require('./components/generic/OutlineButton.vue'));
-    Vue.component('tailwind-select',         require('./components/generic/TailwindSelect.vue'));
+    Vue.component('tailwind-select',        require('./components/generic/TailwindSelect.vue'));
+    Vue.component('timeline',               require('./components/generic/Timeline.vue'));
     
     
 

@@ -20,6 +20,14 @@ class TagsTableSeeder extends Seeder
         ]);
 
         factory(\App\Models\Tag::class)->create([
+            'name' => "Laravel",
+        ]);
+
+        factory(\App\Models\Tag::class)->create([
+            'name' => "Bootstrap",
+        ]);
+
+        factory(\App\Models\Tag::class)->create([
             'name' => "Firebase",
         ]);
 

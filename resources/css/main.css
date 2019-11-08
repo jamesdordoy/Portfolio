@@ -102,3 +102,25 @@
   .stripped-table:last-of-type {
     border-bottom: none;
   }
+
+  .about-me {
+    @apply text-grey;
+    text-align: center;
+  }
+
+  .projects {
+
+  }
+
+  .projects .project:last-child {
+    margin-right: 0;
+  }
+
+  .project {
+    @apply rounded overflow-hidden shadow-lg bg-black;
+    margin-right: 1rem !important;
+  }
+
+  .project:last-of-type {
+    
+  }

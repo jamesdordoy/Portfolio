@@ -11,11 +11,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call(TagsTableSeeder::class);
         $this->call(UsersTableSeeder::class);
         $this->call(ProjectsTableSeeder::class);
         $this->call(LanguagesTableSeeder::class);
-        $this->call(TagsTableSeeder::class);
         $this->call(LinksTableSeeder::class);
+        $this->call(TimelineTableSeeder::class);
 
         factory(\App\Models\DatatableFakeUser::class, 100)->create();
         factory(\App\Models\Post::class, 20)->create();

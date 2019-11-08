@@ -3,10 +3,9 @@
 namespace App\Http\Controllers\Back;
 
 use App\Models\Project;
-
 use App\Models\Language;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class IndexController extends Controller
 {
@@ -17,10 +16,9 @@ class IndexController extends Controller
      */
     public function index()
     {
+        $languages = Language::count();
         $projectCompleteCount = Project::where('completed', true)->count();
         $projectIncompleteCount = Project::where('completed', false)->count();
-
-        $languages = Language::count();
 
         return view(
             'back.home',
