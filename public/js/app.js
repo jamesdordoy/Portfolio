@@ -13426,7 +13426,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_IndexService__ = __webpack_require__("./resources/js/services/IndexService.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_breakpoints__ = __webpack_require__("./node_modules/vue-breakpoints/dist/vue-breakpoints.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_breakpoints___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue_breakpoints__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_IndexService__ = __webpack_require__("./resources/js/services/IndexService.js");
 //
 //
 //
@@ -13500,6 +13502,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 
@@ -13518,6 +13526,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       messageWhenNoItems: 'There arent items'
     };
   },
+
+  components: {
+    showAt: __WEBPACK_IMPORTED_MODULE_0_vue_breakpoints__["showAt"]
+  },
   created: function created() {
     this.getLanguages();
     this.getProjects();
@@ -13528,21 +13540,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     getLanguages: function getLanguages() {
       var _this = this;
 
-      __WEBPACK_IMPORTED_MODULE_0__services_IndexService__["a" /* default */].languages().then(function (response) {
+      __WEBPACK_IMPORTED_MODULE_1__services_IndexService__["a" /* default */].languages().then(function (response) {
         _this.languages = response.data;
       }).catch(console.log);
     },
     getProjects: function getProjects() {
       var _this2 = this;
 
-      __WEBPACK_IMPORTED_MODULE_0__services_IndexService__["a" /* default */].projects().then(function (response) {
+      __WEBPACK_IMPORTED_MODULE_1__services_IndexService__["a" /* default */].projects().then(function (response) {
         _this2.projects = response.data;
       }).catch(console.log);
     },
     getTimeline: function getTimeline() {
       var _this3 = this;
 
-      __WEBPACK_IMPORTED_MODULE_0__services_IndexService__["a" /* default */].timeline().then(function (response) {
+      __WEBPACK_IMPORTED_MODULE_1__services_IndexService__["a" /* default */].timeline().then(function (response) {
         _this3.timeline = response.data.data;
       }).catch(console.log);
     }
@@ -66442,7 +66454,22 @@ var render = function() {
                     items: _vm.timeline,
                     "message-when-no-items": "No data"
                   }
-                })
+                }),
+                _vm._v(" "),
+                _c(
+                  "show-at",
+                  {
+                    attrs: {
+                      breakpoint: "mediumAndBelow",
+                      breakpoints: { medium: 991 }
+                    }
+                  },
+                  [
+                    _c("div", {
+                      staticClass: "timeline-spacing border-b pt-6 border-teal"
+                    })
+                  ]
+                )
               ],
               1
             ),
