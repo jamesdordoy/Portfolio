@@ -54,7 +54,7 @@ class IndexController extends Controller
 
     public function projects()
     {
-        return Project::with("tags")->get();
+        return Project::with("tags")->publicProjects()->get();
     }
 
     public function tweets()
