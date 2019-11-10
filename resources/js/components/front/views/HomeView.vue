@@ -54,9 +54,9 @@
             :items="timeline"
             message-when-no-items="No data">
           </timeline>
-          <show-at breakpoint="mediumAndBelow" :breakpoints="{medium: 991}" >
+          <!-- <show-at breakpoint="mediumAndBelow" :breakpoints="{medium: 991}" >
             <div class="timeline-spacing border-b pt-6 border-teal"></div>
-          </show-at>
+          </show-at> -->
         </div>
         
         <div class="w-full lg:w-1/2 py-8">

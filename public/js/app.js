@@ -66454,22 +66454,7 @@ var render = function() {
                     items: _vm.timeline,
                     "message-when-no-items": "No data"
                   }
-                }),
-                _vm._v(" "),
-                _c(
-                  "show-at",
-                  {
-                    attrs: {
-                      breakpoint: "mediumAndBelow",
-                      breakpoints: { medium: 991 }
-                    }
-                  },
-                  [
-                    _c("div", {
-                      staticClass: "timeline-spacing border-b pt-6 border-teal"
-                    })
-                  ]
-                )
+                })
               ],
               1
             ),
