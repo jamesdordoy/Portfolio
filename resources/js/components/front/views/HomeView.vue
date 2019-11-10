@@ -12,7 +12,7 @@
     </div>
 
     <div class="w-full">
-      <div class="w-full px-10 py-24 bg-black">
+      <div class="w-full px-10 py-12 bg-black">
         <span class="anchor" id="about"></span>
         <h2 class="text-center varela mb-8 text-grey">About Me</h2>
         <p class="about-me">
@@ -31,7 +31,7 @@
         </div>
       </div>
 
-      <div class="w-full px-10 py-24 bg-nav">
+      <div class="w-full px-10 py-12 bg-nav">
         <span class="anchor" id="projects"></span>
         <h2 class="varela text-center text-grey mb-8">Projects</h2>        
         <projects
@@ -39,7 +39,7 @@
         </projects>
       </div>
 
-      <div class="w-full px-10 py-24 bg-black">
+      <div class="w-full px-10 py-12 bg-black">
         <div class="flex flex-col">
           <span class="anchor" id="languages"></span>
           <h2 class="varela text-center text-grey mb-8">Blog Entries</h2>
@@ -56,7 +56,7 @@
           </timeline>
         </div>
         <div class="w-full lg:w-1/2 py-8">
-          <h2 class="varela mb-4 py-4 px-2 text-grey">Contact Me</h2>
+          <h2 class="varela mb-4 py-4 text-grey">Contact Me</h2>
           <contact-form
             :url="contactFormUrl"
             :method="'POST'">

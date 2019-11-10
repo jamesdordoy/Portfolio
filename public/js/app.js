@@ -13318,6 +13318,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -66407,7 +66408,7 @@ var render = function() {
         _vm._v(" "),
         _c(
           "div",
-          { staticClass: "w-full px-10 py-24 bg-nav" },
+          { staticClass: "w-full px-10 py-12 bg-nav" },
           [
             _c("span", { staticClass: "anchor", attrs: { id: "projects" } }),
             _vm._v(" "),
@@ -66450,7 +66451,7 @@ var render = function() {
               "div",
               { staticClass: "w-full lg:w-1/2 py-8" },
               [
-                _c("h2", { staticClass: "varela mb-4 py-4 px-2 text-grey" }, [
+                _c("h2", { staticClass: "varela mb-4 py-4 text-grey" }, [
                   _vm._v("Contact Me")
                 ]),
                 _vm._v(" "),
@@ -66476,7 +66477,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "w-full px-10 py-24 bg-black" }, [
+    return _c("div", { staticClass: "w-full px-10 py-12 bg-black" }, [
       _c("span", { staticClass: "anchor", attrs: { id: "about" } }),
       _vm._v(" "),
       _c("h2", { staticClass: "text-center varela mb-8 text-grey" }, [
@@ -66517,7 +66518,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "w-full px-10 py-24 bg-black" }, [
+    return _c("div", { staticClass: "w-full px-10 py-12 bg-black" }, [
       _c("div", { staticClass: "flex flex-col" }, [
         _c("span", { staticClass: "anchor", attrs: { id: "languages" } }),
         _vm._v(" "),
@@ -69041,7 +69042,7 @@ var render = function() {
             [
               _vm._l(_vm.projects, function(project) {
                 return _c("slide", { key: project.id }, [
-                  _c("div", { staticClass: "flex mt-10 projects" }, [
+                  _c("div", { staticClass: "flex projects" }, [
                     _c(
                       "div",
                       {
@@ -69055,7 +69056,7 @@ var render = function() {
                           { attrs: { href: project.link, target: "_blank" } },
                           [
                             _c("img", {
-                              staticStyle: { height: "200px" },
+                              staticStyle: { width: "100%", height: "200px" },
                               attrs: {
                                 src: project.icon
                                   ? project.icon
@@ -69153,7 +69154,10 @@ var render = function() {
                       [
                         _c(
                           "a",
-                          { attrs: { href: project.link, target: "_blank" } },
+                          {
+                            staticStyle: { width: "100%" },
+                            attrs: { href: project.link, target: "_blank" }
+                          },
                           [
                             _c("img", {
                               staticStyle: { height: "200px" },

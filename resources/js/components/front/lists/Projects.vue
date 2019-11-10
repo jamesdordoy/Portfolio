@@ -5,7 +5,7 @@
             <hooper :itemsToShow="3" :centerMode="false" pagination="yes" :wheelControl="false">
                 <slide v-for="project in projects" :key="project.id">
                 
-                    <div class="flex mt-10 projects">
+                    <div class="flex projects">
                         <div
                             class="project sm:w-full"
                             style="height: 100%;"
@@ -14,7 +14,7 @@
                                 :href="project.link"
                                 target="_blank">
                                 <img
-                                    style="height: 200px;"
+                                    style="width: 100%; height: 200px;"
                                     :src='project.icon ? project.icon : "/images/projects/simple-shopping.png"'/>
                             </a>
                             
@@ -50,6 +50,7 @@
                         :key="project.id">
                         <a
                             :href="project.link"
+                            style="width: 100%;"
                             target="_blank">
                             <img
                                 style="height: 200px;"

@@ -118,7 +118,7 @@
 
   .project {
     @apply rounded overflow-hidden shadow-lg bg-black;
-    margin-right: 1rem !important;
+    /* margin-right: 1rem !important; */
   }
 
   .project:last-of-type {
