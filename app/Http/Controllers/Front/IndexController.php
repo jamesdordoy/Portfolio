@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Front;
 
+use App\Models\Post;
 use App\Models\Project;
 use App\Models\Language;
 use App\Models\Timeline;
@@ -65,6 +66,11 @@ class IndexController extends Controller
     public function timeline()
     {
         return TimelineResource::collection(Timeline::get());
+    }
+
+    public function posts()
+    {
+        return Post::get();
     }
 
     /**

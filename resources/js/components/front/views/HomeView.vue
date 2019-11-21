@@ -43,6 +43,23 @@
         <div class="flex flex-col">
           <span class="anchor" id="languages"></span>
           <h2 class="varela text-center text-grey mb-8">Blog Entries</h2>
+          <div class="flex mb-4">
+            <div class="w-1/3 bg-nav p-4 mr-2">
+              <h4>Laravel Vue Datatables</h4>
+              <h6>0.3.17</h6>
+              <p>This update allows for users to set a default...</p>
+            </div>
+            <div class="w-1/3 bg-nav p-4 mr-2">
+              <h4>Laravel Vue Datatables</h4>
+              <h6>0.3.15</h6>
+              <p>This update allows for users to set a default...</p>
+            </div>
+            <div class="w-1/3 bg-nav p-4 mr-2">
+              <h4>Laravel Vue Datatables</h4>
+              <h6>0.3.13</h6>
+              <p>This update allows for users to set a default...</p>
+            </div>
+          </div>
         </div>
       </div>
 

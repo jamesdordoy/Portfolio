@@ -13507,6 +13507,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -66536,6 +66553,38 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("h2", { staticClass: "varela text-center text-grey mb-8" }, [
           _vm._v("Blog Entries")
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "flex mb-4" }, [
+          _c("div", { staticClass: "w-1/3 bg-nav p-4 mr-2" }, [
+            _c("h4", [_vm._v("Laravel Vue Datatables")]),
+            _vm._v(" "),
+            _c("h6", [_vm._v("0.3.17")]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v("This update allows for users to set a default...")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "w-1/3 bg-nav p-4 mr-2" }, [
+            _c("h4", [_vm._v("Laravel Vue Datatables")]),
+            _vm._v(" "),
+            _c("h6", [_vm._v("0.3.15")]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v("This update allows for users to set a default...")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "w-1/3 bg-nav p-4 mr-2" }, [
+            _c("h4", [_vm._v("Laravel Vue Datatables")]),
+            _vm._v(" "),
+            _c("h6", [_vm._v("0.3.13")]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v("This update allows for users to set a default...")
+            ])
+          ])
         ])
       ])
     ])
