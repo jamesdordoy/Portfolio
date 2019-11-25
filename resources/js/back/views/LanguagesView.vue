@@ -45,9 +45,9 @@
 
 <script>
 
-    import TableClasses from '../../../mixins/DataTableClasses';
-    import LanguageService from '../../../services/LanguageService';
-    import DataTableButtonCell from '../../generic/DataTableButtonCell';
+    import TableClasses from '../../mixins/DataTableClasses';
+    import LanguageService from '../../services/LanguageService';
+    import DataTableButtonCell from '../../components/DataTableButtonCell';
 
     export default {
         data() {

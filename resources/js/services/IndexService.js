@@ -12,6 +12,10 @@ class IndexService extends AbstractService {
         return this.client.get(`/projects`);
     }
 
+    posts() {
+        return this.client.get(`/posts`);
+    }
+
     tweets() {
         return this.client.get(`/tweets`);
     }

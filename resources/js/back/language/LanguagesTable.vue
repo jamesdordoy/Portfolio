@@ -50,11 +50,6 @@ export default{
           default: []
         },
     },
-    computed: {
-        csrf_token:  function(){
-            // return $('meta[name="csrf-token"]').attr('content')
-        }
-    }
 }
 
 </script>

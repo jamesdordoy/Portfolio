@@ -66,7 +66,7 @@
 </template>
 
 <script>
-import TableClasses from '../../../mixins/DataTableClasses';
+import TableClasses from '../../mixins/DataTableClasses';
 
 export default {
     data() {

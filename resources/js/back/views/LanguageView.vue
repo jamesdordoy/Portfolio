@@ -58,7 +58,7 @@
 
 <script>
 
-    import LanguageService from '../../../services/LanguageService';
+    import LanguageService from '../../services/LanguageService';
 
     export default {
         data() {

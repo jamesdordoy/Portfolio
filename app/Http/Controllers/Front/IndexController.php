@@ -9,6 +9,7 @@ use App\Models\Timeline;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\TimelineResource;
+use App\Http\Resources\PostResource;
 use App\Contracts\Services\TwitterServiceContract;
 
 class IndexController extends Controller
@@ -70,7 +71,7 @@ class IndexController extends Controller
 
     public function posts()
     {
-        return Post::get();
+        return PostResource::collection(Post::orderBy("created_at", "desc")->limit(6)->get());
     }
 
     /**

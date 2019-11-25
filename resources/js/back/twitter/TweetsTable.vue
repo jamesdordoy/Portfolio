@@ -54,31 +54,4 @@
 
 <script>
 
-export default{
-
-    props: {
-        tweets: {
-          type: String,
-          default: ''
-        },
-    },
-
-    data: function(){
-        return {
-            list: '',
-        };
-    },
-
-    created: function(){
-        this.list = JSON.parse(this.tweets);
-    },
-
-    computed: {
-        csrf_token:  function(){
-            // return $('meta[name="csrf-token"]').attr('content')
-        }
-    }
-
-}
-
 </script>

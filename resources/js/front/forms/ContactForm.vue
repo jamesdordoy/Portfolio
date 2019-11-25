@@ -62,7 +62,7 @@
 </template>
 <script>
 
-    import FormErrors from '../../../mixins/FormError';
+    import FormErrors from '../../mixins/FormError';
 
     export default{
         data: function(){

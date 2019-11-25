@@ -39,25 +39,22 @@
         </projects>
       </div>
 
-      <div class="w-full px-10 py-12 bg-black">
-        <div class="flex flex-col">
-          <span class="anchor" id="languages"></span>
-          <h2 class="varela text-center text-grey mb-8">Blog Entries</h2>
-          <div class="flex mb-4">
-            <div class="w-1/3 bg-nav p-4 mr-2">
-              <h4>Laravel Vue Datatables</h4>
-              <h6>0.3.17</h6>
-              <p>This update allows for users to set a default...</p>
-            </div>
-            <div class="w-1/3 bg-nav p-4 mr-2">
-              <h4>Laravel Vue Datatables</h4>
-              <h6>0.3.15</h6>
-              <p>This update allows for users to set a default...</p>
-            </div>
-            <div class="w-1/3 bg-nav p-4 mr-2">
-              <h4>Laravel Vue Datatables</h4>
-              <h6>0.3.13</h6>
-              <p>This update allows for users to set a default...</p>
+      <div class="px-10 py-12 bg-black">
+        <span class="anchor" id="languages"></span>
+        <h2 class="varela text-center text-grey mb-8">What i've been up to</h2>
+        <div class="flex flex-wrap -mx-2">
+          <div v-for="post in posts.data" :key="post.id" class="md:w-1/2 lg:w-1/3 w-full mb-4 px-2">
+            <div class="bg-nav p-4">
+              <div class="h-8">
+                <h4 class="text-grey-dark">{{ post.title }}</h4>
+              </div>
+              <small>{{ post.subtitle }}</small>
+              <hr>
+              <div class="h-12">
+                <p class="text-grey-dark">{{ post.excerpt }}</p>
+              </div>
+              <hr>
+              <p class="text-grey-dark text-right">Posted On: {{ post.created_at|formatDate("DD/MM/YYYY") }}</p>
             </div>
           </div>
         </div>
@@ -96,7 +93,7 @@
 <script>
 
   import {showAt, hideAt} from 'vue-breakpoints';
-  import IndexService from '../../../services/IndexService';
+  import IndexService from '../../services/IndexService';
 
   export default {
     data() {
@@ -104,6 +101,7 @@
         auth: {},
         about: '',
         projects: [],
+        posts: {},
         languages: [],
         tweets: [],
         timeline: [],
@@ -118,6 +116,7 @@
     created() {
       this.getLanguages();
       this.getProjects();
+      this.getPosts();
       this.getTimeline();
     },  
     methods: {
@@ -135,6 +134,13 @@
         })
         .catch(console.log)
       },
+      getPosts() {
+        IndexService.posts()
+        .then(response => {
+          this.posts = response.data;
+        })
+        .catch(console.log)
+      },
       getTimeline() {
         IndexService.timeline()
         .then(response => {
@@ -143,5 +149,10 @@
         .catch(console.log)
       }
     },
+    computed: {
+        postGroups () {
+            return Array.from(Array(Math.ceil(this.posts.data.length / 3)).keys())
+        },
+    }
   }
 </script>

@@ -36,7 +36,7 @@
 <script>
 
 import Timeline from 'timeline-vuejs';
-import '../../../../node_modules/timeline-vuejs/dist/timeline-vuejs.css';
+import '../../../node_modules/timeline-vuejs/dist/timeline-vuejs.css';
 
 export default {
     components: {
