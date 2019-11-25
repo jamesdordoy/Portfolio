@@ -54,6 +54,11 @@ Route::namespace('Front')->group(function() {
         'uses' => 'IndexController@index',
     ]);
 
+    Route::get('/auth', [
+        'as' => 'front.get.authenticated',
+        'uses' => 'IndexController@authenticated',
+    ]);
+
     Route::get('/languages', [
         'as' => 'front.get.languages',
         'uses' => 'IndexController@languages',

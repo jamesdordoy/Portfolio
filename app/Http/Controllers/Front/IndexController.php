@@ -49,6 +49,11 @@ class IndexController extends Controller
         );
     }
 
+    public function authenticated(Request $request)
+    {
+        return \Auth::guest() ? "false" : "true";
+    }
+
     public function languages()
     {
         return Language::with('image')->get();

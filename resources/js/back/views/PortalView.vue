@@ -12,7 +12,7 @@
         </div>
         <div slot="content" class="flex">
             <div class="w-1/2">
-                <data-table
+                <!-- <data-table
                     :classes="classes"
                     :url="url"
                     :per-page="perPage"
@@ -33,11 +33,11 @@
                             :links="links">
                         </paginator>
                     </span>
-                </data-table>
+                </data-table> -->
             </div>
 
             <div class="w-1/2 ml-4">
-                <data-table
+                <!-- <data-table
                     url="/api/languages"
                     :classes="classes"
                     :per-page="perPage"
@@ -57,7 +57,7 @@
                             :links="links">
                         </paginator>
                     </span>
-                </data-table>
+                </data-table> -->
             </div>
             
         </div>

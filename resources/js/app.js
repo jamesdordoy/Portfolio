@@ -24,18 +24,18 @@ Sentry.init({
 
 // Frontend
 // Forms
-Vue.component('contact-form',      require('./front/forms/ContactForm.vue'));
-Vue.component('login-form',        require('./front/forms/LoginForm.vue'));
+Vue.component('contact-form',           require('./front/forms/ContactForm.vue'));
+Vue.component('login-form',             require('./front/forms/LoginForm.vue'));
 // Includes
-Vue.component('front-nav',         require('./front/includes/Nav.vue'));
-Vue.component('front-footer',      require('./front/includes/Footer.vue'));
+Vue.component('front-nav',              require('./front/includes/Nav.vue'));
+Vue.component('front-footer',           require('./front/includes/Footer.vue'));
 //Lists
-Vue.component('languages',         require('./front/lists/Languages.vue'));
-Vue.component('projects',          require('./front/lists/Projects.vue'));
-Vue.component('tweets',            require('./front/lists/TwitterTimeline.vue'));
+Vue.component('languages',              require('./front/lists/Languages.vue'));
+Vue.component('projects',               require('./front/lists/Projects.vue'));
+Vue.component('tweets',                 require('./front/lists/TwitterTimeline.vue'));
 //Views
-Vue.component('login-view',        require('./front/views/LoginView.vue'));
-Vue.component('privacy-policy-view',        require('./front/views/PrivacyPolicyView'));
+Vue.component('login-view',             require('./front/views/LoginView.vue'));
+Vue.component('privacy-policy-view',    require('./front/views/PrivacyPolicyView'));
 
 
 // Backend
@@ -51,6 +51,9 @@ Vue.component('privacy-policy-view',        require('./front/views/PrivacyPolicy
         Vue.component('back-nav',          require('./back/includes/Nav.vue'));
     // Generic
         Vue.component('posts',             require('./back/blog/elements/Posts.vue'));
+    //Views
+        Vue.component('layout',         require('./back/views/Layout.vue'));
+        Vue.component('project-create',    require('./back/project/Create.vue'));
         
 // Generic
     Vue.component('back-modal',             require('./components/Modal.vue'));
@@ -67,13 +70,8 @@ Vue.component('privacy-policy-view',        require('./front/views/PrivacyPolicy
     Vue.component('timeline',               require('./components/Timeline.vue'));
     Vue.component('particles',              require('./components/Particles.vue'));
     Vue.component('tag',                    require('./components/Tag.vue'));
-    
-
-Vue.component('layout',         require('./back/views/Layout.vue'));
-Vue.component('project-create',    require('./back/project/Create.vue'));
-
-Vue.component('paginator',        require('./components/Pagination'));
-Vue.component('data-table-filters',        require('./components/DataTableFilters'));
+    Vue.component('paginator',              require('./components/Pagination'));
+    Vue.component('data-table-filters',     require('./components/DataTableFilters'));
 
 
 Vue.filter('formatDate', (value, format) => {

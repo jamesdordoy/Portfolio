@@ -12,9 +12,6 @@
             </div>
             <div :class="{'fadeIn ': open, 'hidden': !open}" class="animated w-full flex-grow lg:flex lg:items-center lg:w-auto">
                 <div class="text-sm sm:flex-grow">
-                    <a href="/" class="no-underline block py-4 mt-4 uppercase md:inline-block md:w-full lg:w-auto lg:mt-0 text-teal hover:text-teal-lighter mr-4 cursor">
-                        Home
-                    </a>
                     <a href="/#about" class="block uppercase py-4  no-underline lg:inline-block lg:mt-0 text-teal hover:text-teal-lighter mr-4 cursor">
                         About Me
                     </a>
@@ -29,10 +26,12 @@
                     </a>
                 </div>
                 <div class="lg:mt-0 mt-6 ">
-                    <a v-show="!auth" href="/login" class="bg-transparent hover:bg-teal text-teal font-semibold hover:text-nav py-1 px-3 border border-teal hover:border-transparent rounded no-underline">
-                        <i class="fa fa-sign-in" aria-hidden="true"></i>
-                        Login
-                    </a>
+                    <router-link v-show="!auth" :to="'/login'">
+                        <a class="bg-transparent hover:bg-teal text-teal font-semibold hover:text-nav py-1 px-3 border border-teal hover:border-transparent rounded no-underline">
+                            <i class="fa fa-sign-in" aria-hidden="true"></i>
+                            Login
+                        </a>
+                    </router-link>
                     <a v-show="auth" href="/back" class="bg-transparent hover:bg-teal text-teal font-semibold hover:text-nav py-2 px-4 border mr-4 border-teal hover:border-transparent rounded">
                         <i class="fa fa-sign-in" aria-hidden="true"></i>
                         Backend
