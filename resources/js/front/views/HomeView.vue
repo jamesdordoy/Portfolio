@@ -5,8 +5,8 @@
       <particles>
         <div style="background: rgba(0, 0, 0, 0.4); text-shadow: 0px 0px 2px #131415;" class="border-teal-light border pin-none rounded mx-10 md:mx-0 p-4 md:p-8 mt-20 text-center text-white">
           <h1 class="varela md:text-5xl sm:text-3xl">James Dordoy</h1>
-          <h2 class="varela md:text-3xl sm:text-2xl">Full Stack Developer</h2>
-          <p class="varela md:text-2xl sm:text-1xl">From Essex</p>
+          <h2 class="varela md:text-2xl sm:text-1xl">Full Stack Developer</h2>
+          <p class="varela md:text-1xl sm:text-1xl">From Essex</p>
         </div>
       </particles>
     </div>

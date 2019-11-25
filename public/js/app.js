@@ -69239,11 +69239,11 @@ var render = function() {
                 _vm._v("James Dordoy")
               ]),
               _vm._v(" "),
-              _c("h2", { staticClass: "varela md:text-3xl sm:text-2xl" }, [
+              _c("h2", { staticClass: "varela md:text-2xl sm:text-1xl" }, [
                 _vm._v("Full Stack Developer")
               ]),
               _vm._v(" "),
-              _c("p", { staticClass: "varela md:text-2xl sm:text-1xl" }, [
+              _c("p", { staticClass: "varela md:text-1xl sm:text-1xl" }, [
                 _vm._v("From Essex")
               ])
             ]
