@@ -69228,22 +69228,24 @@ var render = function() {
             "div",
             {
               staticClass:
-                "border-teal-light border pin-none rounded p-8 mt-20 text-center text-white",
+                "border-teal-light border pin-none rounded mx-10 md:mx-0 p-4 md:p-8 mt-20 text-center text-white",
               staticStyle: {
                 background: "rgba(0, 0, 0, 0.4)",
                 "text-shadow": "0px 0px 2px #131415"
               }
             },
             [
-              _c("h1", { staticClass: "varela text-5xl" }, [
+              _c("h1", { staticClass: "varela md:text-5xl sm:text-3xl" }, [
                 _vm._v("James Dordoy")
               ]),
               _vm._v(" "),
-              _c("h2", { staticClass: "varela" }, [
+              _c("h2", { staticClass: "varela md:text-3xl sm:text-2xl" }, [
                 _vm._v("Full Stack Developer")
               ]),
               _vm._v(" "),
-              _c("p", { staticClass: "varela" }, [_vm._v("From Essex")])
+              _c("p", { staticClass: "varela md:text-2xl sm:text-1xl" }, [
+                _vm._v("From Essex")
+              ])
             ]
           )
         ])
