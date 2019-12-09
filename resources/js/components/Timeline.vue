@@ -1,10 +1,10 @@
 <template>
-    <Timeline
+    <!-- <Timeline
         :timeline-items="getTimeline"
         :message-when-no-items="messageWhenNoItems"
         :unique-year="uniqueYear"
         :order="order"
-    />
+    /> -->
 </template>
 
 <style>
@@ -35,12 +35,12 @@
 
 <script>
 
-import Timeline from 'timeline-vuejs';
-import '../../../node_modules/timeline-vuejs/dist/timeline-vuejs.css';
+// import Timeline from 'timeline-vuejs';
+// import '../../../node_modules/timeline-vuejs/dist/timeline-vuejs.css';
 
 export default {
     components: {
-        Timeline,
+        // Timeline,
     },
     data() {
         return {
