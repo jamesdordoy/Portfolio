@@ -18,5 +18,7 @@ $factory->define(\App\Models\Timeline::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
         'body' => $faker->text,
+        'icon' => $faker->name,
+        'title' => $faker->name,
     ];
 });

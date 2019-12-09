@@ -14,6 +14,10 @@ var VueScrollTo = require('vue-scrollto');
 
 Vue.use(VueScrollTo)
 
+import VueTimeline from "@growthbunker/vuetimeline";
+
+Vue.use(VueTimeline);
+
 Vue.use(DataTable);
 Vue.use(VueRouter);
 Vue.use(VueSweetalert2, {

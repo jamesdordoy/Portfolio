@@ -16,7 +16,10 @@ class TimelineResource extends JsonResource
     {
         return [
             'from' => $this->from,
-            'title' => $this->name,
+            'to' => $this->to,
+            'name' => $this->name,
+            'title' => $this->title,
+            'icon' => $this->icon,
             'description' => $this->body,
         ];
     }

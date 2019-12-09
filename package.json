@@ -33,6 +33,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "@growthbunker/vuetimeline": "^0.1.12",
         "vue-scrollto": "^2.17.1"
     }
 }

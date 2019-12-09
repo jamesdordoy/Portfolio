@@ -18,6 +18,8 @@ class CreateTimelineTable extends Migration
             $table->timestamp("from")->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp("to")->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->string("name");
+            $table->string("title");
+            $table->string("icon");
             $table->text("body");
             $table->timestamps();
         });

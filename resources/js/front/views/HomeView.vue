@@ -61,7 +61,7 @@
                     style="
                         display: block;
                         position: relative;
-                        top: -100px;
+                        top: -70px;
                         visibility: hidden;">
                 </span>
                 <div class="w-full lg:w-1/2 py-8">
@@ -72,11 +72,24 @@
                     </contact-form>
                 </div>
                 <div class="w-full lg:w-1/2 py-8 lg:pr-2">
-                    <h2 class="varela  py-4 px-2 text-grey">Experiance</h2>
-                    <timeline
-                        :items="timeline"
-                        message-when-no-items="No data">
-                    </timeline>
+                    <h2 class="varela py-4 px-2 text-grey">Experiance</h2>
+
+                    <div class="timeline">
+                        <vue-timeline-update
+                            v-for="event in timeline"
+                            :key="event.id"
+                            :date="new Date(event.to)"
+                            :title="event.name"
+                            :description="event.description"
+                            :category="event.title"
+                            :icon="event.icon"
+                            color="black"
+                        />
+
+                    </div>
+
+                    
+  
                 </div>
                 
             </div>
@@ -157,3 +170,30 @@ export default {
     }
 }
 </script>
+
+<style>
+
+.gb-vue-timeline-update {
+    /* border-bottom: solid 1px #dae1e7; */
+}
+
+.gb-vue-timeline-update__description {
+    color: #8795a1 !important;
+}
+
+.gb-vue-timeline-update__title {
+    color: #b8c2cc !important;
+}
+
+.gb-vue-timeline-update__line {
+    background: #4dc0b5 !important;
+}
+
+.timeline {
+    max-width: none !important;
+    color: #b8c2cc;
+    max-height: 520px;
+    overflow: scroll;
+}
+
+</style>
