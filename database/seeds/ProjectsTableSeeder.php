@@ -76,5 +76,28 @@ class ProjectsTableSeeder extends Seeder
             'taggables_id' => $phpForwardChaining->id,
             'taggables_type' => 'App\Models\Project',
         ]);
+
+        $pointsOfInterestMappingApp = factory(\App\Models\Project::class)->create(
+            [
+                'name' => "Points of Interest",
+                'description' => "A JavaScript frontend mapping app with a PHP and NodeJS backend made while attending Uuniversity.",
+                'owner' => "Me",
+                'icon' => "/images/projects/PointsofInterest.png",
+                'link' => "",
+                "private" => 0,
+            ]
+        );
+
+        DB::table('taggables')->insert([
+            'tag_id' => 1,
+            'taggables_id' => $pointsOfInterestMappingApp->id,
+            'taggables_type' => 'App\Models\Project',
+        ]);
+
+        DB::table('taggables')->insert([
+            'tag_id' => 8,
+            'taggables_id' => $pointsOfInterestMappingApp->id,
+            'taggables_type' => 'App\Models\Project',
+        ]);
     }
 }

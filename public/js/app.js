@@ -14372,6 +14372,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -65911,7 +65913,8 @@ var render = function() {
                   _c(
                     "a",
                     {
-                      staticClass: "text-teal-dark visited:text-green",
+                      staticClass:
+                        "text-teal-dark visited:text-green hover:no-underline",
                       attrs: { href: project.link, target: "_blank" }
                     },
                     [_vm._v(_vm._s(project.name))]
@@ -69207,39 +69210,28 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "h-full bg-nav", attrs: { id: "home" } },
+    { staticClass: "h-full bg-nav" },
     [
       _c("front-nav", { attrs: { auth: _vm.auth } }),
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "h-full" },
+        { staticClass: "h-full", attrs: { id: "home" } },
         [
           _c("particles", [
-            _c(
-              "div",
-              {
-                staticClass:
-                  "border-teal-light border pin-none rounded mx-10 md:mx-0 p-4 md:p-8 mt-20 text-center text-white",
-                staticStyle: {
-                  background: "rgba(0, 0, 0, 0.4)",
-                  "text-shadow": "0px 0px 2px #131415"
-                }
-              },
-              [
-                _c("h1", { staticClass: "varela md:text-5xl sm:text-3xl" }, [
-                  _vm._v("James Dordoy")
-                ]),
-                _vm._v(" "),
-                _c("h2", { staticClass: "varela md:text-2xl sm:text-1xl" }, [
-                  _vm._v("Full Stack Developer")
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "varela md:text-1xl sm:text-1xl" }, [
-                  _vm._v("From Essex")
-                ])
-              ]
-            )
+            _c("div", { staticClass: "front-into md:p-8 md:mx-0" }, [
+              _c("h1", { staticClass: "varela md:text-5xl sm:text-3xl" }, [
+                _vm._v("James Dordoy")
+              ]),
+              _vm._v(" "),
+              _c("h2", { staticClass: "varela md:text-2xl sm:text-1xl" }, [
+                _vm._v("Full Stack Developer")
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "varela md:text-1xl sm:text-1xl" }, [
+                _vm._v("From Essex")
+              ])
+            ])
           ])
         ],
         1
@@ -69378,7 +69370,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("p", { staticClass: "about-me" }, [
         _vm._v(
-          "\n        Hey, my name is James and im a Software Enginer living in Essex. I have been developing software for over eight years now and i have a large range of experiance from creating simple Android applications to working on large scale CMS and CRM systems.\n      "
+          "\n        Hey, my name is James and im a Software Enginer living in Essex. I have been developing software for over eight years now and i have a large range of experiance from creating simple Android applications and Microsoft Excel dashboards to working on large scale CMS and CRM systems.\n      "
         )
       ]),
       _vm._v(" "),
@@ -69386,15 +69378,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("p", { staticClass: "about-me" }, [
         _vm._v(
-          "\n        Since leaving University, i have mainly been working with PHP & Laravel. I also have a solid background in JavaScript & Java but picking up a difference langauge isn't a problem.\n      "
-        )
-      ]),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("p", { staticClass: "about-me" }, [
-        _vm._v(
-          "\n        I am currently picking up TypeScript and enjoying it\n      "
+          "\n        Since leaving University, i have mainly been working with PHP & Laravel. I also have a solid background in JavaScript & Java but picking up a difference langauge isn't a problem. I am profitiant writting procedual, object orianted and functonal code which provides many different techniques for making my work cleaner.\n\n        I am currently picking up TypeScript and enjoying it as it enables me to write stricter code to overcome some of the limitations that JavaScript present such as Type Inference.\n      "
         )
       ]),
       _vm._v(" "),
@@ -69403,6 +69387,12 @@ var staticRenderFns = [
           staticClass: "rounded-full",
           attrs: { src: "/images/me.jpeg", alt: "James Dordoy - Me" }
         })
+      ]),
+      _vm._v(" "),
+      _c("p", { staticClass: "about-me" }, [
+        _vm._v(
+          "\n        I am a huge Snooker fan and also enjoying playing competative First Person Shooter games. I also like learning about hardware and electronics and would love to pick up more basics to create simple robots. I have always wanted to learn to play a musical intstument or make YouTube tutorials based on my programming knowledge but have never got round to it.\n      "
+        )
       ])
     ])
   }

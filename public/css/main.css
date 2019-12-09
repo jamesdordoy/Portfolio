@@ -113,6 +113,24 @@ text-link:hover {
   top: -100px;
   visibility: hidden;
 }
+
+.front-into {
+  border-color: #64d5ca;
+  border-width: 1px;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  border-radius: .25rem;
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+  padding: 1rem;
+  margin-top: 5rem;
+  text-align: center;
+  color: #fff;
+  background: rgba(0, 0, 0, .4);
+  text-shadow: 0px 0px 2px #131415;
+}
 .animated {
   -webkit-animation-duration: 1s;
           animation-duration: 1s;

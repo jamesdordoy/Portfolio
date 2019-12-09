@@ -1,12 +1,13 @@
 <template>
-  <div class="h-full bg-nav" id="home">
+  <div class="h-full bg-nav">
+
     <front-nav
       :auth="auth">
     </front-nav>
 
-    <div class="h-full">
+    <div class="h-full" id="home">
       <particles>
-        <div style="background: rgba(0, 0, 0, 0.4); text-shadow: 0px 0px 2px #131415;" class="border-teal-light border pin-none rounded mx-10 md:mx-0 p-4 md:p-8 mt-20 text-center text-white">
+        <div class="front-into md:p-8 md:mx-0">
           <h1 class="varela md:text-5xl sm:text-3xl">James Dordoy</h1>
           <h2 class="varela md:text-2xl sm:text-1xl">Full Stack Developer</h2>
           <p class="varela md:text-1xl sm:text-1xl">From Essex</p>
@@ -27,19 +28,20 @@
 
         <h2 class="text-center varela mb-8 text-grey">About Me</h2>
         <p class="about-me">
-          Hey, my name is James and im a Software Enginer living in Essex. I have been developing software for over eight years now and i have a large range of experiance from creating simple Android applications to working on large scale CMS and CRM systems.
+          Hey, my name is James and im a Software Enginer living in Essex. I have been developing software for over eight years now and i have a large range of experiance from creating simple Android applications and Microsoft Excel dashboards to working on large scale CMS and CRM systems.
         </p>
         <br>
         <p class="about-me">
-          Since leaving University, i have mainly been working with PHP &amp; Laravel. I also have a solid background in JavaScript &amp; Java but picking up a difference langauge isn't a problem.
-        </p>
-        <br>
-        <p class="about-me">
-          I am currently picking up TypeScript and enjoying it
+          Since leaving University, i have mainly been working with PHP &amp; Laravel. I also have a solid background in JavaScript &amp; Java but picking up a difference langauge isn't a problem. I am profitiant writting procedual, object orianted and functonal code which provides many different techniques for making my work cleaner.
+
+          I am currently picking up TypeScript and enjoying it as it enables me to write stricter code to overcome some of the limitations that JavaScript present such as Type Inference.
         </p>
         <div class="flex justify-center items-center py-6">
           <img src="/images/me.jpeg" alt="James Dordoy - Me" class="rounded-full"/>
         </div>
+        <p class="about-me">
+          I am a huge Snooker fan and also enjoying playing competative First Person Shooter games. I also like learning about hardware and electronics and would love to pick up more basics to create simple robots. I have always wanted to learn to play a musical intstument or make YouTube tutorials based on my programming knowledge but have never got round to it.
+        </p>
       </div>
 
       <div class="w-full px-10 py-12 bg-nav">
