@@ -1,5 +1,8 @@
 <template>
     <div class="h-full bg-nav">
+        <front-nav
+            :auth="auth">
+        </front-nav>
         <particles>
             <login-form
                 :old-email="oldEmail">
@@ -12,6 +15,10 @@
 export default {
     props: {
         old: {
+            type: Object,
+            default: () => ({})
+        },
+        auth: {
             type: Object,
             default: () => ({})
         }

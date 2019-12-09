@@ -51,6 +51,68 @@ text-link:hover {
   border-color: #4dc0b5;
   border-width: 1px;
 }
+.front-nav-item {
+  display: block;
+  text-transform: uppercase;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-right: 1rem;
+  cursor: pointer;
+  color: #4dc0b5;
+  text-decoration: none;
+}
+
+.front-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: #22292f;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 255;
+}
+
+/* Enter and leave animations can use different */
+
+/* durations and timing functions.              */
+
+.slide-fade-enter-active {
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.slide-fade-leave-active {
+  -webkit-transition: all .3s cubic-bezier(1, .5, .8, 1);
+  transition: all .3s cubic-bezier(1, .5, .8, 1);
+}
+
+.slide-fade-enter,
+.slide-fade-leave-to {
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
+  opacity: 0;
+}
+
+.front-offset-internal-anchor {
+  display: block;
+  position: relative;
+  top: -100px;
+  visibility: hidden;
+}
 .animated {
   -webkit-animation-duration: 1s;
           animation-duration: 1s;

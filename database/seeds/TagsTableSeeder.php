@@ -38,5 +38,9 @@ class TagsTableSeeder extends Seeder
         factory(\App\Models\Tag::class)->create([
             'name' => "Tailwind.css",
         ]);
+
+        factory(\App\Models\Tag::class)->create([
+            'name' => "PHP",
+        ]);
     }
 }

@@ -1,5 +1,8 @@
 <template>
-  <div class="h-full bg-nav">
+  <div class="h-full bg-nav" id="home">
+    <front-nav
+      :auth="auth">
+    </front-nav>
 
     <div class="h-full">
       <particles>
@@ -13,7 +16,15 @@
 
     <div class="w-full">
       <div class="w-full px-10 py-12 bg-black">
-        <span class="anchor" id="about"></span>
+        <span
+          id="about"
+          style="
+            display: block;
+            position: relative;
+            top: -100px;
+            visibility: hidden;">
+        </span>
+
         <h2 class="text-center varela mb-8 text-grey">About Me</h2>
         <p class="about-me">
           Hey, my name is James and im a Software Enginer living in Essex. I have been developing software for over eight years now and i have a large range of experiance from creating simple Android applications to working on large scale CMS and CRM systems.
@@ -32,7 +43,14 @@
       </div>
 
       <div class="w-full px-10 py-12 bg-nav">
-        <span class="anchor" id="projects"></span>
+        <span
+          id="projects"
+          style="
+            display: block;
+            position: relative;
+            top: -100px;
+            visibility: hidden;">
+        </span>
         <h2 class="varela text-center text-grey mb-8">Projects</h2>        
         <projects
           :projects="projects">
@@ -40,41 +58,38 @@
       </div>
 
       <div class="px-10 py-12 bg-black">
-        <span class="anchor" id="languages"></span>
+        <span
+          id="blog"
+          style="
+            display: block;
+            position: relative;
+            top: -100px;
+            visibility: hidden;">
+        </span>
         <h2 class="varela text-center text-grey mb-8">What i've been up to</h2>
-        <div class="flex flex-wrap -mx-2">
-          <div v-for="post in posts.data" :key="post.id" class="md:w-1/2 lg:w-1/3 w-full mb-4 px-2">
-            <div class="bg-nav p-4 border-b border-teal">
-              <div class="h-8">
-                <h4 class="text-grey-dark">{{ post.title }}</h4>
-              </div>
-              <small>{{ post.subtitle }}</small>
-              <hr>
-              <div class="h-12">
-                <p class="text-grey-dark">{{ post.excerpt }}</p>
-              </div>
-              <hr>
-              <p class="text-grey-dark text-right">Posted On: {{ post.created_at|formatDate("DD/MM/YYYY") }}</p>
-            </div>
-          </div>
-        </div>
+        <blog
+          :posts="posts">
+        </blog>
       </div>
 
       <div class="flex flex-wrap px-10 py-2 bg-nav content-start">
-        <span class="anchor" id="contact"></span>
+        <span
+          id="contact"
+          style="
+            display: block;
+            position: relative;
+            top: -100px;
+            visibility: hidden;">
+        </span>
         <div class="w-full lg:w-1/2 py-8 lg:pr-2">
           <h2 class="varela  py-4 px-2 text-grey">Experiance</h2>
           <timeline
             :items="timeline"
             message-when-no-items="No data">
           </timeline>
-          <!-- <show-at breakpoint="mediumAndBelow" :breakpoints="{medium: 991}" >
-            <div class="timeline-spacing border-b pt-6 border-teal"></div>
-          </show-at> -->
         </div>
         
         <div class="w-full lg:w-1/2 py-8">
-          
           <h2 class="varela mb-4 py-4 text-grey">Contact Me</h2>
           <contact-form
             :url="contactFormUrl"
@@ -92,67 +107,67 @@
 
 <script>
 
-  import {showAt, hideAt} from 'vue-breakpoints';
-  import IndexService from '../../services/IndexService';
+import IndexService from '../../services/IndexService';
 
-  export default {
+export default {
     data() {
-      return {
-        auth: {},
-        about: '',
-        projects: [],
-        posts: {},
-        languages: [],
-        tweets: [],
-        timeline: [],
-        contactFormUrl: '/contact',
-        newsletterFormUrl: '/newsletter',
-        messageWhenNoItems: 'There arent items',
-      };
-    },
-    components: {
-      showAt
+        return {
+            projects: [],
+            posts: {},
+            languages: [],
+            tweets: [],
+            timeline: [],
+            contactFormUrl: '/contact',
+            newsletterFormUrl: '/newsletter',
+            messageWhenNoItems: 'There arent items',
+        };
     },
     created() {
-      this.getLanguages();
-      this.getProjects();
-      this.getPosts();
-      this.getTimeline();
-    },  
+        this.getLanguages();
+        this.getProjects();
+        this.getPosts();
+        this.getTimeline();
+    },
+    props: {
+        auth: {
+          type: Object,
+          default: () => ({})
+        }
+    },
     methods: {
-      getLanguages() {
-        IndexService.languages()
-        .then(response => {
-          this.languages = response.data;
-        })
-        .catch(console.log)
-      },
-      getProjects() {
-        IndexService.projects()
-        .then(response => {
-          this.projects = response.data;
-        })
-        .catch(console.log)
-      },
-      getPosts() {
-        IndexService.posts()
-        .then(response => {
-          this.posts = response.data;
-        })
-        .catch(console.log)
-      },
-      getTimeline() {
-        IndexService.timeline()
-        .then(response => {
-          this.timeline = response.data.data;
-        })
-        .catch(console.log)
-      }
+        getLanguages() {
+            IndexService.languages()
+            .then(response => {
+                this.languages = response.data;
+            })
+            .catch(console.log)
+        },
+        getProjects() {
+            IndexService.projects()
+            .then(response => {
+                this.projects = response.data;
+            })
+            .catch(console.log)
+        },
+        getPosts() {
+            IndexService.posts()
+            .then(response => {
+                this.posts = response.data;
+            })
+            .catch(console.log)
+        },
+        getTimeline() {
+            IndexService.timeline()
+            .then(response => {
+                this.timeline = response.data.data;
+            })
+            .catch(console.log)
+        }
     },
     computed: {
         postGroups () {
             return Array.from(Array(Math.ceil(this.posts.data.length / 3)).keys())
         },
     }
-  }
+}
 </script>

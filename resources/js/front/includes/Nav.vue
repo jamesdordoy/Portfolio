@@ -1,6 +1,6 @@
 <template>
     <div class="font-sans antialiased">
-        <nav class="flex items-center justify-between flex-wrap py-3 px-10 bg-black fixed">
+        <nav class="front-nav lg:px-10">
             <div class="flex items-center flex-no-shrink text-white mr-6">
                 <svg class="fill-current h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"/></svg>
                 <span class="font-semibold text-xl tracking-tight text-white varela">James Dordoy</span>
@@ -12,30 +12,38 @@
             </div>
             <div :class="{'fadeIn ': open, 'hidden': !open}" class="animated w-full flex-grow lg:flex lg:items-center lg:w-auto">
                 <div class="text-sm sm:flex-grow">
-                    <a href="/#about" class="block uppercase py-4  no-underline lg:inline-block lg:mt-0 text-teal hover:text-teal-lighter mr-4 cursor">
+                    <router-link v-if="this.$route.path !== '/'" :to="'/'">
+                        <a class="front-nav-item lg:inline-block lg:mt-0 hover:text-teal-lighter">
+                            Home
+                        </a>
+                    </router-link>
+                    <a v-else v-scroll-to="'#home'" @click="closeMenu" class="front-nav-item lg:inline-block lg:mt-0 hover:text-teal-lighter">
+                        Home
+                    </a>
+                    <a v-scroll-to="'#about'" @click="closeMenu" class="front-nav-item lg:inline-block lg:mt-0 hover:text-teal-lighter">
                         About Me
                     </a>
-                    <a href="/#projects" class="block uppercase py-4  no-underline lg:inline-block lg:mt-0 text-teal hover:text-teal-lighter mr-4 cursor">
+                    <a v-scroll-to="'#projects'" @click="closeMenu" class="front-nav-item lg:inline-block lg:mt-0 hover:text-teal-lighter">
                         Projects
                     </a>
-                    <a href="/#languages" class="block uppercase py-4  no-underline lg:inline-block lg:mt-0 text-teal hover:text-teal-lighter mr-4 cursor">
-                        Languages &amp; Frameworks
+                    <a v-scroll-to="'#blog'" @click="closeMenu" class="front-nav-item lg:inline-block lg:mt-0 hover:text-teal-lighter">
+                        What I've Been Up To
                     </a>
-                    <a href="/#contact" class="block uppercase py-4  no-underline lg:inline-block lg:mt-0 text-teal hover:text-teal-lighter mr-4 cursor">
+                    <a v-scroll-to="'#contact'" @click="closeMenu" class="front-nav-item lg:inline-block lg:mt-0 hover:text-teal-lighter">
                         Contact
                     </a>
                 </div>
-                <div class="lg:mt-0 mt-6 ">
+                <div class="my-2">
                     <router-link v-show="!auth" :to="'/login'">
                         <a class="bg-transparent hover:bg-teal text-teal font-semibold hover:text-nav py-1 px-3 border border-teal hover:border-transparent rounded no-underline">
                             <i class="fa fa-sign-in" aria-hidden="true"></i>
                             Login
                         </a>
                     </router-link>
-                    <a v-show="auth" href="/back" class="bg-transparent hover:bg-teal text-teal font-semibold hover:text-nav py-2 px-4 border mr-4 border-teal hover:border-transparent rounded">
+                    <router-link v-show="auth" :to="'/back'" class="bg-transparent hover:bg-teal text-teal font-semibold hover:text-nav py-2 px-4 border mr-4 border-teal hover:border-transparent rounded">
                         <i class="fa fa-sign-in" aria-hidden="true"></i>
                         Backend
-                    </a>
+                    </router-link>
                     <a v-show="auth" href="#" @click="logout" class="bg-transparent hover:bg-teal text-teal font-semibold hover:text-nav py-2 px-4 border border-teal hover:border-transparent rounded">
                         <i class="fa fa-sign-out" aria-hidden="true"></i>
                         Logout
@@ -52,7 +60,12 @@
 
 <script>
 export default {
-    props: ['auth'],
+    props: {
+        auth: {
+            type: Object,
+            default: () => ({}),
+        }
+    },
     data() {
         return {
             open: false,
@@ -70,32 +83,12 @@ export default {
         toggle() {
             this.open = !this.open
         },
+        openMenu() {
+            this.open = true;
+        },
+        closeMenu() {
+            this.open = false;
+        }
     },
 }
-
-
 </script>
-
-<style scoped>
-nav {
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 255;
-}
-
-/* Enter and leave animations can use different */
-/* durations and timing functions.              */
-.slide-fade-enter-active {
-  transition: all .3s ease;
-}
-.slide-fade-leave-active {
-  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-}
-.slide-fade-enter, .slide-fade-leave-to
-/* .slide-fade-leave-active below version 2.1.8 */ {
-  transform: translateX(10px);
-  opacity: 0;
-}
-
-</style>

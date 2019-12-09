@@ -58,5 +58,23 @@ class ProjectsTableSeeder extends Seeder
             'taggables_id' => $project->id,
             'taggables_type' => 'App\Models\Project',
         ]);
+
+
+        $phpForwardChaining = factory(\App\Models\Project::class)->create(
+            [
+                'name' => "PHP Forward Chaining Engine",
+                'description' => "A simple Forward Chaining Engine written in PHP and makes use of the Syfony expressions language",
+                'owner' => "Me",
+                'icon' => "/images/projects/PHPBinaryTree.png",
+                'link' => "https://github.com/jamesdordoy/PHP-Forward-Chaining",
+                "private" => 0,
+            ]
+        );
+
+        DB::table('taggables')->insert([
+            'tag_id' => 8,
+            'taggables_id' => $phpForwardChaining->id,
+            'taggables_type' => 'App\Models\Project',
+        ]);
     }
 }

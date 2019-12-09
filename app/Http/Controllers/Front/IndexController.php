@@ -51,7 +51,9 @@ class IndexController extends Controller
 
     public function authenticated(Request $request)
     {
-        return \Auth::guest() ? "false" : "true";
+        $logggedIn = \Auth::guest() ? false : true;
+
+
     }
 
     public function languages()

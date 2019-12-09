@@ -1,83 +1,34 @@
 <template>
-    <section class="flex flex-col">
+    <section class="flex flex-wrap">
 
-        <hide-at breakpoint="mediumAndBelow" :breakpoints="{medium: 991}" >
-            <hooper :itemsToShow="3" :centerMode="false" pagination="yes" :wheelControl="false">
-                <slide v-for="project in projects" :key="project.id">
+        <div v-for="project in projects" :key="project.id" class="md:w-1/2 lg:w-1/3 w-full mb-4 px-2">
+            <div
+                class="project sm:w-full"
+                style="height: 100%;"
+                :key="project.id">
+                <a
+                    :href="project.link"
+                    target="_blank">
+                    <img
+                        style="width: 100%; height: 250px;"
+                        :src='project.icon ? project.icon : "/images/projects/simple-shopping.png"'/>
+                </a>
                 
-                    <div class="flex projects">
-                        <div
-                            class="project sm:w-full"
-                            style="height: 100%;"
-                            :key="project.id">
-                            <a
-                                :href="project.link"
-                                target="_blank">
-                                <img
-                                    style="width: 100%; height: 200px;"
-                                    :src='project.icon ? project.icon : "/images/projects/simple-shopping.png"'/>
-                            </a>
-                            
-                            <div class="px-6 py-4">
-                                <div class="font-bold text-xl mb-2">
-                                    <a :href="project.link" class="visted:color-teal" target="_blank">{{ project.name }}</a>
-                                </div>
-                                <p class="text-grey-darker text-base">
-                                    {{ project.description }}
-                                </p>
-                            </div>
-                            <div class="px-6 py-4">
-                                <tag v-for="tag in project.tags" :key="tag.id"
-                                    :name="tag.name">
-                                </tag>
-                            </div>
-                        </div>
+                <div class="px-6 py-4">
+                    <div class="font-bold text-xl mb-2">
+                        <a :href="project.link" class="text-teal-dark visited:text-green" target="_blank">{{ project.name }}</a>
                     </div>
-                </slide>
-
-                <hooper-navigation slot="hooper-addons"></hooper-navigation>
-                <hooper-progress slot="hooper-addons"></hooper-progress>
-            </hooper>
-        </hide-at>
-        <show-at breakpoint="mediumAndBelow" :breakpoints="{medium: 991}">
-            <hooper :itemsToShow="3" :vertical="true" pagination="yes" :wheelControl="false">
-            <slide v-for="project in projects" :key="project.id">
-            
-                <div class="flex mt-10 projects">
-                    <div
-                        class="project sm:w-full"
-                        style="height: 100%;"
-                        :key="project.id">
-                        <a
-                            :href="project.link"
-                            style="width: 100%;"
-                            target="_blank">
-                            <img
-                                style="height: 200px;"
-                                :src='project.icon ? project.icon : "/images/projects/simple-shopping.png"'/>
-                        </a>
-                        
-                        <div class="px-6 py-4">
-                            <div class="font-bold text-xl mb-2">
-                                <a :href="project.link" class="visted:color-teal" target="_blank">{{ project.name }}</a>
-                            </div>
-                            <p class="text-grey-darker text-base">
-                                {{ project.description }}
-                            </p>
-                        </div>
-                        <div class="px-6 py-4">
-                            <tag v-for="tag in project.tags" :key="tag.id"
-                                :name="tag.name">
-                            </tag>
-                        </div>
-                    </div>
+                    <p class="text-grey-darker text-base">
+                        {{ project.description }}
+                    </p>
                 </div>
-            </slide>
-
-            <hooper-navigation slot="hooper-addons"></hooper-navigation>
-            <hooper-progress slot="hooper-addons"></hooper-progress>
-        </hooper>
-        </show-at>
+                <div class="px-6 py-4">
+                    <tag v-for="tag in project.tags" :key="tag.id"
+                        :name="tag.name">
+                    </tag>
+                </div>
+            </div>
+        </div>
     </section>
 </template>
 

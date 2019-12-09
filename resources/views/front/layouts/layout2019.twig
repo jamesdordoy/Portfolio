@@ -18,12 +18,10 @@
     </head>
     <body class="bg-black font-sans font-normal h-full">
         <div class='h-full' id="app">
-            {% include 'front.includes.nav' %}
             {% block hello %}{% endblock %}
             {% block main %}{% endblock %}
         </div>
         {% block scripts %}{% endblock %}
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script>
         <script src="{{ mix("/js/app.js") }}"></script>
     </body>
 </html>

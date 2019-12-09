@@ -11,8 +11,18 @@
 |
 */
 
-Auth::routes();
+//Auth routes
+Route::post('/login', [
+    'as' => 'front.post.login',
+    'uses' => 'Auth\LoginController@login',
+]);
 
+Route::post('/logout', [
+    'as' => 'logout',
+    'uses' => 'Auth\LoginController@logout',
+]);
+
+// Mail Routes
 Route::post('/contact', [
     'as' => 'front.post.contact',
     'uses' => 'ContactController@store',
@@ -23,31 +33,7 @@ Route::post('/newsletter', [
     'uses' => 'ContactController@newsletter',
 ]);
 
-Route::middleware('auth')->group(function () {
-
-    Route::namespace('Back')->group(function() {
-        Route::prefix('back')->group(function() {
-            Route::get('/', 'IndexController@index');
-        });
-    
-        Route::prefix('api')->group(function() {
-            Route::get('/github', 'GitHubController@index');
-            Route::get('/languages', 'LanguageController@index');
-            Route::get('/languages/{id}', 'LanguageController@find');
-            Route::post('/languages/{id}', 'LanguageController@update');
-            Route::post('/languages', 'LanguageController@store');
-            Route::get('/contacts', 'ContactController@index');
-            Route::get('/projects', 'ProjectController@ajax');
-            Route::get('/posts', 'PostController@index');
-            
-        });
-    });
-
-    Route::get('/back/{wildcard}', function () {
-        return view('back/home');
-    })->where('wildcard', '.*');
-});
-
+//Frontend
 Route::namespace('Front')->group(function() {
     Route::get('/', [
         'as' => 'front.get.index',
@@ -88,4 +74,35 @@ Route::namespace('Front')->group(function() {
         'as' => 'front.get.privacy',
         'uses' => 'IndexController@privacyPolicy',
     ]); 
+
+    Route::get('/{wildcard}', [
+        'as' => 'front.get.spa',
+        'uses' => 'IndexController@index',
+    ])->where('wildcard', '.*');
+});
+
+//Backend
+Route::middleware('auth')->group(function () {
+
+    Route::namespace('Back')->group(function() {
+        Route::prefix('back')->group(function() {
+            Route::get('/', 'IndexController@index');
+        });
+    
+        Route::prefix('api')->group(function() {
+            Route::get('/github', 'GitHubController@index');
+            Route::get('/languages', 'LanguageController@index');
+            Route::get('/languages/{id}', 'LanguageController@find');
+            Route::post('/languages/{id}', 'LanguageController@update');
+            Route::post('/languages', 'LanguageController@store');
+            Route::get('/contacts', 'ContactController@index');
+            Route::get('/projects', 'ProjectController@ajax');
+            Route::get('/posts', 'PostController@index');
+            
+        });
+    });
+
+    Route::get('/back/{wildcard}', function () {
+        return view('back/home');
+    })->where('wildcard', '.*');
 });

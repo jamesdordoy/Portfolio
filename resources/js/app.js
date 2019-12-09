@@ -10,6 +10,10 @@ import DataTable from 'laravel-vue-datatable';
 import * as Sentry from '@sentry/browser';
 import * as Integrations from '@sentry/integrations';
 
+var VueScrollTo = require('vue-scrollto');
+
+Vue.use(VueScrollTo)
+
 Vue.use(DataTable);
 Vue.use(VueRouter);
 Vue.use(VueSweetalert2, {
@@ -32,9 +36,10 @@ Vue.component('front-footer',           require('./front/includes/Footer.vue'));
 //Lists
 Vue.component('languages',              require('./front/lists/Languages.vue'));
 Vue.component('projects',               require('./front/lists/Projects.vue'));
+Vue.component('blog',                   require('./front/lists/Blog.vue'));
 Vue.component('tweets',                 require('./front/lists/TwitterTimeline.vue'));
 //Views
-Vue.component('login-view',             require('./front/views/LoginView.vue'));
+// Vue.component('login-view',             require('./front/views/LoginView.vue'));
 Vue.component('privacy-policy-view',    require('./front/views/PrivacyPolicyView'));
 
 
