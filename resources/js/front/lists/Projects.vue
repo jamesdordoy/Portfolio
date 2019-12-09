@@ -16,7 +16,7 @@
                 
                 <div class="px-6 py-4">
                     <div class="font-bold text-xl mb-2">
-                        <a :href="project.link" class="text-teal-dark visited:text-green hover:no-underline" target="_blank">{{ project.name }}</a>
+                        <a :href="project.link" class="text-blue visited:text-green hover:no-underline" target="_blank">{{ project.name }}</a>
                     </div>
                     <p class="text-grey-darker text-base">
                         {{ project.description }}
@@ -43,15 +43,6 @@
     bottom: -20px !important;
     top: auto !important;
 }
-
-/* .hooper-navigation button {
-    border: 1px solid grey;
-    color: #fff;
-}
-
-.hooper-navigation button .icon {
-    color: #fff;
-} */
 
 </style>
 

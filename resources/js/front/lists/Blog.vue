@@ -3,7 +3,7 @@
         <div v-for="post in posts.data" :key="post.id" class="md:w-1/2 lg:w-1/3 w-full mb-4 px-2">
             <div class="bg-nav p-4 border-b border-teal">
                 <div class="h-8">
-                    <h4 class="text-grey-dark">{{ post.title }}</h4>
+                    <a class="text-blue"><h4>{{ post.title }}</h4></a>
                 </div>
                 <small>{{ post.subtitle }}</small>
                 <hr>

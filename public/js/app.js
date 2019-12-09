@@ -14740,15 +14740,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -15163,7 +15154,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "\n.hooper {\n    height: 500px !important;\n    padding: 0 80px;\n}\n.hooper-progress {\n    bottom: -20px !important;\n    top: auto !important;\n}\n\n/* .hooper-navigation button {\n    border: 1px solid grey;\n    color: #fff;\n}\n\n.hooper-navigation button .icon {\n    color: #fff;\n} */\n\n", ""]);
+exports.push([module.i, "\n.hooper {\n    height: 500px !important;\n    padding: 0 80px;\n}\n.hooper-progress {\n    bottom: -20px !important;\n    top: auto !important;\n}\n\n", ""]);
 
 // exports
 
@@ -67048,7 +67039,7 @@ var render = function() {
                     "a",
                     {
                       staticClass:
-                        "text-teal-dark visited:text-green hover:no-underline",
+                        "text-blue visited:text-green hover:no-underline",
                       attrs: { href: project.link, target: "_blank" }
                     },
                     [_vm._v(_vm._s(project.name))]
@@ -69894,8 +69885,8 @@ var render = function() {
         [
           _c("div", { staticClass: "bg-nav p-4 border-b border-teal" }, [
             _c("div", { staticClass: "h-8" }, [
-              _c("h4", { staticClass: "text-grey-dark" }, [
-                _vm._v(_vm._s(post.title))
+              _c("a", { staticClass: "text-blue" }, [
+                _c("h4", [_vm._v(_vm._s(post.title))])
               ])
             ]),
             _vm._v(" "),
