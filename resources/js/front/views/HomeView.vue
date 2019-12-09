@@ -64,32 +64,31 @@
                         top: -70px;
                         visibility: hidden;">
                 </span>
-                <div class="w-full lg:w-1/2 py-8">
+                <div class="w-full lg:w-1/2 py-8 px-2">
                     <h2 class="varela mb-4 py-4 text-grey">Contact Me</h2>
                     <contact-form
                         :url="contactFormUrl"
                         :method="'POST'">
                     </contact-form>
                 </div>
-                <div class="w-full lg:w-1/2 py-8 lg:pr-2">
+                <div class="w-full lg:w-1/2 py-8 lg:pr-2 px-2">
                     <h2 class="varela py-4 px-2 text-grey">Experiance</h2>
 
-                    <div class="timeline">
-                        <vue-timeline-update
-                            v-for="event in timeline"
-                            :key="event.id"
-                            :date="new Date(event.to)"
-                            :title="event.name"
-                            :description="event.description"
-                            :category="event.title"
-                            :icon="event.icon"
-                            color="black"
-                        />
+                    <div class="timeline-container">
 
+                        <div class="timeline">
+                            <vue-timeline-update
+                                v-for="event in timeline"
+                                :key="event.id"
+                                :date="new Date(event.to)"
+                                :title="event.name"
+                                :description="event.description"
+                                :category="event.title"
+                                :icon="event.icon"
+                                color="black"
+                            />
+                        </div>
                     </div>
-
-                    
-  
                 </div>
                 
             </div>
@@ -192,8 +191,32 @@ export default {
 .timeline {
     max-width: none !important;
     color: #b8c2cc;
-    max-height: 520px;
-    overflow: scroll;
+    max-height: 458px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    position: relative;
+    z-index: 11;
 }
 
+.timeline-container {
+    position: relative;
+}
+
+.timeline-container:after {
+  content  : "" !important;
+  position : absolute !important;
+  z-index  : 10 !important;
+  bottom   : 0 !important;
+  left     : 0 !important;
+  pointer-events   : none !important;
+  background-image : linear-gradient(to bottom, 
+                    
+                    
+                    rgba(58,65,69),
+                    rgba(29,32,34)
+
+                     90%);
+  width    : 100% !important;
+  height   : 4em !important;
+}
 </style>
