@@ -3,11 +3,14 @@
         <front-nav
             :auth="auth">
         </front-nav>
-        <particles>
-            <login-form
-                :old-email="oldEmail">
-            </login-form>
-        </particles>  
+
+        <div class="h-full" id="home">
+            <particles>
+                <login-form
+                    :old-email="oldEmail">
+                </login-form>
+            </particles>
+        </div>
     </div>
 </template>
 

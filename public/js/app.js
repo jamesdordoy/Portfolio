@@ -14264,7 +14264,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_IndexService__ = __webpack_require__("./resources/js/services/IndexService.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__includes_About__ = __webpack_require__("./resources/js/front/includes/About.vue");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__includes_About___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__includes_About__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_IndexService__ = __webpack_require__("./resources/js/services/IndexService.js");
 //
 //
 //
@@ -14354,26 +14356,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 
 
 
@@ -14390,6 +14373,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             newsletterFormUrl: '/newsletter',
             messageWhenNoItems: 'There arent items'
         };
+    },
+
+    components: {
+        About: __WEBPACK_IMPORTED_MODULE_0__includes_About___default.a
     },
     created: function created() {
         this.getLanguages();
@@ -14410,28 +14397,28 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         getLanguages: function getLanguages() {
             var _this = this;
 
-            __WEBPACK_IMPORTED_MODULE_0__services_IndexService__["a" /* default */].languages().then(function (response) {
+            __WEBPACK_IMPORTED_MODULE_1__services_IndexService__["a" /* default */].languages().then(function (response) {
                 _this.languages = response.data;
             }).catch(console.log);
         },
         getProjects: function getProjects() {
             var _this2 = this;
 
-            __WEBPACK_IMPORTED_MODULE_0__services_IndexService__["a" /* default */].projects().then(function (response) {
+            __WEBPACK_IMPORTED_MODULE_1__services_IndexService__["a" /* default */].projects().then(function (response) {
                 _this2.projects = response.data;
             }).catch(console.log);
         },
         getPosts: function getPosts() {
             var _this3 = this;
 
-            __WEBPACK_IMPORTED_MODULE_0__services_IndexService__["a" /* default */].posts().then(function (response) {
+            __WEBPACK_IMPORTED_MODULE_1__services_IndexService__["a" /* default */].posts().then(function (response) {
                 _this3.posts = response.data;
             }).catch(console.log);
         },
         getTimeline: function getTimeline() {
             var _this4 = this;
 
-            __WEBPACK_IMPORTED_MODULE_0__services_IndexService__["a" /* default */].timeline().then(function (response) {
+            __WEBPACK_IMPORTED_MODULE_1__services_IndexService__["a" /* default */].timeline().then(function (response) {
                 _this4.timeline = response.data.data;
             }).catch(console.log);
         }
@@ -14450,6 +14437,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
 //
 //
 //
@@ -66804,6 +66794,65 @@ if (false) {
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-2b1c33cd\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/js/front/includes/About.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("h2", { staticClass: "text-center varela mb-8 text-grey" }, [
+        _vm._v("About Me")
+      ]),
+      _vm._v(" "),
+      _c("p", { staticClass: "about-me" }, [
+        _vm._v(
+          "\n        Hey, my name is James and im a Software Enginer living in Essex. I have been developing software for over eight years now and i have a large range of experiance from creating simple Android applications and Microsoft Excel dashboards to working on large scale CMS and CRM systems.\n    "
+        )
+      ]),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
+      _c("p", { staticClass: "about-me" }, [
+        _vm._v(
+          "\n        Since leaving University, i have mainly been working with PHP & Laravel. I also have a solid background in JavaScript & Java but picking up a difference langauge isn't a problem. I am profitiant writting procedual, object orianted and functonal code which provides many different techniques for making my work cleaner.\n\n        I am currently picking up TypeScript and enjoying it as it enables me to write stricter code to overcome some of the limitations that JavaScript present such as Type Inference.\n    "
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "flex justify-center items-center py-6" }, [
+        _c("img", {
+          staticClass: "rounded-full",
+          attrs: { src: "/images/me.jpeg", alt: "James Dordoy - Me" }
+        })
+      ]),
+      _vm._v(" "),
+      _c("p", { staticClass: "about-me" }, [
+        _vm._v(
+          "\n        I am a huge Snooker fan and also enjoying playing competative First Person Shooter games. I also like learning about hardware and electronics and would love to pick up more basics to create simple robots. I have always wanted to learn to play a musical intstument or make YouTube tutorials based on my programming knowledge but have never got round to it.\n    "
+        )
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-2b1c33cd", module.exports)
+  }
+}
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-2c42f8e0\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/js/front/forms/ContactForm.vue":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -67292,8 +67341,15 @@ var render = function() {
       _c("front-nav", { attrs: { auth: _vm.auth } }),
       _vm._v(" "),
       _c(
-        "particles",
-        [_c("login-form", { attrs: { "old-email": _vm.oldEmail } })],
+        "div",
+        { staticClass: "h-full", attrs: { id: "home" } },
+        [
+          _c(
+            "particles",
+            [_c("login-form", { attrs: { "old-email": _vm.oldEmail } })],
+            1
+          )
+        ],
         1
       )
     ],
@@ -69241,7 +69297,24 @@ var render = function() {
         "div",
         { staticClass: "w-full" },
         [
-          _vm._m(0),
+          _c(
+            "div",
+            { staticClass: "w-full px-10 py-12 bg-black" },
+            [
+              _c("span", {
+                staticStyle: {
+                  display: "block",
+                  position: "relative",
+                  top: "-100px",
+                  visibility: "hidden"
+                },
+                attrs: { id: "about" }
+              }),
+              _vm._v(" "),
+              _c("about")
+            ],
+            1
+          ),
           _vm._v(" "),
           _c(
             "div",
@@ -69305,6 +69378,21 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "div",
+                { staticClass: "w-full lg:w-1/2 py-8" },
+                [
+                  _c("h2", { staticClass: "varela mb-4 py-4 text-grey" }, [
+                    _vm._v("Contact Me")
+                  ]),
+                  _vm._v(" "),
+                  _c("contact-form", {
+                    attrs: { url: _vm.contactFormUrl, method: "POST" }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
                 { staticClass: "w-full lg:w-1/2 py-8 lg:pr-2" },
                 [
                   _c("h2", { staticClass: "varela  py-4 px-2 text-grey" }, [
@@ -69316,21 +69404,6 @@ var render = function() {
                       items: _vm.timeline,
                       "message-when-no-items": "No data"
                     }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "w-full lg:w-1/2 py-8" },
-                [
-                  _c("h2", { staticClass: "varela mb-4 py-4 text-grey" }, [
-                    _vm._v("Contact Me")
-                  ]),
-                  _vm._v(" "),
-                  _c("contact-form", {
-                    attrs: { url: _vm.contactFormUrl, method: "POST" }
                   })
                 ],
                 1
@@ -69348,55 +69421,7 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "w-full px-10 py-12 bg-black" }, [
-      _c("span", {
-        staticStyle: {
-          display: "block",
-          position: "relative",
-          top: "-100px",
-          visibility: "hidden"
-        },
-        attrs: { id: "about" }
-      }),
-      _vm._v(" "),
-      _c("h2", { staticClass: "text-center varela mb-8 text-grey" }, [
-        _vm._v("About Me")
-      ]),
-      _vm._v(" "),
-      _c("p", { staticClass: "about-me" }, [
-        _vm._v(
-          "\n        Hey, my name is James and im a Software Enginer living in Essex. I have been developing software for over eight years now and i have a large range of experiance from creating simple Android applications and Microsoft Excel dashboards to working on large scale CMS and CRM systems.\n      "
-        )
-      ]),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("p", { staticClass: "about-me" }, [
-        _vm._v(
-          "\n        Since leaving University, i have mainly been working with PHP & Laravel. I also have a solid background in JavaScript & Java but picking up a difference langauge isn't a problem. I am profitiant writting procedual, object orianted and functonal code which provides many different techniques for making my work cleaner.\n\n        I am currently picking up TypeScript and enjoying it as it enables me to write stricter code to overcome some of the limitations that JavaScript present such as Type Inference.\n      "
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "flex justify-center items-center py-6" }, [
-        _c("img", {
-          staticClass: "rounded-full",
-          attrs: { src: "/images/me.jpeg", alt: "James Dordoy - Me" }
-        })
-      ]),
-      _vm._v(" "),
-      _c("p", { staticClass: "about-me" }, [
-        _vm._v(
-          "\n        I am a huge Snooker fan and also enjoying playing competative First Person Shooter games. I also like learning about hardware and electronics and would love to pick up more basics to create simple robots. I have always wanted to learn to play a musical intstument or make YouTube tutorials based on my programming knowledge but have never got round to it.\n      "
-        )
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -88223,6 +88248,54 @@ if (false) {(function () {
     hotAPI.createRecord("data-v-1f7ce2d9", Component.options)
   } else {
     hotAPI.reload("data-v-1f7ce2d9", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ "./resources/js/front/includes/About.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")
+/* script */
+var __vue_script__ = null
+/* template */
+var __vue_template__ = __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-2b1c33cd\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/js/front/includes/About.vue")
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/front/includes/About.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-2b1c33cd", Component.options)
+  } else {
+    hotAPI.reload("data-v-2b1c33cd", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
