@@ -35,4 +35,8 @@ export default [
         path: '/back/languages/:id',
         component: require('./back/views/LanguageView.vue')
     },
+    { 
+        path: "*", 
+        component: require('./front/views/PageNotFoundView.vue')
+    }
 ];
