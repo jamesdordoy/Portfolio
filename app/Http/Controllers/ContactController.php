@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Carbon\Carbon;
 use App\Models\Contact;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ContactRequest;
@@ -48,7 +49,10 @@ class ContactController extends Controller
         $contact = $this->contact->store($request->all());
 
         if ($contact) {
-            $this->contact->sendContactMeEmail($contact);
+
+            SendContactConfirmationEmailJob::dispatch($contact)
+                ->delay(now()->addSeconds(10));
+            
             return redirect(route('front.get.index'))->with("success", " Created");
         }
     }

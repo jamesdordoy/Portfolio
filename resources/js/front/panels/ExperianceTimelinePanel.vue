@@ -1,9 +1,7 @@
 <template>
     <div>
         <h2 class="varela py-4 px-2 text-grey">Experiance</h2>
-
         <div class="timeline-container">
-
             <div class="timeline">
                 <vue-timeline-update
                     v-for="event in timeline"
