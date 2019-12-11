@@ -2,22 +2,18 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 window.moment = require('moment');
+var VueScrollTo = require('vue-scrollto');
 
 import VueRouter from 'vue-router';
 import routes from './routes.js';
 import VueSweetalert2 from 'vue-sweetalert2';
+import VueTimeline from "@growthbunker/vuetimeline";
 import DataTable from 'laravel-vue-datatable';
 import * as Sentry from '@sentry/browser';
 import * as Integrations from '@sentry/integrations';
 
-var VueScrollTo = require('vue-scrollto');
-
-Vue.use(VueScrollTo)
-
-import VueTimeline from "@growthbunker/vuetimeline";
-
 Vue.use(VueTimeline);
-
+Vue.use(VueScrollTo);
 Vue.use(DataTable);
 Vue.use(VueRouter);
 Vue.use(VueSweetalert2, {

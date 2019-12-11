@@ -69,26 +69,13 @@ Route::namespace('Front')->group(function() {
         'as' => 'front.get.timeline',
         'uses' => 'IndexController@timeline',
     ]);
-
-    Route::get('/privacy', [
-        'as' => 'front.get.privacy',
-        'uses' => 'IndexController@privacyPolicy',
-    ]); 
-
-    Route::get('/{wildcard}', [
-        'as' => 'front.get.spa',
-        'uses' => 'IndexController@index',
-    ])->where('wildcard', '.*');
 });
 
 //Backend
 Route::middleware('auth')->group(function () {
 
     Route::namespace('Back')->group(function() {
-        Route::prefix('back')->group(function() {
-            Route::get('/', 'IndexController@index');
-        });
-    
+
         Route::prefix('api')->group(function() {
             Route::get('/github', 'GitHubController@index');
             Route::get('/languages', 'LanguageController@index');
@@ -98,7 +85,10 @@ Route::middleware('auth')->group(function () {
             Route::get('/contacts', 'ContactController@index');
             Route::get('/projects', 'ProjectController@ajax');
             Route::get('/posts', 'PostController@index');
-            
+        });
+
+        Route::prefix('back')->group(function() {
+            Route::get('/', 'IndexController@index');
         });
     });
 
@@ -106,3 +96,8 @@ Route::middleware('auth')->group(function () {
         return view('back/home');
     })->where('wildcard', '.*');
 });
+
+Route::get('/{wildcard}', [
+    'as' => 'front.get.spa',
+    'uses' => 'IndexController@index',
+])->where('wildcard', '.*');

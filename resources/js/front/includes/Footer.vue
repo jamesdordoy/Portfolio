@@ -11,8 +11,8 @@
                     <i class="fa fa-twitter text-4xl lg:text-5xl text-grey-darker hover:text-blue-light"></i>
                 </a>
                 <span class="text-teal p-2">-</span>
-                <a href="https://plus.google.com/u/0/108820602359020977660" target="_blank">
-                    <i class="fa fa-google-plus text-4xl lg:text-5xl text-grey-darker hover:text-red"></i>
+                <a href="https://www.linkedin.com/in/james-dordoy-a80686110/" target="_blank">
+                    <i class="fa fa-linkedin text-4xl lg:text-5xl text-grey-darker hover:text-blue" aria-hidden="true"></i>
                 </a>
                 <span class="text-teal p-2">-</span>
                 <a href="https://github.com/jamesdordoy" target="_blank">
@@ -26,7 +26,11 @@
         </div>
         <div class="w-full lg:w-1/3 lg:text-center py-6 lg:py-0 varela text-grey lg:pt-2">
             <h4>&copy; James Dordoy</h4>
-            <p><a class="text-teal hover:text-teal-lighter mt-4 block" href="/privacy">Privacy Policy</a></p>
+            <p>
+                <router-link :to="'/privacy'">
+                    <a class="text-teal hover:text-teal-lighter mt-4 block">Privacy Policy</a>
+                </router-link>
+            </p>
         </div>
         <div class="w-full lg:w-1/3">
             <div id="newsletter">

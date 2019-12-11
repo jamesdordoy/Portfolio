@@ -49,10 +49,10 @@ class ProjectController extends Controller
     {   
         $limit = $request->input('length');
         $column = $request->input('column'); //Index
-        $dir = $request->input('dir', 'asc');
+        $dir = $request->input('dir');
         $searchValue = $request->input('search');
 
-        $data = Project::dataTableQuery($column, $dir, $searchValue)
+        $data = Project::eloquentQuery($column, $dir, $searchValue)
             ->paginate($limit);
 
         return new DataTableCollectionResource($data);

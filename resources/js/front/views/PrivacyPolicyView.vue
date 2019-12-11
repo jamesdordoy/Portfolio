@@ -1,7 +1,7 @@
 <template>
     <div class="h-full bg-nav">
-        <particles>
-            <div style="background: rgba(0, 0, 0, 0.4); text-shadow: 0px 0px 2px #131415;" class="border-teal-light border pin-none rounded p-8 mt-20 text-lg text-white">
+        <particles :width="50">
+            <div style="background: rgba(0, 0, 0, 0.4); text-shadow: 0px 0px 2px #131415;" class="border-teal-light border pin-none rounded py-4 px-8 mt-48 text-lg text-white">
                 <p class="varela"> 
                     Here at jamesdordoy.co.uk we take personal privacy very seriously.
                 </p>
@@ -33,10 +33,11 @@
 
 <script>
 export default {
-
+    props: {
+        auth: {
+          type: Object,
+          default: () => ({})
+        }
+    },
 }
 </script>
-
-<style>
-
-</style>

@@ -12,6 +12,8 @@
         <div slot="content">
             <data-table
                 url="/api/projects"
+                order-by="id"
+                order-dir="asc"
                 :classes="classes"
                 ref="languageTable"
                 :add-filters-to-url="true"

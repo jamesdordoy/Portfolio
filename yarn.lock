@@ -3988,11 +3988,6 @@ home-or-tmp@^2.0.0:
     os-homedir "^1.0.0"
     os-tmpdir "^1.0.1"
 
-hooper@^0.3.4:
-  version "0.3.4"
-  resolved "https://registry.yarnpkg.com/hooper/-/hooper-0.3.4.tgz#afb425d23f47f931ce2a9c00b755992cb0e2bcf9"
-  integrity sha512-hV1c+MCiCfVjltdvZIgTrGYHInvhKiNLVNOT/hRWbfjZNIS9H6F6ZUPeaxhxrYkjsEL96Z0RIs+4YPoBqrrrHQ==
-
 hosted-git-info@^2.1.4:
   version "2.8.5"
   resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.8.5.tgz#759cfcf2c4d156ade59b0b2dfabddc42a6b9c70c"
@@ -4948,10 +4943,10 @@ laravel-mix@^1.0:
     webpack-notifier "^1.5.0"
     yargs "^8.0.1"
 
-laravel-vue-datatable@^0.3.7:
-  version "0.3.19"
-  resolved "https://registry.yarnpkg.com/laravel-vue-datatable/-/laravel-vue-datatable-0.3.19.tgz#062d2b038df4a4953df7410e681427c950013de7"
-  integrity sha512-5Cv6Pu/1SBDDRsUNHs5sJtAGiMhdiXmzQ6SUb999QCCLmu1vI3XPMXqzotP1n/LKNVUkLOKf213YLyPDTYbslg==
+laravel-vue-datatable@^0.4.2:
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/laravel-vue-datatable/-/laravel-vue-datatable-0.4.2.tgz#4426e14cf09bdc91b5220d49e1f521e8a9b2102d"
+  integrity sha512-G93YPXTLdeIgN6/xqIKaLAtbltvsS93ZBBLjML6nHbj6wTa5mqUDCrlL7mWqcDMxkM9wOyNv+vzOaMl05JcqiA==
   dependencies:
     axios "^0.18.1"
     laravel-vue-pagination "^2.3.0"
@@ -5163,11 +5158,6 @@ lodash.memoize@^4.1.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/lodash.memoize/-/lodash.memoize-4.1.2.tgz#bcc6c49a42a2840ed997f323eada5ecd182e0bfe"
   integrity sha1-vMbEmkKihA7Zl/Mj6tpezRguC/4=
-
-lodash.merge@^4.6.0:
-  version "4.6.2"
-  resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.2.tgz#558aa53b43b661e1925a0afdfa36a9a1085fe57a"
-  integrity sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==
 
 lodash.restparam@^3.0.0:
   version "3.6.1"
@@ -5826,9 +5816,11 @@ normalize-url@^1.4.0:
     sort-keys "^1.0.0"
 
 npm-bundled@^1.0.1:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/npm-bundled/-/npm-bundled-1.1.0.tgz#2e8fdb7e69eff2df963937b696243316537c284b"
-  integrity sha512-ez6dcKBFNo4FvlMqscBEFUum6M2FTLW5grqm3DyBKB5XOyKVCeeWvAuoZtbmW/5Cv8EM2bQUOA6ufxa/TKVN0g==
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/npm-bundled/-/npm-bundled-1.1.1.tgz#1edd570865a94cdb1bc8220775e29466c9fb234b"
+  integrity sha512-gqkfgGePhTpAEgUsGEgcq1rqPXA+tv/aVBlgEzfXwA1yiUJF7xtEt3CtVwOjNYQOVknDk0F20w58Fnm3EtG0fA==
+  dependencies:
+    npm-normalize-package-bin "^1.0.1"
 
 npm-conf@^1.1.0:
   version "1.1.3"
@@ -5838,10 +5830,15 @@ npm-conf@^1.1.0:
     config-chain "^1.1.11"
     pify "^3.0.0"
 
+npm-normalize-package-bin@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/npm-normalize-package-bin/-/npm-normalize-package-bin-1.0.1.tgz#6e79a41f23fd235c0623218228da7d9c23b8f6e2"
+  integrity sha512-EPfafl6JL5/rU+ot6P3gRSCpPDW5VmIzX959Ob1+ySFUuuYHWHekXpwdUZcKP5C+DS4GEtdJluwBjnsNDl+fSA==
+
 npm-packlist@^1.1.6:
-  version "1.4.6"
-  resolved "https://registry.yarnpkg.com/npm-packlist/-/npm-packlist-1.4.6.tgz#53ba3ed11f8523079f1457376dd379ee4ea42ff4"
-  integrity sha512-u65uQdb+qwtGvEJh/DgQgW1Xg7sqeNbmxYyrvlNznaVTjV3E5P6F/EFjM+BVHXl7JJlsdG8A64M0XI8FI/IOlg==
+  version "1.4.7"
+  resolved "https://registry.yarnpkg.com/npm-packlist/-/npm-packlist-1.4.7.tgz#9e954365a06b80b18111ea900945af4f88ed4848"
+  integrity sha512-vAj7dIkp5NhieaGZxBJB8fF4R0078rqsmhJcAfXZ6O7JJhjhPK96n5Ry1oZcfLXgfun0GWTZPOxaEyqv8GBykQ==
   dependencies:
     ignore-walk "^3.0.1"
     npm-bundled "^1.0.1"
@@ -8219,13 +8216,6 @@ timed-out@^4.0.0:
   resolved "https://registry.yarnpkg.com/timed-out/-/timed-out-4.0.1.tgz#f32eacac5a175bea25d7fab565ab3ed8741ef56f"
   integrity sha1-8y6srFoXW+ol1/q1Zas+2HQe9W8=
 
-timeline-vuejs@^1.0.9:
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/timeline-vuejs/-/timeline-vuejs-1.0.10.tgz#cbe3161e1b20740556be57a383ef43840a4341b9"
-  integrity sha512-hZWzpwrYfVslBe/6LZ+UBtEjziC2/QweYzeJlrWLBRMFrY5iywuRn54UZlPXD1TP1fHfFoDPUOCg9qXh+hoXtQ==
-  dependencies:
-    vue "^2.5.17"
-
 timers-browserify@^2.0.4:
   version "2.0.11"
   resolved "https://registry.yarnpkg.com/timers-browserify/-/timers-browserify-2.0.11.tgz#800b1f3eee272e5bc53ee465a04d0e804c31211f"
@@ -8721,13 +8711,6 @@ vm-browserify@^1.0.1:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
 
-vue-breakpoints@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/vue-breakpoints/-/vue-breakpoints-1.1.0.tgz#e57c2f129184460ae3b64f28d7112650a7364db0"
-  integrity sha512-kbUiGpxW5WzOwOT5t2MjtH3mDwUwlHUM71D3KK+6ssh/XPURc7wp/iWeHrJRI9hGmqTzwDhr65VPde7QxCo+PQ==
-  dependencies:
-    lodash.merge "^4.6.0"
-
 vue-hot-reload-api@^2.2.0:
   version "2.3.4"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.4.tgz#532955cc1eb208a3d990b3a9f9a70574657e08f2"
@@ -8797,7 +8780,7 @@ vue-template-es2015-compiler@^1.6.0:
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
 
-vue@^2.5.17, vue@^2.6.10:
+vue@^2.6.10:
   version "2.6.10"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.10.tgz#a72b1a42a4d82a721ea438d1b6bf55e66195c637"
   integrity sha512-ImThpeNU9HbdZL3utgMCq0oiMzAkt1mcgy3/E6zWC/G6AaQoeuFdsl9nDhTDU3X1R6FK7nsIUuRACVcjI+A2GQ==

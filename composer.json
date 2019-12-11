@@ -12,7 +12,7 @@
         "graham-campbell/github": "^8.2",
         "guzzlehttp/guzzle": "^6.3",
         "intervention/image": "^2.5",
-        "jamesdordoy/laravelvuedatatable": "1.1.*",
+        "jamesdordoy/laravelvuedatatable": "1.2.*",
         "laravel/framework": "6.0.*",
         "laravel/helpers": "^1.1",
         "laravel/tinker": "~1.0",

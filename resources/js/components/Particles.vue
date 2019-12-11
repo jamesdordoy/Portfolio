@@ -1,7 +1,7 @@
 <template>
     <div class="h-100">
         <div id='particles-js'></div>
-        <div class="overlay">
+        <div class="overlay" :style="`width: ${width}%;`">
             <slot></slot>
         </div>
     </div>
@@ -17,6 +17,12 @@ export default {
     this.$nextTick(() => {
       this.initParticlesJS()
     })
+  },
+  props: {
+    width: {
+      type: Number,
+      default: 35,
+    }
   },
   methods: {
     initParticlesJS () {
@@ -154,7 +160,6 @@ export default {
 	top: 40%;
 	right: 50%;
 	transform: translate(50%,-50%);
-  width: 35%;
   min-width: 400px;
 }
   
