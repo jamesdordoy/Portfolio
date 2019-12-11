@@ -37,11 +37,6 @@ Vue.component('login-form',             require('./front/forms/LoginForm.vue'));
 // Includes
 Vue.component('front-nav',              require('./front/includes/Nav.vue'));
 Vue.component('front-footer',           require('./front/includes/Footer.vue'));
-//Lists
-Vue.component('languages',              require('./front/lists/Languages.vue'));
-Vue.component('projects',               require('./front/lists/Projects.vue'));
-Vue.component('blog',                   require('./front/lists/Blog.vue'));
-Vue.component('tweets',                 require('./front/lists/TwitterTimeline.vue'));
 //Views
 // Vue.component('login-view',             require('./front/views/LoginView.vue'));
 Vue.component('privacy-policy-view',    require('./front/views/PrivacyPolicyView'));
@@ -98,6 +93,9 @@ const router = new VueRouter({
     mode: "history",
     base: "/",
     routes,
+    scrollBehavior () {
+        return { x: 0, y: 0 }
+    },
 });
 
 const app = new Vue({

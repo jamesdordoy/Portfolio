@@ -30,7 +30,7 @@
                         What I've Been Up To
                     </a>
                     <a v-scroll-to="'#contact'" @click="closeMenu" class="front-nav-item lg:inline-block lg:mt-0 hover:text-teal-lighter">
-                        Contact
+                        Contact Me
                     </a>
                 </div>
                 <div class="my-2">

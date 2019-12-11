@@ -15,82 +15,32 @@
         </div>
         <div class="w-full">
             <div class="w-full px-10 py-12 bg-black">
-                <span
-                    id="about"
-                    style="
-                        display: block;
-                        position: relative;
-                        top: -100px;
-                        visibility: hidden;">
-                </span>
-                <about></about>
+                <about-me-panel/>
             </div>
 
             <div class="w-full px-10 py-12 bg-nav">
-                <span
-                    id="projects"
-                    style="
-                      display: block;
-                      position: relative;
-                      top: -100px;
-                      visibility: hidden;">
-                </span>
-                <h2 class="varela text-center text-grey mb-8">Projects</h2>        
-                <projects
+                <projects-panel
                     :projects="projects">
-                </projects>
+                </projects-panel>
             </div>
 
             <div class="px-10 py-12 bg-black">
-                <span
-                    id="blog"
-                    style="
-                      display: block;
-                      position: relative;
-                      top: -100px;
-                      visibility: hidden;">
-                </span>
-                <h2 class="varela text-center text-grey mb-8">What i've been up to</h2>
-                <blog
+                <blog-panel
                     :posts="posts">
-                </blog>
+                </blog-panel>
             </div>
             <div class="flex flex-wrap px-10 py-2 bg-nav content-start">
-                <span
-                    id="contact"
-                    style="
-                        display: block;
-                        position: relative;
-                        top: -70px;
-                        visibility: hidden;">
-                </span>
+                
                 <div class="w-full lg:w-1/2 py-8 px-2">
-                    <h2 class="varela mb-4 py-4 text-grey">Contact Me</h2>
-                    <contact-form
-                        :url="contactFormUrl"
-                        :method="'POST'">
-                    </contact-form>
+                    <contact-me-panel
+                        :contact-form-url="contactFormUrl">
+                    </contact-me-panel>
                 </div>
                 <div class="w-full lg:w-1/2 py-8 lg:pr-2 px-2">
-                    <h2 class="varela py-4 px-2 text-grey">Experiance</h2>
-
-                    <div class="timeline-container">
-
-                        <div class="timeline">
-                            <vue-timeline-update
-                                v-for="event in timeline"
-                                :key="event.id"
-                                :date="new Date(event.to)"
-                                :title="event.name"
-                                :description="event.description"
-                                :category="event.title"
-                                :icon="event.icon"
-                                color="black"
-                            />
-                        </div>
-                    </div>
+                    <experiance-timeline-panel
+                        :timeline="timeline">
+                    </experiance-timeline-panel>
                 </div>
-                
             </div>
             <front-footer
                 :newsletter-form-url="newsletterFormUrl">
@@ -101,24 +51,29 @@
 
 <script>
 
-import About from '../includes/About';
+import BlogPanel from '../panels/BlogPanel';
+import AboutMePanel from '../panels/AboutMePanel';
+import ProjectsPanel from '../panels/ProjectsPanel';
+import ContactMePanel from '../panels/ContactMePanel';
 import IndexService from '../../services/IndexService';
+import ExperianceTimelinePanel from '../panels/ExperianceTimelinePanel';
 
 export default {
     data() {
         return {
             projects: [],
             posts: {},
-            languages: [],
-            tweets: [],
             timeline: [],
             contactFormUrl: '/contact',
             newsletterFormUrl: '/newsletter',
-            messageWhenNoItems: 'There arent items',
         };
     },
     components: {
-      About,
+        BlogPanel,
+        AboutMePanel,
+        ProjectsPanel,
+        ContactMePanel,
+        ExperianceTimelinePanel,
     },
     created() {
         this.getLanguages();

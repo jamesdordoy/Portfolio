@@ -6,7 +6,7 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class PostResource extends JsonResource
 {
-    protected $excerptLength = 10;
+    protected $excerptLength = 14;
 
     /**
      * Transform the resource into an array.
