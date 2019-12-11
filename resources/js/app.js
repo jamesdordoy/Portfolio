@@ -27,15 +27,10 @@ Sentry.init({
 });
 
 // Frontend
-// Forms
 Vue.component('contact-form',           require('./front/forms/ContactForm.vue'));
 Vue.component('login-form',             require('./front/forms/LoginForm.vue'));
-// Includes
 Vue.component('front-nav',              require('./front/includes/Nav.vue'));
 Vue.component('front-footer',           require('./front/includes/Footer.vue'));
-//Views
-// Vue.component('login-view',             require('./front/views/LoginView.vue'));
-Vue.component('privacy-policy-view',    require('./front/views/PrivacyPolicyView'));
 
 
 // Backend

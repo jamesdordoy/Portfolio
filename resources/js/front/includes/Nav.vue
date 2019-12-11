@@ -24,7 +24,7 @@
                         About Me
                     </a>
                     <a v-scroll-to="'#projects'" @click="closeMenu" class="front-nav-item lg:inline-block lg:mt-0 hover:text-teal-lighter">
-                        Projects
+                        My Projects
                     </a>
                     <a v-scroll-to="'#blog'" @click="closeMenu" class="front-nav-item lg:inline-block lg:mt-0 hover:text-teal-lighter">
                         What I've Been Up To
@@ -57,24 +57,19 @@
     </div>
 </template>
 
-
 <script>
+
 export default {
-    props: {
-        auth: {
-            type: Object,
-            default: () => ({}),
-        }
-    },
     data() {
         return {
             open: false,
         }
     },
-    computed: {
-        csrfToken() {
-            return document.head.querySelector('meta[name="csrf-token"]').content;
-        },
+    props: {
+        auth: {
+            type: Object,
+            default: () => ({}),
+        }
     },
     methods: {
         logout() {
@@ -89,6 +84,11 @@ export default {
         closeMenu() {
             this.open = false;
         }
+    },
+    computed: {
+        csrfToken() {
+            return document.head.querySelector('meta[name="csrf-token"]').content;
+        },
     },
 }
 </script>
