@@ -35,10 +35,11 @@ class TimelineTableSeeder extends Seeder
             'from' => '2013-04-10 13:53:12',
             'to' => '2014-09-29 13:53:12',
             'name' => "Royal Bank of Scottland",
-            'body' => "While working at RBS I was originally, I began as a member of agency staff, used to answering customer calls regarding their credit card accounts being in and arrears. After six weeks ofin this doing the telephony role, I was asked to help with some spreadsheets to provided trend analysis about customer calls and complaints.
+            'body' => "While working at RBS I was originally, I began as a member of agency staff, used to answering customer calls regarding their credit card accounts being in and arrears.
+                    After six weeks working the telephony role, I was asked to help with some spreadsheets to provided trend analysis about customer calls and complaints.
                     <br><br>I proved to have an aptitude for analytical work and I moved to an analytics team in January with a
-                    permanent contract with RBS. Whilst on this team I helpedMy responsibilities included managinge small
-                    projects, completinged business- critical daily tasks and aideding with group incident management.
+                    permanent contract with RBS. Whilst on this team, my responsibilities included managinge small
+                    projects, completing business critical daily tasks and aideding with group incident management.
                     <br><br>I decided to continue to develop the computing skills I developed by studying at University.",
             'icon' => "work",
             'title' => "Collections Officer",
@@ -48,16 +49,16 @@ class TimelineTableSeeder extends Seeder
             'from' => '2011-09-29 13:55:31',
             'to' => '2013-06-29 13:55:31',
             'name' => "Chelmsford College",
-            'body' => "",
             'icon' => "school",
-            'title' => "BTEC National Diploma in ICT",
+            'title' => "BTEC National Diploma ICT",
+            'body' => "Whilst studying at chelmsford college, i was introduced to basic programming, datatbase management and web design. During this time, i picked up the basics of C++, JavaScript and working with relational databases.",
         ]);
 
         factory(Timeline::class)->create([
             'from' => '2010-03-10 13:54:30',
             'to' => '2013-10-29 13:54:30',
             'name' => "Dominos Pizza",
-            'title' => "Instore &amp; Delivery Staff",
+            'title' => "Instore & Delivery Staff",
             'icon' => "work",
             'body' => "",
         ]);

@@ -63521,7 +63521,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "flex justify-center items-center py-6" }, [
         _c("img", {
           staticClass: "rounded-full",
-          staticStyle: { width: "20%" },
+          staticStyle: { width: "20% min-width: 200px" },
           attrs: { src: "/images/me.jpeg", alt: "James Dordoy - Me" }
         })
       ]),
