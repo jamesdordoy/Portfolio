@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-class Link extends EloquentModel
+class Newsletter extends EloquentModel
 {
     protected $dates = ['created_at', 'updated_at'];
     

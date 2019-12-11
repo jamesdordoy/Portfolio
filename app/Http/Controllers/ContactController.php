@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use Carbon\Carbon;
 use App\Models\Contact;
+use App\Jobs\SendNewsletterEmailJob;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ContactRequest;
 use App\Http\Requests\NewsletterRequest;
@@ -37,11 +38,10 @@ class ContactController extends Controller
         $contact = $this->contact->store($request->all());
 
         if ($contact) {
-
             SendContactConfirmationEmailJob::dispatch($contact)
                 ->delay(now()->addSeconds(10));
             
-            return redirect(route('front.get.index'))->with("success", " Created");
+            return 200;
         }
     }
 
@@ -53,6 +53,15 @@ class ContactController extends Controller
      */
     public function newsletter(NewsletterRequest $request)
     {
-        
+        $newsletter = $this->contact->storeNewsletter($request->input("email"));
+
+        if ($newsletter) {
+            SendNewsletterEmailJob::dispatch($newsletter)
+                ->delay(now()->addSeconds(10));
+
+            // $this->contact->sendNewsLetterEmail($newsletter);
+            
+            return 200;
+        }
     }
 }

@@ -26,9 +26,11 @@ class TimelineTableSeeder extends Seeder
             'from' => '2014-10-01 13:51:54',
             'to' => '2017-05-01 13:51:54',
             'name' => "Southampton Solent",
-            'body' => "",
             'icon' => "school",
             'title' => "BSc Software Engineering",
+            'body' => "Studying at Southampton Solent University gave me a chance to spend time homing in my programming skills.
+            During this time, I became very familuar with PHP and Java. I also started dabbeling with AI topics such as Forward Chaining and Nerual Networks and created some basic examples.
+            I ended up creating a simple social network in PHP for my disattation using no frameworks as an objective as the SNA was required to work on a SBC server.",
         ]);
 
         factory(Timeline::class)->create([
@@ -39,7 +41,7 @@ class TimelineTableSeeder extends Seeder
                     After six weeks working the telephony role, I was asked to help with some spreadsheets to provided trend analysis about customer calls and complaints.
                     <br><br>I proved to have an aptitude for analytical work and I moved to an analytics team in January with a
                     permanent contract with RBS. Whilst on this team, my responsibilities included managinge small
-                    projects, completing business critical daily tasks and aideding with group incident management.
+                    projects, completing business critical daily tasks and aiding with group incident management.
                     <br><br>I decided to continue to develop the computing skills I developed by studying at University.",
             'icon' => "work",
             'title' => "Collections Officer",

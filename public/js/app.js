@@ -14454,7 +14454,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             axios.post(this.newsletterFormUrl, this.payload).then(function (response) {
                 if (response.status == 200) {
-                    _this.$swal('Message Received!');
+                    _this.$swal('Signup Recived', 'Thank you!', 'success');
                     _this.resetPayload();
                 }
             }).catch(function (error) {

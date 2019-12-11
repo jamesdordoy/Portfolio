@@ -6914,6 +6914,10 @@ table {
 .dordoy {
 }
 
+#app {
+  max-width: 1440px;
+}
+
 html {
   height: 100%;
 }

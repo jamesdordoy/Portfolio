@@ -93,7 +93,7 @@ export default {
             axios.post(this.newsletterFormUrl, this.payload)
             .then(response => {
                 if (response.status == 200) {
-                    this.$swal('Message Received!');
+                    this.$swal(`Signup Recived`, `Thank you!`, `success`);
                     this.resetPayload();
                 }
             })
