@@ -97,7 +97,10 @@ Route::middleware('auth')->group(function () {
     })->where('wildcard', '.*');
 });
 
+//Frontend
+Route::namespace('Front')->group(function() {
 Route::get('/{wildcard}', [
     'as' => 'front.get.spa',
     'uses' => 'IndexController@index',
 ])->where('wildcard', '.*');
+});
