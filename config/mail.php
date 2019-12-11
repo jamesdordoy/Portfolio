@@ -60,6 +60,10 @@ return [
         'name' => env('MAIL_FROM_NAME', 'Example'),
     ],
 
+    'recipient' => [
+        'email' => env('MAIL_RECIPIENT', 'jamesdordoy@gmail.com'),
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | E-Mail Encryption Protocol

@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Models\Contact;
 use App\Mail\ContactMeMail;
+use App\Mail\LetMeKnowMail;
 use App\Contracts\Services\ContactServiceContract;
 
 class ContactService extends Service implements ContactServiceContract
@@ -23,5 +24,10 @@ class ContactService extends Service implements ContactServiceContract
     public function sendContactMeEmail(Contact $contact)
     {
         \Mail::to($contact->email)->send(new ContactMeMail($contact));
+    }
+
+    public function sendLetMeKnowEmail(Contact $contact)
+    {
+        \Mail::to(config('mail.recipient.email'))->send(new LetMeKnowMail($contact));
     }
 }
