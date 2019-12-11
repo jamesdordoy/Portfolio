@@ -169,7 +169,6 @@ return [
          */
         JamesDordoy\LaravelVueDatatable\Providers\LaravelVueDatatableServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
-        Barryvdh\Cors\ServiceProvider::class,
 
         /*
          * Application Service Providers...
