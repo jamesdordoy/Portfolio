@@ -67,6 +67,7 @@
   @import "login-form.css";
   @import "front.css";
 
+  @import 'https://fonts.googleapis.com/icon?family=Material+Icons';
   @import "~animate.css/source/_base.css";
   @import "~animate.css/source/fading_entrances/fadeIn.css";
   @import "~animate.css/source/fading_exits/fadeOut.css";

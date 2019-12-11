@@ -217,6 +217,6 @@ export default {
 
                      90%);
   width    : 100% !important;
-  height   : 4em !important;
+  height   : 1em !important;
 }
 </style>
