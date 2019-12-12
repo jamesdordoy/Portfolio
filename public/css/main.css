@@ -6914,10 +6914,10 @@ table {
 .dordoy {
 }
 
-#app {
-  max-width: 1440px;
-  margin: 0 auto;
-}
+/* #app {
+    max-width: 1440px;
+    margin: 0 auto;
+  } */
 
 html {
   height: 100%;
