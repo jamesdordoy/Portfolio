@@ -65,6 +65,11 @@ Route::namespace('Front')->group(function() {
         'uses' => 'IndexController@posts',
     ]);
 
+    Route::get('/posts/{id}', [
+        'as' => 'front.get.posts.find',
+        'uses' => 'IndexController@findPost',
+    ]);
+
     Route::get('/timeline', [
         'as' => 'front.get.timeline',
         'uses' => 'IndexController@timeline',

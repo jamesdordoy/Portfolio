@@ -3,7 +3,6 @@
         <front-nav
             :auth="auth">
         </front-nav>
-
         <div class="h-full" id="home">
             <particles>
                 <div class="front-into md:p-8 md:mx-0">

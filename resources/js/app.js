@@ -30,6 +30,7 @@ Sentry.init({
 Vue.component('contact-form',           require('./front/forms/ContactForm.vue'));
 Vue.component('login-form',             require('./front/forms/LoginForm.vue'));
 Vue.component('front-nav',              require('./front/includes/Nav.vue'));
+Vue.component('back-bar',              require('./front/includes/BackBar.vue'));
 Vue.component('front-footer',           require('./front/includes/Footer.vue'));
 
 

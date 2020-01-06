@@ -19,7 +19,8 @@ class TimelineTableSeeder extends Seeder
             'name' => "Neon Digital",
             'icon' => "code",
             'title' => "Junior Web Developer",
-            'body' => "Working for a local digital agency, my position included creating new interal tools e.g. for server monitoring and completing work on non-customer facing buisness systems including CRM",
+            'body' => "Working for a local digital agency, my position included creating new interal tools e.g. for server monitoring and completing work on non-customer facing buisness systems including CRM, CMS and ordering systems.
+            <br><br>The main tech stack i was using during this time was L.A.M.P. or L.E.M.P. with a Laravel backend. On the frontend, the company was trying to move away from using JQuery so i gained alot of knowledge of JQuery and Vue.js by porting different UI elements.",
         ]);
 
         factory(Timeline::class)->create([
@@ -29,8 +30,8 @@ class TimelineTableSeeder extends Seeder
             'icon' => "school",
             'title' => "BSc Software Engineering",
             'body' => "Studying at Southampton Solent University gave me a chance to spend time homing in my programming skills.
-            During this time, I became very familuar with PHP and Java. I also started dabbeling with AI topics such as Forward Chaining and Nerual Networks and created some basic examples.
-            I ended up creating a simple social network in PHP for my disattation using no frameworks as an objective as the SNA was required to work on a SBC server.",
+            <br><br>During this time, I became very familuar with PHP and Java. I also started dabbeling with AI topics such as Forward Chaining and Nerual Networks and created some basic examples.
+            <br><br>I ended up creating a simple social network in PHP for my disattation using no frameworks as an objective as the SNA was required to work on a SBC server.",
         ]);
 
         factory(Timeline::class)->create([
@@ -53,7 +54,8 @@ class TimelineTableSeeder extends Seeder
             'name' => "Chelmsford College",
             'icon' => "school",
             'title' => "BTEC National Diploma ICT",
-            'body' => "Whilst studying at chelmsford college, i was introduced to basic programming, datatbase management and web design. During this time, i picked up the basics of C++, JavaScript and working with relational databases.",
+            'body' => "Whilst studying at chelmsford college, i was introduced to basic programming, datatbase management and web design.
+            <br><br>During this time, i picked up the basics of C++, JavaScript and working with relational databases.",
         ]);
 
         factory(Timeline::class)->create([
@@ -62,7 +64,8 @@ class TimelineTableSeeder extends Seeder
             'name' => "Dominos Pizza",
             'title' => "Instore & Delivery Staff",
             'icon' => "work",
-            'body' => "",
+            'body' => "While working at Dominos, i became used to working in a target based environment and dealing with customer expectation.
+            <br><br>I originally started as instore staff but after attaining my drivers licence, i also started delivering to customers expanding my knowledge of the full process.",
         ]);
         
     }

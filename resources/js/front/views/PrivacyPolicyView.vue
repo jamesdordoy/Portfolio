@@ -1,5 +1,7 @@
 <template>
     <div class="h-full bg-nav">
+        <back-bar :auth="auth">
+        </back-bar>
         <particles :width="50">
             <div style="background: rgba(0, 0, 0, 0.4); text-shadow: 0px 0px 2px #131415;" class="border-teal-light border pin-none rounded py-4 px-8 mt-48 text-lg text-white">
                 <p class="varela"> 

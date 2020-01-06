@@ -12,11 +12,11 @@ class TagsTableSeeder extends Seeder
     public function run()
     {
         factory(\App\Models\Tag::class)->create([
-            'name' => "Web Application",
+            'name' => "Web App",
         ]);
 
         factory(\App\Models\Tag::class)->create([
-            'name' => "Vue",
+            'name' => "Vue.js",
         ]);
 
         factory(\App\Models\Tag::class)->create([
@@ -41,6 +41,18 @@ class TagsTableSeeder extends Seeder
 
         factory(\App\Models\Tag::class)->create([
             'name' => "PHP",
+        ]);
+
+        factory(\App\Models\Tag::class)->create([
+            'name' => "Node.js",
+        ]);
+
+        factory(\App\Models\Tag::class)->create([
+            'name' => "Angularjs",
+        ]);
+
+        factory(\App\Models\Tag::class)->create([
+            'name' => "Package",
         ]);
     }
 }

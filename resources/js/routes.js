@@ -4,6 +4,10 @@ export default [
         component: require('./front/views/HomeView.vue')
     },
     {
+        path: '/post/:id',
+        component: require('./front/views/PostView.vue')
+    },
+    {
         path: '/privacy',
         component: require('./front/views/PrivacyPolicyView.vue')
     },

@@ -71,6 +71,7 @@
   @import "~animate.css/source/fading_entrances/fadeIn.css";
   @import "~animate.css/source/fading_exits/fadeOut.css";
   @import "~animate.css/source/fading_entrances/fadeInDown.css";
+  @import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
 
   .dordoy {
       
@@ -112,6 +113,12 @@
   .about-me {
     @apply text-grey;
     text-align: center;
+    /* font-family: 'Noto Sans', sans-serif;
+     */
+     font-family: 'Varela Round', sans-serif;
+     font-size: 1.1em;
+    line-height: 1.4;
+
   }
 
   .projects {

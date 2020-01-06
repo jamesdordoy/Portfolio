@@ -7,6 +7,10 @@ class PostService extends AbstractService {
     all() {
         return this.client.get(`/api/posts`);
     }
+
+    find(id) {
+        return this.client.get(`/api/posts/${id}`);
+    }
 };
 
 //Create absoulute Singleton

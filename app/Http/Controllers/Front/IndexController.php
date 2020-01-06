@@ -76,6 +76,13 @@ class IndexController extends Controller
         return TimelineResource::collection(Timeline::get());
     }
 
+    public function findPost(Request $request, $id)
+    {
+        $post = Post::findOrFail($id);
+
+        return new PostResource($post);
+    }
+
     public function posts()
     {
         return PostResource::collection(Post::orderBy("created_at", "desc")->limit(6)->get());

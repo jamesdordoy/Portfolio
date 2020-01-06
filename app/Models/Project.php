@@ -16,6 +16,15 @@ class Project extends EloquentModel
         'name' => [
             'search' => true,
         ],
+        'owner' => [
+            'search' => true,
+        ],
+        'private' => [
+            'search' => true,
+        ],
+        'completed' => [
+            'search' => true,
+        ],
         'link' => [
             'search' => true,
         ]
