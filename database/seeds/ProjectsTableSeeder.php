@@ -69,7 +69,7 @@ class ProjectsTableSeeder extends Seeder
         $phpForwardChaining = factory(\App\Models\Project::class)->create(
             [
                 'name' => "PHP Forward Chaining Engine",
-                'description' => "A simple Forward Chaining Engine written in PHP and makes use of the Syfony expressions language",
+                'description' => "A simple Forward Chaining Engine written in PHP and makes use of the Symfony expressions language",
                 'owner' => "Me",
                 'icon' => "/images/projects/PHPBinaryTree.png",
                 'link' => "https://github.com/jamesdordoy/PHP-Forward-Chaining",

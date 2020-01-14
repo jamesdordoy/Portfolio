@@ -30,7 +30,7 @@ class TimelineTableSeeder extends Seeder
             'icon' => "school",
             'title' => "BSc Software Engineering",
             'body' => "Studying at Southampton Solent University gave me a chance to spend time homing in my programming skills.
-            <br><br>During this time, I became very familuar with PHP and Java. I also started dabbeling with AI topics such as Forward Chaining and Nerual Networks and created some basic examples.
+            <br><br>During this time, I became very familuar with PHP and Java. I also started dabbling with AI topics such as Forward Chaining and Nerual Networks and created some basic examples.
             <br><br>I ended up creating a simple social network in PHP for my disattation using no frameworks as an objective as the SNA was required to work on a SBC server.",
         ]);
 
