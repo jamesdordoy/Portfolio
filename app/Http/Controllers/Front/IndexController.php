@@ -14,18 +14,6 @@ use App\Contracts\Services\TwitterServiceContract;
 
 class IndexController extends Controller
 {
-    protected $twitter;
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct(TwitterServiceContract $twitter)
-    {
-        $this->twitter = $twitter;
-    }
-
     /**
      * Show the Home Page
      *
@@ -49,33 +37,41 @@ class IndexController extends Controller
         );
     }
 
-    public function authenticated(Request $request)
-    {
-        $logggedIn = \Auth::guest() ? false : true;
-
-
-    }
-
+    /**
+     * Get Public Languages
+     *
+     * @return \App\Http\Resources\PostResource
+     */
     public function languages()
     {
         return Language::with('image')->get();
     }
 
+    /**
+     * Get Public Projects
+     *
+     * @return \App\Http\Resources\PostResource
+     */
     public function projects()
     {
         return Project::with("tags")->publicProjects()->get();
     }
 
-    public function tweets()
-    {
-
-    }
-
+    /**
+     * Get Public Timeline Posts
+     *
+     * @return \App\Http\Resources\PostResource
+     */
     public function timeline()
     {
         return TimelineResource::collection(Timeline::get());
     }
 
+    /**
+     * Find a Public Post
+     *
+     * @return \App\Http\Resources\PostResource
+     */
     public function findPost(Request $request, $id)
     {
         $post = Post::findOrFail($id);
@@ -83,6 +79,11 @@ class IndexController extends Controller
         return new PostResource($post);
     }
 
+    /**
+     * Get Public Posts
+     *
+     * @return \App\Http\Resources\PostResource
+     */
     public function posts()
     {
         return PostResource::collection(Post::orderBy("created_at", "desc")->limit(6)->get());

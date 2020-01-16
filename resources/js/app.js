@@ -39,9 +39,6 @@ Vue.component('front-footer',           require('./front/includes/Footer.vue'));
     // Modals
         Vue.component('languages-create-modal',   require('./back/language/CreateLanguageModal.vue'));
     // Tables
-        Vue.component('languages-table',   require('./back/language/LanguagesTable.vue'));
-        Vue.component('contacts-table',    require('./back/contact/ContactTable.vue'));
-        Vue.component('projects-table',    require('./back/project/ProjectsTable.vue'));
         Vue.component('tweets-table',      require('./back/twitter/TweetsTable.vue'));
     // Includes
         Vue.component('back-nav',          require('./back/includes/Nav.vue'));

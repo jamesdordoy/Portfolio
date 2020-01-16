@@ -46,7 +46,7 @@ class ContactController extends Controller
     }
 
     /**
-     * Sign up for the Dordoy newsletter
+     * Sign up for the newsletter
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -58,8 +58,6 @@ class ContactController extends Controller
         if ($newsletter) {
             SendNewsletterEmailJob::dispatch($newsletter)
                 ->delay(now()->addSeconds(10));
-
-            // $this->contact->sendNewsLetterEmail($newsletter);
             
             return 200;
         }

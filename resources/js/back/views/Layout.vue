@@ -1,4 +1,3 @@
-
 <template>
     <div class="h-full">
         <back-nav>
@@ -12,7 +11,6 @@
                     <div class="w-1/2 text-right">
                         <slot
                             name="buttons">
-
                         </slot>
                     </div>
                 </div>

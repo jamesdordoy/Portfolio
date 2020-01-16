@@ -10,61 +10,54 @@
         </span>
 
         <div slot="content">
-            <data-table
+            <tailwind-data-table
                 url="/api/projects"
-                order-by="id"
-                order-dir="asc"
-                :classes="classes"
-                ref="languageTable"
-                :add-filters-to-url="true"
-                :per-page="perPage"
                 :columns="columns">
-                <span slot="filters" slot-scope="{ tableData, perPage }">
-                    <data-table-filters
-                        :classes="classes"
-                        :table-data="tableData"
-                        :per-page="perPage">
-                    </data-table-filters>
-                </span>
-
-                <span slot="pagination" slot-scope="{ links, meta }">
-                    <paginator 
-                        @next="updateUrl"
-                        @prev="updateUrl"
-                        :meta="meta"
-                        :links="links">
-                    </paginator>
-                </span>
-            </data-table>
+            </tailwind-data-table>
         </div>
     </layout>  
 </template>
 
 <script>
 
-    import TableClasses from '../../mixins/DataTableClasses';
+    import TailwindDataTable from '../../components/TailwindDataTable';
 
     export default {
+        components: {
+            TailwindDataTable
+        },
         data() {
             return {
-                url: '',
-                perPage: ['10', '50', '100'],
                 columns: [
-                    { label: 'ID', name: 'id' },
-                    { label: 'Name', name: 'name' },
-                    { label: 'Owner', name: 'owner' },
-                    { label: 'Complete', name: 'completed' },
-                    { label: 'Private', name: 'private' },
+                    { 
+                        label: 'ID',
+                        name: 'id',
+                        orderable: true 
+                    },
+                    { 
+                        label: 'Name', 
+                        name: 'name', 
+                        orderable: true
+                    },
+                    { 
+                        label: 'Owner',
+                        name: 'owner',
+                        orderable: true
+                    },
+                    { 
+                        label: 'Complete',
+                        name: 'completed',
+                        orderable: true
+                    },
+                    { 
+                        label: 'Private',
+                        name: 'private',
+                        orderable: true
+                    },
                 ]
             }
         },
-        mixins: [
-            TableClasses
-        ],
         methods: {
-            alertHi() {
-                alert("hi")
-            },
             updateUrl(url) {
                 this.url = url;
             }
