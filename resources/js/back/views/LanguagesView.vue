@@ -10,28 +10,12 @@
                 </outline-button>
             </span>
             <div slot="content">
-                <data-table
-                    ref="languageTable"
-                    url="/api/languages"
-                    :add-filters-to-url="true"
-                    :classes="classes"
-                    :per-page="perPage"
-                    :columns="columns">
-                    <span slot="filters" slot-scope="{ tableData, perPage }">
-                        <data-table-filters
-                            :table-data="tableData"
-                            :per-page="perPage">
-                        </data-table-filters>
-                    </span>
-                    <span slot="pagination" slot-scope="{ links, meta }">
-                        <paginator 
-                            @next="updateUrl"
-                            @prev="updateUrl"
-                            :meta="meta"
-                            :links="links">
-                        </paginator>
-                    </span>
-                </data-table>
+                <tailwind-data-table
+                    :url="url"
+                    :columns="columns"
+                    @urlUpdated="updateUrl">
+                </tailwind-data-table>
+                
             </div>
         </layout>
 
@@ -47,11 +31,13 @@
 
     import TableClasses from '../../mixins/DataTableClasses';
     import LanguageService from '../../services/LanguageService';
+    import TailwindDataTable from '../../components/TailwindDataTable';
     import DataTableButtonCell from '../../components/DataTableButtonCell';
-
+    
     export default {
         data() {
             return {
+                url: "/api/languages",
                 languages: [],
                 createModal: {
                     show: false,
@@ -89,6 +75,9 @@
                 ],
             };
         },
+        components: {
+            TailwindDataTable
+        },  
         mixins: [
             TableClasses
         ],

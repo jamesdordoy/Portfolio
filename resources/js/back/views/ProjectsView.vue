@@ -11,8 +11,9 @@
 
         <div slot="content">
             <tailwind-data-table
-                url="/api/projects"
-                :columns="columns">
+                :url="url"
+                :columns="columns"
+                @urlUpdated="updateUrl">
             </tailwind-data-table>
         </div>
     </layout>  
@@ -28,6 +29,7 @@
         },
         data() {
             return {
+                url: '/api/projects',
                 columns: [
                     { 
                         label: 'ID',

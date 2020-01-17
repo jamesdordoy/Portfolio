@@ -12,7 +12,6 @@
                 :per-page="perPage">
             </data-table-filters>
         </span>
-
         <span slot="pagination" slot-scope="{ links, meta }">
             <paginator 
                 @next="updateUrl"
@@ -33,6 +32,11 @@ export default {
         columns: {
 
         },
+    },
+    methods: {
+        updateUrl(url) {
+            this.$emit("urlUpdated", url);
+        }
     },
     data() {
         return {

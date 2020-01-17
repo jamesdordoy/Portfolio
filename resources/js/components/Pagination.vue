@@ -1,35 +1,25 @@
 <template>
     <nav class="flex mt-4" v-if="!client">
         <div class="w-1/2">
-            <span class="text-white">Showing {{ meta.from }} to {{ meta.to }} of {{ meta.total }} Entries</span>
+            <span class="text-white">
+                Showing {{ meta.from }} to {{ meta.to }} of {{ meta.total }} Entries
+            </span>
         </div>
         <div class="flex w-1/2 justify-end">
-            <small-button
-                classes="mr-4"
-                v-if="links.prev"
-                @click="$emit('prev', links.prev);">
-                <i class="fa fa-chevron-left" aria-hidden="true"></i>
-                &nbsp;Prev
-            </small-button>
-            <small-button
-                v-else
-                classes="mr-4"
-                :disabled="true" @click="$emit('prev');">
-                <i class="fa fa-chevron-left" aria-hidden="true"></i>
-                &nbsp;Prev
-            </small-button>
-            <small-button
-                v-if="links.next"
-                @click="$emit('next', links.next);">
-                Next&nbsp;
-                <i class="fa fa-chevron-right" aria-hidden="true"></i>
-            </small-button>
-            <small-button
-                v-else
-                :disabled="true">
-                Next&nbsp;
-                <i class="fa fa-chevron-right" aria-hidden="true"></i>
-            </small-button>
+            <button
+                :disabled="!links.prev"
+                @click="$emit('prev', links.prev)"
+                :class="{ 'opacity-50': !links.prev, 'cursor-not-allowed': !links.prev }"
+                class="text-grey-lighter font-bold py-2 px-4 rounded text-xs bg-teal hover:bg-teal-dark mr-2">
+                Prev
+            </button>
+            <button
+                :disabled="!links.next"
+                @click="$emit('next', links.next);"
+                :class="{ 'opacity-50': !links.next, 'cursor-not-allowed': !links.next }"
+                class="text-grey-lighter font-bold py-2 px-4 rounded text-xs bg-teal hover:bg-teal-dark">
+                Next
+            </button>
         </div>        
     </nav>
 </template>

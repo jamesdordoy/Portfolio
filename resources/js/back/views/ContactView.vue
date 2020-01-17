@@ -9,26 +9,11 @@
             </outline-button>
         </span>
         <div slot="content">
-            <data-table
+            <tailwind-data-table
                 :url="url"
-                :per-page="perPage"
-                :classes="classes"
-                :columns="columns">
-                <span slot="filters" slot-scope="{ tableData, perPage }">
-                    <data-table-filters
-                        :table-data="tableData"
-                        :per-page="perPage">
-                    </data-table-filters>
-                </span>
-                <span slot="pagination" slot-scope="{ links, meta }">
-                    <paginator 
-                        @next="updateUrl"
-                        @prev="updateUrl"
-                        :meta="meta"
-                        :links="links">
-                    </paginator>
-                </span>
-            </data-table>
+                :columns="columns"
+                @urlUpdated="updateUrl">
+            </tailwind-data-table>
         </div>
     </layout>
 </template>
@@ -36,6 +21,7 @@
 <script>
 
     import TableClasses from '../../mixins/DataTableClasses';
+    import TailwindDataTable from '../../components/TailwindDataTable';
 
     export default {
         data() {
@@ -48,6 +34,9 @@
                     {label: 'Email', name: 'email' },
                 ]
             }
+        },
+        components: {
+            TailwindDataTable
         },
         mixins: [
             TableClasses
