@@ -15,7 +15,6 @@
                     :columns="columns"
                     @urlUpdated="updateUrl">
                 </tailwind-data-table>
-                
             </div>
         </layout>
 

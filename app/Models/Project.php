@@ -30,6 +30,21 @@ class Project extends EloquentModel
         ]
     ];
 
+    protected $dataTableRelationships = [
+        "belongsTo" => [
+            //
+        ],
+        "hasOne" => [
+            //
+        ],
+        "hasMany" => [
+            //
+        ],
+        "belongsToMany" => [
+            //
+        ],
+    ];
+
     public function dependencies()
     {
         return $this->hasMany('App\Dependencies');

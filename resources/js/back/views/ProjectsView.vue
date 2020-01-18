@@ -18,7 +18,6 @@
         </div>
     </layout>  
 </template>
-
 <script>
 
     import TailwindDataTable from '../../components/TailwindDataTable';
