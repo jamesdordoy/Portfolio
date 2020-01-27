@@ -22,6 +22,13 @@
             <directory suffix=".php">./app</directory>
         </whitelist>
     </filter>
+    <logging>
+        <log
+            type="coverage-html"
+            target="./storage/report"
+            lowUpperBound="50"
+            highLowerBound="80" />
+    </logging>
     <php>
         <env name="APP_ENV" value="testing"/>
         <env name="CACHE_DRIVER" value="array"/>
