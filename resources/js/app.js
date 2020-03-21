@@ -1,6 +1,6 @@
 require('./bootstrap');
 
-window.Vue = require('vue');
+import Vue from 'vue'; 
 window.moment = require('moment');
 var VueScrollTo = require('vue-scrollto');
 
@@ -27,44 +27,44 @@ Sentry.init({
 });
 
 // Frontend
-Vue.component('contact-form',           require('./front/forms/ContactForm.vue'));
-Vue.component('login-form',             require('./front/forms/LoginForm.vue'));
-Vue.component('front-nav',              require('./front/includes/Nav.vue'));
-Vue.component('back-bar',              require('./front/includes/BackBar.vue'));
-Vue.component('front-footer',           require('./front/includes/Footer.vue'));
+Vue.component('contact-form',           require('./front/forms/ContactForm.vue').default);
+Vue.component('login-form',             require('./front/forms/LoginForm.vue').default);
+Vue.component('front-nav',              require('./front/includes/Nav.vue').default);
+Vue.component('back-bar',              require('./front/includes/BackBar.vue').default);
+Vue.component('front-footer',           require('./front/includes/Footer.vue').default);
 
 
 // Backend
     // Forms
     // Modals
-        Vue.component('languages-create-modal',   require('./back/language/CreateLanguageModal.vue'));
+        Vue.component('languages-create-modal',   require('./back/language/CreateLanguageModal.vue').default);
     // Tables
-        Vue.component('tweets-table',      require('./back/twitter/TweetsTable.vue'));
+        Vue.component('tweets-table',      require('./back/twitter/TweetsTable.vue').default);
     // Includes
-        Vue.component('back-nav',          require('./back/includes/Nav.vue'));
+        Vue.component('back-nav',          require('./back/includes/Nav.vue').default);
     // Generic
-        Vue.component('posts',             require('./back/blog/elements/Posts.vue'));
+        Vue.component('posts',             require('./back/blog/elements/Posts.vue').default);
     //Views
-        Vue.component('layout',         require('./back/views/Layout.vue'));
-        Vue.component('project-create',    require('./back/project/Create.vue'));
+        Vue.component('layout',         require('./back/views/Layout.vue').default);
+        Vue.component('project-create',    require('./back/project/Create.vue').default);
         
 // Generic
-    Vue.component('back-modal',             require('./components/Modal.vue'));
-    Vue.component('back-nav-link',          require('./components/NavLink.vue'));
-    Vue.component('text-input',             require('./components/TextInput.vue'));
-    Vue.component('file-input',             require('./components/FileInput.vue'));
-    Vue.component('file-input-display',     require('./components/FileInputDisplay.vue'));
-    Vue.component('form-group',             require('./components/FormGroup.vue'));
-    Vue.component('form-error',             require('./components/FormError.vue'));
-    Vue.component('textarea-input',         require('./components/TextareaInput.vue'));
-    Vue.component('small-button',           require('./components/SmallButton.vue'));
-    Vue.component('outline-button',         require('./components/OutlineButton.vue'));
-    Vue.component('tailwind-select',        require('./components/TailwindSelect.vue'));
-    Vue.component('timeline',               require('./components/Timeline.vue'));
-    Vue.component('particles',              require('./components/Particles.vue'));
-    Vue.component('tag',                    require('./components/Tag.vue'));
-    Vue.component('paginator',              require('./components/Pagination'));
-    Vue.component('data-table-filters',     require('./components/DataTableFilters'));
+    Vue.component('back-modal',             require('./components/Modal.vue').default);
+    Vue.component('back-nav-link',          require('./components/NavLink.vue').default);
+    Vue.component('text-input',             require('./components/TextInput.vue').default);
+    Vue.component('file-input',             require('./components/FileInput.vue').default);
+    Vue.component('file-input-display',     require('./components/FileInputDisplay.vue').default);
+    Vue.component('form-group',             require('./components/FormGroup.vue').default);
+    Vue.component('form-error',             require('./components/FormError.vue').default);
+    Vue.component('textarea-input',         require('./components/TextareaInput.vue').default);
+    Vue.component('small-button',           require('./components/SmallButton.vue').default);
+    Vue.component('outline-button',         require('./components/OutlineButton.vue').default);
+    Vue.component('tailwind-select',        require('./components/TailwindSelect.vue').default);
+    Vue.component('timeline',               require('./components/Timeline.vue').default);
+    Vue.component('particles',              require('./components/Particles.vue').default);
+    Vue.component('tag',                    require('./components/Tag.vue').default);
+    Vue.component('paginator',              require('./components/Pagination').default);
+    Vue.component('data-table-filters',     require('./components/DataTableFilters').default);
 
 
 Vue.filter('formatDate', (value, format) => {

@@ -28,14 +28,6 @@
         </div>
     </div>
 </template>
-<style lang="">
-    
-hr.hr-header {
-    margin-top:20px;
-    border-top: 1px solid #ccc;
-}
-
-</style>
 
 <script>
 
