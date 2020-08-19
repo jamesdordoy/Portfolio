@@ -1,6 +1,7 @@
 /node_modules
 /public/hot
 /public/storage
+/database/backups
 /storage/*.key
 /storage/report
 /vendor
