@@ -20,7 +20,7 @@
         "cross-env": "^7.0",
         "laravel-mix": "^5.0.1",
         "laravel-vue-datatable": "0.5.11",
-        "lodash": "^4.17.13",
+        "lodash": "^4.17.19",
         "moment": "^2.24.0",
         "particles.js": "^2.0.0",
         "resolve-url-loader": "^3.1.0",
