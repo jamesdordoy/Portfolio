@@ -94,7 +94,7 @@
                 axios.post(this.url, this.payload)
                 .then(response => {
                     if (response.status == 200) {
-                        this.$swal(`Message Recived`, `Thank you ${ this.payload.name }`, `success`);
+                        this.$swal(`Message Received`, `Thank you ${ this.payload.name }`, `success`);
                         this.resetPayload();
                     }
                 })

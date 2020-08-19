@@ -13,7 +13,7 @@ class PostService extends AbstractService {
     }
 };
 
-//Create absoulute Singleton
+//Create absolute Singleton
 const instance = new PostService;
 Object.freeze(instance);
 export default instance;

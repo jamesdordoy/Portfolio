@@ -122,9 +122,7 @@ export default {
         TableClasses
     ],
     methods: {
-        selectChange(item) {
-            console.log(item);
-        }
+
     },
 }
 </script>

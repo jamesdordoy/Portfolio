@@ -18,13 +18,13 @@ class LanguageService extends AbstractService {
 
     update(id, data) {
         return this.client.post(`/api/languages/${id}`, data, {
-            headers: { 
+            headers: {
             }
         });
     }
 };
 
-//Create absoulute Singleton
+//Create absolute Singleton
 const instance = new LanguageService;
 Object.freeze(instance);
 export default instance;

@@ -29,7 +29,7 @@ class IndexService extends AbstractService {
     }
 };
 
-//Create absoulute Singleton
+//Create absolute Singleton
 const instance = new IndexService;
 Object.freeze(instance);
 export default instance;

@@ -42,9 +42,6 @@
             TableClasses
         ],
         methods: {
-            alertHi(item) {
-                console.log(item)
-            },
             updateUrl(url) {
                 this.url = url;
             }
