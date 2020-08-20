@@ -1,6 +1,6 @@
 
 .front-nav-item {
-    @apply block uppercase py-4 mr-4 cursor-pointer text-teal no-underline;
+    @apply block uppercase py-4 mr-4 cursor-pointer text-teal-500 no-underline;
 }
 
 .front-nav {
@@ -36,7 +36,7 @@
 }
 
 .front-into {
-    @apply border-teal-light border pin-none rounded mx-10 p-4 mt-20 text-center text-white;
+    @apply border-teal-200 border rounded mx-10 p-4 mt-20 text-center text-white;
 
     background: rgba(0, 0, 0, 0.4); text-shadow: 0px 0px 2px #131415;
 }

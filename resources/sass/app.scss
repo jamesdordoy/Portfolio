@@ -1,0 +1,99 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import "text.scss";
+@import "buttons.scss";
+@import "login-form.scss";
+@import "front.scss";
+@import "components.scss";
+
+@import "~animate.css/source/_base.css";
+@import "~animate.css/source/fading_entrances/fadeIn.css";
+@import "~animate.css/source/fading_exits/fadeOut.css";
+@import "~animate.css/source/fading_entrances/fadeInDown.css";
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
+
+
+.jd-bookmark {
+    display: block;
+    position: relative;
+    top: -100px;
+    visibility: hidden;
+}
+
+/* #app {
+  max-width: 1440px;
+  margin: 0 auto;
+} */
+
+.bg-nav {
+    background-color: #3a4145;
+}
+
+.bg-second {
+    background: #22292f;
+}
+
+html {
+    @apply h-full;
+}
+
+.lg:overflow-none{
+    overflow: none;
+}
+
+.varela{
+    font-family: 'Varela Round', sans-serif;
+}
+
+.input-generic {
+    @apply appearance-none block w-full bg-gray-200 text-gray-600 border rounded py-3 px-4 mb-3 leading-tight;
+}
+
+.container {
+    max-width: 1400px;
+}
+
+.stripped-table:nth-child(even) {
+    @apply bg-black;
+}
+
+.stripped-table:last-of-type {
+    border-bottom: none;
+}
+
+.about-me {
+    @apply text-gray-500;
+    text-align: center;
+    /* font-family: 'Noto Sans', sans-serif;
+     */
+    font-family: 'Varela Round', sans-serif;
+    font-size: 1.1em;
+    line-height: 1.4;
+
+}
+
+.projects {
+
+}
+
+.projects .project:last-child {
+    margin-right: 0;
+}
+
+.project {
+    @apply rounded overflow-hidden shadow-lg bg-secondary;
+}
+
+.section-year {
+    padding: 5px !important;
+}
+
+
+.timeline-spacing {
+
+}
+.project:last-of-type {
+
+}

@@ -36,12 +36,12 @@
                             <i class="fa fa-language" aria-hidden="true"></i>
                         </back-nav-link>
                         <li>
-                            <a href="https://server.jamesdordoy.co.uk/goaccess" target="_blank" class="no-underline p-4 text-grey-dark border-b xl:border-0 hover:bg-grey-lightest xl:hover:bg-transparent xl:hover:text-blue ml-2">
+                            <a href="https://stats.jamesdordoy.co.uk" target="_blank" class="no-underline p-4 text-grey-dark border-b xl:border-0 hover:bg-grey-lightest xl:hover:bg-transparent xl:hover:text-blue ml-2">
                                 <i class="fa fa-server" aria-hidden="true"></i>
                                 Server Statistics
                             </a>
                         </li>
-                        
+
                     </ul>
                 </div>
                 <div class="w-1/6 md:w-auto md:flex text-right" @click="dropdown = !dropdown">

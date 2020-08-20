@@ -2,13 +2,9 @@
     <div>
         <span
             id="contact"
-            style="
-                display: block;
-                position: relative;
-                top: -100px;
-                visibility: hidden;">
+            class="jd-bookmark">
         </span>
-        <h2 class="varela mb-4 py-4 text-grey">Contact Me</h2>
+        <h2 class="text-3xl varela mb-8 text-gray-500">Contact Me</h2>
         <contact-form
             :url="contactFormUrl"
             :method="'POST'">

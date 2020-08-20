@@ -1,80 +1,23 @@
-/**
- * This injects Tailwind's base styles, which is a combination of
- * Normalize.css and some additional base styles.
- *
- * You can see the styles here:
- * https://github.com/tailwindcss/tailwindcss/blob/master/css/preflight.css
- *
- * If using `postcss-import`, use this import instead:
- *
- * @import "tailwindcss/preflight";
- */
- @tailwind preflight;
+@tailwind base;
 
- /**
-  * This injects any component classes registered by plugins.
-  *
-  * If using `postcss-import`, use this import instead:
-  *
-  * @import "tailwindcss/components";
-  */
- @tailwind components;
- 
- /**
-  * Here you would add any of your custom component classes; stuff that you'd
-  * want loaded *before* the utilities so that the utilities could still
-  * override them.
-  *
-  * Example:
-  *
-  * .btn { ... }
-  * .form-input { ... }
-  *
-  * Or if using a preprocessor or `postcss-import`:
-  *
-  * @import "components/buttons";
-  * @import "components/forms";
-  */
- 
- /**
-  * This injects all of Tailwind's utility classes, generated based on your
-  * config file.
-  *
-  * If using `postcss-import`, use this import instead:
-  *
-  * @import "tailwindcss/utilities";
-  */
- @tailwind utilities;
- 
- /**
-  * Here you would add any custom utilities you need that don't come out of the
-  * box with Tailwind.
-  *
-  * Example :
-  *
-  * .bg-pattern-graph-paper { ... }
-  * .skew-45 { ... }
-  *
-  * Or if using a preprocessor or `postcss-import`:
-  *
-  * @import "utilities/background-patterns";
-  * @import "utilities/skew-transforms";
-  */
+@tailwind components;
+
+@tailwind utilities;
 
 
-  @import "text.css";
-  @import "buttons.css";
-  @import "login-form.css";
-  @import "front.css";
+@import "text.css";
+@import "buttons.css";
+@import "login-form.css";
+@import "front.css";
 
-  @import "~animate.css/source/_base.css";
-  @import "~animate.css/source/fading_entrances/fadeIn.css";
-  @import "~animate.css/source/fading_exits/fadeOut.css";
-  @import "~animate.css/source/fading_entrances/fadeInDown.css";
-  @import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
+@import "~animate.css/source/_base.css";
+@import "~animate.css/source/fading_entrances/fadeIn.css";
+@import "~animate.css/source/fading_exits/fadeOut.css";
+@import "~animate.css/source/fading_entrances/fadeInDown.css";
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
 
   .dordoy {
-      
+
   }
 
   /* #app {
@@ -95,7 +38,7 @@
   }
 
   .input-generic {
-    @apply appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3 leading-tight;
+    @apply appearance-none block w-full bg-gray-200 text-gray-600 border rounded py-3 px-4 mb-3 leading-tight;
   }
 
   .container {
@@ -111,7 +54,7 @@
   }
 
   .about-me {
-    @apply text-grey;
+    @apply text-gray-500;
     text-align: center;
     /* font-family: 'Noto Sans', sans-serif;
      */
@@ -143,5 +86,5 @@
 
   }
   .project:last-of-type {
-    
+
   }

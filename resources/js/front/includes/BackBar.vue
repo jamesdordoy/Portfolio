@@ -1,9 +1,9 @@
 <template>
-    <div class="font-sans antialiased">
-        <nav class="front-nav lg:px-10">
+    <div class="font-sans antialiased fixed top-0 left-0 right-0 z-10">
+        <nav class="bg-secondary p-4 lg:px-10">
             <router-link :to="`/`" class="no-underline">
-                <a class="text-blue no-underline">
-                    <h4>&lt;&lt; Back</h4>
+                <a class="text-blue-500 no-underline">
+                    <h4 class="text-xl">&lt;&lt; Back</h4>
                 </a>
             </router-link>
         </nav>

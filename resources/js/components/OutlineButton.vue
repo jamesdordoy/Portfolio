@@ -4,7 +4,7 @@
         :class="classes"
         @click="onClick"
         :disabled:="disabled"
-        class="bg-transparent hover:bg-teal text-teal-dark font-semibold py-2 px-4 border border-teal hover:border-transparent rounded">
+        class="jd-outline-button hover:bg-teal-500 hover:border-transparent">
         <slot></slot><span v-if='hasSlot'>&nbsp;</span>{{ title }}
     </button>
 </template>
@@ -14,7 +14,7 @@
 export default {
     data() {
         return {
-           
+
         }
     },
     props: {

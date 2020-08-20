@@ -1,0 +1,112 @@
+
+.front-nav-item {
+    @apply block uppercase py-4 mr-4 cursor-pointer text-teal-500 no-underline;
+}
+
+.front-nav {
+    @apply flex items-center justify-between flex-wrap py-3 px-4 fixed;
+
+    background: #22292f;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 255;
+}
+
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.slide-fade-enter-active {
+    transition: all .3s ease;
+}
+
+.slide-fade-leave-active {
+    transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+
+.slide-fade-enter, .slide-fade-leave-to
+    /* .slide-fade-leave-active below version 2.1.8 */ {
+    transform: translateX(10px);
+    opacity: 0;
+}
+
+.front-offset-internal-anchor {
+    display: block;
+    position: relative;
+    top: -100px;
+    visibility: hidden;
+}
+
+.front-into {
+    @apply border-teal-200 border rounded mx-10 p-4 mt-20 text-center text-white;
+
+    background: rgba(0, 0, 0, 0.4); text-shadow: 0px 0px 2px #131415;
+}
+
+.timeline {
+    overflow-x: hidden;
+    max-width: none !important;
+    color: #b8c2cc;
+    max-height: 458px;
+    position: relative;
+    z-index: 11;
+}
+
+/* width */
+.timeline::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+.timeline::-webkit-scrollbar-track {
+    @apply bg-gray-200;
+}
+
+/* Handle */
+.timeline::-webkit-scrollbar-thumb {
+    @apply bg-teal-700;
+}
+
+/* Handle on hover */
+.timeline::-webkit-scrollbar-thumb:hover {
+    @apply bg-teal-900;
+}
+
+
+.gb-vue-timeline-update {
+    /* border-bottom: solid 1px #dae1e7; */
+}
+
+.gb-vue-timeline-update__description {
+    color: #8795a1 !important;
+}
+
+.gb-vue-timeline-update__title {
+    color: #b8c2cc !important;
+}
+
+.gb-vue-timeline-update__line {
+    background: #4dc0b5 !important;
+}
+
+.timeline-container {
+    position: relative;
+}
+
+.timeline-container:after {
+    content  : "" !important;
+    position : absolute !important;
+    z-index  : 10 !important;
+    bottom   : 0 !important;
+    left     : 0 !important;
+    pointer-events   : none !important;
+    background-image : linear-gradient(to bottom,
+
+
+        rgba(58,65,69),
+        rgba(29,32,34)
+
+        90%);
+    width    : 100% !important;
+    height   : 1em !important;
+}
+

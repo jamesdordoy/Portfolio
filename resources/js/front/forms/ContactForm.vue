@@ -3,8 +3,8 @@
         <input type="hidden" name="_token" :value="csrfToken">
         <div class="flex flex-wrap -mx-3 mb-6">
             <div class="w-full px-3 mb-6 md:mb-0 ">
-                <div class="border-b border-b-2 border-teal">
-                    <label class="block uppercase tracking-wide text-grey text-xs font-bold mb-2">
+                <div class="border-b border-b-2 border-teal-500">
+                    <label class="block uppercase tracking-wide text-gray-500 text-xs font-bold mb-2">
                     Name:
                 </label>
                 <input
@@ -12,22 +12,22 @@
                     v-model="payload.name"
                     name="name"
                     placeholder="John Smith"
-                    class="appearance-none block w-full bg-nav text-grey py-3 px-4 leading-tight focus:outline-none focus:bg-black">
+                    class="appearance-none block w-full bg-nav text-gray-500 py-3 px-4 leading-tight focus:outline-none focus:bg-secondary">
                 </div>
                 <form-error :errors="checkError('name')"></form-error>
             </div>
         </div>
         <div class="flex flex-wrap -mx-3 mb-6">
             <div class="w-full px-3 mb-6 md:mb-0">
-                <div class="border-b border-b-2 border-teal">
-                    <label class="block uppercase tracking-wide text-grey text-xs font-bold mb-2">
+                <div class="border-b border-b-2 border-teal-500">
+                    <label class="block uppercase tracking-wide text-gray-500 text-xs font-bold mb-2">
                     Email:
                     </label>
                     <input
                         name="email"
                         type="email"
                         v-model="payload.email"
-                        class="appearance-none block w-full bg-nav text-grey py-3 px-4 leading-tight focus:outline-none focus:bg-black"
+                        class="appearance-none block w-full bg-nav text-gray-500 py-3 px-4 leading-tight focus:outline-none focus:bg-secondary"
                         placeholder="john@example.com">
                 </div>
                 <form-error :errors="checkError('email')"></form-error>
@@ -35,8 +35,8 @@
         </div>
         <div class="flex flex-wrap -mx-3 mb-6">
             <div class="w-full px-3">
-                <div class="border-b border-b-2 border-teal">
-                    <label class="block uppercase tracking-wide text-grey text-xs font-bold mb-2">
+                <div class="border-b border-b-2 border-teal-500">
+                    <label class="block uppercase tracking-wide text-gray-500 text-xs font-bold mb-2">
                     Message:
                     </label>
                     <textarea
@@ -44,7 +44,7 @@
                         name="message"
                         v-model="payload.message"
                         placeholder="Hello, World!"
-                        class="appearance-none block w-full bg-nav text-grey py-3 px-4 leading-tight focus:outline-none focus:bg-black">
+                        class="appearance-none block w-full bg-nav text-gray-500 py-3 px-4 leading-tight focus:outline-none focus:bg-secondary">
                     </textarea>
                 </div>
                 <form-error :errors="checkError('message')"></form-error>

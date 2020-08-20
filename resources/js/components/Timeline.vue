@@ -8,12 +8,7 @@
 </template>
 
 <style>
-.timeline {
-    max-width: none !important;
-    color: #b8c2cc;
-    max-height: 520px;
-    overflow: scroll;
-}
+
 
 .section-year {
     width: 70px !important;

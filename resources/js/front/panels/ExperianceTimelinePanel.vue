@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2 class="varela py-4 px-2 text-grey">My Experiance</h2>
+        <h2 class="text-3xl varela mb-8 text-gray-500">My Experience</h2>
         <div class="timeline-container">
             <div class="timeline">
                 <vue-timeline-update

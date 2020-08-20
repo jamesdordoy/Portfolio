@@ -11,23 +11,23 @@
             </particles>
         </div>
         <div class="w-full">
-            <div class="w-full px-10 py-12 bg-black">
+            <div class="w-full px-10 py-12 bg-secondary">
                 <about-me-panel/>
             </div>
 
-            <div class="w-full px-10 py-12 bg-nav">
+            <div class="w-full px-10 py-12 bg-primary">
                 <projects-panel
                     :projects="projects">
                 </projects-panel>
             </div>
 
-            <div class="px-10 py-12 bg-black">
+            <div class="px-10 py-12 bg-secondary">
                 <blog-panel
                     :posts="posts">
                 </blog-panel>
             </div>
-            <div class="flex flex-wrap px-10 py-2 bg-nav content-start">
-                
+            <div class="flex flex-wrap px-10 py-2 content-start bg-primary">
+
                 <div class="w-full lg:w-1/2 py-8 px-2">
                     <contact-me-panel
                         :contact-form-url="contactFormUrl">
@@ -42,7 +42,7 @@
             <front-footer
                 :newsletter-form-url="newsletterFormUrl">
             </front-footer>
-        </div>   
+        </div>
     </div>
 </template>
 
