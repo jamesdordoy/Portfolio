@@ -10,9 +10,9 @@
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
     },
     "devDependencies": {
-        "@growthbunker/vuetimeline": "^0.1.12",
+        "@growthbunker/vuetimeline": "^0.1.17",
         "@sentry/browser": "5.6.3",
-        "@sentry/integrations": "^5.6.1",
+        "@sentry/integrations": "^5.21.1",
         "@vue/ui": "^0.5.6",
         "acorn": "^5.7.4",
         "animate.css": "^3.7.2",
@@ -21,13 +21,13 @@
         "laravel-mix": "^5.0.1",
         "laravel-vue-datatable": "0.5.11",
         "lodash": "^4.17.19",
-        "moment": "^2.24.0",
+        "moment": "^2.27.0",
         "particles.js": "^2.0.0",
         "resolve-url-loader": "^3.1.0",
         "tailwindcss": "^0.6.6",
         "vue": "^2.6.10",
-        "vue-router": "^3.1.6",
-        "vue-scrollto": "^2.17.1",
+        "vue-router": "^3.4.3",
+        "vue-scrollto": "^2.18.2",
         "vue-sweetalert2": "^1.6.4",
         "vue-template-compiler": "^2.6.10"
     }
