@@ -1,25 +1,36 @@
 require('./bootstrap');
 
-import Vue from 'vue';
-import Vuex from 'vuex';
 window.moment = require('moment');
 const VueScrollTo = require('vue-scrollto');
 
-import VueRouter from 'vue-router';
+import Vue from 'vue';
+import Vuex from 'vuex';
 import routes from './routes.js';
-import VueSweetalert2 from 'vue-sweetalert2';
-import VueTimeline from "@growthbunker/vuetimeline";
-import DataTable from 'laravel-vue-datatable';
+import VueRouter from 'vue-router';
 import * as Sentry from '@sentry/browser';
+import VueSweetalert2 from 'vue-sweetalert2';
+import DataTable from 'laravel-vue-datatable';
+import VueTimeline from "@growthbunker/vuetimeline";
 import * as Integrations from '@sentry/integrations';
 import createPersistedState from "vuex-persistedstate";
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { faGithub, faFacebook, faTwitter, faLinkedin, faJsfiddle } from '@fortawesome/free-brands-svg-icons';
+import { faCog, faTimes, faSignOutAlt, faCheck, faSignInAlt, faDatabase } from '@fortawesome/free-solid-svg-icons';
 
-
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faCog, faTimes } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-
-library.add(faCog, faTimes)
+library.add(
+    faCog,
+    faTimes,
+    faSignInAlt,
+    faSignOutAlt,
+    faCheck,
+    faDatabase,
+    faGithub,
+    faFacebook,
+    faTwitter,
+    faLinkedin,
+    faJsfiddle
+);
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
@@ -38,8 +49,6 @@ Sentry.init({
   integrations: [new Integrations.Vue({Vue, attachProps: true})],
 });
 
-// Backend
-// Forms
 // Modals
 Vue.component('languages-create-modal',   require('./back/language/CreateLanguageModal.vue').default);
 // Tables

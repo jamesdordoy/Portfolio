@@ -75,16 +75,16 @@
                         <a
                             class="bg-transparent font-semibold  py-1 px-3 border hover:border-transparent rounded no-underline"
                             :class="`border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade} text-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade} hover:bg-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade} hover:text-${$store.getters.primaryThemeHoverTextColour}`">
-                            <i class="fa fa-sign-in" aria-hidden="true"></i>
+                            <font-awesome-icon :icon="['fas', 'sign-in-alt']" />
                             Login
                         </a>
                     </router-link>
                     <router-link v-show="auth" :to="'/back'" class="bg-transparent hover:bg-teal-500 text-teal-500 font-semibold hover:text-nav py-2 px-4 border mr-4 border-teal-500 hover:border-transparent hover:text-black rounded">
-                        <i class="fa fa-sign-in" aria-hidden="true"></i>
+                        <font-awesome-icon :icon="['fas', 'database']" />
                         Backend
                     </router-link>
                     <a v-show="auth" href="#" @click="logout" class="bg-transparent hover:bg-teal-500 text-teal-500 font-semibold hover:text-nav py-2 px-4 border border-teal-500 hover:border-transparent hover:text-black rounded">
-                        <i class="fa fa-sign-out" aria-hidden="true"></i>
+                        <font-awesome-icon :icon="['fas', 'sign-out-alt']" />
                         Logout
                     </a>
                     <form method="POST" id="logout-form" action="/logout" class="hidden">

@@ -7,23 +7,23 @@
             :class="`border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`">
             <p class="mt-4">
                 <a href="https://www.facebook.com/dordoy" target="_blank">
-                    <i class="fa fa-facebook text-4xl lg:text-5xl hover:text-blue-500" :class="`text-${$store.getters.primaryThemeTextColour}`"></i>
+                    <font-awesome-icon :icon="['fab', 'facebook']" class="fa fa-facebook text-4xl lg:text-5xl hover:text-blue-500" :class="`text-${$store.getters.primaryThemeTextColour}`" />
                 </a>
                 <span class="text-teal p-2 inline-block">-</span>
                 <a href="https://twitter.com/JDordoy" target="_blank">
-                    <i class="fa fa-twitter text-4xl lg:text-5xl hover:text-blue-200" :class="`text-${$store.getters.primaryThemeTextColour}`"></i>
+                    <font-awesome-icon :icon="['fab', 'twitter']" class="fa fa-facebook text-4xl lg:text-5xl hover:text-blue-500" :class="`text-${$store.getters.primaryThemeTextColour}`" />
                 </a>
                 <span class="text-teal p-2">-</span>
                 <a href="https://www.linkedin.com/in/james-dordoy-a80686110/" target="_blank">
-                    <i class="fa fa-linkedin text-4xl lg:text-5xl hover:text-blue-500" :class="`text-${$store.getters.primaryThemeTextColour}`" aria-hidden="true"></i>
+                    <font-awesome-icon :icon="['fab', 'linkedin']" class="fa fa-facebook text-4xl lg:text-5xl hover:text-blue-500" :class="`text-${$store.getters.primaryThemeTextColour}`" />
                 </a>
                 <span class="text-teal p-2">-</span>
                 <a href="https://github.com/jamesdordoy" target="_blank">
-                    <i class="fa fa-github text-4xl lg:text-5xl hover:text-gray-900" :class="`text-${$store.getters.primaryThemeTextColour}`"></i>
+                    <font-awesome-icon :icon="['fab', 'github']" class="fa fa-facebook text-4xl lg:text-5xl hover:text-blue-500" :class="`text-${$store.getters.primaryThemeTextColour}`" />
                 </a>
                 <span class="text-teal p-2">-</span>
                 <a href="https://jsfiddle.net/user/JamesDordoy/fiddles/" target="_blank">
-                    <i class="fa fa-jsfiddle text-4xl lg:text-5xl hover:text-yellow-500" :class="`text-${$store.getters.primaryThemeTextColour}`" aria-hidden="true"></i>
+                    <font-awesome-icon :icon="['fab', 'jsfiddle']" class="fa fa-facebook text-4xl lg:text-5xl hover:text-blue-500" :class="`text-${$store.getters.primaryThemeTextColour}`" />
                 </a>
             </p>
         </div>
@@ -62,7 +62,7 @@
                                 <button
                                     class="flex-shrink-0 bg-transparent text-sm border py-1 px-2 rounded" type="button"
                                     :class="`border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade} text-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade} hover:bg-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade} hover:text-${$store.getters.primaryThemeHoverTextColour}`">
-                                    <i class="fa fa-check" aria-hidden="true"></i>
+                                    <font-awesome-icon :icon="['fas', 'check']" />
                                     Sign Up
                                 </button>
                             </div>
