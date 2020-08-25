@@ -1,6 +1,8 @@
 <template>
     <div>
-        <h2 class="text-3xl varela mb-8 text-gray-500">My Experience</h2>
+        <h2
+            class="text-3xl varela mb-8"
+            :class="`text-${$store.getters.primaryThemeTextColour}`">My Experience</h2>
         <div class="timeline-container">
             <div class="timeline">
                 <vue-timeline-update
@@ -28,3 +30,11 @@ export default {
     }
 }
 </script>
+
+<style>
+
+.gb-vue-timeline-update__line {
+    background: #4dc0b5 !important;
+}
+
+</style>

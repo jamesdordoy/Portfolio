@@ -23,12 +23,48 @@ export default {
         width: {
             type: Number,
             default: 35,
+        },
+    },
+    computed: {
+        particleColour() {
+            let tailwindColours = require('tailwindcss/defaultTheme');
+            return tailwindColours.colors[this.$store.getters.primaryThemeColour][this.$store.getters.primaryThemeColourShade]
+        },
+        theme() {
+            return this.$store.getters.primaryTheme;
         }
     },
     methods: {
         initParticlesJS () {
-            /* eslint-disable */
-            window.particlesJS('particles-js', particlesConfig);
+            if (this.theme === "light") {
+                particlesConfig.particles.line_linked.color = this.particleColour;
+            } else {
+                particlesConfig.particles.line_linked.color = "#ffffff";
+            }
+
+            particlesConfig.particles.color.value = this.particleColour;
+            particlesJS('particles-js', particlesConfig);
+        }
+    },
+    watch: {
+        theme (newTheme, oldCount) {
+            if (newTheme === "light") {
+                particlesConfig.particles.line_linked.color = this.particleColour;
+            } else {
+                particlesConfig.particles.line_linked.color = "#ffffff";
+            }
+
+            particlesJS('particles-js', particlesConfig);
+        },
+        particleColour (newCount, oldCount) {
+            if (this.theme === "light") {
+                particlesConfig.particles.line_linked.color = this.particleColour;
+            } else {
+                particlesConfig.particles.line_linked.color = "#ffffff";
+            }
+
+            particlesConfig.particles.color.value = this.particleColour;
+            particlesJS('particles-js', particlesConfig);
         }
     }
 }
@@ -40,14 +76,13 @@ export default {
     position: absolute;
     width: 100%;
     height: 99%;
-	background: #3a4145;
 }
 
 .overlay {
-	position: absolute;
-	top: 40%;
-	right: 50%;
-	transform: translate(50%,-50%);
+    position: absolute;
+    top: 40%;
+    right: 50%;
+    transform: translate(50%,-50%);
     min-width: 400px;
 }
 </style>

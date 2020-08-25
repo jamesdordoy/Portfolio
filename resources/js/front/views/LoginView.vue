@@ -1,8 +1,33 @@
 <template>
-    <div class="h-full bg-nav">
+    <div
+        class="h-full"
+        :class="`bg-${$store.getters.primaryThemeBgParticles}`">
         <front-nav
             :auth="auth">
         </front-nav>
+
+        <div
+            id="settings-sidebar"
+            :class="`bg-${$store.getters.primaryThemeBg} border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade} ${ displaySettings ? '' : 'hidden' }`"
+            class="fixed py-2 min-h-full shadow border-r border-t">
+            <transition
+                mode="out-in"
+                :enter-active-class="`animated ${$store.getters.primaryThemeRouterAnimation}`">
+                <theme-settings-panel
+                    @toggle="closeSettings">
+                </theme-settings-panel>
+            </transition>
+        </div>
+
+        <div class="themeSettingsPanelToggleButton">
+            <button
+                @click="showSettings"
+                class="rounded-r p-2 text-lg text-white"
+                :class="`bg-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`">
+                <font-awesome-icon :icon="['fas', 'cog']" />
+            </button>
+        </div>
+
         <div class="h-full" id="home">
             <particles>
                 <login-form
@@ -11,22 +36,27 @@
             </particles>
         </div>
         <div class="w-full">
-            <div class="w-full px-10 py-12 bg-secondary">
+            <div class="w-full px-10 py-12"
+                 :class="`bg-${$store.getters.primaryThemeBgDarker}`">
                 <about-me-panel/>
             </div>
 
-            <div class="w-full px-10 py-12 bg-primary">
+            <div class="w-full px-10 py-12"
+                 :class="`bg-${$store.getters.primaryThemeBgLighter}`">
                 <projects-panel
                     :projects="projects">
                 </projects-panel>
             </div>
 
-            <div class="px-10 py-12 bg-secondary">
+            <div class="px-10 py-12"
+                 :class="`bg-${$store.getters.primaryThemeBgDarker}`">
                 <blog-panel
                     :posts="posts">
                 </blog-panel>
             </div>
-            <div class="flex flex-wrap px-10 py-2 content-start bg-primary">
+            <div
+                class="flex flex-wrap px-10 py-2 content-start"
+                :class="`bg-${$store.getters.primaryThemeBgLighter}`">
 
                 <div class="w-full lg:w-1/2 py-8 px-2">
                     <contact-me-panel
@@ -34,9 +64,9 @@
                     </contact-me-panel>
                 </div>
                 <div class="w-full lg:w-1/2 py-8 lg:pr-2 px-2">
-                    <experiance-timeline-panel
+                    <experience-timeline-panel
                         :timeline="timeline">
-                    </experiance-timeline-panel>
+                    </experience-timeline-panel>
                 </div>
             </div>
             <front-footer
@@ -48,12 +78,16 @@
 
 <script>
 
+import LoginForm from "../forms/LoginForm";
+import FrontNav from '../includes/Nav';
+import FrontFooter from '../includes/Footer';
 import BlogPanel from '../panels/BlogPanel';
 import AboutMePanel from '../panels/AboutMePanel';
 import ProjectsPanel from '../panels/ProjectsPanel';
 import ContactMePanel from '../panels/ContactMePanel';
 import IndexService from '../../services/IndexService';
-import ExperianceTimelinePanel from '../panels/ExperianceTimelinePanel';
+import ThemeSettingsPanel from '../panels/ThemeSettingsPanel';
+import ExperienceTimelinePanel from '../panels/ExperienceTimelinePanel';
 
 export default {
     data() {
@@ -63,14 +97,19 @@ export default {
             timeline: [],
             contactFormUrl: '/contact',
             newsletterFormUrl: '/newsletter',
+            displaySettings: false,
         };
     },
     components: {
+        FrontNav,
         BlogPanel,
+        LoginForm,
+        FrontFooter,
         AboutMePanel,
         ProjectsPanel,
         ContactMePanel,
-        ExperianceTimelinePanel,
+        ThemeSettingsPanel,
+        ExperienceTimelinePanel,
     },
     created() {
         this.getLanguages();
@@ -106,6 +145,12 @@ export default {
                 this.timeline = response.data.data;
             })
             .catch(console.log)
+        },
+        showSettings() {
+            this.displaySettings = true;
+        },
+        closeSettings() {
+            this.displaySettings = false;
         }
     },
     props: {

@@ -36,8 +36,12 @@
 <script>
 
 import IndexService from '../../services/IndexService';
+import BackBar from '../includes/BackBar';
 
 export default {
+    components: {
+        BackBar
+    },
     data() {
         return {
             post: {},

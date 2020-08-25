@@ -1,6 +1,6 @@
 
 .login-input {
-    @apply shadow appearance-none border rounded w-full py-2 px-3 text-gray-800 leading-tight
+    @apply shadow appearance-none rounded w-full py-2 px-3 leading-tight
 }
 
 .login-form-label {
@@ -8,5 +8,5 @@
 }
 
 .login-form {
-    @apply bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 border-teal-500 border
+    @apply bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 border
 }

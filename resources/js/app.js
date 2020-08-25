@@ -1,8 +1,9 @@
 require('./bootstrap');
 
-import Vue from 'vue'; 
+import Vue from 'vue';
+import Vuex from 'vuex';
 window.moment = require('moment');
-var VueScrollTo = require('vue-scrollto');
+const VueScrollTo = require('vue-scrollto');
 
 import VueRouter from 'vue-router';
 import routes from './routes.js';
@@ -11,7 +12,18 @@ import VueTimeline from "@growthbunker/vuetimeline";
 import DataTable from 'laravel-vue-datatable';
 import * as Sentry from '@sentry/browser';
 import * as Integrations from '@sentry/integrations';
+import createPersistedState from "vuex-persistedstate";
 
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faCog, faTimes } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+library.add(faCog, faTimes)
+
+Vue.component('font-awesome-icon', FontAwesomeIcon)
+
+Vue.use(Vuex);
 Vue.use(VueTimeline);
 Vue.use(VueScrollTo);
 Vue.use(DataTable);
@@ -22,61 +34,47 @@ Vue.use(VueSweetalert2, {
 });
 
 Sentry.init({
-  dsn: 'https://fa1a336bb87745c38b45c778226ca712@sentry.io/1549074',
+  dsn: process.env.MIX_SENTRY_DSN_PUBLIC,
   integrations: [new Integrations.Vue({Vue, attachProps: true})],
 });
 
-// Frontend
-Vue.component('contact-form',           require('./front/forms/ContactForm.vue').default);
-Vue.component('login-form',             require('./front/forms/LoginForm.vue').default);
-Vue.component('front-nav',              require('./front/includes/Nav.vue').default);
-Vue.component('back-bar',              require('./front/includes/BackBar.vue').default);
-Vue.component('front-footer',           require('./front/includes/Footer.vue').default);
-
-
 // Backend
-    // Forms
-    // Modals
-        Vue.component('languages-create-modal',   require('./back/language/CreateLanguageModal.vue').default);
-    // Tables
-        Vue.component('tweets-table',      require('./back/twitter/TweetsTable.vue').default);
-    // Includes
-        Vue.component('back-nav',          require('./back/includes/Nav.vue').default);
-    // Generic
-        Vue.component('posts',             require('./back/blog/elements/Posts.vue').default);
-    //Views
-        Vue.component('layout',         require('./back/views/Layout.vue').default);
-        Vue.component('project-create',    require('./back/project/Create.vue').default);
-        
+// Forms
+// Modals
+Vue.component('languages-create-modal',   require('./back/language/CreateLanguageModal.vue').default);
+// Tables
+Vue.component('tweets-table',      require('./back/twitter/TweetsTable.vue').default);
+// Includes
+Vue.component('back-nav',          require('./back/includes/Nav.vue').default);
 // Generic
-    Vue.component('back-modal',             require('./components/Modal.vue').default);
-    Vue.component('back-nav-link',          require('./components/NavLink.vue').default);
-    Vue.component('text-input',             require('./components/TextInput.vue').default);
-    Vue.component('file-input',             require('./components/FileInput.vue').default);
-    Vue.component('file-input-display',     require('./components/FileInputDisplay.vue').default);
-    Vue.component('form-group',             require('./components/FormGroup.vue').default);
-    Vue.component('form-error',             require('./components/FormError.vue').default);
-    Vue.component('textarea-input',         require('./components/TextareaInput.vue').default);
-    Vue.component('small-button',           require('./components/SmallButton.vue').default);
-    Vue.component('outline-button',         require('./components/OutlineButton.vue').default);
-    Vue.component('tailwind-select',        require('./components/TailwindSelect.vue').default);
-    Vue.component('timeline',               require('./components/Timeline.vue').default);
-    Vue.component('particles',              require('./components/Particles.vue').default);
-    Vue.component('tag',                    require('./components/Tag.vue').default);
-    Vue.component('paginator',              require('./components/Pagination').default);
-    Vue.component('data-table-filters',     require('./components/DataTableFilters').default);
+Vue.component('posts',             require('./back/blog/elements/Posts.vue').default);
+//Views
+Vue.component('layout',         require('./back/views/Layout.vue').default);
+Vue.component('project-create',    require('./back/project/Create.vue').default);
 
+// Generic
+Vue.component('back-modal',             require('./components/Modal.vue').default);
+Vue.component('back-nav-link',          require('./components/NavLink.vue').default);
+Vue.component('text-input',             require('./components/TextInput.vue').default);
+Vue.component('file-input',             require('./components/FileInput.vue').default);
+Vue.component('file-input-display',     require('./components/FileInputDisplay.vue').default);
+Vue.component('form-group',             require('./components/FormGroup.vue').default);
+Vue.component('form-error',             require('./components/FormError.vue').default);
+Vue.component('textarea-input',         require('./components/TextareaInput.vue').default);
+Vue.component('small-button',           require('./components/SmallButton.vue').default);
+Vue.component('outline-button',         require('./components/OutlineButton.vue').default);
+Vue.component('tailwind-select',        require('./components/TailwindSelect.vue').default);
+Vue.component('timeline',               require('./components/Timeline.vue').default);
+Vue.component('particles',              require('./components/Particles.vue').default);
+Vue.component('tag',                    require('./components/Tag.vue').default);
+Vue.component('paginator',              require('./components/Pagination').default);
+Vue.component('data-table-filters',     require('./components/DataTableFilters').default);
 
-Vue.filter('formatDate', (value, format) => {
-    if (!value) return '';
-    return moment(value).isValid() ? moment(value).format(format) : '';
-});
+import FormatDateFunction from './utils/format-date';
+import CapitalizeStringFunction from './utils/capitalize-string';
 
-Vue.filter('capitalize', (value) => {
-    if (!value) return '';
-    value = value.toString();
-    return value.charAt(0).toUpperCase() + value.slice(1);
-});
+Vue.filter('formatDate', FormatDateFunction);
+Vue.filter('capitalize', CapitalizeStringFunction);
 
 const router = new VueRouter({
     mode: "history",
@@ -87,7 +85,19 @@ const router = new VueRouter({
     },
 });
 
+import state from './state/state';
+import getters from './state/getters';
+import mutations from './state/mutations';
+
+const store = new Vuex.Store({
+    state,
+    mutations,
+    getters,
+    plugins: [createPersistedState()],
+});
+
 const app = new Vue({
     el: '#app',
     router,
+    store,
 });

@@ -4,7 +4,9 @@
             id="contact"
             class="jd-bookmark">
         </span>
-        <h2 class="text-3xl varela mb-8 text-gray-500">Contact Me</h2>
+        <h2
+            class="text-3xl varela mb-8"
+            :class="`text-${$store.getters.primaryThemeTextColour}`">Contact Me</h2>
         <contact-form
             :url="contactFormUrl"
             :method="'POST'">
@@ -13,7 +15,13 @@
 </template>
 
 <script>
+
+import ContactForm from "../forms/ContactForm";
+
 export default {
+    components: {
+        ContactForm
+    },
     props: {
         contactFormUrl: {
             type: String,
