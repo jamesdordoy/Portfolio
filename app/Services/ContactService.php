@@ -2,7 +2,6 @@
 
 namespace App\Services;
 
-
 use App\Models\Contact;
 use App\Models\Newsletter;
 use App\Mail\ContactMeMail;
