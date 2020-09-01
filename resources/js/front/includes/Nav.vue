@@ -51,7 +51,7 @@
                     <a
                         v-scroll-to="'#projects'"
                         @click="closeMenu"
-                        class="front-nav-item lg:inline-block lg:mt-0 hover:text-teal-200"
+                        class="front-nav-item lg:inline-block lg:mt-0"
                         :class="`text-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade} hover:text-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShadeLighter}`">
                         My Projects
                     </a>
