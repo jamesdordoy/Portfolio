@@ -11,10 +11,9 @@
 |
 */
 
-//Auth routes
-
 use Illuminate\Support\Facades\Route;
 
+//Auth routes
 Route::post('/login', [
     'as' => 'front.post.login',
     'uses' => 'Auth\LoginController@login',

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Newsletter;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Jobs\SendNewsletterEmailJob;
@@ -18,7 +19,7 @@ class ContactController extends Controller
     /**
      * Create a new controller instance.
      *
-     * @return void
+     * @param ContactServiceContract $contact
      */
     public function __construct(ContactServiceContract $contact)
     {
@@ -70,6 +71,7 @@ class ContactController extends Controller
      *
      * @param Request $request
      * @param Newsletter $newsletter
+     * @return RedirectResponse|Response
      */
     public function newsletterUnsubscribe(Request $request, Newsletter $newsletter)
     {
