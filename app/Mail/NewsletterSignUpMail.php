@@ -2,9 +2,9 @@
 
 namespace App\Mail;
 
+use Illuminate\Support\Facades\URL;
 use App\Models\Newsletter;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
@@ -31,8 +31,11 @@ class NewsletterSignUpMail extends Mailable
      */
     public function build()
     {
+        $unsubscribeUrl = URL::signedRoute('front.get.unsubscribe', [ 'newsletter' => $this->newsletter->id ]);
+
         return $this->view('mail.newsletter', [
-            'newsletter' => $this->newsletter
+            'newsletter' => $this->newsletter,
+            'url' => $unsubscribeUrl
         ]);
     }
 }

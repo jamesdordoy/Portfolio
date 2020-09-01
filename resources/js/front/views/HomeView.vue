@@ -8,8 +8,8 @@
 
         <div
             id="settings-sidebar"
-            :class="`bg-${$store.getters.primaryThemeBg} border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade} ${ displaySettings ? '' : 'hidden' }`"
-            class="fixed py-2 min-h-full shadow border-r border-t">
+            class="fixed py-2 min-h-full shadow border-r border-t"
+            :class="`bg-${$store.getters.primaryThemeBg} border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade} ${ displaySettings ? '' : 'hidden' }`">
             <transition
                 mode="out-in"
                 :enter-active-class="`animated ${$store.getters.primaryThemeRouterAnimation}`">
@@ -82,7 +82,6 @@
 
 import FrontNav from '../includes/Nav';
 import BlogPanel from '../panels/BlogPanel';
-
 import AboutMePanel from '../panels/AboutMePanel';
 import FrontFooter from '../includes/Footer';
 import ProjectsPanel from '../panels/ProjectsPanel';
@@ -117,6 +116,9 @@ export default {
         this.getProjects();
         this.getPosts();
         this.getTimeline();
+
+        let unsubscribed = this.getURLParameter("unsubscribed");
+        this.showUnsubscribedToast(unsubscribed);
     },
     props: {
         auth: {
@@ -153,11 +155,23 @@ export default {
             })
             .catch(console.log)
         },
+        showUnsubscribedToast(unsubscribed) {
+            if (unsubscribed) {
+                this.$toast.open({
+                    message: 'You have been unsubscribed',
+                    position: "top-right",
+                    type: 'success',
+                });
+            }
+        },
         showSettings() {
             this.displaySettings = true;
         },
         closeSettings() {
             this.displaySettings = false;
+        },
+        getURLParameter(name) {
+            return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
         }
     },
     computed: {

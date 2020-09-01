@@ -7,32 +7,29 @@ use App\Models\Project;
 use App\Models\Language;
 use App\Models\Timeline;
 use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\TimelineResource;
 use App\Http\Resources\PostResource;
 use App\Contracts\Services\TwitterServiceContract;
+use Illuminate\View\View;
 
 class IndexController extends Controller
 {
     /**
      * Show the Home Page
      *
-     * @return \Illuminate\Http\Response
+     * @return View
      */
     public function index()
     {
-        $auth = \Auth::user();
-        $timeline = Timeline::get();
-        $languages = Language::with('image')->get();
-        $projects = Project::get();
+        $auth = Auth::user();
 
         return view(
-            'front.home', 
+            'front.home',
             [
                 'auth' => $auth,
-                'projects' => $projects, 
-                'languages' => $languages,
-                'timeline' => $timeline,
             ]
         );
     }
@@ -60,7 +57,7 @@ class IndexController extends Controller
     /**
      * Get Public Timeline Posts
      *
-     * @return \App\Http\Resources\PostResource
+     * @return AnonymousResourceCollection
      */
     public function timeline()
     {
@@ -82,7 +79,7 @@ class IndexController extends Controller
     /**
      * Get Public Posts
      *
-     * @return \App\Http\Resources\PostResource
+     * @return AnonymousResourceCollection
      */
     public function posts()
     {
@@ -92,7 +89,7 @@ class IndexController extends Controller
     /**
      * Show the Privacy Page
      *
-     * @return \Illuminate\Http\Response
+     * @return View
      */
     public function privacyPolicy()
     {

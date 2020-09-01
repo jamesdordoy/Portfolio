@@ -6,12 +6,15 @@
                 <div
                     class="border-b border-b-2"
                     :class="`border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`">
-                    <label class="block uppercase tracking-wide text-xs font-bold mb-2"
+                    <label
+                        for="name"
+                        class="block uppercase tracking-wide text-xs font-bold mb-2"
                         :class="`text-${$store.getters.primaryThemeTextColour}`">
                     Name:
                 </label>
                 <input
                     type="text"
+                    id="name"
                     v-model="payload.name"
                     name="name"
                     placeholder="John Smith"
@@ -26,12 +29,15 @@
                 <div
                     class="border-b border-b-2"
                     :class="`border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`">
-                    <label class="block uppercase tracking-wide text-xs font-bold mb-2"
-                           :class="`text-${$store.getters.primaryThemeTextColour}`">
+                    <label
+                        for="email"
+                        class="block uppercase tracking-wide text-xs font-bold mb-2"
+                        :class="`text-${$store.getters.primaryThemeTextColour}`">
                     Email:
                     </label>
                     <input
                         name="email"
+                        id="email"
                         type="email"
                         v-model="payload.email"
                         class="appearance-none block w-full py-3 px-4 leading-tight focus:outline-none"
@@ -46,12 +52,15 @@
                 <div
                     class="border-b border-b-2"
                     :class="`border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`">
-                    <label class="block uppercase tracking-wide text-xs font-bold mb-2"
-                           :class="`text-${$store.getters.primaryThemeTextColour}`">
+                    <label
+                        for="message"
+                        class="block uppercase tracking-wide text-xs font-bold mb-2"
+                        :class="`text-${$store.getters.primaryThemeTextColour}`">
                     Message:
                     </label>
                     <textarea
                         rows="10"
+                        id="message"
                         name="message"
                         v-model="payload.message"
                         placeholder="Hello, World!"
@@ -63,12 +72,13 @@
             </div>
         </div>
         <div class="flex flex-wrap -mx-3 pl-3">
-            <outline-button
+            <button
                 type="submit"
-                classes="hover:text-nav"
-                title="Submit">
-                <i class="fa fa-check" aria-hidden="true"></i>
-            </outline-button>
+                class="flex-shrink-0 bg-transparent text-sm border py-1 px-2 rounded"
+                :class="`border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade} text-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade} hover:bg-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade} hover:text-${$store.getters.primaryThemeHoverTextColour}`">
+                <font-awesome-icon :icon="['fas', 'check']" />
+                Submit
+            </button>
         </div>
     </form>
 </template>
@@ -105,12 +115,17 @@
 
                 axios.post(this.url, this.payload)
                 .then(response => {
-                    if (response.status == 200) {
+
+                    if (response.status === 201) {
                         this.$swal(`Message Received`, `Thank you ${ this.payload.name }`, `success`);
                         this.resetPayload();
                     }
                 })
                 .catch(error => {
+                    if (error.response.status === 400) {
+                        this.$swal(`Oops`, `Something went wrong.`, `error`);
+                    }
+
                     this.errors = error.response.data.errors;
                 });
             },

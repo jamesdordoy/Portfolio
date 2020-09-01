@@ -13,10 +13,9 @@ class ContactController extends Controller
      * GET show data.
      *
      * @param  Request $request
-     * @return Response
      */
     public function index(Request $request)
-    {   
+    {
         $limit = $request->input('length');
         $index = $request->input('column');
         $orderBy = $request->input('dir', 'asc');

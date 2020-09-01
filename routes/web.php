@@ -12,6 +12,9 @@
 */
 
 //Auth routes
+
+use Illuminate\Support\Facades\Route;
+
 Route::post('/login', [
     'as' => 'front.post.login',
     'uses' => 'Auth\LoginController@login',
@@ -32,6 +35,11 @@ Route::post('/newsletter', [
     'as' => 'front.post.newsletter',
     'uses' => 'ContactController@newsletter',
 ]);
+
+Route::get('/unsubscribe/{newsletter}', [
+    'as' => 'front.get.unsubscribe',
+    'uses' => 'ContactController@newsletterUnsubscribe',
+])->middleware('signed');
 
 //Frontend
 Route::namespace('Front')->group(function() {

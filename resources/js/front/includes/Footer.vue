@@ -1,29 +1,30 @@
 <template>
 
-    <div class="flex flex-wrap py-3 px-10 lg:p-10"
-         :class="`bg-${$store.getters.primaryThemeBg}`">
+    <div
+        class="flex flex-wrap py-3 px-10 lg:p-10"
+        :class="`bg-${$store.getters.primaryThemeBg}`">
         <div
-            class="w-full lg:w-1/3 mt-2 border-b border-b-2 py-2"
+            class="w-full lg:w-1/3 border-b border-b-2"
             :class="`border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`">
-            <p class="mt-4">
+            <p class="mt-2">
                 <a href="https://www.facebook.com/dordoy" target="_blank">
-                    <font-awesome-icon :icon="['fab', 'facebook']" class="fa fa-facebook text-4xl lg:text-5xl hover:text-blue-500" :class="`text-${$store.getters.primaryThemeTextColour}`" />
+                    <font-awesome-icon :icon="['fab', 'facebook']" class="text-4xl lg:text-5xl hover:text-blue-700" :class="`text-${$store.getters.primaryThemeTextColour}`" />
                 </a>
-                <span class="text-teal p-2 inline-block">-</span>
+                <span class="p-2 inline-block" :class="`text-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`">-</span>
                 <a href="https://twitter.com/JDordoy" target="_blank">
-                    <font-awesome-icon :icon="['fab', 'twitter']" class="fa fa-facebook text-4xl lg:text-5xl hover:text-blue-500" :class="`text-${$store.getters.primaryThemeTextColour}`" />
+                    <font-awesome-icon :icon="['fab', 'twitter']" class="text-4xl lg:text-5xl hover:text-blue-400" :class="`text-${$store.getters.primaryThemeTextColour}`" />
                 </a>
-                <span class="text-teal p-2">-</span>
+                <span class="p-2 inline-block" :class="`text-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`">-</span>
                 <a href="https://www.linkedin.com/in/james-dordoy-a80686110/" target="_blank">
-                    <font-awesome-icon :icon="['fab', 'linkedin']" class="fa fa-facebook text-4xl lg:text-5xl hover:text-blue-500" :class="`text-${$store.getters.primaryThemeTextColour}`" />
+                    <font-awesome-icon :icon="['fab', 'linkedin']" class="text-4xl lg:text-5xl hover:text-blue-500" :class="`text-${$store.getters.primaryThemeTextColour}`" />
                 </a>
-                <span class="text-teal p-2">-</span>
+                <span class="p-2 inline-block" :class="`text-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`">-</span>
                 <a href="https://github.com/jamesdordoy" target="_blank">
-                    <font-awesome-icon :icon="['fab', 'github']" class="fa fa-facebook text-4xl lg:text-5xl hover:text-blue-500" :class="`text-${$store.getters.primaryThemeTextColour}`" />
+                    <font-awesome-icon :icon="['fab', 'github']" class="text-4xl lg:text-5xl hover:text-gray-500" :class="`text-${$store.getters.primaryThemeTextColour}`" />
                 </a>
-                <span class="text-teal p-2">-</span>
+                <span class="p-2 inline-block" :class="`text-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`">-</span>
                 <a href="https://jsfiddle.net/user/JamesDordoy/fiddles/" target="_blank">
-                    <font-awesome-icon :icon="['fab', 'jsfiddle']" class="fa fa-facebook text-4xl lg:text-5xl hover:text-blue-500" :class="`text-${$store.getters.primaryThemeTextColour}`" />
+                    <font-awesome-icon :icon="['fab', 'jsfiddle']" class="text-4xl lg:text-5xl hover:text-yellow-500" :class="`text-${$store.getters.primaryThemeTextColour}`" />
                 </a>
             </p>
         </div>
@@ -59,13 +60,16 @@
                                     aria-label="Email Address"
                                     class="appearance-none bg-transparent border-none w-full mr-3 py-1 px-2 leading-tight focus:outline-none"
                                     :class="`text-${$store.getters.primaryThemeTextColour}`">
+
                                 <button
+                                    @click="submitNewsletterForm"
                                     class="flex-shrink-0 bg-transparent text-sm border py-1 px-2 rounded" type="button"
                                     :class="`border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade} text-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade} hover:bg-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade} hover:text-${$store.getters.primaryThemeHoverTextColour}`">
                                     <font-awesome-icon :icon="['fas', 'check']" />
                                     Sign Up
                                 </button>
                             </div>
+                            <form-error :errors="checkError('email')"></form-error>
                         </div>
                     </div>
                 </form>
@@ -101,12 +105,15 @@ export default {
 
             axios.post(this.newsletterFormUrl, this.payload)
             .then(response => {
-                if (response.status == 200) {
-                    this.$swal(`Signup Recived`, `Thank you!`, `success`);
+                if (response.status === 201) {
+                    this.$swal(`Signup Received`, `Thank you!`, `success`);
                     this.resetPayload();
                 }
             })
             .catch(error => {
+                if (error.response.status === 400) {
+                    this.$swal(`Oops`, `Something went wrong.`, `error`);
+                }
                 this.errors = error.response.data.errors;
             });
         },

@@ -22,11 +22,10 @@
                     :class="`text-${$store.getters.primaryThemeTextColour}`">Theme Mode</h3>
             </div>
             <div class="w-full">
-                {{ getTheme }}
                 <div class="block relative">
                     <select
                         @change="updateTheme"
-                        :selected="getTheme"
+                        :selected="$store.getters.primaryTheme"
                         class="block appearance-none w-full px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
                         :class="`bg-${$store.getters.primaryThemeBgLighter} text-${$store.getters.primaryThemeTextColour} focus:bg-${$store.getters.primaryThemeBgDarkest}`">
                         <option value="light">Light</option>
@@ -114,7 +113,6 @@
                             @input="updatePrimaryThemeColourShade">
                        </tailwind-range-input>
                     </div>
-
                     <hr class="my-2">
                 </div>
             </div>

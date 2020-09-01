@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Newsletter;
 use Illuminate\Http\Request;
-
-use Carbon\Carbon;
-use App\Models\Contact;
+use Illuminate\Http\Response;
 use App\Jobs\SendNewsletterEmailJob;
-use App\Http\Controllers\Controller;
 use App\Http\Requests\ContactRequest;
 use App\Http\Requests\NewsletterRequest;
 use App\Jobs\SendContactConfirmationEmailJob;
@@ -30,8 +28,8 @@ class ContactController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param ContactRequest $request
+     * @return Response
      */
     public function store(ContactRequest $request)
     {
@@ -40,16 +38,18 @@ class ContactController extends Controller
         if ($contact) {
             SendContactConfirmationEmailJob::dispatch($contact)
                 ->delay(now()->addSeconds(10));
-            
-            return 200;
+
+            return response()->noContent(Response::HTTP_CREATED);
         }
+
+        return response()->noContent(Response::HTTP_BAD_REQUEST);
     }
 
     /**
      * Sign up for the newsletter
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param NewsletterRequest $request
+     * @return Response
      */
     public function newsletter(NewsletterRequest $request)
     {
@@ -58,8 +58,25 @@ class ContactController extends Controller
         if ($newsletter) {
             SendNewsletterEmailJob::dispatch($newsletter)
                 ->delay(now()->addSeconds(10));
-            
-            return 200;
+
+            return response()->noContent(Response::HTTP_CREATED);
         }
+
+        return response()->noContent(Response::HTTP_BAD_REQUEST);
+    }
+
+    /**
+     * Sign up for the newsletter
+     *
+     * @param Request $request
+     * @param Newsletter $newsletter
+     */
+    public function newsletterUnsubscribe(Request $request, Newsletter $newsletter)
+    {
+        if ($this->contact->unsubscribeFromNewsletter($newsletter)) {
+            return redirect()->route('front.get.index', ['unsubscribed' => 1]);
+        }
+
+        return response()->noContent(Response::HTTP_BAD_REQUEST);
     }
 }

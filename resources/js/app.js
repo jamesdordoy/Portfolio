@@ -3,6 +3,8 @@ require('./bootstrap');
 window.moment = require('moment');
 const VueScrollTo = require('vue-scrollto');
 
+
+
 import Vue from 'vue';
 import Vuex from 'vuex';
 import routes from './routes.js';
@@ -10,19 +12,22 @@ import VueRouter from 'vue-router';
 import * as Sentry from '@sentry/browser';
 import VueSweetalert2 from 'vue-sweetalert2';
 import DataTable from 'laravel-vue-datatable';
+import VueToast from 'vue-toast-notification';
 import VueTimeline from "@growthbunker/vuetimeline";
 import * as Integrations from '@sentry/integrations';
 import createPersistedState from "vuex-persistedstate";
+import 'vue-toast-notification/dist/theme-default.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faGithub, faFacebook, faTwitter, faLinkedin, faJsfiddle } from '@fortawesome/free-brands-svg-icons';
-import { faCog, faTimes, faSignOutAlt, faCheck, faSignInAlt, faDatabase } from '@fortawesome/free-solid-svg-icons';
+import { faCog, faTimes, faSignOutAlt, faCheck, faSignInAlt, faDatabase, faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
     faCog,
     faTimes,
     faSignInAlt,
     faSignOutAlt,
+    faExclamationTriangle,
     faCheck,
     faDatabase,
     faGithub,
@@ -35,6 +40,7 @@ library.add(
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.use(Vuex);
+Vue.use(VueToast);
 Vue.use(VueTimeline);
 Vue.use(VueScrollTo);
 Vue.use(DataTable);

@@ -1,8 +1,8 @@
 <template>
     <div class="text-left text-grey mt-2">
         <template v-if="errors.length">
-            <span v-for="error in errors" :key="error">
-                <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+            <span v-for="error in errors" :class="`text-${$store.getters.primaryThemeTextColour}`" :key="error">
+                <font-awesome-icon :icon="['fas', 'exclamation-triangle']"  />
                 {{ error }}
             </span>
             <br>
