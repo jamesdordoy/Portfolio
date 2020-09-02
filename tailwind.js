@@ -6,5 +6,8 @@ module.exports = {
                 'secondary': '#22292f',
             }
         }
-    }
+    },
+    future: {
+        removeDeprecatedGapUtilities: true,
+    },
 }
