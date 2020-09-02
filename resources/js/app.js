@@ -37,6 +37,11 @@ library.add(
     faJsfiddle
 );
 
+import { VueReCaptcha } from 'vue-recaptcha-v3'
+
+// For more options see below
+Vue.use(VueReCaptcha, { siteKey: process.env.MIX_RECAPTCHA_SITE_KEY })
+
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.use(Vuex);

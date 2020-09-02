@@ -82,6 +82,8 @@
 <script>
 
 import FormErrors from '../../mixins/FormError';
+import ContactService from '../../services/ContactService';
+import RecaptureService from '../../services/RecaptureService';
 
 export default {
     data: function(){
@@ -99,23 +101,28 @@ export default {
         },
     },
     methods: {
-        submitNewsletterForm(){
+        async submitNewsletterForm(){
 
-            this.resetErrors();
+            await this.$recaptchaLoaded()
+            const token = await this.$recaptcha('newsletter_signup')
+            const recaptureResponse = await RecaptureService.validateToken(token);
 
-            axios.post(this.newsletterFormUrl, this.payload)
-            .then(response => {
-                if (response.status === 201) {
-                    this.$swal(`Signup Received`, `Thank you!`, `success`);
-                    this.resetPayload();
-                }
-            })
-            .catch(error => {
+            if (recaptureResponse.data.success) {
+                this.resetErrors();
+            }
+
+            const newsletterResponse = await ContactService.newsletterSignUp(this.payload).catch(error => {
                 if (error.response.status === 400) {
                     this.$swal(`Oops`, `Something went wrong.`, `error`);
                 }
+
                 this.errors = error.response.data.errors;
             });
+
+            if (newsletterResponse.status === 201) {
+                await this.$swal(`Signup Received`, `Thank you!`, `success`);
+                this.resetPayload();
+            }
         },
         resetPayload() {
             this.payload = {

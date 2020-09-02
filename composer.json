@@ -7,6 +7,7 @@
     "require": {
         "php": ">=7.2.5",
         "abraham/twitteroauth": "^0.7.4",
+        "biscolab/laravel-recaptcha": "^4.1",
         "fideloper/proxy": "^4.0",
         "graham-campbell/github": "^8.2",
         "guzzlehttp/guzzle": "^6.3",
