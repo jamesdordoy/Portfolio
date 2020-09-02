@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Newsletter;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Jobs\SendNewsletterEmailJob;
 use App\Http\Requests\ContactRequest;
+use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\NewsletterRequest;
 use App\Jobs\SendContactConfirmationEmailJob;
 use App\Contracts\Services\ContactServiceContract;

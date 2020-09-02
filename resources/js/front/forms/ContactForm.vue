@@ -74,7 +74,10 @@
         <div class="flex flex-wrap -mx-3 pl-3">
             <button
                 type="submit"
-                class="flex-shrink-0 bg-transparent text-sm border py-1 px-2 rounded"
+                data-sitekey="6Lefr8YZAAAAAGORNbgShocEow3cSweBT04iMFFY"
+                data-callback='onSubmit'
+                data-action='submit'
+                class="g-recaptcha flex-shrink-0 bg-transparent text-sm border py-1 px-2 rounded"
                 :class="`border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade} text-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade} hover:bg-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade} hover:text-${$store.getters.primaryThemeHoverTextColour}`">
                 <font-awesome-icon :icon="['fas', 'check']" />
                 Submit

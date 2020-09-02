@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Back;
 
 use App\Models\Project;
 use App\Models\Language;
-use Illuminate\Http\Request;
+use Illuminate\View\View;
 use App\Http\Controllers\Controller;
 
 class IndexController extends Controller
@@ -12,7 +12,7 @@ class IndexController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Http\Response
+     * @return View
      */
     public function index()
     {
@@ -33,7 +33,7 @@ class IndexController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Http\Response
+     * @return View
      */
     public function playground()
     {

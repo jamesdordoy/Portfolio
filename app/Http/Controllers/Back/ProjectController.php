@@ -28,7 +28,7 @@ class ProjectController extends Controller
      * @return Response
      */
     public function index(Request $request)
-    {   
+    {
         $id = Project::max('id') + 1;
         $projects = Project::where('private', 1)
             ->orderBy('id', 'ASC')
@@ -46,7 +46,7 @@ class ProjectController extends Controller
      * @return Response
      */
     public function ajax(Request $request)
-    {   
+    {
         $limit = $request->input('length');
         $column = $request->input('column'); //Index
         $dir = $request->input('dir');
@@ -150,7 +150,7 @@ class ProjectController extends Controller
         $project->link = $request->input("link") ?? '';
         $project->icon = $imageName;
         $project->completed = $request->input("complete") ? 1 : 0;
-        
+
         if ($project->save()) {
             return view('forms.edit_project', compact('project'));
         }
