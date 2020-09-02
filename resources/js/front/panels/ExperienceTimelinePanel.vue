@@ -33,8 +33,10 @@ export default {
 
 <style>
 
-.gb-vue-timeline-update__line {
-    background: #4dc0b5 !important;
-}
+/*.gb-vue-timeline-update__line {*/
+/*    background: #4dc0b5 !important;*/
+/*}*/
+
+
 
 </style>

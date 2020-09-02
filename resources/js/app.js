@@ -3,8 +3,6 @@ require('./bootstrap');
 window.moment = require('moment');
 const VueScrollTo = require('vue-scrollto');
 
-
-
 import Vue from 'vue';
 import Vuex from 'vuex';
 import routes from './routes.js';
@@ -20,10 +18,11 @@ import 'vue-toast-notification/dist/theme-default.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faGithub, faFacebook, faTwitter, faLinkedin, faJsfiddle } from '@fortawesome/free-brands-svg-icons';
-import { faCog, faTimes, faSignOutAlt, faCheck, faSignInAlt, faDatabase, faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
+import { faCog, faTimes, faSignOutAlt, faCheck, faSignInAlt, faDatabase, faExclamationTriangle, faList } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
     faCog,
+    faList,
     faTimes,
     faSignInAlt,
     faSignOutAlt,

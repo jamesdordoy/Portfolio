@@ -4,17 +4,14 @@
 }
 
 #settings-sidebar {
-    @apply left-0;
+    @apply left-0 z-20;
     top: 77px;
     width: 350px;
-    z-index: 10000000000;
 }
 
 .themeSettingsPanelToggleButton {
-    position: fixed;
+    @apply fixed z-10 left-0;
     top: 50%;
-    left: 0;
-    z-index: 50;
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {

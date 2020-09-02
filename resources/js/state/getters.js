@@ -20,4 +20,5 @@ export default {
 
     primaryThemeRouterAnimation: state => state.primaryThemeRouterAnimation,
     isLoggedIn: state => !! state.isLoggedIn,
+    hasUserAcceptedGDPR: state => !! state.acceptedGDRP,
 };

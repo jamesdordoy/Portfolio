@@ -28,6 +28,9 @@
             </button>
         </div>
 
+        <gdpr-banner>
+        </gdpr-banner>
+
         <div class="h-full" id="home">
             <particles>
                 <div class="front-into md:p-8 md:mx-0" :class="`border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`">
@@ -81,6 +84,8 @@
 <script>
 
 import FrontNav from '../includes/Nav';
+import GDPRBanner from '../includes/GDPRBanner';
+import PrivacyPreferences from '../includes/PrivacyPreferences';
 import BlogPanel from '../panels/BlogPanel';
 import AboutMePanel from '../panels/AboutMePanel';
 import FrontFooter from '../includes/Footer';
@@ -110,6 +115,8 @@ export default {
         ContactMePanel,
         ThemeSettingsPanel,
         ExperienceTimelinePanel,
+        'gdpr-banner': GDPRBanner,
+        PrivacyPreferences
     },
     created() {
         this.getLanguages();

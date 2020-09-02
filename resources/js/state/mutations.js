@@ -11,6 +11,9 @@ export default {
     setPrimaryThemeRouterAnimation(state, animation) {
         state.primaryThemeRouterAnimation = animation;
     },
+    userAcceptedGDRP(state) {
+        state.acceptedGDRP = true;
+    },
     login(state) {
         state.isLoggedIn = true;
     },
