@@ -21,6 +21,7 @@
 
         <div class="themeSettingsPanelToggleButton">
             <button
+                aria-label="settings"
                 @click="showSettings"
                 class="rounded-r p-2 text-lg text-white"
                 :class="`bg-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`">

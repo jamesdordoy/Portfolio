@@ -7,29 +7,29 @@
             class="w-full lg:w-1/3 border-b border-b-2"
             :class="`border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`">
             <p class="mt-2">
-                <a href="https://www.facebook.com/dordoy"  rel="noreferrer" target="_blank">
+                <a aria-label="facebook" href="https://www.facebook.com/dordoy"  rel="noreferrer" target="_blank">
                     <font-awesome-icon :icon="['fab', 'facebook']" class="text-4xl lg:text-5xl hover:text-blue-700" :class="`text-${$store.getters.primaryThemeTextColour}`" />
                 </a>
                 <span class="p-2 inline-block" :class="`text-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`">-</span>
-                <a href="https://twitter.com/JDordoy" rel="noreferrer" target="_blank">
+                <a aria-label="twitter" href="https://twitter.com/JDordoy" rel="noreferrer" target="_blank">
                     <font-awesome-icon :icon="['fab', 'twitter']" class="text-4xl lg:text-5xl hover:text-blue-400" :class="`text-${$store.getters.primaryThemeTextColour}`" />
                 </a>
                 <span class="p-2 inline-block" :class="`text-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`">-</span>
-                <a href="https://www.linkedin.com/in/james-dordoy-a80686110/" rel="noreferrer" target="_blank">
+                <a aria-label="linkedin" href="https://www.linkedin.com/in/james-dordoy-a80686110/" rel="noreferrer" target="_blank">
                     <font-awesome-icon :icon="['fab', 'linkedin']" class="text-4xl lg:text-5xl hover:text-blue-500" :class="`text-${$store.getters.primaryThemeTextColour}`" />
                 </a>
                 <span class="p-2 inline-block" :class="`text-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`">-</span>
-                <a href="https://github.com/jamesdordoy" rel="noreferrer" target="_blank">
+                <a aria-label="github" href="https://github.com/jamesdordoy" rel="noreferrer" target="_blank">
                     <font-awesome-icon :icon="['fab', 'github']" class="text-4xl lg:text-5xl hover:text-gray-500" :class="`text-${$store.getters.primaryThemeTextColour}`" />
                 </a>
                 <span class="p-2 inline-block" :class="`text-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`">-</span>
-                <a href="https://jsfiddle.net/user/JamesDordoy/fiddles/" rel="noreferrer" target="_blank">
+                <a aria-label="jsfiddle" href="https://jsfiddle.net/user/JamesDordoy/fiddles/" rel="noreferrer" target="_blank">
                     <font-awesome-icon :icon="['fab', 'jsfiddle']" class="text-4xl lg:text-5xl hover:text-yellow-500" :class="`text-${$store.getters.primaryThemeTextColour}`" />
                 </a>
             </p>
         </div>
         <div class="w-full lg:w-1/3 lg:text-center py-6 lg:py-0 varela text-gray-400 lg:pt-2">
-            <h4 :class="`text-${$store.getters.primaryThemeTextColour}`">&copy; James Dordoy</h4>
+            <h3 :class="`text-${$store.getters.primaryThemeTextColour}`">&copy; James Dordoy</h3>
             <p>
                 <router-link :to="'/privacy'">
                     <a class="teal-300 mt-4 block"
