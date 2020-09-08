@@ -1,11 +1,38 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "autoload": {
+        "classmap": [
+            "database/seeds",
+            "database/factories"
+        ],
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "optimize-autoloader": true
+    },
+    "description": "James Dordoy Portfolio",
+    "extra": {
+        "laravel": {
+            "dont-discover": [
+            ]
+        }
+    },
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
     "license": "MIT",
-    "type": "project",
+    "name": "jamesdordoy/portfolio",
     "require": {
-        "php": ">=7.2.5",
+        "php": ">=7.3",
         "abraham/twitteroauth": "^0.7.4",
         "biscolab/laravel-recaptcha": "^4.1",
         "fideloper/proxy": "^4.0",
@@ -28,26 +55,6 @@
         "mockery/mockery": "~1.0",
         "phpunit/phpunit": "^8.5"
     },
-    "autoload": {
-        "classmap": [
-            "database/seeds",
-            "database/factories"
-        ],
-        "psr-4": {
-            "App\\": "app/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Tests\\": "tests/"
-        }
-    },
-    "extra": {
-        "laravel": {
-            "dont-discover": [
-            ]
-        }
-    },
     "scripts": {
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
@@ -60,9 +67,5 @@
             "@php artisan package:discover"
         ]
     },
-    "config": {
-        "preferred-install": "dist",
-        "sort-packages": true,
-        "optimize-autoloader": true
-    }
+    "type": "project"
 }
