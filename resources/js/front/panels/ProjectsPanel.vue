@@ -16,9 +16,11 @@
                     :class="`bg-${$store.getters.primaryThemeBgDarker} border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`">
                     <a
                         :href="project.link"
+                        rel="noreferrer"
                         target="_blank">
                         <img
                             style="height: 250px;"
+                            :alt="project.name"
                             :class="`border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`"
                             class="border-b w-full"
                             :src='project.icon ? project.icon : "/images/projects/simple-shopping.png"'/>
@@ -26,7 +28,7 @@
 
                     <div class="px-6 py-4">
                         <div class="font-bold text-xl mb-2">
-                            <a :href="project.link" class="text-blue-500 underline visited:text-green-500 hover:no-underline" target="_blank">{{ project.name }}</a>
+                            <a :href="project.link" rel="noreferrer" class="text-blue-500 underline visited:text-green-500 hover:no-underline" target="_blank">{{ project.name }}</a>
                         </div>
                         <p
                             class="text-base"

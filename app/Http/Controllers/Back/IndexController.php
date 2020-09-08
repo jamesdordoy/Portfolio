@@ -30,6 +30,11 @@ class IndexController extends Controller
         );
     }
 
+    /**
+     * Show the application dashboard
+     *
+     * @return View
+     */
     public function wildcard()
     {
         return view('back/home');
