@@ -96,12 +96,9 @@ Route::middleware('auth')->group(function () {
 
         Route::prefix('back')->group(function() {
             Route::get('/', 'IndexController@index');
+            Route::get('/{wildcard}', "IndexController@wildcard")->where('wildcard', '.*');
         });
     });
-
-    Route::get('/back/{wildcard}', function () {
-        return view('back/home');
-    })->where('wildcard', '.*');
 });
 
 //Frontend
