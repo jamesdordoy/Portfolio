@@ -9,6 +9,12 @@
     width: 350px;
 }
 
+@media only screen and (max-width: 1024px) {
+    #settings-sidebar {
+        top: 56px;
+    }
+}
+
 .themeSettingsPanelToggleButton {
     @apply fixed z-10 left-0;
     top: 50%;
