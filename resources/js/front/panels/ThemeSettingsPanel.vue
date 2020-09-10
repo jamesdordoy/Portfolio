@@ -25,7 +25,7 @@
                 <div class="block relative">
                     <select
                         @change="updateTheme"
-                        :selected="$store.getters.primaryTheme"
+                        v-model="$store.getters.primaryTheme"
                         class="block appearance-none w-full px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
                         :class="`bg-${$store.getters.primaryThemeBgLighter} text-${$store.getters.primaryThemeTextColour} focus:bg-${$store.getters.primaryThemeBgDarkest}`">
                         <option value="light">Light</option>
