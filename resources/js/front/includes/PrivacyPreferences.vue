@@ -15,12 +15,12 @@
                                 <h5 class="text-white text-3xl uppercase">Privacy Preferences</h5>
                             </div>
                             <div class="modal-body p-5 w-full h-full overflow-y-auto flex flex-wrap ">
-                                <div class="w-1/3 h-full bg-gray-900">
-                                    <ul>
+<!--                                <div class="w-1/3 h-full bg-gray-900">-->
+<!--                                    <ul>-->
 
-                                    </ul>
-                                </div>
-                                <div class="w-2/3">
+<!--                                    </ul>-->
+<!--                                </div>-->
+                                <div class="w-full">
                                     <h6 class="text-2xl mb-2">Consent Management</h6>
 
                                     <p class="text-xl">Privacy Policy (Required)</p>
