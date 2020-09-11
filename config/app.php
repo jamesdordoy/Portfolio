@@ -167,6 +167,7 @@ return [
         /*
          * Package Service Providers...
          */
+        GrahamCampbell\GitHub\GitHubServiceProvider::class,
         JamesDordoy\LaravelVueDatatable\Providers\LaravelVueDatatableServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
 
@@ -178,8 +179,6 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        GrahamCampbell\GitHub\GitHubServiceProvider::class,
-
     ],
 
     /*

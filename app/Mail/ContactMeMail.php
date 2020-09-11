@@ -17,7 +17,7 @@ class ContactMeMail extends Mailable
     /**
      * Create a new message instance.
      *
-     * @return void
+     * @param Contact $contact
      */
     public function __construct(Contact $contact)
     {
