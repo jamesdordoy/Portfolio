@@ -1,8 +1,10 @@
 <?php
 
+use App\Models\Project;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
-class ProjectsTableSeeder extends Seeder
+class ProjectTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +13,7 @@ class ProjectsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Models\Project::class)->create(
+        Project::factory()->create(
             [
                 'name' => "Portfolio",
                 'description' => "My Website Portfolio",
@@ -20,7 +22,7 @@ class ProjectsTableSeeder extends Seeder
             ]
         );
 
-        factory(\App\Models\Project::class)->create(
+        Project::factory()->create(
             [
                 'name' => "Shopping Application",
                 'description' => "VueFire SPA, Vue Cli 3, Tailwind.css.",
@@ -30,7 +32,7 @@ class ProjectsTableSeeder extends Seeder
             ]
         );
 
-        $project = factory(\App\Models\Project::class)->create(
+        $project = Project::factory()->create(
             [
                 'name' => "Laravel Vue Datatables",
                 'description' => "A Vue.js datatable component for Laravel that works with Bootstrap.",
@@ -66,7 +68,7 @@ class ProjectsTableSeeder extends Seeder
         ]);
 
 
-        $phpForwardChaining = factory(\App\Models\Project::class)->create(
+        $phpForwardChaining = Project::factory()->create(
             [
                 'name' => "PHP Forward Chaining Engine",
                 'description' => "A simple Forward Chaining Engine written in PHP and makes use of the Symfony expressions language",
@@ -89,7 +91,7 @@ class ProjectsTableSeeder extends Seeder
             'taggables_type' => 'App\Models\Project',
         ]);
 
-        $pointsOfInterestMappingApp = factory(\App\Models\Project::class)->create(
+        $pointsOfInterestMappingApp = Project::factory()->create(
             [
                 'name' => "Points of Interest",
                 'description' => "A JavaScript frontend mapping app with a PHP and Node.JS backend made while attending University.",

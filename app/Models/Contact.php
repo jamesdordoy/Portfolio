@@ -2,11 +2,12 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use JamesDordoy\LaravelVueDatatable\Traits\LaravelVueDatatableTrait;
 
 class Contact extends EloquentModel
 {
-    use LaravelVueDatatableTrait;
+    use HasFactory, LaravelVueDatatableTrait;
 
     protected $dataTableColumns = [
         'id' => [

@@ -1,8 +1,9 @@
 <?php
 
+use App\Models\Link;
 use Illuminate\Database\Seeder;
 
-class LinksTableSeeder extends Seeder
+class LinkTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +12,7 @@ class LinksTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Models\Link::class)->create([
+        Link::factory()->create([
             'name' => "YouTube",
             'link' => "www.youtube.com"
         ]);

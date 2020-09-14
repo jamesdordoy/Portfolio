@@ -3,11 +3,12 @@
 namespace App\Models;
 
 use App\Traits\Taggable;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use JamesDordoy\LaravelVueDatatable\Traits\LaravelVueDatatableTrait;
 
 class Project extends EloquentModel
 {
-    use Taggable, LaravelVueDatatableTrait;
+    use HasFactory, Taggable, LaravelVueDatatableTrait;
 
     protected $dataTableColumns = [
         'id' => [

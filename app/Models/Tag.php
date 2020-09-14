@@ -2,8 +2,12 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+
 class Tag extends EloquentModel
 {
+    use HasFactory;
+
     /**
      * Get all of the Projects that are assigned this Tag.
      */

@@ -1,8 +1,9 @@
 <?php
 
+use App\Models\Tag;
 use Illuminate\Database\Seeder;
 
-class TagsTableSeeder extends Seeder
+class TagTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,47 +12,47 @@ class TagsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Models\Tag::class)->create([
+        Tag::factory()->create([
             'name' => "Web App",
         ]);
 
-        factory(\App\Models\Tag::class)->create([
+        Tag::factory()->create([
             'name' => "Vue.js",
         ]);
 
-        factory(\App\Models\Tag::class)->create([
+        Tag::factory()->create([
             'name' => "Laravel",
         ]);
 
-        factory(\App\Models\Tag::class)->create([
+        Tag::factory()->create([
             'name' => "Bootstrap",
         ]);
 
-        factory(\App\Models\Tag::class)->create([
+        Tag::factory()->create([
             'name' => "Firebase",
         ]);
 
-        factory(\App\Models\Tag::class)->create([
+        Tag::factory()->create([
             'name' => "VueFire",
         ]);
 
-        factory(\App\Models\Tag::class)->create([
+        Tag::factory()->create([
             'name' => "Tailwind.css",
         ]);
 
-        factory(\App\Models\Tag::class)->create([
+        Tag::factory()->create([
             'name' => "PHP",
         ]);
 
-        factory(\App\Models\Tag::class)->create([
+        Tag::factory()->create([
             'name' => "Node.js",
         ]);
 
-        factory(\App\Models\Tag::class)->create([
+        Tag::factory()->create([
             'name' => "Angularjs",
         ]);
 
-        factory(\App\Models\Tag::class)->create([
+        Tag::factory()->create([
             'name' => "Package",
         ]);
     }

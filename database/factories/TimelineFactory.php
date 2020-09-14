@@ -1,24 +1,31 @@
 <?php
 
-use Faker\Generator as Faker;
+namespace Database\Factories;
 
-/*
-|--------------------------------------------------------------------------
-| Model Factories
-|--------------------------------------------------------------------------
-|
-| This directory should contain each of the model factory definitions for
-| your application. Factories provide a convenient way to generate new
-| model instances for testing / seeding your application's database.
-|
-*/
+use App\Models\Timeline;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-$factory->define(\App\Models\Timeline::class, function (Faker $faker) {
-    
-    return [
-        'name' => $faker->name,
-        'body' => $faker->text,
-        'icon' => $faker->name,
-        'title' => $faker->name,
-    ];
-});
+class TimelineFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = Timeline::class;
+
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            'name' => $this->faker->name,
+            'body' => $this->faker->text,
+            'icon' => $this->faker->name,
+            'title' => $this->faker->name,
+        ];
+    }
+}

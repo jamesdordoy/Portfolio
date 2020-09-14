@@ -1,8 +1,7 @@
 <?php
 
-use Illuminate\Database\Seeder;
-
 use App\Models\Timeline;
+use Illuminate\Database\Seeder;
 
 class TimelineTableSeeder extends Seeder
 {
@@ -13,7 +12,7 @@ class TimelineTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Timeline::class)->create([
+        Timeline::factory()->create([
             'from' => '2017-11-28 13:23:45',
             'to' => '2019-08-31 13:23:45',
             'name' => "Neon Digital",
@@ -23,7 +22,7 @@ class TimelineTableSeeder extends Seeder
             <br><br>The main tech stack i was using during this time was L.A.M.P. or L.E.M.P. with a Laravel backend. On the frontend, the company was trying to move away from using JQuery so i gained alot of knowledge of JQuery and Vue.js by porting different UI elements.",
         ]);
 
-        factory(Timeline::class)->create([
+        Timeline::factory()->create([
             'from' => '2014-10-01 13:51:54',
             'to' => '2017-05-01 13:51:54',
             'name' => "Southampton Solent",
@@ -34,7 +33,7 @@ class TimelineTableSeeder extends Seeder
             <br><br>I ended up creating a simple social network in PHP for my disattation using no frameworks as an objective as the SNA was required to work on a SBC server.",
         ]);
 
-        factory(Timeline::class)->create([
+        Timeline::factory()->create([
             'from' => '2013-04-10 13:53:12',
             'to' => '2014-09-29 13:53:12',
             'name' => "Royal Bank of Scottland",
@@ -48,7 +47,7 @@ class TimelineTableSeeder extends Seeder
             'title' => "Collections Officer",
         ]);
 
-        factory(Timeline::class)->create([
+        Timeline::factory()->create([
             'from' => '2011-09-29 13:55:31',
             'to' => '2013-06-29 13:55:31',
             'name' => "Chelmsford College",
@@ -58,7 +57,7 @@ class TimelineTableSeeder extends Seeder
             <br><br>During this time, i picked up the basics of C++, JavaScript and working with relational databases.",
         ]);
 
-        factory(Timeline::class)->create([
+        Timeline::factory()->create([
             'from' => '2010-03-10 13:54:30',
             'to' => '2013-10-29 13:54:30',
             'name' => "Dominos Pizza",
@@ -67,6 +66,5 @@ class TimelineTableSeeder extends Seeder
             'body' => "While working at Dominoes, i became used to working in a target based environment and dealing with customer expectation.
             <br><br>I originally started as instore staff but after attaining my drivers licence, i also started delivering to customers expanding my knowledge of the full process.",
         ]);
-
     }
 }
