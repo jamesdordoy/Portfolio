@@ -13,47 +13,47 @@ class TagTableSeeder extends Seeder
     public function run()
     {
         Tag::factory()->create([
-            'name' => "Web App",
+            'name' => 'Web App',
         ]);
 
         Tag::factory()->create([
-            'name' => "Vue.js",
+            'name' => 'Vue.js',
         ]);
 
         Tag::factory()->create([
-            'name' => "Laravel",
+            'name' => 'Laravel',
         ]);
 
         Tag::factory()->create([
-            'name' => "Bootstrap",
+            'name' => 'Bootstrap',
         ]);
 
         Tag::factory()->create([
-            'name' => "Firebase",
+            'name' => 'Firebase',
         ]);
 
         Tag::factory()->create([
-            'name' => "VueFire",
+            'name' => 'VueFire',
         ]);
 
         Tag::factory()->create([
-            'name' => "Tailwind.css",
+            'name' => 'Tailwind.css',
         ]);
 
         Tag::factory()->create([
-            'name' => "PHP",
+            'name' => 'PHP',
         ]);
 
         Tag::factory()->create([
-            'name' => "Node.js",
+            'name' => 'Node.js',
         ]);
 
         Tag::factory()->create([
-            'name' => "Angularjs",
+            'name' => 'Angularjs',
         ]);
 
         Tag::factory()->create([
-            'name' => "Package",
+            'name' => 'Package',
         ]);
     }
 }

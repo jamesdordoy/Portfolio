@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Back;
 
-use App\Models\Project;
-use App\Models\Language;
-use Illuminate\View\View;
 use App\Http\Controllers\Controller;
+use App\Models\Language;
+use App\Models\Project;
+use Illuminate\View\View;
 
 class IndexController extends Controller
 {
@@ -31,7 +31,7 @@ class IndexController extends Controller
     }
 
     /**
-     * Show the application dashboard
+     * Show the application dashboard.
      *
      * @return View
      */

@@ -2,9 +2,9 @@
 
 namespace App\Providers;
 
+use App\Contracts\Services\ServiceContract;
 use App\Traits\Serviceable;
 use Illuminate\Support\ServiceProvider;
-use App\Contracts\Services\ServiceContract;
 
 class AppServiceProvider extends ServiceProvider implements ServiceContract
 {

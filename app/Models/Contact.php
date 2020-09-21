@@ -7,7 +7,8 @@ use JamesDordoy\LaravelVueDatatable\Traits\LaravelVueDatatableTrait;
 
 class Contact extends EloquentModel
 {
-    use HasFactory, LaravelVueDatatableTrait;
+    use HasFactory;
+    use LaravelVueDatatableTrait;
 
     protected $dataTableColumns = [
         'id' => [
@@ -18,7 +19,7 @@ class Contact extends EloquentModel
         ],
         'email' => [
             'search' => true,
-        ]
+        ],
     ];
 
     protected $dates = ['created_at', 'updated_at'];

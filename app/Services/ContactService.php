@@ -2,19 +2,19 @@
 
 namespace App\Services;
 
-use App\Models\Contact;
-use App\Models\Newsletter;
+use App\Contracts\Services\ContactServiceContract;
 use App\Mail\ContactMeMail;
 use App\Mail\LetMeKnowMail;
 use App\Mail\NewsletterSignUpMail;
+use App\Models\Contact;
+use App\Models\Newsletter;
 use Illuminate\Support\Facades\Mail;
-use App\Contracts\Services\ContactServiceContract;
 
 class ContactService extends Service implements ContactServiceContract
 {
     public function store(array $data)
     {
-        $contact = new Contact;
+        $contact = new Contact();
         $contact->name = $data['name'];
         $contact->email = $data['email'];
         $contact->message = $data['message'];
@@ -28,7 +28,7 @@ class ContactService extends Service implements ContactServiceContract
 
     public function storeNewsletter($email)
     {
-        $newsletter = new Newsletter;
+        $newsletter = new Newsletter();
         $newsletter->email = $email;
 
         if ($newsletter->save()) {
