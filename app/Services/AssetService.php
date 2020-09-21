@@ -2,14 +2,14 @@
 
 namespace App\Services;
 
-use App\Models\Asset;
 use App\Contracts\Services\AssetServiceContract;
+use App\Models\Asset;
 
 class AssetService extends Service implements AssetServiceContract
 {
     public function store($id, $type, $image, $url = null)
     {
-        $asset = new Asset;
+        $asset = new Asset();
         $asset->assetable_id = $id;
         $asset->assetable_type = $type;
         $asset->name = $image->getClientOriginalName();

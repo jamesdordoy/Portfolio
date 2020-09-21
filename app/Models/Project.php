@@ -8,7 +8,9 @@ use JamesDordoy\LaravelVueDatatable\Traits\LaravelVueDatatableTrait;
 
 class Project extends EloquentModel
 {
-    use HasFactory, Taggable, LaravelVueDatatableTrait;
+    use HasFactory;
+    use Taggable;
+    use LaravelVueDatatableTrait;
 
     protected $dataTableColumns = [
         'id' => [
@@ -28,20 +30,20 @@ class Project extends EloquentModel
         ],
         'link' => [
             'search' => true,
-        ]
+        ],
     ];
 
     protected $dataTableRelationships = [
-        "belongsTo" => [
+        'belongsTo' => [
             //
         ],
-        "hasOne" => [
+        'hasOne' => [
             //
         ],
-        "hasMany" => [
+        'hasMany' => [
             //
         ],
-        "belongsToMany" => [
+        'belongsToMany' => [
             //
         ],
     ];
@@ -53,6 +55,6 @@ class Project extends EloquentModel
 
     public function scopePublicProjects($query)
     {
-        return $query->where('private', 0)->with("tags")->latest();
+        return $query->where('private', 0)->with('tags')->latest();
     }
 }

@@ -4,7 +4,6 @@ namespace Database\Factories;
 
 use App\Models\Project;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 
 class ProjectFactory extends Factory
 {
@@ -23,10 +22,10 @@ class ProjectFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name,
+            'name'        => $this->faker->name,
             'description' => $this->faker->text,
-            'owner' => $this->faker->name,
-            'link' => $this->faker->url(),
+            'owner'       => $this->faker->name,
+            'link'        => $this->faker->url(),
         ];
     }
 }

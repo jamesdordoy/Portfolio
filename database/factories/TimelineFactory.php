@@ -22,9 +22,9 @@ class TimelineFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name,
-            'body' => $this->faker->text,
-            'icon' => $this->faker->name,
+            'name'  => $this->faker->name,
+            'body'  => $this->faker->text,
+            'icon'  => $this->faker->name,
             'title' => $this->faker->name,
         ];
     }

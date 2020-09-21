@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateTimelineTable extends Migration
 {
@@ -15,12 +15,12 @@ class CreateTimelineTable extends Migration
     {
         Schema::create('timeline', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamp("from")->default(DB::raw('CURRENT_TIMESTAMP'));
-            $table->timestamp("to")->default(DB::raw('CURRENT_TIMESTAMP'));
-            $table->string("name");
-            $table->string("title");
-            $table->string("icon");
-            $table->text("body");
+            $table->timestamp('from')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('to')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->string('name');
+            $table->string('title');
+            $table->string('icon');
+            $table->text('body');
             $table->timestamps();
         });
     }

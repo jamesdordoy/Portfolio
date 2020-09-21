@@ -6,11 +6,11 @@ use App\Models\Contact;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Contracts\Queue\ShouldQueue;
 
 class ContactMeMail extends Mailable
 {
-    use Queueable, SerializesModels;
+    use Queueable;
+    use SerializesModels;
 
     protected $contact;
 
@@ -32,7 +32,7 @@ class ContactMeMail extends Mailable
     public function build()
     {
         return $this->view('mail.contact-me', [
-            'contact' => $this->contact
+            'contact' => $this->contact,
         ]);
     }
 }

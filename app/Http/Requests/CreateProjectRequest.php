@@ -24,11 +24,11 @@ class ProjectRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
+            'name'        => 'required',
             'description' => 'required',
-            'owner' => 'required',
-            'complete' => 'required',
-            'thumbnail' => 'image|mimes:jpeg,bmp,png'
+            'owner'       => 'required',
+            'complete'    => 'required',
+            'thumbnail'   => 'image|mimes:jpeg,bmp,png',
         ];
     }
 }

@@ -7,7 +7,8 @@ use JamesDordoy\LaravelVueDatatable\Traits\LaravelVueDatatableTrait;
 
 class Language extends EloquentModel
 {
-    use HasFactory, LaravelVueDatatableTrait;
+    use HasFactory;
+    use LaravelVueDatatableTrait;
 
     protected $dataTableColumns = [
         'id' => [
@@ -18,7 +19,7 @@ class Language extends EloquentModel
         ],
         'description' => [
             'search' => true,
-        ]
+        ],
     ];
 
     public function examples()

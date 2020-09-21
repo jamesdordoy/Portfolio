@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Back;
 
-use App\Models\Contact;
 use App\Http\Controllers\Controller;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 use JamesDordoy\LaravelVueDatatable\Http\Resources\DataTableCollectionResource;
 
@@ -12,7 +12,7 @@ class ContactController extends Controller
     /**
      * GET show data.
      *
-     * @param  Request $request
+     * @param Request $request
      */
     public function index(Request $request)
     {

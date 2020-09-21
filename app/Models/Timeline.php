@@ -8,5 +8,5 @@ class Timeline extends EloquentModel
 {
     use HasFactory;
 
-    protected $table = "timeline";
+    protected $table = 'timeline';
 }

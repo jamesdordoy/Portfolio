@@ -2,23 +2,22 @@
 
 namespace App\Http\Controllers\Front;
 
+use App\Http\Controllers\Controller;
+use App\Http\Resources\PostResource;
+use App\Http\Resources\TimelineResource;
+use App\Models\Language;
 use App\Models\Post;
 use App\Models\Project;
-use App\Models\Language;
 use App\Models\Timeline;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\Controller;
-use App\Http\Resources\TimelineResource;
-use App\Http\Resources\PostResource;
-use App\Contracts\Services\TwitterServiceContract;
 use Illuminate\View\View;
 
 class IndexController extends Controller
 {
     /**
-     * Show the Home Page
+     * Show the Home Page.
      *
      * @return View
      */
@@ -35,7 +34,7 @@ class IndexController extends Controller
     }
 
     /**
-     * Get Public Languages
+     * Get Public Languages.
      *
      * @return \App\Http\Resources\PostResource
      */
@@ -45,17 +44,17 @@ class IndexController extends Controller
     }
 
     /**
-     * Get Public Projects
+     * Get Public Projects.
      *
      * @return \App\Http\Resources\PostResource
      */
     public function projects()
     {
-        return Project::with("tags")->publicProjects()->get();
+        return Project::with('tags')->publicProjects()->get();
     }
 
     /**
-     * Get Public Timeline Posts
+     * Get Public Timeline Posts.
      *
      * @return AnonymousResourceCollection
      */
@@ -65,7 +64,7 @@ class IndexController extends Controller
     }
 
     /**
-     * Find a Public Post
+     * Find a Public Post.
      *
      * @return \App\Http\Resources\PostResource
      */
@@ -77,17 +76,17 @@ class IndexController extends Controller
     }
 
     /**
-     * Get Public Posts
+     * Get Public Posts.
      *
      * @return AnonymousResourceCollection
      */
     public function posts()
     {
-        return PostResource::collection(Post::orderBy("created_at", "desc")->limit(6)->get());
+        return PostResource::collection(Post::orderBy('created_at', 'desc')->limit(6)->get());
     }
 
     /**
-     * Show the Privacy Page
+     * Show the Privacy Page.
      *
      * @return View
      */
