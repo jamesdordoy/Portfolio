@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Newsletter;
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
-use App\Jobs\SendNewsletterEmailJob;
+use App\Contracts\Services\ContactServiceContract;
 use App\Http\Requests\ContactRequest;
-use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\NewsletterRequest;
 use App\Jobs\SendContactConfirmationEmailJob;
-use App\Contracts\Services\ContactServiceContract;
+use App\Jobs\SendNewsletterEmailJob;
+use App\Models\Newsletter;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class ContactController extends Controller
 {
@@ -30,6 +30,7 @@ class ContactController extends Controller
      * Store a newly created resource in storage.
      *
      * @param ContactRequest $request
+     *
      * @return Response
      */
     public function store(ContactRequest $request)
@@ -47,14 +48,15 @@ class ContactController extends Controller
     }
 
     /**
-     * Sign up for the newsletter
+     * Sign up for the newsletter.
      *
      * @param NewsletterRequest $request
+     *
      * @return Response
      */
     public function newsletter(NewsletterRequest $request)
     {
-        $newsletter = $this->contact->storeNewsletter($request->input("email"));
+        $newsletter = $this->contact->storeNewsletter($request->input('email'));
 
         if ($newsletter) {
             SendNewsletterEmailJob::dispatch($newsletter)
@@ -67,10 +69,11 @@ class ContactController extends Controller
     }
 
     /**
-     * Sign up for the newsletter
+     * Sign up for the newsletter.
      *
-     * @param Request $request
+     * @param Request    $request
      * @param Newsletter $newsletter
+     *
      * @return RedirectResponse|Response
      */
     public function newsletterUnsubscribe(Request $request, Newsletter $newsletter)

@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers\Back;
 
-use App\Models\Project;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ProjectRequest;
+use App\Models\Project;
 use Illuminate\Http\Request;
 use JamesDordoy\LaravelVueDatatable\Http\Resources\DataTableCollectionResource;
-
-use App\Http\Requests\ProjectRequest;
 
 class ProjectController extends Controller
 {
@@ -18,13 +17,13 @@ class ProjectController extends Controller
      */
     public function __construct()
     {
-
     }
 
     /**
      * GET show data.
      *
-     * @param  Request $request
+     * @param Request $request
+     *
      * @return Response
      */
     public function index(Request $request)
@@ -42,7 +41,8 @@ class ProjectController extends Controller
     /**
      * GET show data.
      *
-     * @param  Request $request
+     * @param Request $request
+     *
      * @return Response
      */
     public function ajax(Request $request)
@@ -61,61 +61,64 @@ class ProjectController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return Response
      */
     public function store(ProjectRequest $request)
     {
-        $file = $request->file("thumbnail");
+        $file = $request->file('thumbnail');
 
-        $imageName = str_replace(' ', '', $request->input("name")) .'.'. $file->getClientOriginalExtension();
+        $imageName = str_replace(' ', '', $request->input('name')).'.'.$file->getClientOriginalExtension();
 
-        $file->move( base_path() . '/public/images/projects/', $imageName );
+        $file->move(base_path().'/public/images/projects/', $imageName);
 
-        $project = new Project;
-        $project->name = $request->input("name");
-        $project->description = $request->input("description");
-        $project->owner = $request->input("owner");
-        $project->link = $request->input("link") ?? '';
+        $project = new Project();
+        $project->name = $request->input('name');
+        $project->description = $request->input('description');
+        $project->owner = $request->input('owner');
+        $project->link = $request->input('link') ?? '';
         $project->icon = $imageName;
-        $project->completed = $request->input("complete") ? 1 : 0;
+        $project->completed = $request->input('complete') ? 1 : 0;
 
         if ($project->save()) {
-            return redirect("/dash/projects")->with("success", "Task Created");
+            return redirect('/dash/projects')->with('success', 'Task Created');
         }
 
-        return redirect("/dash/projects")->with("error", "Task Not Created");
+        return redirect('/dash/projects')->with('error', 'Task Not Created');
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return Response
      */
     public function destroy($id)
     {
         if (!$id) {
-            throw new HttpException(400, "Invalid id");
+            throw new HttpException(400, 'Invalid id');
         }
 
         $project = Project::findOrFail($id);
 
-        if($project->delete()) {
-            return redirect("/dash/projects")->with("success", "Project " . $project->name .  " Removed");
+        if ($project->delete()) {
+            return redirect('/dash/projects')->with('success', 'Project '.$project->name.' Removed');
         }
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return Response
      */
     public function edit($id)
     {
         if (!$id) {
-            throw new HttpException(400, "Invalid id");
+            throw new HttpException(400, 'Invalid id');
         }
 
         $project = Project::findOrFail($id);
@@ -126,36 +129,36 @@ class ProjectController extends Controller
     /**
      * Update the given Task.
      *
-     * @param  Request  $request
-     * @param  string  $id
+     * @param Request $request
+     * @param string  $id
+     *
      * @return Response
      */
     public function update(Request $request, $id)
     {
         if (!$id) {
-            throw new HttpException(400, "Invalid id");
+            throw new HttpException(400, 'Invalid id');
         }
 
         $project = Project::findOrFail($id);
 
-        $file = $request->file("thumbnail");
+        $file = $request->file('thumbnail');
 
-        $imageName = $request->input("id") .'.'. $file->getClientOriginalExtension();
+        $imageName = $request->input('id').'.'.$file->getClientOriginalExtension();
 
-        $file->move( base_path() . '/public/images/projects/', $imageName );
+        $file->move(base_path().'/public/images/projects/', $imageName);
 
-        $project->name = $request->input("name");
-        $project->description = $request->input("description");
-        $project->owner = $request->input("owner");
-        $project->link = $request->input("link") ?? '';
+        $project->name = $request->input('name');
+        $project->description = $request->input('description');
+        $project->owner = $request->input('owner');
+        $project->link = $request->input('link') ?? '';
         $project->icon = $imageName;
-        $project->completed = $request->input("complete") ? 1 : 0;
+        $project->completed = $request->input('complete') ? 1 : 0;
 
         if ($project->save()) {
             return view('forms.edit_project', compact('project'));
         }
 
-        throw new HttpException(400, "Invalid data");
+        throw new HttpException(400, 'Invalid data');
     }
-
 }

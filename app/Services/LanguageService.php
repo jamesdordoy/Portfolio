@@ -2,11 +2,10 @@
 
 namespace App\Services;
 
-use Carbon\Carbon;
-use App\Models\Asset;
-use App\Models\Language;
-use App\Contracts\Services\LanguageServiceContract;
 use App\Contracts\Services\AssetServiceContract;
+use App\Contracts\Services\LanguageServiceContract;
+use App\Models\Language;
+use Carbon\Carbon;
 
 class LanguageService extends Service implements LanguageServiceContract
 {
@@ -19,14 +18,12 @@ class LanguageService extends Service implements LanguageServiceContract
 
     public function store($payload, $image = null)
     {
-        $language = new Language;
+        $language = new Language();
         $language->name = $payload['name'];
         $language->description = $payload['description'];
 
         if ($language->save()) {
-
-            if (! is_null($image)) {
-
+            if (!is_null($image)) {
                 $asset = null;
                 $imageName = $this->imageName($language->id, $image);
                 $imageUrl = $this->imageUrl($imageName);
@@ -41,22 +38,20 @@ class LanguageService extends Service implements LanguageServiceContract
                 $this->uploadImage($image, $imageName);
             }
 
-            return $language;            
+            return $language;
         }
 
         return null;
     }
 
     public function update($id, $payload, $image = null)
-    {        
+    {
         $language = Language::find($id);
         $language->name = $payload['name'];
         $language->description = $payload['description'];
 
         if ($language->save()) {
-
-            if (! is_null($image)) {
-
+            if (!is_null($image)) {
                 $asset = null;
                 $imageName = $this->imageName($id, $image);
                 $imageUrl = $this->imageUrl($imageName);
@@ -70,7 +65,7 @@ class LanguageService extends Service implements LanguageServiceContract
 
                 $this->uploadImage($image, $imageName);
             }
-            
+
             return $language;
         }
 
@@ -79,17 +74,17 @@ class LanguageService extends Service implements LanguageServiceContract
 
     public function imageName($id, $image)
     {
-        return $id .'.'. $image->getClientOriginalExtension();
+        return $id.'.'.$image->getClientOriginalExtension();
     }
 
     public function imageUrl($imageName)
     {
-        return config('app.url')."/images/languages/".$imageName."?stamp=".Carbon::now()->timestamp;
+        return config('app.url').'/images/languages/'.$imageName.'?stamp='.Carbon::now()->timestamp;
     }
 
     public function uploadImage($image, $imageName)
     {
-        if (! is_null($image)) {
+        if (!is_null($image)) {
             $image = \Image::make(
                 $image->getRealPath()
             )

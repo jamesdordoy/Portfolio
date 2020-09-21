@@ -15,75 +15,73 @@ use Illuminate\Support\Facades\Route;
 
 //Auth routes
 Route::post('/login', [
-    'as' => 'front.post.login',
+    'as'   => 'front.post.login',
     'uses' => 'Auth\LoginController@login',
 ]);
 
 Route::post('/logout', [
-    'as' => 'logout',
+    'as'   => 'logout',
     'uses' => 'Auth\LoginController@logout',
 ]);
 
 // Mail Routes
 Route::post('/contact', [
-    'as' => 'front.post.contact',
+    'as'   => 'front.post.contact',
     'uses' => 'ContactController@store',
 ]);
 
 Route::post('/newsletter', [
-    'as' => 'front.post.newsletter',
+    'as'   => 'front.post.newsletter',
     'uses' => 'ContactController@newsletter',
 ]);
 
 Route::get('/unsubscribe/{newsletter}', [
-    'as' => 'front.get.unsubscribe',
+    'as'   => 'front.get.unsubscribe',
     'uses' => 'ContactController@newsletterUnsubscribe',
 ])->middleware('signed');
 
 //Frontend
-Route::namespace('Front')->group(function() {
+Route::namespace('Front')->group(function () {
     Route::get('/', [
-        'as' => 'front.get.index',
+        'as'   => 'front.get.index',
         'uses' => 'IndexController@index',
     ]);
 
     Route::get('/languages', [
-        'as' => 'front.get.languages',
+        'as'   => 'front.get.languages',
         'uses' => 'IndexController@languages',
     ]);
 
     Route::get('/projects', [
-        'as' => 'front.get.projects',
+        'as'   => 'front.get.projects',
         'uses' => 'IndexController@projects',
     ]);
 
     Route::get('/tweets', [
-        'as' => 'front.get.tweets',
+        'as'   => 'front.get.tweets',
         'uses' => 'IndexController@tweets',
     ]);
 
     Route::get('/posts', [
-        'as' => 'front.get.posts',
+        'as'   => 'front.get.posts',
         'uses' => 'IndexController@posts',
     ]);
 
     Route::get('/posts/{id}', [
-        'as' => 'front.get.posts.find',
+        'as'   => 'front.get.posts.find',
         'uses' => 'IndexController@findPost',
     ]);
 
     Route::get('/timeline', [
-        'as' => 'front.get.timeline',
+        'as'   => 'front.get.timeline',
         'uses' => 'IndexController@timeline',
     ]);
 });
 
 //Backend
 Route::middleware('auth')->group(function () {
-
-    Route::namespace('Back')->group(function() {
-
-        Route::prefix('api')->group(function() {
+    Route::namespace('Back')->group(function () {
+        Route::prefix('api')->group(function () {
             Route::get('/github', 'GitHubController@index');
             Route::get('/languages', 'LanguageController@index');
             Route::get('/languages/{id}', 'LanguageController@find');
@@ -94,17 +92,17 @@ Route::middleware('auth')->group(function () {
             Route::get('/posts', 'PostController@index');
         });
 
-        Route::prefix('back')->group(function() {
+        Route::prefix('back')->group(function () {
             Route::get('/', 'IndexController@index');
-            Route::get('/{wildcard}', "IndexController@wildcard")->where('wildcard', '.*');
+            Route::get('/{wildcard}', 'IndexController@wildcard')->where('wildcard', '.*');
         });
     });
 });
 
 //Frontend
-Route::namespace('Front')->group(function() {
+Route::namespace('Front')->group(function () {
     Route::get('/{wildcard}', [
-        'as' => 'front.get.spa',
+        'as'   => 'front.get.spa',
         'uses' => 'IndexController@index',
     ])->where('wildcard', '.*');
 });

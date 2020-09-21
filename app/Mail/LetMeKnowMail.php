@@ -4,13 +4,13 @@ namespace App\Mail;
 
 use App\Models\Contact;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
 class LetMeKnowMail extends Mailable
 {
-    use Queueable, SerializesModels;
+    use Queueable;
+    use SerializesModels;
 
     protected $contact;
 
@@ -32,7 +32,7 @@ class LetMeKnowMail extends Mailable
     public function build()
     {
         return $this->view('mail.let-me-know', [
-            'contact' => $this->contact
+            'contact' => $this->contact,
         ]);
     }
 }

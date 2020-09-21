@@ -13,15 +13,13 @@ class LanguageTableSeeder extends Seeder
     public function run()
     {
         Language::factory()->create([
-            'name' => "PHP",
-            'description' => "PHP",
+            'name'        => 'PHP',
+            'description' => 'PHP',
         ]);
 
         Language::factory()->create([
-            'name' => "Laravel",
-            'description' => "PHP",
+            'name'        => 'Laravel',
+            'description' => 'PHP',
         ]);
-
-
     }
 }

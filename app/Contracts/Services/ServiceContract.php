@@ -4,5 +4,5 @@ namespace App\Contracts\Services;
 
 interface ServiceContract
 {
-    function registerServices();
+    public function registerServices();
 }

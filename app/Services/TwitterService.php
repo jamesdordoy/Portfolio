@@ -23,7 +23,7 @@ class TwitterService extends Service implements TwitterServiceContract
     private $consumerKey;
 
     /**
-     * Twitter Consumer Secret
+     * Twitter Consumer Secret.
      */
     private $consumerSecret;
 
@@ -37,10 +37,10 @@ class TwitterService extends Service implements TwitterServiceContract
      */
     public function __construct()
     {
-        $this->accessToken = config("services.twitter.access_token", "");
-        $this->accessTokenSecret = config("services.twitter.token_secret", "");
-        $this->consumerKey = config("services.twitter.consumer_key", "");
-        $this->consumerSecret = config("services.twitter.consumer_secret", "");
+        $this->accessToken = config('services.twitter.access_token', '');
+        $this->accessTokenSecret = config('services.twitter.token_secret', '');
+        $this->consumerKey = config('services.twitter.consumer_key', '');
+        $this->consumerSecret = config('services.twitter.consumer_secret', '');
 
         $this->conn = new TwitterOAuth(
             $this->consumerKey,
@@ -58,10 +58,10 @@ class TwitterService extends Service implements TwitterServiceContract
     public function getStatuses()
     {
         return $this->conn->get(
-            "statuses/user_timeline",
+            'statuses/user_timeline',
             [
-                "count" => 50,
-                "exclude_replies" => true
+                'count'           => 50,
+                'exclude_replies' => true,
             ]
         );
     }
@@ -69,15 +69,16 @@ class TwitterService extends Service implements TwitterServiceContract
     /**
      * cULR POST Create Twitter Status.
      *
-     * @param  string  $status
+     * @param string $status
+     *
      * @return array
      */
-    public function postStatus(string $status) : array
+    public function postStatus(string $status): array
     {
         return $this->conn->post(
-            "statuses/update",
+            'statuses/update',
             [
-                "status" => $status
+                'status' => $status,
             ]
         );
     }

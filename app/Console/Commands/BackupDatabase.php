@@ -3,8 +3,6 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use Symfony\Component\Process\Process;
-use Symfony\Component\Process\Exception\ProcessFailedException;
 
 class BackupDatabase extends Command
 {
@@ -28,9 +26,9 @@ class BackupDatabase extends Command
 
         $ts = time();
 
-        $path = database_path() . $ds . 'backups' . $ds . date('Y', $ts) . $ds . date('m', $ts) . $ds . date('d', $ts) . $ds;
-        $file = date('Y-m-d-His', $ts) . '-dump-' . $database . '.sql';
-        $command = sprintf('mysqldump -h %s -u %s -p\'%s\' %s > %s --no-tablespaces', $host, $username, $password, $database, $path . $file);
+        $path = database_path().$ds.'backups'.$ds.date('Y', $ts).$ds.date('m', $ts).$ds.date('d', $ts).$ds;
+        $file = date('Y-m-d-His', $ts).'-dump-'.$database.'.sql';
+        $command = sprintf('mysqldump -h %s -u %s -p\'%s\' %s > %s --no-tablespaces', $host, $username, $password, $database, $path.$file);
 
         is_dir($path) ?: mkdir($path, 0755, true);
 

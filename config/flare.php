@@ -25,10 +25,10 @@ return [
     */
 
     'reporting' => [
-        'anonymize_ips' => true,
+        'anonymize_ips'           => true,
         'collect_git_information' => true,
-        'report_queries' => true,
-        'report_query_bindings' => true,
-        'report_view_data' => true,
+        'report_queries'          => true,
+        'report_query_bindings'   => true,
+        'report_view_data'        => true,
     ],
 ];

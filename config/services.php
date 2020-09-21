@@ -15,11 +15,11 @@ return [
     */
 
     'jamesdordoy' => [
-        'TwitterService' => 'TwitterServiceContract',
-        'GitHubService' => 'GithubServiceContract',
+        'TwitterService'  => 'TwitterServiceContract',
+        'GitHubService'   => 'GithubServiceContract',
         'LanguageService' => 'LanguageServiceContract',
-        'ContactService' => 'ContactServiceContract',
-        'AssetService' => 'AssetServiceContract',
+        'ContactService'  => 'ContactServiceContract',
+        'AssetService'    => 'AssetServiceContract',
     ],
 
 ];

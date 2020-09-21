@@ -13,8 +13,8 @@ class LinkTableSeeder extends Seeder
     public function run()
     {
         Link::factory()->create([
-            'name' => "YouTube",
-            'link' => "www.youtube.com"
+            'name' => 'YouTube',
+            'link' => 'www.youtube.com',
         ]);
     }
 }

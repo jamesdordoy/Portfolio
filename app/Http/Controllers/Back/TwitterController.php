@@ -2,14 +2,12 @@
 
 namespace App\Http\Controllers\Back;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Services\TwitterService;
 use App\Interfaces\TwitterInterface;
+use Illuminate\Http\Request;
 
 class TwitterController extends Controller
 {
-
     private $twitter;
 
     /**
@@ -47,7 +45,8 @@ class TwitterController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -58,7 +57,8 @@ class TwitterController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -69,7 +69,8 @@ class TwitterController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -80,8 +81,9 @@ class TwitterController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int                      $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -92,7 +94,8 @@ class TwitterController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
