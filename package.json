@@ -26,6 +26,7 @@
         "laravel-vue-datatable": "0.5.11",
         "lodash": "^4.17.19",
         "moment": "^2.27.0",
+        "node-forge": "^0.10.0",
         "particles.js": "^2.0.0",
         "resolve-url-loader": "^3.1.0",
         "sass": "^1.26.10",

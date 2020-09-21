@@ -182,6 +182,4 @@ PERFORMANCE OF THIS SOFTWARE.
 
 //! moment.js
 
-//! moment.js language configuration
-
 //! moment.js locale configuration
