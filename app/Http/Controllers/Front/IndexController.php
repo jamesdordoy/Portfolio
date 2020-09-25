@@ -69,6 +69,7 @@ class IndexController extends Controller
      *
      * @param Request $request
      * @param $id
+     *
      * @return PostResource
      */
     public function findPost(Request $request, $id)
