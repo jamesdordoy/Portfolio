@@ -11,6 +11,7 @@ use App\Models\Project;
 use App\Models\Timeline;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
@@ -36,7 +37,7 @@ class IndexController extends Controller
     /**
      * Get Public Languages.
      *
-     * @return \App\Http\Resources\PostResource
+     * @return Collection
      */
     public function languages()
     {
@@ -46,7 +47,7 @@ class IndexController extends Controller
     /**
      * Get Public Projects.
      *
-     * @return \App\Http\Resources\PostResource
+     * @return Collection
      */
     public function projects()
     {
@@ -66,7 +67,9 @@ class IndexController extends Controller
     /**
      * Find a Public Post.
      *
-     * @return \App\Http\Resources\PostResource
+     * @param Request $request
+     * @param $id
+     * @return PostResource
      */
     public function findPost(Request $request, $id)
     {
