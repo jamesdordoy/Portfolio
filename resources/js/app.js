@@ -90,9 +90,11 @@ Vue.component('paginator',              require('./components/Pagination').defau
 Vue.component('data-table-filters',     require('./components/DataTableFilters').default);
 
 import FormatDateFunction from './utils/format-date';
+import DateDifferenceFunction from './utils/date-difference';
 import CapitalizeStringFunction from './utils/capitalize-string';
 
 Vue.filter('formatDate', FormatDateFunction);
+Vue.filter('dateDifference', DateDifferenceFunction);
 Vue.filter('capitalize', CapitalizeStringFunction);
 
 const router = new VueRouter({
