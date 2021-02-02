@@ -40,7 +40,7 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "intervention/image": "^2.5",
         "jamesdordoy/laravelvuedatatable": "1.*",
-        "laravel/framework": "8.0.*",
+        "laravel/framework": "8.24.*",
         "laravel/helpers": "^1.1",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0",
