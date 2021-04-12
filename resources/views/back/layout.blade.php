@@ -23,7 +23,7 @@
     <title>{{ config('app.name', 'James Dordoy - Portfolio') }}</title>
 </head>
 
-<body class="bg-black font-sans font-normal">
+<body class="font-sans font-normal">
 <div id="app" class="h-full">
     @yield('main')
 </div>

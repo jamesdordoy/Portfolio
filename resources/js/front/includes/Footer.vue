@@ -2,7 +2,7 @@
 
     <div
         class="flex flex-wrap py-3 px-10 lg:p-10"
-        :class="`bg-${$store.getters.primaryThemeBg}`">
+        :class="`bg-${$store.getters.primaryThemeBg} border-t border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`">
         <div
             class="w-full lg:w-1/3 border-b border-b-2"
             :class="`border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`">

@@ -10,5 +10,11 @@ module.exports = {
     },
     future: {
         removeDeprecatedGapUtilities: true,
-    }
+    },
+    variants: {
+        opacity: ['disabled'],
+        cursor: ['disabled', 'hover'],
+        zIndex: ['focus'],
+        backgroundColor: ['hover', 'focus', 'even'],
+    },
 }

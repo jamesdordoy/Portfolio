@@ -14,15 +14,12 @@
                         </slot>
                     </div>
                 </div>
-                <hr class="hr-header">
+                <hr class="hr-header my-4">
             </div>
             <div class="flex flex-wrap text-grey-dark">
                 <div class="w-full">
                     <slot name="content">
                     </slot>
-                    <div class="w-full m-6 flex justify-center">
-
-                    </div>
                 </div>
             </div>
         </div>

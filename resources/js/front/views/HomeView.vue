@@ -63,17 +63,30 @@
             <div
                 class="flex flex-wrap px-10 py-2 content-start"
                 :class="`bg-${$store.getters.primaryThemeBgLighter}`">
-
-                <div class="w-full lg:w-1/2 py-8 px-2">
-                    <contact-me-panel
-                        :contact-form-url="contactFormUrl">
-                    </contact-me-panel>
-                </div>
-                <div class="w-full lg:w-1/2 py-8 lg:pr-2 px-2">
+                <div class="w-full py-8 lg:pr-2 px-2">
                     <experience-timeline-panel
                         :timeline="timeline">
                     </experience-timeline-panel>
                 </div>
+            </div>
+
+            <div class="flex flex-wrap px-10 py-2 content-start"
+                 :class="`bg-${$store.getters.primaryThemeBgDarker}`">
+
+                        <div class="w-full lg:w-1/2 py-8 px-2">
+                            <contact-me-panel
+                                :contact-form-url="contactFormUrl">
+                            </contact-me-panel>
+                        </div>
+                    <div class="w-full lg:w-1/2 py-8 px-2">
+                        <span
+                            id="games"
+                            class="jd-bookmark">
+                        </span>
+                        <h2
+                            class="text-3xl varela mb-8"
+                            :class="`text-${$store.getters.primaryThemeTextColour}`">Games</h2>
+                    </div>
             </div>
             <front-footer
                 :newsletter-form-url="newsletterFormUrl">
