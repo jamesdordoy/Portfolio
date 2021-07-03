@@ -6,7 +6,7 @@ if [[ "$STAGED_FILES" = "" ]]; then
   exit 0
 fi
 
- PASS=true
+PASS=true
 
 echo "\nValidating PHPCS:\n"
 
