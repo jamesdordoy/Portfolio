@@ -145,7 +145,7 @@ export default {
         auth: {
           type: Object,
           default: () => ({})
-        }
+        },
     },
     methods: {
         getLanguages() {
