@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 
 class TwitterController extends Controller
 {
-
     /**
      * Create a new controller instance.
      *
@@ -15,7 +14,6 @@ class TwitterController extends Controller
      */
     public function __construct()
     {
-
     }
 
     /**
