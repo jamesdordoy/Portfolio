@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use Illuminate\Support\Str;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class PostResource extends JsonResource
@@ -23,7 +24,7 @@ class PostResource extends JsonResource
             'title'      => $this->title,
             'subtitle'   => $this->subtitle,
             'body'       => $this->body,
-            'excerpt'    => \Str::words($this->body, $this->excerptLength),
+            'excerpt'    => Str::words($this->body, $this->excerptLength),
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ];

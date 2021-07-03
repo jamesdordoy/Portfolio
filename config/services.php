@@ -4,13 +4,10 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Third Party Services
+    | Business Logic Services
     |--------------------------------------------------------------------------
     |
-    | This file is for storing the credentials for third party services such
-    | as Stripe, Mailgun, SparkPost and others. This file provides a sane
-    | default location for this type of information, allowing packages
-    | to have a conventional place to find your various credentials.
+    | This file is for storing the business logic for my portfolio. These are composable and can be pulled in form the DI container.
     |
     */
 

@@ -2,7 +2,7 @@
 
 namespace App\Contracts\Services;
 
-interface ServiceContract
+interface AppServiceContract
 {
     public function registerServices();
 }

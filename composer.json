@@ -44,8 +44,9 @@
         "laravel/helpers": "^1.1",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0",
-        "sentry/sentry-laravel": "^1.9",
-        "php-http/curl-client": "^2.0"
+        "php-http/curl-client": "^2.0",
+        "predis/predis": "^1.1",
+        "sentry/sentry-laravel": "^1.9"
     },
     "replace": {
         "php-http/guzzle6-adapter": "*"

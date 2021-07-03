@@ -14,7 +14,7 @@ use Illuminate\Http\Response;
 
 class ContactController extends Controller
 {
-    private $contact;
+    private $contactService;
 
     /**
      * Create a new controller instance.
@@ -23,7 +23,7 @@ class ContactController extends Controller
      */
     public function __construct(ContactServiceContract $contact)
     {
-        $this->contact = $contact;
+        $this->contactService = $contact;
     }
 
     /**
@@ -35,7 +35,7 @@ class ContactController extends Controller
      */
     public function store(ContactRequest $request)
     {
-        $contact = $this->contact->store($request->all());
+        $contact = $this->contactService->store($request->all());
 
         if ($contact) {
             SendContactConfirmationEmailJob::dispatch($contact)
@@ -56,7 +56,7 @@ class ContactController extends Controller
      */
     public function newsletter(NewsletterRequest $request)
     {
-        $newsletter = $this->contact->storeNewsletter($request->input('email'));
+        $newsletter = $this->contactService->storeNewsletter($request->input('email'));
 
         if ($newsletter) {
             SendNewsletterEmailJob::dispatch($newsletter)
@@ -78,7 +78,7 @@ class ContactController extends Controller
      */
     public function newsletterUnsubscribe(Request $request, Newsletter $newsletter)
     {
-        if ($this->contact->unsubscribeFromNewsletter($newsletter)) {
+        if ($this->contactService->unsubscribeFromNewsletter($newsletter)) {
             return redirect()->route('front.get.index', ['unsubscribed' => 1]);
         }
 

@@ -3,21 +3,19 @@
 namespace App\Http\Controllers\Back;
 
 use App\Http\Controllers\Controller;
-use App\Interfaces\TwitterInterface;
 use Illuminate\Http\Request;
 
 class TwitterController extends Controller
 {
-    private $twitter;
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct(TwitterInterface $twitter)
+    public function __construct()
     {
-        $this->twitter = $twitter;
+
     }
 
     /**
