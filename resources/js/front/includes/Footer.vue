@@ -93,7 +93,8 @@
         <div
             class="
                 w-full
-                lg:w-1/3 lg:text-center
+                lg:w-1/3
+                lg:text-center
                 py-6
                 lg:py-0
                 varela
@@ -114,7 +115,10 @@
                 </router-link>
             </p>
         </div>
-        <div class="w-full lg:w-1/3">
+        <div
+            class="w-full lg:w-1/3 border-b"
+            :class="`border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`"
+        >
             <div id="newsletter">
                 <form
                     action="/newsletter"
@@ -133,10 +137,7 @@
                     </div>
                     <div class="md:flex md:items-center py-2">
                         <div class="md:w-full">
-                            <div
-                                class="flex items-center border-b pb-4"
-                                :class="`border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`"
-                            >
+                            <div class="flex items-center pb-4">
                                 <input
                                     v-model="payload.email"
                                     type="email"
