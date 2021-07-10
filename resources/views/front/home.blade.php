@@ -1,4 +1,4 @@
-@extends('front.layouts.layout2020')
+@extends('front.layouts.layout')
 
 @section('main')
     <router-view :auth="{{ json_encode($auth) }}">

@@ -41,6 +41,7 @@
         "jamesdordoy/laravelvuedatatable": "1.*",
         "laravel/framework": "8.40.*",
         "laravel/helpers": "^1.1",
+        "laravel/horizon": "^5.7",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0",
         "php-http/curl-client": "^2.0",

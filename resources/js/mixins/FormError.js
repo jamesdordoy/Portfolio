@@ -1,8 +1,8 @@
 export default {
-    data: function() {
+    data() {
         return {
-            errors: {}
-        }
+            errors: {},
+        };
     },
     methods: {
         checkError(field) {
@@ -20,4 +20,4 @@ export default {
             this.errors = {};
         },
     },
-}
+};

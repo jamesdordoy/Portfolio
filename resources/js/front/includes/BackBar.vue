@@ -12,15 +12,21 @@
 
 <script>
 export default {
+    props: {
+        auth: {
+            type: Object,
+            default: () => ({}),
+        },
+    },
     data() {
         return {
             open: false,
         };
     },
-    props: {
-        auth: {
-            type: Object,
-            default: () => ({}),
+    computed: {
+        csrfToken() {
+            return document.head.querySelector('meta[name="csrf-token"]')
+                .content;
         },
     },
     methods: {
@@ -35,12 +41,6 @@ export default {
         },
         closeMenu() {
             this.open = false;
-        },
-    },
-    computed: {
-        csrfToken() {
-            return document.head.querySelector('meta[name="csrf-token"]')
-                .content;
         },
     },
 };

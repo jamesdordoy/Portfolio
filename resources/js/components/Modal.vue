@@ -1,31 +1,29 @@
-|<template>
-    <div class="modal-mask" v-if="show" transition="modal">
-
-        <div class="modal-container relative" :class="sizeClass" >
-            <button @click="close" class="absolute close-btn">X</button>
+|
+<template>
+    <div v-if="show" class="modal-mask" transition="modal">
+        <div class="modal-container relative" :class="sizeClass">
+            <button class="absolute close-btn" @click="close">X</button>
             <div class="modal-header">
-                <slot name="header">
-                    default header
-                </slot>
+                <slot name="header"> default header </slot>
             </div>
             <div class="modal-body">
-                <slot name="body">
-                    default body
-                </slot>
+                <slot name="body"> default body </slot>
             </div>
             <div class="modal-footer">
                 <slot name="footer">
                     <div class="clearfix">
                         <outline-button
-                            @click="submit"
                             title="Submit"
-                            classes="float-left bg-transparent hover:bg-blue text-blue-dark font-semibold hover:text-white py-2 px-4 border border-blue hover:border-transparent rounded">
+                            classes="float-left bg-transparent hover:bg-blue text-blue-dark font-semibold hover:text-white py-2 px-4 border border-blue hover:border-transparent rounded"
+                            @click="submit"
+                        >
                         </outline-button>
 
                         <outline-button
-                            @click="close"
                             title="Close"
-                            classes="float-right bg-transparent hover:bg-red text-red-dark font-semibold hover:text-white py-2 px-4 border border-red hover:border-transparent rounded">
+                            classes="float-right bg-transparent hover:bg-red text-red-dark font-semibold hover:text-white py-2 px-4 border border-red hover:border-transparent rounded"
+                            @click="close"
+                        >
                         </outline-button>
                     </div>
                 </slot>
@@ -35,13 +33,7 @@
 </template>
 
 <script>
-
 export default {
-    data() {
-        return {
-            
-        };
-    },
     props: {
         show: {
             type: Boolean,
@@ -52,39 +44,40 @@ export default {
             default: 'md',
         },
     },
+    data() {
+        return {};
+    },
+    computed: {
+        sizeClass() {
+            const { size } = this;
+
+            return {
+                'modal-sm': size === 'sm',
+                'modal-md': size === 'md',
+                'modal-lg': size === 'lg',
+                'modal-xl': size === 'xl',
+            };
+        },
+    },
     methods: {
         close() {
-            this.$emit("close");
+            this.$emit('close');
         },
         submit() {
-            this.$emit("submit");
+            this.$emit('submit');
         },
     },
     ready() {
-        document.addEventListener("keydown", (e) => {
-            if (this.show && e.keyCode == 27) {
+        document.addEventListener('keydown', (e) => {
+            if (this.show && e.keyCode === 27) {
                 this.close();
             }
         });
     },
-    computed: {
-        sizeClass() {
-            var size = this.size;
-
-            return {
-                'modal-sm' : size == 'sm',
-                'modal-md' : size == 'md',
-                'modal-lg' : size == 'lg',
-                'modal-xl' : size == 'xl',
-            }
-        },
-    },
-}
-
+};
 </script>
 
 <style scoped>
-
 * {
     box-sizing: border-box;
 }
@@ -102,8 +95,8 @@ export default {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, .5);
-    transition: opacity .3s ease;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: opacity 0.3s ease;
 }
 
 .modal-sm {
@@ -127,8 +120,8 @@ export default {
     padding: 20px 30px;
     background-color: #fff;
     border-radius: 2px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
-    transition: all .3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+    transition: all 0.3s ease;
     font-family: Helvetica, Arial, sans-serif;
 }
 
@@ -145,7 +138,8 @@ export default {
     text-align: right;
 }
 
-.modal-enter, .modal-leave {
+.modal-enter,
+.modal-leave {
     opacity: 0;
 }
 
@@ -154,5 +148,4 @@ export default {
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
-
 </style>

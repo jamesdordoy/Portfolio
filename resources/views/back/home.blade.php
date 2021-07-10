@@ -1,4 +1,4 @@
-@extends('back.layout')
+@extends('back.layouts.layout')
 
 @section('main')
     <router-view>

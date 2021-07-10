@@ -38,8 +38,7 @@ class ContactController extends Controller
         $contact = $this->contactService->store($request->all());
 
         if ($contact) {
-            SendContactConfirmationEmailJob::dispatch($contact)
-                ->delay(now()->addSeconds(10));
+            SendContactConfirmationEmailJob::dispatch($contact);
 
             return response()->noContent(Response::HTTP_CREATED);
         }
@@ -59,8 +58,7 @@ class ContactController extends Controller
         $newsletter = $this->contactService->storeNewsletter($request->input('email'));
 
         if ($newsletter) {
-            SendNewsletterEmailJob::dispatch($newsletter)
-                ->delay(now()->addSeconds(10));
+            SendNewsletterEmailJob::dispatch($newsletter);
 
             return response()->noContent(Response::HTTP_CREATED);
         }

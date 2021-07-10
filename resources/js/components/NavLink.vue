@@ -1,7 +1,18 @@
 <template>
     <li>
         <router-link class="no-underline" :to="url">
-            <a class="no-underline p-4 text-grey-dark border-b xl:border-0 hover:bg-grey-lightest xl:hover:bg-transparent xl:hover:text-blue ml-2">
+            <a
+                class="
+                    no-underline
+                    p-4
+                    text-grey-dark
+                    border-b
+                    xl:border-0
+                    hover:bg-grey-lightest
+                    xl:hover:bg-transparent xl:hover:text-blue
+                    ml-2
+                "
+            >
                 <slot></slot>
                 {{ text }}
             </a>
@@ -18,10 +29,8 @@ export default {
         text: {
             type: String,
         },
-    }
-}
+    },
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

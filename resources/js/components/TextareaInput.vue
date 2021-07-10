@@ -1,33 +1,19 @@
 <template>
     <textarea
         :id="id"
-        :rows="rows"
-        @input="onInput"
         v-model="inputValue"
+        :rows="rows"
         :placeholder="placeholder"
-        class="input-generic focus:outline-none focus:bg-white">
+        class="input-generic focus:outline-none focus:bg-white"
+        @input="onInput"
+    >
     </textarea>
 </template>
 
-<style>
-
-</style>
+<style></style>
 
 <script>
-
 export default {
-    data() {
-        return {
-            inputValue: '',
-        }
-    },
-    watch: {
-        value: {
-            handler(newVal) {
-                this.inputValue = newVal;
-            }
-        }
-    },
     props: {
         value: {
             type: String,
@@ -46,16 +32,27 @@ export default {
             default: '',
         },
     },
+    data() {
+        return {
+            inputValue: '',
+        };
+    },
+    watch: {
+        value: {
+            handler(newVal) {
+                this.inputValue = newVal;
+            },
+        },
+    },
+    created() {
+        this.inputValue = this.value;
+    },
     methods: {
         onInput(event) {
-            let value = event.srcElement.value;
+            const { value } = event.srcElement;
 
-            this.$emit("input", value);
-        }
+            this.$emit('input', value);
+        },
     },
-    created: function() {
-        this.inputValue = this.value;
-    }
-}
-
+};
 </script>

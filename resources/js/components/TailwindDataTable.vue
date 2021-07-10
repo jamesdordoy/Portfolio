@@ -1,21 +1,18 @@
 <template>
     <data-table
+        ref="languageTable"
         :url="url"
         framework="tailwind"
-        ref="languageTable"
-        :columns="columns">
+        :columns="columns"
+    >
     </data-table>
 </template>
 
 <script>
 export default {
     props: {
-        url: {
-
-        },
-        columns: {
-
-        },
+        url: {},
+        columns: {},
     },
-}
+};
 </script>

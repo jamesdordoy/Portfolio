@@ -1,9 +1,6 @@
-"use strict";
-
-import AbstractService from './AbstractService.js';
+import AbstractService from './AbstractService';
 
 class IndexService extends AbstractService {
-
     languages() {
         return this.client.get(`/languages`);
     }
@@ -27,9 +24,8 @@ class IndexService extends AbstractService {
     timeline() {
         return this.client.get(`/timeline`);
     }
-};
+}
 
-//Create absolute Singleton
-const instance = new IndexService;
+const instance = new IndexService();
 Object.freeze(instance);
 export default instance;

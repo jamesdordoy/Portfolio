@@ -1,5 +1,5 @@
 <template>
-    <button :class="classes" @click="click(data)" title="Update">
+    <button :class="classes" title="Update" @click="click(data)">
         <span>
             <i class="fa fa-eye" aria-hidden="true"></i>
         </span>
@@ -15,6 +15,6 @@ export default {
         name: {},
         click: {},
         classes: {},
-    }
-}
+    },
+};
 </script>

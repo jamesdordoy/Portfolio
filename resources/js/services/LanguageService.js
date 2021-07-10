@@ -1,9 +1,6 @@
-"use strict";
-
-import AbstractService from './AbstractService.js';
+import AbstractService from './AbstractService';
 
 class LanguageService extends AbstractService {
-
     all() {
         return this.client.get(`/api/languages`);
     }
@@ -18,13 +15,11 @@ class LanguageService extends AbstractService {
 
     update(id, data) {
         return this.client.post(`/api/languages/${id}`, data, {
-            headers: {
-            }
+            headers: {},
         });
     }
-};
+}
 
-//Create absolute Singleton
-const instance = new LanguageService;
+const instance = new LanguageService();
 Object.freeze(instance);
 export default instance;

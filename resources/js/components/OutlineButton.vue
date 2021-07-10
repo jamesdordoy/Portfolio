@@ -2,21 +2,16 @@
     <button
         :type="type"
         :class="classes"
-        @click="onClick"
         :disabled:="disabled"
-        class="jd-outline-button hover:bg-teal-500 hover:border-transparent">
-        <slot></slot><span v-if='hasSlot'>&nbsp;</span>{{ title }}
+        class="jd-outline-button hover:bg-teal-500 hover:border-transparent"
+        @click="onClick"
+    >
+        <slot></slot><span v-if="hasSlot">&nbsp;</span>{{ title }}
     </button>
 </template>
 
 <script>
-
 export default {
-    data() {
-        return {
-
-        }
-    },
     props: {
         title: {
             type: String,
@@ -33,18 +28,20 @@ export default {
         disabled: {
             type: Boolean,
             default: false,
-        }
-    },
-    methods: {
-        onClick() {
-            this.$emit("click");
         },
+    },
+    data() {
+        return {};
     },
     computed: {
         hasSlot() {
-            return !! this.$slots.default;
-        }
-    }
-}
-
+            return !!this.$slots.default;
+        },
+    },
+    methods: {
+        onClick() {
+            this.$emit('click');
+        },
+    },
+};
 </script>

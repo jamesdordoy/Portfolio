@@ -1,10 +1,12 @@
 <template>
     <div class="mb-4">
-        <label class="block text-grey-darker text-sm font-bold mb-2" :for="forId">
+        <label
+            class="block text-grey-darker text-sm font-bold mb-2"
+            :for="forId"
+        >
             {{ title }}
         </label>
-        <slot>
-        </slot>
+        <slot> </slot>
     </div>
 </template>
 
@@ -15,5 +17,6 @@ export default {
         title: String,
         forId: String,
     },
-}
+};
 </script>
+∂

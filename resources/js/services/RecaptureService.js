@@ -1,19 +1,15 @@
-"use strict";
-
-import AbstractService from './AbstractService.js';
+import AbstractService from './AbstractService';
 
 class RecaptureService extends AbstractService {
-
     async validateToken(token) {
         return this.client.get(`/recaptcha/validate`, {
             params: {
-                token
-            }
+                token,
+            },
         });
     }
 }
 
-//Create absolute Singleton
-const instance = new RecaptureService;
+const instance = new RecaptureService();
 Object.freeze(instance);
 export default instance;

@@ -1,4 +1,4 @@
-@extends('front.layouts.layout2020')
+@extends('front.layouts.layout')
 
 @section('main')
     <privacy-policy-view>

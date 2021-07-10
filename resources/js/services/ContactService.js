@@ -1,9 +1,6 @@
-"use strict";
-
-import AbstractService from './AbstractService.js';
+import AbstractService from './AbstractService';
 
 class ContactService extends AbstractService {
-
     store(data) {
         return this.client.post(`/contact`, data);
     }
@@ -13,7 +10,6 @@ class ContactService extends AbstractService {
     }
 }
 
-//Create absolute Singleton
-const instance = new ContactService;
+const instance = new ContactService();
 Object.freeze(instance);
 export default instance;

@@ -2,21 +2,25 @@
     <button
         :type="type"
         :class="classes"
-        @click="onClick"
         :disabled:="disabled"
-        class="text-grey-lighter font-bold py-2 px-4 rounded text-xs bg-teal hover:bg-teal-dark">
+        class="
+            text-grey-lighter
+            font-bold
+            py-2
+            px-4
+            rounded
+            text-xs
+            bg-teal
+            hover:bg-teal-dark
+        "
+        @click="onClick"
+    >
         <slot></slot>&nbsp;{{ title }}
     </button>
 </template>
 
 <script>
-
 export default {
-    data() {
-        return {
-           
-        }
-    },
     props: {
         title: {
             type: String,
@@ -33,13 +37,15 @@ export default {
         disabled: {
             type: Boolean,
             default: false,
-        }
+        },
+    },
+    data() {
+        return {};
     },
     methods: {
         onClick() {
-            this.$emit("click");
+            this.$emit('click');
         },
     },
-}
-
+};
 </script>

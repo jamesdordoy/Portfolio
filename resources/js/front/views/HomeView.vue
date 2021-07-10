@@ -23,9 +23,9 @@
         <div class="themeSettingsPanelToggleButton">
             <button
                 aria-label="settings"
-                @click="showSettings"
                 class="rounded-r p-2 text-lg text-white"
                 :class="`bg-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`"
+                @click="showSettings"
             >
                 <font-awesome-icon :icon="['fas', 'cog']" />
             </button>
@@ -33,7 +33,7 @@
 
         <gdpr-banner> </gdpr-banner>
 
-        <div class="h-full" id="home">
+        <div id="home" class="h-full">
             <particles>
                 <div
                     class="front-into md:p-8 md:mx-0"
@@ -103,29 +103,18 @@
 </template>
 
 <script>
-import FrontNav from '../includes/Nav';
-import GDPRBanner from '../includes/GDPRBanner';
-import PrivacyPreferences from '../includes/PrivacyPreferences';
-import BlogPanel from '../panels/BlogPanel';
-import AboutMePanel from '../panels/AboutMePanel';
-import FrontFooter from '../includes/Footer';
-import ProjectsPanel from '../panels/ProjectsPanel';
-import ContactMePanel from '../panels/ContactMePanel';
+import FrontNav from '../includes/Nav.vue';
+import GDPRBanner from '../includes/GDPRBanner.vue';
+import BlogPanel from '../panels/BlogPanel.vue';
+import AboutMePanel from '../panels/AboutMePanel.vue';
+import FrontFooter from '../includes/Footer.vue';
+import ProjectsPanel from '../panels/ProjectsPanel.vue';
+import ContactMePanel from '../panels/ContactMePanel.vue';
 import IndexService from '../../services/IndexService';
-import ThemeSettingsPanel from '../panels/ThemeSettingsPanel';
-import ExperienceTimelinePanel from '../panels/ExperienceTimelinePanel';
+import ThemeSettingsPanel from '../panels/ThemeSettingsPanel.vue';
+import ExperienceTimelinePanel from '../panels/ExperienceTimelinePanel.vue';
 
 export default {
-    data() {
-        return {
-            projects: [],
-            posts: {},
-            timeline: [],
-            contactFormUrl: '/contact',
-            newsletterFormUrl: '/newsletter',
-            displaySettings: false,
-        };
-    },
     components: {
         FrontNav,
         BlogPanel,
@@ -136,7 +125,29 @@ export default {
         ThemeSettingsPanel,
         ExperienceTimelinePanel,
         'gdpr-banner': GDPRBanner,
-        PrivacyPreferences,
+    },
+    props: {
+        auth: {
+            type: Object,
+            default: () => ({}),
+        },
+    },
+    data() {
+        return {
+            projects: [],
+            posts: {},
+            timeline: [],
+            contactFormUrl: '/contact',
+            newsletterFormUrl: '/newsletter',
+            displaySettings: false,
+        };
+    },
+    computed: {
+        postGroups() {
+            return Array.from(
+                Array(Math.ceil(this.posts.data.length / 3)).keys()
+            );
+        },
     },
     created() {
         this.getLanguages();
@@ -144,14 +155,8 @@ export default {
         this.getPosts();
         this.getTimeline();
 
-        let unsubscribed = this.getURLParameter('unsubscribed');
+        const unsubscribed = this.getURLParameter('unsubscribed');
         this.showUnsubscribedToast(unsubscribed);
-    },
-    props: {
-        auth: {
-            type: Object,
-            default: () => ({}),
-        },
     },
     methods: {
         getLanguages() {
@@ -200,23 +205,13 @@ export default {
         getURLParameter(name) {
             return (
                 decodeURIComponent(
-                    (new RegExp(
-                        '[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)'
-                    ).exec(location.search) || [null, ''])[1].replace(
-                        /\+/g,
-                        '%20'
-                    )
+                    // eslint-disable-next-line no-useless-concat
+                    (new RegExp(`[?|&]${name}=` + `([^&;]+?)(&|#|;|$)`).exec(
+                        window.location.search
+                    ) || [null, ''])[1].replace(/\+/g, '%20')
                 ) || null
-            );
-        },
-    },
-    computed: {
-        postGroups() {
-            return Array.from(
-                Array(Math.ceil(this.posts.data.length / 3)).keys()
             );
         },
     },
 };
 </script>
-
