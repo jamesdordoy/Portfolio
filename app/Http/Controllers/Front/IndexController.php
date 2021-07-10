@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Languages\LanguagesResource;
 use App\Http\Resources\Posts\PostResource;
+use App\Http\Resources\Projects\ProjectsResource;
 use App\Http\Resources\Timeline\TimelineResource;
 use App\Models\Language;
 use App\Models\Post;
@@ -14,8 +16,6 @@ use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
-use App\Http\Resources\Projects\ProjectsResource;
-use App\Http\Resources\Languages\LanguagesResource;
 
 class IndexController extends Controller
 {
