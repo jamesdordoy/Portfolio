@@ -12,13 +12,13 @@
  */
 
 /*!
- * Font Awesome Free 5.15.1 by @fontawesome - https://fontawesome.com
+ * Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  */
 
 /*!
- * Vue.js v2.6.12
- * (c) 2014-2020 Evan You
+ * Vue.js v2.6.14
+ * (c) 2014-2021 Evan You
  * Released under the MIT License.
  */
 
@@ -64,6 +64,18 @@ PERFORMANCE OF THIS SOFTWARE.
 	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	THE SOFTWARE.
+*/
+
+/*! @license ScrollReveal v4.0.5
+
+	Copyright 2018 Fisssion LLC.
+
+	Licensed under the GNU General Public License 3.0 for
+	compatible open source projects and non-commercial use.
+
+	For commercial sites, themes, projects, and applications,
+	keep your source code private/proprietary by purchasing
+	a commercial license from https://scrollrevealjs.org/
 */
 
 /*! @license Tealight v0.3.6
@@ -175,20 +187,6 @@ PERFORMANCE OF THIS SOFTWARE.
  * Released under MIT license <https://lodash.com/license>
  * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
  * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
- */
-
-/**
- * TraceKit - Cross brower stack traces
- *
- * This was originally forked from github.com/occ/TraceKit, but has since been
- * largely modified and is now maintained as part of Sentry JS SDK.
- *
- * NOTE: Last merge with upstream repository
- * Jul 11,2018 - #f03357c
- *
- * https://github.com/csnover/TraceKit
- * @license MIT
- * @namespace TraceKit
  */
 
 //! moment.js
