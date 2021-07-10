@@ -11,16 +11,16 @@
 |
 */
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Back\PostController;
-use App\Http\Controllers\Back\GitHubController;
-use App\Http\Controllers\Back\LanguageController;
-use App\Http\Controllers\Back\ProjectController;
-use App\Http\Controllers\Back\IndexController as BackIndexController;
 use App\Http\Controllers\Back\ContactController as BackContactController;
+use App\Http\Controllers\Back\GitHubController;
+use App\Http\Controllers\Back\IndexController as BackIndexController;
+use App\Http\Controllers\Back\LanguageController;
+use App\Http\Controllers\Back\PostController;
+use App\Http\Controllers\Back\ProjectController;
 use App\Http\Controllers\ContactController as FrontContactController;
 use App\Http\Controllers\Front\IndexController as FrontIndexController;
+use Illuminate\Support\Facades\Route;
 
 // Auth Routes
 Route::post(
@@ -51,7 +51,6 @@ Route::get(
 
 //Frontend
 Route::namespace('Front')->group(function () {
-
     Route::get(
         '/',
         [FrontIndexController::class, 'index']
