@@ -1,46 +1,58 @@
+import HomeView from './front/views/HomeView.vue';
+import PostView from './front/views/PostView.vue';
+import PrivacyPolicyView from './front/views/PrivacyPolicyView.vue';
+import LoginView from './front/views/LoginView.vue';
+import PortalView from './back/views/PortalView.vue';
+import ProjectsView from './back/views/ProjectsView.vue';
+import BlogIndex from './back/blog/Index.vue';
+import ContactView from './back/views/ContactView.vue';
+import LanguagesView from './back/views/LanguagesView.vue';
+import LanguageView from './back/views/LanguageView.vue';
+import PageNotFoundView from './front/views/PageNotFoundView.vue';
+
 export default [
     {
         path: '/',
-        component: require('./front/views/HomeView.vue').default
+        component: HomeView
     },
     {
         path: '/post/:id',
-        component: require('./front/views/PostView.vue').default
+        component: PostView
     },
     {
         path: '/privacy',
-        component: require('./front/views/PrivacyPolicyView.vue').default
+        component: PrivacyPolicyView
     },
     {
         path: '/login',
-        component: require('./front/views/LoginView.vue').default
+        component: LoginView
     },
     {
         path: '/back',
-        component: require('./back/views/PortalView.vue').default
+        component: PortalView
     },
     {
         path: '/back/projects',
-        component: require('./back/views/ProjectsView.vue').default
+        component: ProjectsView
     },
     {
         path: '/back/blog',
-        component: require('./back/blog/Index.vue').default
+        component: BlogIndex
     },
     {
         path: '/back/contact',
-        component: require('./back/views/ContactView.vue').default
+        component: ContactView
     },
     {
         path: '/back/languages',
-        component: require('./back/views/LanguagesView.vue').default
+        component: LanguagesView
     },
     {
         path: '/back/languages/:id',
-        component: require('./back/views/LanguageView.vue').default
+        component: LanguageView
     },
     { 
         path: "*", 
-        component: require('./front/views/PageNotFoundView.vue').default
+        component: PageNotFoundView
     }
 ];
