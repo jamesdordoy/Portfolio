@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Back;
 
 use App\Contracts\Services\LanguageServiceContract;
 use App\Http\Controllers\Controller;
-use App\Http\Resources\LanguageResource;
+use App\Http\Resources\Languages\LanguageResource;
 use App\Models\Language;
 use Illuminate\Http\Request;
 use JamesDordoy\LaravelVueDatatable\Http\Resources\DataTableCollectionResource;

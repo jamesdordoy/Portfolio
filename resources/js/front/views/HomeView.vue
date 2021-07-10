@@ -150,7 +150,6 @@ export default {
         },
     },
     created() {
-        this.getLanguages();
         this.getProjects();
         this.getPosts();
         this.getTimeline();
@@ -159,33 +158,38 @@ export default {
         this.showUnsubscribedToast(unsubscribed);
     },
     methods: {
-        getLanguages() {
-            IndexService.languages()
-                .then((response) => {
-                    this.languages = response.data;
-                })
-                .catch(console.log);
+        async getProjects() {
+            try {
+                const response = await IndexService.projects();
+
+                if (response.status === 200) {
+                    this.projects = response.data.data;
+                }
+            } catch (error) {
+                this.$toastError('Could not fetch projects');
+            }
         },
-        getProjects() {
-            IndexService.projects()
-                .then((response) => {
-                    this.projects = response.data;
-                })
-                .catch(console.log);
-        },
-        getPosts() {
-            IndexService.posts()
-                .then((response) => {
+        async getPosts() {
+            try {
+                const response = await IndexService.posts();
+
+                if (response.status === 200) {
                     this.posts = response.data;
-                })
-                .catch(console.log);
+                }
+            } catch (error) {
+                this.$toastError('Could not fetch posts');
+            }
         },
-        getTimeline() {
-            IndexService.timeline()
-                .then((response) => {
+        async getTimeline() {
+            try {
+                const response = await IndexService.timeline();
+
+                if (response.status === 200) {
                     this.timeline = response.data.data;
-                })
-                .catch(console.log);
+                }
+            } catch (error) {
+                this.$toastError('Could not fetch timeline');
+            }
         },
         showUnsubscribedToast(unsubscribed) {
             if (unsubscribed) {
