@@ -4,7 +4,7 @@
         :class="`bg-${$store.getters.primaryThemeBg} border-t border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`"
     >
         <div
-            class="w-full lg:w-1/3 border-b border-b-2"
+            class="w-full lg:w-1/3 border-b border-b-2 flex-none"
             :class="`border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`"
         >
             <p class="mt-2">
@@ -164,7 +164,6 @@
                                         border
                                         py-1
                                         px-2
-                                        rounded
                                     "
                                     type="button"
                                     :class="`border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade} text-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade} hover:bg-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade} hover:text-${$store.getters.primaryThemeHoverTextColour}`"

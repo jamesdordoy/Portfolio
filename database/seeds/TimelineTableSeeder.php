@@ -43,7 +43,7 @@ class TimelineTableSeeder extends Seeder
                     permanent contract with RBS. Whilst on this team, my responsibilities included managing small
                     projects, completing business critical daily tasks and aiding with group incident management.
                     <br><br>I decided to continue to develop the computing skills I developed by studying at University.',
-            'icon'  => 'work',
+            'icon'  => 'building',
             'title' => 'Collections Officer',
         ]);
 
@@ -62,7 +62,7 @@ class TimelineTableSeeder extends Seeder
             'to'    => '2013-10-29 13:54:30',
             'name'  => 'Dominos Pizza',
             'title' => 'Instore & Delivery Staff',
-            'icon'  => 'work',
+            'icon'  => 'building',
             'body'  => 'While working at Dominoes, i became used to working in a target based environment and dealing with customer expectation.
             <br><br>I originally started as instore staff but after attaining my drivers licence, i also started delivering to customers expanding my knowledge of the full process.',
         ]);

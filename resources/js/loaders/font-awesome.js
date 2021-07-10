@@ -15,6 +15,9 @@ const icons = [
     'faTwitter',
     'faLinkedin',
     'faJsfiddle',
+    'faBuilding',
+    'faSchool',
+    'faCode',
 ];
 
 // eslint-disable-next-line import/prefer-default-export

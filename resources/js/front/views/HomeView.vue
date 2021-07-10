@@ -27,7 +27,7 @@
                 :class="`bg-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`"
                 @click="showSettings"
             >
-                <font-awesome-icon :icon="['fas', 'cog']" />
+                <font-awesome-icon icon="cog" />
             </button>
         </div>
 
@@ -92,7 +92,7 @@
                         class="text-3xl varela mb-8"
                         :class="`text-${$store.getters.primaryThemeTextColour}`"
                     >
-                        Games
+                        Games I'm Playing Right Now
                     </h2>
                 </div>
             </div>

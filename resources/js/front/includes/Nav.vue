@@ -105,11 +105,10 @@
                             class="
                                 bg-transparent
                                 font-semibold
-                                py-1
+                                py-2
                                 px-3
                                 border
                                 hover:border-transparent
-                                rounded
                                 no-underline
                             "
                             :class="`border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade} text-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade} hover:bg-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade} hover:text-${$store.getters.primaryThemeHoverTextColour}`"
@@ -123,18 +122,15 @@
                         :to="'/back'"
                         class="
                             bg-transparent
-                            hover:bg-teal-500
-                            text-teal-500
                             font-semibold
-                            hover:text-nav
                             py-2
-                            px-4
+                            px-3
+                            mr-2
                             border
-                            mr-4
-                            border-teal-500
-                            hover:border-transparent hover:text-black
-                            rounded
+                            hover:border-transparent
+                            no-underline
                         "
+                        :class="`border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade} text-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade} hover:bg-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade} hover:text-${$store.getters.primaryThemeHoverTextColour}`"
                     >
                         <font-awesome-icon :icon="['fas', 'database']" />
                         Backend
@@ -144,16 +140,14 @@
                         href="#"
                         class="
                             bg-transparent
-                            hover:bg-teal-500
-                            text-teal-500
                             font-semibold
-                            hover:text-nav
                             py-2
-                            px-4
-                            border border-teal-500
-                            hover:border-transparent hover:text-black
-                            rounded
+                            px-3
+                            border
+                            hover:border-transparent
+                            no-underline
                         "
+                        :class="`border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade} text-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade} hover:bg-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade} hover:text-${$store.getters.primaryThemeHoverTextColour}`"
                         @click="logout"
                     >
                         <font-awesome-icon :icon="['fas', 'sign-out-alt']" />

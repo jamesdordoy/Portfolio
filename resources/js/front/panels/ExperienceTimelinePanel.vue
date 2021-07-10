@@ -20,17 +20,17 @@
                                     class="flex flex-row w-full"
                                 >
                                     <!-- left col -->
-                                    <div class="w-2/5 py-10">
+                                    <div class="w-4/5 py-10">
                                         <div
                                             class="
                                                 flex flex-col
                                                 w-full
-                                                rounded-lg
                                                 shadow
                                                 px-4
                                                 py-5
+                                                border-b
                                             "
-                                            :class="`bg-${$store.getters.primaryThemeBgDarker}`"
+                                            :class="`bg-${$store.getters.primaryThemeBgDarker} border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`"
                                         >
                                             <div
                                                 class="
@@ -89,95 +89,36 @@
                                     </div>
                                     <!--line column-->
                                     <div class="w-1/5 flex justify-center">
-                                        <div
-                                            class="
-                                                relative
-                                                flex
-                                                h-full
-                                                w-1
-                                                items-center
-                                                justify-center
-                                            "
-                                            :class="`bg-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`"
+                                        <font-awesome-icon
+                                            class="m-auto text-5xl"
+                                            :class="`text-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`"
+                                            :icon="event.icon"
                                         >
-                                            <div
-                                                class="
-                                                    absolute
-                                                    flex flex-col
-                                                    justify-center
-                                                    h-24
-                                                    w-24
-                                                    rounded-full
-                                                    border-2
-                                                    leading-none
-                                                    text-center
-                                                    z-10
-                                                    font-thin
-                                                "
-                                                :class="`bg-${$store.getters.primaryThemeBgDarker} border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`"
-                                            >
-                                                {{
-                                                    event.to
-                                                        | dateDifference(
-                                                            event.from
-                                                        )
-                                                }}
-                                                Year Ago
-                                            </div>
-                                        </div>
+                                        </font-awesome-icon>
                                     </div>
-                                    <!--right column-->
-                                    <div class="w-2/5 px-2 py-10"></div>
                                 </div>
                                 <div v-else class="flex flex-row w-full">
-                                    <!-- left col -->
-                                    <div class="w-2/5 px-2 py-10"></div>
                                     <!--line column-->
                                     <div class="w-1/5 flex justify-center">
-                                        <div
-                                            class="
-                                                relative
-                                                flex
-                                                h-full
-                                                w-1
-                                                items-center
-                                                justify-center
-                                            "
-                                            :class="`bg-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`"
+                                        <font-awesome-icon
+                                            class="m-auto text-5xl"
+                                            :class="`text-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`"
+                                            :icon="event.icon"
                                         >
-                                            <div
-                                                class="
-                                                    absolute
-                                                    flex flex-col
-                                                    justify-center
-                                                    h-24
-                                                    w-24
-                                                    rounded-full
-                                                    border-2
-                                                    leading-none
-                                                    text-center
-                                                    z-10
-                                                    font-thin
-                                                "
-                                                :class="`bg-${$store.getters.primaryThemeBgDarker} border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`"
-                                            >
-                                                {{ event.to | dateDifference }}
-                                                Years Ago
-                                            </div>
-                                        </div>
+                                        </font-awesome-icon>
                                     </div>
                                     <!--right column-->
-                                    <div class="w-2/5 px-2 py-10">
+                                    <div class="w-4/5 px-2 py-10">
                                         <div
                                             class="
                                                 flex flex-col
                                                 w-full
-                                                rounded-lg
                                                 shadow
                                                 px-4
                                                 py-5
+                                                border-b
                                             "
-                                            :class="`bg-${$store.getters.primaryThemeBgDarker}`"
+                                            :class="`bg-${$store.getters.primaryThemeBgDarker} border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`"
                                         >
                                             <div
                                                 class="
