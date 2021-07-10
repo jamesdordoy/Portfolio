@@ -77,7 +77,7 @@ class ContactController extends Controller
     public function newsletterUnsubscribe(Request $request, Newsletter $newsletter)
     {
         if ($this->contactService->unsubscribeFromNewsletter($newsletter)) {
-            return redirect()->route('front.get.index', ['unsubscribed' => 1]);
+            return redirect()->route('get.front.index', ['unsubscribed' => 1]);
         }
 
         return response()->noContent(Response::HTTP_BAD_REQUEST);

@@ -189,11 +189,7 @@ export default {
         },
         showUnsubscribedToast(unsubscribed) {
             if (unsubscribed) {
-                this.$toast.open({
-                    message: 'You have been unsubscribed',
-                    position: 'top-right',
-                    type: 'success',
-                });
+                this.$toastSuccess('You have been unsubscribed');
             }
         },
         showSettings() {

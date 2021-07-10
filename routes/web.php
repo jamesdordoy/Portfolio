@@ -12,97 +12,146 @@
 */
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Back\PostController;
+use App\Http\Controllers\Back\GitHubController;
+use App\Http\Controllers\Back\LanguageController;
+use App\Http\Controllers\Back\ProjectController;
+use App\Http\Controllers\Back\IndexController as BackIndexController;
+use App\Http\Controllers\Back\ContactController as BackContactController;
+use App\Http\Controllers\ContactController as FrontContactController;
+use App\Http\Controllers\Front\IndexController as FrontIndexController;
 
-//Auth routes
-Route::post('/login', [
-    'as'   => 'front.post.login',
-    'uses' => 'Auth\LoginController@login',
-]);
+// Auth Routes
+Route::post(
+    '/login',
+    [LoginController::class, 'login']
+)->name('post.login');
 
-Route::post('/logout', [
-    'as'   => 'logout',
-    'uses' => 'Auth\LoginController@logout',
-]);
+Route::post(
+    '/logout',
+    [LoginController::class, 'logout']
+)->name('post.logout');
 
 // Mail Routes
-Route::post('/contact', [
-    'as'   => 'front.post.contact',
-    'uses' => 'ContactController@store',
-]);
+Route::post(
+    '/contact',
+    [FrontContactController::class, 'store']
+)->name('post.contact');
 
-Route::post('/newsletter', [
-    'as'   => 'front.post.newsletter',
-    'uses' => 'ContactController@newsletter',
-]);
+Route::post(
+    '/newsletter',
+    [FrontContactController::class, 'newsletter']
+)->name('post.newsletter');
 
-Route::get('/unsubscribe/{newsletter}', [
-    'as'   => 'front.get.unsubscribe',
-    'uses' => 'ContactController@newsletterUnsubscribe',
-])->middleware('signed');
+Route::get(
+    '/unsubscribe/{newsletter}',
+    [FrontContactController::class, 'newsletterUnsubscribe']
+)->middleware('signed')->name('get.newsletter.unsubscribe');
 
 //Frontend
 Route::namespace('Front')->group(function () {
-    Route::get('/', [
-        'as'   => 'front.get.index',
-        'uses' => 'IndexController@index',
-    ]);
 
-    Route::get('/languages', [
-        'as'   => 'front.get.languages',
-        'uses' => 'IndexController@languages',
-    ]);
+    Route::get(
+        '/',
+        [FrontIndexController::class, 'index']
+    )->name('get.front.index');
 
-    Route::get('/projects', [
-        'as'   => 'front.get.projects',
-        'uses' => 'IndexController@projects',
-    ]);
+    Route::get(
+        '/languages',
+        [FrontIndexController::class, 'languages']
+    )->name('get.front.languages');
 
-    Route::get('/tweets', [
-        'as'   => 'front.get.tweets',
-        'uses' => 'IndexController@tweets',
-    ]);
+    Route::get(
+        '/projects',
+        [FrontIndexController::class, 'projects']
+    )->name('get.front.projects');
 
-    Route::get('/posts', [
-        'as'   => 'front.get.posts',
-        'uses' => 'IndexController@posts',
-    ]);
+    Route::get(
+        '/tweets',
+        [FrontIndexController::class, 'tweets']
+    )->name('get.front.tweets');
 
-    Route::get('/posts/{id}', [
-        'as'   => 'front.get.posts.find',
-        'uses' => 'IndexController@findPost',
-    ]);
+    Route::get(
+        '/posts',
+        [FrontIndexController::class, 'posts']
+    )->name('get.front.posts');
 
-    Route::get('/timeline', [
-        'as'   => 'front.get.timeline',
-        'uses' => 'IndexController@timeline',
-    ]);
+    Route::get(
+        '/posts/{id}',
+        [FrontIndexController::class, 'findPost']
+    )->name('get.front.posts.find');
+
+    Route::get(
+        '/timeline',
+        [FrontIndexController::class, 'timeline']
+    )->name('get.front.timeline');
 });
 
 //Backend
 Route::middleware('auth')->group(function () {
     Route::namespace('Back')->group(function () {
         Route::prefix('api')->group(function () {
-            Route::get('/github', 'GitHubController@index');
-            Route::get('/languages', 'LanguageController@index');
-            Route::get('/languages/{id}', 'LanguageController@find');
-            Route::post('/languages/{id}', 'LanguageController@update');
-            Route::post('/languages', 'LanguageController@store');
-            Route::get('/contacts', 'ContactController@index');
-            Route::get('/projects', 'ProjectController@ajax');
-            Route::get('/posts', 'PostController@index');
+            Route::get(
+                '/github',
+                [GitHubController::class, 'index']
+            )->name('get.back.github');
+
+            Route::get(
+                '/languages',
+                [LanguageController::class, 'index']
+            )->name('get.back.languages');
+
+            Route::get(
+                '/languages/{id}',
+                [LanguageController::class, 'find']
+            )->name('get.back.languages.find');
+
+            Route::post(
+                '/languages',
+                [LanguageController::class, 'store']
+            )->name('post.back.languages.store');
+
+            Route::post(
+                '/languages/{id}',
+                [LanguageController::class, 'find']
+            )->name('post.back.languages.update');
+
+            Route::get(
+                '/contacts',
+                [BackContactController::class, 'index']
+            )->name('get.back.contacts');
+
+            Route::get(
+                '/projects',
+                [ProjectController::class, 'index']
+            )->name('get.back.projects');
+
+            Route::get(
+                '/posts',
+                [PostController::class, 'index']
+            )->name('get.back.posts');
         });
 
         Route::prefix('back')->group(function () {
-            Route::get('/', 'IndexController@index');
-            Route::get('/{wildcard}', 'IndexController@wildcard')->where('wildcard', '.*');
+            Route::get(
+                '/',
+                [BackIndexController::class, 'index']
+            )->name('get.back.index');
+
+            Route::get(
+                '/posts',
+                [BackIndexController::class, 'wildcard']
+            )->where('wildcard', '.*')->name('get.back.spa');
         });
     });
 });
 
 //Frontend
 Route::namespace('Front')->group(function () {
-    Route::get('/{wildcard}', [
-        'as'   => 'front.get.spa',
-        'uses' => 'IndexController@index',
-    ])->where('wildcard', '.*');
+    Route::get(
+        '/{wildcard}',
+        [FrontIndexController::class, 'index']
+    )->name('get.front.spa')
+    ->where('wildcard', '.*');
 });
