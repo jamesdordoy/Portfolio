@@ -2,13 +2,13 @@
 
 namespace App\Jobs;
 
+use App\Contracts\Services\ContactServiceContract;
 use App\Models\Newsletter;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use App\Contracts\Services\ContactServiceContract;
 
 class SendNewsletterEmailJob implements ShouldQueue
 {
