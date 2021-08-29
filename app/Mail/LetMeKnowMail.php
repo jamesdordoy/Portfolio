@@ -11,7 +11,7 @@ class LetMeKnowMail extends Mailable
 {
     use Queueable;
     use SerializesModels;
-    
+
     protected Contact $contact;
 
     /**
