@@ -61,7 +61,7 @@ return [
     ],
 
     'recipient' => [
-        'email' => env('MAIL_RECIPIENT', 'jamesdordoy@gmail.com'),
+        'email' => env('MAIL_RECIPIENT', 'hello@example.com'),
     ],
 
     /*

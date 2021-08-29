@@ -11,6 +11,7 @@
 |
 */
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Back\ContactController as BackContactController;
 use App\Http\Controllers\Back\GitHubController;
@@ -18,9 +19,9 @@ use App\Http\Controllers\Back\IndexController as BackIndexController;
 use App\Http\Controllers\Back\LanguageController;
 use App\Http\Controllers\Back\PostController;
 use App\Http\Controllers\Back\ProjectController;
+use App\Http\Controllers\Front\APIController as FrontAPIController;
 use App\Http\Controllers\ContactController as FrontContactController;
 use App\Http\Controllers\Front\IndexController as FrontIndexController;
-use Illuminate\Support\Facades\Route;
 
 // Auth Routes
 Route::post(
@@ -58,32 +59,27 @@ Route::namespace('Front')->group(function () {
 
     Route::get(
         '/languages',
-        [FrontIndexController::class, 'languages']
+        [FrontAPIController::class, 'languages']
     )->name('get.front.languages');
 
     Route::get(
         '/projects',
-        [FrontIndexController::class, 'projects']
+        [FrontAPIController::class, 'projects']
     )->name('get.front.projects');
 
     Route::get(
-        '/tweets',
-        [FrontIndexController::class, 'tweets']
-    )->name('get.front.tweets');
-
-    Route::get(
         '/posts',
-        [FrontIndexController::class, 'posts']
+        [FrontAPIController::class, 'posts']
     )->name('get.front.posts');
 
     Route::get(
         '/posts/{id}',
-        [FrontIndexController::class, 'findPost']
+        [FrontAPIController::class, 'findPost']
     )->name('get.front.posts.find');
 
     Route::get(
         '/timeline',
-        [FrontIndexController::class, 'timeline']
+        [FrontAPIController::class, 'timeline']
     )->name('get.front.timeline');
 });
 

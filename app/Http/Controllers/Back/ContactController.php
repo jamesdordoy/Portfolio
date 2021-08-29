@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Back;
 
-use App\Http\Controllers\Controller;
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use JamesDordoy\LaravelVueDatatable\Http\Resources\DataTableCollectionResource;
 
 class ContactController extends Controller
@@ -14,7 +14,7 @@ class ContactController extends Controller
      *
      * @param Request $request
      */
-    public function index(Request $request)
+    public function index(Request $request): DataTableCollectionResource
     {
         $limit = $request->input('length');
         $index = $request->input('column');

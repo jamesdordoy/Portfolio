@@ -14,7 +14,7 @@ class IndexController extends Controller
      *
      * @return View
      */
-    public function index()
+    public function index(): View
     {
         $languages = Language::count();
         $projectCompleteCount = Project::where('completed', true)->count();
@@ -35,7 +35,7 @@ class IndexController extends Controller
      *
      * @return View
      */
-    public function wildcard()
+    public function wildcard(): View
     {
         return view('back/home');
     }
@@ -45,7 +45,7 @@ class IndexController extends Controller
      *
      * @return View
      */
-    public function playground()
+    public function playground(): View
     {
         return view(
             'back.playground.index'

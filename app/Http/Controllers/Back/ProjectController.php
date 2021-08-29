@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Back;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\ProjectRequest;
 use App\Models\Project;
+use Illuminate\View\View;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\CreateProjectRequest;
 use JamesDordoy\LaravelVueDatatable\Http\Resources\DataTableCollectionResource;
 
 class ProjectController extends Controller
@@ -26,7 +27,7 @@ class ProjectController extends Controller
      *
      * @return Response
      */
-    public function index(Request $request)
+    public function index(Request $request): View
     {
         $id = Project::max('id') + 1;
         $projects = Project::where('private', 1)
@@ -65,7 +66,7 @@ class ProjectController extends Controller
      *
      * @return Response
      */
-    public function store(ProjectRequest $request)
+    public function store(CreateProjectRequest $request)
     {
         $file = $request->file('thumbnail');
 

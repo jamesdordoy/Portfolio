@@ -7,7 +7,7 @@ return [
     | Business Logic Services
     |--------------------------------------------------------------------------
     |
-    | This file is for storing the business logic for my portfolio. These are composable and can be pulled in form the DI container.
+    | This file is for storing the business logic for my portfolio. These are composable and can be pulled in from the DI container.
     |
     */
 

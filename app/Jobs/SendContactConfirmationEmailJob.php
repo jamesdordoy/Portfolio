@@ -34,7 +34,7 @@ class SendContactConfirmationEmailJob implements ShouldQueue
      *
      * @return void
      */
-    public function handle(ContactServiceContract $contactService)
+    public function handle(ContactServiceContract $contactService): void
     {
         $contactService->sendContactMeEmail($this->contact);
         $contactService->sendLetMeKnowEmail($this->contact);

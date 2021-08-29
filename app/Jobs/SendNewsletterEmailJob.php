@@ -34,7 +34,7 @@ class SendNewsletterEmailJob implements ShouldQueue
      *
      * @return void
      */
-    public function handle(ContactServiceContract $contactService)
+    public function handle(ContactServiceContract $contactService): void
     {
         $contactService->sendNewsLetterEmail($this->newsletter);
     }

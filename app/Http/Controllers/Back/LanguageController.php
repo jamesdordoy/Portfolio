@@ -28,7 +28,7 @@ class LanguageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index(Request $request): DataTableCollectionResource
     {
         $limit = $request->input('length');
         $index = $request->input('column');
@@ -47,7 +47,7 @@ class LanguageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function find(Request $request, int $id)
+    public function find(Request $request, int $id): Language
     {
         return Language::with('image')->find($id);
     }

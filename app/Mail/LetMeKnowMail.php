@@ -11,8 +11,8 @@ class LetMeKnowMail extends Mailable
 {
     use Queueable;
     use SerializesModels;
-
-    protected $contact;
+    
+    protected Contact $contact;
 
     /**
      * Create a new message instance.
@@ -29,7 +29,7 @@ class LetMeKnowMail extends Mailable
      *
      * @return $this
      */
-    public function build()
+    public function build(): LetMeKnowMail
     {
         return $this->view('mail.let-me-know', [
             'contact' => $this->contact,

@@ -14,7 +14,7 @@ use Illuminate\Http\Response;
 
 class ContactController extends Controller
 {
-    private $contactService;
+    private ContactServiceContract $contactService;
 
     /**
      * Create a new controller instance.
@@ -33,7 +33,7 @@ class ContactController extends Controller
      *
      * @return Response
      */
-    public function store(ContactRequest $request)
+    public function store(ContactRequest $request): Response
     {
         $contact = $this->contactService->store($request->only('name', 'email', 'message'));
 
@@ -53,7 +53,7 @@ class ContactController extends Controller
      *
      * @return Response
      */
-    public function newsletter(NewsletterRequest $request)
+    public function newsletter(NewsletterRequest $request): Response
     {
         $newsletter = $this->contactService->storeNewsletter($request->input('email'));
 
@@ -74,7 +74,7 @@ class ContactController extends Controller
      *
      * @return RedirectResponse|Response
      */
-    public function newsletterUnsubscribe(Request $request, Newsletter $newsletter)
+    public function newsletterUnsubscribe(Request $request, Newsletter $newsletter): RedirectResponse
     {
         if ($this->contactService->unsubscribeFromNewsletter($newsletter)) {
             return redirect()->route('get.front.index', ['unsubscribed' => 1]);

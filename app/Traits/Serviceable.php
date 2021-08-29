@@ -7,7 +7,7 @@ trait Serviceable
     /**
      * Get all of the Tags for the Project.
      */
-    public function registerServices()
+    public function registerServices(): void
     {
         foreach (config('services.jamesdordoy') as $service => $contract) {
             $this->app->bind("App\\Contracts\\Services\\{$contract}", "App\\Services\\{$service}");
