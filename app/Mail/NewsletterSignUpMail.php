@@ -6,7 +6,6 @@ use App\Models\Newsletter;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Support\Facades\URL;
 
 class NewsletterSignUpMail extends Mailable
 {
