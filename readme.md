@@ -13,3 +13,14 @@ cp .githooks/pre-commit .git/hooks/pre-commit
 ```bash
 chmod +x .git/hooks/pre-commit
 ```
+
+Running code sniffer using docker
+```bash
+docker run --rm \
+    -u "$(id -u):$(id -g)" \
+    -v $(pwd):/opt \
+    -w /opt \
+    laravelsail/php80-composer:latest \
+    php vendor/bin/phpcbf
+
+```

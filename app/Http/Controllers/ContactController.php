@@ -35,7 +35,7 @@ class ContactController extends Controller
      */
     public function store(ContactRequest $request)
     {
-        $contact = $this->contactService->store($request->all());
+        $contact = $this->contactService->store($request->only('name', 'email', 'message'));
 
         if ($contact) {
             SendContactConfirmationEmailJob::dispatch($contact);

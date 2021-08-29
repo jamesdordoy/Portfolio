@@ -21,7 +21,12 @@ RULESET=./phpcs.xml
 
 for FILE in $STAGED_FILES
 do
-  ./vendor/bin/phpcs --runtime-set ignore_warnings_on_exit --standard="$RULESET" "$FILE"
+  docker run --rm \
+    -u "$(id -u):$(id -g)" \
+    -v $(pwd):/opt \
+    -w /opt \
+    laravelsail/php80-composer:latest \
+    vendor/bin/phpcs --runtime-set ignore_warnings_on_exit --standard="$RULESET" "$FILE"
 
   if [[ "$?" == 0 ]]; then
     echo "\t\033[32mPHPCS Passed: $FILE\033[0m"

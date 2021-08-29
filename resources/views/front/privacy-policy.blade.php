@@ -4,4 +4,3 @@
     <privacy-policy-view>
     </privacy-policy-view>
 @endsection
-

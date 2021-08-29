@@ -4,4 +4,3 @@
     <router-view>
     </router-view>
 @endsection
-

@@ -12,10 +12,12 @@
     <meta name="msapplication-starturl" content="/">
     <meta name="theme-color" content="#e5e5e5">
 
+    <title>{{ config('app.name', 'James Dordoy - Portfolio') }}</title>
+
     <link rel="manifest" href="/manifest.json">
 
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154219567-1"></script>
@@ -29,8 +31,6 @@
 
     <link rel="stylesheet" href="{{ mix("/css/app.css") }}">
     <script src="{{ mix("/js/app.js") }}" defer></script>
-
-    <title>{{ config('app.name', 'James Dordoy - Portfolio') }}</title>
 </head>
 <body class="bg-black font-sans font-normal h-full">
     <div class='h-full' id="app">

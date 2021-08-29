@@ -3,10 +3,19 @@
 namespace App\Contracts\Services;
 
 use App\Models\Contact;
+use App\Models\Newsletter;
 
 interface ContactServiceContract
 {
-    public function sendContactMeEmail(Contact $contact);
+    public function store(array $data) : Contact;
 
-    public function sendLetMeKnowEmail(Contact $contact);
+    public function storeNewsletter(string $email) : Newsletter;
+
+    public function unsubscribeFromNewsletter(Newsletter $newsletter) : bool;
+
+    public function sendContactMeEmail(Contact $contact) : void;
+
+    public function sendLetMeKnowEmail(Contact $contact) : void;
+
+    public function sendNewsLetterEmail(Newsletter $newsletter) : void;
 }

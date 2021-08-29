@@ -12,22 +12,20 @@
     <meta name="msapplication-starturl" content="/">
     <meta name="theme-color" content="#e5e5e5">
 
+    <title>{{ config('app.name', 'James Dordoy - Portfolio') }}</title>
+
     <link rel="manifest" href="/manifest.json">
 
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
-
-
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+    
     <link rel="stylesheet" href="{{ mix("/css/app.css") }}">
-
-    <title>{{ config('app.name', 'James Dordoy - Portfolio') }}</title>
+    <script src="{{ mix("/js/app.js") }}" defer></script>
 </head>
-
 <body class="font-sans font-normal">
-<div id="app" class="h-full">
-    @yield('main')
-</div>
-@yield('scripts')
-<script src="{{ mix("/js/app.js") }}"></script>
+    <div id="app" class="h-full">
+        @yield('main')
+    </div>
+    @yield('scripts')
 </body>
 </html>
