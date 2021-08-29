@@ -36,7 +36,13 @@ Vue.use(VueTimeline);
 Vue.use(VueScrollTo);
 Vue.use(DataTable);
 Vue.use(VueRouter);
-Vue.use(VueReCaptcha, { siteKey: process.env.MIX_RECAPTCHA_SITE_KEY });
+
+
+if ( process.env.NODE_ENV === 'production' ) {
+    Vue.use(VueReCaptcha, { siteKey: process.env.MIX_PRODUCTION_RECAPTCHA_SITE_KEY });
+} else {
+    Vue.use(VueReCaptcha, { siteKey: process.env.MIX_LOCAL_RECAPTCHA_SITE_KEY });
+}
 
 Vue.filter('formatDate', FormatDateFunction);
 Vue.filter('dateDifference', DateDifferenceFunction);

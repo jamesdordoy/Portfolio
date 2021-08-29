@@ -19,6 +19,7 @@
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154219567-1"></script>
+    
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){ dataLayer.push(arguments); }
@@ -27,32 +28,14 @@
     </script>
 
     <link rel="stylesheet" href="{{ mix("/css/app.css") }}">
+    <script src="{{ mix("/js/app.js") }}" defer></script>
 
     <title>{{ config('app.name', 'James Dordoy - Portfolio') }}</title>
 </head>
 <body class="bg-black font-sans font-normal h-full">
-<div class='h-full' id="app">
-    @yield('main')
-</div>
-@yield('scripts')
-<script src="{{ mix("/js/app.js") }}"></script>
-<script>
-    if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function () {
-            navigator.serviceWorker.register('/sw.js').then(function (registration) {
-
-            }).catch(function (error) {
-
-            });
-        });
-    }
-    window.addEventListener('beforeinstallprompt', saveBeforeInstallPromptEvent);
-
-    function saveBeforeInstallPromptEvent(evt) {
-        deferredInstallPrompt = evt;
-        deferredInstallPrompt.prompt();
-    }
-
-</script>
+    <div class='h-full' id="app">
+        @yield('main')
+    </div>
+    @yield('scripts')
 </body>
 </html>
