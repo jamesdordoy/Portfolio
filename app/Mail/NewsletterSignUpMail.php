@@ -12,7 +12,7 @@ class NewsletterSignUpMail extends Mailable
     use Queueable;
     use SerializesModels;
 
-    protected $newsletter;
+    protected Newsletter $newsletter;
 
     /**
      * Create a new message instance.

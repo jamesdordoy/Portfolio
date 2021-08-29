@@ -12,7 +12,7 @@ class ContactMeMail extends Mailable
     use Queueable;
     use SerializesModels;
 
-    protected $contact;
+    protected Contact $contact;
 
     /**
      * Create a new message instance.
