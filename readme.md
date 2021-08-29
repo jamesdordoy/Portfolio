@@ -35,5 +35,4 @@ docker run --rm \
     -w /opt \
     laravelsail/php80-composer:latest \
     php vendor/bin/phpcbf
-
 ```
