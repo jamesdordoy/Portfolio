@@ -41,6 +41,7 @@
         "laravel/helpers": "^1.1",
         "laravel/horizon": "^5.7",
         "laravel/tinker": "^2.5",
+        "laravel/ui": "^3.2",
         "php-http/curl-client": "^2.0",
         "predis/predis": "^1.1",
         "sentry/sentry-laravel": "^2.8"
