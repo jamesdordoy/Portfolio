@@ -2,13 +2,13 @@
 
 namespace App\Jobs;
 
-use App\Contracts\Services\ContactServiceContract;
 use App\Models\Contact;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
+use App\Contracts\Services\ContactServiceContract;
 
 class SendContactConfirmationEmailJob implements ShouldQueue
 {
@@ -17,7 +17,7 @@ class SendContactConfirmationEmailJob implements ShouldQueue
     use Queueable;
     use SerializesModels;
 
-    private $contact;
+    private Contact $contact;
 
     /**
      * Create a new job instance.
