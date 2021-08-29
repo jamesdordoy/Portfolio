@@ -7,51 +7,56 @@ use App\Models\Newsletter;
 
 interface ContactServiceContract
 {
-
     /**
-     * store
+     * store.
      *
-     * @param  array $data
+     * @param array $data
+     *
      * @return Contact
      */
     public function store(array $data): Contact;
-    
+
     /**
-     * storeNewsletter
+     * storeNewsletter.
      *
-     * @param  mixed $email
+     * @param mixed $email
+     *
      * @return Newsletter
      */
     public function storeNewsletter(string $email): Newsletter;
-    
+
     /**
-     * unsubscribeFromNewsletter
+     * unsubscribeFromNewsletter.
      *
-     * @param  mixed $newsletter
+     * @param mixed $newsletter
+     *
      * @return bool
      */
     public function unsubscribeFromNewsletter(Newsletter $newsletter): bool;
-    
+
     /**
-     * sendContactMeEmail
+     * sendContactMeEmail.
      *
-     * @param  mixed $contact
+     * @param mixed $contact
+     *
      * @return void
      */
     public function sendContactMeEmail(Contact $contact): void;
-    
+
     /**
-     * sendLetMeKnowEmail
+     * sendLetMeKnowEmail.
      *
-     * @param  mixed $contact
+     * @param mixed $contact
+     *
      * @return void
      */
     public function sendLetMeKnowEmail(Contact $contact): void;
-    
+
     /**
-     * sendNewsLetterEmail
+     * sendNewsLetterEmail.
      *
-     * @param  mixed $newsletter
+     * @param mixed $newsletter
+     *
      * @return void
      */
     public function sendNewsLetterEmail(Newsletter $newsletter): void;

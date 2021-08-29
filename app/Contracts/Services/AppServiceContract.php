@@ -4,9 +4,8 @@ namespace App\Contracts\Services;
 
 interface AppServiceContract
 {
-
     /**
-     * registerServices
+     * registerServices.
      *
      * @return void
      */

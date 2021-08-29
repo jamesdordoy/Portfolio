@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Back;
 
-use App\Models\Project;
-use Illuminate\View\View;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateProjectRequest;
+use App\Models\Project;
+use Illuminate\Http\Request;
+use Illuminate\View\View;
 use JamesDordoy\LaravelVueDatatable\Http\Resources\DataTableCollectionResource;
 
 class ProjectController extends Controller
