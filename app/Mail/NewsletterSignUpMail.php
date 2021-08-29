@@ -32,11 +32,8 @@ class NewsletterSignUpMail extends Mailable
      */
     public function build()
     {
-        $unsubscribeUrl = URL::signedRoute('get.newsletter.unsubscribe', ['newsletter' => $this->newsletter->id]);
-
         return $this->view('mail.newsletter', [
             'newsletter' => $this->newsletter,
-            'url'        => $unsubscribeUrl,
         ]);
     }
 }
