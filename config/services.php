@@ -12,8 +12,6 @@ return [
     */
 
     'jamesdordoy' => [
-        'TwitterService'  => 'TwitterServiceContract',
-        'GitHubService'   => 'GithubServiceContract',
         'LanguageService' => 'LanguageServiceContract',
         'ContactService'  => 'ContactServiceContract',
         'AssetService'    => 'AssetServiceContract',

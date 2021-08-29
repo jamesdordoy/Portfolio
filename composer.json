@@ -31,30 +31,28 @@
     "license": "MIT",
     "name": "jamesdordoy/portfolio",
     "require": {
-        "php": ">=7.3",
-        "abraham/twitteroauth": "^0.7.4",
-        "biscolab/laravel-recaptcha": "^4",
+        "php": "^8.0",
+        "biscolab/laravel-recaptcha": "^5",
         "fideloper/proxy": "^4.2",
-        "graham-campbell/github": "^9",
         "guzzlehttp/guzzle": "^7.0.1",
         "intervention/image": "^2.5",
         "jamesdordoy/laravelvuedatatable": "1.*",
         "laravel/framework": "8.40.*",
         "laravel/helpers": "^1.1",
         "laravel/horizon": "^5.7",
-        "laravel/tinker": "^2.0",
-        "laravel/ui": "^2.0",
+        "laravel/tinker": "^2.5",
         "php-http/curl-client": "^2.0",
         "predis/predis": "^1.1",
-        "sentry/sentry-laravel": "^1.9"
+        "sentry/sentry-laravel": "^2.8"
     },
     "replace": {
         "php-http/guzzle6-adapter": "*"
     },
     "require-dev": {
-        "facade/ignition": "^2.3.6",
-        "fzaninotto/faker": "~1.4",
-        "mockery/mockery": "~1.0",
+        "facade/ignition": "^2.5",
+        "fakerphp/faker": "^1.9.1",
+        "laravel/sail": "^1.10",
+        "mockery/mockery": "^1.4.2",
         "nunomaduro/collision": "^5.0",
         "phpunit/phpunit": "^9.0",
         "squizlabs/php_codesniffer": "^3.6"
