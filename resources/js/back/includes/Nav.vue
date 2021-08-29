@@ -48,6 +48,26 @@
                         </back-nav-link>
                         <li>
                             <a
+                                href="/telescope"
+                                target="_blank"
+                                class="
+                                    no-underline
+                                    p-4
+                                    text-grey-dark
+                                    border-b
+                                    xl:border-0
+                                    hover:bg-grey-lightest
+                                    xl:hover:bg-transparent
+                                    xl:hover:text-blue
+                                    ml-2
+                                "
+                            >
+                                <i class="fa fa-server" aria-hidden="true"></i>
+                                Horizon
+                            </a>
+                        </li>
+                        <li>
+                            <a
                                 href="/horizon"
                                 target="_blank"
                                 class="
