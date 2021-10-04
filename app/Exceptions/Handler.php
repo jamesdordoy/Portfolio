@@ -12,18 +12,18 @@ class Handler extends ExceptionHandler
      *
      * @var array
      */
-    protected $dontReport = [
+    protected array $dontReport = [
         //
     ];
 
-    protected $redirectToIfUnauthenticated = '/login';
+    protected string $redirectToIfUnauthenticated = '/login';
 
     /**
      * A list of the inputs that are never flashed for validation exceptions.
      *
      * @var array
      */
-    protected $dontFlash = [
+    protected array $dontFlash = [
         'current_password',
         'password',
         'password_confirmation',
