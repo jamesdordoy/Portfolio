@@ -12,7 +12,7 @@ class Handler extends ExceptionHandler
      *
      * @var array
      */
-    protected array $dontReport = [
+    protected $dontReport = [
         //
     ];
 
@@ -23,7 +23,7 @@ class Handler extends ExceptionHandler
      *
      * @var array
      */
-    protected array $dontFlash = [
+    protected $dontFlash = [
         'current_password',
         'password',
         'password_confirmation',
