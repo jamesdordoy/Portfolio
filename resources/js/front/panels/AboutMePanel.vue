@@ -13,7 +13,7 @@
         >
             Hey, my name is James and im a Software Enginer living in Essex. I
             have been developing software for over eight years now and i have a
-            large range of experiance from creating simple Android applications
+            large range of experience from creating simple Android applications
             and Microsoft Excel dashboards to working on large scale CMS and CRM
             systems.
         </p>
