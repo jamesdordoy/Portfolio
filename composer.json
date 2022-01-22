@@ -37,7 +37,7 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "intervention/image": "^2.5",
         "jamesdordoy/laravelvuedatatable": "1.*",
-        "laravel/framework": "8.40.*",
+        "laravel/framework": "8.75.*",
         "laravel/helpers": "^1.1",
         "laravel/horizon": "^5.7",
         "laravel/telescope": "^4.6",
