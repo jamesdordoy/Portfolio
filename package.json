@@ -35,7 +35,7 @@
         "@growthbunker/vuetimeline": "^0.1.17",
         "@sentry/browser": "6.11.0",
         "@sentry/integrations": "^6.11.0",
-        "axios": "^0.21.1",
+        "axios": "^0.21.2",
         "laravel-mix": "^6.0.28",
         "laravel-vue-datatable": "0.6.0-beta.14",
         "lodash": "^4.17.21",
