@@ -14,16 +14,14 @@ use Illuminate\Http\Response;
 
 class ContactController extends Controller
 {
-    private ContactServiceContract $contactService;
-
     /**
      * Create a new controller instance.
      *
      * @param ContactServiceContract $contact
      */
-    public function __construct(ContactServiceContract $contact)
+    public function __construct(private ContactServiceContract $contact)
     {
-        $this->contactService = $contact;
+        //
     }
 
     /**
