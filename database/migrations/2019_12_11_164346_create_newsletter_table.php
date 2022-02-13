@@ -14,7 +14,7 @@ class CreateNewsletterTable extends Migration
     public function up()
     {
         Schema::create('newsletters', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->id();
             $table->string('email')->unique();
             $table->timestamps();
         });

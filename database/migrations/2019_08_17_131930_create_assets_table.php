@@ -14,8 +14,8 @@ class CreateAssetsTable extends Migration
     public function up()
     {
         Schema::create('assets', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('assetable_id');
+            $table->id();
+            $table->unsignedBigInteger('assetable_id');
             $table->string('assetable_type');
             $table->string('name');
             $table->string('file_name');

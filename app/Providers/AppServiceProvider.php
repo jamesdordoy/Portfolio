@@ -2,13 +2,19 @@
 
 namespace App\Providers;
 
-use App\Contracts\Services\AppServiceContract;
-use App\Traits\Serviceable;
 use Illuminate\Support\ServiceProvider;
 
-class AppServiceProvider extends ServiceProvider implements AppServiceContract
+class AppServiceProvider extends ServiceProvider
 {
-    use Serviceable;
+    /**
+     * Register any application services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        //
+    }
 
     /**
      * Bootstrap any application services.
@@ -18,15 +24,5 @@ class AppServiceProvider extends ServiceProvider implements AppServiceContract
     public function boot()
     {
         //
-    }
-
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        $this->registerServices();
     }
 }

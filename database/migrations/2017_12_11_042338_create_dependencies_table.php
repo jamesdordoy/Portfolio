@@ -14,11 +14,11 @@ class CreateDependenciesTable extends Migration
     public function up()
     {
         Schema::create('dependencies', function (Blueprint $table) {
-            $table->increments('id')->unsigned();
-            $table->string('name')->nullable(false);
-            $table->string('description')->nullable(false);
-            $table->string('type')->nullable(false);
-            $table->text('link')->nullable(false);
+            $table->id();
+            $table->string('name');
+            $table->string('description');
+            $table->string('type');
+            $table->text('link');
             $table->timestamps();
         });
     }

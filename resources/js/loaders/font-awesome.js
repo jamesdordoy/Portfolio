@@ -56,5 +56,7 @@ export function load(Vue) {
         }
     }
 
+    return library;
+
     Vue.component('FontAwesomeIcon', FontAwesomeIcon);
 }

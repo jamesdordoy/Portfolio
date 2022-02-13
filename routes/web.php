@@ -1,5 +1,14 @@
 <?php
 
+use Illuminate\Foundation\Application;
+use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TagsController;
+use App\Http\Controllers\ProjectsController;
+use App\Http\Controllers\LanguagesController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,142 +20,27 @@
 |
 */
 
-use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Back\ContactController as BackContactController;
-use App\Http\Controllers\Back\GitHubController;
-use App\Http\Controllers\Back\IndexController as BackIndexController;
-use App\Http\Controllers\Back\LanguageController;
-use App\Http\Controllers\Back\PostController;
-use App\Http\Controllers\Back\ProjectController;
-use App\Http\Controllers\ContactController as FrontContactController;
-use App\Http\Controllers\Front\APIController as FrontAPIController;
-use App\Http\Controllers\Front\IndexController as FrontIndexController;
-use Illuminate\Support\Facades\Route;
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
-// Auth Routes
-Route::post(
-    '/login',
-    [LoginController::class, 'login']
-)->name('post.login');
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
-Route::post(
-    '/logout',
-    [LoginController::class, 'logout']
-)->name('post.logout');
+    Route::get('/dashboard', function() {
+        return Inertia::render('Dashboard');
+    })->name('dashboard');
 
-// Mail Routes
-Route::post(
-    '/contact',
-    [FrontContactController::class, 'store']
-)->name('post.contact');
 
-Route::post(
-    '/newsletter',
-    [FrontContactController::class, 'newsletter']
-)->name('post.newsletter');
+    Route::get('/tags',  [TagsController::class, 'index'])->name('tags');
+    Route::get('/tags/create',  [TagsController::class, 'create'])->name('tags.create');
 
-Route::get(
-    '/unsubscribe/{newsletter}',
-    [FrontContactController::class, 'newsletterUnsubscribe']
-)->middleware('signed')->name('get.newsletter.unsubscribe');
+    Route::get('/languages', [LanguagesController::class, 'index'])->name('languages');
+    Route::get('/languages/create',  [LanguagesController::class, 'create'])->name('languages.create');
+    Route::post('/languages/create',  [LanguagesController::class, 'store'])->name('languages.store');
+    Route::delete('/languages/{id}',  [LanguagesController::class, 'destroy'])->name('languages.delete');
 
-//Frontend
-Route::namespace('Front')->group(function () {
-    Route::get(
-        '/',
-        [FrontIndexController::class, 'index']
-    )->name('get.front.index');
+    Route::get('/projects', [ProjectsController::class, 'index'])->name('projects');
 
-    Route::get(
-        '/languages',
-        [FrontAPIController::class, 'languages']
-    )->name('get.front.languages');
 
-    Route::get(
-        '/projects',
-        [FrontAPIController::class, 'projects']
-    )->name('get.front.projects');
-
-    Route::get(
-        '/posts',
-        [FrontAPIController::class, 'posts']
-    )->name('get.front.posts');
-
-    Route::get(
-        '/posts/{id}',
-        [FrontAPIController::class, 'findPost']
-    )->name('get.front.posts.find');
-
-    Route::get(
-        '/timeline',
-        [FrontAPIController::class, 'timeline']
-    )->name('get.front.timeline');
-});
-
-//Backend
-Route::middleware('auth')->group(function () {
-    Route::namespace('Back')->group(function () {
-        Route::prefix('api')->group(function () {
-            Route::get(
-                '/github',
-                [GitHubController::class, 'index']
-            )->name('get.back.github');
-
-            Route::get(
-                '/languages',
-                [LanguageController::class, 'index']
-            )->name('get.back.languages');
-
-            Route::get(
-                '/languages/{id}',
-                [LanguageController::class, 'find']
-            )->name('get.back.languages.find');
-
-            Route::post(
-                '/languages',
-                [LanguageController::class, 'store']
-            )->name('post.back.languages.store');
-
-            Route::post(
-                '/languages/{id}',
-                [LanguageController::class, 'find']
-            )->name('post.back.languages.update');
-
-            Route::get(
-                '/contacts',
-                [BackContactController::class, 'index']
-            )->name('get.back.contacts');
-
-            Route::get(
-                '/projects',
-                [ProjectController::class, 'index']
-            )->name('get.back.projects');
-
-            Route::get(
-                '/posts',
-                [PostController::class, 'index']
-            )->name('get.back.posts');
-        });
-
-        Route::prefix('back')->group(function () {
-            Route::get(
-                '/',
-                [BackIndexController::class, 'index']
-            )->name('get.back.index');
-
-            Route::get(
-                '/posts',
-                [BackIndexController::class, 'wildcard']
-            )->where('wildcard', '.*')->name('get.back.spa');
-        });
-    });
-});
-
-//Frontend
-Route::namespace('Front')->group(function () {
-    Route::get(
-        '/{wildcard}',
-        [FrontIndexController::class, 'index']
-    )->name('get.front.spa')
-    ->where('wildcard', '.*');
+    Route::get('/posts', function() {
+        return Inertia::render('Posts');
+    })->name('posts');
 });

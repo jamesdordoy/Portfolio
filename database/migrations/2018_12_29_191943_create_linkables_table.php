@@ -14,9 +14,9 @@ class CreateLinkablesTable extends Migration
     public function up()
     {
         Schema::create('linkables', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('link_id')->unsigned();
-            $table->integer('linkable_id')->unsigned();
+            $table->id();
+            $table->unsignedBigInteger('link_id');
+            $table->unsignedBigInteger('linkable_id');
             $table->string('linkable_type')->index();
             $table->timestamps();
 

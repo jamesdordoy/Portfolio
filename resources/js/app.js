@@ -1,87 +1,48 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
-import VueRouter from 'vue-router';
-import * as Sentry from '@sentry/browser';
-
-import DataTable from 'laravel-vue-datatable';
-import VueToast from 'vue-toast-notification';
-import VueTimeline from '@growthbunker/vuetimeline';
-import * as Integrations from '@sentry/integrations';
-import createPersistedState from 'vuex-persistedstate';
-import 'vue-toast-notification/dist/theme-default.css';
-import { VueReCaptcha } from 'vue-recaptcha-v3';
-
-import routes from './routes';
-import state from './state/state';
-import getters from './state/getters';
-import mutations from './state/mutations';
-
-import FormatDateFunction from './utils/format-date';
-import DateDifferenceFunction from './utils/date-difference';
-import CapitalizeStringFunction from './utils/capitalize-string';
-
 require('./bootstrap');
 
-window.moment = require('moment');
-const VueScrollTo = require('vue-scrollto');
+import { createApp, h } from 'vue';
+import { createStore } from 'vuex';
+import { createInertiaApp } from '@inertiajs/inertia-vue3';
+import { InertiaProgress } from '@inertiajs/progress';
+import Particles from "particles.vue3";
 
-Sentry.init({
-    dsn: process.env.MIX_SENTRY_DSN_PUBLIC,
-    integrations: [new Integrations.Vue({ Vue, attachProps: true })],
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+
+var VueScrollTo = require('vue-scrollto');
+
+const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
+
+import state from '@/State/state.js';
+import mutations from '@/State/mutations.js';
+
+const store = createStore({
+    state () {
+      return state
+    },
+    mutations,
 });
 
-Vue.use(Vuex);
-Vue.use(VueToast);
-Vue.use(VueTimeline);
-Vue.use(VueScrollTo);
-Vue.use(DataTable);
-Vue.use(VueRouter);
-
-
-if ( process.env.NODE_ENV === 'production' ) {
-    Vue.use(VueReCaptcha, { siteKey: process.env.MIX_PRODUCTION_RECAPTCHA_SITE_KEY });
-} else {
-    Vue.use(VueReCaptcha, { siteKey: process.env.MIX_LOCAL_RECAPTCHA_SITE_KEY });
-}
-
-Vue.filter('formatDate', FormatDateFunction);
-Vue.filter('dateDifference', DateDifferenceFunction);
-Vue.filter('capitalize', CapitalizeStringFunction);
-
 // Font Awesome Components
-const FontAwesomeLoader = require('./loaders/font-awesome');
+const FontAwesomeLoader = require('@/Loaders/font-awesome.js');
 
-FontAwesomeLoader.load(Vue);
+createInertiaApp({
+    title: (title) => `${title} - ${appName}`,
+    resolve: (name) => require(`./Pages/${name}.vue`),
+    setup({ el, app, props, plugin }) {
 
-// Custom Components
-const ComponentLoader = require('./loaders/components');
+        const libary = FontAwesomeLoader.load(app);
 
-ComponentLoader.load(Vue);
+        const vue = createApp({ render: () => h(app, props) })
+            .use(store)
+            .use(plugin)
+            .use(Particles)
+            .use(VueScrollTo)
+            .mixin({ methods: { route } })
+            .component("font-awesome-icon", FontAwesomeIcon)
+            .mount(el);
 
-// Sweet Alerts
-const SwalLoader = require('./loaders/swal');
-
-SwalLoader.load(Vue);
-
-const router = new VueRouter({
-    mode: 'history',
-    base: '/',
-    routes,
-    scrollBehavior() {
-        return { x: 0, y: 0 };
+        return vue;
     },
 });
 
-const store = new Vuex.Store({
-    state,
-    mutations,
-    getters,
-    plugins: [createPersistedState()],
-});
-
-// eslint-disable-next-line no-unused-vars
-const app = new Vue({
-    el: '#app',
-    router,
-    store,
-});
+InertiaProgress.init({ color: '#4B5563' });

@@ -3,35 +3,43 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use JamesDordoy\LaravelVueDatatable\Traits\LaravelVueDatatableTrait;
 
+/**
+ * Class Language
+ * @package App\Models
+ */
 class Language extends EloquentModel
 {
     use HasFactory;
-    use LaravelVueDatatableTrait;
 
-    protected $dataTableColumns = [
-        'id' => [
-            'search' => false,
-        ],
-        'name' => [
-            'search' => true,
-        ],
-        'description' => [
-            'search' => true,
-        ],
-    ];
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\MorphToMany
+     */
+    public function tags()
+    {
+        return $this->morphToMany(Tag::class, 'taggable');
+    }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function examples()
     {
         return $this->hasMany('App\Example');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\MorphOne
+     */
     public function image()
     {
         return $this->morphOne(Asset::class, 'assetable');
     }
 
+    /**
+     * @param $query
+     * @return mixed
+     */
     public function scopeOrdered($query)
     {
         return $query->orderBy('id', 'ASC');

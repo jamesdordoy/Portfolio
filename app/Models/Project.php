@@ -4,55 +4,28 @@ namespace App\Models;
 
 use App\Traits\Taggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use JamesDordoy\LaravelVueDatatable\Traits\LaravelVueDatatableTrait;
 
+/**
+ * Class Project
+ * @package App\Models
+ */
 class Project extends EloquentModel
 {
     use HasFactory;
     use Taggable;
-    use LaravelVueDatatableTrait;
 
-    protected $dataTableColumns = [
-        'id' => [
-            'search' => false,
-        ],
-        'name' => [
-            'search' => true,
-        ],
-        'owner' => [
-            'search' => true,
-        ],
-        'private' => [
-            'search' => true,
-        ],
-        'completed' => [
-            'search' => true,
-        ],
-        'link' => [
-            'search' => true,
-        ],
-    ];
-
-    protected $dataTableRelationships = [
-        'belongsTo' => [
-            //
-        ],
-        'hasOne' => [
-            //
-        ],
-        'hasMany' => [
-            //
-        ],
-        'belongsToMany' => [
-            //
-        ],
-    ];
-
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function dependencies()
     {
         return $this->hasMany('App\Dependencies');
     }
 
+    /**
+     * @param $query
+     * @return mixed
+     */
     public function scopePublicProjects($query)
     {
         return $query->where('private', 0)->with('tags')->latest();
