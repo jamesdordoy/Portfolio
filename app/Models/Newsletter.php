@@ -5,8 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 /**
- * Class Newsletter
- * @package App\Models
+ * Class Newsletter.
  */
 class Newsletter extends EloquentModel
 {
@@ -15,5 +14,5 @@ class Newsletter extends EloquentModel
     /**
      * @var string[]
      */
-    protected $dates = ['created_at', 'updated_at'];
+    protected $dates = array('created_at', 'updated_at');
 }

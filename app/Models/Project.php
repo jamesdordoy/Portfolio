@@ -6,8 +6,7 @@ use App\Traits\Taggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 /**
- * Class Project
- * @package App\Models
+ * Class Project.
  */
 class Project extends EloquentModel
 {
@@ -24,6 +23,7 @@ class Project extends EloquentModel
 
     /**
      * @param $query
+     *
      * @return mixed
      */
     public function scopePublicProjects($query)

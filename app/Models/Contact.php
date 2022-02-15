@@ -5,16 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 /**
- * Contact
+ * Contact.
  */
 class Contact extends EloquentModel
 {
     use HasFactory;
 
     /**
-     * Dates
+     * Dates.
      *
      * @var array
      */
-    protected $dates = ['created_at', 'updated_at'];
+    protected $dates = array('created_at', 'updated_at');
 }
