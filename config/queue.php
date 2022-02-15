@@ -1,6 +1,6 @@
 <?php
 
-return [
+return array(
 
     /*
     |--------------------------------------------------------------------------
@@ -28,30 +28,30 @@ return [
     |
     */
 
-    'connections' => [
+    'connections' => array(
 
-        'sync' => [
+        'sync' => array(
             'driver' => 'sync',
-        ],
+        ),
 
-        'database' => [
+        'database' => array(
             'driver' => 'database',
             'table' => 'jobs',
             'queue' => 'default',
             'retry_after' => 90,
             'after_commit' => false,
-        ],
+        ),
 
-        'beanstalkd' => [
+        'beanstalkd' => array(
             'driver' => 'beanstalkd',
             'host' => 'localhost',
             'queue' => 'default',
             'retry_after' => 90,
             'block_for' => 0,
             'after_commit' => false,
-        ],
+        ),
 
-        'sqs' => [
+        'sqs' => array(
             'driver' => 'sqs',
             'key' => env('AWS_ACCESS_KEY_ID'),
             'secret' => env('AWS_SECRET_ACCESS_KEY'),
@@ -60,18 +60,18 @@ return [
             'suffix' => env('SQS_SUFFIX'),
             'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
             'after_commit' => false,
-        ],
+        ),
 
-        'redis' => [
+        'redis' => array(
             'driver' => 'redis',
             'connection' => 'default',
             'queue' => env('REDIS_QUEUE', 'default'),
             'retry_after' => 90,
             'block_for' => null,
             'after_commit' => false,
-        ],
+        ),
 
-    ],
+    ),
 
     /*
     |--------------------------------------------------------------------------
@@ -84,10 +84,10 @@ return [
     |
     */
 
-    'failed' => [
+    'failed' => array(
         'driver' => env('QUEUE_FAILED_DRIVER', 'database-uuids'),
         'database' => env('DB_CONNECTION', 'mysql'),
         'table' => 'failed_jobs',
-    ],
+    ),
 
-];
+);

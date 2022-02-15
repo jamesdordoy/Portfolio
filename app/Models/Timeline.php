@@ -5,8 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 /**
- * Class Timeline
- * @package App\Models
+ * Class Timeline.
  */
 class Timeline extends EloquentModel
 {

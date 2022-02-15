@@ -5,8 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 /**
- * Class Tag
- * @package App\Models
+ * Class Tag.
  */
 class Tag extends EloquentModel
 {

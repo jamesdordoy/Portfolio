@@ -5,8 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 /**
- * Class Language
- * @package App\Models
+ * Class Language.
  */
 class Language extends EloquentModel
 {
@@ -38,6 +37,7 @@ class Language extends EloquentModel
 
     /**
      * @param $query
+     *
      * @return mixed
      */
     public function scopeOrdered($query)

@@ -21,9 +21,9 @@ class LanguageFactory extends Factory
      */
     public function definition()
     {
-        return [
-            'name'        => $this->faker->name,
+        return array(
+            'name' => $this->faker->name,
             'description' => $this->faker->text,
-        ];
+        );
     }
 }
