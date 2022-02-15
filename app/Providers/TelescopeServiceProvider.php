@@ -46,11 +46,13 @@ class TelescopeServiceProvider extends TelescopeApplicationServiceProvider
 
         Telescope::hideRequestParameters(['_token']);
 
-        Telescope::hideRequestHeaders([
-            'cookie',
-            'x-csrf-token',
-            'x-xsrf-token',
-        ]);
+        Telescope::hideRequestHeaders(
+            [
+                'cookie',
+                'x-csrf-token',
+                'x-xsrf-token',
+            ]
+        );
     }
 
     /**
@@ -62,10 +64,15 @@ class TelescopeServiceProvider extends TelescopeApplicationServiceProvider
      */
     protected function gate()
     {
-        Gate::define('viewTelescope', function ($user) {
-            return in_array($user->email, [
-                //
-            ]);
-        });
+        Gate::define(
+            'viewTelescope',
+            function ($user) {
+                return in_array(
+                    $user->email, [
+                        //
+                    ]
+                );
+            }
+        );
     }
 }

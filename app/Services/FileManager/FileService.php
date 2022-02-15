@@ -156,5 +156,4 @@ class FileService implements Filesystem
             throw $exception;
         }
     }
-
 }
