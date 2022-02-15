@@ -48,8 +48,7 @@ class TagsController extends Controller
 
         $callback = fn (InertiaTable $table) =>
             $table->addSearchRows($this->datatableSearchRows)
-                ->addColumns($this->datatableColumns);
-        
+            ->addColumns($this->datatableColumns);
 
         return Inertia::render(
             'Tags/Index',
