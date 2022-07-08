@@ -30,8 +30,6 @@
     import Welcome from '@/Jetstream/Welcome.vue'
     import JetstreamButton from '@/Jetstream/Button.vue'
     import JetstreamDangerButton from '@/Jetstream/DangerButton.vue'
-    import { InteractsWithQueryBuilder, Tailwind2 } from '@protonemedia/inertiajs-tables-laravel-query-builder';
-
 
     export default defineComponent({
         components: {

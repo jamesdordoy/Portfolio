@@ -3,7 +3,7 @@
     <div class="min-h-screen overflow-hidden relative">
         <Particles
             id="home-particles"
-            class="jd-particles"
+            class="jd-particles min-h-screen"
             :options="particlesConfig"
         />
     </div>
@@ -12,7 +12,7 @@
 <script>
     import { defineComponent } from 'vue'
     import { Head, Link } from '@inertiajs/inertia-vue3';
-    import ParticlesConfig from '@/Config/config.particles.js'
+    import ParticlesConfig from '@/Config/config.particles'
 
     export default defineComponent({
         components: {
