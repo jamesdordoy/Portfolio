@@ -1,10 +1,12 @@
 
 <template>
-    <Particles
-        id="home-particles"
-        class="jd-particles min-h-screen"
-        :options="particlesConfig"
-    />
+    <div class="min-h-screen overflow-hidden relative">
+        <Particles
+            id="home-particles"
+            class="jd-particles"
+            :options="particlesConfig"
+        />
+    </div>
 </template>
 
 <script>

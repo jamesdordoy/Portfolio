@@ -18,16 +18,10 @@
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-    
-        <!-- SASS -->
-        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-
-        <!-- Styles -->
-        <link rel="stylesheet" href="{{ mix('css/styles.css') }}">
 
         <!-- Scripts -->
         @routes
-        <script src="{{ mix('js/app.js') }}" defer></script>
+        @vite('resources/js/app.js')
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154219567-1"></script>

@@ -1,5 +1,5 @@
+
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 const icons = [
     'faCog',
@@ -20,35 +20,44 @@ const icons = [
     'faCode',
 ];
 
-// eslint-disable-next-line import/prefer-default-export
-export function load(Vue) {
-    // eslint-disable-next-line no-plusplus
+export default async function loadFontAwesome() {
     for (let i = 0; i < icons.length; i++) {
         try {
-            library.add(
-                // eslint-disable-next-line global-require
-                require('@fortawesome/free-solid-svg-icons')[icons[i]]
+            const icon = await import('@fortawesome/free-solid-svg-icons').then(
+                (module) => {
+                    return module[icons[i]]
+                }
             );
+
+    
+            library.add(icon);
         } catch (e) {
             if (i === 4) {
                 // console.log(e);
             }
         }
         try {
-            library.add(
-                // eslint-disable-next-line global-require
-                require('@fortawesome/free-brands-svg-icons')[icons[i]]
+            const icon = await import(
+                '@fortawesome/free-regular-svg-icons'
+            ).then(
+                (module) => {
+                    return module[icons[i]]
+                }
             );
+    
+            library.add(icon);
         } catch (e) {
             if (i === 4) {
                 // console.log(e);
             }
         }
+    
         try {
-            library.add(
-                // eslint-disable-next-line global-require
-                require('@fortawesome/free-regular-svg-icons')[icons[i]]
-            );
+            const icon = import(
+                '@fortawesome/free-brands-svg-icons'
+            ).then((module) => module[icons[i]]);
+    
+            library.add(icon);
         } catch (e) {
             if (i === 4) {
                 // console.log(e);
@@ -57,6 +66,4 @@ export function load(Vue) {
     }
 
     return library;
-
-    Vue.component('FontAwesomeIcon', FontAwesomeIcon);
 }

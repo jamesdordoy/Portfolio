@@ -3,8 +3,12 @@ export default {
     //     h: "500px"
     // },
     // fpsLimit: 60,
-    background: {
-        // color: '#000000'
+    "retina_detect": true,
+    "background": {
+      "repeat": "no-repeat",
+    },
+    fullScreen: {
+        enable: false
     },
     particles: {
         number: {
@@ -113,5 +117,4 @@ export default {
             },
         },
     },
-    retina_detect: true,
 };

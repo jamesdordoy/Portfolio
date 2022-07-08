@@ -18,10 +18,6 @@
                 <div class="overflow-hidden shadow-xl">
                     
                     <Table
-                        :filters="queryBuilderProps.filters"
-                        :search="queryBuilderProps.search"
-                        :columns="queryBuilderProps.columns"
-                        :on-update="setQueryBuilder"
                         :meta="tags"
                     >
                         <template #head>
@@ -57,20 +53,19 @@
     import { defineComponent } from 'vue'
     import AppLayout from '@/Layouts/AppLayout.vue'
     import Welcome from '@/Jetstream/Welcome.vue'
-    import JetstreamButton from '@/Jetstream/Button'
-    import JetstreamDangerButton from '@/Jetstream/DangerButton'
-    import { InteractsWithQueryBuilder, Tailwind2 } from '@protonemedia/inertiajs-tables-laravel-query-builder';
+    import JetstreamButton from '@/Jetstream/Button.vue'
+    import JetstreamDangerButton from '@/Jetstream/DangerButton.vue'
+    import { Table } from '@protonemedia/inertiajs-tables-laravel-query-builder';
 
 
     export default defineComponent({
         components: {
             AppLayout,
             Welcome,
-            Table: Tailwind2.Table,
+            Table,
             JetstreamButton,
             JetstreamDangerButton
         },
-        mixins: [InteractsWithQueryBuilder],
         props: {
             tags: Object
         }

@@ -28,8 +28,8 @@
     import { defineComponent } from 'vue'
     import AppLayout from '@/Layouts/AppLayout.vue'
     import Welcome from '@/Jetstream/Welcome.vue'
-    import JetstreamButton from '@/Jetstream/Button'
-    import JetstreamDangerButton from '@/Jetstream/DangerButton'
+    import JetstreamButton from '@/Jetstream/Button.vue'
+    import JetstreamDangerButton from '@/Jetstream/DangerButton.vue'
     import { InteractsWithQueryBuilder, Tailwind2 } from '@protonemedia/inertiajs-tables-laravel-query-builder';
 
 

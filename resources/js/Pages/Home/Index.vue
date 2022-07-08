@@ -32,9 +32,39 @@
             <AboutMe />
         </div>
 
+        <div>
+            <Projects />
+        </div>
+
         
     </div>
 </template>
+
+<script>
+    import { defineComponent } from 'vue'
+    import { Head, Link } from '@inertiajs/inertia-vue3';
+    import Particles from '@/Pages/Home/Partials/Particles.vue';
+    import Navigation from '@/Pages/Home/Partials/Navigation.vue';
+    import AboutMe from '@/Pages/Home/Partials/AboutMe.vue';
+    import Projects from '@/Pages/Home/Partials/Projects.vue';
+
+    export default defineComponent({
+        components: {
+            Head,
+            Link,
+            AboutMe,
+            Particles,
+            Navigation,
+            Projects,
+        },
+
+        props: {
+            canLogin: Boolean,
+            canRegister: Boolean,
+        }
+    })
+</script>
+
 
 <style scoped>
     .bg-gray-100 {
@@ -99,28 +129,3 @@
         }
     }
 </style>
-
-<script>
-    import { defineComponent } from 'vue'
-    import { Head, Link } from '@inertiajs/inertia-vue3';
-    import Particles from '@/Pages/Home/Partials/Particles.vue';
-    import Navigation from '@/Pages/Home/Partials/Navigation.vue';
-    import AboutMe from '@/Pages/Home/Partials/AboutMe.vue';
-
-    export default defineComponent({
-        components: {
-            Head,
-            Link,
-            AboutMe,
-            Particles,
-            Navigation,
-        },
-
-        props: {
-            canLogin: Boolean,
-            canRegister: Boolean,
-            laravelVersion: String,
-            phpVersion: String,
-        }
-    })
-</script>
