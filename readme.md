@@ -1,9 +1,9 @@
 # Portfolio
 My personal portfolio built with Laravel, Vue & Tailwind.
 
-## Requirements
+## Deps
 
-* [PHP](https://www.php.net/releases/8.0/en.php) 8.1+
+* [PHP](https://www.php.net/releases/8.1/en.php) 8.1+
 * [Vue.js](https://vuejs.org/) 3.x
 * [Laravel](http://laravel.com/docs/) 9.x
     * [Horizon](https://laravel.com/docs/8.x/horizon)

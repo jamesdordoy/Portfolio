@@ -4,9 +4,11 @@ namespace App\Services\FileManager;
 
 use Illuminate\Contracts\Filesystem\Filesystem;
 use App\Services\FileManager\Contracts\Diskable;
+use App\Services\FileManager\Models\File;
 use App\Services\FileManager\Models\Folder;
 use Exception;
 use Illuminate\Support\Facades\Storage;
+use SplFileInfo;
 
 class FileService implements Filesystem
 {
@@ -20,7 +22,7 @@ class FileService implements Filesystem
     }
 
     public function exists($path)
-    { 
+    {
         return $this->disk->exists($path);
     }
 
@@ -37,6 +39,15 @@ class FileService implements Filesystem
     public function put($path, $contents, $options = [])
     {
         return $this->disk->put($path, $contents, $options);
+    }
+
+    public function write($path, SplFileInfo $file,  $folder = null, $options = [])
+    {
+
+        if ($folder) {
+            $path = $folder->makePath($path);
+        }
+        return $this->disk->put($path, file_get_contents($file), $options);
     }
 
     public function writeStream($path, $resource, array $options = [])
@@ -134,7 +145,7 @@ class FileService implements Filesystem
             }
         } catch (Exception $exception) {
             //handle
-            throw $exception;
+            return $folder;
         }
     }
 
@@ -155,5 +166,55 @@ class FileService implements Filesystem
             //handle
             throw $exception;
         }
+    }
+
+    public function importFromDirectoryRecursive($directory = null)
+    {
+        foreach ($this->directories($directory) as $dir) {
+            $this->makeDirectory($dir);
+            $this->importFromDirectoryRecursive($dir);
+        }
+
+        $files = [];
+
+        if ($directory !== $this->directorySeperator) {
+            $folder = Folder::where('name', $directory)->first();
+
+            foreach ($this->files($directory) as $file) {
+                $files[] = $this->getOrCreateFileFromPath($file, $folder);
+            }
+        }
+
+
+        return $files;
+    }
+
+    public function getDisk()
+    {
+    }
+
+    public function getFileFromPath($path)
+    {
+        $resourceIdentifier = $this->getRemoteResourceIdentifierFromPath(
+            $path
+        );
+
+        return File::query()
+            ->where('file_disk_id', $this->fileDisk->id)
+            ->where('resource_identifier', $resourceIdentifier)
+            ->first();
+    }
+
+    public function getOrCreateFileFromPath($path, Folder $folder): File
+    {
+        $name = pathinfo($path, PATHINFO_FILENAME);
+        $extension = pathinfo($path, PATHINFO_EXTENSION);
+
+        return File::query()->firstOrCreate([
+            'disk_id' => $folder->disk->id,
+            'folder_id' => $folder->id,
+            'name' => $name,
+            'extension' => $extension,
+        ]);
     }
 }

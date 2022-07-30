@@ -11,6 +11,8 @@ class File extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['folder_id', 'name', 'original_filename', 'extension', 'mime_type', 'width', 'height', 'size'];
+
     public function disk()
     {
         return $this->morphOne(Disk::class, 'diskable');
@@ -20,7 +22,7 @@ class File extends Model
     {
         return $this->belongsTo(Folder::class);
     }
- 
+
     public function handle(): Attribute
     {
         return new Attribute(

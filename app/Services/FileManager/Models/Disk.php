@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
+use SplFileInfo;
 
 class Disk extends Model implements Diskable
 {
@@ -29,13 +30,25 @@ class Disk extends Model implements Diskable
     public function createFolder(string $name): Folder
     {
         $service = app(FileService::class, [$this]);
-        
+
         return $service->makeDirectory($name);
     }
 
-    public function createFile(SplFileObject $file): File
+    public function getFolder(string $name): Folder
     {
-        return new File;
+        $service = app(FileService::class, [$this]);
+
+        return $service->makeDirectory($name);
+    }
+
+    public function createFile(SplFileInfo $file): File
+    {
+        $file = new File;
+
+
+
+
+        return $file;
     }
 
     public function getType(): DiskTypes

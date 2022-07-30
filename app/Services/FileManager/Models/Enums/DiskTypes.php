@@ -6,5 +6,4 @@ enum DiskTypes: string
 {
     case Local = 'local';
     case Open  = 'public';
-
 }

@@ -27,17 +27,13 @@
 <script>
     import { defineComponent } from 'vue'
     import AppLayout from '@/Layouts/AppLayout.vue'
-    import Welcome from '@/Jetstream/Welcome.vue'
     import JetstreamButton from '@/Jetstream/Button.vue'
-    import JetstreamDangerButton from '@/Jetstream/DangerButton.vue'
     import CreateLanguageForm from '@/Pages/Languages/Partials/CreateLanguageForm.vue';
 
     export default defineComponent({
         components: {
             AppLayout,
-            Welcome,
             JetstreamButton,
-            JetstreamDangerButton,
             CreateLanguageForm
         },
         props: {

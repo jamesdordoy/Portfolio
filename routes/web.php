@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LanguagesController;
 use App\Http\Controllers\ProjectsController;
@@ -20,6 +21,8 @@ use Inertia\Inertia;
 */
 
 Route::get('/', array(HomeController::class, 'index'))->name('home');
+
+Route::post('/file', array(FileController::class, 'create'))->name('file-create');
 
 Route::middleware(array('auth:sanctum', 'verified'))->group(function () {
     Route::get('/dashboard', function () {

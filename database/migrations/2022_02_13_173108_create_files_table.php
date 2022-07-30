@@ -4,7 +4,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class() extends Migration {
+return new class() extends Migration
+{
     /**
      * Run the migrations.
      *
@@ -15,6 +16,7 @@ return new class() extends Migration {
         Schema::create('files', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('folder_id')->nullable();
+            $table->unsignedBigInteger('disk_id')->nullable();
             $table->string('name');
             $table->string('original_filename')->nullable();
             $table->string('extension');
@@ -25,6 +27,7 @@ return new class() extends Migration {
             $table->timestamps();
 
             $table->foreign('folder_id')->references('id')->on('folders');
+            $table->foreign('disk_id')->references('id')->on('disks');
         });
     }
 

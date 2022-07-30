@@ -5,6 +5,7 @@ namespace App\Services\FileManager\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Services\FileManager\Contracts\Folderable;
+use App\Services\FileManager\FileService;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Support\Str;
 use SplFileObject;
@@ -42,7 +43,7 @@ class Folder extends Model implements Folderable
 
     public function createFile(SplFileObject $file): File
     {
-        return new File;
+        $service = new FileService($this->fileDisk);
     }
 
     public function handle(): Attribute
@@ -50,5 +51,9 @@ class Folder extends Model implements Folderable
         return new Attribute(
             set: fn ($value) => Str::slug($value),
         );
+    }
+
+    public function makePath($path)
+    {
     }
 }
