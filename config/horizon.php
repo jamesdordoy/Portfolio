@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Str;
 
-return [
+return array(
 
     /*
     |--------------------------------------------------------------------------
@@ -70,7 +70,7 @@ return [
     |
     */
 
-    'middleware' => ['web'],
+    'middleware' => array('web'),
 
     /*
     |--------------------------------------------------------------------------
@@ -83,9 +83,9 @@ return [
     |
     */
 
-    'waits' => [
+    'waits' => array(
         'redis:default' => 60,
-    ],
+    ),
 
     /*
     |--------------------------------------------------------------------------
@@ -98,14 +98,14 @@ return [
     |
     */
 
-    'trim' => [
+    'trim' => array(
         'recent' => 60,
         'pending' => 60,
         'completed' => 60,
         'recent_failed' => 10080,
         'failed' => 10080,
         'monitored' => 10080,
-    ],
+    ),
 
     /*
     |--------------------------------------------------------------------------
@@ -118,12 +118,12 @@ return [
     |
     */
 
-    'metrics' => [
-        'trim_snapshots' => [
+    'metrics' => array(
+        'trim_snapshots' => array(
             'job' => 24,
             'queue' => 24,
-        ],
-    ],
+        ),
+    ),
 
     /*
     |--------------------------------------------------------------------------
@@ -164,31 +164,31 @@ return [
     |
     */
 
-    'defaults' => [
-        'supervisor-1' => [
+    'defaults' => array(
+        'supervisor-1' => array(
             'connection' => 'redis',
-            'queue' => ['default'],
+            'queue' => array('default'),
             'balance' => 'auto',
             'maxProcesses' => 1,
             'memory' => 128,
             'tries' => 1,
             'nice' => 0,
-        ],
-    ],
+        ),
+    ),
 
-    'environments' => [
-        'production' => [
-            'supervisor-1' => [
+    'environments' => array(
+        'production' => array(
+            'supervisor-1' => array(
                 'maxProcesses' => 10,
                 'balanceMaxShift' => 1,
                 'balanceCooldown' => 3,
-            ],
-        ],
+            ),
+        ),
 
-        'local' => [
-            'supervisor-1' => [
+        'local' => array(
+            'supervisor-1' => array(
                 'maxProcesses' => 3,
-            ],
-        ],
-    ],
-];
+            ),
+        ),
+    ),
+);
