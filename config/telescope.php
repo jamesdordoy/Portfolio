@@ -3,7 +3,7 @@
 use Laravel\Telescope\Http\Middleware\Authorize;
 use Laravel\Telescope\Watchers;
 
-return array(
+return [
 
     /*
     |--------------------------------------------------------------------------
@@ -44,12 +44,12 @@ return array(
 
     'driver' => env('TELESCOPE_DRIVER', 'database'),
 
-    'storage' => array(
-        'database' => array(
+    'storage' => [
+        'database' => [
             'connection' => env('DB_CONNECTION', 'mysql'),
             'chunk' => 1000,
-        ),
-    ),
+        ],
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -75,10 +75,10 @@ return array(
     |
     */
 
-    'middleware' => array(
+    'middleware' => [
         'web',
         Authorize::class,
-    ),
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -91,17 +91,17 @@ return array(
     |
     */
 
-    'only_paths' => array(
+    'only_paths' => [
         // 'api/*'
-    ),
+    ],
 
-    'ignore_paths' => array(
+    'ignore_paths' => [
         'nova-api*',
-    ),
+    ],
 
-    'ignore_commands' => array(
+    'ignore_commands' => [
         //
-    ),
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -114,58 +114,58 @@ return array(
     |
     */
 
-    'watchers' => array(
+    'watchers' => [
         Watchers\BatchWatcher::class => env('TELESCOPE_BATCH_WATCHER', true),
         Watchers\CacheWatcher::class => env('TELESCOPE_CACHE_WATCHER', true),
         Watchers\ClientRequestWatcher::class => env('TELESCOPE_CLIENT_REQUEST_WATCHER', true),
 
-        Watchers\CommandWatcher::class => array(
+        Watchers\CommandWatcher::class => [
             'enabled' => env('TELESCOPE_COMMAND_WATCHER', true),
-            'ignore' => array(),
-        ),
+            'ignore' => [],
+        ],
 
         Watchers\DumpWatcher::class => env('TELESCOPE_DUMP_WATCHER', true),
 
-        Watchers\EventWatcher::class => array(
+        Watchers\EventWatcher::class => [
             'enabled' => env('TELESCOPE_EVENT_WATCHER', true),
-            'ignore' => array(),
-        ),
+            'ignore' => [],
+        ],
 
         Watchers\ExceptionWatcher::class => env('TELESCOPE_EXCEPTION_WATCHER', true),
 
-        Watchers\GateWatcher::class => array(
+        Watchers\GateWatcher::class => [
             'enabled' => env('TELESCOPE_GATE_WATCHER', true),
-            'ignore_abilities' => array(),
+            'ignore_abilities' => [],
             'ignore_packages' => true,
-        ),
+        ],
 
         Watchers\JobWatcher::class => env('TELESCOPE_JOB_WATCHER', true),
         Watchers\LogWatcher::class => env('TELESCOPE_LOG_WATCHER', true),
         Watchers\MailWatcher::class => env('TELESCOPE_MAIL_WATCHER', true),
 
-        Watchers\ModelWatcher::class => array(
+        Watchers\ModelWatcher::class => [
             'enabled' => env('TELESCOPE_MODEL_WATCHER', true),
-            'events' => array('eloquent.*'),
+            'events' => ['eloquent.*'],
             'hydrations' => true,
-        ),
+        ],
 
         Watchers\NotificationWatcher::class => env('TELESCOPE_NOTIFICATION_WATCHER', true),
 
-        Watchers\QueryWatcher::class => array(
+        Watchers\QueryWatcher::class => [
             'enabled' => env('TELESCOPE_QUERY_WATCHER', true),
             'ignore_packages' => true,
             'slow' => 100,
-        ),
+        ],
 
         Watchers\RedisWatcher::class => env('TELESCOPE_REDIS_WATCHER', true),
 
-        Watchers\RequestWatcher::class => array(
+        Watchers\RequestWatcher::class => [
             'enabled' => env('TELESCOPE_REQUEST_WATCHER', true),
             'size_limit' => env('TELESCOPE_RESPONSE_SIZE_LIMIT', 64),
-            'ignore_status_codes' => array(),
-        ),
+            'ignore_status_codes' => [],
+        ],
 
         Watchers\ScheduleWatcher::class => env('TELESCOPE_SCHEDULE_WATCHER', true),
         Watchers\ViewWatcher::class => env('TELESCOPE_VIEW_WATCHER', true),
-    ),
-);
+    ],
+];
