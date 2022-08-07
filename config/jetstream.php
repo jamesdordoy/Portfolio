@@ -2,7 +2,7 @@
 
 use Laravel\Jetstream\Features;
 
-return [
+return array(
 
     /*
     |--------------------------------------------------------------------------
@@ -28,7 +28,7 @@ return [
      |
      */
 
-    'middleware' => ['web'],
+    'middleware' => array('web'),
 
     /*
     |--------------------------------------------------------------------------
@@ -41,13 +41,13 @@ return [
     |
     */
 
-    'features' => [
+    'features' => array(
         Features::termsAndPrivacyPolicy(),
         Features::profilePhotos(),
         // Features::api(),
         // Features::teams(['invitations' => true]),
         Features::accountDeletion(),
-    ],
+    ),
 
     /*
     |--------------------------------------------------------------------------
@@ -62,4 +62,4 @@ return [
 
     'profile_photo_disk' => 'public',
 
-];
+);
