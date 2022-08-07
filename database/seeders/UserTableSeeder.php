@@ -15,10 +15,10 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        User::factory()->create(array(
+        User::factory()->create([
             'name' => 'example',
             'email' => 'example@example.com',
             'password' => Hash::make('password'),
-        ));
+        ]);
     }
 }

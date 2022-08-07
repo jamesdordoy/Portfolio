@@ -3,7 +3,7 @@
 use App\Providers\RouteServiceProvider;
 use Laravel\Fortify\Features;
 
-return array(
+return [
 
     /*
     |--------------------------------------------------------------------------
@@ -89,7 +89,7 @@ return array(
     |
     */
 
-    'middleware' => array('web'),
+    'middleware' => ['web'],
 
     /*
     |--------------------------------------------------------------------------
@@ -102,10 +102,10 @@ return array(
     |
     */
 
-    'limiters' => array(
+    'limiters' => [
         'login' => 'login',
         'two-factor' => 'two-factor',
-    ),
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -131,15 +131,15 @@ return array(
     |
     */
 
-    'features' => array(
+    'features' => [
         Features::registration(),
         Features::resetPasswords(),
         // Features::emailVerification(),
         Features::updateProfileInformation(),
         Features::updatePasswords(),
-        Features::twoFactorAuthentication(array(
+        Features::twoFactorAuthentication([
             'confirmPassword' => true,
-        )),
-    ),
+        ]),
+    ],
 
-);
+];
