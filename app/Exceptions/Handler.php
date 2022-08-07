@@ -12,20 +12,20 @@ class Handler extends ExceptionHandler
      *
      * @var string[]
      */
-    protected $dontReport = [
+    protected $dontReport = array(
         //
-    ];
+    );
 
     /**
      * A list of the inputs that are never flashed for validation exceptions.
      *
      * @var string[]
      */
-    protected $dontFlash = [
+    protected $dontFlash = array(
         'current_password',
         'password',
         'password_confirmation',
-    ];
+    );
 
     /**
      * Register the exception handling callbacks for the application.
