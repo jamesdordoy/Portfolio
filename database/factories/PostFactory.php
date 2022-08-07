@@ -21,10 +21,10 @@ class PostFactory extends Factory
      */
     public function definition()
     {
-        return [
+        return array(
             'title' => $this->faker->name,
             'subtitle' => $this->faker->name,
             'body' => $this->faker->paragraphs(rand(1, 4), true),
-        ];
+        );
     }
 }

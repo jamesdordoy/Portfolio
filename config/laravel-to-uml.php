@@ -1,6 +1,6 @@
 <?php
 
-return [
+return array(
     /**
      * Default route to see the UML diagram.
      */
@@ -33,9 +33,9 @@ return [
 
     /**
      * You can define specific nomnoml styling.
-     * For more information: https://github.com/skanaar/nomnoml
+     * For more information: https://github.com/skanaar/nomnoml.
      */
-    'style' => [
+    'style' => array(
         'background' => '#071013',
         'stroke' => '#EBEBEB',
         'arrowSize' => 1,
@@ -57,13 +57,13 @@ return [
         'zoom' => 1,
         'acyclicer' => 'greedy',
         'ranker' => 'longest-path',
-    ],
+    ),
 
     /**
      * Specific files can be excluded if need be.
      * By default, all default Laravel classes are ignored.
      */
-    'excludeFiles' => [
+    'excludeFiles' => array(
         'Http/Kernel.php',
         'Console/Kernel.php',
         'Exceptions/Handler.php',
@@ -81,13 +81,13 @@ return [
         'Providers/BroadcastServiceProvider.php',
         'Providers/EventServiceProvider.php',
         'Providers/RouteServiceProvider.php',
-    ],
+    ),
 
     /**
      * In case you changed any of the default directories
      * for different classes, please amend below.
      */
-    'directories' => [
+    'directories' => array(
         'casts' => 'Casts/',
         'channels' => 'Broadcasting/',
         'commands' => 'Console/Commands/',
@@ -107,5 +107,5 @@ return [
         'requests' => 'Http/Requests/',
         'resources' => 'Http/Resources/',
         'rules' => 'Rules/',
-    ],
-];
+    ),
+);
