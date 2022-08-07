@@ -22,6 +22,14 @@ class Project extends EloquentModel
     }
 
     /**
+     * @return \Illuminate\Database\Eloquent\Relations\MorphToMany
+     */
+    public function tags()
+    {
+        return $this->morphToMany(Tag::class, 'taggable');
+    }
+
+    /**
      * @param $query
      *
      * @return mixed

@@ -3,8 +3,9 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
-class CreateTimelineTable extends Migration
+return new class() extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +14,7 @@ class CreateTimelineTable extends Migration
      */
     public function up()
     {
-        Schema::create('timeline', function (Blueprint $table) {
+        Schema::create('timeline_events', function (Blueprint $table) {
             $table->id();
             $table->timestamp('from')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('to')->default(DB::raw('CURRENT_TIMESTAMP'));
@@ -21,6 +22,7 @@ class CreateTimelineTable extends Migration
             $table->string('title');
             $table->string('icon');
             $table->text('body');
+            $table->boolean('hidden')->default(0);
             $table->timestamps();
         });
     }
@@ -32,6 +34,6 @@ class CreateTimelineTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('timeline');
+        Schema::dropIfExists('timeline_events');
     }
-}
+};

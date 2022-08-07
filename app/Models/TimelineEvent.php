@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 /**
- * Class Timeline.
+ * Class TimelineEvent.
  */
-class Timeline extends EloquentModel
+class TimelineEvent extends EloquentModel
 {
     use HasFactory;
 
     /**
      * @var string
      */
-    protected $table = 'timeline';
+    protected $table = 'timeline_events';
 }
