@@ -31,6 +31,7 @@ class Project extends EloquentModel
 
     /**
      * @param $query
+     *
      * @return mixed
      */
     public function scopePublicProjects($query)
