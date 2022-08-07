@@ -1,6 +1,6 @@
 <?php
 
-return array(
+return [
 
     /*
     |--------------------------------------------------------------------------
@@ -31,7 +31,7 @@ return array(
     |
     */
 
-    'guard' => array('web'),
+    'guard' => ['web'],
 
     /*
     |--------------------------------------------------------------------------
@@ -57,9 +57,9 @@ return array(
     |
     */
 
-    'middleware' => array(
+    'middleware' => [
         'verify_csrf_token' => App\Http\Middleware\VerifyCsrfToken::class,
         'encrypt_cookies' => App\Http\Middleware\EncryptCookies::class,
-    ),
+    ],
 
-);
+];
