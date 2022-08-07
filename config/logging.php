@@ -4,7 +4,7 @@ use Monolog\Handler\NullHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Handler\SyslogUdpHandler;
 
-return array(
+return [
 
     /*
     |--------------------------------------------------------------------------
@@ -47,72 +47,72 @@ return array(
     |
     */
 
-    'channels' => array(
-        'stack' => array(
+    'channels' => [
+        'stack' => [
             'driver' => 'stack',
-            'channels' => array('single'),
+            'channels' => ['single'],
             'ignore_exceptions' => false,
-        ),
+        ],
 
-        'single' => array(
+        'single' => [
             'driver' => 'single',
             'path' => storage_path('logs/laravel.log'),
             'level' => env('LOG_LEVEL', 'debug'),
-        ),
+        ],
 
-        'daily' => array(
+        'daily' => [
             'driver' => 'daily',
             'path' => storage_path('logs/laravel.log'),
             'level' => env('LOG_LEVEL', 'debug'),
             'days' => 14,
-        ),
+        ],
 
-        'slack' => array(
+        'slack' => [
             'driver' => 'slack',
             'url' => env('LOG_SLACK_WEBHOOK_URL'),
             'username' => 'Laravel Log',
             'emoji' => ':boom:',
             'level' => env('LOG_LEVEL', 'critical'),
-        ),
+        ],
 
-        'papertrail' => array(
+        'papertrail' => [
             'driver' => 'monolog',
             'level' => env('LOG_LEVEL', 'debug'),
             'handler' => SyslogUdpHandler::class,
-            'handler_with' => array(
+            'handler_with' => [
                 'host' => env('PAPERTRAIL_URL'),
                 'port' => env('PAPERTRAIL_PORT'),
-            ),
-        ),
+            ],
+        ],
 
-        'stderr' => array(
+        'stderr' => [
             'driver' => 'monolog',
             'level' => env('LOG_LEVEL', 'debug'),
             'handler' => StreamHandler::class,
             'formatter' => env('LOG_STDERR_FORMATTER'),
-            'with' => array(
+            'with' => [
                 'stream' => 'php://stderr',
-            ),
-        ),
+            ],
+        ],
 
-        'syslog' => array(
+        'syslog' => [
             'driver' => 'syslog',
             'level' => env('LOG_LEVEL', 'debug'),
-        ),
+        ],
 
-        'errorlog' => array(
+        'errorlog' => [
             'driver' => 'errorlog',
             'level' => env('LOG_LEVEL', 'debug'),
-        ),
+        ],
 
-        'null' => array(
+        'null' => [
             'driver' => 'monolog',
             'handler' => NullHandler::class,
-        ),
+        ],
 
-        'emergency' => array(
+        'emergency' => [
             'path' => storage_path('logs/laravel.log'),
-        ),
-    ),
+        ],
+    ],
 
-);
+];

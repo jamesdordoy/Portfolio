@@ -21,9 +21,9 @@ class LinkFactory extends Factory
      */
     public function definition()
     {
-        return array(
+        return [
             'name' => $this->faker->name,
             'link' => $this->faker->domainName,
-        );
+        ];
     }
 }

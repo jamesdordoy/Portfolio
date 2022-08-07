@@ -21,11 +21,11 @@ class TimelineEventFactory extends Factory
      */
     public function definition()
     {
-        return array(
+        return [
             'name' => $this->faker->name,
             'body' => $this->faker->text,
             'icon' => $this->faker->name,
             'title' => $this->faker->name,
-        );
+        ];
     }
 }

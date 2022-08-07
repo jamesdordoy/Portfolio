@@ -14,5 +14,5 @@ class Newsletter extends EloquentModel
     /**
      * @var string[]
      */
-    protected $dates = array('created_at', 'updated_at');
+    protected $dates = ['created_at', 'updated_at'];
 }
