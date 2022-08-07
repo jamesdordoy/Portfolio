@@ -1,6 +1,6 @@
 <?php
 
-return [
+return array(
 
     /*
     |--------------------------------------------------------------------------
@@ -33,8 +33,8 @@ return [
     |
     */
 
-    'mailers' => [
-        'smtp' => [
+    'mailers' => array(
+        'smtp' => array(
             'transport' => 'smtp',
             'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
             'port' => env('MAIL_PORT', 587),
@@ -43,42 +43,42 @@ return [
             'password' => env('MAIL_PASSWORD'),
             'timeout' => null,
             'auth_mode' => null,
-        ],
+        ),
 
-        'ses' => [
+        'ses' => array(
             'transport' => 'ses',
-        ],
+        ),
 
-        'mailgun' => [
+        'mailgun' => array(
             'transport' => 'mailgun',
-        ],
+        ),
 
-        'postmark' => [
+        'postmark' => array(
             'transport' => 'postmark',
-        ],
+        ),
 
-        'sendmail' => [
+        'sendmail' => array(
             'transport' => 'sendmail',
             'path' => '/usr/sbin/sendmail -bs',
-        ],
+        ),
 
-        'log' => [
+        'log' => array(
             'transport' => 'log',
             'channel' => env('MAIL_LOG_CHANNEL'),
-        ],
+        ),
 
-        'array' => [
+        'array' => array(
             'transport' => 'array',
-        ],
+        ),
 
-        'failover' => [
+        'failover' => array(
             'transport' => 'failover',
-            'mailers' => [
+            'mailers' => array(
                 'smtp',
                 'log',
-            ],
-        ],
-    ],
+            ),
+        ),
+    ),
 
     /*
     |--------------------------------------------------------------------------
@@ -91,10 +91,10 @@ return [
     |
     */
 
-    'from' => [
+    'from' => array(
         'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
         'name' => env('MAIL_FROM_NAME', 'Example'),
-    ],
+    ),
 
     /*
     |--------------------------------------------------------------------------
@@ -107,12 +107,12 @@ return [
     |
     */
 
-    'markdown' => [
+    'markdown' => array(
         'theme' => 'default',
 
-        'paths' => [
+        'paths' => array(
             resource_path('views/vendor/mail'),
-        ],
-    ],
+        ),
+    ),
 
-];
+);
