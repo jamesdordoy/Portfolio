@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Str;
 
-return [
+return array(
 
     /*
     |--------------------------------------------------------------------------
@@ -33,17 +33,17 @@ return [
     |
     */
 
-    'connections' => [
+    'connections' => array(
 
-        'sqlite' => [
+        'sqlite' => array(
             'driver' => 'sqlite',
             'url' => env('DATABASE_URL'),
             'database' => env('DB_DATABASE', database_path('database.sqlite')),
             'prefix' => '',
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
-        ],
+        ),
 
-        'mysql' => [
+        'mysql' => array(
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
             'host' => env('DB_HOST', '127.0.0.1'),
@@ -58,12 +58,12 @@ return [
             'prefix_indexes' => true,
             'strict' => true,
             'engine' => null,
-            'options' => extension_loaded('pdo_mysql') ? array_filter([
+            'options' => extension_loaded('pdo_mysql') ? array_filter(array(
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
-            ]) : [],
-        ],
+            )) : array(),
+        ),
 
-        'pgsql' => [
+        'pgsql' => array(
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),
             'host' => env('DB_HOST', '127.0.0.1'),
@@ -76,9 +76,9 @@ return [
             'prefix_indexes' => true,
             'schema' => 'public',
             'sslmode' => 'prefer',
-        ],
+        ),
 
-        'sqlsrv' => [
+        'sqlsrv' => array(
             'driver' => 'sqlsrv',
             'url' => env('DATABASE_URL'),
             'host' => env('DB_HOST', 'localhost'),
@@ -89,9 +89,9 @@ return [
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
-        ],
+        ),
 
-    ],
+    ),
 
     /*
     |--------------------------------------------------------------------------
@@ -117,31 +117,31 @@ return [
     |
     */
 
-    'redis' => [
+    'redis' => array(
 
         'client' => env('REDIS_CLIENT', 'phpredis'),
 
-        'options' => [
+        'options' => array(
             'cluster' => env('REDIS_CLUSTER', 'redis'),
             'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_database_'),
-        ],
+        ),
 
-        'default' => [
+        'default' => array(
             'url' => env('REDIS_URL'),
             'host' => env('REDIS_HOST', '127.0.0.1'),
             'password' => env('REDIS_PASSWORD', null),
             'port' => env('REDIS_PORT', '6379'),
             'database' => env('REDIS_DB', '0'),
-        ],
+        ),
 
-        'cache' => [
+        'cache' => array(
             'url' => env('REDIS_URL'),
             'host' => env('REDIS_HOST', '127.0.0.1'),
             'password' => env('REDIS_PASSWORD', null),
             'port' => env('REDIS_PORT', '6379'),
             'database' => env('REDIS_CACHE_DB', '1'),
-        ],
+        ),
 
-    ],
+    ),
 
-];
+);

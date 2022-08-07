@@ -22,39 +22,39 @@ class User extends Authenticatable
      *
      * @var string[]
      */
-    protected $fillable = [
+    protected $fillable = array(
         'name',
         'email',
         'password',
-    ];
+    );
 
     /**
      * The attributes that should be hidden for serialization.
      *
      * @var array
      */
-    protected $hidden = [
+    protected $hidden = array(
         'password',
         'remember_token',
         'two_factor_recovery_codes',
         'two_factor_secret',
-    ];
+    );
 
     /**
      * The attributes that should be cast.
      *
      * @var array
      */
-    protected $casts = [
+    protected $casts = array(
         'email_verified_at' => 'datetime',
-    ];
+    );
 
     /**
      * The accessors to append to the model's array form.
      *
      * @var array
      */
-    protected $appends = [
+    protected $appends = array(
         'profile_photo_url',
-    ];
+    );
 }
