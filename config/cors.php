@@ -1,6 +1,6 @@
 <?php
 
-return array(
+return [
 
     /*
     |--------------------------------------------------------------------------
@@ -15,20 +15,20 @@ return array(
     |
     */
 
-    'paths' => array('api/*', 'sanctum/csrf-cookie'),
+    'paths' => ['api/*', 'sanctum/csrf-cookie'],
 
-    'allowed_methods' => array('*'),
+    'allowed_methods' => ['*'],
 
-    'allowed_origins' => array('*'),
+    'allowed_origins' => ['*'],
 
-    'allowed_origins_patterns' => array(),
+    'allowed_origins_patterns' => [],
 
-    'allowed_headers' => array('*'),
+    'allowed_headers' => ['*'],
 
-    'exposed_headers' => array(),
+    'exposed_headers' => [],
 
     'max_age' => 0,
 
     'supports_credentials' => false,
 
-);
+];

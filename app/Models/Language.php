@@ -37,7 +37,6 @@ class Language extends EloquentModel
 
     /**
      * @param $query
-     *
      * @return mixed
      */
     public function scopeOrdered($query)

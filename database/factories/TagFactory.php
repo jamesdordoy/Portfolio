@@ -21,9 +21,9 @@ class TagFactory extends Factory
      */
     public function definition()
     {
-        return array(
+        return [
             'taggable_id' => $this->faker->name,
             'taggable_type' => $this->faker->name,
-        );
+        ];
     }
 }
