@@ -2,17 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use App\Models\Project;
 use Illuminate\View\View;
 use Inertia\Inertia;
 use Inertia\Response;
-use App\Models\Project;
 use ProtoneMedia\LaravelQueryBuilderInertiaJs\InertiaTable;
 use Spatie\QueryBuilder\QueryBuilder;
 
 /**
  * Class ProjectsController
- * @package App\Http\Controllers
  */
 class ProjectsController extends Controller
 {
@@ -45,8 +43,7 @@ class ProjectsController extends Controller
             ->paginate()
             ->withQueryString();
 
-        $callback = fn (InertiaTable $table) =>
-            $table->addSearchRows($this->datatableSearchRows)
+        $callback = fn (InertiaTable $table) => $table->addSearchRows($this->datatableSearchRows)
                 ->addColumns($this->datatableColumns);
 
         return Inertia::render(

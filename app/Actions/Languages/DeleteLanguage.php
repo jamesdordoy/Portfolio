@@ -2,18 +2,17 @@
 
 namespace App\Actions\Languages;
 
-use App\Models\Tag;
-use App\Models\Language;
 use App\Contracts\Actions\Languages\DeleteLanguageContract;
+use App\Models\Language;
+use App\Models\Tag;
 
 /**
  * Class DeleteLanguage
- * @package App\Actions\Languages
  */
 class DeleteLanguage implements DeleteLanguageContract
 {
     /**
-     * @param Language $langauge
+     * @param  Language  $langauge
      * @return bool
      */
     public function delete(Language $langauge): bool

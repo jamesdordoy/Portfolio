@@ -2,10 +2,8 @@
 
 namespace App\Services\FileManager\Contracts;
 
-use SplFileObject;
-use App\Services\FileManager\Models\Enums\DiskTypes;
 use App\Services\FileManager\Models\File;
-use App\Services\FileManager\Models\Folder;
+use SplFileObject;
 
 interface Folderable
 {

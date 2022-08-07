@@ -2,11 +2,11 @@
 
 namespace App\Services\FileManager;
 
-use Illuminate\Contracts\Filesystem\Filesystem;
 use App\Services\FileManager\Contracts\Diskable;
 use App\Services\FileManager\Models\File;
 use App\Services\FileManager\Models\Folder;
 use Exception;
+use Illuminate\Contracts\Filesystem\Filesystem;
 use Illuminate\Support\Facades\Storage;
 use SplFileInfo;
 
@@ -41,12 +41,12 @@ class FileService implements Filesystem
         return $this->disk->put($path, $contents, $options);
     }
 
-    public function write($path, SplFileInfo $file,  $folder = null, $options = [])
+    public function write($path, SplFileInfo $file, $folder = null, $options = [])
     {
-
         if ($folder) {
             $path = $folder->makePath($path);
         }
+
         return $this->disk->put($path, file_get_contents($file), $options);
     }
 
@@ -138,7 +138,6 @@ class FileService implements Filesystem
 
         try {
             if ($folder->save() && $this->disk->makeDirectory($fullPath)) {
-
                 $this->fileDisk->folders()->syncWithoutDetaching($folder);
 
                 return $folder;
@@ -157,7 +156,6 @@ class FileService implements Filesystem
 
         try {
             if ($folder->delete() && $this->disk->deleteDirectory($fullPath)) {
-
                 $this->fileDisk->folders()->detach($folder);
 
                 return $folder;
@@ -184,7 +182,6 @@ class FileService implements Filesystem
                 $files[] = $this->getOrCreateFileFromPath($file, $folder);
             }
         }
-
 
         return $files;
     }

@@ -2,25 +2,24 @@
 
 namespace App\Actions\Languages;
 
-use App\Models\Language;
 use App\Contracts\Actions\Languages\CreateLanguageContract;
+use App\Models\Language;
 
 /**
  * Class CreateLanguage
- * @package App\Actions\Languages
  */
 class CreateLanguage implements CreateLanguageContract
 {
     /**
-     * @param array $data
+     * @param  array  $data
      * @return Language
      */
     public function create(array $data): Language
     {
         return Language::create(
             [
-                'name' =>  $data['name'],
-                'description' =>  $data['description'],
+                'name' => $data['name'],
+                'description' => $data['description'],
             ]
         );
     }

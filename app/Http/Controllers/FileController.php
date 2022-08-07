@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Services\FileManager\FileService;
 use App\Services\FileManager\Models\Disk;
 use Illuminate\Http\Request;

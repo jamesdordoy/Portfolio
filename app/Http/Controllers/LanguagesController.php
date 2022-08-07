@@ -2,22 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use Illuminate\View\View;
-use Inertia\Inertia;
-use Inertia\Response;
-use App\Models\Language;
-use ProtoneMedia\LaravelQueryBuilderInertiaJs\InertiaTable;
-use Spatie\QueryBuilder\QueryBuilder;
-use Illuminate\Http\Request;
 use App\Actions\Languages\CreateLanguage;
 use App\Actions\Languages\DeleteLanguage;
 use App\Http\Requests\Languages\CreateLanguageRequest;
+use App\Models\Language;
+use Illuminate\Http\Request;
+use Illuminate\View\View;
+use Inertia\Inertia;
+use Inertia\Response;
 use Laravel\Jetstream\RedirectsActions;
+use ProtoneMedia\LaravelQueryBuilderInertiaJs\InertiaTable;
+use Spatie\QueryBuilder\QueryBuilder;
 
 /**
  * Class LanguagesController
- * @package App\Http\Controllers
  */
 class LanguagesController extends Controller
 {
@@ -52,8 +50,7 @@ class LanguagesController extends Controller
             ->paginate()
             ->withQueryString();
 
-        $callback = fn (InertiaTable $table) =>
-            $table->addSearchRows($this->datatableSearchRows)
+        $callback = fn (InertiaTable $table) => $table->addSearchRows($this->datatableSearchRows)
                 ->addColumns($this->datatableColumns);
 
         return Inertia::render(
@@ -75,7 +72,7 @@ class LanguagesController extends Controller
     }
 
     /**
-     * @param CreateLanguageRequest $request
+     * @param  CreateLanguageRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function store(CreateLanguageRequest $request)
@@ -90,7 +87,7 @@ class LanguagesController extends Controller
     }
 
     /**
-     * @param Request $request
+     * @param  Request  $request
      * @param $id
      * @return \Illuminate\Http\Response
      */
@@ -103,6 +100,5 @@ class LanguagesController extends Controller
         $language = $creator->delete($language);
 
         return $this->redirectPath($creator);
-
     }
 }

@@ -2,21 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use App\Models\Tag;
 use Illuminate\View\View;
 use Inertia\Inertia;
 use Inertia\Response;
-use App\Models\Tag;
 use ProtoneMedia\LaravelQueryBuilderInertiaJs\InertiaTable;
 use Spatie\QueryBuilder\QueryBuilder;
 
 /**
  * Class TagsController
- * @package App\Http\Controllers
  */
 class TagsController extends Controller
 {
-
     /**
      * @var array|string[]
      */
@@ -46,8 +43,7 @@ class TagsController extends Controller
             ->paginate()
             ->withQueryString();
 
-        $callback = fn (InertiaTable $table) =>
-            $table->addSearchRows($this->datatableSearchRows)
+        $callback = fn (InertiaTable $table) => $table->addSearchRows($this->datatableSearchRows)
             ->addColumns($this->datatableColumns);
 
         return Inertia::render(

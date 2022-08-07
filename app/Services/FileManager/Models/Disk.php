@@ -2,15 +2,14 @@
 
 namespace App\Services\FileManager\Models;
 
-use SplFileObject;
 use App\Services\FileManager\Contracts\Diskable;
-use App\Services\FileManager\Models\Enums\DiskTypes;
 use App\Services\FileManager\FileService;
+use App\Services\FileManager\Models\Enums\DiskTypes;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
+use Illuminate\Support\Str;
 use SplFileInfo;
 
 class Disk extends Model implements Diskable
@@ -44,9 +43,6 @@ class Disk extends Model implements Diskable
     public function createFile(SplFileInfo $file): File
     {
         $file = new File;
-
-
-
 
         return $file;
     }

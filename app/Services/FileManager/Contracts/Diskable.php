@@ -2,11 +2,11 @@
 
 namespace App\Services\FileManager\Contracts;
 
-use SplFileObject;
 use App\Services\FileManager\Models\Enums\DiskTypes;
 use App\Services\FileManager\Models\File;
 use App\Services\FileManager\Models\Folder;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
+use SplFileObject;
 
 interface Diskable
 {
@@ -38,7 +38,7 @@ interface Diskable
      */
     public function createFile(SplFileObject $file): File;
 
-     /**
+    /**
      * Get folders
      *
      * @return MorphToMany
