@@ -1,6 +1,6 @@
 <?php
 
-return [
+return array(
 
     /*
     |--------------------------------------------------------------------------
@@ -134,7 +134,7 @@ return [
     |
     */
 
-    'providers' => [
+    'providers' => array(
 
         /*
          * Laravel Framework Service Providers...
@@ -179,7 +179,7 @@ return [
         App\Providers\FortifyServiceProvider::class,
         App\Providers\JetstreamServiceProvider::class,
 
-    ],
+    ),
 
     /*
     |--------------------------------------------------------------------------
@@ -192,7 +192,7 @@ return [
     |
     */
 
-    'aliases' => [
+    'aliases' => array(
 
         'App' => Illuminate\Support\Facades\App::class,
         'Arr' => Illuminate\Support\Arr::class,
@@ -234,6 +234,6 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
-    ],
+    ),
 
-];
+);
