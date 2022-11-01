@@ -1,1 +1,0 @@
-import{_ as s}from"./plugin-vue_export-helper.21dcd24c.js";import{b as o,o as t,a as e}from"./app.8e3291d0.js";const c={},l=e("p",{class:"bg-blue-500"},null,-1),n=e("p",{class:"bg-teal-500"},null,-1),a=e("p",{class:"bg-purple-500"},null,-1),_=[l,n,a];function r(d,p){return t(),o("div",null,_)}var f=s(c,[["render",r]]);export{f as default};

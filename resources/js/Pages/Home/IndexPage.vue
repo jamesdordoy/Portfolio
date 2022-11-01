@@ -3,6 +3,34 @@
 
     <Navigation />
 
+    <div
+        id="settings-sidebar"
+        class="absolute py-2 min-h-full shadow border-r border-t w-1/4"
+        :class="`bg-${$store.getters.primaryThemeBg} border-${
+            $store.getters.primaryThemeColour
+        }-${$store.getters.primaryThemeColourShade} ${
+            displaySettings ? '' : 'hidden'
+        }`"
+    >
+        <transition
+            mode="out-in"
+            :enter-active-class="`animated ${$store.getters.primaryThemeRouterAnimation}`"
+        >
+            <Settings @toggle="closeSettings"></Settings>
+        </transition>
+    </div>
+
+    <div class="themeSettingsPanelToggleButton">
+        <button
+            aria-label="settings"
+            class="rounded-r p-2 text-lg text-white"
+            :class="`bg-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`"
+            @click="showSettings"
+        >
+            <font-awesome-icon icon="cog" />
+        </button>
+    </div>
+
     <div class="relative flex-auto items-top min-h-screen sm:pt-0">
         <div class="w-full px-10 py-12 relative" :class="``">
             <Particles> </Particles>
@@ -27,6 +55,7 @@ import { defineComponent } from 'vue';
 import { Head, Link } from '@inertiajs/inertia-vue3';
 import Particles from '@/Pages/Home/Partials/HomeParticles.vue';
 import AboutMe from '@/Pages/Home/Partials/AboutMe.vue';
+import Settings from '@/Pages/Home/Partials/Settings.vue';
 import ProjectsSection from '@/Pages/Home/Sections/ProjectsSection.vue';
 import MyExperianceSection from '@/Pages/Home/Sections/MyExperianceSection.vue';
 import Navigation from '@/Pages/Home/Partials/NavigationMenu.vue';
@@ -37,6 +66,7 @@ export default defineComponent({
         Link,
         AboutMe,
         Particles,
+        Settings,
         Navigation,
         ProjectsSection,
         MyExperianceSection,
@@ -54,6 +84,24 @@ export default defineComponent({
         timeline: {
             type: Array,
             default: () => [],
+        },
+    },
+    data() {
+        return {
+            displaySettings: false,
+        };
+    },
+    computed: {
+        primaryThemeBg() {
+            return this.$store.getters.primaryThemeBg;
+        },
+    },
+    methods: {
+        showSettings() {
+            this.displaySettings = true;
+        },
+        closeSettings() {
+            this.displaySettings = false;
         },
     },
 });
