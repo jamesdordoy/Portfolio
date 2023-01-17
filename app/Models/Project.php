@@ -2,16 +2,17 @@
 
 namespace App\Models;
 
-use App\Traits\Taggable;
+use App\Traits\HasTags;
+use App\Contracts\Traits\Taggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 /**
  * Class Project.
  */
-class Project extends EloquentModel
+class Project extends EloquentModel implements Taggable
 {
     use HasFactory;
-    use Taggable;
+    use HasTags;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -19,14 +20,6 @@ class Project extends EloquentModel
     public function dependencies()
     {
         return $this->hasMany('App\Dependencies');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\MorphToMany
-     */
-    public function tags()
-    {
-        return $this->morphToMany(Tag::class, 'taggable');
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\DAO;
+namespace App\Models\Data;
 
 use Spatie\LaravelData\Attributes\DataCollectionOf;
 use Spatie\LaravelData\Data;

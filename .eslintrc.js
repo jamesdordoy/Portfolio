@@ -10,4 +10,12 @@ module.exports = {
     parserOptions: {
         parser: '@typescript-eslint/parser',
     },
+    settings: {
+        'import/resolver': {
+            alias: {
+                map: [['@', './resources/js']],
+                extensions: ['.ts', '.js', '.jsx', '.json', '.vue'],
+            },
+        },
+    },
 }

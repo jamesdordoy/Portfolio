@@ -4,10 +4,10 @@ namespace App\Traits;
 
 use App\Models\Tag;
 
-trait Taggable
+trait HasTags
 {
     public function tags()
     {
-        return $this->morphToMany(Tag::class, 'taggables');
+        return $this->morphToMany(Tag::class, 'taggable');
     }
 }

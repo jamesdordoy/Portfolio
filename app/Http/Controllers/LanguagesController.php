@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Actions\Languages\CreateLanguage;
 use App\Actions\Languages\DeleteLanguage;
-use App\Http\Requests\Languages\CreateLanguageRequest;
 use App\Models\Language;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -39,15 +38,16 @@ class LanguagesController extends Controller
             ->paginate()
             ->withQueryString();
 
-        $callback = fn (InertiaTable $table) => $table->addSearchRows($this->datatableSearchRows)
-                ->addColumns($this->datatableColumns);
-
         return Inertia::render(
             'Languages/Index',
             [
                 'languages' => $languages,
             ]
-        )->table($callback);
+        )->table(
+            fn (InertiaTable $table) =>
+            $table->addSearchRows($this->datatableSearchRows)
+                ->addColumns($this->datatableColumns)
+        );
     }
 
     /**
@@ -60,11 +60,7 @@ class LanguagesController extends Controller
         );
     }
 
-    /**
-     * @param  CreateLanguageRequest  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(CreateLanguageRequest $request)
+    public function store(Request $request)
     {
         $data = $request->only('name', 'description');
 

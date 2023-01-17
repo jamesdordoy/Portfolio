@@ -2,22 +2,18 @@
 
 namespace App\Models;
 
+use App\Traits\HasTags;
+use App\Contracts\Traits\Taggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 /**
  * Class Language.
  */
-class Language extends EloquentModel
+class Language extends EloquentModel implements Taggable
 {
     use HasFactory;
+    use HasTags;
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\MorphToMany
-     */
-    public function tags()
-    {
-        return $this->morphToMany(Tag::class, 'taggable');
-    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\MorphOne

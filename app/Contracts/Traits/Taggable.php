@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Contracts\Tags;
+namespace App\Contracts\Traits;
 
 interface Taggable
 {

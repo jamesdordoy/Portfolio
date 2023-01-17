@@ -1,15 +1,28 @@
+<script setup>
+import { useStore } from 'vuex'
+
+const store = useStore()
+
+defineProps({
+    timeline: {
+        type: Array,
+        required: true,
+    },
+})
+</script>
+
 <template>
     <div>
         <h2
             class="varela mb-8 text-3xl"
-            :class="`text-${$store.getters.primaryThemeTextColour}`"
+            :class="`text-${store.getters.primaryThemeTextColour}`"
         >
             My Experience
         </h2>
         <div class="timeline-container">
             <div
                 class="timeline"
-                :class="`timeline-${$store.getters.primaryThemeColour}`"
+                :class="`timeline-${store.getters.primaryThemeColour}`"
             >
                 <div class="min-h-screen">
                     <div class="flex min-h-screen justify-center">
@@ -22,15 +35,14 @@
                                     v-if="event.id & 1"
                                     class="flex w-full flex-row"
                                 >
-                                    <!-- left col -->
                                     <div class="w-4/5 py-10">
                                         <div
                                             class="flex w-full flex-col border-b px-4 py-5 shadow"
-                                            :class="`bg-${$store.getters.primaryThemeBgDarker} border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`"
+                                            :class="`bg-${store.getters.primaryThemeBgDarker} border-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShade}`"
                                         >
                                             <div class="mb-2 flex justify-between text-gray-600">
                                                 <div
-                                                    :class="`text-${$store.getters.primaryThemeTextColour}`"
+                                                    :class="`text-${store.getters.primaryThemeTextColour}`"
                                                     class="font-bold"
                                                 >
                                                     <p
@@ -53,16 +65,15 @@
                                                 </div>
                                             </div>
                                             <p
-                                                :class="`text-${$store.getters.primaryThemeTextColour}`"
+                                                :class="`text-${store.getters.primaryThemeTextColour}`"
                                                 v-html="event.body"
                                             ></p>
                                         </div>
                                     </div>
-                                    <!--line column-->
                                     <div class="flex w-1/5 justify-center">
                                         <font-awesome-icon
                                             class="m-auto text-5xl"
-                                            :class="`text-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`"
+                                            :class="`text-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShade}`"
                                             :icon="event.icon"
                                         >
                                         </font-awesome-icon>
@@ -72,24 +83,22 @@
                                     v-else
                                     class="flex w-full flex-row"
                                 >
-                                    <!--line column-->
                                     <div class="flex w-1/5 justify-center">
                                         <font-awesome-icon
                                             class="m-auto text-5xl"
-                                            :class="`text-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`"
+                                            :class="`text-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShade}`"
                                             :icon="event.icon"
                                         >
                                         </font-awesome-icon>
                                     </div>
-                                    <!--right column-->
                                     <div class="w-4/5 px-2 py-10">
                                         <div
                                             class="flex w-full flex-col border-b px-4 py-5 shadow"
-                                            :class="`bg-${$store.getters.primaryThemeBgDarker} border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`"
+                                            :class="`bg-${store.getters.primaryThemeBgDarker} border-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShade}`"
                                         >
                                             <div class="mb-2 flex justify-between text-gray-600">
                                                 <div
-                                                    :class="`text-${$store.getters.primaryThemeTextColour}`"
+                                                    :class="`text-${store.getters.primaryThemeTextColour}`"
                                                     class="font-bold"
                                                 >
                                                     <p
@@ -100,7 +109,7 @@
                                                 </div>
                                             </div>
                                             <p
-                                                :class="`text-${$store.getters.primaryThemeTextColour}`"
+                                                :class="`text-${store.getters.primaryThemeTextColour}`"
                                                 v-html="event.body"
                                             ></p>
                                         </div>
@@ -114,14 +123,3 @@
         </div>
     </div>
 </template>
-
-<script>
-export default {
-    props: {
-        timeline: {
-            type: Array,
-            default: () => [],
-        },
-    },
-}
-</script>
