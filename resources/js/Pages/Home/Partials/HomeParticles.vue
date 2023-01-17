@@ -7,20 +7,20 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue';
-import ParticlesConfig from '@/Config/config.particles.js';
+import { defineComponent } from 'vue'
+import ParticlesConfig from '@/Config/config.particles.js'
 
 export default defineComponent({
     computed: {
         particlesConfig() {
-            return ParticlesConfig;
+            return ParticlesConfig
         },
     },
     methods: {
         particlesInit() {},
         particlesLoaded() {},
     },
-});
+})
 </script>
 
 <style></style>

@@ -2,28 +2,20 @@
     <app-layout title="Languages">
         <template #header>
             <div class="flex justify-between">
-                <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                    Languages
-                </h2>
-                <JetstreamButton :href="route('languages.create')">
-                    Create new Language
-                </JetstreamButton>
+                <h2 class="text-xl font-semibold leading-tight text-gray-800">Languages</h2>
+                <JetstreamButton :href="route('languages.create')"> Create new Language </JetstreamButton>
             </div>
         </template>
 
         <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <div class="overflow-hidden shadow-xl">
-                    <Table
-                        :meta="languages"
-                    >
+                    <Table :meta="languages">
                         <template #head>
                             <tr>
                                 <th @click.prevent="sortBy('id')">ID</th>
                                 <th @click.prevent="sortBy('name')">Name</th>
-                                <th @click.prevent="sortBy('description')">
-                                    Description
-                                </th>
+                                <th @click.prevent="sortBy('description')">Description</th>
                                 <th></th>
                             </tr>
                         </template>
@@ -37,12 +29,8 @@
                                 <td>{{ language.name }}</td>
                                 <td>{{ language.description }}</td>
                                 <td class="flex justify-end">
-                                    <JetstreamButton classes="mr-2">
-                                        Edit
-                                    </JetstreamButton>
-                                    <JetstreamDangerButton
-                                        @click="deleteLanguage(language.id)"
-                                    >
+                                    <JetstreamButton classes="mr-2"> Edit </JetstreamButton>
+                                    <JetstreamDangerButton @click="deleteLanguage(language.id)">
                                         Delete
                                     </JetstreamDangerButton>
                                 </td>
@@ -56,13 +44,13 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue';
-import AppLayout from '@/Layouts/AppLayout.vue';
-import Welcome from '@/Jetstream/Welcome.vue';
-import { Table } from '@protonemedia/inertiajs-tables-laravel-query-builder';
-import { Inertia } from '@inertiajs/inertia';
-import JetstreamButton from '@/Jetstream/Button.vue';
-import JetstreamDangerButton from '@/Jetstream/DangerButton.vue';
+import { defineComponent } from 'vue'
+import AppLayout from '@/Layouts/AppLayout.vue'
+import Welcome from '@/Jetstream/Welcome.vue'
+import { Table } from '@protonemedia/inertiajs-tables-laravel-query-builder'
+import { router } from '@inertiajs/vue3'
+import JetstreamButton from '@/Jetstream/Button.vue'
+import JetstreamDangerButton from '@/Jetstream/DangerButton.vue'
 
 export default defineComponent({
     components: {
@@ -78,14 +66,14 @@ export default defineComponent({
     data() {
         return {
             selectedLanguage: {},
-        };
+        }
     },
     methods: {
         deleteLanguage(id) {
-            const thing = Inertia.delete(this.route('languages.delete', id));
+            const thing = router.delete(this.route('languages.delete', id))
 
-            console.log(thing);
+            console.log(thing)
         },
     },
-});
+})
 </script>

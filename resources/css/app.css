@@ -2,23 +2,22 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-
 .themeSettingsPanelToggleButton {
-    @apply fixed z-10 left-0;
+    @apply fixed left-0 z-10;
     top: 50%;
 }
 
 #settings-sidebar {
     @apply left-0 z-20;
-    top: 82px;
+    top: 76px;
 }
 
 .front-nav-item {
-    @apply block uppercase py-4 mr-4 cursor-pointer no-underline;
+    @apply mr-4 block cursor-pointer py-4 uppercase no-underline;
 }
 
 .front-nav {
-    @apply flex items-center justify-between flex-wrap py-3 px-4 fixed top-0 right-0 left-0;
+    @apply fixed top-0 right-0 left-0 flex flex-wrap items-center justify-between py-3 px-4;
 
     z-index: 19;
 }

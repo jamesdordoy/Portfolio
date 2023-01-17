@@ -1,5 +1,4 @@
-
-import { library } from '@fortawesome/fontawesome-svg-core';
+import { library } from '@fortawesome/fontawesome-svg-core'
 
 const icons = [
     'faCog',
@@ -18,46 +17,37 @@ const icons = [
     'faBuilding',
     'faSchool',
     'faCode',
-];
+]
 
 export default async function loadFontAwesome() {
     for (let i = 0; i < icons.length; i++) {
         try {
-            const icon = await import('@fortawesome/free-solid-svg-icons').then(
-                (module) => {
-                    return module[icons[i]]
-                }
-            );
+            const icon = await import('@fortawesome/free-solid-svg-icons').then((module) => {
+                return module[icons[i]]
+            })
 
-    
-            library.add(icon);
+            library.add(icon)
         } catch (e) {
             if (i === 4) {
                 // console.log(e);
             }
         }
         try {
-            const icon = await import(
-                '@fortawesome/free-regular-svg-icons'
-            ).then(
-                (module) => {
-                    return module[icons[i]]
-                }
-            );
-    
-            library.add(icon);
+            const icon = await import('@fortawesome/free-regular-svg-icons').then((module) => {
+                return module[icons[i]]
+            })
+
+            library.add(icon)
         } catch (e) {
             if (i === 4) {
                 // console.log(e);
             }
         }
-    
+
         try {
-            const icon = import(
-                '@fortawesome/free-brands-svg-icons'
-            ).then((module) => module[icons[i]]);
-    
-            library.add(icon);
+            const icon = import('@fortawesome/free-brands-svg-icons').then((module) => module[icons[i]])
+
+            library.add(icon)
         } catch (e) {
             if (i === 4) {
                 // console.log(e);
@@ -65,5 +55,5 @@ export default async function loadFontAwesome() {
         }
     }
 
-    return library;
+    return library
 }

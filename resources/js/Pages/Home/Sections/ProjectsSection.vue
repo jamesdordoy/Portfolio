@@ -1,8 +1,23 @@
+<script setup>
+import Tag from '@/Components/ModelTag.vue'
+
+defineProps({
+    projects: {
+        type: Array,
+        required: true,
+    },
+})
+</script>
+
 <template>
     <div>
-        <span id="projects" class="jd-bookmark"> </span>
+        <span
+            id="projects"
+            class="jd-bookmark"
+        >
+        </span>
         <h2
-            class="text-3xl varela text-center mb-8"
+            class="varela mb-8 text-center text-3xl"
             :class="`text-${$store.getters.primaryThemeTextColour}`"
         >
             Projects
@@ -11,29 +26,29 @@
             <div
                 v-for="project in projects"
                 :key="project.id"
-                class="md:w-1/2 lg:w-1/3 w-full mb-4 px-2"
+                class="mb-4 w-full px-2 md:w-1/2 lg:w-1/3"
             >
                 <div
                     :key="project.id"
-                    class="project h-full sm:w-full border"
+                    class="project h-full border sm:w-full"
                     :class="`bg-${$store.getters.primaryThemeBgDarker} border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`"
                 >
-                    <a :href="project.link" rel="noreferrer" target="_blank">
+                    <a
+                        :href="project.link"
+                        rel="noreferrer"
+                        target="_blank"
+                    >
                         <img
                             style="height: 250px"
                             :alt="project.name"
                             :class="`border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`"
-                            class="border-b w-full"
-                            :src="
-                                project.icon
-                                    ? project.icon
-                                    : '/images/projects/simple-shopping.png'
-                            "
+                            class="w-full border-b"
+                            :src="project.icon ? project.icon : '/images/projects/simple-shopping.png'"
                         />
                     </a>
 
                     <div class="px-6 py-4">
-                        <div class="font-bold text-xl mb-2">
+                        <div class="mb-2 text-xl font-bold">
                             <a
                                 :href="project.link"
                                 rel="noreferrer"
@@ -62,20 +77,3 @@
         </section>
     </div>
 </template>
-
-<script>
-import Tag from '@/Components/ModelTag.vue';
-
-export default {
-    components: {
-        Tag,
-    },
-    props: {
-        projects: {
-            type: Array,
-            default: () => [],
-            required: true,
-        },
-    },
-};
-</script>

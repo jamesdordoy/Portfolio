@@ -10,14 +10,7 @@ class ResetUserPassword implements ResetsUserPasswords
 {
     use PasswordValidationRules;
 
-    /**
-     * Validate and reset the user's forgotten password.
-     *
-     * @param  mixed  $user
-     * @param  array  $input
-     * @return void
-     */
-    public function reset($user, array $input)
+    public function reset(mixed $user, array $input): void
     {
         Validator::make($input, [
             'password' => $this->passwordRules(),

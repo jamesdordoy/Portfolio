@@ -21,27 +21,16 @@ class LanguagesController extends Controller
 {
     use RedirectsActions;
 
-    /**
-     * @var array|string[]
-     */
     protected array $datatableColumns = [
         'id' => 'id',
         'name' => 'name',
         'description' => 'description',
     ];
 
-    /**
-     * @var array|string[]
-     */
     protected array $datatableSearchRows = [
         'name' => 'name',
     ];
 
-    /**
-     * Show the Tags Page.
-     *
-     * @return View
-     */
     public function index(): Response
     {
         $languages = QueryBuilder::for(Language::class)

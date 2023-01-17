@@ -23,17 +23,17 @@
         <div class="flex flex-wrap px-3 py-2">
             <div class="w-full">
                 <h3
-                    class="text-lg mb-2"
+                    class="mb-2 text-lg"
                     :class="`text-${$store.getters.primaryThemeTextColour}`"
                 >
                     Theme Mode
                 </h3>
             </div>
             <div class="w-full">
-                <div class="block relative">
+                <div class="relative block">
                     <select
                         :value="$store.getters.primaryTheme"
-                        class="block appearance-none w-full px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
+                        class="focus:shadow-outline block w-full appearance-none rounded px-4 py-2 pr-8 leading-tight shadow focus:outline-none"
                         :class="`bg-${$store.getters.primaryThemeBgLighter} text-${$store.getters.primaryThemeTextColour} focus:bg-${$store.getters.primaryThemeBgDarkest}`"
                         @change="updateTheme"
                     >
@@ -45,7 +45,7 @@
             </div>
             <div class="w-full">
                 <h3
-                    class="text-lg mb-2"
+                    class="mb-2 text-lg"
                     :class="`text-${$store.getters.primaryThemeTextColour}`"
                 >
                     Theme Colour
@@ -162,18 +162,15 @@
                 <hr class="my-2" />
                 <div class="w-full">
                     <h3
-                        class="text-lg mb-2"
+                        class="mb-2 text-lg"
                         :class="`text-${$store.getters.primaryThemeTextColour}`"
                     >
                         Theme Colour Shade
                     </h3>
                 </div>
                 <div class="w-full">
-                    <div class="block relative">
-                        <tailwind-range-input
-                            @input="updatePrimaryThemeColourShade"
-                        >
-                        </tailwind-range-input>
+                    <div class="relative block">
+                        <tailwind-range-input @input="updatePrimaryThemeColourShade"> </tailwind-range-input>
                     </div>
                     <hr class="my-2" />
                 </div>
@@ -183,8 +180,8 @@
 </template>
 
 <script>
-import ColourButton from '@/Components/ColourButton.vue';
-import TailwindRangeInput from '@/Components/TailwindRangeInput.vue';
+import ColourButton from '@/Components/ColourButton.vue'
+import TailwindRangeInput from '@/Components/TailwindRangeInput.vue'
 
 export default {
     components: {
@@ -199,28 +196,25 @@ export default {
     },
     computed: {
         getTheme() {
-            return this.$store.getters.primaryTheme;
+            return this.$store.getters.primaryTheme
         },
     },
     methods: {
         showSettings() {
-            this.$emit('toggle', false);
+            this.$emit('toggle', false)
         },
         updatePrimaryThemeColour(colour) {
-            this.$store.commit('setPrimaryThemeColor', colour);
+            this.$store.commit('setPrimaryThemeColor', colour)
         },
         updatePrimaryThemeColourShade(event) {
-            this.$store.commit('setPrimaryThemeColorShade', event.target.value);
+            this.$store.commit('setPrimaryThemeColorShade', event.target.value)
         },
         updateTheme(event) {
-            this.$store.commit('setPrimaryTheme', event.target.value);
+            this.$store.commit('setPrimaryTheme', event.target.value)
         },
         updateThemeRouterAnimation(event) {
-            this.$store.commit(
-                'setPrimaryThemeRouterAnimation',
-                event.target.value
-            );
+            this.$store.commit('setPrimaryThemeRouterAnimation', event.target.value)
         },
     },
-};
+}
 </script>

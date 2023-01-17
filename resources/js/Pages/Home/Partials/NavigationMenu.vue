@@ -1,15 +1,15 @@
 <template>
-    <div class="font-sans antialiased z-10">
+    <div class="z-10 font-sans antialiased">
         <nav
-            class="front-nav bg-secondary lg:px-10 border-b"
+            class="front-nav bg-secondary border-b lg:px-10"
             :class="`bg-${$store.getters.primaryThemeBg} border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`"
         >
-            <div class="flex items-center flex-no-shrink text-white mr-6">
+            <div class="flex-no-shrink mr-6 flex items-center text-white">
                 <svg
                     width="54"
                     height="54"
                     viewBox="0 0 54 54"
-                    class="fill-current h-8 w-8 mr-2"
+                    class="mr-2 h-8 w-8 fill-current"
                     xmlns="http://www.w3.org/2000/svg"
                     :class="`text-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`"
                 >
@@ -19,18 +19,18 @@
                 </svg>
                 <span
                     :class="`text-${$store.getters.primaryThemeTextColour}`"
-                    class="font-semibold text-xl tracking-tight varela"
+                    class="varela text-xl font-semibold tracking-tight"
                     >James Dordoy</span
                 >
             </div>
             <div class="block lg:hidden">
                 <button
-                    class="flex items-center px-3 py-2 border rounded"
+                    class="flex items-center rounded border px-3 py-2"
                     :class="`text-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade} border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade} hover:bg-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShadeDarker} hover:border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShadeDarker}`"
                     @click="toggle"
                 >
                     <svg
-                        class="fill-current h-3 w-3"
+                        class="h-3 w-3 fill-current"
                         viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg"
                     >
@@ -41,12 +41,12 @@
             </div>
             <div
                 :class="{ 'fadeIn ': open, hidden: !open }"
-                class="animated w-full flex-grow lg:flex lg:items-center lg:w-auto"
+                class="animated w-full flex-grow lg:flex lg:w-auto lg:items-center"
             >
                 <div class="text-sm sm:flex-grow">
                     <a
                         v-scroll-to="'#home'"
-                        class="front-nav-item lg:inline-block lg:mt-0"
+                        class="front-nav-item lg:mt-0 lg:inline-block"
                         :class="`text-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade} hover:text-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShadeLighter}`"
                         @click="closeMenu"
                     >
@@ -54,7 +54,7 @@
                     </a>
                     <a
                         v-scroll-to="'#about'"
-                        class="front-nav-item lg:inline-block lg:mt-0"
+                        class="front-nav-item lg:mt-0 lg:inline-block"
                         :class="`text-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade} hover:text-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShadeLighter}`"
                         @click="closeMenu"
                     >
@@ -62,7 +62,7 @@
                     </a>
                     <a
                         v-scroll-to="'#projects'"
-                        class="front-nav-item lg:inline-block lg:mt-0"
+                        class="front-nav-item lg:mt-0 lg:inline-block"
                         :class="`text-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade} hover:text-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShadeLighter}`"
                         @click="closeMenu"
                     >
@@ -70,7 +70,7 @@
                     </a>
                     <a
                         v-scroll-to="'#blog'"
-                        class="front-nav-item lg:inline-block lg:mt-0"
+                        class="front-nav-item lg:mt-0 lg:inline-block"
                         :class="`text-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade} hover:text-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShadeLighter}`"
                         @click="closeMenu"
                     >
@@ -78,25 +78,12 @@
                     </a>
                     <a
                         v-scroll-to="'#contact'"
-                        class="front-nav-item lg:inline-block lg:mt-0"
+                        class="front-nav-item lg:mt-0 lg:inline-block"
                         :class="`text-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade} hover:text-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShadeLighter}`"
                         @click="closeMenu"
                     >
                         Contact Me
                     </a>
-                </div>
-                <div class="my-2">
-                    <Link
-                        v-show="auth"
-                        as="button"
-                        href="/logout"
-                        method="post"
-                        class="bg-transparent font-semibold py-2 px-3 border hover:border-transparent no-underline"
-                        :class="`border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade} text-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade} hover:bg-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade} hover:text-${$store.getters.primaryThemeHoverTextColour}`"
-                    >
-                        <font-awesome-icon :icon="['fas', 'sign-out-alt']" />
-                        Logout
-                    </Link>
                 </div>
             </div>
         </nav>
@@ -104,7 +91,7 @@
 </template>
 
 <script>
-import { Link } from '@inertiajs/inertia-vue3';
+import { Link } from '@inertiajs/vue3'
 
 export default {
     components: {
@@ -119,26 +106,26 @@ export default {
     data() {
         return {
             open: false,
-        };
+        }
     },
     computed: {
         csrfToken() {
-            return null;
+            return null
         },
     },
     methods: {
         logout() {
-            document.getElementById('logout-form').submit();
+            document.getElementById('logout-form').submit()
         },
         toggle() {
-            this.open = !this.open;
+            this.open = !this.open
         },
         openMenu() {
-            this.open = true;
+            this.open = true
         },
         closeMenu() {
-            this.open = false;
+            this.open = false
         },
     },
-};
+}
 </script>

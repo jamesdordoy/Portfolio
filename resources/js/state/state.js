@@ -1,6 +1,6 @@
 export default {
-    primaryThemeColour: "blue",
+    primaryThemeColour: 'blue',
     primaryThemeColourShade: 500,
-    primaryTheme: "dark",
+    primaryTheme: 'dark',
     acceptedGDRP: false,
-};
+}

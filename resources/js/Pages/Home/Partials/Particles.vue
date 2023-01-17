@@ -1,6 +1,5 @@
-
 <template>
-    <div class="min-h-screen overflow-hidden relative">
+    <div class="relative min-h-screen overflow-hidden">
         <Particles
             id="home-particles"
             class="jd-particles min-h-screen"
@@ -10,30 +9,23 @@
 </template>
 
 <script>
-    import { defineComponent } from 'vue'
-    import { Head, Link } from '@inertiajs/inertia-vue3';
-    import ParticlesConfig from '@/Config/config.particles'
+import { defineComponent } from 'vue'
+import { Head, Link } from '@inertiajs/inertia-vue3'
+import ParticlesConfig from '@/Config/config.particles'
 
-    export default defineComponent({
-        components: {
-            Head,
-            Link,
+export default defineComponent({
+    components: {
+        Head,
+        Link,
+    },
+    computed: {
+        particlesConfig() {
+            return ParticlesConfig
         },
-        computed: {
-            particlesConfig() {
-                return ParticlesConfig;
-            }
-        },
-        methods: {
-            particlesInit() {
-
-            },
-            particlesLoaded() {
-                
-            }
-        }
-    })
+    },
+    methods: {
+        particlesInit() {},
+        particlesLoaded() {},
+    },
+})
 </script>
-
-
- 

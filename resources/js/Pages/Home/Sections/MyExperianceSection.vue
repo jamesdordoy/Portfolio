@@ -1,7 +1,7 @@
 <template>
     <div>
         <h2
-            class="text-3xl varela mb-8"
+            class="varela mb-8 text-3xl"
             :class="`text-${$store.getters.primaryThemeTextColour}`"
         >
             My Experience
@@ -12,46 +12,43 @@
                 :class="`timeline-${$store.getters.primaryThemeColour}`"
             >
                 <div class="min-h-screen">
-                    <div class="min-h-screen flex justify-center">
-                        <div class="w-full mx-2">
-                            <div v-for="event in timeline" :key="event.id">
+                    <div class="flex min-h-screen justify-center">
+                        <div class="mx-2 w-full">
+                            <div
+                                v-for="event in timeline"
+                                :key="event.id"
+                            >
                                 <div
                                     v-if="event.id & 1"
-                                    class="flex flex-row w-full"
+                                    class="flex w-full flex-row"
                                 >
                                     <!-- left col -->
                                     <div class="w-4/5 py-10">
                                         <div
-                                            class="flex flex-col w-full shadow px-4 py-5 border-b"
+                                            class="flex w-full flex-col border-b px-4 py-5 shadow"
                                             :class="`bg-${$store.getters.primaryThemeBgDarker} border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`"
                                         >
-                                            <div
-                                                class="text-gray-600 mb-2 flex justify-between"
-                                            >
+                                            <div class="mb-2 flex justify-between text-gray-600">
                                                 <div
                                                     :class="`text-${$store.getters.primaryThemeTextColour}`"
                                                     class="font-bold"
                                                 >
                                                     <p
-                                                        class="text-lg mb-1"
+                                                        class="mb-1 text-lg"
                                                         v-html="event.name"
                                                     ></p>
                                                     {{ event.title }}
                                                 </div>
                                                 <div class="flex flex-row">
                                                     <button
-                                                        class="text-blue-500 mr-2 hover:text-blue-300 transition duration-200"
+                                                        class="mr-2 text-blue-500 transition duration-200 hover:text-blue-300"
                                                     >
-                                                        <i
-                                                            class="far fa-edit"
-                                                        ></i>
+                                                        <i class="far fa-edit"></i>
                                                     </button>
                                                     <button
-                                                        class="text-red-500 hover:text-red-300 transition duration-200"
+                                                        class="text-red-500 transition duration-200 hover:text-red-300"
                                                     >
-                                                        <i
-                                                            class="far fa-trash-alt"
-                                                        ></i>
+                                                        <i class="far fa-trash-alt"></i>
                                                     </button>
                                                 </div>
                                             </div>
@@ -62,7 +59,7 @@
                                         </div>
                                     </div>
                                     <!--line column-->
-                                    <div class="w-1/5 flex justify-center">
+                                    <div class="flex w-1/5 justify-center">
                                         <font-awesome-icon
                                             class="m-auto text-5xl"
                                             :class="`text-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`"
@@ -71,9 +68,12 @@
                                         </font-awesome-icon>
                                     </div>
                                 </div>
-                                <div v-else class="flex flex-row w-full">
+                                <div
+                                    v-else
+                                    class="flex w-full flex-row"
+                                >
                                     <!--line column-->
-                                    <div class="w-1/5 flex justify-center">
+                                    <div class="flex w-1/5 justify-center">
                                         <font-awesome-icon
                                             class="m-auto text-5xl"
                                             :class="`text-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`"
@@ -84,18 +84,16 @@
                                     <!--right column-->
                                     <div class="w-4/5 px-2 py-10">
                                         <div
-                                            class="flex flex-col w-full shadow px-4 py-5 border-b"
+                                            class="flex w-full flex-col border-b px-4 py-5 shadow"
                                             :class="`bg-${$store.getters.primaryThemeBgDarker} border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`"
                                         >
-                                            <div
-                                                class="text-gray-600 mb-2 flex justify-between"
-                                            >
+                                            <div class="mb-2 flex justify-between text-gray-600">
                                                 <div
                                                     :class="`text-${$store.getters.primaryThemeTextColour}`"
                                                     class="font-bold"
                                                 >
                                                     <p
-                                                        class="text-lg mb-1"
+                                                        class="mb-1 text-lg"
                                                         v-html="event.name"
                                                     ></p>
                                                     {{ event.title }}
@@ -125,5 +123,5 @@ export default {
             default: () => [],
         },
     },
-};
+}
 </script>

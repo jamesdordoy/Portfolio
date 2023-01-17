@@ -1,7 +1,7 @@
 <template>
     <Head title="Home" />
 
-    <div class="relative flex-auto items-top min-h-screen sm:pt-0">
+    <div class="items-top relative min-h-screen flex-auto sm:pt-0">
         <Navigation />
 
         <!-- <div v-if="canLogin" class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
@@ -22,12 +22,10 @@
 
         <div
             id="settings-sidebar"
-            class="absolute py-2 min-h-full shadow border-r border-t w-1/4"
-            :class="`bg-${$store.getters.primaryThemeBg} border-${
-                $store.getters.primaryThemeColour
-            }-${$store.getters.primaryThemeColourShade} ${
-                displaySettings ? '' : 'hidden'
-            }`"
+            class="absolute min-h-full w-1/4 border-r border-t py-2 shadow"
+            :class="`bg-${$store.getters.primaryThemeBg} border-${$store.getters.primaryThemeColour}-${
+                $store.getters.primaryThemeColourShade
+            } ${displaySettings ? '' : 'hidden'}`"
         >
             <transition
                 mode="out-in"
@@ -64,13 +62,13 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue';
-import { Head, Link } from '@inertiajs/inertia-vue3';
-import Settings from '@/Pages/Home/Partials/Settings.vue';
-import Particles from '@/Pages/Home/Partials/Particles.vue';
-import Navigation from '@/Pages/Home/Partials/NavigationMenu.vue';
-import AboutMe from '@/Pages/Home/Partials/AboutMe.vue';
-import Projects from '@/Pages/Home/Partials/Projects.vue';
+import { defineComponent } from 'vue'
+import { Head, Link } from '@inertiajs/inertia-vue3'
+import Settings from '@/Pages/Home/Partials/Settings.vue'
+import Particles from '@/Pages/Home/Partials/Particles.vue'
+import Navigation from '@/Pages/Home/Partials/NavigationMenu.vue'
+import AboutMe from '@/Pages/Home/Partials/AboutMe.vue'
+import Projects from '@/Pages/Home/Partials/Projects.vue'
 
 export default defineComponent({
     components: {
@@ -90,22 +88,22 @@ export default defineComponent({
     data() {
         return {
             displaySettings: false,
-        };
+        }
     },
     computed: {
         primaryThemeBg() {
-            return this.$store.getters.primaryThemeBg;
+            return this.$store.getters.primaryThemeBg
         },
     },
     methods: {
         showSettings() {
-            this.displaySettings = true;
+            this.displaySettings = true
         },
         closeSettings() {
-            this.displaySettings = false;
+            this.displaySettings = false
         },
     },
-});
+})
 </script>
 
 <style scoped>

@@ -8,14 +8,10 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\View\View;
 use Inertia\Inertia;
 use Inertia\Response;
+use App\Models\DAO\Project as ProjectData;
 
 class HomeController extends Controller
 {
-    /**
-     * Show the Home Page.
-     *
-     * @return View
-     */
     public function index(): Response
     {
         $publicProjects = Project::with('tags')->publicProjects()->get();
@@ -25,8 +21,7 @@ class HomeController extends Controller
         return Inertia::render(
             'Home/IndexPage',
             [
-                'canLogin' => Route::has('login'),
-                'projects' => $publicProjects,
+                'projects' => ProjectData::collection($publicProjects),
                 'timeline' => $timeline,
             ]
         );

@@ -20,14 +20,6 @@ class Language extends EloquentModel
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function examples()
-    {
-        return $this->hasMany('App\Example');
-    }
-
-    /**
      * @return \Illuminate\Database\Eloquent\Relations\MorphOne
      */
     public function image()
