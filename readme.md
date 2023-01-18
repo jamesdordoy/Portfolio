@@ -1,3 +1,6 @@
+[![PHP Linting (Pint)](https://github.com/jamesdordoy/Portfolio/actions/workflows/pint.yml/badge.svg)](https://github.com/jamesdordoy/Portfolio/actions/workflows/pint.yml) [![Pest](https://github.com/jamesdordoy/Portfolio/actions/workflows/test.yml/badge.svg)](https://github.com/jamesdordoy/Portfolio/actions/workflows/test.yml)
+
+
 # Portfolio
 My personal portfolio built with Laravel, Vue & Tailwind.
 
