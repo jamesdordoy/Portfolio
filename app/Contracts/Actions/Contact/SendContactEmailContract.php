@@ -6,6 +6,5 @@ use App\Models\Contact;
 
 interface SendContactEmailContract
 {
-
     public function send(string $email): Contact;
 }

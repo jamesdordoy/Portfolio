@@ -6,7 +6,6 @@ use App\Actions\Languages\CreateLanguage;
 use App\Actions\Languages\DeleteLanguage;
 use App\Models\Language;
 use Illuminate\Http\Request;
-use Illuminate\View\View;
 use Inertia\Inertia;
 use Inertia\Response;
 use Laravel\Jetstream\RedirectsActions;

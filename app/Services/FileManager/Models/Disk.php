@@ -42,7 +42,7 @@ class Disk extends Model implements Diskable
 
     public function createFile(SplFileInfo $file): File
     {
-        $file = new File;
+        $file = new File();
 
         return $file;
     }

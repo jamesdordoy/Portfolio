@@ -22,7 +22,6 @@ class Project extends Data
         public bool $private,
         public DateTime $created_at,
         public DateTime $updated_at,
-
         #[DataCollectionOf(Tag::class)]
         public DataCollection $tags,
     ) {
