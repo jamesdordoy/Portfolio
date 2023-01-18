@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateNewsletterTable extends Migration
-{
+return new class () extends Migration {
     /**
      * Run the migrations.
      *
@@ -14,7 +13,7 @@ class CreateNewsletterTable extends Migration
     public function up()
     {
         Schema::create('newsletters', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->id();
             $table->string('email')->unique();
             $table->timestamps();
         });
@@ -29,4 +28,4 @@ class CreateNewsletterTable extends Migration
     {
         Schema::dropIfExists('newsletter');
     }
-}
+};

@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLinkablesTable extends Migration
-{
+return new class () extends Migration {
     /**
      * Run the migrations.
      *
@@ -14,9 +13,9 @@ class CreateLinkablesTable extends Migration
     public function up()
     {
         Schema::create('linkables', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('link_id')->unsigned();
-            $table->integer('linkable_id')->unsigned();
+            $table->id();
+            $table->unsignedBigInteger('link_id');
+            $table->unsignedBigInteger('linkable_id');
             $table->string('linkable_type')->index();
             $table->timestamps();
 
@@ -33,4 +32,4 @@ class CreateLinkablesTable extends Migration
     {
         Schema::dropIfExists('linkables');
     }
-}
+};

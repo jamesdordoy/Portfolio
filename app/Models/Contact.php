@@ -3,24 +3,15 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use JamesDordoy\LaravelVueDatatable\Traits\LaravelVueDatatableTrait;
 
 class Contact extends EloquentModel
 {
     use HasFactory;
-    use LaravelVueDatatableTrait;
 
-    protected $dataTableColumns = [
-        'id' => [
-            'search' => false,
-        ],
-        'name' => [
-            'search' => true,
-        ],
-        'email' => [
-            'search' => true,
-        ],
-    ];
-
+    /**
+     * Dates.
+     *
+     * @var array
+     */
     protected $dates = ['created_at', 'updated_at'];
 }

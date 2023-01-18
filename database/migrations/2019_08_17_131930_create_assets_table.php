@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAssetsTable extends Migration
-{
+return new class () extends Migration {
     /**
      * Run the migrations.
      *
@@ -14,8 +13,8 @@ class CreateAssetsTable extends Migration
     public function up()
     {
         Schema::create('assets', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('assetable_id');
+            $table->id();
+            $table->unsignedBigInteger('assetable_id');
             $table->string('assetable_type');
             $table->string('name');
             $table->string('file_name');
@@ -35,4 +34,4 @@ class CreateAssetsTable extends Migration
     {
         Schema::dropIfExists('assets');
     }
-}
+};

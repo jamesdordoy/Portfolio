@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDependenciesTable extends Migration
-{
+return new class () extends Migration {
     /**
      * Run the migrations.
      *
@@ -14,11 +13,11 @@ class CreateDependenciesTable extends Migration
     public function up()
     {
         Schema::create('dependencies', function (Blueprint $table) {
-            $table->increments('id')->unsigned();
-            $table->string('name')->nullable(false);
-            $table->string('description')->nullable(false);
-            $table->string('type')->nullable(false);
-            $table->text('link')->nullable(false);
+            $table->id();
+            $table->string('name');
+            $table->string('description');
+            $table->string('type');
+            $table->text('link');
             $table->timestamps();
         });
     }
@@ -32,4 +31,4 @@ class CreateDependenciesTable extends Migration
     {
         Schema::dropIfExists('dependencies');
     }
-}
+};

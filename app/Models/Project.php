@@ -2,57 +2,27 @@
 
 namespace App\Models;
 
-use App\Traits\Taggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use JamesDordoy\LaravelVueDatatable\Traits\LaravelVueDatatableTrait;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Project extends EloquentModel
 {
     use HasFactory;
-    use Taggable;
-    use LaravelVueDatatableTrait;
 
-    protected $dataTableColumns = [
-        'id' => [
-            'search' => false,
-        ],
-        'name' => [
-            'search' => true,
-        ],
-        'owner' => [
-            'search' => true,
-        ],
-        'private' => [
-            'search' => true,
-        ],
-        'completed' => [
-            'search' => true,
-        ],
-        'link' => [
-            'search' => true,
-        ],
-    ];
-
-    protected $dataTableRelationships = [
-        'belongsTo' => [
-            //
-        ],
-        'hasOne' => [
-            //
-        ],
-        'hasMany' => [
-            //
-        ],
-        'belongsToMany' => [
-            //
-        ],
-    ];
-
-    public function dependencies()
+    public function dependencies(): HasMany
     {
         return $this->hasMany('App\Dependencies');
     }
 
+    public function tags()
+    {
+        return $this->morphToMany(Tag::class, 'taggable');
+    }
+
+    /**
+     * @param $query
+     * @return mixed
+     */
     public function scopePublicProjects($query)
     {
         return $query->where('private', 0)->with('tags')->latest();

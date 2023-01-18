@@ -1,23 +1,23 @@
 export default {
     setPrimaryTheme(state, theme) {
-        state.primaryTheme = theme;
+        state.primaryTheme = theme
     },
     setPrimaryThemeColor(state, colour) {
-        state.primaryThemeColour = colour;
+        state.primaryThemeColour = colour
     },
     setPrimaryThemeColorShade(state, shade) {
-        state.primaryThemeColourShade = shade;
+        state.primaryThemeColourShade = shade
     },
     setPrimaryThemeRouterAnimation(state, animation) {
-        state.primaryThemeRouterAnimation = animation;
+        state.primaryThemeRouterAnimation = animation
     },
     userAcceptedGDRP(state) {
-        state.acceptedGDRP = true;
+        state.acceptedGDRP = true
     },
     login(state) {
-        state.isLoggedIn = true;
+        state.isLoggedIn = true
     },
     logout(state) {
-        state.isLoggedIn = false;
-    }
-};
+        state.isLoggedIn = false
+    },
+}

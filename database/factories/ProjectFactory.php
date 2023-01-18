@@ -22,10 +22,10 @@ class ProjectFactory extends Factory
     public function definition()
     {
         return [
-            'name'        => $this->faker->name,
+            'name' => $this->faker->name,
             'description' => $this->faker->text,
-            'owner'       => $this->faker->name,
-            'link'        => $this->faker->url(),
+            'owner' => $this->faker->name,
+            'link' => $this->faker->url(),
         ];
     }
 }

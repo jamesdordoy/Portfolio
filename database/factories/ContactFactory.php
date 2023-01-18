@@ -22,8 +22,8 @@ class ContactFactory extends Factory
     public function definition()
     {
         return [
-            'name'    => $this->faker->name,
-            'email'   => $this->faker->unique()->safeEmail,
+            'name' => $this->faker->name,
+            'email' => $this->faker->unique()->safeEmail,
             'message' => $this->faker->text,
         ];
     }
