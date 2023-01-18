@@ -6,13 +6,12 @@ use DateTime;
 use Spatie\LaravelData\Data;
 use Spatie\LaravelData\Optional;
 
-class Contact extends Data
+class Language extends Data
 {
     public function __construct(
-        public int $id,
+        public int|Optional $id,
         public string $name,
-        public string $email,
-        public string $message,
+        public string $description,
         public DateTime|Optional $created_at,
         public DateTime|Optional $updated_at,
     ) {

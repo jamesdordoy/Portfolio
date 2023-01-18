@@ -2,17 +2,14 @@
 
 namespace App\Models;
 
-use App\Traits\HasTags;
-use App\Contracts\Traits\Taggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 /**
  * Class Language.
  */
-class Language extends EloquentModel implements Taggable
+class Language extends EloquentModel
 {
     use HasFactory;
-    use HasTags;
 
 
     /**
@@ -21,6 +18,11 @@ class Language extends EloquentModel implements Taggable
     public function image()
     {
         return $this->morphOne(Asset::class, 'assetable');
+    }
+
+    public function tags()
+    {
+        return $this->morphToMany(Tag::class, 'taggable');
     }
 
     /**

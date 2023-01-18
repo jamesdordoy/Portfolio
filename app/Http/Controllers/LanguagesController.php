@@ -42,10 +42,6 @@ class LanguagesController extends Controller
             [
                 'languages' => $languages,
             ]
-        )->table(
-            fn (InertiaTable $table) =>
-            $table->addSearchRows($this->datatableSearchRows)
-                ->addColumns($this->datatableColumns)
         );
     }
 

@@ -38,7 +38,6 @@
             />
         </div>
         <p
-            contenteditable="true"
             class="about-me"
             :class="`text-${$store.getters.primaryThemeTextColour} text-center`"
         >

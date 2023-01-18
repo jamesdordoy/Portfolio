@@ -63,13 +63,6 @@
                                 </jet-nav-link>
 
                                 <jet-nav-link
-                                    :external="true"
-                                    :href="route('telescope')"
-                                >
-                                    Telescope
-                                </jet-nav-link>
-
-                                <jet-nav-link
                                     target="_blank"
                                     :external="true"
                                     :href="`https://stats.jamesdordoy.co.uk/`"
@@ -83,9 +76,9 @@
                             <div class="relative ml-3">
                                 <!-- Teams Dropdown -->
                                 <jet-dropdown
+                                    v-if="$page.props.jetstream.hasTeamFeatures"
                                     align="right"
                                     width="60"
-                                    v-if="$page.props.jetstream.hasTeamFeatures"
                                 >
                                     <template #trigger>
                                         <span class="inline-flex rounded-md">
@@ -125,8 +118,8 @@
                                                 </jet-dropdown-link>
 
                                                 <jet-dropdown-link
-                                                    :href="route('teams.create')"
                                                     v-if="$page.props.jetstream.canCreateTeams"
+                                                    :href="route('teams.create')"
                                                 >
                                                     Create New Team
                                                 </jet-dropdown-link>
@@ -221,8 +214,8 @@
                                         <jet-dropdown-link :href="route('profile.show')"> Profile </jet-dropdown-link>
 
                                         <jet-dropdown-link
-                                            :href="route('api-tokens.index')"
                                             v-if="$page.props.jetstream.hasApiFeatures"
+                                            :href="route('api-tokens.index')"
                                         >
                                             API Tokens
                                         </jet-dropdown-link>
@@ -241,8 +234,8 @@
                         <!-- Hamburger -->
                         <div class="-mr-2 flex items-center sm:hidden">
                             <button
-                                @click="showingNavigationDropdown = !showingNavigationDropdown"
                                 class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 transition hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none"
+                                @click="showingNavigationDropdown = !showingNavigationDropdown"
                             >
                                 <svg
                                     class="h-6 w-6"
@@ -319,9 +312,9 @@
                             </jet-responsive-nav-link>
 
                             <jet-responsive-nav-link
+                                v-if="$page.props.jetstream.hasApiFeatures"
                                 :href="route('api-tokens.index')"
                                 :active="route().current('api-tokens.index')"
-                                v-if="$page.props.jetstream.hasApiFeatures"
                             >
                                 API Tokens
                             </jet-responsive-nav-link>
@@ -349,9 +342,9 @@
                                 </jet-responsive-nav-link>
 
                                 <jet-responsive-nav-link
+                                    v-if="$page.props.jetstream.canCreateTeams"
                                     :href="route('teams.create')"
                                     :active="route().current('teams.create')"
-                                    v-if="$page.props.jetstream.canCreateTeams"
                                 >
                                     Create New Team
                                 </jet-responsive-nav-link>
@@ -393,8 +386,8 @@
 
             <!-- Page Heading -->
             <header
-                class="bg-white shadow"
                 v-if="$slots.header"
+                class="bg-white shadow"
             >
                 <div class="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
                     <slot name="header"></slot>
@@ -420,10 +413,6 @@ import JetResponsiveNavLink from '@/Jetstream/ResponsiveNavLink.vue'
 import { Head, Link } from '@inertiajs/inertia-vue3'
 
 export default defineComponent({
-    props: {
-        title: String,
-    },
-
     components: {
         Head,
         JetApplicationMark,
@@ -433,6 +422,9 @@ export default defineComponent({
         JetNavLink,
         JetResponsiveNavLink,
         Link,
+    },
+    props: {
+        title: String,
     },
 
     data() {
