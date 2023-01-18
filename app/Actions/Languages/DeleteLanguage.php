@@ -11,10 +11,6 @@ use App\Models\Tag;
  */
 class DeleteLanguage implements DeleteLanguageContract
 {
-    /**
-     * @param  Language  $langauge
-     * @return bool
-     */
     public function delete(Language $langauge): bool
     {
         // dd($langauge->tags);
@@ -36,10 +32,7 @@ class DeleteLanguage implements DeleteLanguageContract
         //return $langauge->delete();
     }
 
-    /**
-     * @return string
-     */
-    public function redirectTo()
+    public function redirectTo(): string
     {
         return route('languages');
     }

@@ -11,10 +11,6 @@ use App\Models\Language;
  */
 class CreateLanguage implements CreateLanguageContract
 {
-    /**
-     * @param  array  $data
-     * @return Language
-     */
     public function create(LanguageData $data): Language
     {
         return Language::create(
@@ -25,9 +21,6 @@ class CreateLanguage implements CreateLanguageContract
         );
     }
 
-    /**
-     * @return string
-     */
     public function redirectTo(): string
     {
         return route('languages');

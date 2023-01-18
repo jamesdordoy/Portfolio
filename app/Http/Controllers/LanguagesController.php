@@ -10,6 +10,7 @@ use Inertia\Inertia;
 use Inertia\Response;
 use Laravel\Jetstream\RedirectsActions;
 use Spatie\QueryBuilder\QueryBuilder;
+use App\Models\Data\Language as LanguageData;
 
 class LanguagesController extends Controller
 {
@@ -50,7 +51,7 @@ class LanguagesController extends Controller
 
     public function store(Request $request)
     {
-        $data = $request->only('name', 'description');
+        $data = LanguageData::from($request->only('name', 'description'));
 
         $creator = app(CreateLanguage::class);
 
