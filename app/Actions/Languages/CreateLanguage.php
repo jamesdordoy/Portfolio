@@ -6,9 +6,6 @@ use App\Contracts\Actions\Languages\CreateLanguageContract;
 use App\Models\Data\Language as LanguageData;
 use App\Models\Language;
 
-/**
- * Class CreateLanguage
- */
 class CreateLanguage implements CreateLanguageContract
 {
     public function create(LanguageData $data): Language

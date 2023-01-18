@@ -6,9 +6,6 @@ use App\Contracts\Actions\Languages\DeleteLanguageContract;
 use App\Models\Language;
 use App\Models\Tag;
 
-/**
- * Class DeleteLanguage
- */
 class DeleteLanguage implements DeleteLanguageContract
 {
     public function delete(Language $langauge): bool
