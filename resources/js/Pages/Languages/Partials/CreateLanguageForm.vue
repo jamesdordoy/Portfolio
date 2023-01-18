@@ -12,10 +12,10 @@
                 />
                 <jet-input
                     id="language_name"
+                    ref="name"
+                    v-model="form.name"
                     type="text"
                     class="mt-1 block w-full"
-                    v-model="form.name"
-                    ref="name"
                 />
                 <jet-input-error
                     :message="form.errors.name"
@@ -30,9 +30,9 @@
                 />
                 <JetTextarea
                     id="language_description"
-                    class="mt-1 block w-full"
-                    v-model="form.description"
                     ref="description"
+                    v-model="form.description"
+                    class="mt-1 block w-full"
                 />
                 <jet-input-error
                     :message="form.errors.description"
@@ -91,7 +91,7 @@ export default defineComponent({
 
     methods: {
         updatePassword() {
-            this.form.post(route('languages.store'), {
+            this.form.post(this.route('languages.store'), {
                 errorBag: 'updatePassword',
                 preserveScroll: true,
                 onSuccess: () => this.form.reset(),

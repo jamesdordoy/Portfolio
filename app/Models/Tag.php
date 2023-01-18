@@ -3,34 +3,24 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
+use Illuminate\Database\Eloquent\Relations\MorphToMany;
 
-/**
- * Class Tag.
- */
 class Tag extends EloquentModel
 {
     use HasFactory;
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\MorphTo
-     */
-    public function taggable()
+    public function taggable(): MorphTo
     {
         return $this->morphTo();
     }
 
-    /**
-     * Get all of the Projects that are assigned this Tag.
-     */
-    public function projects()
+    public function projects(): MorphToMany
     {
         return $this->morphedByMany(Project::class, 'taggables');
     }
 
-    /**
-     * Get all of the Languages that are assigned this Tag.
-     */
-    public function languages()
+    public function languages(): MorphToMany
     {
         return $this->morphedByMany(Language::class, 'taggables');
     }

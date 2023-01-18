@@ -14,7 +14,7 @@ defineProps({
 <template>
     <div>
         <h2
-            class="varela mb-8 text-3xl"
+            class="varela mb-8 text-center text-3xl"
             :class="`text-${store.getters.primaryThemeTextColour}`"
         >
             My Experience

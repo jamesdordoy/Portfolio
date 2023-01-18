@@ -3,37 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Models\Tag;
-use Illuminate\View\View;
 use Inertia\Inertia;
 use Inertia\Response;
-use ProtoneMedia\LaravelQueryBuilderInertiaJs\InertiaTable;
 use Spatie\QueryBuilder\QueryBuilder;
 
-/**
- * Class TagsController
- */
 class TagsController extends Controller
 {
-    /**
-     * @var array|string[]
-     */
     protected array $datatableColumns = [
         'id' => 'id',
         'name' => 'name',
     ];
 
-    /**
-     * @var array|string[]
-     */
     protected array $datatableSearchRows = [
         'name' => 'name',
     ];
 
-    /**
-     * Show the Tags Page.
-     *
-     * @return View
-     */
     public function index(): Response
     {
         $tags = QueryBuilder::for(Tag::with('taggable'))
@@ -43,20 +27,14 @@ class TagsController extends Controller
             ->paginate()
             ->withQueryString();
 
-        $callback = fn (InertiaTable $table) => $table->addSearchRows($this->datatableSearchRows)
-            ->addColumns($this->datatableColumns);
-
         return Inertia::render(
             'Tags/Index',
             [
                 'tags' => $tags,
             ]
-        )->table($callback);
+        );
     }
 
-    /**
-     * @return Response
-     */
     public function create(): Response
     {
         return Inertia::render(

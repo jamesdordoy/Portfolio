@@ -9,12 +9,8 @@ use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
 use Laravel\Jetstream\RedirectsActions;
-use ProtoneMedia\LaravelQueryBuilderInertiaJs\InertiaTable;
 use Spatie\QueryBuilder\QueryBuilder;
 
-/**
- * Class LanguagesController
- */
 class LanguagesController extends Controller
 {
     use RedirectsActions;
@@ -45,9 +41,6 @@ class LanguagesController extends Controller
         );
     }
 
-    /**
-     * @return Response
-     */
     public function create(): Response
     {
         return Inertia::render(
@@ -66,11 +59,6 @@ class LanguagesController extends Controller
         return $this->redirectPath($creator);
     }
 
-    /**
-     * @param  Request  $request
-     * @param $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Request $request, $id)
     {
         $language = Language::findOrFail($id);

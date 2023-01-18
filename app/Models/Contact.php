@@ -4,9 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-/**
- * Contact.
- */
 class Contact extends EloquentModel
 {
     use HasFactory;

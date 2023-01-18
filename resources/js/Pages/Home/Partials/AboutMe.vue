@@ -1,3 +1,16 @@
+<script setup>
+import { useStore } from 'vuex'
+
+const store = useStore()
+
+defineProps({
+    timeline: {
+        type: Array,
+        required: true,
+    },
+})
+</script>
+
 <template>
     <div>
         <span
@@ -6,14 +19,14 @@
         >
         </span>
         <h2
-            class="varela mb-8 text-center text-3xl text-gray-400"
-            :class="`text-${$store.getters.primaryThemeTextColour}`"
+            class="varela mb-16 text-center text-4xl text-gray-400"
+            :class="`text-${store.getters.primaryThemeTextColour}`"
         >
             About Me
         </h2>
         <p
-            class="about-me"
-            :class="`text-${$store.getters.primaryThemeTextColour} text-center`"
+            class="about-me mb-8 text-center text-xl"
+            :class="`text-${store.getters.primaryThemeTextColour}`"
         >
             Hey, my name is James and im a Software Enginer living in Essex. I have been developing software for over
             ten years now and i have a large range of experience from creating simple Android applications and Microsoft
@@ -21,8 +34,8 @@
         </p>
         <br />
         <p
-            class="about-me"
-            :class="`text-${$store.getters.primaryThemeTextColour} text-center`"
+            class="about-me mb-8 text-center text-xl"
+            :class="`text-${store.getters.primaryThemeTextColour}`"
         >
             Since leaving University, i have mainly been working with PHP &amp; Laravel. I also have a solid background
             in JavaScript &amp; Java but picking up a difference langauge isn't a problem. I am profitiant at writting
@@ -30,7 +43,7 @@
             cleaner. I am currently picking up TypeScript and enjoying the benifits as it enables me to write stricter
             code to overcome some of the limitations that JavaScript present such as Type Inference.
         </p>
-        <div class="flex items-center justify-center py-6">
+        <div class="mb-8 flex items-center justify-center">
             <img
                 src="/storage/images/me.jpeg"
                 alt="James Dordoy - Me"
@@ -38,8 +51,8 @@
             />
         </div>
         <p
-            class="about-me"
-            :class="`text-${$store.getters.primaryThemeTextColour} text-center`"
+            class="about-me text-center text-xl"
+            :class="`text-${store.getters.primaryThemeTextColour}`"
         >
             I am a huge Snooker fan and also enjoying playing competitive First Person Shooter games. I also like
             learning about hardware and electronics and would love to pick up more basics to create simple robots. I

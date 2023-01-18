@@ -3,18 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
-/**
- * Class Project.
- */
 class Project extends EloquentModel
 {
     use HasFactory;
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function dependencies()
+    public function dependencies(): HasMany
     {
         return $this->hasMany('App\Dependencies');
     }

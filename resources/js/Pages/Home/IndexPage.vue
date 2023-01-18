@@ -67,23 +67,29 @@ const closeSettings = () => {
     <div class="items-top relative min-h-screen flex-auto sm:pt-0">
         <div
             class="relative w-full px-10 py-12"
-            :class="``"
+            :class="`bg-${store.getters.primaryThemeBgLighter}`"
         >
             <Particles> </Particles>
         </div>
 
         <div
-            class="w-full px-10 py-12"
-            :class="`bg-secondary`"
+            class="w-full px-10 py-24"
+            :class="`bg-${store.getters.primaryThemeBgDarkest}`"
         >
             <AboutMe />
         </div>
 
-        <div class="w-full px-10 py-12">
+        <div
+            class="w-full px-10 py-12"
+            :class="`bg-${store.getters.primaryThemeBgLighter}`"
+        >
             <ProjectsSection :projects="projects" />
         </div>
 
-        <div class="w-full px-10 py-12">
+        <div
+            class="w-full px-10 py-12"
+            :class="`bg-${store.getters.primaryThemeBgDarkest}`"
+        >
             <MyExperianceSection :timeline="timeline" />
         </div>
     </div>
