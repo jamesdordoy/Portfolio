@@ -10,8 +10,6 @@ My personal portfolio built with Laravel, Vue & Tailwind.
 * [Vue.js](https://vuejs.org/) 3.x
 * [TypeScript](https://www.typescriptlang.org/) 4.x
 * [Laravel](http://laravel.com/docs/) 9.x
-    * [Horizon](https://laravel.com/docs/8.x/horizon)
-    * [Telescope](https://laravel.com/docs/8.x/telescope)
     * [Sail](https://laravel.com/docs/8.x/sail) (Optional)
 * [Inertiajs](https://inertiajs.com/) 1.x
 * [Tailwind](https://tailwindcss.com/) 3.*
