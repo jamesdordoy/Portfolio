@@ -1,12 +1,20 @@
 {
-    "name": "laravel/laravel",
+    "name": "jamesdordoy/portfolio",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "Personal Portfolio",
     "keywords": [
-        "framework",
-        "laravel"
+        "Portfolio",
+        "Laravel",
+        "VueJS",
+        "Tailwind.css",
+        "Inertia",
+        "TypeScript",
+        "Queues",
+        "Spatie",
+        "Vite",
+        "PHP"
     ],
-    "license": "MIT",
+    "license": "Dont take the piss :P",
     "require": {
         "php": "^8.1",
         "fruitcake/laravel-cors": "^v3.0.0",
