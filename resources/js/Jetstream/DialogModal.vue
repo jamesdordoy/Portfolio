@@ -26,7 +26,6 @@ import { defineComponent } from 'vue'
 import Modal from './Modal.vue'
 
 export default defineComponent({
-    emits: ['close'],
 
     components: {
         Modal,
@@ -43,6 +42,7 @@ export default defineComponent({
             default: true,
         },
     },
+    emits: ['close'],
 
     methods: {
         close() {

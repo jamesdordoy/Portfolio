@@ -1,14 +1,14 @@
 <script setup>
-import { useStore } from 'vuex'
+import { useStore } from 'vuex';
 
-const store = useStore()
+const store = useStore();
 
 defineProps({
     timeline: {
         type: Array,
         required: true,
     },
-})
+});
 </script>
 
 <template>

@@ -23,9 +23,9 @@
                 />
                 <jet-input
                     id="email"
+                    v-model="form.email"
                     type="email"
                     class="mt-1 block w-full"
-                    v-model="form.email"
                     required
                     autofocus
                 />
@@ -38,9 +38,9 @@
                 />
                 <jet-input
                     id="password"
+                    v-model="form.password"
                     type="password"
                     class="mt-1 block w-full"
-                    v-model="form.password"
                     required
                     autocomplete="current-password"
                 />
@@ -49,8 +49,8 @@
             <div class="mt-4 block">
                 <label class="flex items-center">
                     <jet-checkbox
-                        name="remember"
                         v-model:checked="form.remember"
+                        name="remember"
                     />
                     <span class="ml-2 text-sm text-gray-600">Remember me</span>
                 </label>

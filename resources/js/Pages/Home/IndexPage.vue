@@ -1,16 +1,16 @@
 <script lang="ts" setup>
-import { useStore } from 'vuex'
-import { ref, computed } from 'vue'
-import { Head } from '@inertiajs/inertia-vue3'
-import Particles from '@/Pages/Home/Partials/HomeParticles.vue'
-import AboutMe from '@/Pages/Home/Partials/AboutMe.vue'
-import Settings from '@/Pages/Home/Partials/Settings.vue'
-import ProjectsSection from '@/Pages/Home/Sections/ProjectsSection.vue'
-import MyExperianceSection from '@/Pages/Home/Sections/MyExperianceSection.vue'
-import Navigation from '@/Pages/Home/Partials/NavigationMenu.vue'
+import { useStore } from 'vuex';
+import { ref, computed } from 'vue';
+import { Head } from '@inertiajs/inertia-vue3';
+import Particles from '@/Pages/Home/Partials/HomeParticles.vue';
+import AboutMe from '@/Pages/Home/Partials/AboutMe.vue';
+import Settings from '@/Pages/Home/Partials/Settings.vue';
+import ProjectsSection from '@/Pages/Home/Sections/ProjectsSection.vue';
+import MyExperianceSection from '@/Pages/Home/Sections/MyExperianceSection.vue';
+import Navigation from '@/Pages/Home/Partials/NavigationMenu.vue';
 
-const store = useStore()
-const displaySettings = ref<boolean>(false)
+const store = useStore();
+const displaySettings = ref<boolean>(false);
 
 defineProps({
     projects: {
@@ -21,21 +21,19 @@ defineProps({
         type: Array,
         required: true,
     },
-})
+});
 
-computed<string>(() => store.getters.primaryThemeBg)
+computed<string>(() => store.getters.primaryThemeBg);
 
 const showSettings = () => {
-    displaySettings.value = true
-}
+    displaySettings.value = true;
+};
 const closeSettings = () => {
-    displaySettings.value = false
-}
+    displaySettings.value = false;
+};
 </script>
 
 <template>
-    <Head title="Home" />
-
     <Navigation />
 
     <div

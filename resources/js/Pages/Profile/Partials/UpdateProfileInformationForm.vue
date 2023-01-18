@@ -7,14 +7,14 @@
         <template #form>
             <!-- Profile Photo -->
             <div
-                class="col-span-6 sm:col-span-4"
                 v-if="$page.props.jetstream.managesProfilePhotos"
+                class="col-span-6 sm:col-span-4"
             >
                 <!-- Profile Photo File Input -->
                 <input
+                    ref="photo"
                     type="file"
                     class="hidden"
-                    ref="photo"
                     @change="updatePhotoPreview"
                 />
 
@@ -25,8 +25,8 @@
 
                 <!-- Current Profile Photo -->
                 <div
-                    class="mt-2"
                     v-show="!photoPreview"
+                    class="mt-2"
                 >
                     <img
                         :src="user.profile_photo_url"
@@ -37,8 +37,8 @@
 
                 <!-- New Profile Photo Preview -->
                 <div
-                    class="mt-2"
                     v-show="photoPreview"
+                    class="mt-2"
                 >
                     <span
                         class="block h-20 w-20 rounded-full bg-cover bg-center bg-no-repeat"
@@ -56,10 +56,10 @@
                 </jet-secondary-button>
 
                 <jet-secondary-button
+                    v-if="user.profile_photo_path"
                     type="button"
                     class="mt-2"
                     @click.prevent="deletePhoto"
-                    v-if="user.profile_photo_path"
                 >
                     Remove Photo
                 </jet-secondary-button>
@@ -78,9 +78,9 @@
                 />
                 <jet-input
                     id="name"
+                    v-model="form.name"
                     type="text"
                     class="mt-1 block w-full"
-                    v-model="form.name"
                     autocomplete="name"
                 />
                 <jet-input-error
@@ -97,9 +97,9 @@
                 />
                 <jet-input
                     id="email"
+                    v-model="form.email"
                     type="email"
                     class="mt-1 block w-full"
-                    v-model="form.email"
                 />
                 <jet-input-error
                     :message="form.errors.email"

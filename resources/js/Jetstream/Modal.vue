@@ -48,7 +48,6 @@
 import { defineComponent, onMounted, onUnmounted } from 'vue'
 
 export default defineComponent({
-    emits: ['close'],
 
     props: {
         show: {
@@ -61,19 +60,7 @@ export default defineComponent({
             default: true,
         },
     },
-
-    watch: {
-        show: {
-            immediate: true,
-            handler: (show) => {
-                if (show) {
-                    document.body.style.overflow = 'hidden'
-                } else {
-                    document.body.style.overflow = null
-                }
-            },
-        },
-    },
+    emits: ['close'],
 
     setup(props, { emit }) {
         const close = () => {
@@ -108,6 +95,19 @@ export default defineComponent({
                 xl: 'sm:max-w-xl',
                 '2xl': 'sm:max-w-2xl',
             }[this.maxWidth]
+        },
+    },
+
+    watch: {
+        show: {
+            immediate: true,
+            handler: (show) => {
+                if (show) {
+                    document.body.style.overflow = 'hidden'
+                } else {
+                    document.body.style.overflow = null
+                }
+            },
         },
     },
 })

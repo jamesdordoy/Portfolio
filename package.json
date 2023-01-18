@@ -4,7 +4,7 @@
         "dev": "vite",
         "build": "run-p format & vite build",
         "type-check": "vue-tsc -noEmit",
-        "lint": "eslint \"resources/**\" -fix",
+        "lint": "eslint \"resources/**\"",
         "format": "prettier \"resources/**/*.{js,ts,vue}\" -write"
     },
     "devDependencies": {

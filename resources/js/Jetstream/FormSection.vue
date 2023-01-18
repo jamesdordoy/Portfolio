@@ -17,8 +17,8 @@
                 </div>
 
                 <div
-                    class="flex items-center justify-end bg-gray-50 px-4 py-3 text-right shadow sm:rounded-bl-md sm:rounded-br-md sm:px-6"
                     v-if="hasActions"
+                    class="flex items-center justify-end bg-gray-50 px-4 py-3 text-right shadow sm:rounded-bl-md sm:rounded-br-md sm:px-6"
                 >
                     <slot name="actions"></slot>
                 </div>
@@ -32,11 +32,11 @@ import { defineComponent } from 'vue'
 import JetSectionTitle from './SectionTitle.vue'
 
 export default defineComponent({
-    emits: ['submitted'],
 
     components: {
         JetSectionTitle,
     },
+    emits: ['submitted'],
 
     computed: {
         hasActions() {

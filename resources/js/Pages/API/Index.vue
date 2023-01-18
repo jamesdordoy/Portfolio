@@ -17,16 +17,15 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue'
-import ApiTokenManager from '@/Pages/API/Partials/ApiTokenManager.vue'
-import AppLayout from '@/Layouts/AppLayout.vue'
+import { defineComponent } from 'vue';
+import ApiTokenManager from '@/Pages/API/Partials/ApiTokenManager.vue';
+import AppLayout from '@/Layouts/AppLayout.vue';
 
 export default defineComponent({
-    props: ['tokens', 'availablePermissions', 'defaultPermissions'],
-
     components: {
         ApiTokenManager,
         AppLayout,
     },
-})
+    props: ['tokens', 'availablePermissions', 'defaultPermissions'],
+});
 </script>

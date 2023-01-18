@@ -1,12 +1,12 @@
 <script setup>
-import Tag from '@/Components/ModelTag.vue'
+import Tag from '@/Components/ModelTag.vue';
 
 defineProps({
     projects: {
         type: Array,
         required: true,
     },
-})
+});
 </script>
 
 <template>

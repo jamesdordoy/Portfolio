@@ -28,11 +28,11 @@
 
                     <div class="mt-4">
                         <jet-input
+                            ref="password"
+                            v-model="form.password"
                             type="password"
                             class="mt-1 block w-3/4"
                             placeholder="Password"
-                            ref="password"
-                            v-model="form.password"
                             @keyup.enter="deleteUser"
                         />
 
@@ -48,9 +48,9 @@
 
                     <jet-danger-button
                         class="ml-2"
-                        @click="deleteUser"
                         :class="{ 'opacity-25': form.processing }"
                         :disabled="form.processing"
+                        @click="deleteUser"
                     >
                         Delete Account
                     </jet-danger-button>
