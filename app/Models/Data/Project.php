@@ -11,7 +11,7 @@ use Spatie\LaravelData\DataCollection;
 
 class Project extends Data
 {
-    const COLLECTION_NAME = 'projects';
+    public const COLLECTION_NAME = 'projects';
 
     public function __construct(
         public int $id,

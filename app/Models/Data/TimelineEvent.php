@@ -7,7 +7,7 @@ use Spatie\LaravelData\Data;
 
 class TimelineEvent extends Data
 {
-    const COLLECTION_NAME = 'timeline';
+    public const COLLECTION_NAME = 'timeline';
 
     public function __construct(
         public int $id,
