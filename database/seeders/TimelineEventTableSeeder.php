@@ -58,15 +58,5 @@ class TimelineEventTableSeeder extends Seeder
             'body' => 'Whilst studying at Chelmsford college, i was introduced to basic programming, database management and web design.
             <br><br>During this time, i picked up the basics of C++, JavaScript and working with relational databases. I was also exposed to industry level software such as the Adobe suite',
         ]);
-
-        TimelineEvent::factory()->create([
-            'from' => '2010-03-10 13:54:30',
-            'to' => '2013-10-29 13:54:30',
-            'name' => 'Dominos Pizza',
-            'title' => 'Instore & Delivery Staff',
-            'icon' => 'building',
-            'body' => 'While working at Dominoes, i became used to working in a target based environment and dealing with customer expectation.
-            <br><br>I originally started as instore staff but after attaining my drivers licence, i also started delivering to customers expanding my knowledge of the full process.',
-        ]);
     }
 }
