@@ -16,10 +16,10 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue'
-import AppLayout from '@/Layouts/AppLayout.vue'
-import JetstreamButton from '@/Jetstream/Button.vue'
-import JetstreamDangerButton from '@/Jetstream/DangerButton.vue'
+import { defineComponent } from 'vue';
+import AppLayout from '@/Layouts/AppLayout.vue';
+import JetstreamButton from '@/Jetstream/Button.vue';
+import JetstreamDangerButton from '@/Jetstream/DangerButton.vue';
 
 export default defineComponent({
     components: {
@@ -30,5 +30,5 @@ export default defineComponent({
     props: {
         projects: Object,
     },
-})
+});
 </script>

@@ -11,16 +11,18 @@ use App\Models\Data\TimelineEvent as TimelineEventData;
 
 class HomeController extends Controller
 {
+    protected string $index = 'Home/IndexPage';
+
     public function index(): Response
     {
-        $publicProjects = Project::with('tags')->publicProjects()->get();
+        $publicProjects = Project::with(Project::PUBLIC_RELATIONSHIPS)->publicProjects()->get();
         $timeline = TimelineEvent::get();
 
         return Inertia::render(
-            'Home/IndexPage',
+            $this->index,
             [
-                'projects' => ProjectData::collection($publicProjects),
-                'timeline' => TimelineEventData::collection($timeline),
+                ProjectData::COLLECTION_NAME => ProjectData::collection($publicProjects),
+                TimelineEventData::COLLECTION_NAME => TimelineEventData::collection($timeline),
             ]
         );
     }
