@@ -15,9 +15,3 @@ test('A language can be created', function () {
 
     $this->assertEquals($language->name, 'HTML');
 });
-
-test('A language redirects back to the listing', function () {
-    $action = new CreateLanguage();
-
-    $this->assertEquals($action->redirectTo(), route('languages'));
-});

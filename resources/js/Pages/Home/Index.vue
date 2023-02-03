@@ -19,7 +19,7 @@ const displaySettings = ref<boolean>(false);
 
 defineProps({
     projects: {
-        type: Array,
+        type: Array as App.Models.Data.Project<Array<App.Models.Data.Project>>,
         required: true,
     },
     timeline: {
@@ -104,6 +104,11 @@ const closeSettings = () => {
         >
             <MyExperianceSection :timeline="timeline" />
         </div>
+
+        <div
+            class="w-full px-10 py-12"
+            :class="`bg-${store.getters.primaryThemeBgLighter}`"
+        ></div>
 
         <Footer />
     </div>

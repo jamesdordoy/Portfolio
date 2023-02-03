@@ -10,7 +10,7 @@ export default {
     primaryThemeBgParticles: (state) => (state.primaryTheme === 'light' ? 'gray-100' : 'slate-900'),
 
     primaryThemeBgLighter: (state) => (state.primaryTheme === 'light' ? 'gray-100' : 'slate-800'),
-    primaryThemeBgDarker: (state) => (state.primaryTheme === 'light' ? 'gray-200' : 'secondary'),
+    primaryThemeBgDarker: (state) => (state.primaryTheme === 'light' ? 'gray-200' : 'slate-850'),
     primaryThemeBgDarkest: (state) => (state.primaryTheme === 'light' ? 'gray-300' : 'slate-900'),
     primaryThemeBackground: (state) => (state.primaryTheme === 'light' ? 'white' : 'slate-900'),
     primaryThemeTextColour: (state) => (state.primaryTheme === 'light' ? 'gray-800' : 'slate-400'),
@@ -18,6 +18,5 @@ export default {
     primaryThemeHoverTextColour: (state) => (state.primaryTheme === 'light' ? 'white' : 'slate-900'),
 
     primaryThemeRouterAnimation: (state) => state.primaryThemeRouterAnimation,
-    isLoggedIn: (state) => !!state.isLoggedIn,
     hasUserAcceptedGDPR: (state) => !!state.acceptedGDRP,
 };

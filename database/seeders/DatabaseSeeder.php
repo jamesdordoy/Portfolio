@@ -17,7 +17,6 @@ class DatabaseSeeder extends Seeder
         $this->call(UserTableSeeder::class);
         $this->call(ProjectTableSeeder::class);
         $this->call(LanguageTableSeeder::class);
-        $this->call(LinkTableSeeder::class);
         $this->call(TimelineEventTableSeeder::class);
         $this->call(PostTableSeeder::class);
     }

@@ -9,7 +9,7 @@ class Project extends EloquentModel
 {
     use HasFactory;
 
-    public const PUBLIC_RELATIONSHIPS = ['tags'];
+    public const PUBLIC_RELATIONSHIPS = ['tags.taggable'];
 
     public function dependencies(): HasMany
     {

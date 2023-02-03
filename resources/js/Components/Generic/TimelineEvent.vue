@@ -19,7 +19,7 @@ const store = useStore();
         <div class="w-4/5 py-10">
             <div
                 class="flex w-full flex-col border-b px-4 py-5 shadow"
-                :class="`bg-${store.getters.primaryThemeBgDarker} border-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShade}`"
+                :class="`bg-${store.getters.primaryThemeBgDarkest} border-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShade}`"
             >
                 <div class="mb-2 flex justify-between text-gray-600">
                     <div

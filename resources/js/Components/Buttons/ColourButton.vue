@@ -1,7 +1,3 @@
-<template>
-    <button :class="`p-5 bg-${colour}-500 rounded`"></button>
-</template>
-
 <script>
 export default {
     props: {
@@ -12,3 +8,7 @@ export default {
     },
 };
 </script>
+
+<template>
+    <button :class="`p-5 bg-${colour}-500 rounded`"></button>
+</template>
