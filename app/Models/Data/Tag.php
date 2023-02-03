@@ -2,7 +2,6 @@
 
 namespace App\Models\Data;
 
-use Spatie\LaravelData\Optional;
 use Spatie\LaravelData\Data;
 
 class Tag extends Data
