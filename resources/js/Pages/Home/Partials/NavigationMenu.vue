@@ -91,7 +91,7 @@
 </template>
 
 <script>
-import { Link } from '@inertiajs/vue3'
+import { Link } from '@inertiajs/vue3';
 
 export default {
     components: {
@@ -106,26 +106,26 @@ export default {
     data() {
         return {
             open: false,
-        }
+        };
     },
     computed: {
         csrfToken() {
-            return null
+            return null;
         },
     },
     methods: {
         logout() {
-            document.getElementById('logout-form').submit()
+            document.getElementById('logout-form').submit();
         },
         toggle() {
-            this.open = !this.open
+            this.open = !this.open;
         },
         openMenu() {
-            this.open = true
+            this.open = true;
         },
         closeMenu() {
-            this.open = false
+            this.open = false;
         },
     },
-}
+};
 </script>

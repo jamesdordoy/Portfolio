@@ -1,5 +1,5 @@
 <script setup>
-import Tag from '@/Components/ModelTag.vue';
+import Tag from '@/Components/Generic/PortfolioTag.vue';
 
 defineProps({
     projects: {
@@ -52,7 +52,7 @@ defineProps({
                             <a
                                 :href="project.link"
                                 rel="noreferrer"
-                                class="text-blue-500 underline visited:text-green-500 hover:no-underline"
+                                class="text-blue-500 underline hover:no-underline"
                                 target="_blank"
                                 >{{ project.name }}</a
                             >

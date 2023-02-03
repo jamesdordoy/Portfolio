@@ -6,12 +6,14 @@ import { createStore } from 'vuex';
 import Particles from 'particles.vue3';
 import VueScrollTo from 'vue-scrollto';
 import mutations from '@/State/mutations.js';
-import fontAwesomeLibrary from '@/Loaders/font-awesome.js';
+import fontAwesomeLibrary from '@/font-awesome.js';
 import { createInertiaApp } from '@inertiajs/vue3';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import createPersistedState from 'vuex-persistedstate';
 
 const store = createStore({
+    plugins: [createPersistedState()],
     state() {
         return state;
     },
@@ -21,7 +23,7 @@ const store = createStore({
 
 const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
 
-createInertiaApp({
+const app = createInertiaApp({
     progress: {
         color: '#4B5563',
     },

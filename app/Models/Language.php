@@ -10,10 +10,6 @@ class Language extends EloquentModel
 {
     use HasFactory;
 
-
-    /**
-     * @return \
-     */
     public function image(): MorphOne
     {
         return $this->morphOne(Asset::class, 'assetable');
@@ -24,10 +20,6 @@ class Language extends EloquentModel
         return $this->morphToMany(Tag::class, 'taggable');
     }
 
-    /**
-     * @param $query
-     * @return mixed
-     */
     public function scopeOrdered($query)
     {
         return $query->orderBy('id', 'ASC');

@@ -1,171 +1,112 @@
+<script lang="ts" setup>
+import { useStore } from 'vuex';
+import { ref, computed } from 'vue';
+import { Head } from '@inertiajs/vue3';
+
+import Particles from '@/Pages/Home/Partials/HomeParticles.vue';
+import AboutMe from '@/Pages/Home/Partials/AboutMe.vue';
+import Settings from '@/Pages/Home/Partials/Settings.vue';
+import ProjectsSection from '@/Pages/Home/Sections/ProjectsSection.vue';
+import MyExperianceSection from '@/Pages/Home/Sections/MyExperianceSection.vue';
+import Navigation from '@/Pages/Home/Partials/NavigationMenu.vue';
+import Footer from '@/components/Generic/Footer.vue';
+import BaseButton from '@/components/Base/BaseButton.vue';
+import BaseSelect from '@/components/Base/BaseSelect.vue';
+import BaseTextarea from '@/components/Base/BaseTextarea.vue';
+
+const store = useStore();
+const displaySettings = ref<boolean>(false);
+
+defineProps({
+    projects: {
+        type: Array,
+        required: true,
+    },
+    timeline: {
+        type: Array,
+        required: true,
+    },
+});
+
+computed<string>(() => store.getters.primaryThemeBg);
+
+const showSettings = () => {
+    displaySettings.value = true;
+};
+const closeSettings = () => {
+    displaySettings.value = false;
+};
+</script>
+
 <template>
-    <Head title="Home" />
+    <Navigation />
+
+    <div
+        id="settings-sidebar"
+        class="fixed min-h-full w-1/4 border-r border-t py-2 shadow"
+        :class="`bg-${store.getters.primaryThemeBg} border-${store.getters.primaryThemeColour}-${
+            store.getters.primaryThemeColourShade
+        } ${displaySettings ? '' : 'hidden'}`"
+    >
+        <transition
+            mode="out-in"
+            :enter-active-class="`animated ${store.getters.primaryThemeRouterAnimation}`"
+        >
+            <Settings @toggle="closeSettings"></Settings>
+        </transition>
+    </div>
+
+    <div class="themeSettingsPanelToggleButton">
+        <button
+            aria-label="settings"
+            class="rounded-r p-2 text-lg text-white"
+            :class="`bg-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShade}`"
+            @click="showSettings"
+        >
+            <font-awesome-icon icon="cog" />
+        </button>
+    </div>
 
     <div class="items-top relative min-h-screen flex-auto sm:pt-0">
-        <Navigation />
+        <!-- :class="`bg-${store.getters.primaryThemeBgLighter}`" -->
+        <div class="py-18 relative min-h-screen w-full px-10">
+            <Particles />
 
-        <!-- <div v-if="canLogin" class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-            <Link v-if="$page.props.user" :href="route('dashboard')" class="text-sm text-gray-700 underline">
-                Dashboard
-            </Link>
-
-            <template v-else>
-                <Link :href="route('login')" class="text-sm text-gray-700 underline">
-                    Log in
-                </Link>
-
-                <Link v-if="canRegister" :href="route('register')" class="ml-4 text-sm text-gray-700 underline">
-                    Register
-                </Link>
-            </template>
-        </div> -->
-
-        <div
-            id="settings-sidebar"
-            class="absolute min-h-full w-1/4 border-r border-t py-2 shadow"
-            :class="`bg-${$store.getters.primaryThemeBg} border-${$store.getters.primaryThemeColour}-${
-                $store.getters.primaryThemeColourShade
-            } ${displaySettings ? '' : 'hidden'}`"
-        >
-            <transition
-                mode="out-in"
-                :enter-active-class="`animated ${$store.getters.primaryThemeRouterAnimation}`"
-            >
-                <Settings @toggle="closeSettings"></Settings>
-            </transition>
+            <div class="absolute top-1/2 left-1/2 w-1/3 -translate-x-1/2 -translate-y-1/2 transform">
+                <div
+                    class="front-into w-full md:mx-0 md:p-8"
+                    :class="`border-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShade}`"
+                >
+                    <h1 class="varela sm:text-3xl md:text-4xl">James Dordoy</h1>
+                    <h2 class="varela sm:text-1xl md:text-2xl">Full Stack Developer</h2>
+                    <p class="varela md:text-1xl sm:text-1xl">From Essex</p>
+                </div>
+            </div>
         </div>
 
-        <div class="themeSettingsPanelToggleButton">
-            <button
-                aria-label="settings"
-                class="rounded-r p-2 text-lg text-white"
-                :class="`bg-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`"
-                @click="showSettings"
-            >
-                <font-awesome-icon icon="cog" />
-            </button>
-        </div>
-
-        <Particles> </Particles>
-
         <div
-            class="w-full px-10 py-12"
-            :class="`bg-${$store.getters.primaryThemeBg}`"
+            class="w-full px-10 py-24"
+            :class="`bg-${store.getters.primaryThemeBgDarkest}`"
         >
             <AboutMe />
         </div>
 
-        <div>
-            <Projects />
+        <div
+            class="w-full px-10 py-12"
+            :class="`bg-${store.getters.primaryThemeBgLighter}`"
+        >
+            <ProjectsSection :projects="projects" />
         </div>
+
+        <div
+            class="w-full px-10 py-12"
+            :class="`bg-${store.getters.primaryThemeBgDarkest}`"
+        >
+            <MyExperianceSection :timeline="timeline" />
+        </div>
+
+        <Footer />
     </div>
 </template>
 
-<script>
-import { defineComponent } from 'vue'
-import { Head, Link } from '@inertiajs/inertia-vue3'
-import Settings from '@/Pages/Home/Partials/Settings.vue'
-import Particles from '@/Pages/Home/Partials/Particles.vue'
-import Navigation from '@/Pages/Home/Partials/NavigationMenu.vue'
-import AboutMe from '@/Pages/Home/Partials/AboutMe.vue'
-import Projects from '@/Pages/Home/Partials/Projects.vue'
-
-export default defineComponent({
-    components: {
-        Head,
-        Link,
-        Settings,
-        AboutMe,
-        Particles,
-        Navigation,
-        Projects,
-    },
-
-    props: {
-        canLogin: Boolean,
-        canRegister: Boolean,
-    },
-    data() {
-        return {
-            displaySettings: false,
-        }
-    },
-    computed: {
-        primaryThemeBg() {
-            return this.$store.getters.primaryThemeBg
-        },
-    },
-    methods: {
-        showSettings() {
-            this.displaySettings = true
-        },
-        closeSettings() {
-            this.displaySettings = false
-        },
-    },
-})
-</script>
-
-<style scoped>
-.bg-gray-100 {
-    background-color: #f7fafc;
-    background-color: rgba(247, 250, 252, var(--tw-bg-opacity));
-}
-
-.border-gray-200 {
-    border-color: #edf2f7;
-    border-color: rgba(237, 242, 247, var(--tw-border-opacity));
-}
-
-.text-gray-400 {
-    color: #cbd5e0;
-    color: rgba(203, 213, 224, var(--tw-text-opacity));
-}
-
-.text-gray-500 {
-    color: #a0aec0;
-    color: rgba(160, 174, 192, var(--tw-text-opacity));
-}
-
-.text-gray-600 {
-    color: #718096;
-    color: rgba(113, 128, 150, var(--tw-text-opacity));
-}
-
-.text-gray-700 {
-    color: #4a5568;
-    color: rgba(74, 85, 104, var(--tw-text-opacity));
-}
-
-.text-gray-900 {
-    color: #1a202c;
-    color: rgba(26, 32, 44, var(--tw-text-opacity));
-}
-
-@media (prefers-color-scheme: dark) {
-    .dark\:bg-gray-800 {
-        background-color: #2d3748;
-        background-color: rgba(45, 55, 72, var(--tw-bg-opacity));
-    }
-
-    .dark\:bg-gray-900 {
-        background-color: #1a202c;
-        background-color: rgba(26, 32, 44, var(--tw-bg-opacity));
-    }
-
-    .dark\:border-gray-700 {
-        border-color: #4a5568;
-        border-color: rgba(74, 85, 104, var(--tw-border-opacity));
-    }
-
-    .dark\:text-white {
-        color: #fff;
-        color: rgba(255, 255, 255, var(--tw-text-opacity));
-    }
-
-    .dark\:text-gray-400 {
-        color: #cbd5e0;
-        color: rgba(203, 213, 224, var(--tw-text-opacity));
-    }
-}
-</style>
+<style scoped></style>

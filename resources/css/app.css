@@ -21,3 +21,17 @@
 
     z-index: 19;
 }
+
+.front-into {
+    @apply mx-10 mt-20 rounded border p-4 text-center text-white;
+
+    background: rgba(0, 0, 0, 0.4);
+    text-shadow: 0px 0px 2px #131415;
+}
+
+.jd-bookmark {
+    display: block;
+    position: relative;
+    top: -100px;
+    visibility: hidden;
+}

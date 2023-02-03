@@ -170,7 +170,7 @@
                 </div>
                 <div class="w-full">
                     <div class="relative block">
-                        <tailwind-range-input @input="updatePrimaryThemeColourShade"> </tailwind-range-input>
+                        <RangeInput @input="updatePrimaryThemeColourShade" />
                     </div>
                     <hr class="my-2" />
                 </div>
@@ -180,13 +180,13 @@
 </template>
 
 <script>
-import ColourButton from '@/Components/ColourButton.vue'
-import TailwindRangeInput from '@/Components/TailwindRangeInput.vue'
+import ColourButton from '@/Components/Buttons/ColourButton.vue';
+import RangeInput from '@/Components/Inputs/RangeInput.vue';
 
 export default {
     components: {
         ColourButton,
-        TailwindRangeInput,
+        RangeInput,
     },
     props: {
         hidden: {
@@ -196,25 +196,25 @@ export default {
     },
     computed: {
         getTheme() {
-            return this.$store.getters.primaryTheme
+            return this.$store.getters.primaryTheme;
         },
     },
     methods: {
         showSettings() {
-            this.$emit('toggle', false)
+            this.$emit('toggle', false);
         },
         updatePrimaryThemeColour(colour) {
-            this.$store.commit('setPrimaryThemeColor', colour)
+            this.$store.commit('setPrimaryThemeColor', colour);
         },
         updatePrimaryThemeColourShade(event) {
-            this.$store.commit('setPrimaryThemeColorShade', event.target.value)
+            this.$store.commit('setPrimaryThemeColorShade', event.target.value);
         },
         updateTheme(event) {
-            this.$store.commit('setPrimaryTheme', event.target.value)
+            this.$store.commit('setPrimaryTheme', event.target.value);
         },
         updateThemeRouterAnimation(event) {
-            this.$store.commit('setPrimaryThemeRouterAnimation', event.target.value)
+            this.$store.commit('setPrimaryThemeRouterAnimation', event.target.value);
         },
     },
-}
+};
 </script>

@@ -21,10 +21,6 @@ class Project extends EloquentModel
         return $this->morphToMany(Tag::class, 'taggable');
     }
 
-    /**
-     * @param $query
-     * @return mixed
-     */
     public function scopePublicProjects($query)
     {
         return $query->where('private', 0)->with('tags')->latest();

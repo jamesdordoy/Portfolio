@@ -8,6 +8,7 @@ use Spatie\LaravelData\Attributes\Validation\Required;
 use Spatie\LaravelData\Attributes\Validation\StringType;
 use Spatie\LaravelData\Data;
 use Spatie\LaravelData\DataCollection;
+use Spatie\LaravelData\Optional;
 
 class Project extends Data
 {
@@ -25,7 +26,7 @@ class Project extends Data
         public DateTime $created_at,
         public DateTime $updated_at,
         #[DataCollectionOf(Tag::class)]
-        public DataCollection $tags,
+        public DataCollection|Optional $tags,
     ) {
     }
 

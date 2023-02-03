@@ -11,7 +11,7 @@ use App\Models\Data\TimelineEvent as TimelineEventData;
 
 class HomeController extends Controller
 {
-    protected string $index = 'Home/IndexPage';
+    protected string $index = 'Home/Index';
 
     public function index(): Response
     {
