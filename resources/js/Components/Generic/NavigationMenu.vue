@@ -18,7 +18,7 @@
                     />
                 </svg>
                 <span
-                    :class="`text-${$store.getters.primaryThemeTextColour}`"
+                    :class="`text-white`"
                     class="varela text-xl font-semibold tracking-tight"
                     >James Dordoy</span
                 >

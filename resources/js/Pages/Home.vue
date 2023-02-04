@@ -1,34 +1,36 @@
 <script lang="ts" setup>
 import { useStore } from 'vuex';
-import { ref, computed } from 'vue';
-import { Head } from '@inertiajs/vue3';
+import { notify } from 'notiwind';
+import { ref, computed, onUnmounted, isProxy, toRaw } from 'vue';
+import { router } from '@inertiajs/vue3';
+import Particles from '@/Components/Generic/Particles.vue';
+import AboutMe from '@/Components/Sections/AboutMeSection.vue';
+import Settings from '@/Components/Generic/Settings.vue';
+import ToastSection from '@/Components/Sections/ToastSection.vue';
+import ProjectsSection from '@/Components/Sections/ProjectsSection.vue';
+import MyExperianceSection from '@/Components/Sections/MyExperianceSection.vue';
+import Navigation from '@/Components/Generic/NavigationMenu.vue';
+import Footer from '@/Components/Generic/Footer.vue';
 
-import Particles from '@/Pages/Home/Partials/HomeParticles.vue';
-import AboutMe from '@/Pages/Home/Partials/AboutMe.vue';
-import Settings from '@/Pages/Home/Partials/Settings.vue';
-import ProjectsSection from '@/Pages/Home/Sections/ProjectsSection.vue';
-import MyExperianceSection from '@/Pages/Home/Sections/MyExperianceSection.vue';
-import Navigation from '@/Pages/Home/Partials/NavigationMenu.vue';
-import Footer from '@/components/Generic/Footer.vue';
-import BaseButton from '@/components/Base/BaseButton.vue';
-import BaseSelect from '@/components/Base/BaseSelect.vue';
-import BaseTextarea from '@/components/Base/BaseTextarea.vue';
-
-const store = useStore();
-const displaySettings = ref<boolean>(false);
-
-defineProps({
+const props = defineProps({
     projects: {
         type: Array as App.Models.Data.Project<Array<App.Models.Data.Project>>,
         required: true,
     },
     timeline: {
-        type: Array,
+        type: Array as App.Models.Data.TimelineEvent<Array<App.Models.Data.TimelineEvent>>,
         required: true,
+    },
+    errors: {
+        type: Object,
+        default: () => ({}),
     },
 });
 
-computed<string>(() => store.getters.primaryThemeBg);
+const store = useStore();
+const displaySettings = ref<boolean>(false);
+
+const primaryThemeBg = computed<string>(() => store.getters.primaryThemeBg);
 
 const showSettings = () => {
     displaySettings.value = true;
@@ -36,6 +38,30 @@ const showSettings = () => {
 const closeSettings = () => {
     displaySettings.value = false;
 };
+
+const removeFinishEventListener = router.on('finish', () => {
+    if (isProxy(props.errors)) {
+        const errors = toRaw(props.errors);
+
+        const keys = Object.keys(errors);
+
+        keys.forEach((key) => {
+            notify(
+                {
+                    group: 'toasts',
+                    title: 'Error',
+                    text: errors[key],
+                    colour: 'red',
+                },
+                4000
+            );
+        });
+    }
+});
+
+onUnmounted(() => {
+    removeFinishEventListener();
+});
 </script>
 
 <template>
@@ -44,7 +70,7 @@ const closeSettings = () => {
     <div
         id="settings-sidebar"
         class="fixed min-h-full w-1/4 border-r border-t py-2 shadow"
-        :class="`bg-${store.getters.primaryThemeBg} border-${store.getters.primaryThemeColour}-${
+        :class="`bg-${primaryThemeBg} border-${store.getters.primaryThemeColour}-${
             store.getters.primaryThemeColourShade
         } ${displaySettings ? '' : 'hidden'}`"
     >
@@ -111,7 +137,7 @@ const closeSettings = () => {
         ></div>
 
         <Footer />
+
+        <ToastSection />
     </div>
 </template>
-
-<style scoped></style>

@@ -20,6 +20,6 @@ class CreateLanguage implements CreateLanguageContract
 
     public function redirectTo(): string
     {
-        return route('languages');
+        return route('home');
     }
 }

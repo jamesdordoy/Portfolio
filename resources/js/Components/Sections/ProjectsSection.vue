@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useStore } from 'vuex';
 import { PropType } from 'vue';
-import Project from '@/Pages/Home/Partials/Project.vue';
+import Project from '@/Components/Generic/Project.vue';
 
 const store = useStore();
 

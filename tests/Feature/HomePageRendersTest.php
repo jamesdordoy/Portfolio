@@ -9,7 +9,7 @@ test('Home Page can render', function () {
         ->assertStatus(200)
         ->assertInertia(
             fn (Assert $page) => $page
-                ->component('Home/Index')
+                ->component('Home')
                 ->has('projects')
                 ->has('timeline')
         );

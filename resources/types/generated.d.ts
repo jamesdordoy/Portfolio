@@ -14,6 +14,10 @@ description: string;
 created_at?: string;
 updated_at?: string;
 };
+export type Newsletter = {
+id?: number;
+email: string;
+};
 export type Project = {
 id: number;
 name: string;

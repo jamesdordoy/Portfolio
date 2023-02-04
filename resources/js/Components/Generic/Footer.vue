@@ -4,7 +4,7 @@
         :class="`bg-${$store.getters.primaryThemeBg} border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`"
     >
         <div
-            class="w-full border-b border-b-2 lg:w-1/3"
+            class="w-full border-b lg:w-1/3"
             :class="`border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`"
         >
             <p class="mt-2">
@@ -90,48 +90,22 @@
                 </a>
             </p>
         </div>
-        <div class="varela w-full py-6 text-gray-400 lg:w-1/3 lg:py-0 lg:pt-2 lg:text-center">
+        <div class="varela w-full py-6 text-center text-gray-400 sm:text-left lg:w-1/3 lg:py-0 lg:pt-2 lg:text-center">
             <h3 :class="`text-${$store.getters.primaryThemeTextColour}`">&copy; James Dordoy</h3>
-            <p></p>
+            <p class="my-2">{{ new Date().getFullYear() }}</p>
         </div>
         <div class="w-full lg:w-1/3">
-            <div id="newsletter">
-                <form
-                    action="/newsletter"
-                    method="POST"
-                    @submit.prevent="submitNewsletterForm"
-                ></form>
+            <div
+                id="newsletter"
+                class="border-b"
+                :class="`border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`"
+            >
+                <NewsletterForm />
             </div>
         </div>
     </div>
 </template>
 
-<script>
-export default {
-    props: {
-        newsletterFormUrl: {
-            type: String,
-            default: '/',
-        },
-    },
-    data: function () {
-        return {
-            payload: {
-                email: '',
-            },
-        };
-    },
-    computed: {
-        csrfToken() {
-            return document.head.querySelector('meta[name="csrf-token"]').content;
-        },
-    },
-    methods: {
-        resetPayload() {
-            this.payload = {
-                email: '',
-            };
-        },
-    },
-};
+<script lang="ts" setup>
+import NewsletterForm from '@/Components/Forms/NewsletterForm.vue';
 </script>
