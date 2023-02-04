@@ -23,7 +23,7 @@ class Newsletter extends Data
                 new Validation\Unique(
                     table: NewsletterModel::class
                 ),
-                new Validation\Email,
+                new Validation\Email(),
             ],
         ];
     }

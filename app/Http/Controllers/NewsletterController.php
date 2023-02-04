@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Actions\Newsletter\CreateNewsletter;
 use App\Models\Data\Newsletter as NewsletterData;
-use Illuminate\Http\Request;
 
 class NewsletterController extends Controller
 {
