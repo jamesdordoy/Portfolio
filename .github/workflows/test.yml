@@ -38,6 +38,9 @@ jobs:
       run: |
         mkdir -p database
         touch database/database.sqlite
+
+    - name: Vitest Test
+      run: /home/runner/.bun/bin/bun run test
     
     - name: Execute tests (Unit and Feature tests) via PHPUnit
       env:
@@ -45,6 +48,5 @@ jobs:
         DB_DATABASE: database/database.sqlite
       run: php artisan test
 
-    - name: Vitest Test
-      run: /home/runner/.bun/bin/bun run test
+   
 
