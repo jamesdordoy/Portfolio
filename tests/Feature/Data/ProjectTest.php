@@ -4,7 +4,6 @@ use App\Models\Data\Project;
 use Spatie\LaravelData\Attributes\Validation;
 
 test('test_project_data_object_name', function () {
-
     $project = Project::from([
         'name' => 'Testing',
         'description' => 'description',
@@ -19,7 +18,6 @@ test('test_project_data_object_name', function () {
 });
 
 test('test_project_data_rules', function () {
-
     $rules = Project::rules();
 
     $this->assertTrue(array_key_exists('name', $rules));

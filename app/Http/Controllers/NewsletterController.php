@@ -27,7 +27,7 @@ class NewsletterController extends Controller
         return redirect(CreateNewsletter::redirectTo());
     }
 
-    // Un sub 
+    // Un sub
     public function destroy()
     {
     }

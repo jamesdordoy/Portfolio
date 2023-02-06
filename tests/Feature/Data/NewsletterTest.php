@@ -12,7 +12,6 @@ test('test_newsletter_data_object_name', function () {
 });
 
 test('test_newsletter_data_rules', function () {
-
     $rules = Newsletter::rules();
     $this->assertTrue(array_key_exists('email', $rules));
 

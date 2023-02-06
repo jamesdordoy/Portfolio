@@ -6,7 +6,6 @@ use Closure;
 use App\Models\Contact;
 use App\Models\Data\Contact as ContactData;
 
-
 class CreateContact
 {
     public function handle(ContactData $data, Closure $next)

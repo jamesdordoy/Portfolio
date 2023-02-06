@@ -14,7 +14,6 @@ test('test_contact_data_object_name', function () {
 });
 
 test('test_contact_data_rules', function () {
-
     $rules = Contact::rules();
 
     $this->assertTrue(array_key_exists('name', $rules));

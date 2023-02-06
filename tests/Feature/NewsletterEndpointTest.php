@@ -33,7 +33,6 @@ test('Newsletter end point success with a valid email', function () {
 
 
 test('Newsletter end point fails with an duplicate email', function () {
-
     $this->followingRedirects()
         ->post(route('newsletter.store'), ['email' => 'test@test.com'])
         ->assertInertia(

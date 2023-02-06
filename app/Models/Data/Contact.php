@@ -6,7 +6,6 @@ use DateTime;
 use Spatie\LaravelData\Data;
 use Spatie\LaravelData\Optional;
 use Spatie\LaravelData\Attributes\Validation;
-use App\Models\Contact as ContactModel;
 
 class Contact extends Data
 {
