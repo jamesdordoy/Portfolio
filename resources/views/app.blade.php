@@ -10,7 +10,6 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="msapplication-starturl" content="/">
-    <meta name="theme-color" content="#e5e5e5">
 
     <title inertia>{{ config('app.name', 'James Dordoy - Portfolio') }}</title>
 

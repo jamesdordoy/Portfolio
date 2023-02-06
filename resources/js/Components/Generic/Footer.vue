@@ -1,7 +1,7 @@
 <template>
     <div
         class="flex flex-wrap border-t py-3 px-10 lg:p-10"
-        :class="`bg-${$store.getters.primaryThemeBg} border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`"
+        :class="`bg-${$store.getters.primaryThemeBgDarker} border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`"
     >
         <div
             class="w-full border-b lg:w-1/3"

@@ -3,25 +3,30 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\MorphToMany;
 
 class Project extends EloquentModel
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'description',
+        'owner',
+        'link',
+        'icon',
+        'complete',
+        'private',
+    ];
+
     public const PUBLIC_RELATIONSHIPS = ['tags.taggable'];
 
-    public function dependencies(): HasMany
-    {
-        return $this->hasMany('App\Dependencies');
-    }
-
-    public function tags()
+    public function tags(): MorphToMany
     {
         return $this->morphToMany(Tag::class, 'taggable');
     }
 
-    public function scopePublicProjects($query)
+    public function scopePublic($query)
     {
         return $query->where('private', 0)->with('tags')->latest();
     }

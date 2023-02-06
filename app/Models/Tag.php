@@ -10,18 +10,13 @@ class Tag extends EloquentModel
 {
     use HasFactory;
 
+    protected $fillable = [
+        'taggable_id',
+        'taggable_type',
+    ];
+
     public function taggable(): MorphTo
     {
         return $this->morphTo();
-    }
-
-    public function projects(): MorphToMany
-    {
-        return $this->morphedByMany(Project::class, 'taggables');
-    }
-
-    public function languages(): MorphToMany
-    {
-        return $this->morphedByMany(Language::class, 'taggables');
     }
 }

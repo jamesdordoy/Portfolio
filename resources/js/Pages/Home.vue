@@ -3,14 +3,16 @@ import { useStore } from 'vuex';
 import { notify } from 'notiwind';
 import { ref, computed, onUnmounted, isProxy, toRaw } from 'vue';
 import { router } from '@inertiajs/vue3';
+import Footer from '@/Components/Generic/Footer.vue';
 import Particles from '@/Components/Generic/Particles.vue';
 import AboutMe from '@/Components/Sections/AboutMeSection.vue';
 import Settings from '@/Components/Generic/Settings.vue';
+import Navigation from '@/Components/Generic/NavigationMenu.vue';
 import ToastSection from '@/Components/Sections/ToastSection.vue';
 import ProjectsSection from '@/Components/Sections/ProjectsSection.vue';
+import ContactMeSection from '@/Components/Sections/ContactMeSection.vue';
+import GamesSection from '@/Components/Sections/GamesSection.vue';
 import MyExperianceSection from '@/Components/Sections/MyExperianceSection.vue';
-import Navigation from '@/Components/Generic/NavigationMenu.vue';
-import Footer from '@/Components/Generic/Footer.vue';
 
 const props = defineProps({
     projects: {
@@ -19,6 +21,10 @@ const props = defineProps({
     },
     timeline: {
         type: Array as App.Models.Data.TimelineEvent<Array<App.Models.Data.TimelineEvent>>,
+        required: true,
+    },
+    gameClips: {
+        type: Array as App.Models.Data.GameClip<Array<App.Models.Data.GameClip>>,
         required: true,
     },
     errors: {
@@ -45,7 +51,7 @@ const removeFinishEventListener = router.on('finish', () => {
 
         const keys = Object.keys(errors);
 
-        keys.forEach((key) => {
+        keys.reverse().forEach((key) => {
             notify(
                 {
                     group: 'toasts',
@@ -94,7 +100,6 @@ onUnmounted(() => {
     </div>
 
     <div class="items-top relative min-h-screen flex-auto sm:pt-0">
-        <!-- :class="`bg-${store.getters.primaryThemeBgLighter}`" -->
         <div class="py-18 relative min-h-screen w-full px-10">
             <Particles />
 
@@ -112,29 +117,36 @@ onUnmounted(() => {
 
         <div
             class="w-full px-10 py-24"
-            :class="`bg-${store.getters.primaryThemeBgDarkest}`"
+            :class="`bg-${store.getters.primaryThemeBgDarker}`"
         >
             <AboutMe />
         </div>
 
         <div
             class="w-full px-10 py-12"
-            :class="`bg-${store.getters.primaryThemeBgLighter}`"
+            :class="`bg-${store.getters.primaryThemeBg}`"
         >
             <ProjectsSection :projects="projects" />
         </div>
 
         <div
             class="w-full px-10 py-12"
-            :class="`bg-${store.getters.primaryThemeBgDarkest}`"
+            :class="`bg-${store.getters.primaryThemeBgDarker}`"
         >
             <MyExperianceSection :timeline="timeline" />
         </div>
 
         <div
-            class="w-full px-10 py-12"
-            :class="`bg-${store.getters.primaryThemeBgLighter}`"
-        ></div>
+            class="flex w-full flex-wrap px-10 py-12"
+            :class="`bg-${store.getters.primaryThemeBg}`"
+        >
+            <div class="w-full lg:w-1/2">
+                <ContactMeSection />
+            </div>
+            <div class="w-full lg:w-1/2">
+                <GamesSection :game-clips="gameClips" />
+            </div>
+        </div>
 
         <Footer />
 

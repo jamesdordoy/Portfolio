@@ -18,10 +18,6 @@ const props = defineProps({
 
 const emit = defineEmits(['click']);
 
-const onClick = () => {
-    emit('click');
-};
-
 const variantClasses = computed(() => {
     return cva('btn w-full font-medium disabled:pointer-events-none disabled:select-none disabled:opacity-60', {
         variants: {
@@ -50,7 +46,7 @@ const variantClasses = computed(() => {
 <template>
     <button
         :class="variantClasses"
-        @click="onClick"
+        @click="emit('click')"
     >
         <slot></slot>
         {{ text }}

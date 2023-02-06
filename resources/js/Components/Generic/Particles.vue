@@ -27,11 +27,10 @@ watch(
 );
 
 const backgroundColour = computed<string>(() => {
-    if (store.getters.primaryTheme == 'light') {
-        return colours.gray['200'];
-    } else {
-        return colours.gray['800'];
-    }
+    const themeColour = store.getters.primaryThemeBgParticlesColour;
+    const themeShade = store.getters.primaryThemeBgParticlesColourShade;
+
+    return colours[themeColour][themeShade];
 });
 
 const particleColour = computed<string>(() => {

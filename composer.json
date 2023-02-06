@@ -17,12 +17,14 @@
     "license": "Dont take the piss :P",
     "require": {
         "php": "^8.1",
+        "biscolab/laravel-recaptcha": "^5.4",
         "fruitcake/laravel-cors": "^v3.0.0",
         "guzzlehttp/guzzle": "^7.5.0",
         "inertiajs/inertia-laravel": "^0.6.9",
         "laravel/framework": "^v9.48.0",
         "laravel/tinker": "^v2.8.0",
         "spatie/laravel-data": "^2.2.2",
+        "spatie/laravel-discord-alerts": "^1.2",
         "spatie/laravel-query-builder": "^5.1.1",
         "spatie/laravel-typescript-transformer": "^2.1.6",
         "tightenco/ziggy": "^v1.5.0"

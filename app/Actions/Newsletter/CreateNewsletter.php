@@ -2,22 +2,24 @@
 
 namespace App\Actions\Newsletter;
 
-use App\Contracts\Actions\Newsletters\CreateNewsletterContract;
 use App\Models\Data\Newsletter as NewsletterData;
 use App\Models\Newsletter;
+use Closure;
 
-class CreateNewsletter implements CreateNewsletterContract
+class CreateNewsletter
 {
-    public function create(NewsletterData $data): Newsletter
+    public function handle(NewsletterData $data, Closure $next)
     {
-        return Newsletter::create(
+        $newsletter = Newsletter::create(
             [
                 'email' => $data->email,
             ]
         );
+
+        return $next($newsletter);
     }
 
-    public function redirectTo(): string
+    public static function redirectTo(): string
     {
         return route('home');
     }

@@ -2,9 +2,11 @@
 
 namespace App\Contracts\Actions\Contact;
 
+use Closure;
 use App\Models\Contact;
+use App\Models\Data\Contact as ContactData;
 
 interface CreateContactContract
 {
-    public function create(array $data): Contact;
+    public function handle(ContactData $data, Closure $next): Closure;
 }

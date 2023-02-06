@@ -8,5 +8,9 @@ class Newsletter extends EloquentModel
 {
     use HasFactory;
 
+    protected $fillable = [
+        'email',
+    ];
+
     protected $dates = ['created_at', 'updated_at'];
 }

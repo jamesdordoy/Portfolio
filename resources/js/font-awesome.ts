@@ -18,6 +18,8 @@ const icons = [
     'faSchool',
     'faCode',
     'faNewspaper',
+    'faForward',
+    'faBackward',
 ];
 
 export default async function loadFontAwesome() {

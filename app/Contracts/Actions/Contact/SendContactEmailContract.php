@@ -3,8 +3,9 @@
 namespace App\Contracts\Actions\Contact;
 
 use App\Models\Contact;
+use Closure;
 
 interface SendContactEmailContract
 {
-    public function send(string $email): Contact;
+    public function handle(Contact $contact, Closure $next): Closure;
 }

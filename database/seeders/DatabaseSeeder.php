@@ -19,5 +19,7 @@ class DatabaseSeeder extends Seeder
         $this->call(LanguageTableSeeder::class);
         $this->call(TimelineEventTableSeeder::class);
         $this->call(PostTableSeeder::class);
+        $this->call(GameTableSeeder::class);
+        $this->call(GameClipTableSeeder::class);
     }
 }

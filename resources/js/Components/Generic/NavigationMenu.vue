@@ -1,8 +1,8 @@
 <template>
     <div class="z-10 font-sans antialiased">
         <nav
-            class="front-nav bg-secondary border-b lg:px-10"
-            :class="`bg-${$store.getters.primaryThemeBg} border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`"
+            class="front-nav border-b lg:px-10"
+            :class="`bg-${$store.getters.primaryThemeBgDarker} border-${$store.getters.primaryThemeColour}-${$store.getters.primaryThemeColourShade}`"
         >
             <div class="flex-no-shrink mr-6 flex items-center text-white">
                 <svg
@@ -91,32 +91,14 @@
 </template>
 
 <script>
-import { Link } from '@inertiajs/vue3';
-
 export default {
-    components: {
-        Link,
-    },
-    props: {
-        auth: {
-            type: Object,
-            default: () => ({}),
-        },
-    },
     data() {
         return {
             open: false,
         };
     },
-    computed: {
-        csrfToken() {
-            return null;
-        },
-    },
+
     methods: {
-        logout() {
-            document.getElementById('logout-form').submit();
-        },
         toggle() {
             this.open = !this.open;
         },

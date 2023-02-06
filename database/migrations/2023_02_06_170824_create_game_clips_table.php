@@ -1,10 +1,12 @@
 <?php
 
+use App\Models\Game;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class () extends Migration {
+return new class extends Migration
+{
     /**
      * Run the migrations.
      *
@@ -12,14 +14,12 @@ return new class () extends Migration {
      */
     public function up()
     {
-        Schema::create('diskables', function (Blueprint $table) {
+        Schema::create('game_clips', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('disk_id');
-            $table->unsignedBigInteger('diskable_id');
-            $table->string('diskable_type')->index();
+            $table->foreignIdFor(Game::class);
+            $table->foreign('game_id')->references('id')->on('games');
+            $table->text('url');
             $table->timestamps();
-
-            $table->foreign('disk_id')->references('id')->on('disks');
         });
     }
 
@@ -30,6 +30,6 @@ return new class () extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('diskables');
+        Schema::dropIfExists('game_clips');
     }
 };

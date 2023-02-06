@@ -3,10 +3,11 @@
 use App\Models\Data\Language;
 
 test('test_language_data_object_name', function () {
-    $createdAt = new DateTime();
-    $updatedAt = new DateTime();
 
-    $language = new Language(1, 'HTML', 'mark up language', $createdAt, $updatedAt);
+    $language = Language::from([
+        'name' => 'HTML',
+        'description' => 'mark up language',
+    ]);
 
     $this->assertEquals($language->name, 'HTML');
 });

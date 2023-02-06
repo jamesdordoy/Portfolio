@@ -10,5 +10,15 @@ class TimelineEvent extends EloquentModel
 
     protected $table = 'timeline_events';
 
+    protected $fillable = [
+        'from',
+        'to',
+        'name',
+        'title',
+        'icon',
+        'body',
+        'hidden',
+    ];
+
     protected $dates = ['from', 'to', 'created_at', 'updated_at'];
 }

@@ -1,22 +1,24 @@
+import { State } from './state';
+
 export default {
-    primaryThemeColour: (state) => state.primaryThemeColour,
-    primaryThemeColourShade: (state) => state.primaryThemeColourShade,
-    primaryThemeColourShadeLighter: (state) => parseInt(state.primaryThemeColourShade, 10) - 200,
-    primaryThemeColourShadeDarker: (state) => parseInt(state.primaryThemeColourShade, 10) + 200,
+    primaryThemeColour: (state: State) => state.primaryThemeColour,
+    primaryThemeColourShade: (state: State) => state.primaryThemeColourShade,
+    primaryThemeColourShadeLighter: (state: State) => state.primaryThemeColourShade - 200,
+    primaryThemeColourShadeDarker: (state: State) => state.primaryThemeColourShade + 200,
 
-    primaryTheme: (state) => state.primaryTheme,
-    primaryThemeBg: (state) => (state.primaryTheme === 'light' ? 'gray-200' : 'slate-900'),
+    primaryTheme: (state: State) => state.primaryTheme,
+    primaryThemeBg: (state: State) => (state.primaryTheme === 'light' ? 'gray-100' : 'slate-800'),
+    primaryThemeBgLighter: (state: State) => (state.primaryTheme === 'light' ? 'gray-100' : 'slate-700'),
+    primaryThemeBgDarker: (state: State) => (state.primaryTheme === 'light' ? 'gray-200' : 'slate-900'),
+    primaryThemeBgDarkest: (state: State) => (state.primaryTheme === 'light' ? 'gray-300' : 'black'),
 
-    primaryThemeBgParticles: (state) => (state.primaryTheme === 'light' ? 'gray-100' : 'slate-900'),
+    primaryThemeBgParticlesColour: (state: State) => (state.primaryTheme === 'light' ? 'gray' : 'slate'),
+    primaryThemeBgParticlesColourShade: (state: State) => (state.primaryTheme === 'light' ? '100' : '800'),
 
-    primaryThemeBgLighter: (state) => (state.primaryTheme === 'light' ? 'gray-100' : 'slate-800'),
-    primaryThemeBgDarker: (state) => (state.primaryTheme === 'light' ? 'gray-200' : 'slate-850'),
-    primaryThemeBgDarkest: (state) => (state.primaryTheme === 'light' ? 'gray-300' : 'slate-900'),
-    primaryThemeBackground: (state) => (state.primaryTheme === 'light' ? 'white' : 'slate-900'),
-    primaryThemeTextColour: (state) => (state.primaryTheme === 'light' ? 'gray-800' : 'slate-400'),
+    primaryThemeTextColour: (state: State) => (state.primaryTheme === 'light' ? 'gray-800' : 'slate-400'),
 
-    primaryThemeHoverTextColour: (state) => (state.primaryTheme === 'light' ? 'white' : 'slate-900'),
+    primaryThemeHoverTextColour: (state: State) => (state.primaryTheme === 'light' ? 'white' : 'slate-900'),
 
-    primaryThemeRouterAnimation: (state) => state.primaryThemeRouterAnimation,
-    hasUserAcceptedGDPR: (state) => !!state.acceptedGDRP,
+    primaryThemeRouterAnimation: (state: State) => state.primaryThemeRouterAnimation,
+    hasUserAcceptedGDPR: (state: State) => !!state.acceptedGDRP,
 };

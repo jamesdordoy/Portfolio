@@ -1,5 +1,5 @@
 import '../css/app.css';
-import state from '@/State/state.js';
+import { state } from '@/State/state.js';
 import getters from '@/State/getters.js';
 import { createApp, h } from 'vue';
 import { createStore } from 'vuex';
@@ -12,6 +12,7 @@ import { createInertiaApp } from '@inertiajs/vue3';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import createPersistedState from 'vuex-persistedstate';
+import { VueReCaptcha } from 'vue-recaptcha-v3';
 
 const store = createStore({
     plugins: [createPersistedState()],
@@ -40,6 +41,7 @@ const app = createInertiaApp({
             .use(Particles)
             .use(VueScrollTo)
             .use(Notifications)
+            .use(VueReCaptcha, { siteKey: import.meta.env.VITE_RECAPTCHA_SITE_KEY })
             .mixin({ methods: { route } })
             .component('font-awesome-icon', FontAwesomeIcon)
             .mount(el);
