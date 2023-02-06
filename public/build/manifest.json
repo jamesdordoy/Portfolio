@@ -1,80 +1,11 @@
 {
-  "resources/js/Pages/Home/Partials/HomeParticles.css": {
-    "file": "assets/HomeParticles-c2b8742e.css",
-    "src": "resources/js/Pages/Home/Partials/HomeParticles.css"
+  "resources/js/Pages/Home.css": {
+    "file": "assets/Home-14272c6d.css",
+    "src": "resources/js/Pages/Home.css"
   },
   "resources/js/app.css": {
-    "file": "assets/app-f85539f2.css",
+    "file": "assets/app-178aa6aa.css",
     "src": "resources/js/app.css"
-  },
-  "resources/js/Pages/Home/Partials/NavigationMenu.vue": {
-    "file": "assets/NavigationMenu-7c25d168.js",
-    "src": "resources/js/Pages/Home/Partials/NavigationMenu.vue",
-    "isDynamicEntry": true,
-    "imports": [
-      "resources/js/app.ts",
-      "__plugin-vue_export-helper-c27b6911.js"
-    ]
-  },
-  "resources/js/Pages/Home/Sections/ContactMeSection.vue": {
-    "file": "assets/ContactMeSection-2df93d67.js",
-    "src": "resources/js/Pages/Home/Sections/ContactMeSection.vue",
-    "isDynamicEntry": true,
-    "imports": [
-      "__plugin-vue_export-helper-c27b6911.js"
-    ]
-  },
-  "__plugin-vue_export-helper-c27b6911.js": {
-    "file": "assets/_plugin-vue_export-helper-c27b6911.js"
-  },
-  "resources/js/Pages/Home/Sections/MyExperianceSection.vue": {
-    "file": "assets/MyExperianceSection-0228f03d.js",
-    "src": "resources/js/Pages/Home/Sections/MyExperianceSection.vue",
-    "isDynamicEntry": true,
-    "imports": [
-      "resources/js/app.ts"
-    ]
-  },
-  "resources/js/Pages/Home/Partials/Settings.vue": {
-    "file": "assets/Settings-2a6c1c90.js",
-    "src": "resources/js/Pages/Home/Partials/Settings.vue",
-    "isDynamicEntry": true,
-    "imports": [
-      "__plugin-vue_export-helper-c27b6911.js",
-      "resources/js/app.ts"
-    ]
-  },
-  "resources/js/Pages/Home/Index.vue": {
-    "file": "assets/Index-7a7138a1.js",
-    "src": "resources/js/Pages/Home/Index.vue",
-    "isDynamicEntry": true,
-    "imports": [
-      "resources/js/app.ts",
-      "resources/js/Pages/Home/Partials/HomeParticles.vue",
-      "resources/js/Pages/Home/Partials/AboutMe.vue",
-      "resources/js/Pages/Home/Partials/Settings.vue",
-      "resources/js/Pages/Home/Sections/ProjectsSection.vue",
-      "resources/js/Pages/Home/Sections/MyExperianceSection.vue",
-      "resources/js/Pages/Home/Partials/NavigationMenu.vue",
-      "__plugin-vue_export-helper-c27b6911.js"
-    ]
-  },
-  "resources/js/Pages/Home/Partials/AboutMe.vue": {
-    "file": "assets/AboutMe-470fda95.js",
-    "src": "resources/js/Pages/Home/Partials/AboutMe.vue",
-    "isDynamicEntry": true,
-    "imports": [
-      "resources/js/app.ts"
-    ]
-  },
-  "resources/js/Pages/Home/Sections/ProjectsSection.vue": {
-    "file": "assets/ProjectsSection-67f5cd6d.js",
-    "src": "resources/js/Pages/Home/Sections/ProjectsSection.vue",
-    "isDynamicEntry": true,
-    "imports": [
-      "__plugin-vue_export-helper-c27b6911.js",
-      "resources/js/app.ts"
-    ]
   },
   "node_modules/@fortawesome/free-regular-svg-icons/index.mjs": {
     "file": "assets/index-5a151d46.js",
@@ -86,16 +17,15 @@
     "src": "node_modules/@fortawesome/free-brands-svg-icons/index.mjs",
     "isDynamicEntry": true
   },
-  "resources/js/Pages/Home/Partials/HomeParticles.vue": {
-    "file": "assets/HomeParticles-216fd1b5.js",
-    "src": "resources/js/Pages/Home/Partials/HomeParticles.vue",
+  "resources/js/Pages/Home.vue": {
+    "file": "assets/Home-b5d47ae7.js",
+    "src": "resources/js/Pages/Home.vue",
     "isDynamicEntry": true,
     "imports": [
-      "resources/js/app.ts",
-      "__plugin-vue_export-helper-c27b6911.js"
+      "resources/js/app.ts"
     ],
     "css": [
-      "assets/HomeParticles-c2b8742e.css"
+      "assets/Home-14272c6d.css"
     ]
   },
   "node_modules/@fortawesome/free-solid-svg-icons/index.mjs": {
@@ -104,24 +34,17 @@
     "isDynamicEntry": true
   },
   "resources/js/app.ts": {
-    "file": "assets/app-ca591cf8.js",
+    "file": "assets/app-076a31d1.js",
     "src": "resources/js/app.ts",
     "isEntry": true,
     "dynamicImports": [
       "node_modules/@fortawesome/free-brands-svg-icons/index.mjs",
       "node_modules/@fortawesome/free-solid-svg-icons/index.mjs",
       "node_modules/@fortawesome/free-regular-svg-icons/index.mjs",
-      "resources/js/Pages/Home/Index.vue",
-      "resources/js/Pages/Home/Partials/AboutMe.vue",
-      "resources/js/Pages/Home/Partials/HomeParticles.vue",
-      "resources/js/Pages/Home/Partials/NavigationMenu.vue",
-      "resources/js/Pages/Home/Partials/Settings.vue",
-      "resources/js/Pages/Home/Sections/ContactMeSection.vue",
-      "resources/js/Pages/Home/Sections/MyExperianceSection.vue",
-      "resources/js/Pages/Home/Sections/ProjectsSection.vue"
+      "resources/js/Pages/Home.vue"
     ],
     "css": [
-      "assets/app-f85539f2.css"
+      "assets/app-178aa6aa.css"
     ]
   }
 }
