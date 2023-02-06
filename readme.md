@@ -1,5 +1,5 @@
-[![PHP Linting (Pint)](https://github.com/jamesdordoy/Portfolio/actions/workflows/pint.yml/badge.svg)](https://github.com/jamesdordoy/Portfolio/actions/workflows/pint.yml) [![Pest](https://github.com/jamesdordoy/Portfolio/actions/workflows/test.yml/badge.svg)](https://github.com/jamesdordoy/Portfolio/actions/workflows/test.yml)
-
+[![PHP Linting (Pint)](https://github.com/jamesdordoy/Portfolio/actions/workflows/pint.yml/badge.svg)](https://github.com/jamesdordoy/Portfolio/actions/workflows/pint.yml) [![Pest](https://github.com/jamesdordoy/Portfolio/actions/workflows/pest.yml/badge.svg)](https://github.com/jamesdordoy/Portfolio/actions/workflows/pest.yml)
+[![Vitest](https://github.com/jamesdordoy/Portfolio/actions/workflows/vitest.yml/badge.svg)](https://github.com/jamesdordoy/Portfolio/actions/workflows/vitest.yml)
 
 # Portfolio
 My personal portfolio built with Laravel, Vue & Tailwind.
