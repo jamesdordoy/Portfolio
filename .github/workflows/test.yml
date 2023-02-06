@@ -46,5 +46,5 @@ jobs:
       run: php artisan test
 
     - name: Vitest Test
-        run: /home/runner/.bun/bin/bun run test
+      run: /home/runner/.bun/bin/bun run test
 
