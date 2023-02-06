@@ -1,4 +1,4 @@
-name: Pest
+name: Vitest
 
 on:
   push:
