@@ -21,6 +21,7 @@ jobs:
     
     - name: Install Dependencies
       run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+      run: composer require vlucas/phpdotenv:^5.3.1 --no-update --no-interaction
     
     - name: Generate key
       run: php artisan key:generate
