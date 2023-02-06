@@ -29,7 +29,7 @@ class ProjectTableSeeder extends Seeder
                 'name' => 'Shopping Application',
                 'description' => 'VueFire SPA, Vue Cli 3, Tailwind.css.',
                 'owner' => 'Me',
-                'icon' => '/images/projects/simple-shopping.png',
+                'icon' => '/storage/images/projects/simple-shopping.png',
                 'link' => 'https://shopping.jamesdordoy.co.uk',
             ]
         );
@@ -39,7 +39,7 @@ class ProjectTableSeeder extends Seeder
                 'name' => 'Laravel Vue Datatables',
                 'description' => 'A Vue.js datatable component for Laravel that works with Bootstrap.',
                 'owner' => 'Me',
-                'icon' => '/images/projects/bootstrap-datatable.png',
+                'icon' => '/storage/images/projects/bootstrap-datatable.png',
                 'link' => 'https://github.com/jamesdordoy/laravel-vue-datatable',
                 'private' => 0,
             ]
@@ -80,7 +80,7 @@ class ProjectTableSeeder extends Seeder
                 'name' => 'PHP Forward Chaining Engine',
                 'description' => 'A simple Forward Chaining Engine written in PHP and makes use of the Symfony expressions language',
                 'owner' => 'Me',
-                'icon' => '/images/projects/PHPBinaryTree.png',
+                'icon' => '/storage/images/projects/PHPBinaryTree.png',
                 'link' => 'https://github.com/jamesdordoy/PHP-Forward-Chaining',
                 'private' => 0,
             ]
@@ -103,7 +103,7 @@ class ProjectTableSeeder extends Seeder
                 'name' => 'Points of Interest',
                 'description' => 'A JavaScript frontend mapping app with a PHP and Node.JS backend made while attending University.',
                 'owner' => 'Me',
-                'icon' => '/images/projects/PointsofInterest.png',
+                'icon' => '/storage/images/projects/PointsofInterest.png',
                 'link' => '',
                 'private' => 0,
             ]
