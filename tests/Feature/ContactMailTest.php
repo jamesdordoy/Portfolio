@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactMail;
 use App\Models\Data\Contact as ContactData;
 use Illuminate\Pipeline\Pipeline;
+use Illuminate\Support\Facades\Bus;
+
+beforeEach(function () {
+    Bus::fake();
+});
 
 test('A contact email can be created and queued', function () {
     Mail::fake();

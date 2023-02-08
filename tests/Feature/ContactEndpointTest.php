@@ -1,6 +1,11 @@
 <?php
 
+use Illuminate\Support\Facades\Bus;
 use Inertia\Testing\AssertableInertia as Assert;
+
+beforeEach(function () {
+    Bus::fake();
+});
 
 test('Contact end point fails with no name', function () {
     $this->followingRedirects()

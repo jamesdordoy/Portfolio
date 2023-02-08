@@ -1,6 +1,11 @@
 <?php
 
+use Illuminate\Support\Facades\Bus;
 use Inertia\Testing\AssertableInertia as Assert;
+
+beforeEach(function () {
+    Bus::fake();
+});
 
 test('Newsletter end point fails with no email', function () {
     $this->followingRedirects()
