@@ -40,7 +40,7 @@ jobs:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
         DISCORD_ALERT_WEBHOOK: ${{ secrets.DISCORD_ALERT_WEBHOOK }}
-      run: test --coverage --coverage-clover storage/coverage/coverage.xml
+      run: php artisan test --coverage --coverage-clover storage/coverage/coverage.xml
     - name: Upload coverage reports to Codecov
       uses: codecov/codecov-action@v3
       with:
