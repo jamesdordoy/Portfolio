@@ -18,7 +18,7 @@ const { executeRecaptcha, recaptchaLoaded } = useReCaptcha();
 const submit = async () => {
     if (checkRecapture(executeRecaptcha, recaptchaLoaded)) {
         form.post(route('newsletter.store'), {
-            preserveScroll: (page): boolean => !! Object.keys(page.props.errors).length,
+            preserveScroll: (page): boolean => !!Object.keys(page.props.errors).length,
             onSuccess: (): void => {
                 notify(
                     {

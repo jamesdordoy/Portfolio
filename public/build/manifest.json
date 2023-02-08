@@ -18,7 +18,7 @@
     "isDynamicEntry": true
   },
   "resources/js/Pages/Home.vue": {
-    "file": "assets/Home-aee4cdc3.js",
+    "file": "assets/Home-328b966d.js",
     "src": "resources/js/Pages/Home.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -34,7 +34,7 @@
     "isDynamicEntry": true
   },
   "resources/js/app.ts": {
-    "file": "assets/app-e72d21bc.js",
+    "file": "assets/app-4fd1f0f2.js",
     "src": "resources/js/app.ts",
     "isEntry": true,
     "dynamicImports": [

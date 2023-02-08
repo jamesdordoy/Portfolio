@@ -11,11 +11,11 @@ const store = useStore();
 
 const getTheme = computed<string>(() => store.getters.primaryTheme);
 
-const showSettings = ( ) => {
+const showSettings = () => {
     emit('toggle', false);
 };
 const updatePrimaryThemeColour = (colour: string) => {
-    console.log(colour)
+    console.log(colour);
     store.commit('setPrimaryThemeColor', colour);
 };
 const updatePrimaryThemeColourShade = (event: Event) => {
@@ -33,10 +33,8 @@ const props = defineProps({
         type: Boolean,
         default: true,
     },
-   
 });
 </script>
-
 
 <template>
     <div>
@@ -218,4 +216,3 @@ const props = defineProps({
         </div>
     </div>
 </template>
-

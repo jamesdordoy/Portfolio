@@ -17,7 +17,7 @@ const props = defineProps({
 });
 
 const emit = defineEmits<{
-    (e: 'click'): void
+    (e: 'click'): void;
 }>();
 
 const variantClasses = computed(() => {

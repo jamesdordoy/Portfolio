@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-
 import { useStore } from 'vuex';
 import { ref } from 'vue';
 
@@ -9,14 +8,13 @@ const open = ref<boolean>(false);
 
 const toggle = () => {
     open.value = !open.value;
-}
+};
 const openMenu = () => {
     open.value = true;
-}
+};
 const closeMenu = () => {
     open.value = false;
-}
-
+};
 </script>
 
 <template>
@@ -110,4 +108,3 @@ const closeMenu = () => {
         </nav>
     </div>
 </template>
-
