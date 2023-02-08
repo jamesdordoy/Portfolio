@@ -1,11 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Bus;
+use Illuminate\Support\Facades\Mail;
 use Inertia\Testing\AssertableInertia as Assert;
 
 beforeEach(function () {
     config()->set('discord-alerts.webhook_urls.default', 'https://test-domain.com');
     Bus::fake();
+    Mail::fake();
 });
 
 test('Contact end point fails with no name', function () {
