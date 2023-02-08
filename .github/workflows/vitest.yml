@@ -35,7 +35,14 @@ jobs:
       run: chmod -R 777 storage bootstrap/cache
     
     - name: Vitest Test
-      run: /home/runner/.bun/bin/bun run test
+      run: |
+        /home/runner/.bun/bin/bun run test
+        /home/runner/.bun/bin/bun run coverage
+    - name: Upload coverage reports to Codecov
+      uses: codecov/codecov-action@v3
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        files: ./coverage/clover.xml
     
    
 
