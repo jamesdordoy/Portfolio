@@ -11,6 +11,7 @@ use Illuminate\Pipeline\Pipeline;
 use Illuminate\Support\Facades\Bus;
 
 beforeEach(function () {
+    config()->set('discord-alerts.webhook_urls.default', 'https://test-domain.com');
     Bus::fake();
 });
 

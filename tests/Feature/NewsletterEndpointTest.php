@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Bus;
 use Inertia\Testing\AssertableInertia as Assert;
 
 beforeEach(function () {
+    config()->set('discord-alerts.webhook_urls.default', 'https://test-domain.com');
     Bus::fake();
 });
 
