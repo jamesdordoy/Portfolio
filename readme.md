@@ -1,3 +1,4 @@
+[![statuscake](https://app.statuscake.com/button/index.php?Track=5724429&Days=30&Design=2)](https://www.statuscake.com)
 [![PHP Linting (Pint)](https://github.com/jamesdordoy/Portfolio/actions/workflows/pint.yml/badge.svg)](https://github.com/jamesdordoy/Portfolio/actions/workflows/pint.yml) [![Pest](https://github.com/jamesdordoy/Portfolio/actions/workflows/pest.yml/badge.svg)](https://github.com/jamesdordoy/Portfolio/actions/workflows/pest.yml)
 [![Vitest](https://github.com/jamesdordoy/Portfolio/actions/workflows/vitest.yml/badge.svg)](https://github.com/jamesdordoy/Portfolio/actions/workflows/vitest.yml)
 [![Laravel Forge Site Deployment Status](https://img.shields.io/endpoint?url=https%3A%2F%2Fforge.laravel.com%2Fsite-badges%2F17ffaca2-cef7-4bd4-b87f-bf17cfb9b396&style=flat)](https://forge.laravel.com)
