@@ -37,7 +37,6 @@ test('A contact email can be created and queued', function () {
 });
 
 test('A contact email renders', function () {
-
     $contact = Contact::factory()->create();
 
     $mail = new ContactMail($contact);
