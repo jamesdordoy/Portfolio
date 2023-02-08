@@ -16,7 +16,9 @@ const props = defineProps({
     },
 });
 
-const emit = defineEmits(['click']);
+const emit = defineEmits<{
+    (e: 'click'): void
+}>();
 
 const variantClasses = computed(() => {
     return cva('btn w-full font-medium disabled:pointer-events-none disabled:select-none disabled:opacity-60', {

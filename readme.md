@@ -1,5 +1,6 @@
 [![PHP Linting (Pint)](https://github.com/jamesdordoy/Portfolio/actions/workflows/pint.yml/badge.svg)](https://github.com/jamesdordoy/Portfolio/actions/workflows/pint.yml) [![Pest](https://github.com/jamesdordoy/Portfolio/actions/workflows/pest.yml/badge.svg)](https://github.com/jamesdordoy/Portfolio/actions/workflows/pest.yml)
 [![Vitest](https://github.com/jamesdordoy/Portfolio/actions/workflows/vitest.yml/badge.svg)](https://github.com/jamesdordoy/Portfolio/actions/workflows/vitest.yml)
+[![Laravel Forge Site Deployment Status](https://img.shields.io/endpoint?url=https%3A%2F%2Fforge.laravel.com%2Fsite-badges%2F17ffaca2-cef7-4bd4-b87f-bf17cfb9b396&style=flat)](https://forge.laravel.com)
 
 # Portfolio
 My personal portfolio built with Laravel, Vue & Tailwind.
@@ -10,7 +11,6 @@ My personal portfolio built with Laravel, Vue & Tailwind.
 * [Vue.js](https://vuejs.org/) 3.x
 * [TypeScript](https://www.typescriptlang.org/) 4.x
 * [Laravel](http://laravel.com/docs/) 9.x
-    * [Sail](https://laravel.com/docs/8.x/sail) (Optional)
 * [Inertiajs](https://inertiajs.com/) 1.x
 * [Tailwind](https://tailwindcss.com/) 3.*
 * [Redis](https://redis.io/)

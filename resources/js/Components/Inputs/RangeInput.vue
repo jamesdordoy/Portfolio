@@ -5,8 +5,10 @@ const store = useStore();
 
 let value = ref(store.getters.primaryThemeColourShade);
 
-const onInput = (event) => {
-    value.value = event.target.value;
+const onInput = (event: Event) => {
+    const target = event.target as HTMLInputElement;
+
+    value.value = target.value;
 };
 </script>
 

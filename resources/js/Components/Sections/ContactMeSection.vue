@@ -1,5 +1,10 @@
 <script lang="ts" setup>
+
 import ContactForm from '@/components/forms/ContactForm.vue';
+import { useStore } from 'vuex';
+
+const store = useStore();
+
 </script>
 
 <template>
@@ -11,7 +16,7 @@ import ContactForm from '@/components/forms/ContactForm.vue';
         </span>
         <h2
             class="varela mb-8 text-3xl"
-            :class="`text-${$store.getters.primaryThemeTextColour}`"
+            :class="`text-${store.getters.primaryThemeTextColour}`"
         >
             Contact Me
         </h2>

@@ -1,35 +1,25 @@
 <script lang="ts" setup>
-import axios from 'axios';
 import { notify } from 'notiwind';
 import { useForm } from '@inertiajs/vue3';
 import { useStore } from 'vuex';
 import { useReCaptcha } from 'vue-recaptcha-v3';
+import checkRecapture from '@/checkRecapture.js';
+
+const store = useStore();
 
 const newsletter: App.Models.Data.Newsletter = {
     email: '',
 };
 
-const form = useForm(newsletter);
-
-const store = useStore();
+const form = useForm<App.Models.Data.Newsletter>(newsletter);
 
 const { executeRecaptcha, recaptchaLoaded } = useReCaptcha();
 
 const submit = async () => {
-    await recaptchaLoaded();
-
-    const token = await executeRecaptcha('login');
-
-    const response = await axios.get(`/recaptcha/validate`, {
-        params: {
-            token,
-        },
-    });
-
-    if (response.data.success) {
+    if (checkRecapture(executeRecaptcha, recaptchaLoaded)) {
         form.post(route('newsletter.store'), {
-            preserveScroll: (page) => Object.keys(page.props.errors).length,
-            onSuccess: () => {
+            preserveScroll: (page): boolean => !! Object.keys(page.props.errors).length,
+            onSuccess: (): void => {
                 notify(
                     {
                         group: 'toasts',
