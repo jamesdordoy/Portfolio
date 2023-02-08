@@ -16,15 +16,4 @@ class Taggable extends Data
         public DateTime|Optional $updated_at,
     ) {
     }
-
-    public static function fromModel(Taggable $tag): self
-    {
-        return new self(
-            $tag->id,
-            $tag->name,
-            $tag->description,
-            $tag->created_at,
-            $tag->updated_at,
-        );
-    }
 }

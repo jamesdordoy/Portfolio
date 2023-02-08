@@ -6,6 +6,7 @@ use App\Actions\Contact\CreateContact;
 use App\Actions\Contact\SendContactEmail;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactMail;
+use App\Models\Contact;
 use App\Models\Data\Contact as ContactData;
 use Illuminate\Pipeline\Pipeline;
 use Illuminate\Support\Facades\Bus;
@@ -33,4 +34,15 @@ test('A contact email can be created and queued', function () {
         ->then(function ($contact) {
             Mail::assertQueued(ContactMail::class);
         });
+});
+
+test('A contact email renders', function () {
+
+    $contact = Contact::factory()->create();
+
+    $mail = new ContactMail($contact);
+
+    $mail->build();
+
+    $mail->assertSeeInHtml($contact->name);
 });
