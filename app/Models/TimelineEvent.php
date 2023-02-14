@@ -20,5 +20,10 @@ class TimelineEvent extends EloquentModel
         'hidden',
     ];
 
-    protected $dates = ['from', 'to', 'created_at', 'updated_at'];
+    protected $casts = [
+        'from' => 'datetime',
+        'to' => 'datetime',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+    ];
 }

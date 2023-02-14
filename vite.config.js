@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 import vue from '@vitejs/plugin-vue';
 import path from 'path';
+import dts from 'vite-plugin-dts';
 
 export default defineConfig({
     plugins: [
@@ -18,6 +19,7 @@ export default defineConfig({
                 },
             },
         }),
+        dts(),
         {
             name: 'ziggy',
             enforce: 'post',

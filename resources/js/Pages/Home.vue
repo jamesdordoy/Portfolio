@@ -16,7 +16,7 @@ import MyExperianceSection from '@/Components/Sections/MyExperianceSection.vue';
 
 const props = defineProps({
     projects: {
-        type: Array as App.Models.Data.Project<Array<App.Models.Data.Project>>,
+        type: Array<Project>,
         required: true,
     },
     timeline: {

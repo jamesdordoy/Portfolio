@@ -32,8 +32,8 @@ const app = createInertiaApp({
         color: '#4B5563',
     },
     title: () => `${appName}`,
-    resolve: (name): Promise<unknown> =>
-        resolvePageComponent(`./Pages/${name}.vue`, import.meta.glob('./Pages/**/*.vue')).then((page) => page),
+    resolve: (name: string): Promise<unknown> =>
+        resolvePageComponent(`./Pages/${name}.vue`, import.meta.glob('./Pages/**/*.vue')).then((page: any) => page),
     async setup({ el, App, props, plugin }) {
         await fontAwesomeLibrary();
 

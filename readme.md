@@ -12,7 +12,7 @@ My personal portfolio built with Laravel, Vue & Tailwind.
 * [PHP](https://www.php.net/releases/8.1/en.php) 8.1+
 * [Vue.js](https://vuejs.org/) 3.x
 * [TypeScript](https://www.typescriptlang.org/) 4.x
-* [Laravel](http://laravel.com/docs/) 9.x
+* [Laravel](http://laravel.com/docs/) 10.x
 * [Inertiajs](https://inertiajs.com/) 1.x
 * [Tailwind](https://tailwindcss.com/) 3.*
 * [Redis](https://redis.io/)
