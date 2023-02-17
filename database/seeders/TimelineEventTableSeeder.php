@@ -15,6 +15,35 @@ class TimelineEventTableSeeder extends Seeder
     public function run()
     {
         TimelineEvent::factory()->create([
+            'from' => '2020-11-10 13:23:45',
+            'to' => '2023-02-17 13:23:45',
+            'name' => 'Pulse Digital',
+            'icon' => 'code',
+            'title' => 'Full Stack Developer',
+            'body' => 'Now working from home, i joined the team at Pulse Digital. I have helped in working on their current website along side some of their clients. I have also been developing their SaaS platform Heartbeat using Intertia.js with Vue',
+        ]);
+
+        TimelineEvent::factory()->create([
+            'from' => '2020-03-15 13:23:45',
+            'to' => '2020-09-30 13:23:45',
+            'name' => 'Ghost Enterprises',
+            'icon' => 'building',
+            'title' => 'Technical Support',
+            'body' => 'Working for another local business, i provided technical support and managed websites and servers for Ghost Enterprises. During this time i helped with general operations, support requests and managing parts of IT and Essex Cricket.
+            <br><br>During this time i learned alot about manging WordPress sites using virtual private servers, running a local virtualization server locally called Proxmox and manging users and accounts with sharepoint.',
+        ]);
+
+        TimelineEvent::factory()->create([
+            'from' => '2017-11-28 13:23:45',
+            'to' => '2019-08-31 13:23:45',
+            'name' => 'Neon Digital',
+            'icon' => 'code',
+            'title' => 'Junior Web Developer',
+            'body' => 'Working for a local digital agency, my position included creating new internal tools e.g. for server monitoring and completing work on non-customer facing business systems including CRM, CMS and ordering systems.
+            <br><br>The main tech stack i was using during this time was L.A.M.P. or L.E.M.P. with a Laravel backend. On the frontend, the company was trying to move away from using JQuery so i gained alot of knowledge of JQuery and Vue.js by porting different UI elements.',
+        ]);
+
+        TimelineEvent::factory()->create([
             'from' => '2017-11-28 13:23:45',
             'to' => '2019-08-31 13:23:45',
             'name' => 'Neon Digital',

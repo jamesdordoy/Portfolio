@@ -9,7 +9,6 @@
 
 #settings-sidebar {
     @apply left-0 z-20;
-    top: 76px;
 }
 
 .front-nav-item {
@@ -23,14 +22,10 @@
 }
 
 .front-into {
-    @apply mx-10 mt-20 rounded border p-4 text-center text-white;
+    @apply rounded border p-4 text-center text-white;
 
     background: rgba(0, 0, 0, 0.4);
     text-shadow: 0px 0px 2px #131415;
-}
-
-.jd-tag {
-    @apply inline-block;
 }
 
 .jd-bookmark {

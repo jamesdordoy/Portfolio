@@ -55,6 +55,7 @@ defineProps({
                 v-for="tag in project.tags"
                 :key="tag.id"
                 :name="tag.taggable.name"
+                class="mt-2"
             >
             </tag>
         </div>

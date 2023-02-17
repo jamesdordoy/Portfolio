@@ -53,6 +53,7 @@
         "notiwind": "^2.0.0",
         "particles.vue3": "^2.8.0",
         "postcss": "^8.4.21",
+        "swiper": "^9.0.5",
         "tailwindcss": "^3.2.4",
         "tom-select": "^2.2.2",
         "tsparticles": "^2.8.0",

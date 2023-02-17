@@ -75,7 +75,7 @@ onUnmounted(() => {
 
     <div
         id="settings-sidebar"
-        class="fixed min-h-full w-1/4 border-r border-t py-2 shadow"
+        class="fixed top-[56px] min-h-full w-full border-r border-t py-2 shadow lg:top-[76px] lg:w-1/4"
         :class="`bg-${primaryThemeBg} border-${store.getters.primaryThemeColour}-${
             store.getters.primaryThemeColourShade
         } ${displaySettings ? '' : 'hidden'}`"
@@ -103,13 +103,13 @@ onUnmounted(() => {
         <div class="py-18 relative min-h-screen w-full px-10">
             <Particles />
 
-            <div class="absolute top-1/2 left-1/2 w-1/3 -translate-x-1/2 -translate-y-1/2 transform">
+            <div class="absolute top-1/2 left-1/2 w-1/2 -translate-x-1/2 -translate-y-1/2 transform lg:w-1/3">
                 <div
                     class="front-into w-full md:mx-0 md:p-8"
                     :class="`border-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShade}`"
                 >
-                    <h1 class="varela sm:text-3xl md:text-4xl">James Dordoy</h1>
-                    <h2 class="varela sm:text-1xl md:text-2xl">Full Stack Developer</h2>
+                    <h1 class="varela text-2xl sm:text-3xl md:text-4xl">James Dordoy</h1>
+                    <h2 class="varela sm:text-1xl text-lg md:text-2xl">Full Stack Developer</h2>
                     <p class="varela md:text-1xl sm:text-1xl">From Essex</p>
                 </div>
             </div>
