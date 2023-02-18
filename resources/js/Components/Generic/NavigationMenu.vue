@@ -64,14 +64,6 @@ const closeMenu = () => {
             >
                 <div class="text-sm sm:flex-grow">
                     <a
-                        v-scroll-to="'#home'"
-                        class="front-nav-item lg:mt-0 lg:inline-block"
-                        :class="`text-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShade} hover:text-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShadeLighter}`"
-                        @click="closeMenu"
-                    >
-                        Home
-                    </a>
-                    <a
                         v-scroll-to="'#about'"
                         class="front-nav-item lg:mt-0 lg:inline-block"
                         :class="`text-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShade} hover:text-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShadeLighter}`"
@@ -88,7 +80,7 @@ const closeMenu = () => {
                         My Projects
                     </a>
                     <a
-                        v-scroll-to="'#blog'"
+                        v-scroll-to="'#experiance'"
                         class="front-nav-item lg:mt-0 lg:inline-block"
                         :class="`text-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShade} hover:text-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShadeLighter}`"
                         @click="closeMenu"

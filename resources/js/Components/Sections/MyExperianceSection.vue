@@ -14,6 +14,11 @@ defineProps({
 
 <template>
     <div>
+        <span
+            id="experiance"
+            class="jd-bookmark"
+        >
+        </span>
         <h2
             class="varela mb-8 text-center text-3xl"
             :class="`text-${store.getters.primaryThemeTextColour}`"

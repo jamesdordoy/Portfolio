@@ -4,7 +4,7 @@
     "src": "resources/js/Pages/Home.css"
   },
   "resources/js/app.css": {
-    "file": "assets/app-178aa6aa.css",
+    "file": "assets/app-56d6b89e.css",
     "src": "resources/js/app.css"
   },
   "node_modules/@fortawesome/free-regular-svg-icons/index.mjs": {
@@ -18,7 +18,7 @@
     "isDynamicEntry": true
   },
   "resources/js/Pages/Home.vue": {
-    "file": "assets/Home-328b966d.js",
+    "file": "assets/Home-1e4887bb.js",
     "src": "resources/js/Pages/Home.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -34,7 +34,7 @@
     "isDynamicEntry": true
   },
   "resources/js/app.ts": {
-    "file": "assets/app-4fd1f0f2.js",
+    "file": "assets/app-26271ab4.js",
     "src": "resources/js/app.ts",
     "isEntry": true,
     "dynamicImports": [
@@ -44,7 +44,7 @@
       "resources/js/Pages/Home.vue"
     ],
     "css": [
-      "assets/app-178aa6aa.css"
+      "assets/app-56d6b89e.css"
     ]
   }
 }
