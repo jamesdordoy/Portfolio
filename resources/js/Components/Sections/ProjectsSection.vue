@@ -2,6 +2,36 @@
 import { useStore } from 'vuex';
 import { PropType } from 'vue';
 import Project from '@/Components/Generic/Project.vue';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Navigation } from 'swiper';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+
+const modules = [Navigation];
+
+const breakpoints = {
+    640: {
+        slidesPerView: 1,
+        spaceBetween: 14,
+    },
+    768: {
+        slidesPerView: 1,
+        spaceBetween: 14,
+    },
+    1024: {
+        slidesPerView: 2,
+        spaceBetween: 14,
+    },
+    1280: {
+        slidesPerView: 3,
+        spaceBetween: 14,
+    },
+    1536: {
+        slidesPerView: 3,
+        spaceBetween: 14,
+    },
+};
 
 const store = useStore();
 
@@ -27,13 +57,18 @@ defineProps({
             Projects
         </h2>
         <section class="flex flex-wrap">
-            <div
-                v-for="project in projects"
-                :key="project.id"
-                class="mb-4 w-full px-2 md:w-1/2 lg:w-1/3"
+            <swiper
+                navigation
+                :modules="modules"
+                :breakpoints="breakpoints"
             >
-                <Project :project="project" />
-            </div>
+                <SwiperSlide
+                    v-for="project in projects"
+                    :key="project.id"
+                >
+                    <Project :project="project" />
+                </SwiperSlide>
+            </swiper>
         </section>
     </div>
 </template>

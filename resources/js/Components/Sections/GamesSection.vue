@@ -6,6 +6,37 @@ import Game from '@/Components/Generic/Game.vue';
 import Carousel from '@/Components/Generic/Carousel.vue';
 import Slide from '@/Components/Generic/Slide.vue';
 
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Navigation } from 'swiper';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+
+const modules = [Navigation];
+
+const breakpoints = {
+    640: {
+        slidesPerView: 1,
+        spaceBetween: 14,
+    },
+    768: {
+        slidesPerView: 1,
+        spaceBetween: 14,
+    },
+    1024: {
+        slidesPerView: 1,
+        spaceBetween: 14,
+    },
+    1280: {
+        slidesPerView: 1,
+        spaceBetween: 14,
+    },
+    1536: {
+        slidesPerView: 1,
+        spaceBetween: 14,
+    },
+};
+
 const store = useStore();
 
 defineProps({
@@ -29,26 +60,19 @@ defineProps({
         >
             Game Clips
         </h2>
-        <section class="flex h-full w-full flex-wrap overflow-hidden py-4 lg:pl-8">
-            <Carousel
-                v-slot="{ currentSlide }"
-                :navigation="true"
-                :auto-play-enabled="false"
-                class="carousel mt-2 w-full"
+        <section class="flex w-full flex-wrap overflow-hidden py-4 lg:pl-8">
+            <swiper
+                navigation
+                :modules="modules"
+                :breakpoints="breakpoints"
             >
-                <Slide
+                <SwiperSlide
                     v-for="(clip, index) in gameClips"
                     :key="index"
-                    class="min-h-80"
                 >
-                    <Game
-                        v-show="currentSlide == index"
-                        :clip="clip"
-                    />
-                </Slide>
-            </Carousel>
+                    <Game :clip="clip" />
+                </SwiperSlide>
+            </swiper>
         </section>
     </div>
 </template>
-
-<style></style>

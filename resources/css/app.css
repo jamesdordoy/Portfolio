@@ -34,3 +34,7 @@
     top: -100px;
     visibility: hidden;
 }
+
+.grecaptcha-logo {
+    z-index: 100;
+}
