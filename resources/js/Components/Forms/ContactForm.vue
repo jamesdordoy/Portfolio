@@ -5,6 +5,8 @@ import { useForm } from '@inertiajs/vue3';
 import { useStore } from 'vuex';
 import { useReCaptcha } from 'vue-recaptcha-v3';
 
+import route from 'ziggy-js';
+
 const contact: App.Models.Data.Contact = {
     name: '',
     email: '',
@@ -30,7 +32,7 @@ const submit = async () => {
 
     if (response.data.success) {
         form.post(route('contact.store'), {
-            preserveScroll: (page) => Object.keys(page.props.errors).length,
+            preserveScroll: (page) => !!Object.keys(page.props.errors).length,
             onSuccess: () => {
                 notify(
                     {

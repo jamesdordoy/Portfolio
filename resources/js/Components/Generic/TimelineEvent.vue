@@ -78,17 +78,11 @@ const store = useStore();
                         :class="`text-${store.getters.primaryThemeTextColour}`"
                         class="font-bold"
                     >
-                        <p
-                            class="mb-1 text-lg"
-                            v-html="event.name"
-                        ></p>
+                        <p class="mb-1 text-lg">{{ event.name }}</p>
                         {{ event.title }}
                     </div>
                 </div>
-                <p
-                    :class="`text-${store.getters.primaryThemeTextColour}`"
-                    v-html="event.body"
-                ></p>
+                <p :class="`text-${store.getters.primaryThemeTextColour}`">{{ event.body }}</p>
             </div>
         </div>
     </div>

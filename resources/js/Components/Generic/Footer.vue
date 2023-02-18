@@ -1,3 +1,10 @@
+<script lang="ts" setup>
+import { useStore } from 'vuex';
+import NewsletterForm from '@/Components/Forms/NewsletterForm.vue';
+
+const store = useStore();
+</script>
+
 <template>
     <div
         class="flex flex-wrap border-t py-3 px-10 lg:p-10"
@@ -105,10 +112,3 @@
         </div>
     </div>
 </template>
-
-<script lang="ts" setup>
-import { useStore } from 'vuex';
-import NewsletterForm from '@/Components/Forms/NewsletterForm.vue';
-
-const store = useStore();
-</script>

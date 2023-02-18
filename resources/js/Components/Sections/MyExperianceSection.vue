@@ -6,7 +6,7 @@ const store = useStore();
 
 defineProps({
     timeline: {
-        type: Array as App.Models.Data.TimelineEvent<Array<App.Models.Data.TimelineEvent>>,
+        type: Array,
         required: true,
     },
 });

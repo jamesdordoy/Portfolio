@@ -1,8 +1,5 @@
 <script lang="ts" setup>
-import { useStore } from 'vuex';
 import { PropType } from 'vue';
-
-const store = useStore();
 
 defineProps({
     clip: {

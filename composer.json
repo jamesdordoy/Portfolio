@@ -19,7 +19,7 @@
         "php": "^8.1|^8.2",
         "biscolab/laravel-recaptcha": "dev-master",
         "guzzlehttp/guzzle": "^7.5.0",
-        "inertiajs/inertia-laravel": "^v0.6.9",
+        "inertiajs/inertia-laravel": "^0.6.9",
         "laravel/framework": "^v10.0.0",
         "laravel/tinker": "^v2.8.0",
         "spatie/laravel-data": "^3.1.0",

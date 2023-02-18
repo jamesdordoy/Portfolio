@@ -4,6 +4,7 @@ import { useForm } from '@inertiajs/vue3';
 import { useStore } from 'vuex';
 import { useReCaptcha } from 'vue-recaptcha-v3';
 import checkRecapture from '@/checkRecapture.js';
+import route from 'ziggy-js';
 
 const store = useStore();
 

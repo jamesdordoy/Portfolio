@@ -1,50 +1,34 @@
 {
-  "resources/js/Pages/Home.css": {
-    "file": "assets/Home-14272c6d.css",
-    "src": "resources/js/Pages/Home.css"
-  },
-  "resources/js/app.css": {
-    "file": "assets/app-56d6b89e.css",
-    "src": "resources/js/app.css"
+  "node_modules/@fortawesome/free-brands-svg-icons/index.mjs": {
+    "file": "assets/index-7caedcd7.js",
+    "isDynamicEntry": true,
+    "src": "node_modules/@fortawesome/free-brands-svg-icons/index.mjs"
   },
   "node_modules/@fortawesome/free-regular-svg-icons/index.mjs": {
-    "file": "assets/index-5a151d46.js",
-    "src": "node_modules/@fortawesome/free-regular-svg-icons/index.mjs",
-    "isDynamicEntry": true
-  },
-  "node_modules/@fortawesome/free-brands-svg-icons/index.mjs": {
-    "file": "assets/index-38d63d1c.js",
-    "src": "node_modules/@fortawesome/free-brands-svg-icons/index.mjs",
-    "isDynamicEntry": true
-  },
-  "resources/js/Pages/Home.vue": {
-    "file": "assets/Home-1e4887bb.js",
-    "src": "resources/js/Pages/Home.vue",
+    "file": "assets/index-ced6fa51.js",
     "isDynamicEntry": true,
-    "imports": [
-      "resources/js/app.ts"
-    ],
-    "css": [
-      "assets/Home-14272c6d.css"
-    ]
+    "src": "node_modules/@fortawesome/free-regular-svg-icons/index.mjs"
   },
   "node_modules/@fortawesome/free-solid-svg-icons/index.mjs": {
-    "file": "assets/index-ab1af4c4.js",
-    "src": "node_modules/@fortawesome/free-solid-svg-icons/index.mjs",
-    "isDynamicEntry": true
+    "file": "assets/index-2a010712.js",
+    "isDynamicEntry": true,
+    "src": "node_modules/@fortawesome/free-solid-svg-icons/index.mjs"
+  },
+  "resources/js/app.css": {
+    "file": "assets/app-0c90834b.css",
+    "src": "resources/js/app.css"
   },
   "resources/js/app.ts": {
-    "file": "assets/app-26271ab4.js",
-    "src": "resources/js/app.ts",
-    "isEntry": true,
+    "css": [
+      "assets/app-0c90834b.css"
+    ],
     "dynamicImports": [
       "node_modules/@fortawesome/free-brands-svg-icons/index.mjs",
       "node_modules/@fortawesome/free-solid-svg-icons/index.mjs",
-      "node_modules/@fortawesome/free-regular-svg-icons/index.mjs",
-      "resources/js/Pages/Home.vue"
+      "node_modules/@fortawesome/free-regular-svg-icons/index.mjs"
     ],
-    "css": [
-      "assets/app-56d6b89e.css"
-    ]
+    "file": "assets/app-48bb439c.js",
+    "isEntry": true,
+    "src": "resources/js/app.ts"
   }
 }

@@ -3,9 +3,6 @@ import { useStore } from 'vuex';
 import { PropType } from 'vue';
 import Game from '@/Components/Generic/Game.vue';
 
-import Carousel from '@/Components/Generic/Carousel.vue';
-import Slide from '@/Components/Generic/Slide.vue';
-
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Navigation } from 'swiper';
 
@@ -41,7 +38,7 @@ const store = useStore();
 
 defineProps({
     gameClips: {
-        type: Array as PropType<Array<App.Models.Data.GameClip>>,
+        type: Array,
         required: true,
     },
 });

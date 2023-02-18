@@ -21,7 +21,7 @@ interface Getters {
     hasUserAcceptedGDPR(state: State): boolean;
 }
 
-export const getters: Getters = {
+const getters: Getters = {
     primaryThemeColour: (state: State) => state.primaryThemeColour,
     primaryThemeColourShade: (state: State) => state.primaryThemeColourShade,
     primaryThemeColourShadeLighter: (state: State) => state.primaryThemeColourShade - 200,
@@ -43,3 +43,5 @@ export const getters: Getters = {
 
     hasUserAcceptedGDPR: (state: State) => !!state.acceptedGDRP,
 };
+
+export default getters;

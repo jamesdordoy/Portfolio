@@ -6,10 +6,12 @@ export type State = {
     primaryThemeRouterAnimation: string;
 };
 
-export const state: State = {
+const state: State = {
     primaryThemeColour: 'blue',
     primaryThemeColourShade: 500,
     primaryTheme: 'dark',
     acceptedGDRP: false,
     primaryThemeRouterAnimation: '',
 };
+
+export default state;

@@ -16,15 +16,15 @@ import MyExperianceSection from '@/Components/Sections/MyExperianceSection.vue';
 
 const props = defineProps({
     projects: {
-        type: Array<Project>,
+        type: Array,
         required: true,
     },
     timeline: {
-        type: Array as App.Models.Data.TimelineEvent<Array<App.Models.Data.TimelineEvent>>,
+        type: Array,
         required: true,
     },
     gameClips: {
-        type: Array as App.Models.Data.GameClip<Array<App.Models.Data.GameClip>>,
+        type: Array,
         required: true,
     },
     errors: {

@@ -8,7 +8,7 @@ interface Mutations {
     userAcceptedGDRP(state: State): void;
 }
 
-export const mutations: Mutations = {
+const mutations: Mutations = {
     setPrimaryTheme(state: State, theme: string): void {
         state.primaryTheme = theme;
     },
@@ -25,3 +25,5 @@ export const mutations: Mutations = {
         state.acceptedGDRP = true;
     },
 };
+
+export default mutations;
