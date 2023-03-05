@@ -122,7 +122,7 @@ const submit = async () => {
                     <textarea
                         id="contact_message"
                         v-model="form.message"
-                        rows="10"
+                        rows="9"
                         name="message"
                         placeholder="Hello, World!"
                         class="block w-full appearance-none border-none py-3 px-4 leading-tight focus:outline-none"
