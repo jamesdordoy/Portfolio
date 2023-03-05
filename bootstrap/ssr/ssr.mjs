@@ -1600,7 +1600,7 @@ createServer(
       await loadFontAwesome();
       return createSSRApp({
         render: () => h$1(App, props)
-      }).use(plugin).use(store).use(Particles).use(VueScrollTo).use(Notifications).use(VueReCaptcha, { siteKey: {}.VITE_RECAPTCHA_SITE_KEY }).mixin({ methods: { route } }).use(I, Ziggy$1).component("font-awesome-icon", FontAwesomeIcon);
+      }).use(plugin).use(store).use(Particles).use(VueScrollTo).use(Notifications).use(VueReCaptcha, { siteKey: "6Lefr8YZAAAAAGORNbgShocEow3cSweBT04iMFFY" }).mixin({ methods: { route } }).use(I, Ziggy$1).component("font-awesome-icon", FontAwesomeIcon);
     }
   })
 );
