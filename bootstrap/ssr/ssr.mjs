@@ -889,7 +889,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
           class: ["m-auto text-5xl", `text-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShade}`],
           icon: __props.event.icon
         }, null, _parent));
-        _push(`</div><div class="w-4/5 px-2 py-10"><div class="${ssrRenderClass([`bg-${unref(store2).getters.primaryThemeBgDarker} border-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShade}`, "flex w-full flex-col border-b px-4 py-5 shadow"])}"><div class="mb-2 flex justify-between text-gray-600"><div class="${ssrRenderClass([`text-${unref(store2).getters.primaryThemeTextColour}`, "font-bold"])}"><p class="mb-1 text-lg">${ssrInterpolate(__props.event.name)}</p> ${ssrInterpolate(__props.event.title)}</div></div><p class="${ssrRenderClass(`text-${unref(store2).getters.primaryThemeTextColour}`)}">${ssrInterpolate(__props.event.body)}</p></div></div></div>`);
+        _push(`</div><div class="w-4/5 px-2 py-10"><div class="${ssrRenderClass([`bg-${unref(store2).getters.primaryThemeBgDarker} border-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShade}`, "flex w-full flex-col border-b px-4 py-5 shadow"])}"><div class="mb-2 flex justify-between text-gray-600"><div class="${ssrRenderClass([`text-${unref(store2).getters.primaryThemeTextColour}`, "font-bold"])}"><p class="mb-1 text-lg">${ssrInterpolate(__props.event.name)}</p> ${ssrInterpolate(__props.event.title)}</div></div><p class="${ssrRenderClass(`text-${unref(store2).getters.primaryThemeTextColour}`)}">${__props.event.body}</p></div></div></div>`);
       }
     };
   }
@@ -1600,7 +1600,7 @@ createServer(
       await loadFontAwesome();
       return createSSRApp({
         render: () => h$1(App, props)
-      }).use(plugin).use(store).use(Particles).use(VueScrollTo).use(Notifications).use(VueReCaptcha, { siteKey: "6Lefr8YZAAAAAGORNbgShocEow3cSweBT04iMFFY" }).mixin({ methods: { route } }).use(I, Ziggy$1).component("font-awesome-icon", FontAwesomeIcon);
+      }).use(plugin).use(store).use(Particles).use(VueScrollTo).use(Notifications).use(VueReCaptcha, { siteKey: {}.VITE_RECAPTCHA_SITE_KEY }).mixin({ methods: { route } }).use(I, Ziggy$1).component("font-awesome-icon", FontAwesomeIcon);
     }
   })
 );
