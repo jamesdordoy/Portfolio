@@ -8,12 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class ProjectTableSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
-    public function run()
+    public function run(): void
     {
         Project::factory()->create(
             [

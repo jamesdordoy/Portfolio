@@ -14,12 +14,7 @@ class LanguageFactory extends Factory
      */
     protected $model = Language::class;
 
-    /**
-     * Define the model's default state.
-     *
-     * @return array
-     */
-    public function definition()
+    public function definition(): array
     {
         return [
             'name' => $this->faker->name,

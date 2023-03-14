@@ -7,12 +7,7 @@ use Illuminate\Database\Seeder;
 
 class TimelineEventTableSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
-    public function run()
+    public function run(): void
     {
         TimelineEvent::factory()->create([
             'from' => '2020-11-15 13:23:45',

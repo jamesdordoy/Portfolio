@@ -14,12 +14,7 @@ class ProjectFactory extends Factory
      */
     protected $model = Project::class;
 
-    /**
-     * Define the model's default state.
-     *
-     * @return array
-     */
-    public function definition()
+    public function definition(): array
     {
         return [
             'name' => $this->faker->name,

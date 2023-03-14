@@ -6,11 +6,12 @@ use App\Models\Contact;
 use App\Actions\Contact\CreateContact;
 use App\Actions\Contact\SendContactEmail;
 use App\Models\Data\Contact as ContactData;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Pipeline\Pipeline;
 
 class ContactController extends Controller
 {
-    public function __invoke(ContactData $request)
+    public function __invoke(ContactData $request): RedirectResponse
     {
         $data = ContactData::from($request->all());
 

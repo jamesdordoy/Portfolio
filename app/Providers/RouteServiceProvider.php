@@ -9,7 +9,7 @@ class RouteServiceProvider extends ServiceProvider
 {
     public const HOME = '/dashboard';
 
-    public function boot()
+    public function boot(): void
     {
         $this->routes(function () {
             Route::middleware('web')
