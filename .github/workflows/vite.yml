@@ -1,0 +1,29 @@
+name: Vite
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  vite-prod:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Copy .env
+      run: php -r "file_exists('.env') || copy('.env.testing', '.env');"
+    
+    - name: Install Bun
+      run: curl https://bun.sh/install | bash
+
+    - name: Install Node Dependencies
+      run: /home/runner/.bun/bin/bun install
+    
+    - name: Vitest Test
+      run: |
+        /home/runner/.bun/bin/bun run build
+    
+   
+

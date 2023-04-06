@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2b026180e14dabfe24b53612770939e1",
+    "content-hash": "0d22c849bc986f1f2da2bb58f7f0ef68",
     "packages": [
         {
             "name": "biscolab/laravel-recaptcha",
@@ -1169,16 +1169,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v10.6.0",
+            "version": "v10.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "a9c6b58ebafc839b61e75b19aa38ec8bef45bf67"
+                "reference": "13dc93889617427352f72b6aa8b195b252af1197"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/a9c6b58ebafc839b61e75b19aa38ec8bef45bf67",
-                "reference": "a9c6b58ebafc839b61e75b19aa38ec8bef45bf67",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/13dc93889617427352f72b6aa8b195b252af1197",
+                "reference": "13dc93889617427352f72b6aa8b195b252af1197",
                 "shasum": ""
             },
             "require": {
@@ -1277,7 +1277,7 @@
                 "league/flysystem-read-only": "^3.3",
                 "league/flysystem-sftp-v3": "^3.0",
                 "mockery/mockery": "^1.5.1",
-                "orchestra/testbench-core": "^8.3",
+                "orchestra/testbench-core": "^8.4",
                 "pda/pheanstalk": "^4.0",
                 "phpstan/phpdoc-parser": "^1.15",
                 "phpstan/phpstan": "^1.4.7",
@@ -1365,7 +1365,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2023-04-04T14:08:32+00:00"
+            "time": "2023-04-05T15:28:17+00:00"
         },
         {
             "name": "laravel/serializable-closure",
@@ -3305,16 +3305,16 @@
         },
         {
             "name": "spatie/laravel-discord-alerts",
-            "version": "dev-laravel-10",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-discord-alerts.git",
-                "reference": "380f550fa0278529236c96b6e273e4c97ef178b6"
+                "reference": "f454c06d2b95d3238f4c25fe84f9728f12c5bad1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-discord-alerts/zipball/380f550fa0278529236c96b6e273e4c97ef178b6",
-                "reference": "380f550fa0278529236c96b6e273e4c97ef178b6",
+                "url": "https://api.github.com/repos/spatie/laravel-discord-alerts/zipball/f454c06d2b95d3238f4c25fe84f9728f12c5bad1",
+                "reference": "f454c06d2b95d3238f4c25fe84f9728f12c5bad1",
                 "shasum": ""
             },
             "require": {
@@ -3381,7 +3381,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-discord-alerts/issues",
-                "source": "https://github.com/spatie/laravel-discord-alerts/tree/laravel-10"
+                "source": "https://github.com/spatie/laravel-discord-alerts/tree/1.2.2"
             },
             "funding": [
                 {
@@ -3389,7 +3389,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-03-29T10:09:25+00:00"
+            "time": "2023-03-29T10:12:30+00:00"
         },
         {
             "name": "spatie/laravel-package-tools",
@@ -5994,25 +5994,23 @@
         },
         {
             "name": "tomasvotruba/punchcard",
-            "version": "0.0.3",
+            "version": "0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TomasVotruba/punchcard.git",
-                "reference": "85692962a06584d086015d776e8d8280c1fbf5fc"
+                "reference": "c440b4c05b674d677ec32fc851691ac5615ad5f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TomasVotruba/punchcard/zipball/85692962a06584d086015d776e8d8280c1fbf5fc",
-                "reference": "85692962a06584d086015d776e8d8280c1fbf5fc",
+                "url": "https://api.github.com/repos/TomasVotruba/punchcard/zipball/c440b4c05b674d677ec32fc851691ac5615ad5f6",
+                "reference": "c440b4c05b674d677ec32fc851691ac5615ad5f6",
                 "shasum": ""
             },
             "require": {
-                "illuminate/console": "^10.0",
-                "illuminate/container": "^10.0",
-                "illuminate/http": "^10.0",
-                "illuminate/support": "^10.0",
-                "nette/utils": "^3.2|^4.0",
-                "nikic/php-parser": "^4.15.3",
+                "illuminate/console": "^9.0 || ^10.0",
+                "illuminate/container": "^9.0 || ^10.0",
+                "nette/utils": "^3.2 || ^4.0",
+                "nikic/php-parser": "^4.15.4",
                 "php": "^8.1",
                 "webmozart/assert": "^1.11"
             },
@@ -6026,7 +6024,10 @@
                 "rector/rector": "^0.15.18",
                 "symplify/easy-ci": "^11.2",
                 "symplify/easy-coding-standard": "^11.2",
-                "symplify/phpstan-extensions": "^11.2"
+                "symplify/phpstan-extensions": "^11.2",
+                "tomasvotruba/type-coverage": "^0.0.11",
+                "tomasvotruba/unused-public": "^0.0.29",
+                "tracy/tracy": "^2.10"
             },
             "bin": [
                 "bin/punchcard"
@@ -6052,9 +6053,9 @@
             ],
             "support": {
                 "issues": "https://github.com/TomasVotruba/punchcard/issues",
-                "source": "https://github.com/TomasVotruba/punchcard/tree/0.0.3"
+                "source": "https://github.com/TomasVotruba/punchcard/tree/0.2.0"
             },
-            "time": "2023-02-25T20:45:24+00:00"
+            "time": "2023-04-04T15:10:53+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -9375,9 +9376,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "spatie/laravel-discord-alerts": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
