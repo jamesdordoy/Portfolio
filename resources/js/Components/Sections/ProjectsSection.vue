@@ -5,9 +5,6 @@ import Project from '@/Components/Generic/Project.vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Navigation } from 'swiper';
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-
 const modules = [Navigation];
 
 const breakpoints = {
@@ -37,7 +34,7 @@ const store = useStore();
 
 defineProps({
     projects: {
-        type: Array,
+        type: Array as PropType<App.Models.Data.Collection<App.Models.Data.Project>>,
         required: true,
     },
 });
@@ -57,7 +54,7 @@ defineProps({
             Projects
         </h2>
         <section class="flex flex-wrap">
-            <swiper
+            <Swiper
                 navigation
                 :modules="modules"
                 :breakpoints="breakpoints"
@@ -68,7 +65,7 @@ defineProps({
                 >
                     <Project :project="project" />
                 </SwiperSlide>
-            </swiper>
+            </Swiper>
         </section>
     </div>
 </template>

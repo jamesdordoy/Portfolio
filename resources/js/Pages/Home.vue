@@ -76,7 +76,6 @@ onUnmounted(() => {
 
     <div
         id="settings-sidebar"
-        class="fixed top-[56px] min-h-full w-full border-r border-t py-2 shadow lg:top-[76px] lg:w-1/4"
         :class="`bg-${primaryThemeBg} border-${store.getters.primaryThemeColour}-${
             store.getters.primaryThemeColourShade
         } ${displaySettings ? '' : 'hidden'}`"

@@ -1,4 +1,7 @@
 import '../css/app.css';
+import 'swiper/css';
+import 'swiper/css/navigation';
+
 import state from '@/State/state.js';
 import getters from '@/State/getters.js';
 import { createSSRApp, h } from 'vue';

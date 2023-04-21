@@ -16,7 +16,7 @@ defineProps({
 <template>
     <div
         :key="project.id"
-        class="project h-full border sm:w-full"
+        class="project"
         :class="`bg-${store.getters.primaryThemeBgDarker} border-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShade}`"
     >
         <a
@@ -25,10 +25,10 @@ defineProps({
             target="_blank"
         >
             <img
-                style="height: 250px"
+
                 :alt="project.name"
                 :class="`border-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShade}`"
-                class="w-full border-b"
+                class="project-image"
                 :src="project.icon ? project.icon : '/images/projects/simple-shopping.png'"
             />
         </a>
@@ -38,7 +38,7 @@ defineProps({
                 <a
                     :href="project.link"
                     rel="noreferrer"
-                    class="text-blue-500 underline hover:no-underline"
+                    class="project-name"
                     target="_blank"
                     >{{ project.name }}</a
                 >

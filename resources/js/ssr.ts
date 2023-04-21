@@ -3,6 +3,9 @@ import { renderToString } from '@vue/server-renderer';
 import { createSSRApp, h } from 'vue';
 
 import '../css/app.css';
+import 'swiper/css';
+import 'swiper/css/navigation';
+
 import state from '@/State/state.js';
 import getters from '@/State/getters.js';
 import { createStore } from 'vuex';

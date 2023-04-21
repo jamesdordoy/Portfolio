@@ -18,7 +18,7 @@ const closeMenu = () => {
 <template>
     <div class="z-10 font-sans antialiased">
         <nav
-            class="front-nav border-b lg:px-10"
+            class="front-nav"
             :class="`bg-${store.getters.primaryThemeBgDarker} border-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShade}`"
         >
             <div class="flex-no-shrink mr-6 flex items-center text-white">

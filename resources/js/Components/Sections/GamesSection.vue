@@ -6,9 +6,6 @@ import Game from '@/Components/Generic/Game.vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Navigation } from 'swiper';
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-
 const modules = [Navigation];
 
 const breakpoints = {
@@ -38,7 +35,7 @@ const store = useStore();
 
 defineProps({
     gameClips: {
-        type: Array,
+        type: Array as PropType<App.Models.Data.Collection<App.Models.Data.GameClip>>,
         required: true,
     },
 });

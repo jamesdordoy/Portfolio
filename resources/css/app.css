@@ -3,12 +3,11 @@
 @import 'tailwindcss/utilities';
 
 .themeSettingsPanelToggleButton {
-    @apply fixed left-0 z-10;
-    top: 50%;
+    @apply fixed left-0 z-10 top-[50%];
 }
 
 #settings-sidebar {
-    @apply left-0 z-20;
+    @apply left-0 z-20 fixed top-[56px] min-h-full w-full border-r border-t py-2 shadow lg:top-[76px] lg:w-1/4;
 }
 
 .front-nav-item {
@@ -16,7 +15,7 @@
 }
 
 .front-nav {
-    @apply fixed top-0 right-0 left-0 flex flex-wrap items-center justify-between py-3 px-4 z-10;
+    @apply fixed top-0 right-0 left-0 flex flex-wrap items-center justify-between py-3 px-4 z-10 border-b lg:px-10;
 }
 
 .front-into {
@@ -27,8 +26,7 @@
 }
 
 .jd-bookmark {
-    @apply block invisible;
-    top: -100px;
+    @apply block invisible relative top-[-100px];
 }
 
 .grecaptcha-logo {
@@ -37,4 +35,28 @@
 
 #portfolio-particles {
     @apply absolute top-0 left-0 bottom-0 right-0 p-0 m-0 z-0;
+}
+
+.project {
+    @apply h-full border sm:w-full;
+}
+
+.project-image {
+    @apply w-full border-b h-80;
+}
+
+.project-name {
+    @apply text-blue-500 underline hover:no-underline;
+}
+
+.game {
+    @apply h-96 w-full;
+}
+
+
+
+
+
+.tag {
+    @apply mr-2 inline-block rounded border border-blue-500 py-1 px-2 text-xs;
 }
