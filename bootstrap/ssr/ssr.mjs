@@ -1,5 +1,5 @@
 import { defineComponent, resolveComponent, unref, useSSRContext, mergeProps, ref, watch, computed, resolveDirective, withCtx, openBlock, createBlock, Fragment, renderList, createVNode, toDisplayString, isProxy, toRaw, onUnmounted, createSSRApp, h as h$1 } from "vue";
-import { ssrRenderClass, ssrRenderComponent, ssrRenderAttr, ssrRenderAttrs, ssrInterpolate, ssrGetDirectiveProps, ssrRenderList, ssrRenderStyle } from "vue/server-renderer";
+import { ssrRenderClass, ssrRenderComponent, ssrRenderAttr, ssrRenderAttrs, ssrInterpolate, ssrGetDirectiveProps, ssrRenderList } from "vue/server-renderer";
 import { useStore, createStore } from "vuex";
 import Notifications, { notify } from "notiwind";
 import { useForm, router, createInertiaApp } from "@inertiajs/vue3";
@@ -402,7 +402,7 @@ const _sfc_main$c = /* @__PURE__ */ defineComponent({
     const open = ref(false);
     return (_ctx, _push, _parent, _attrs) => {
       const _directive_scroll_to = resolveDirective("scroll-to");
-      _push(`<div${ssrRenderAttrs(mergeProps({ class: "z-10 font-sans antialiased" }, _attrs))}><nav class="${ssrRenderClass([`bg-${unref(store2).getters.primaryThemeBgDarker} border-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShade}`, "front-nav border-b lg:px-10"])}"><div class="flex-no-shrink mr-6 flex items-center text-white"><svg width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg" class="${ssrRenderClass([`text-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShade}`, "mr-2 h-8 w-8 fill-current"])}"><path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"></path></svg><span class="${ssrRenderClass([`text-white`, "varela text-xl font-semibold tracking-tight"])}">James Dordoy</span></div><div class="block lg:hidden"><button class="${ssrRenderClass([`text-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShade} border-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShade} hover:bg-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShadeDarker} hover:border-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShadeDarker}`, "flex items-center rounded border px-3 py-2"])}"><svg class="h-3 w-3 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path></svg></button></div><div class="${ssrRenderClass([{ "fadeIn ": open.value, hidden: !open.value }, "animated w-full flex-grow lg:flex lg:w-auto lg:items-center"])}"><div class="text-sm sm:flex-grow"><a${ssrRenderAttrs(mergeProps({
+      _push(`<div${ssrRenderAttrs(mergeProps({ class: "z-10 font-sans antialiased" }, _attrs))}><nav class="${ssrRenderClass([`bg-${unref(store2).getters.primaryThemeBgDarker} border-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShade}`, "front-nav"])}"><div class="flex-no-shrink mr-6 flex items-center text-white"><svg width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg" class="${ssrRenderClass([`text-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShade}`, "mr-2 h-8 w-8 fill-current"])}"><path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"></path></svg><span class="${ssrRenderClass([`text-white`, "varela text-xl font-semibold tracking-tight"])}">James Dordoy</span></div><div class="block lg:hidden"><button class="${ssrRenderClass([`text-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShade} border-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShade} hover:bg-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShadeDarker} hover:border-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShadeDarker}`, "flex items-center rounded border px-3 py-2"])}"><svg class="h-3 w-3 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path></svg></button></div><div class="${ssrRenderClass([{ "fadeIn ": open.value, hidden: !open.value }, "animated w-full flex-grow lg:flex lg:w-auto lg:items-center"])}"><div class="text-sm sm:flex-grow"><a${ssrRenderAttrs(mergeProps({
         class: ["front-nav-item lg:mt-0 lg:inline-block", `text-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShade} hover:text-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShadeLighter}`]
       }, ssrGetDirectiveProps(_ctx, _directive_scroll_to, "#about")))}> About Me </a><a${ssrRenderAttrs(mergeProps({
         class: ["front-nav-item lg:mt-0 lg:inline-block", `text-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShade} hover:text-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShadeLighter}`]
@@ -573,7 +573,7 @@ const _sfc_main$9 = {
     return (_ctx, _push, _parent, _attrs) => {
       _push(ssrRenderComponent(_sfc_main$a, mergeProps({
         name: __props.name,
-        class: [`text-${unref(store2).getters.primaryThemeTextColour}`, "mr-2 inline-block rounded border border-blue-500 py-1 px-2 text-xs"]
+        class: [`text-${unref(store2).getters.primaryThemeTextColour}`, "tag"]
       }, _attrs), null, _parent));
     };
   }
@@ -598,8 +598,8 @@ const _sfc_main$8 = /* @__PURE__ */ defineComponent({
     return (_ctx, _push, _parent, _attrs) => {
       _push(`<div${ssrRenderAttrs(mergeProps({
         key: __props.project.id,
-        class: ["project h-full border sm:w-full", `bg-${unref(store2).getters.primaryThemeBgDarker} border-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShade}`]
-      }, _attrs))}><a${ssrRenderAttr("href", __props.project.link)} rel="noreferrer" target="_blank"><img style="${ssrRenderStyle({ "height": "250px" })}"${ssrRenderAttr("alt", __props.project.name)} class="${ssrRenderClass([`border-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShade}`, "w-full border-b"])}"${ssrRenderAttr("src", __props.project.icon ? __props.project.icon : "/images/projects/simple-shopping.png")}></a><div class="px-6 py-4"><div class="mb-2 text-xl font-bold"><a${ssrRenderAttr("href", __props.project.link)} rel="noreferrer" class="text-blue-500 underline hover:no-underline" target="_blank">${ssrInterpolate(__props.project.name)}</a></div><p class="${ssrRenderClass([`text-${unref(store2).getters.primaryThemeTextColour}`, "text-base"])}">${ssrInterpolate(__props.project.description)}</p></div><div class="px-6 py-4"><!--[-->`);
+        class: ["project", `bg-${unref(store2).getters.primaryThemeBgDarker} border-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShade}`]
+      }, _attrs))}><a${ssrRenderAttr("href", __props.project.link)} rel="noreferrer" target="_blank"><img${ssrRenderAttr("alt", __props.project.name)} class="${ssrRenderClass([`border-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShade}`, "project-image"])}"${ssrRenderAttr("src", __props.project.icon ? __props.project.icon : "/images/projects/simple-shopping.png")}></a><div class="px-6 py-4"><div class="mb-2 text-xl font-bold"><a${ssrRenderAttr("href", __props.project.link)} rel="noreferrer" class="project-name" target="_blank">${ssrInterpolate(__props.project.name)}</a></div><p class="${ssrRenderClass([`text-${unref(store2).getters.primaryThemeTextColour}`, "text-base"])}">${ssrInterpolate(__props.project.description)}</p></div><div class="px-6 py-4"><!--[-->`);
       ssrRenderList(__props.project.tags, (tag) => {
         _push(ssrRenderComponent(_sfc_main$9, {
           key: tag.id,
@@ -617,8 +617,6 @@ _sfc_main$8.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Components/Generic/Project.vue");
   return _sfc_setup$8 ? _sfc_setup$8(props, ctx) : void 0;
 };
-const swiper_min = "";
-const navigation_min = "";
 const _sfc_main$7 = /* @__PURE__ */ defineComponent({
   __name: "ProjectsSection",
   __ssrInlineRender: true,
@@ -763,7 +761,7 @@ const _sfc_main$4 = /* @__PURE__ */ defineComponent({
   setup(__props) {
     return (_ctx, _push, _parent, _attrs) => {
       _push(`<iframe${ssrRenderAttrs(mergeProps({
-        class: "min-h-96 h-96 w-full",
+        class: "game",
         src: __props.clip.url,
         title: "YouTube video player",
         frameborder: "0",
@@ -983,7 +981,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       const _component_font_awesome_icon = resolveComponent("font-awesome-icon");
       _push(`<!--[-->`);
       _push(ssrRenderComponent(_sfc_main$c, null, null, _parent));
-      _push(`<div id="settings-sidebar" class="${ssrRenderClass([`bg-${unref(primaryThemeBg)} border-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShade} ${displaySettings.value ? "" : "hidden"}`, "fixed top-[56px] min-h-full w-full border-r border-t py-2 shadow lg:top-[76px] lg:w-1/4"])}">`);
+      _push(`<div id="settings-sidebar" class="${ssrRenderClass(`bg-${unref(primaryThemeBg)} border-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShade} ${displaySettings.value ? "" : "hidden"}`)}">`);
       _push(ssrRenderComponent(_sfc_main$d, { onToggle: closeSettings }, null, _parent));
       _push(`</div><div class="themeSettingsPanelToggleButton"><button aria-label="settings" class="${ssrRenderClass([`bg-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShade}`, "rounded-r p-2 text-lg text-white"])}">`);
       _push(ssrRenderComponent(_component_font_awesome_icon, { icon: "cog" }, null, _parent));
@@ -1017,6 +1015,8 @@ const __vite_glob_0_0 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.def
   default: _sfc_main
 }, Symbol.toStringTag, { value: "Module" }));
 const app = "";
+const swiper_min = "";
+const navigation_min = "";
 const state = {
   primaryThemeColour: "blue",
   primaryThemeColourShade: 500,
