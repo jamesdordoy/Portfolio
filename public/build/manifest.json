@@ -1,33 +1,33 @@
 {
   "node_modules/@fortawesome/free-brands-svg-icons/index.mjs": {
-    "file": "assets/index-7caedcd7.js",
+    "file": "assets/index-2d7a4cda.js",
     "isDynamicEntry": true,
     "src": "node_modules/@fortawesome/free-brands-svg-icons/index.mjs"
   },
   "node_modules/@fortawesome/free-regular-svg-icons/index.mjs": {
-    "file": "assets/index-ced6fa51.js",
+    "file": "assets/index-24c14523.js",
     "isDynamicEntry": true,
     "src": "node_modules/@fortawesome/free-regular-svg-icons/index.mjs"
   },
   "node_modules/@fortawesome/free-solid-svg-icons/index.mjs": {
-    "file": "assets/index-2a010712.js",
+    "file": "assets/index-d25196f6.js",
     "isDynamicEntry": true,
     "src": "node_modules/@fortawesome/free-solid-svg-icons/index.mjs"
   },
   "resources/js/app.css": {
-    "file": "assets/app-0c90834b.css",
+    "file": "assets/app-cb8496e1.css",
     "src": "resources/js/app.css"
   },
   "resources/js/app.ts": {
     "css": [
-      "assets/app-0c90834b.css"
+      "assets/app-cb8496e1.css"
     ],
     "dynamicImports": [
       "node_modules/@fortawesome/free-brands-svg-icons/index.mjs",
       "node_modules/@fortawesome/free-solid-svg-icons/index.mjs",
       "node_modules/@fortawesome/free-regular-svg-icons/index.mjs"
     ],
-    "file": "assets/app-a1fe5f3a.js",
+    "file": "assets/app-193d91af.js",
     "isEntry": true,
     "src": "resources/js/app.ts"
   }

@@ -75,7 +75,7 @@ const _sfc_main$i = /* @__PURE__ */ defineComponent({
         icon: ["fab", "jsfiddle"],
         class: ["text-4xl hover:text-yellow-500 lg:text-5xl", `text-${unref(store2).getters.primaryThemeTextColour}`]
       }, null, _parent));
-      _push(`</a></p></div><div class="varela w-full py-6 text-center text-gray-400 sm:text-left lg:w-1/3 lg:py-0 lg:pt-2 lg:text-center"><h3 class="${ssrRenderClass(`text-${unref(store2).getters.primaryThemeTextColour}`)}">© James Dordoy</h3><p class="my-2">${ssrInterpolate(new Date().getFullYear())}</p></div><div class="w-full lg:w-1/3"><div id="newsletter" class="${ssrRenderClass([`border-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShade}`, "border-b"])}">`);
+      _push(`</a></p></div><div class="varela w-full py-6 text-center text-gray-400 sm:text-left lg:w-1/3 lg:py-0 lg:pt-2 lg:text-center"><h3 class="${ssrRenderClass(`text-${unref(store2).getters.primaryThemeTextColour}`)}">© James Dordoy</h3><p class="my-2">${ssrInterpolate((/* @__PURE__ */ new Date()).getFullYear())}</p></div><div class="w-full lg:w-1/3"><div id="newsletter" class="${ssrRenderClass([`border-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShade}`, "border-b"])}">`);
       _push(ssrRenderComponent(_sfc_main$j, null, null, _parent));
       _push(`</div></div></div>`);
     };
@@ -730,7 +730,7 @@ const _sfc_main$6 = /* @__PURE__ */ defineComponent({
 const _sfc_setup$6 = _sfc_main$6.setup;
 _sfc_main$6.setup = (props, ctx) => {
   const ssrContext = useSSRContext();
-  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/components/forms/ContactForm.vue");
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Components/Forms/ContactForm.vue");
   return _sfc_setup$6 ? _sfc_setup$6(props, ctx) : void 0;
 };
 const _sfc_main$5 = /* @__PURE__ */ defineComponent({
@@ -876,8 +876,9 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
   setup(__props) {
     const store2 = useStore();
     return (_ctx, _push, _parent, _attrs) => {
+      var _a;
       const _component_font_awesome_icon = resolveComponent("font-awesome-icon");
-      if (__props.event.id & 1) {
+      if (((_a = __props.event) == null ? void 0 : _a.id) & 1) {
         _push(`<div${ssrRenderAttrs(mergeProps({ class: "flex w-full flex-row" }, _attrs))}><div class="w-4/5 py-10"><div class="${ssrRenderClass([`bg-${unref(store2).getters.primaryThemeBgDarkest} border-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShade}`, "flex w-full flex-col border-b px-4 py-5 shadow"])}"><div class="mb-2 flex justify-between text-gray-600"><div class="${ssrRenderClass([`text-${unref(store2).getters.primaryThemeTextColour}`, "font-bold"])}"><p class="mb-1 text-lg">${__props.event.name}</p> ${ssrInterpolate(__props.event.title)}</div><div class="flex flex-row"><button class="mr-2 text-blue-500 transition duration-200 hover:text-blue-300"><i class="far fa-edit"></i></button><button class="text-red-500 transition duration-200 hover:text-red-300"><i class="far fa-trash-alt"></i></button></div></div><p class="${ssrRenderClass(`text-${unref(store2).getters.primaryThemeTextColour}`)}">${__props.event.body}</p></div></div><div class="flex w-1/5 justify-center">`);
         _push(ssrRenderComponent(_component_font_awesome_icon, {
           class: ["m-auto text-5xl", `text-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShade}`],
@@ -1601,7 +1602,7 @@ createServer(
       await loadFontAwesome();
       return createSSRApp({
         render: () => h$1(App, props)
-      }).use(plugin).use(store).use(Particles).use(VueScrollTo).use(Notifications).use(VueReCaptcha, { siteKey: "6Lefr8YZAAAAAGORNbgShocEow3cSweBT04iMFFY" }).mixin({ methods: { route } }).use(I, Ziggy$1).component("font-awesome-icon", FontAwesomeIcon);
+      }).use(plugin).use(store).use(Particles).use(VueScrollTo).use(Notifications).use(VueReCaptcha, { siteKey: {}.VITE_RECAPTCHA_SITE_KEY }).mixin({ methods: { route } }).use(I, Ziggy$1).component("font-awesome-icon", FontAwesomeIcon);
     }
   })
 );
