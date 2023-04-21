@@ -1,9 +1,10 @@
 <script lang="ts" setup>
+import { PropType } from 'vue';
 import { useStore } from 'vuex';
 
 defineProps({
     event: {
-        type: Object,
+        type: Object as PropType<App.Models.Data.TimelineEvent>,
         required: true,
     },
 });
@@ -13,7 +14,7 @@ const store = useStore();
 
 <template>
     <div
-        v-if="event.id & 1"
+        v-if="event?.id & 1"
         class="flex w-full flex-row"
     >
         <div class="w-4/5 py-10">

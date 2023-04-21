@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { useStore } from 'vuex';
+import { PropType } from 'vue';
 import TimelineEvent from '@/Components/Generic/TimelineEvent.vue';
 
 const store = useStore();
 
 defineProps({
     timeline: {
-        type: Array,
+        type: Array as PropType<App.Models.Data.Collection<App.Models.Data.TimelineEvent>>,
         required: true,
     },
 });

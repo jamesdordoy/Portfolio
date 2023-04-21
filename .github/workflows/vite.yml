@@ -25,3 +25,8 @@ jobs:
     - name: Vite Build
       run: |
         /home/runner/.bun/bin/bun run build
+    - name: Commit changes
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: Vite Build
+        skip_fetch: true

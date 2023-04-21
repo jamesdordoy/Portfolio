@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { useStore } from 'vuex';
+import { PropType } from 'vue';
 import { notify } from 'notiwind';
 import { ref, computed, onUnmounted, isProxy, toRaw } from 'vue';
 import { router } from '@inertiajs/vue3';
@@ -16,15 +17,15 @@ import MyExperianceSection from '@/Components/Sections/MyExperianceSection.vue';
 
 const props = defineProps({
     projects: {
-        type: Array,
+        type: Array as PropType<App.Models.Data.Collection<App.Models.Data.Project>>,
         required: true,
     },
     timeline: {
-        type: Array,
+        type: Array as PropType<App.Models.Data.Collection<App.Models.Data.TimelineEvent>>,
         required: true,
     },
     gameClips: {
-        type: Array,
+        type: Array as PropType<App.Models.Data.Collection<App.Models.Data.GameClip>>,
         required: true,
     },
     errors: {
