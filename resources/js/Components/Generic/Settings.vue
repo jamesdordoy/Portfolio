@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import ColourButton from '@/Components/Buttons/ColourButton.vue';
 import RangeInput from '@/Components/Inputs/RangeInput.vue';
-import { ref, computed, onUnmounted, isProxy, toRaw } from 'vue';
+import { computed } from 'vue';
 
 import { useStore } from 'vuex';
 
@@ -21,7 +21,7 @@ const updatePrimaryThemeColour = (colour: string) => {
 const updatePrimaryThemeColourShade = (event: Event) => {
     store.commit('setPrimaryThemeColorShade', event?.target?.value);
 };
-const updateTheme = (even: Event) => {
+const updateTheme = (event: Event) => {
     store.commit('setPrimaryTheme', event?.target?.value);
 };
 const updateThemeRouterAnimation = (event: Event) => {
@@ -92,109 +92,94 @@ const props = defineProps({
             <div class="w-full">
                 <div class="flex flex-wrap">
                     <div class="w-1/6 p-1">
-                        <colour-button
+                        <ColourButton
                             colour="blue"
                             @click="updatePrimaryThemeColour('blue')"
-                        >
-                        </colour-button>
+                        />
                     </div>
                     <div class="w-1/6 p-1">
-                        <colour-button
+                        <ColourButton
                             colour="teal"
                             @click="updatePrimaryThemeColour('teal')"
-                        >
-                        </colour-button>
+                        />
                     </div>
                     <div class="w-1/6 p-1">
-                        <colour-button
+                        <ColourButton
                             colour="purple"
                             @click="updatePrimaryThemeColour('purple')"
-                        >
-                        </colour-button>
+                        />
                     </div>
                     <div class="w-1/6 p-1">
-                        <colour-button
+                        <ColourButton
                             colour="green"
                             @click="updatePrimaryThemeColour('green')"
-                        >
-                        </colour-button>
+                        />
                     </div>
                     <div class="w-1/6 p-1">
-                        <colour-button
+                        <ColourButton
                             colour="red"
                             @click="updatePrimaryThemeColour('red')"
-                        >
-                        </colour-button>
+                        />
                     </div>
                     <div class="w-1/6 p-1">
-                        <colour-button
+                        <ColourButton
                             colour="orange"
                             @click="updatePrimaryThemeColour('orange')"
-                        >
-                        </colour-button>
+                        />
                     </div>
                     <div class="w-1/6 p-1">
-                        <colour-button
+                        <ColourButton
                             colour="yellow"
                             @click="updatePrimaryThemeColour('yellow')"
-                        >
-                        </colour-button>
+                        />
                     </div>
                     <div class="w-1/6 p-1">
-                        <colour-button
+                        <ColourButton
                             colour="indigo"
                             @click="updatePrimaryThemeColour('indigo')"
-                        >
-                        </colour-button>
+                        />
                     </div>
                     <div class="w-1/6 p-1">
-                        <colour-button
+                        <ColourButton
                             colour="pink"
                             @click="updatePrimaryThemeColour('pink')"
-                        >
-                        </colour-button>
+                        />
                     </div>
                     <div class="w-1/6 p-1">
-                        <colour-button
+                        <ColourButton
                             colour="lime"
                             @click="updatePrimaryThemeColour('lime')"
-                        >
-                        </colour-button>
+                        />
                     </div>
                     <div class="w-1/6 p-1">
-                        <colour-button
+                        <ColourButton
                             colour="sky"
                             @click="updatePrimaryThemeColour('sky')"
-                        >
-                        </colour-button>
+                        />
                     </div>
                     <div class="w-1/6 p-1">
-                        <colour-button
+                        <ColourButton
                             colour="emerald"
                             @click="updatePrimaryThemeColour('emerald')"
-                        >
-                        </colour-button>
+                        />
                     </div>
                     <div class="w-1/6 p-1">
-                        <colour-button
+                        <ColourButton
                             colour="stone"
                             @click="updatePrimaryThemeColour('stone')"
-                        >
-                        </colour-button>
+                        />
                     </div>
                     <div class="w-1/6 p-1">
-                        <colour-button
+                        <ColourButton
                             colour="zinc"
                             @click="updatePrimaryThemeColour('zinc')"
-                        >
-                        </colour-button>
+                        />
                     </div>
                     <div class="w-1/6 p-1">
-                        <colour-button
+                        <ColourButton
                             colour="slate"
                             @click="updatePrimaryThemeColour('slate')"
-                        >
-                        </colour-button>
+                        />
                     </div>
                 </div>
                 <hr class="my-2" />
