@@ -299,9 +299,9 @@ const _sfc_main$d = /* @__PURE__ */ defineComponent({
       console.log(colour);
       store2.commit("setPrimaryThemeColor", colour);
     };
-    const updatePrimaryThemeColourShade = (event2) => {
+    const updatePrimaryThemeColourShade = (event) => {
       var _a;
-      store2.commit("setPrimaryThemeColorShade", (_a = event2 == null ? void 0 : event2.target) == null ? void 0 : _a.value);
+      store2.commit("setPrimaryThemeColorShade", (_a = event == null ? void 0 : event.target) == null ? void 0 : _a.value);
     };
     return (_ctx, _push, _parent, _attrs) => {
       const _component_font_awesome_icon = resolveComponent("font-awesome-icon");
