@@ -18,4 +18,7 @@ module.exports = {
             },
         },
     },
+    "globals": {
+        "App": "writable"
+    }
 }

@@ -9,9 +9,7 @@ const open = ref<boolean>(false);
 const toggle = () => {
     open.value = !open.value;
 };
-const openMenu = () => {
-    open.value = true;
-};
+
 const closeMenu = () => {
     open.value = false;
 };
