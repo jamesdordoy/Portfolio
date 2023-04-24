@@ -12,7 +12,7 @@ test('A newsletter can be created', function () {
     app()->make(CreateNewsletter::class)->handle($data, fn (Newsletter $newsletter) => $this->assertEquals($newsletter->email, 'test@test.com'));
 });
 
-test('A language redirects back to the listing', function () {
+test('A newsletter redirects back to the listing', function () {
     $action = new CreateNewsletter();
 
     $this->assertEquals($action->redirectTo(), route('home'));
