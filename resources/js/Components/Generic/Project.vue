@@ -25,7 +25,6 @@ defineProps({
             target="_blank"
         >
             <img
-
                 :alt="project.name"
                 :class="`border-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShade}`"
                 class="project-image"

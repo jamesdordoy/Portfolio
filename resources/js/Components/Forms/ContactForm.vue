@@ -76,7 +76,7 @@ const submit = async () => {
                         name="name"
                         placeholder="John Smith"
                         :class="`bg-${store.getters.primaryThemeBgDarker} text-${store.getters.primaryThemeTextColour} focus:bg-${store.getters.primaryThemeBgDarkest}`"
-                        class="block w-full appearance-none border-none py-3 px-4 leading-tight focus:outline-none"
+                        class="block w-full appearance-none border-none px-4 py-3 leading-tight focus:outline-none"
                     />
                 </div>
             </div>
@@ -99,7 +99,7 @@ const submit = async () => {
                         v-model="form.email"
                         name="email"
                         type="email"
-                        class="block w-full appearance-none border-none py-3 px-4 leading-tight focus:outline-none"
+                        class="block w-full appearance-none border-none px-4 py-3 leading-tight focus:outline-none"
                         :class="`bg-${store.getters.primaryThemeBgDarker} text-${store.getters.primaryThemeTextColour} focus:bg-${store.getters.primaryThemeBgDarkest}`"
                         placeholder="john@example.com"
                     />
@@ -125,7 +125,7 @@ const submit = async () => {
                         rows="9"
                         name="message"
                         placeholder="Hello, World!"
-                        class="block w-full appearance-none border-none py-3 px-4 leading-tight focus:outline-none"
+                        class="block w-full appearance-none border-none px-4 py-3 leading-tight focus:outline-none"
                         :class="`bg-${store.getters.primaryThemeBgDarker} text-${store.getters.primaryThemeTextColour} focus:bg-${store.getters.primaryThemeBgDarkest}`"
                     >
                     </textarea>
@@ -135,7 +135,7 @@ const submit = async () => {
         <div class="-mx-3 flex flex-wrap pl-3">
             <button
                 type="submit"
-                class="g-recaptcha flex-shrink-0 rounded border bg-transparent py-1 px-2 text-sm"
+                class="g-recaptcha flex-shrink-0 rounded border bg-transparent px-2 py-1 text-sm"
                 :class="`border-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShade} text-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShade} hover:bg-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShade} hover:text-${store.getters.primaryThemeHoverTextColour}`"
             >
                 <font-awesome-icon :icon="['fas', 'check']" />

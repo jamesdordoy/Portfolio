@@ -103,7 +103,7 @@ onUnmounted(() => {
         <div class="py-18 relative min-h-screen w-full px-10">
             <Particles />
 
-            <div class="absolute top-1/2 left-1/2 w-1/2 -translate-x-1/2 -translate-y-1/2 transform lg:w-1/3">
+            <div class="absolute left-1/2 top-1/2 w-1/2 -translate-x-1/2 -translate-y-1/2 transform lg:w-1/3">
                 <div
                     class="front-into w-full md:mx-0 md:p-8"
                     :class="`border-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShade}`"

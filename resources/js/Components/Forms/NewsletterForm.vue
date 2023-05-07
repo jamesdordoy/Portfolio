@@ -56,11 +56,11 @@ const submit = async () => {
                     type="email"
                     placeholder="john@example.com"
                     aria-label="Email Address"
-                    class="mr-3 w-full border-none border-transparent bg-transparent py-1 px-2 leading-tight focus:border-transparent focus:ring-0"
+                    class="mr-3 w-full border-none border-transparent bg-transparent px-2 py-1 leading-tight focus:border-transparent focus:ring-0"
                     :class="`text-${store.getters.primaryThemeTextColour}`"
                 />
                 <button
-                    class="flex-shrink-0 rounded border bg-transparent py-1 px-2 text-sm"
+                    class="flex-shrink-0 rounded border bg-transparent px-2 py-1 text-sm"
                     type="button"
                     :class="`border-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShade} text-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShade} hover:bg-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShade} hover:text-${store.getters.primaryThemeHoverTextColour}`"
                     @click="submit"

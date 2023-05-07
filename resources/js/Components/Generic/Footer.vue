@@ -7,7 +7,7 @@ const store = useStore();
 
 <template>
     <div
-        class="flex flex-wrap border-t py-3 px-10 lg:p-10"
+        class="flex flex-wrap border-t px-10 py-3 lg:p-10"
         :class="`bg-${store.getters.primaryThemeBgDarker} border-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShade}`"
     >
         <div
