@@ -29,7 +29,7 @@ const _sfc_main$j = /* @__PURE__ */ defineComponent({
       const _component_font_awesome_icon = resolveComponent("font-awesome-icon");
       _push(`<!--[--><div class="pt-2 md:flex md:items-center"><h4 class="${ssrRenderClass([`text-${unref(store2).getters.primaryThemeTextColour}`, "mb-1 pr-4 md:mb-0 md:text-right"])}">`);
       _push(ssrRenderComponent(_component_font_awesome_icon, { icon: ["fas", "newspaper"] }, null, _parent));
-      _push(`  Newsletter Signup: </h4></div><div class="py-2 md:flex md:items-center"><div class="md:w-full"><div class="flex items-center pb-2"><input${ssrRenderAttr("value", unref(form).email)} type="email" placeholder="john@example.com" aria-label="Email Address" class="${ssrRenderClass([`text-${unref(store2).getters.primaryThemeTextColour}`, "mr-3 w-full border-none border-transparent bg-transparent py-1 px-2 leading-tight focus:border-transparent focus:ring-0"])}"><button type="button" class="${ssrRenderClass([`border-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShade} text-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShade} hover:bg-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShade} hover:text-${unref(store2).getters.primaryThemeHoverTextColour}`, "flex-shrink-0 rounded border bg-transparent py-1 px-2 text-sm"])}">`);
+      _push(`  Newsletter Signup: </h4></div><div class="py-2 md:flex md:items-center"><div class="md:w-full"><div class="flex items-center pb-2"><input${ssrRenderAttr("value", unref(form).email)} type="email" placeholder="john@example.com" aria-label="Email Address" class="${ssrRenderClass([`text-${unref(store2).getters.primaryThemeTextColour}`, "mr-3 w-full border-none border-transparent bg-transparent px-2 py-1 leading-tight focus:border-transparent focus:ring-0"])}"><button type="button" class="${ssrRenderClass([`border-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShade} text-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShade} hover:bg-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShade} hover:text-${unref(store2).getters.primaryThemeHoverTextColour}`, "flex-shrink-0 rounded border bg-transparent px-2 py-1 text-sm"])}">`);
       _push(ssrRenderComponent(_component_font_awesome_icon, { icon: ["fas", "check"] }, null, _parent));
       _push(` Sign Up </button></div></div></div><!--]-->`);
     };
@@ -49,7 +49,7 @@ const _sfc_main$i = /* @__PURE__ */ defineComponent({
     return (_ctx, _push, _parent, _attrs) => {
       const _component_font_awesome_icon = resolveComponent("font-awesome-icon");
       _push(`<div${ssrRenderAttrs(mergeProps({
-        class: ["flex flex-wrap border-t py-3 px-10 lg:p-10", `bg-${unref(store2).getters.primaryThemeBgDarker} border-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShade}`]
+        class: ["flex flex-wrap border-t px-10 py-3 lg:p-10", `bg-${unref(store2).getters.primaryThemeBgDarker} border-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShade}`]
       }, _attrs))}><div class="${ssrRenderClass([`border-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShade}`, "w-full border-b lg:w-1/3"])}"><p class="mt-2"><a aria-label="facebook" href="https://www.facebook.com/dordoy" rel="noreferrer" target="_blank">`);
       _push(ssrRenderComponent(_component_font_awesome_icon, {
         icon: ["fab", "facebook"],
@@ -719,7 +719,7 @@ const _sfc_main$6 = /* @__PURE__ */ defineComponent({
     useReCaptcha();
     return (_ctx, _push, _parent, _attrs) => {
       const _component_font_awesome_icon = resolveComponent("font-awesome-icon");
-      _push(`<form${ssrRenderAttrs(mergeProps({ class: "w-full" }, _attrs))}><div class="-mx-3 mb-6 flex flex-wrap"><div class="mb-6 w-full px-3 md:mb-0"><div class="${ssrRenderClass([`border-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShade}`, "border-b"])}"><label for="contact_name" class="${ssrRenderClass([`text-${unref(store2).getters.primaryThemeTextColour}`, "mb-2 block text-xs font-bold uppercase tracking-wide"])}"> Name: </label><input id="contact_name"${ssrRenderAttr("value", unref(form).name)} type="text" name="name" placeholder="John Smith" class="${ssrRenderClass([`bg-${unref(store2).getters.primaryThemeBgDarker} text-${unref(store2).getters.primaryThemeTextColour} focus:bg-${unref(store2).getters.primaryThemeBgDarkest}`, "block w-full appearance-none border-none py-3 px-4 leading-tight focus:outline-none"])}"></div></div></div><div class="-mx-3 mb-6 flex flex-wrap"><div class="mb-6 w-full px-3 md:mb-0"><div class="${ssrRenderClass([`border-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShade}`, "border-b"])}"><label for="contact_email" class="${ssrRenderClass([`text-${unref(store2).getters.primaryThemeTextColour}`, "mb-2 block text-xs font-bold uppercase tracking-wide"])}"> Email: </label><input id="contact_email"${ssrRenderAttr("value", unref(form).email)} name="email" type="email" class="${ssrRenderClass([`bg-${unref(store2).getters.primaryThemeBgDarker} text-${unref(store2).getters.primaryThemeTextColour} focus:bg-${unref(store2).getters.primaryThemeBgDarkest}`, "block w-full appearance-none border-none py-3 px-4 leading-tight focus:outline-none"])}" placeholder="john@example.com"></div></div></div><div class="-mx-3 mb-6 flex flex-wrap"><div class="w-full px-3"><div class="${ssrRenderClass([`border-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShade}`, "border-b"])}"><label for="contact_message" class="${ssrRenderClass([`text-${unref(store2).getters.primaryThemeTextColour}`, "mb-2 block text-xs font-bold uppercase tracking-wide"])}"> Message: </label><textarea id="contact_message" rows="9" name="message" placeholder="Hello, World!" class="${ssrRenderClass([`bg-${unref(store2).getters.primaryThemeBgDarker} text-${unref(store2).getters.primaryThemeTextColour} focus:bg-${unref(store2).getters.primaryThemeBgDarkest}`, "block w-full appearance-none border-none py-3 px-4 leading-tight focus:outline-none"])}">${ssrInterpolate(unref(form).message)}</textarea></div></div></div><div class="-mx-3 flex flex-wrap pl-3"><button type="submit" class="${ssrRenderClass([`border-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShade} text-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShade} hover:bg-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShade} hover:text-${unref(store2).getters.primaryThemeHoverTextColour}`, "g-recaptcha flex-shrink-0 rounded border bg-transparent py-1 px-2 text-sm"])}">`);
+      _push(`<form${ssrRenderAttrs(mergeProps({ class: "w-full" }, _attrs))}><div class="-mx-3 mb-6 flex flex-wrap"><div class="mb-6 w-full px-3 md:mb-0"><div class="${ssrRenderClass([`border-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShade}`, "border-b"])}"><label for="contact_name" class="${ssrRenderClass([`text-${unref(store2).getters.primaryThemeTextColour}`, "mb-2 block text-xs font-bold uppercase tracking-wide"])}"> Name: </label><input id="contact_name"${ssrRenderAttr("value", unref(form).name)} type="text" name="name" placeholder="John Smith" class="${ssrRenderClass([`bg-${unref(store2).getters.primaryThemeBgDarker} text-${unref(store2).getters.primaryThemeTextColour} focus:bg-${unref(store2).getters.primaryThemeBgDarkest}`, "block w-full appearance-none border-none px-4 py-3 leading-tight focus:outline-none"])}"></div></div></div><div class="-mx-3 mb-6 flex flex-wrap"><div class="mb-6 w-full px-3 md:mb-0"><div class="${ssrRenderClass([`border-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShade}`, "border-b"])}"><label for="contact_email" class="${ssrRenderClass([`text-${unref(store2).getters.primaryThemeTextColour}`, "mb-2 block text-xs font-bold uppercase tracking-wide"])}"> Email: </label><input id="contact_email"${ssrRenderAttr("value", unref(form).email)} name="email" type="email" class="${ssrRenderClass([`bg-${unref(store2).getters.primaryThemeBgDarker} text-${unref(store2).getters.primaryThemeTextColour} focus:bg-${unref(store2).getters.primaryThemeBgDarkest}`, "block w-full appearance-none border-none px-4 py-3 leading-tight focus:outline-none"])}" placeholder="john@example.com"></div></div></div><div class="-mx-3 mb-6 flex flex-wrap"><div class="w-full px-3"><div class="${ssrRenderClass([`border-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShade}`, "border-b"])}"><label for="contact_message" class="${ssrRenderClass([`text-${unref(store2).getters.primaryThemeTextColour}`, "mb-2 block text-xs font-bold uppercase tracking-wide"])}"> Message: </label><textarea id="contact_message" rows="9" name="message" placeholder="Hello, World!" class="${ssrRenderClass([`bg-${unref(store2).getters.primaryThemeBgDarker} text-${unref(store2).getters.primaryThemeTextColour} focus:bg-${unref(store2).getters.primaryThemeBgDarkest}`, "block w-full appearance-none border-none px-4 py-3 leading-tight focus:outline-none"])}">${ssrInterpolate(unref(form).message)}</textarea></div></div></div><div class="-mx-3 flex flex-wrap pl-3"><button type="submit" class="${ssrRenderClass([`border-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShade} text-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShade} hover:bg-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShade} hover:text-${unref(store2).getters.primaryThemeHoverTextColour}`, "g-recaptcha flex-shrink-0 rounded border bg-transparent px-2 py-1 text-sm"])}">`);
       _push(ssrRenderComponent(_component_font_awesome_icon, { icon: ["fas", "check"] }, null, _parent));
       _push(` Submit </button></div></form>`);
     };
@@ -987,7 +987,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       _push(ssrRenderComponent(_component_font_awesome_icon, { icon: "cog" }, null, _parent));
       _push(`</button></div><div class="items-top relative min-h-screen flex-auto sm:pt-0"><div class="py-18 relative min-h-screen w-full px-10">`);
       _push(ssrRenderComponent(_sfc_main$h, null, null, _parent));
-      _push(`<div class="absolute top-1/2 left-1/2 w-1/2 -translate-x-1/2 -translate-y-1/2 transform lg:w-1/3"><div class="${ssrRenderClass([`border-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShade}`, "front-into w-full md:mx-0 md:p-8"])}"><h1 class="varela text-2xl sm:text-3xl md:text-4xl">James Dordoy</h1><h2 class="varela sm:text-1xl text-lg md:text-2xl">Full Stack Developer</h2><p class="varela md:text-1xl sm:text-1xl">From Essex</p></div></div></div><div class="${ssrRenderClass([`bg-${unref(store2).getters.primaryThemeBgDarker}`, "w-full px-10 py-24"])}">`);
+      _push(`<div class="absolute left-1/2 top-1/2 w-1/2 -translate-x-1/2 -translate-y-1/2 transform lg:w-1/3"><div class="${ssrRenderClass([`border-${unref(store2).getters.primaryThemeColour}-${unref(store2).getters.primaryThemeColourShade}`, "front-into w-full md:mx-0 md:p-8"])}"><h1 class="varela text-2xl sm:text-3xl md:text-4xl">James Dordoy</h1><h2 class="varela sm:text-1xl text-lg md:text-2xl">Full Stack Developer</h2><p class="varela md:text-1xl sm:text-1xl">From Essex</p></div></div></div><div class="${ssrRenderClass([`bg-${unref(store2).getters.primaryThemeBgDarker}`, "w-full px-10 py-24"])}">`);
       _push(ssrRenderComponent(_sfc_main$g, null, null, _parent));
       _push(`</div><div class="${ssrRenderClass([`bg-${unref(store2).getters.primaryThemeBg}`, "w-full px-10 py-12"])}">`);
       _push(ssrRenderComponent(_sfc_main$7, { projects: __props.projects }, null, _parent));
@@ -1125,8 +1125,20 @@ async function loadFontAwesome() {
 function t(t4, r2) {
   for (var n2 = 0; n2 < r2.length; n2++) {
     var e2 = r2[n2];
-    e2.enumerable = e2.enumerable || false, e2.configurable = true, "value" in e2 && (e2.writable = true), Object.defineProperty(t4, e2.key, e2);
+    e2.enumerable = e2.enumerable || false, e2.configurable = true, "value" in e2 && (e2.writable = true), Object.defineProperty(t4, "symbol" == typeof (o2 = function(t5, r3) {
+      if ("object" != typeof t5 || null === t5)
+        return t5;
+      var n3 = t5[Symbol.toPrimitive];
+      if (void 0 !== n3) {
+        var e3 = n3.call(t5, "string");
+        if ("object" != typeof e3)
+          return e3;
+        throw new TypeError("@@toPrimitive must return a primitive value.");
+      }
+      return String(t5);
+    }(e2.key)) ? o2 : String(o2), e2);
   }
+  var o2;
 }
 function r(r2, n2, e2) {
   return n2 && t(r2.prototype, n2), e2 && t(r2, e2), Object.defineProperty(r2, "prototype", { writable: false }), r2;
@@ -1151,31 +1163,30 @@ function o(t4, r2) {
     return t5.__proto__ = r3, t5;
   }, o(t4, r2);
 }
-function i() {
-  if ("undefined" == typeof Reflect || !Reflect.construct)
-    return false;
-  if (Reflect.construct.sham)
-    return false;
-  if ("function" == typeof Proxy)
-    return true;
-  try {
-    return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function() {
-    })), true;
-  } catch (t4) {
-    return false;
-  }
-}
-function u(t4, r2, n2) {
-  return u = i() ? Reflect.construct.bind() : function(t5, r3, n3) {
+function i(t4, r2, n2) {
+  return i = function() {
+    if ("undefined" == typeof Reflect || !Reflect.construct)
+      return false;
+    if (Reflect.construct.sham)
+      return false;
+    if ("function" == typeof Proxy)
+      return true;
+    try {
+      return Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function() {
+      })), true;
+    } catch (t5) {
+      return false;
+    }
+  }() ? Reflect.construct.bind() : function(t5, r3, n3) {
     var e2 = [null];
     e2.push.apply(e2, r3);
     var i2 = new (Function.bind.apply(t5, e2))();
     return n3 && o(i2, n3.prototype), i2;
-  }, u.apply(null, arguments);
+  }, i.apply(null, arguments);
 }
-function f(t4) {
+function u(t4) {
   var r2 = "function" == typeof Map ? /* @__PURE__ */ new Map() : void 0;
-  return f = function(t5) {
+  return u = function(t5) {
     if (null === t5 || -1 === Function.toString.call(t5).indexOf("[native code]"))
       return t5;
     if ("function" != typeof t5)
@@ -1186,16 +1197,16 @@ function f(t4) {
       r2.set(t5, n2);
     }
     function n2() {
-      return u(t5, arguments, e(this).constructor);
+      return i(t5, arguments, e(this).constructor);
     }
     return n2.prototype = Object.create(t5.prototype, { constructor: { value: n2, enumerable: false, writable: true, configurable: true } }), o(n2, t5);
-  }, f(t4);
+  }, u(t4);
 }
-var a = String.prototype.replace, c = /%20/g, l = { default: "RFC3986", formatters: { RFC1738: function(t4) {
-  return a.call(t4, c, "+");
+var f = String.prototype.replace, a = /%20/g, c = "RFC3986", l = { default: c, formatters: { RFC1738: function(t4) {
+  return f.call(t4, a, "+");
 }, RFC3986: function(t4) {
   return String(t4);
-} }, RFC1738: "RFC1738", RFC3986: "RFC3986" }, s = Object.prototype.hasOwnProperty, v = Array.isArray, p = function() {
+} }, RFC1738: "RFC1738", RFC3986: c }, s = Object.prototype.hasOwnProperty, v = Array.isArray, p = function() {
   for (var t4 = [], r2 = 0; r2 < 256; ++r2)
     t4.push("%" + ((r2 < 16 ? "0" : "") + r2.toString(16)).toUpperCase());
   return t4;
@@ -1323,24 +1334,24 @@ var a = String.prototype.replace, c = /%20/g, l = { default: "RFC3986", formatte
   else if (m(f2))
     k2 = f2;
   else {
-    var C2 = Object.keys(h2);
-    k2 = a2 ? C2.sort(a2) : C2;
+    var T2 = Object.keys(h2);
+    k2 = a2 ? T2.sort(a2) : T2;
   }
-  for (var N2 = 0; N2 < k2.length; ++N2) {
-    var T2 = k2[N2], F2 = "object" == typeof T2 && void 0 !== T2.value ? T2.value : h2[T2];
-    if (!i2 || null !== F2) {
-      var D2 = m(h2) ? "function" == typeof e2 ? e2(n2, T2) : n2 : n2 + (c2 ? "." + T2 : "[" + T2 + "]");
-      w(x2, t3(F2, D2, e2, o2, i2, u2, f2, a2, c2, l2, s2, v2, p2, y2));
+  for (var C2 = 0; C2 < k2.length; ++C2) {
+    var N2 = k2[C2], D2 = "object" == typeof N2 && void 0 !== N2.value ? N2.value : h2[N2];
+    if (!i2 || null !== D2) {
+      var F2 = m(h2) ? "function" == typeof e2 ? e2(n2, N2) : n2 : n2 + (c2 ? "." + N2 : "[" + N2 + "]");
+      w(x2, t3(D2, F2, e2, o2, i2, u2, f2, a2, c2, l2, s2, v2, p2, y2));
     }
   }
   return x2;
-}, k = Object.prototype.hasOwnProperty, x = Array.isArray, C = { allowDots: false, allowPrototypes: false, arrayLimit: 20, charset: "utf-8", charsetSentinel: false, comma: false, decoder: d.decode, delimiter: "&", depth: 5, ignoreQueryPrefix: false, interpretNumericEntities: false, parameterLimit: 1e3, parseArrays: true, plainObjects: false, strictNullHandling: false }, N = function(t4) {
+}, k = Object.prototype.hasOwnProperty, x = Array.isArray, T = { allowDots: false, allowPrototypes: false, arrayLimit: 20, charset: "utf-8", charsetSentinel: false, comma: false, decoder: d.decode, delimiter: "&", depth: 5, ignoreQueryPrefix: false, interpretNumericEntities: false, parameterLimit: 1e3, parseArrays: true, plainObjects: false, strictNullHandling: false }, C = function(t4) {
   return t4.replace(/&#(\d+);/g, function(t5, r2) {
     return String.fromCharCode(parseInt(r2, 10));
   });
-}, T = function(t4, r2) {
+}, N = function(t4, r2) {
   return t4 && "string" == typeof t4 && r2.comma && t4.indexOf(",") > -1 ? t4.split(",") : t4;
-}, F = function(t4, r2, n2, e2) {
+}, D = function(t4, r2, n2, e2) {
   if (t4) {
     var o2 = n2.allowDots ? t4.replace(/\.([^.[]+)/g, "[$1]") : t4, i2 = /(\[[^[\]]*])/g, u2 = n2.depth > 0 && /(\[[^[\]]*])/.exec(o2), f2 = u2 ? o2.slice(0, u2.index) : o2, a2 = [];
     if (f2) {
@@ -1354,7 +1365,7 @@ var a = String.prototype.replace, c = /%20/g, l = { default: "RFC3986", formatte
       a2.push(u2[1]);
     }
     return u2 && a2.push("[" + o2.slice(u2.index) + "]"), function(t5, r3, n3, e3) {
-      for (var o3 = e3 ? r3 : T(r3, n3), i3 = t5.length - 1; i3 >= 0; --i3) {
+      for (var o3 = e3 ? r3 : N(r3, n3), i3 = t5.length - 1; i3 >= 0; --i3) {
         var u3, f3 = t5[i3];
         if ("[]" === f3 && n3.parseArrays)
           u3 = [].concat(o3);
@@ -1368,15 +1379,15 @@ var a = String.prototype.replace, c = /%20/g, l = { default: "RFC3986", formatte
       return o3;
     }(a2, r2, n2, e2);
   }
-}, D = function(t4, r2) {
+}, F = function(t4, r2) {
   var n2 = function(t5) {
     if (!t5)
-      return C;
+      return T;
     if (null != t5.decoder && "function" != typeof t5.decoder)
       throw new TypeError("Decoder has to be a function.");
     if (void 0 !== t5.charset && "utf-8" !== t5.charset && "iso-8859-1" !== t5.charset)
       throw new TypeError("The charset option must be either utf-8, iso-8859-1, or undefined");
-    return { allowDots: void 0 === t5.allowDots ? C.allowDots : !!t5.allowDots, allowPrototypes: "boolean" == typeof t5.allowPrototypes ? t5.allowPrototypes : C.allowPrototypes, arrayLimit: "number" == typeof t5.arrayLimit ? t5.arrayLimit : C.arrayLimit, charset: void 0 === t5.charset ? C.charset : t5.charset, charsetSentinel: "boolean" == typeof t5.charsetSentinel ? t5.charsetSentinel : C.charsetSentinel, comma: "boolean" == typeof t5.comma ? t5.comma : C.comma, decoder: "function" == typeof t5.decoder ? t5.decoder : C.decoder, delimiter: "string" == typeof t5.delimiter || d.isRegExp(t5.delimiter) ? t5.delimiter : C.delimiter, depth: "number" == typeof t5.depth || false === t5.depth ? +t5.depth : C.depth, ignoreQueryPrefix: true === t5.ignoreQueryPrefix, interpretNumericEntities: "boolean" == typeof t5.interpretNumericEntities ? t5.interpretNumericEntities : C.interpretNumericEntities, parameterLimit: "number" == typeof t5.parameterLimit ? t5.parameterLimit : C.parameterLimit, parseArrays: false !== t5.parseArrays, plainObjects: "boolean" == typeof t5.plainObjects ? t5.plainObjects : C.plainObjects, strictNullHandling: "boolean" == typeof t5.strictNullHandling ? t5.strictNullHandling : C.strictNullHandling };
+    return { allowDots: void 0 === t5.allowDots ? T.allowDots : !!t5.allowDots, allowPrototypes: "boolean" == typeof t5.allowPrototypes ? t5.allowPrototypes : T.allowPrototypes, arrayLimit: "number" == typeof t5.arrayLimit ? t5.arrayLimit : T.arrayLimit, charset: void 0 === t5.charset ? T.charset : t5.charset, charsetSentinel: "boolean" == typeof t5.charsetSentinel ? t5.charsetSentinel : T.charsetSentinel, comma: "boolean" == typeof t5.comma ? t5.comma : T.comma, decoder: "function" == typeof t5.decoder ? t5.decoder : T.decoder, delimiter: "string" == typeof t5.delimiter || d.isRegExp(t5.delimiter) ? t5.delimiter : T.delimiter, depth: "number" == typeof t5.depth || false === t5.depth ? +t5.depth : T.depth, ignoreQueryPrefix: true === t5.ignoreQueryPrefix, interpretNumericEntities: "boolean" == typeof t5.interpretNumericEntities ? t5.interpretNumericEntities : T.interpretNumericEntities, parameterLimit: "number" == typeof t5.parameterLimit ? t5.parameterLimit : T.parameterLimit, parseArrays: false !== t5.parseArrays, plainObjects: "boolean" == typeof t5.plainObjects ? t5.plainObjects : T.plainObjects, strictNullHandling: "boolean" == typeof t5.strictNullHandling ? t5.strictNullHandling : T.strictNullHandling };
   }(r2);
   if ("" === t4 || null == t4)
     return n2.plainObjects ? /* @__PURE__ */ Object.create(null) : {};
@@ -1388,17 +1399,17 @@ var a = String.prototype.replace, c = /%20/g, l = { default: "RFC3986", formatte
     for (n3 = 0; n3 < o3.length; ++n3)
       if (n3 !== i3) {
         var f3, a3, c2 = o3[n3], l2 = c2.indexOf("]="), s2 = -1 === l2 ? c2.indexOf("=") : l2 + 1;
-        -1 === s2 ? (f3 = r3.decoder(c2, C.decoder, u3, "key"), a3 = r3.strictNullHandling ? null : "") : (f3 = r3.decoder(c2.slice(0, s2), C.decoder, u3, "key"), a3 = d.maybeMap(T(c2.slice(s2 + 1), r3), function(t6) {
-          return r3.decoder(t6, C.decoder, u3, "value");
-        })), a3 && r3.interpretNumericEntities && "iso-8859-1" === u3 && (a3 = N(a3)), c2.indexOf("[]=") > -1 && (a3 = x(a3) ? [a3] : a3), e3[f3] = k.call(e3, f3) ? d.combine(e3[f3], a3) : a3;
+        -1 === s2 ? (f3 = r3.decoder(c2, T.decoder, u3, "key"), a3 = r3.strictNullHandling ? null : "") : (f3 = r3.decoder(c2.slice(0, s2), T.decoder, u3, "key"), a3 = d.maybeMap(N(c2.slice(s2 + 1), r3), function(t6) {
+          return r3.decoder(t6, T.decoder, u3, "value");
+        })), a3 && r3.interpretNumericEntities && "iso-8859-1" === u3 && (a3 = C(a3)), c2.indexOf("[]=") > -1 && (a3 = x(a3) ? [a3] : a3), e3[f3] = k.call(e3, f3) ? d.combine(e3[f3], a3) : a3;
       }
     return e3;
   }(t4, n2) : t4, o2 = n2.plainObjects ? /* @__PURE__ */ Object.create(null) : {}, i2 = Object.keys(e2), u2 = 0; u2 < i2.length; ++u2) {
-    var f2 = i2[u2], a2 = F(f2, e2[f2], n2, "string" == typeof t4);
+    var f2 = i2[u2], a2 = D(f2, e2[f2], n2, "string" == typeof t4);
     o2 = d.merge(o2, a2, n2);
   }
   return d.compact(o2);
-}, $ = /* @__PURE__ */ function() {
+}, I = /* @__PURE__ */ function() {
   function t4(t5, r2, n3) {
     var e2, o2;
     this.name = t5, this.definition = r2, this.bindings = null != (e2 = r2.bindings) ? e2 : {}, this.wheres = null != (o2 = r2.wheres) ? o2 : {}, this.config = n3;
@@ -1412,7 +1423,12 @@ var a = String.prototype.replace, c = /%20/g, l = { default: "RFC3986", formatte
       var i3, u3 = "(?<" + e3 + ">" + ((null == (i3 = r2.wheres[e3]) ? void 0 : i3.replace(/(^\^)|(\$$)/g, "")) || "[^/?]+") + ")";
       return o3 ? "(" + n4 + u3 + ")?" : "" + n4 + u3;
     }).replace(/^\w+:\/\//, ""), e2 = t5.replace(/^\w+:\/\//, "").split("?"), o2 = e2[0], i2 = e2[1], u2 = new RegExp("^" + n3 + "/?$").exec(o2);
-    return !!u2 && { params: u2.groups, query: D(i2) };
+    if (u2) {
+      for (var f2 in u2.groups)
+        u2.groups[f2] = "string" == typeof u2.groups[f2] ? decodeURIComponent(u2.groups[f2]) : u2.groups[f2];
+      return { params: u2.groups, query: F(i2) };
+    }
+    return false;
   }, n2.compile = function(t5) {
     var r2 = this, n3 = this.parameterSegments;
     return n3.length ? this.template.replace(/{([^}?]+)(\??)}/g, function(e2, o2, i2) {
@@ -1424,23 +1440,25 @@ var a = String.prototype.replace, c = /%20/g, l = { default: "RFC3986", formatte
       if (r2.wheres[o2] && !new RegExp("^" + (i2 ? "(" + r2.wheres[o2] + ")?" : r2.wheres[o2]) + "$").test(null != (u2 = t5[o2]) ? u2 : ""))
         throw new Error("Ziggy error: '" + o2 + "' parameter does not match required format '" + r2.wheres[o2] + "' for route '" + r2.name + "'.");
       return encodeURIComponent(null != (f2 = t5[o2]) ? f2 : "");
-    }).replace(/\/+$/, "") : this.template;
+    }).replace(this.origin + "//", this.origin + "/").replace(/\/+$/, "") : this.template;
   }, r(t4, [{ key: "template", get: function() {
-    return ((this.config.absolute ? this.definition.domain ? "" + this.config.url.match(/^\w+:\/\//)[0] + this.definition.domain + (this.config.port ? ":" + this.config.port : "") : this.config.url : "") + "/" + this.definition.uri).replace(/\/+$/, "");
+    return (this.origin + "/" + this.definition.uri).replace(/\/+$/, "");
+  } }, { key: "origin", get: function() {
+    return this.config.absolute ? this.definition.domain ? "" + this.config.url.match(/^\w+:\/\//)[0] + this.definition.domain + (this.config.port ? ":" + this.config.port : "") : this.config.url : "";
   } }, { key: "parameterSegments", get: function() {
     var t5, r2;
     return null != (t5 = null == (r2 = this.template.match(/{[^}?]+\??}/g)) ? void 0 : r2.map(function(t6) {
       return { name: t6.replace(/{|\??}/g, ""), required: !/\?}$/.test(t6) };
     })) ? t5 : [];
   } }]), t4;
-}(), A = /* @__PURE__ */ function(t4) {
+}(), P = /* @__PURE__ */ function(t4) {
   var e2, i2;
   function u2(r2, e3, o2, i3) {
     var u3;
     if (void 0 === o2 && (o2 = true), (u3 = t4.call(this) || this).t = null != i3 ? i3 : "undefined" != typeof Ziggy ? Ziggy : null == globalThis ? void 0 : globalThis.Ziggy, u3.t = n({}, u3.t, { absolute: o2 }), r2) {
       if (!u3.t.routes[r2])
         throw new Error("Ziggy error: route '" + r2 + "' is not in the route list.");
-      u3.i = new $(r2, u3.t.routes[r2], u3.t), u3.u = u3.l(e3);
+      u3.i = new I(r2, u3.t.routes[r2], u3.t), u3.u = u3.l(e3);
     }
     return u3;
   }
@@ -1494,7 +1512,7 @@ var a = String.prototype.replace, c = /%20/g, l = { default: "RFC3986", formatte
     var r2 = this;
     t5 ? this.t.absolute && t5.startsWith("/") && (t5 = this.p().host + t5) : t5 = this.h();
     var e3 = {}, o2 = Object.entries(this.t.routes).find(function(n2) {
-      return e3 = new $(n2[0], n2[1], r2.t).matchesUrl(t5);
+      return e3 = new I(n2[0], n2[1], r2.t).matchesUrl(t5);
     }) || [void 0, void 0];
     return n({ name: o2[0] }, e3, { route: o2[1] });
   }, f2.h = function() {
@@ -1507,7 +1525,7 @@ var a = String.prototype.replace, c = /%20/g, l = { default: "RFC3986", formatte
     var a2 = new RegExp("^" + t5.replace(/\./g, "\\.").replace(/\*/g, ".*") + "$").test(o2);
     if ([null, void 0].includes(r2) || !a2)
       return a2;
-    var c2 = new $(o2, f3, this.t);
+    var c2 = new I(o2, f3, this.t);
     r2 = this.l(r2, c2);
     var l2 = n({}, i3, u3);
     return !(!Object.values(r2).every(function(t6) {
@@ -1569,16 +1587,29 @@ var a = String.prototype.replace, c = /%20/g, l = { default: "RFC3986", formatte
     var t5 = this.v();
     return n({}, t5.params, t5.query);
   } }]), u2;
-}(/* @__PURE__ */ f(String)), I = { install: function(t4, r2) {
+}(/* @__PURE__ */ u(String)), $ = { install: function(t4, r2) {
   var n2 = function(t5, n3, e2, o2) {
     return void 0 === o2 && (o2 = r2), function(t6, r3, n4, e3) {
-      var o3 = new A(t6, r3, n4, e3);
+      var o3 = new P(t6, r3, n4, e3);
       return t6 ? o3.toString() : o3;
     }(t5, n3, e2, o2);
   };
   t4.mixin({ methods: { route: n2 } }), parseInt(t4.version) > 2 && t4.provide("route", n2);
 } };
-const Ziggy$1 = { "url": "http://portfolio.test", "port": null, "defaults": {}, "routes": { "ignition.healthCheck": { "uri": "_ignition/health-check", "methods": ["GET", "HEAD"] }, "ignition.executeSolution": { "uri": "_ignition/execute-solution", "methods": ["POST"] }, "ignition.updateConfig": { "uri": "_ignition/update-config", "methods": ["POST"] }, "home": { "uri": "/", "methods": ["GET", "HEAD"] }, "contact.store": { "uri": "contact", "methods": ["POST"] }, "newsletter.store": { "uri": "newsletter", "methods": ["POST"] }, "newsletter.destroy": { "uri": "newsletter/unsubscribe", "methods": ["GET", "HEAD"] } } };
+const Ziggy$1 = {
+  url: "http://portfolio.test",
+  port: null,
+  defaults: {},
+  routes: {
+    "ignition.healthCheck": { uri: "_ignition/health-check", methods: ["GET", "HEAD"] },
+    "ignition.executeSolution": { uri: "_ignition/execute-solution", methods: ["POST"] },
+    "ignition.updateConfig": { uri: "_ignition/update-config", methods: ["POST"] },
+    home: { uri: "/", methods: ["GET", "HEAD"] },
+    "contact.store": { uri: "contact", methods: ["POST"] },
+    "newsletter.store": { uri: "newsletter", methods: ["POST"] },
+    "newsletter.destroy": { uri: "newsletter/unsubscribe", methods: ["GET", "HEAD"] }
+  }
+};
 if (typeof window !== "undefined" && typeof window.Ziggy !== "undefined") {
   Object.assign(Ziggy$1.routes, window.Ziggy.routes);
 }
@@ -1602,7 +1633,7 @@ createServer(
       await loadFontAwesome();
       return createSSRApp({
         render: () => h$1(App, props)
-      }).use(plugin).use(store).use(Particles).use(VueScrollTo).use(Notifications).use(VueReCaptcha, { siteKey: {}.VITE_RECAPTCHA_SITE_KEY }).mixin({ methods: { route } }).use(I, Ziggy$1).component("font-awesome-icon", FontAwesomeIcon);
+      }).use(plugin).use(store).use(Particles).use(VueScrollTo).use(Notifications).use(VueReCaptcha, { siteKey: {}.VITE_RECAPTCHA_SITE_KEY }).mixin({ methods: { route } }).use($, Ziggy$1).component("font-awesome-icon", FontAwesomeIcon);
     }
   })
 );

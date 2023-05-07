@@ -15,19 +15,19 @@
     "src": "node_modules/@fortawesome/free-solid-svg-icons/index.mjs"
   },
   "resources/js/app.css": {
-    "file": "assets/app-d518b954.css",
+    "file": "assets/app-5a636b42.css",
     "src": "resources/js/app.css"
   },
   "resources/js/app.ts": {
     "css": [
-      "assets/app-d518b954.css"
+      "assets/app-5a636b42.css"
     ],
     "dynamicImports": [
       "node_modules/@fortawesome/free-brands-svg-icons/index.mjs",
       "node_modules/@fortawesome/free-solid-svg-icons/index.mjs",
       "node_modules/@fortawesome/free-regular-svg-icons/index.mjs"
     ],
-    "file": "assets/app-cfed6899.js",
+    "file": "assets/app-367a2864.js",
     "isEntry": true,
     "src": "resources/js/app.ts"
   }
