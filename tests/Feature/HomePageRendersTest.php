@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Inertia\Testing\AssertableInertia as Assert;
 
 test('Home Page can render', function () {
@@ -9,7 +10,7 @@ test('Home Page can render', function () {
         ->assertStatus(200)
         ->assertInertia(
             fn (Assert $page) => $page
-                ->component('Home')
+                ->component(HomeController::INDEX)
                 ->has('projects')
                 ->has('timeline')
         );

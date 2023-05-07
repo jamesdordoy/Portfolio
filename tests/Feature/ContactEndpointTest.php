@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Bus;
 use Illuminate\Support\Facades\Mail;
 use Inertia\Testing\AssertableInertia as Assert;
@@ -17,7 +18,7 @@ test('Contact end point fails with no name', function () {
             'message' => 'message',
         ])
         ->assertInertia(fn (Assert $page) => $page
-            ->component('Home')
+            ->component(HomeController::INDEX)
             ->has(
                 'errors.name'
             ));
@@ -30,7 +31,7 @@ test('Contact end point fails with no email', function () {
             'message' => 'message',
         ])
         ->assertInertia(fn (Assert $page) => $page
-            ->component('Home')
+            ->component(HomeController::INDEX)
             ->has(
                 'errors.email'
             ));
@@ -43,7 +44,7 @@ test('Contact end point fails with no message', function () {
             'email' => 'test@test.com',
         ])
         ->assertInertia(fn (Assert $page) => $page
-            ->component('Home')
+            ->component(HomeController::INDEX)
             ->has(
                 'errors.message'
             ));
@@ -58,6 +59,6 @@ test('Contact end point can be submitted', function () {
         ])
         ->assertInertia(
             fn (Assert $page) => $page
-                ->component('Home')
+                ->component(HomeController::INDEX)
         );
 });

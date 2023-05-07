@@ -11,14 +11,16 @@ use App\Models\Data\TimelineEvent as TimelineEventData;
 use App\Models\GameClip;
 use App\Models\Data\GameClip as GameClipData;
 
-class HomeController extends Controller
+final class HomeController extends Controller
 {
-    protected string $index = 'HomePage';
+    // public static string $index = 'HomePage';
+
+    public const INDEX = 'HomePage';
 
     public function index(): Response
     {
         return Inertia::render(
-            $this->index,
+            self::INDEX,
             [
                 ProjectData::COLLECTION_NAME => fn () => ProjectData::collection(
                     Project::with(Project::PUBLIC_RELATIONSHIPS)->public()->get()
