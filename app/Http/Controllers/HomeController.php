@@ -13,8 +13,6 @@ use App\Models\Data\GameClip as GameClipData;
 
 final class HomeController extends Controller
 {
-    // public static string $index = 'HomePage';
-
     public const INDEX = 'HomePage';
 
     public function index(): Response

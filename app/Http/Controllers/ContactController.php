@@ -9,7 +9,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Pipeline\Pipeline;
 use Spatie\DiscordAlerts\Facades\DiscordAlert;
 
-class ContactController extends Controller
+final class ContactController extends Controller
 {
     public function __invoke(ContactData $request): RedirectResponse
     {
