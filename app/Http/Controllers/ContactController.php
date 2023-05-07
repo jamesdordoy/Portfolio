@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Contact;
 use App\Actions\Contact\CreateContact;
 use App\Actions\Contact\SendContactEmail;
 use App\Models\Data\Contact as ContactData;
@@ -23,7 +22,7 @@ class ContactController extends Controller
                 SendContactEmail::class,
             ])
             ->then(
-                fn () => 
+                fn () =>
                     DiscordAlert::message(sprintf('%s has reached out to you via the contact form: %s', $data->name, $data->message))
             );
 

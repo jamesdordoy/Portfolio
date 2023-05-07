@@ -23,7 +23,7 @@ class NewsletterController extends Controller
             ->then(
                 fn (Newsletter $newsletter) =>
                     DiscordAlert::message(sprintf('%s has signed up the the newsletter', $newsletter->email))
-                );
+            );
 
         return redirect(CreateNewsletter::redirectTo());
     }
