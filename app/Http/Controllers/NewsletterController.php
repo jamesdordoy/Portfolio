@@ -8,6 +8,7 @@ use App\Models\Newsletter;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Pipeline\Pipeline;
 use Spatie\DiscordAlerts\Facades\DiscordAlert;
+
 final class NewsletterController extends Controller
 {
     public function store(NewsletterData $request): RedirectResponse
