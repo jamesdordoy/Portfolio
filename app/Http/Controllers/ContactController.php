@@ -8,6 +8,7 @@ use App\Actions\Contact\SendContactEmail;
 use App\Models\Data\Contact as ContactData;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Pipeline\Pipeline;
+use Spatie\DiscordAlerts\Facades\DiscordAlert;
 
 class ContactController extends Controller
 {
@@ -21,7 +22,10 @@ class ContactController extends Controller
                 CreateContact::class,
                 SendContactEmail::class,
             ])
-            ->then(fn (Contact $contact) => $contact);
+            ->then(
+                fn () => 
+                    DiscordAlert::message(sprintf('%s has reached out to you via the contact form: %s', $data->name, $data->message))
+            );
 
         return redirect(CreateContact::redirectTo());
     }

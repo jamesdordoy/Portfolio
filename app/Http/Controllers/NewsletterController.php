@@ -13,17 +13,17 @@ class NewsletterController extends Controller
 {
     public function store(NewsletterData $request): RedirectResponse
     {
-        $data = NewsletterData::from($request->all());
-
         app(Pipeline::class)
-            ->send($data)
+            ->send(
+                NewsletterData::from($request->all())
+            )
             ->through([
                 CreateNewsletter::class,
             ])
-            ->then(function (Newsletter $newsletter) {
-                DiscordAlert::message(sprintf('%s has signed up the the newsletter', $newsletter->email));
-                return $newsletter;
-            });
+            ->then(
+                fn (Newsletter $newsletter) =>
+                    DiscordAlert::message(sprintf('%s has signed up the the newsletter', $newsletter->email))
+                );
 
         return redirect(CreateNewsletter::redirectTo());
     }

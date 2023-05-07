@@ -8,6 +8,8 @@ class GameClip extends EloquentModel
 {
     use HasFactory;
 
+    public const PUBLIC_RELATIONSHIPS = ['game'];
+
     protected $fillable = [
         'url',
     ];

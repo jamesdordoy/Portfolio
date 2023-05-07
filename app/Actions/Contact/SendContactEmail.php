@@ -6,7 +6,6 @@ use App\Models\Contact;
 use App\Mail\ContactMail;
 use Illuminate\Support\Facades\Mail;
 use Closure;
-use Spatie\DiscordAlerts\Facades\DiscordAlert;
 
 class SendContactEmail
 {
@@ -14,8 +13,6 @@ class SendContactEmail
     {
         Mail::to($contact->email)
             ->queue(new ContactMail($contact));
-
-        DiscordAlert::message(sprintf('%s has reached out to you via the contact form: %s', $contact->name, $contact->message));
 
         return $next($contact);
     }

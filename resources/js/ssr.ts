@@ -6,12 +6,12 @@ import '../css/app.css';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-import state from '@/State/state.js';
-import getters from '@/State/getters.js';
+import state from '@/stores/theme/state.js';
+import getters from '@/stores/theme/getters.js';
+import mutations from '@/stores/theme/mutations.js';
 import { createStore } from 'vuex';
 import Particles from 'particles.vue3';
 import VueScrollTo from 'vue-scrollto';
-import mutations from '@/State/mutations.js';
 import Notifications from 'notiwind';
 import fontAwesomeLibrary from '@/font-awesome.js';
 import { createInertiaApp } from '@inertiajs/vue3';
