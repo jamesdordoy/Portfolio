@@ -18,13 +18,12 @@ jobs:
       run: php -r "file_exists('.env') || copy('.env.testing', '.env');"
     - name: Install Dependencies
       run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
-    - name: Install Bun
-      run: curl https://bun.sh/install | bash
-    - name: Install Node Dependencies
-      run: /home/runner/.bun/bin/bun install
-    - name: Vite Build
-      run: |
-        /home/runner/.bun/bin/bun run build
+    - name: Setup Node
+      uses: actions/setup-node@v3
+    - name: Install dependencies
+      uses: bahmutov/npm-install@v1
+    - name: Build project
+      run: npm run build
     - name: Commit changes
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
