@@ -24,7 +24,7 @@ jobs:
       run: /home/runner/.bun/bin/bun install
     - name: Vite Build
       run: |
-        /home/runner/.bun/bin/bun run build
+        /home/runner/.bun/bin/bun run build --base=https://jamesdordoy.co.uk
     - name: Commit changes
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
