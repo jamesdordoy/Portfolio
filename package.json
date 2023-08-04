@@ -2,7 +2,7 @@
     "private": true,
     "scripts": {
         "dev": "vite",
-        "build": "vite build && vite build --ssr",
+        "build": "vite build",
         "type-check": "vue-tsc -noEmit",
         "lint": "eslint \"resources/**\"",
         "format": "prettier \"resources/**/*.{js,ts,vue}\" -write",
