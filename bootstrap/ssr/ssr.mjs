@@ -11,8 +11,8 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { VueReCaptcha } from "vue-recaptcha-v3";
 import route from "ziggy-js";
 const app = "";
-const swiper_min = "";
-const navigation_min = "";
+const swiper = "";
+const navigation = "";
 const state = {
   primaryThemeColour: "blue",
   primaryThemeColourShade: 500,
