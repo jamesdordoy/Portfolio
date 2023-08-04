@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\HomeController;
 use Inertia\Testing\AssertableInertia as Assert;
 
 test('Home Page can render', function () {
