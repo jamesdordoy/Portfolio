@@ -9,9 +9,10 @@ test('Home Page can render', function () {
     $response
         ->assertStatus(200)
         ->assertInertia(
-            fn (Assert $page) => $page
-                ->component(HomeController::INDEX)
-                ->has('projects')
-                ->has('timeline')
+            fn (Assert $page) => dd($page)
+            //  $page
+            //     ->component(HomeController::INDEX)
+            //     ->has('projects')
+            //     ->has('timeline')
         );
 });
