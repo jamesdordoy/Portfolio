@@ -1,16 +1,16 @@
 {
   "node_modules/@fortawesome/free-brands-svg-icons/index.mjs": {
-    "file": "assets/index-f47be9fa.js",
+    "file": "assets/index-2d7a4cda.js",
     "isDynamicEntry": true,
     "src": "node_modules/@fortawesome/free-brands-svg-icons/index.mjs"
   },
   "node_modules/@fortawesome/free-regular-svg-icons/index.mjs": {
-    "file": "assets/index-8ac251fe.js",
+    "file": "assets/index-24c14523.js",
     "isDynamicEntry": true,
     "src": "node_modules/@fortawesome/free-regular-svg-icons/index.mjs"
   },
   "node_modules/@fortawesome/free-solid-svg-icons/index.mjs": {
-    "file": "assets/index-78927580.js",
+    "file": "assets/index-d25196f6.js",
     "isDynamicEntry": true,
     "src": "node_modules/@fortawesome/free-solid-svg-icons/index.mjs"
   },
@@ -27,7 +27,7 @@
       "node_modules/@fortawesome/free-solid-svg-icons/index.mjs",
       "node_modules/@fortawesome/free-regular-svg-icons/index.mjs"
     ],
-    "file": "assets/app-c235a002.js",
+    "file": "assets/app-3bebed5b.js",
     "isEntry": true,
     "src": "resources/js/app.ts"
   }
