@@ -3,7 +3,7 @@ import { useStore } from 'vuex';
 import { PropType } from 'vue';
 import Project from '@/Components/Generic/Project.vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
-import { Navigation } from 'swiper';
+import { Navigation } from 'swiper/modules';
 
 const modules = [Navigation];
 

@@ -4,7 +4,7 @@ import { PropType } from 'vue';
 import Game from '@/Components/Generic/Game.vue';
 
 import { Swiper, SwiperSlide } from 'swiper/vue';
-import { Navigation } from 'swiper';
+import { Navigation } from 'swiper/modules';
 
 const modules = [Navigation];
 
