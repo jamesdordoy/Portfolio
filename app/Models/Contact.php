@@ -8,11 +8,8 @@ class Contact extends EloquentModel
 {
     use HasFactory;
 
-    protected $fillable = [
-        'name',
-        'email',
-        'message',
+    protected $casts = [
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
     ];
-
-    protected $dates = ['created_at', 'updated_at'];
 }

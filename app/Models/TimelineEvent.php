@@ -10,16 +10,6 @@ class TimelineEvent extends EloquentModel
 
     protected $table = 'timeline_events';
 
-    protected $fillable = [
-        'from',
-        'to',
-        'name',
-        'title',
-        'icon',
-        'body',
-        'hidden',
-    ];
-
     protected $casts = [
         'from' => 'datetime',
         'to' => 'datetime',

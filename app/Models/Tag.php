@@ -9,9 +9,9 @@ class Tag extends EloquentModel
 {
     use HasFactory;
 
-    protected $fillable = [
-        'taggable_id',
-        'taggable_type',
+    protected $casts = [
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
     ];
 
     public function taggable(): MorphTo

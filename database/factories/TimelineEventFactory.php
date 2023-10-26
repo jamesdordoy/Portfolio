@@ -2,18 +2,10 @@
 
 namespace Database\Factories;
 
-use App\Models\TimelineEvent;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class TimelineEventFactory extends Factory
 {
-    /**
-     * The name of the factory's corresponding model.
-     *
-     * @var string
-     */
-    protected $model = TimelineEvent::class;
-
     public function definition(): array
     {
         return [

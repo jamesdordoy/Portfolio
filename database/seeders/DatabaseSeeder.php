@@ -6,15 +6,19 @@ use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
+    protected array $seeds = [
+        TagTableSeeder::class,
+        UserTableSeeder::class,
+        ProjectTableSeeder::class,
+        LanguageTableSeeder::class,
+        TimelineEventTableSeeder::class,
+        PostTableSeeder::class,
+        GameTableSeeder::class,
+        GameClipTableSeeder::class,
+    ];
+
     public function run(): void
     {
-        $this->call(TagTableSeeder::class);
-        $this->call(UserTableSeeder::class);
-        $this->call(ProjectTableSeeder::class);
-        $this->call(LanguageTableSeeder::class);
-        $this->call(TimelineEventTableSeeder::class);
-        $this->call(PostTableSeeder::class);
-        $this->call(GameTableSeeder::class);
-        $this->call(GameClipTableSeeder::class);
+        $this->call($this->seeds);
     }
 }
