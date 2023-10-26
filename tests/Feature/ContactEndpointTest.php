@@ -17,7 +17,7 @@ test('Contact end point fails with no name', function () {
             'email' => 'test@test.com',
             'message' => 'message',
         ])
-        ->assertInertia(fn (Assert $page) => $page
+        ->assertInertia(fn(Assert $page) => $page
             ->component(HomeController::INDEX)
             ->has(
                 'errors.name'
@@ -30,7 +30,7 @@ test('Contact end point fails with no email', function () {
             'name' => 'test',
             'message' => 'message',
         ])
-        ->assertInertia(fn (Assert $page) => $page
+        ->assertInertia(fn(Assert $page) => $page
             ->component(HomeController::INDEX)
             ->has(
                 'errors.email'
@@ -43,7 +43,7 @@ test('Contact end point fails with no message', function () {
             'name' => 'test',
             'email' => 'test@test.com',
         ])
-        ->assertInertia(fn (Assert $page) => $page
+        ->assertInertia(fn(Assert $page) => $page
             ->component(HomeController::INDEX)
             ->has(
                 'errors.message'
@@ -58,7 +58,7 @@ test('Contact end point can be submitted', function () {
             'message' => 'message',
         ])
         ->assertInertia(
-            fn (Assert $page) => $page
+            fn(Assert $page) => $page
                 ->component(HomeController::INDEX)
         );
 });

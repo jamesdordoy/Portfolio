@@ -21,7 +21,7 @@ final class NewsletterController extends Controller
                 CreateNewsletter::class,
             ])
             ->then(
-                fn (Newsletter $newsletter) =>
+                fn(Newsletter $newsletter) =>
                     DiscordAlert::message(sprintf('%s has signed up the the newsletter', $newsletter->email))
             );
 

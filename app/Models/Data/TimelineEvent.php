@@ -21,6 +21,5 @@ class TimelineEvent extends Data
         public bool $hidden,
         public DateTime|Optional $created_at,
         public DateTime|Optional $updated_at,
-    ) {
-    }
+    ) {}
 }

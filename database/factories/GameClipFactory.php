@@ -10,7 +10,7 @@ class GameClipFactory extends Factory
     public function definition(): array
     {
         return [
-            'game_id' => fn () => Game::factory()->create()->id,
+            'game_id' => fn() => Game::factory()->create()->id,
             'url' => $this->faker->url(),
         ];
     }
