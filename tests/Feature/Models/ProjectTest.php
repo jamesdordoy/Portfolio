@@ -1,8 +1,8 @@
 <?php
 
-use App\Models\Tag;
-use App\Models\Project;
 use App\Models\Language;
+use App\Models\Project;
+use App\Models\Tag;
 
 test('test_project_tag_relationship', function () {
     $language = Language::factory()->create();
@@ -18,7 +18,6 @@ test('test_project_tag_relationship', function () {
 
     $this->assertTrue($project->tags->contains($tag));
 });
-
 
 test('test_a_project_is_public', function () {
     $projectA = Project::factory()->create([

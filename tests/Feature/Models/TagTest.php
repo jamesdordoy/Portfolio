@@ -1,8 +1,8 @@
 <?php
 
-use App\Models\Tag;
-use App\Models\Project;
 use App\Models\Language;
+use App\Models\Project;
+use App\Models\Tag;
 
 test('test_tag_taggable_relationship_with_languages', function () {
     $language = Language::factory()->create();
@@ -14,7 +14,6 @@ test('test_tag_taggable_relationship_with_languages', function () {
 
     $this->assertInstanceOf(Language::class, $tag->taggable);
 });
-
 
 test('test_tag_taggable_relationship_with_projects', function () {
     $project = Project::factory()->create();

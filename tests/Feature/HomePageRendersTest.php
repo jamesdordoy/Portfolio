@@ -8,8 +8,8 @@ test('Home Page can render', function () {
     $response
         ->assertStatus(200)
         ->assertInertia(
-            fn(Assert $page) => $page
-                ->component("HomePage")
+            fn (Assert $page) => $page
+                ->component('HomePage')
                 ->has('projects')
                 ->has('timeline')
         );

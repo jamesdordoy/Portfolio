@@ -2,9 +2,9 @@
 
 namespace App\Actions\Contact;
 
-use Closure;
 use App\Models\Contact;
 use App\Models\Data\Contact as ContactData;
+use Closure;
 
 class CreateContact
 {
@@ -12,7 +12,7 @@ class CreateContact
     {
         $contact = Contact::create(
             [
-                'name' =>  $data->name,
+                'name' => $data->name,
                 'email' => $data->email,
                 'message' => $data->message,
             ]

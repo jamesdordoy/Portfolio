@@ -7,7 +7,7 @@ return [
      */
 
     'auto_discover_types' => [
-        sprintf("%s/Models/Data", app_path())
+        sprintf('%s/Models/Data', app_path()),
     ],
 
     /*

@@ -15,7 +15,8 @@ class TimelineEventTableSeeder extends Seeder
             'name' => 'Pulse Digital',
             'icon' => 'code',
             'title' => 'Full Stack Developer',
-            'body' => 'Now working from home, i joined the team at Pulse Digital as a Fullstack Developer. During this time i worked on client and internal projects including work on their SaaS platform Heartbeat.',
+            'body' => 'Now working from home, I joined the team at Pulse Digital as a Fullstack Developer. During this time I worked on client and internal projects including work on their SaaS platform Heartbeat.
+            <br>Now in 2023, I have been working on custom platforms and started working with larger datasets and more annoying APIs.',
         ]);
 
         TimelineEvent::factory()->create([
@@ -24,8 +25,8 @@ class TimelineEventTableSeeder extends Seeder
             'name' => 'Ghost Enterprises',
             'icon' => 'building',
             'title' => 'Technical Support',
-            'body' => 'Working for another local business, i provided technical support and managed websites and servers for Ghost Enterprises. During this time i helped with general operations, support requests and managing parts of IT and Essex Cricket.
-            <br><br>During this time i learned alot about manging WordPress sites using virtual private servers, running a local virtualization server locally called Proxmox and manging users and accounts with sharepoint.',
+            'body' => 'Working for another local business, I provided technical support and managed websites and servers for Ghost Enterprises. During this time I helped with general operations, support requests and managing parts of IT and Essex Cricket.
+            <br><br>During this time I learned alot about manging WordPress sites using virtual private servers, running a local virtualization server locally called Proxmox and manging users and accounts with sharepoint.',
         ]);
 
         TimelineEvent::factory()->create([
@@ -35,7 +36,7 @@ class TimelineEventTableSeeder extends Seeder
             'icon' => 'code',
             'title' => 'Junior Web Developer',
             'body' => 'Working for a local digital agency, my position included creating new internal tools e.g. for server monitoring and completing work on non-customer facing business systems including CRM, CMS and ordering systems.
-            <br><br>The main tech stack i was using during this time was L.A.M.P. or L.E.M.P. with a Laravel backend. On the frontend, the company was trying to move away from using JQuery so i gained alot of knowledge of JQuery and Vue.js by porting different UI elements.',
+            <br><br>The main tech stack I was using during this time was L.A.M.P. or L.E.M.P. with a Laravel backend. On the frontend, the company was trying to move away from using JQuery so I gained alot of knowledge of JQuery and Vue.js by porting different UI elements.',
         ]);
 
         TimelineEvent::factory()->create([
@@ -69,8 +70,8 @@ class TimelineEventTableSeeder extends Seeder
             'name' => 'Chelmsford College',
             'icon' => 'school',
             'title' => 'BTEC National Diploma ICT',
-            'body' => 'Whilst studying at Chelmsford college, i was introduced to basic programming, database management and web design.
-            <br><br>During this time, i picked up the basics of C++, JavaScript and working with relational databases. I was also exposed to industry level software such as the Adobe suite',
+            'body' => 'Whilst studying at Chelmsford college, I was introduced to basic programming, database management and web design.
+            <br><br>During this time, I picked up the basics of C++, JavaScript and working with relational databases. I was also exposed to industry level software such as the Adobe suite',
         ]);
     }
 }

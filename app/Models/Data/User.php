@@ -14,5 +14,6 @@ class User extends Data
         public string $email,
         public DateTime|Optional $created_at,
         public DateTime|Optional $updated_at,
-    ) {}
+    ) {
+    }
 }

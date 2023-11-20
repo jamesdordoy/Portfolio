@@ -5,6 +5,7 @@ namespace App\Mail;
 use App\Models\Contact;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
+use Illuminate\Mail\Mailables\Content;
 use Illuminate\Queue\SerializesModels;
 
 class ContactMail extends Mailable
@@ -19,10 +20,13 @@ class ContactMail extends Mailable
         $this->contact = $contact;
     }
 
-    public function build()
+    public function content(): Content
     {
-        return $this->view('mail.contact', [
-            'contact' => $this->contact,
-        ]);
+        return new Content(
+            markdown: 'mail.contact',
+            with: [
+                'contact' => $this->contact,
+            ],
+        );
     }
 }

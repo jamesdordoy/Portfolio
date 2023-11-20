@@ -3,20 +3,21 @@
 namespace App\Models\Data;
 
 use DateTime;
+use Spatie\LaravelData\Attributes\Validation;
 use Spatie\LaravelData\Data;
 use Spatie\LaravelData\Optional;
-use Spatie\LaravelData\Attributes\Validation;
 
 class Contact extends Data
 {
     public function __construct(
-        public int|Optional  $id,
+        public int|Optional $id,
         public string $name,
         public string $email,
         public string $message,
         public DateTime|Optional $created_at,
         public DateTime|Optional $updated_at,
-    ) {}
+    ) {
+    }
 
     public static function rules(): array
     {

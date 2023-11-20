@@ -14,5 +14,6 @@ class Taggable extends Data
         public string $description,
         public DateTime|Optional $created_at,
         public DateTime|Optional $updated_at,
-    ) {}
+    ) {
+    }
 }

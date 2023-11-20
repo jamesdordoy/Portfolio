@@ -4,12 +4,12 @@
 
 use App\Actions\Contact\CreateContact;
 use App\Actions\Contact\SendContactEmail;
-use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactMail;
 use App\Models\Contact;
 use App\Models\Data\Contact as ContactData;
 use Illuminate\Pipeline\Pipeline;
 use Illuminate\Support\Facades\Bus;
+use Illuminate\Support\Facades\Mail;
 
 beforeEach(function () {
     config()->set('discord-alerts.webhook_urls.default', 'https://test-domain.com');
@@ -22,7 +22,7 @@ test('A contact email can be created and queued', function () {
     $data = ContactData::from([
         'name' => 'test',
         'email' => 'test@test.com',
-        'message' => 'testing'
+        'message' => 'testing',
     ]);
 
     app(Pipeline::class)
@@ -39,9 +39,7 @@ test('A contact email can be created and queued', function () {
 test('A contact email renders', function () {
     $contact = Contact::factory()->create();
 
-    $mail = new ContactMail($contact);
+    $mailable = new ContactMail($contact);
 
-    $mail->build();
-
-    $mail->assertSeeInHtml($contact->name);
+    $mailable->assertSeeInHtml($contact->name);
 });

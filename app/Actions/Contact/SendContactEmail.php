@@ -2,10 +2,10 @@
 
 namespace App\Actions\Contact;
 
-use App\Models\Contact;
 use App\Mail\ContactMail;
-use Illuminate\Support\Facades\Mail;
+use App\Models\Contact;
 use Closure;
+use Illuminate\Support\Facades\Mail;
 
 class SendContactEmail
 {

@@ -4,9 +4,9 @@ namespace App\Models\Data;
 
 use App\Models\Newsletter as NewsletterModel;
 use DateTime;
+use Spatie\LaravelData\Attributes\Validation;
 use Spatie\LaravelData\Data;
 use Spatie\LaravelData\Optional;
-use Spatie\LaravelData\Attributes\Validation;
 
 class Newsletter extends Data
 {
@@ -15,8 +15,8 @@ class Newsletter extends Data
         public string $email,
         public DateTime|Optional $created_at,
         public DateTime|Optional $updated_at,
-    ) {}
-
+    ) {
+    }
 
     public static function rules(): array
     {

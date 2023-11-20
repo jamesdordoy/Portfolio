@@ -3,10 +3,10 @@
 namespace App\Models\Data;
 
 use DateTime;
-use Spatie\LaravelData\Data;
-use Spatie\LaravelData\Optional;
 use Spatie\LaravelData\Attributes\DataCollectionOf;
+use Spatie\LaravelData\Data;
 use Spatie\LaravelData\DataCollection;
+use Spatie\LaravelData\Optional;
 
 class Game extends Data
 {
@@ -24,5 +24,6 @@ class Game extends Data
         public DateTime|Optional $updated_at,
         #[DataCollectionOf(GameClip::class)]
         public DataCollection|Optional $clips,
-    ) {}
+    ) {
+    }
 }

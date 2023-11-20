@@ -2,8 +2,8 @@
 
 namespace App\Contracts\Actions\Contact;
 
-use Closure;
 use App\Models\Data\Contact as ContactData;
+use Closure;
 
 interface CreateContactContract
 {
