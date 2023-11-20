@@ -15,8 +15,7 @@ class Tag extends Data
         public Taggable $taggable,
         public DateTime|Optional $created_at,
         public DateTime|Optional $updated_at,
-    ) {
-    }
+    ) {}
 
     public static function fromModel(Tag $tag): self
     {

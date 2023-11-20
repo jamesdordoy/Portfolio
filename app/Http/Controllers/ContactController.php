@@ -23,7 +23,7 @@ final class ContactController extends Controller
                 SendContactEmail::class,
             ])
             ->then(
-                fn (Contact $contact) => DiscordAlert::message(sprintf('%s has reached out to you via the contact form: %s', $contact->name, $contact->message))
+                fn(Contact $contact) => DiscordAlert::message(sprintf('%s has reached out to you via the contact form: %s', $contact->name, $contact->message))
             );
 
         return redirect(CreateContact::redirectTo());

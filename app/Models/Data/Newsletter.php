@@ -15,8 +15,7 @@ class Newsletter extends Data
         public string $email,
         public DateTime|Optional $created_at,
         public DateTime|Optional $updated_at,
-    ) {
-    }
+    ) {}
 
     public static function rules(): array
     {

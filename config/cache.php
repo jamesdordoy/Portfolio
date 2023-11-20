@@ -29,5 +29,5 @@ return CacheConfig::make()
             'lock_connection' => 'default',
         ],
     ])
-    ->prefix(env('CACHE_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_cache'))
+    ->prefix(env('CACHE_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_') . '_cache'))
     ->toArray();
