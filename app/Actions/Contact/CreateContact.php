@@ -8,17 +8,17 @@ use Closure;
 
 class CreateContact
 {
+    public function __invoke(ContactData $data): Contact
+    {
+        return $this->handle($data, fn(Contact $contact) => $contact);
+    }
+
     public function handle(ContactData $data, Closure $next)
     {
-        $contact = Contact::create(
-            [
-                'name' => $data->name,
-                'email' => $data->email,
-                'message' => $data->message,
-            ]
+        return tap(
+            Contact::create($data->all()),
+            fn(Contact $contact) => $next($contact)
         );
-
-        return $next($contact);
     }
 
     public static function redirectTo(): string

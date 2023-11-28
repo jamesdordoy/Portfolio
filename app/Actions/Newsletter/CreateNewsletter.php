@@ -8,15 +8,17 @@ use Closure;
 
 class CreateNewsletter
 {
+    public function __invoke(NewsletterData $data): Newsletter
+    {
+        return $this->handle($data, fn(Newsletter $newsletter) => $newsletter);
+    }
+
     public function handle(NewsletterData $data, Closure $next)
     {
-        $newsletter = Newsletter::create(
-            [
-                'email' => $data->email,
-            ]
+        return tap(
+            Newsletter::create($data->all()),
+            fn(Newsletter $newsletter) => $next($newsletter)
         );
-
-        return $next($newsletter);
     }
 
     public static function redirectTo(): string

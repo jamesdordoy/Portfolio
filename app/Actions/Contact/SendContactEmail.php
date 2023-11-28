@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\Mail;
 
 class SendContactEmail
 {
+    public function __invoke(Contact $contact)
+    {
+        $this->handle($contact, fn() => null);
+    }
+
     public function handle(Contact $contact, Closure $next)
     {
         Mail::to($contact->email)
