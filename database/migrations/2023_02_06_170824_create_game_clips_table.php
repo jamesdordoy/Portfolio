@@ -11,7 +11,6 @@ return new class () extends Migration {
         Schema::create('game_clips', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Game::class);
-            $table->foreign('game_id')->references('id')->on('games');
             $table->text('url');
             $table->timestamps();
         });
