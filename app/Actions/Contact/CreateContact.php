@@ -3,7 +3,7 @@
 namespace App\Actions\Contact;
 
 use App\Models\Contact;
-use App\Models\Data\Contact as ContactData;
+use App\Dto\Contact as ContactData;
 use Closure;
 
 class CreateContact

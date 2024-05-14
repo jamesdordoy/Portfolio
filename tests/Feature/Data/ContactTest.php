@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Data\Contact;
+use App\Dto\Contact;
 use Spatie\LaravelData\Attributes\Validation;
 
 test('test_contact_data_object_name', function () {

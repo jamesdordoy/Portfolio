@@ -35,7 +35,7 @@ const store = useStore();
 
 defineProps({
     gameClips: {
-        type: Array as PropType<App.Models.Data.Collection<App.Models.Data.GameClip>>,
+        type: Array as PropType<App.Models.Data.Collection<App.Dto.GameClip>>,
         required: true,
     },
 });

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Data;
+namespace App\Dto;
 
 use DateTime;
 use Spatie\LaravelData\Attributes\Validation;

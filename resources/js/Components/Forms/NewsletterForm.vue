@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { notify } from 'notiwind';
-import { useForm } from '@inertiajs/vue3';
+import { useForm } from 'laravel-precognition-vue-inertia';
 import { useStore } from 'vuex';
 import { useReCaptcha } from 'vue-recaptcha-v3';
 import checkRecapture from '@/checkRecapture.js';
@@ -8,17 +8,17 @@ import route from 'ziggy-js';
 
 const store = useStore();
 
-const newsletter: App.Models.Data.Newsletter = {
+const newsletter: App.Dto.Newsletter = {
     email: '',
 };
 
-const form = useForm<App.Models.Data.Newsletter>(newsletter);
+const form = useForm('post', route('newsletter.store'), newsletter);
 
 const { executeRecaptcha, recaptchaLoaded } = useReCaptcha();
 
 const submit = async () => {
     if (checkRecapture(executeRecaptcha, recaptchaLoaded)) {
-        form.post(route('newsletter.store'), {
+        form.submit({
             preserveScroll: (page): boolean => !!Object.keys(page.props.errors).length,
             onSuccess: (): void => {
                 notify(
@@ -58,6 +58,7 @@ const submit = async () => {
                     aria-label="Email Address"
                     class="mr-3 w-full border-none border-transparent bg-transparent px-2 py-1 leading-tight focus:border-transparent focus:ring-0"
                     :class="`text-${store.getters.primaryThemeTextColour}`"
+                    @change="form.validate('email')"
                 />
                 <button
                     class="flex-shrink-0 rounded border bg-transparent px-2 py-1 text-sm"
@@ -68,6 +69,9 @@ const submit = async () => {
                     <font-awesome-icon :icon="['fas', 'check']" />
                     Sign Up
                 </button>
+            </div>
+            <div v-if="form.invalid('email')" :class="`text-${store.getters.primaryThemeTextColour}`">
+                {{ form.errors.email }}
             </div>
         </div>
     </div>

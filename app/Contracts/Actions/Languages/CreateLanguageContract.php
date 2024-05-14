@@ -2,7 +2,7 @@
 
 namespace App\Contracts\Actions\Languages;
 
-use App\Models\Data\Language as LanguageData;
+use App\Dto\Language as LanguageData;
 use App\Models\Language;
 
 interface CreateLanguageContract

@@ -3,7 +3,7 @@ import { PropType } from 'vue';
 
 defineProps({
     clip: {
-        type: Object as PropType<App.Models.Data.GameClip>,
+        type: Object as PropType<App.Dto.GameClip>,
         required: true,
     },
 });

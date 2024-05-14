@@ -1,7 +1,7 @@
 <?php
 
 use App\Actions\Languages\CreateLanguage;
-use App\Models\Data\Language as LanguageData;
+use App\Dto\Language as LanguageData;
 
 test('A language can be created', function () {
     $data = LanguageData::from([

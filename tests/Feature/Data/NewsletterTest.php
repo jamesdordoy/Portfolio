@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Data\Newsletter;
+use App\Dto\Newsletter;
 use Spatie\LaravelData\Attributes\Validation;
 
 test('test_newsletter_data_object_name', function () {

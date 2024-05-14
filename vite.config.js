@@ -35,14 +35,14 @@ export default defineConfig({
     ],
     resolve: {
         alias: {
-            ziggy: path.resolve('vendor/tightenco/ziggy/dist/vue.m.js'),
+            ziggy: path.resolve('vendor/tightenco/ziggy/dist/vue.es.js'),
             route: path.resolve('vendor/tightenco/ziggy/src/js/Route.js'),
             '@': '/resources/js',
         },
     },
     test: {
         globals: true,
-        setupFiles: ['resources/js/tests/setup.ts'],
+        setupFiles: ['resources/js/Tests/setup.ts'],
         coverage: {
             reportsDirectory: './storage/coverage',
         },

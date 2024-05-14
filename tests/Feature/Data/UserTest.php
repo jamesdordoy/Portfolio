@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Data\User;
+use App\Dto\User;
 
 test('test_usert_data_object_name', function () {
     $user = User::from([

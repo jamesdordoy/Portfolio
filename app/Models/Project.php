@@ -10,12 +10,12 @@ class Project extends EloquentModel
 {
     use HasFactory;
 
+    public const PUBLIC_RELATIONSHIPS = ['tags.taggable'];
+
     protected $casts = [
         'created_at' => 'datetime',
         'updated_at' => 'datetime',
     ];
-
-    public const PUBLIC_RELATIONSHIPS = ['tags.taggable'];
 
     public function tags(): MorphToMany
     {

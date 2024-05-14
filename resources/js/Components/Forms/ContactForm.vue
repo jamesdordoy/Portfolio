@@ -1,19 +1,19 @@
 <script lang="ts" setup>
 import axios from 'axios';
 import { notify } from 'notiwind';
-import { useForm } from '@inertiajs/vue3';
+import { useForm } from 'laravel-precognition-vue-inertia';
 import { useStore } from 'vuex';
 import { useReCaptcha } from 'vue-recaptcha-v3';
 
 import route from 'ziggy-js';
 
-const contact: App.Models.Data.Contact = {
+const contact: App.Dto.Contact = {
     name: '',
     email: '',
     message: '',
 };
 
-const form = useForm(contact);
+const form = useForm('post', route('contact.store'), contact);
 
 const store = useStore();
 
@@ -22,7 +22,7 @@ const { executeRecaptcha, recaptchaLoaded } = useReCaptcha();
 const submit = async () => {
     await recaptchaLoaded();
 
-    const token = await executeRecaptcha('login');
+    const token = await executeRecaptcha('contact');
 
     const response = await axios.get(`/recaptcha/validate`, {
         params: {
@@ -31,7 +31,7 @@ const submit = async () => {
     });
 
     if (response.data.success) {
-        form.post(route('contact.store'), {
+        form.submit({
             preserveScroll: (page) => !!Object.keys(page.props.errors).length,
             onSuccess: () => {
                 notify(
@@ -77,7 +77,11 @@ const submit = async () => {
                         placeholder="John Smith"
                         :class="`bg-${store.getters.primaryThemeBgDarker} text-${store.getters.primaryThemeTextColour} focus:bg-${store.getters.primaryThemeBgDarkest}`"
                         class="block w-full appearance-none border-none px-4 py-3 leading-tight focus:outline-none"
+                        @change="form.validate('name')"
                     />
+                </div>
+                <div v-if="form.invalid('name')" :class="`text-${store.getters.primaryThemeTextColour}`">
+                    {{ form.errors.name }}
                 </div>
             </div>
         </div>
@@ -102,7 +106,11 @@ const submit = async () => {
                         class="block w-full appearance-none border-none px-4 py-3 leading-tight focus:outline-none"
                         :class="`bg-${store.getters.primaryThemeBgDarker} text-${store.getters.primaryThemeTextColour} focus:bg-${store.getters.primaryThemeBgDarkest}`"
                         placeholder="john@example.com"
+                        @change="form.validate('email')"
                     />
+                </div>
+                <div v-if="form.invalid('email')" :class="`text-${store.getters.primaryThemeTextColour}`">
+                    {{ form.errors.email }}
                 </div>
             </div>
         </div>
@@ -127,8 +135,12 @@ const submit = async () => {
                         placeholder="Hello, World!"
                         class="block w-full appearance-none border-none px-4 py-3 leading-tight focus:outline-none"
                         :class="`bg-${store.getters.primaryThemeBgDarker} text-${store.getters.primaryThemeTextColour} focus:bg-${store.getters.primaryThemeBgDarkest}`"
+                        @change="form.validate('message')"
                     >
                     </textarea>
+                </div>
+                <div v-if="form.invalid('message')" :class="`text-${store.getters.primaryThemeTextColour}`">
+                    {{ form.errors.message }}
                 </div>
             </div>
         </div>
@@ -137,6 +149,7 @@ const submit = async () => {
                 type="submit"
                 class="g-recaptcha flex-shrink-0 rounded border bg-transparent px-2 py-1 text-sm"
                 :class="`border-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShade} text-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShade} hover:bg-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShade} hover:text-${store.getters.primaryThemeHoverTextColour}`"
+                :disabled="form.processing"
             >
                 <font-awesome-icon :icon="['fas', 'check']" />
                 Submit

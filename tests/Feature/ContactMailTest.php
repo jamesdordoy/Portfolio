@@ -6,7 +6,7 @@ use App\Actions\Contact\CreateContact;
 use App\Actions\Contact\SendContactEmail;
 use App\Mail\ContactMail;
 use App\Models\Contact;
-use App\Models\Data\Contact as ContactData;
+use App\Dto\Contact as ContactData;
 use Illuminate\Pipeline\Pipeline;
 use Illuminate\Support\Facades\Bus;
 use Illuminate\Support\Facades\Mail;

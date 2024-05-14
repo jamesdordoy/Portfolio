@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Actions\Newsletter\CreateNewsletter;
-use App\Models\Data\Newsletter as NewsletterData;
+use App\Dto\Newsletter as NewsletterData;
 use App\Models\Newsletter;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Pipeline\Pipeline;
 use Spatie\DiscordAlerts\Facades\DiscordAlert;
 
-final class NewsletterController extends Controller
+final class NewsletterController
 {
     public function store(NewsletterData $request): RedirectResponse
     {

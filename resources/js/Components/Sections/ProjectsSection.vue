@@ -34,7 +34,7 @@ const store = useStore();
 
 defineProps({
     projects: {
-        type: Array as PropType<App.Models.Data.Collection<App.Models.Data.Project>>,
+        type: Array as PropType<App.Models.Data.Collection<App.Dto.Project>>,
         required: true,
     },
 });

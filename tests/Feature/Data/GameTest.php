@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Data\Game;
+use App\Dto\Game;
 
 test('test_project_data_object_name', function () {
     $game = Game::from([

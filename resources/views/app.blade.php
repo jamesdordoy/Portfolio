@@ -18,6 +18,7 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
     @routes
+    @inertiaHead
     @vite('resources/js/app.ts')
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154219567-1"></script>

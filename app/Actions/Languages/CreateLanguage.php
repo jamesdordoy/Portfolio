@@ -3,7 +3,7 @@
 namespace App\Actions\Languages;
 
 use App\Contracts\Actions\Languages\CreateLanguageContract;
-use App\Models\Data\Language as LanguageData;
+use App\Dto\Language as LanguageData;
 use App\Models\Language;
 
 class CreateLanguage implements CreateLanguageContract

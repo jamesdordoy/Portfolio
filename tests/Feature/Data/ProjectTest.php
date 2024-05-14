@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Data\Project;
+use App\Dto\Project;
 use Spatie\LaravelData\Attributes\Validation;
 
 test('test_project_data_object_name', function () {

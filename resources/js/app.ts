@@ -2,9 +2,9 @@ import '../css/app.css';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-import state from '@/stores/theme/state.js';
-import getters from '@/stores/theme/getters.js';
-import mutations from '@/stores/theme/mutations.js';
+import state from '@/Stores/Theme/state.js';
+import getters from '@/Stores/Theme/getters.js';
+import mutations from '@/Stores/Theme/mutations.js';
 import { createSSRApp, h } from 'vue';
 import { createStore } from 'vuex';
 import Notifications from 'notiwind';
