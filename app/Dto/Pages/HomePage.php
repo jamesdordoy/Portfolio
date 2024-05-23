@@ -19,7 +19,5 @@ class HomePage extends Data
         public DataCollection $timeline,
         #[DataCollectionOf(GameClip::class)]
         public DataCollection $gameClips,
-        // #[DataCollectionOf(GameClip::class)]
-        // public DataCollection $errors,
     ) {}
 }

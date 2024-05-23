@@ -29,8 +29,8 @@ final class HomeController
                 ),
                 gameClips: GameClipData::collection(
                     GameClip::with(GameClip::PUBLIC_RELATIONSHIPS)->get()
-                )
-              )
+                ),
+            )
         );
     }
 }
