@@ -20,6 +20,7 @@
     @routes
     @inertiaHead
     @vite('resources/js/app.ts')
+    @inertiaHead
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154219567-1"></script>
 
