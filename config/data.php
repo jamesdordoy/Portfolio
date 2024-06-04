@@ -27,4 +27,10 @@ return [
     ],
     'wrap' => null,
     'var_dumper_caster_mode' => 'development',
+    'commands' => [
+        'make' => [
+            'namespace' => 'Data',
+            'suffix' => 'Data',
+        ],
+    ]
 ];
