@@ -9,7 +9,7 @@ test('A newsletter can be created', function () {
         'email' => 'test@test.com',
     ]);
 
-    app()->make(CreateNewsletter::class)->handle($data, fn(Newsletter $newsletter) => $this->assertEquals($newsletter->email, 'test@test.com'));
+    app()->make(CreateNewsletter::class)->handle($data, fn (Newsletter $newsletter) => $this->assertEquals($newsletter->email, 'test@test.com'));
 });
 
 test('A newsletter redirects back to the listing', function () {

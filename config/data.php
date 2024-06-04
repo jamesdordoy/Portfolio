@@ -32,5 +32,5 @@ return [
             'namespace' => 'Data',
             'suffix' => 'Data',
         ],
-    ]
+    ],
 ];

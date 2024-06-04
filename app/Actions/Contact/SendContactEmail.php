@@ -11,7 +11,7 @@ class SendContactEmail
 {
     public function __invoke(Contact $contact)
     {
-        $this->handle($contact, fn() => null);
+        $this->handle($contact, fn () => null);
     }
 
     public function handle(Contact $contact, Closure $next)

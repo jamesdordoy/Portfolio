@@ -7,7 +7,7 @@ return [
      */
 
     'auto_discover_types' => [
-        sprintf('%s/Dto', app_path())
+        sprintf('%s/Dto', app_path()),
     ],
 
     /*

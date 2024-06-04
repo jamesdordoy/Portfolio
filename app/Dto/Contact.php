@@ -16,7 +16,8 @@ class Contact extends Data
         public string $message,
         public DateTime|Optional $created_at,
         public DateTime|Optional $updated_at,
-    ) {}
+    ) {
+    }
 
     public static function rules(): array
     {

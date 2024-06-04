@@ -2,22 +2,22 @@
 
 namespace App\Actions\Contact;
 
-use App\Models\Contact;
 use App\Dto\Contact as ContactData;
+use App\Models\Contact;
 use Closure;
 
 class CreateContact
 {
     public function __invoke(ContactData $data): Contact
     {
-        return $this->handle($data, fn(Contact $contact) => $contact);
+        return $this->handle($data, fn (Contact $contact) => $contact);
     }
 
     public function handle(ContactData $data, Closure $next)
     {
         return tap(
             Contact::create($data->all()),
-            fn(Contact $contact) => $next($contact)
+            fn (Contact $contact) => $next($contact)
         );
     }
 

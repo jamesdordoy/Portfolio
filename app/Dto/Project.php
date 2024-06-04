@@ -25,7 +25,8 @@ class Project extends Data
         public ?DateTime $updated_at,
         #[DataCollectionOf(Tag::class)]
         public ?DataCollection $tags,
-    ) {}
+    ) {
+    }
 
     public static function rules(): array
     {

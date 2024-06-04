@@ -10,14 +10,14 @@ class CreateNewsletter
 {
     public function __invoke(NewsletterData $data): Newsletter
     {
-        return $this->handle($data, fn(Newsletter $newsletter) => $newsletter);
+        return $this->handle($data, fn (Newsletter $newsletter) => $newsletter);
     }
 
     public function handle(NewsletterData $data, Closure $next)
     {
         return tap(
             Newsletter::create($data->all()),
-            fn(Newsletter $newsletter) => $next($newsletter)
+            fn (Newsletter $newsletter) => $next($newsletter)
         );
     }
 

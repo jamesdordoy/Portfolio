@@ -13,5 +13,6 @@ class Language extends Data
         public string $description,
         public ?DateTime $created_at,
         public ?DateTime $updated_at,
-    ) {}
+    ) {
+    }
 }
