@@ -1,15 +1,9 @@
 <script lang="ts" setup>
 import colours from 'tailwindcss/colors';
 import { useStore } from 'vuex';
-import { loadFull } from 'tsparticles';
 import { ref, computed, watch } from 'vue';
 
 const store = useStore();
-
-const particlesInit = async (engine: any) => {
-    await loadFull(engine);
-};
-
 let renderIndex = ref(0);
 
 watch(
@@ -41,14 +35,15 @@ const particleColour = computed<string>(() => {
 </script>
 
 <template>
-    <Particles
+    <p>hi</p>
+    <vue-particles
         id="portfolio-particles"
         :key="renderIndex"
-        :particles-init="particlesInit"
+        
         :options="{
             background: {
                 color: {
-                    value: backgroundColour,
+                    value: '#fff',
                 },
             },
             fullScreen: {
@@ -127,4 +122,6 @@ const particleColour = computed<string>(() => {
             detectRetina: true,
         }"
     />
+
+    <!-- -->
 </template>

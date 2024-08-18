@@ -60,8 +60,8 @@ defineProps({
                 :breakpoints="breakpoints"
             >
                 <SwiperSlide
-                    v-for="project in projects"
-                    :key="project.id"
+                    v-for="(project, i) in projects"
+                    :key="`project_${i}`"
                 >
                     <Project :project="project" />
                 </SwiperSlide>

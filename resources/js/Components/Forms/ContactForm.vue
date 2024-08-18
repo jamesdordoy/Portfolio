@@ -5,7 +5,7 @@ import { useForm } from 'laravel-precognition-vue-inertia';
 import { useStore } from 'vuex';
 import { useReCaptcha } from 'vue-recaptcha-v3';
 
-import route from 'ziggy-js';
+import { route } from 'ziggy-js'
 
 const contact: App.Dto.Contact = {
     name: '',

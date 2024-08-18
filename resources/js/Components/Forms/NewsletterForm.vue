@@ -4,7 +4,7 @@ import { useForm } from 'laravel-precognition-vue-inertia';
 import { useStore } from 'vuex';
 import { useReCaptcha } from 'vue-recaptcha-v3';
 import checkRecapture from '@/checkRecapture.js';
-import route from 'ziggy-js';
+import { route } from 'ziggy-js'
 
 const store = useStore();
 

@@ -1,34 +1,34 @@
 {
   "node_modules/@fortawesome/free-brands-svg-icons/index.mjs": {
-    "file": "assets/index-2d7a4cda.js",
-    "isDynamicEntry": true,
-    "src": "node_modules/@fortawesome/free-brands-svg-icons/index.mjs"
+    "file": "assets/index-tZTHQh9n.js",
+    "name": "index",
+    "src": "node_modules/@fortawesome/free-brands-svg-icons/index.mjs",
+    "isDynamicEntry": true
   },
   "node_modules/@fortawesome/free-regular-svg-icons/index.mjs": {
-    "file": "assets/index-24c14523.js",
-    "isDynamicEntry": true,
-    "src": "node_modules/@fortawesome/free-regular-svg-icons/index.mjs"
+    "file": "assets/index-D1KYXDDN.js",
+    "name": "index",
+    "src": "node_modules/@fortawesome/free-regular-svg-icons/index.mjs",
+    "isDynamicEntry": true
   },
   "node_modules/@fortawesome/free-solid-svg-icons/index.mjs": {
-    "file": "assets/index-d25196f6.js",
-    "isDynamicEntry": true,
-    "src": "node_modules/@fortawesome/free-solid-svg-icons/index.mjs"
-  },
-  "resources/js/app.css": {
-    "file": "assets/app-23ce65cd.css",
-    "src": "resources/js/app.css"
+    "file": "assets/index-Bgw5ka5g.js",
+    "name": "index",
+    "src": "node_modules/@fortawesome/free-solid-svg-icons/index.mjs",
+    "isDynamicEntry": true
   },
   "resources/js/app.ts": {
-    "css": [
-      "assets/app-23ce65cd.css"
-    ],
+    "file": "assets/app-MnYamBNv.js",
+    "name": "app",
+    "src": "resources/js/app.ts",
+    "isEntry": true,
     "dynamicImports": [
       "node_modules/@fortawesome/free-brands-svg-icons/index.mjs",
       "node_modules/@fortawesome/free-solid-svg-icons/index.mjs",
       "node_modules/@fortawesome/free-regular-svg-icons/index.mjs"
     ],
-    "file": "assets/app-0d80a755.js",
-    "isEntry": true,
-    "src": "resources/js/app.ts"
+    "css": [
+      "assets/app-CgnX2JfM.css"
+    ]
   }
 }

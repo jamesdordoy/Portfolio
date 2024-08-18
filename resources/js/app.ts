@@ -9,15 +9,21 @@ import { createSSRApp, h } from 'vue';
 import { createStore } from 'vuex';
 import Notifications from 'notiwind';
 import Particles from 'particles.vue3';
+import { loadFull } from "tsparticles";
+import { loadSlim } from "@tsparticles/slim";
 import VueScrollTo from 'vue-scrollto';
 import fontAwesomeLibrary from '@/font-awesome.js';
 import { createInertiaApp } from '@inertiajs/vue3';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { VueReCaptcha } from 'vue-recaptcha-v3';
-import { ZiggyVue } from 'ziggy';
+
 import { Ziggy } from './ziggy';
-import route from 'ziggy-js';
+import { route, ZiggyVue } from 'ziggy-js'
+
+
+import type { Engine } from "tsparticles-engine"; 
+
 
 const store = createStore({
     plugins: [],
@@ -41,16 +47,25 @@ const app = createInertiaApp({
 
         const vue = createSSRApp({ render: () => h(App, props) })
             .use(store)
-            .use(plugin)
-            .use(Particles)
-            .use(VueScrollTo)
+            .use(plugin);
+
+            vue.use(VueScrollTo)
             .use(Notifications)
             .use(VueReCaptcha, { siteKey: import.meta.env.VITE_RECAPTCHA_SITE_KEY })
+            .use(Particles, {
+                init: async engine => {
+                    // await loadFull(engine); // you can load the full tsParticles library from "tsparticles" if you need it
+                    await loadSlim(engine); // or you can load the slim version from "@tsparticles/slim" if don't need Shapes or Animations
+                },
+            })
             .mixin({ methods: { route } })
             .use(ZiggyVue, Ziggy)
-            .component('font-awesome-icon', FontAwesomeIcon)
-            .mount(el);
+            .component('font-awesome-icon', FontAwesomeIcon);
 
-        return vue;
+            const component = vue.mount(el);
+
+        return component;
     },
 });
+
+
