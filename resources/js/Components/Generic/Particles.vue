@@ -121,6 +121,4 @@ const particleColour = computed<string>(() => {
             detectRetina: true,
         }"
     />
-
-    <!-- -->
 </template>
