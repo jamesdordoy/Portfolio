@@ -8,7 +8,7 @@ import mutations from '@/Stores/Theme/mutations.js';
 import { createSSRApp, h } from 'vue';
 import { createStore } from 'vuex';
 import Notifications from 'notiwind';
-import Particles from 'particles.vue3';
+import Particles from "@tsparticles/vue3";
 import { loadFull } from "tsparticles";
 import { loadSlim } from "@tsparticles/slim";
 import VueScrollTo from 'vue-scrollto';
@@ -45,26 +45,21 @@ const app = createInertiaApp({
     async setup({ el, App, props, plugin }) {
         await fontAwesomeLibrary();
 
-        const vue = createSSRApp({ render: () => h(App, props) })
+        return createSSRApp({ render: () => h(App, props) })
             .use(store)
-            .use(plugin);
-
-            vue.use(VueScrollTo)
+            .use(plugin)
+            .use(VueScrollTo)
             .use(Notifications)
             .use(VueReCaptcha, { siteKey: import.meta.env.VITE_RECAPTCHA_SITE_KEY })
             .use(Particles, {
                 init: async engine => {
-                    // await loadFull(engine); // you can load the full tsParticles library from "tsparticles" if you need it
-                    await loadSlim(engine); // or you can load the slim version from "@tsparticles/slim" if don't need Shapes or Animations
-                },
+                    await loadFull(engine);
+                }
             })
             .mixin({ methods: { route } })
             .use(ZiggyVue, Ziggy)
-            .component('font-awesome-icon', FontAwesomeIcon);
-
-            const component = vue.mount(el);
-
-        return component;
+            .component('font-awesome-icon', FontAwesomeIcon)
+            .mount(el);
     },
 });
 

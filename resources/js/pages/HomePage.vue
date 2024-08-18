@@ -101,7 +101,7 @@ onUnmounted(() => {
 
     <Particles />
 
-    <!-- <div class="items-top relative min-h-screen flex-auto sm:pt-0">
+    <div class="items-top relative min-h-screen flex-auto sm:pt-0">
         <div class="py-18 relative min-h-screen w-full px-10">
             <Particles />
 
@@ -153,5 +153,5 @@ onUnmounted(() => {
         <Footer />
 
         <ToastSection />
-    </div> -->
+    </div>
 </template>

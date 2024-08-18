@@ -35,7 +35,6 @@ const particleColour = computed<string>(() => {
 </script>
 
 <template>
-    <p>hi</p>
     <vue-particles
         id="portfolio-particles"
         :key="renderIndex"
@@ -43,7 +42,7 @@ const particleColour = computed<string>(() => {
         :options="{
             background: {
                 color: {
-                    value: '#fff',
+                    value: backgroundColour,
                 },
             },
             fullScreen: {
