@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { useStore } from 'vuex';
 import { PropType } from 'vue';
 import { notify } from 'notiwind';
 import { ref, computed, onUnmounted, isProxy, toRaw } from 'vue';
@@ -14,6 +13,9 @@ import ProjectsSection from '@/Components/Sections/ProjectsSection.vue';
 import ContactMeSection from '@/Components/Sections/ContactMeSection.vue';
 import GamesSection from '@/Components/Sections/GamesSection.vue';
 import MyExperianceSection from '@/Components/Sections/MyExperianceSection.vue';
+import { usePortfolioStore } from '@/Stores/index.ts';
+
+const portfolioStore = usePortfolioStore();
 
 const props = defineProps({
     projects: {
@@ -34,10 +36,9 @@ const props = defineProps({
     },
 });
 
-const store = useStore();
 const displaySettings = ref<boolean>(false);
 
-const primaryThemeBg = computed<string>(() => store.getters.primaryThemeBg);
+const primaryThemeBg = computed<string>(() => portfolioStore.primaryThemeBg);
 
 const showSettings = () => {
     displaySettings.value = true;
@@ -76,13 +77,13 @@ onUnmounted(() => {
 
     <div
         id="settings-sidebar"
-        :class="`bg-${primaryThemeBg} border-${store.getters.primaryThemeColour}-${
-            store.getters.primaryThemeColourShade
+        :class="`bg-${primaryThemeBg} border-${portfolioStore.primaryThemeColour}-${
+            portfolioStore.primaryThemeColourShade
         } ${displaySettings ? '' : 'hidden'}`"
     >
         <transition
             mode="out-in"
-            :enter-active-class="`animated ${store.getters.primaryThemeRouterAnimation}`"
+            :enter-active-class="`animated ${portfolioStore.primaryThemeRouterAnimation}`"
         >
             <Settings @toggle="closeSettings"></Settings>
         </transition>
@@ -92,7 +93,7 @@ onUnmounted(() => {
         <button
             aria-label="settings"
             class="rounded-r p-2 text-lg text-white"
-            :class="`bg-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShade}`"
+            :class="`bg-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade}`"
             @click="showSettings"
         >
             <font-awesome-icon icon="cog" />
@@ -108,7 +109,7 @@ onUnmounted(() => {
             <div class="absolute left-1/2 top-1/2 w-1/2 -translate-x-1/2 -translate-y-1/2 transform lg:w-1/3">
                 <div
                     class="front-into w-full md:mx-0 md:p-8"
-                    :class="`border-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShade}`"
+                    :class="`border-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade}`"
                 >
                     <h1 class="varela text-2xl sm:text-3xl md:text-4xl">James Dordoy</h1>
                     <h2 class="varela sm:text-1xl text-lg md:text-2xl">Full Stack Developer</h2>
@@ -119,28 +120,28 @@ onUnmounted(() => {
 
         <div
             class="w-full px-10 py-24"
-            :class="`bg-${store.getters.primaryThemeBgDarker}`"
+            :class="`bg-${portfolioStore.primaryThemeBgDarker}`"
         >
             <AboutMe />
         </div>
 
         <div
             class="w-full px-10 py-12"
-            :class="`bg-${store.getters.primaryThemeBg}`"
+            :class="`bg-${portfolioStore.primaryThemeBg}`"
         >
             <ProjectsSection :projects="projects" />
         </div>
 
         <div
             class="w-full px-10 py-12"
-            :class="`bg-${store.getters.primaryThemeBgDarker}`"
+            :class="`bg-${portfolioStore.primaryThemeBgDarker}`"
         >
             <MyExperianceSection :timeline="timeline" />
         </div>
 
         <div
             class="flex w-full flex-wrap px-10 py-12"
-            :class="`bg-${store.getters.primaryThemeBg}`"
+            :class="`bg-${portfolioStore.primaryThemeBg}`"
         >
             <div class="w-full lg:w-1/2">
                 <ContactMeSection />

@@ -1,8 +1,9 @@
 <script setup>
 import BaseTag from '@/Components/Base/BaseTag.vue';
-import { useStore } from 'vuex';
 
-const store = useStore();
+import { usePortfolioStore } from '@/Stores/index.ts';
+
+const portfolioStore = usePortfolioStore();
 
 defineProps({
     name: {
@@ -15,7 +16,7 @@ defineProps({
 <template>
     <BaseTag
         :name="name"
-        :class="`text-${store.getters.primaryThemeTextColour}`"
+        :class="`text-${portfolioStore.primaryThemeTextColour}`"
         class="tag"
     />
 </template>

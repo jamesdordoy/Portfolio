@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { useStore } from 'vuex';
 import { PropType } from 'vue';
 import TimelineEvent from '@/Components/Generic/TimelineEvent.vue';
+import { usePortfolioStore } from '@/Stores/index.ts';
 
-const store = useStore();
+const portfolioStore = usePortfolioStore();
 
 defineProps({
     timeline: {
@@ -22,14 +22,14 @@ defineProps({
         </span>
         <h2
             class="varela mb-8 text-center text-3xl"
-            :class="`text-${store.getters.primaryThemeTextColour}`"
+            :class="`text-${portfolioStore.primaryThemeTextColour}`"
         >
             My Experience
         </h2>
         <div class="timeline-container">
             <div
                 class="timeline"
-                :class="`timeline-${store.getters.primaryThemeColour}`"
+                :class="`timeline-${portfolioStore.primaryThemeColour}`"
             >
                 <div class="min-h-screen">
                     <div class="flex min-h-screen justify-center">

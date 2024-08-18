@@ -3,29 +3,33 @@ import ColourButton from '@/Components/Buttons/ColourButton.vue';
 import RangeInput from '@/Components/Inputs/RangeInput.vue';
 import { computed } from 'vue';
 
-import { useStore } from 'vuex';
+import { usePortfolioStore } from '@/Stores/index.ts';
+
+const portfolioStore = usePortfolioStore();
 
 const emit = defineEmits(['toggle']);
 
-const store = useStore();
-
-const getTheme = computed<string>(() => store.getters.primaryTheme);
+const getTheme = computed<string>(() => store.primaryTheme);
 
 const showSettings = () => {
     emit('toggle', false);
 };
 const updatePrimaryThemeColour = (colour: string) => {
     console.log(colour);
-    store.commit('setPrimaryThemeColor', colour);
+    // store.commit('setPrimaryThemeColor', colour);
+    portfolioStore.primaryThemeColour = colour;
 };
 const updatePrimaryThemeColourShade = (event: Event) => {
-    store.commit('setPrimaryThemeColorShade', event?.target?.value);
+    // store.commit('setPrimaryThemeColorShade', );
+    portfolioStore.primaryThemeColourShade = event?.target?.value;
 };
 const updateTheme = (event: Event) => {
-    store.commit('setPrimaryTheme', event?.target?.value);
+    // store.commit('setPrimaryTheme', event?.target?.value);
+    portfolioStore.primaryTheme = event?.target?.value;
 };
 const updateThemeRouterAnimation = (event: Event) => {
-    store.commit('setPrimaryThemeRouterAnimation', event?.target?.value);
+    // store.commit('setPrimaryThemeRouterAnimation', event?.target?.value);
+    portfolioStore.primaryThemeRouterAnimation = event?.target?.value;
 };
 
 const props = defineProps({
@@ -42,14 +46,14 @@ const props = defineProps({
             <div class="w-4/6">
                 <h2
                     class="text-xl"
-                    :class="`text-${store.getters.primaryThemeTextColour}`"
+                    :class="`text-${portfolioStore.primaryThemeTextColour}`"
                 >
                     Theme Settings
                 </h2>
             </div>
             <div class="w-2/6">
                 <button
-                    :class="`text-${store.getters.primaryThemeTextColour}`"
+                    :class="`text-${portfolioStore.primaryThemeTextColour}`"
                     class="float-right mt-1"
                     @click="showSettings"
                 >
@@ -62,7 +66,7 @@ const props = defineProps({
             <div class="w-full">
                 <h3
                     class="mb-2 text-lg"
-                    :class="`text-${store.getters.primaryThemeTextColour}`"
+                    :class="`text-${portfolioStore.primaryThemeTextColour}`"
                 >
                     Theme Mode
                 </h3>
@@ -70,9 +74,9 @@ const props = defineProps({
             <div class="w-full">
                 <div class="relative block">
                     <select
-                        :value="store.getters.primaryTheme"
+                        :value="portfolioStore.primaryTheme"
                         class="focus:shadow-outline block w-full appearance-none rounded px-4 py-2 pr-8 leading-tight shadow focus:outline-none"
-                        :class="`bg-${store.getters.primaryThemeBgLighter} text-${store.getters.primaryThemeTextColour} focus:bg-${store.getters.primaryThemeBgDarkest}`"
+                        :class="`bg-${portfolioStore.primaryThemeBgLighter} text-${portfolioStore.primaryThemeTextColour} focus:bg-${portfolioStore.primaryThemeBgDarkest}`"
                         @change="updateTheme"
                     >
                         <option value="light">Light</option>
@@ -84,7 +88,7 @@ const props = defineProps({
             <div class="w-full">
                 <h3
                     class="mb-2 text-lg"
-                    :class="`text-${store.getters.primaryThemeTextColour}`"
+                    :class="`text-${portfolioStore.primaryThemeTextColour}`"
                 >
                     Theme Colour
                 </h3>
@@ -186,7 +190,7 @@ const props = defineProps({
                 <div class="w-full">
                     <h3
                         class="mb-2 text-lg"
-                        :class="`text-${store.getters.primaryThemeTextColour}`"
+                        :class="`text-${portfolioStore.primaryThemeTextColour}`"
                     >
                         Theme Colour Shade
                     </h3>

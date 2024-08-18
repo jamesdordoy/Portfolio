@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { useStore } from 'vuex';
 import { PropType } from 'vue';
 import Project from '@/Components/Generic/Project.vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Navigation } from 'swiper/modules';
+import { usePortfolioStore } from '@/Stores/index.ts';
 
+const portfolioStore = usePortfolioStore();
 const modules = [Navigation];
 
 const breakpoints = {
@@ -30,7 +31,7 @@ const breakpoints = {
     },
 };
 
-const store = useStore();
+
 
 defineProps({
     projects: {
@@ -49,7 +50,7 @@ defineProps({
         </span>
         <h2
             class="varela mb-8 text-center text-3xl"
-            :class="`text-${store.getters.primaryThemeTextColour}`"
+            :class="`text-${portfolioStore.primaryThemeTextColour}`"
         >
             Projects
         </h2>

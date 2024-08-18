@@ -1,7 +1,7 @@
 <script setup>
-import { useStore } from 'vuex';
+import { usePortfolioStore } from '@/Stores/index.ts';
 
-const store = useStore();
+const portfolioStore = usePortfolioStore();
 </script>
 
 <template>
@@ -13,13 +13,13 @@ const store = useStore();
         </span>
         <h2
             class="varela mb-16 text-center text-4xl text-gray-400"
-            :class="`text-${store.getters.primaryThemeTextColour}`"
+            :class="`text-${portfolioStore.primaryThemeTextColour}`"
         >
             About Me
         </h2>
         <p
             class="about-me mb-8 text-center text-xl"
-            :class="`text-${store.getters.primaryThemeTextColour}`"
+            :class="`text-${portfolioStore.primaryThemeTextColour}`"
         >
             Hey, my name is James and im a Software Enginer living in Essex. I have been developing software for over
             ten years now and i have a large range of experience from creating simple Android applications and Microsoft
@@ -28,7 +28,7 @@ const store = useStore();
         <br />
         <p
             class="about-me mb-8 text-center text-xl"
-            :class="`text-${store.getters.primaryThemeTextColour}`"
+            :class="`text-${portfolioStore.primaryThemeTextColour}`"
         >
             Since leaving University, i have mainly been working with PHP &amp; Laravel. I also have a solid background
             in JavaScript &amp; Java but picking up a difference langauge isn't a problem. I am profitiant at writting
@@ -45,7 +45,7 @@ const store = useStore();
         </div>
         <p
             class="about-me text-center text-xl"
-            :class="`text-${store.getters.primaryThemeTextColour}`"
+            :class="`text-${portfolioStore.primaryThemeTextColour}`"
         >
             I am a huge Snooker fan and also enjoying playing competitive First Person Shooter games. I also like
             learning about hardware and electronics and would love to pick up more basics to create simple robots. I

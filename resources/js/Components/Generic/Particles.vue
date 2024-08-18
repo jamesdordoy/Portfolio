@@ -1,35 +1,36 @@
 <script lang="ts" setup>
 import colours from 'tailwindcss/colors';
-import { useStore } from 'vuex';
 import { ref, computed, watch } from 'vue';
+import { usePortfolioStore } from '@/Stores/index.ts';
 
-const store = useStore();
+const portfolioStore = usePortfolioStore();
+
 let renderIndex = ref(0);
 
 watch(
-    () => store.getters.primaryTheme,
+    () => portfolioStore.primaryTheme,
     function () {
         renderIndex.value = renderIndex.value + 1;
     }
 );
 
 watch(
-    () => store.getters.primaryThemeColour,
+    () => portfolioStore.primaryThemeColour,
     function () {
         renderIndex.value = renderIndex.value + 1;
     }
 );
 
 const backgroundColour = computed<string>(() => {
-    const themeColour = store.getters.primaryThemeBgParticlesColour;
-    const themeShade = store.getters.primaryThemeBgParticlesColourShade;
+    const themeColour = portfolioStore.primaryThemeBgParticlesColour;
+    const themeShade = portfolioStore.primaryThemeBgParticlesColourShade;
 
     return colours[themeColour][themeShade];
 });
 
 const particleColour = computed<string>(() => {
-    const themeColour = store.getters.primaryThemeColour;
-    const themeShade = store.getters.primaryThemeColourShade;
+    const themeColour = portfolioStore.primaryThemeColour;
+    const themeShade = portfolioStore.primaryThemeColourShade;
     return colours[themeColour][themeShade];
 });
 </script>

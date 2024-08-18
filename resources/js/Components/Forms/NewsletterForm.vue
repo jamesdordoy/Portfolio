@@ -1,12 +1,12 @@
 <script lang="ts" setup>
 import { notify } from 'notiwind';
 import { useForm } from 'laravel-precognition-vue-inertia';
-import { useStore } from 'vuex';
 import { useReCaptcha } from 'vue-recaptcha-v3';
 import checkRecapture from '@/checkRecapture.js';
 import { route } from 'ziggy-js'
+import { usePortfolioStore } from '@/Stores/index.ts';
 
-const store = useStore();
+const portfolioStore = usePortfolioStore();
 
 const newsletter: App.Dto.Newsletter = {
     email: '',
@@ -42,7 +42,7 @@ const submit = async () => {
     <div class="pt-2 md:flex md:items-center">
         <h4
             class="mb-1 pr-4 md:mb-0 md:text-right"
-            :class="`text-${store.getters.primaryThemeTextColour}`"
+            :class="`text-${portfolioStore.primaryThemeTextColour}`"
         >
             <font-awesome-icon :icon="['fas', 'newspaper']" />
             &nbsp;Newsletter Signup:
@@ -57,20 +57,20 @@ const submit = async () => {
                     placeholder="john@example.com"
                     aria-label="Email Address"
                     class="mr-3 w-full border-none border-transparent bg-transparent px-2 py-1 leading-tight focus:border-transparent focus:ring-0"
-                    :class="`text-${store.getters.primaryThemeTextColour}`"
+                    :class="`text-${portfolioStore.primaryThemeTextColour}`"
                     @change="form.validate('email')"
                 />
                 <button
                     class="flex-shrink-0 rounded border bg-transparent px-2 py-1 text-sm"
                     type="button"
-                    :class="`border-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShade} text-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShade} hover:bg-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShade} hover:text-${store.getters.primaryThemeHoverTextColour}`"
+                    :class="`border-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade} text-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade} hover:bg-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade} hover:text-${portfolioStore.primaryThemeHoverTextColour}`"
                     @click="submit"
                 >
                     <font-awesome-icon :icon="['fas', 'check']" />
                     Sign Up
                 </button>
             </div>
-            <div v-if="form.invalid('email')" :class="`text-${store.getters.primaryThemeTextColour}`">
+            <div v-if="form.invalid('email')" :class="`text-${portfolioStore.primaryThemeTextColour}`">
                 {{ form.errors.email }}
             </div>
         </div>

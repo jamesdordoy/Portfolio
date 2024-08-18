@@ -1,9 +1,10 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
-import { useStore } from 'vuex';
-const store = useStore();
+import { usePortfolioStore } from '@/Stores/index.ts';
 
-let value = ref(store.getters.primaryThemeColourShade);
+const portfolioStore = usePortfolioStore();
+
+let value = ref(portfolioStore.primaryThemeColourShade);
 
 const onInput = (event: Event) => {
     const target = event.target as HTMLInputElement;
@@ -15,7 +16,7 @@ const onInput = (event: Event) => {
 <template>
     <input
         :value="value"
-        :class="`bg-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShade}`"
+        :class="`bg-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade}`"
         class="h-3 w-full appearance-none overflow-hidden rounded-lg outline-none"
         type="range"
         min="100"

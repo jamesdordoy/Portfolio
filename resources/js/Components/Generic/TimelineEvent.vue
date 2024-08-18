@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 import { PropType } from 'vue';
-import { useStore } from 'vuex';
+import { usePortfolioStore } from '@/Stores/index.ts';
+
+const portfolioStore = usePortfolioStore();
 
 defineProps({
     event: {
@@ -9,7 +11,6 @@ defineProps({
     },
 });
 
-const store = useStore();
 </script>
 
 <template>
@@ -20,11 +21,11 @@ const store = useStore();
         <div class="w-4/5 py-10">
             <div
                 class="flex w-full flex-col border-b px-4 py-5 shadow"
-                :class="`bg-${store.getters.primaryThemeBgDarkest} border-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShade}`"
+                :class="`bg-${portfolioStore.primaryThemeBgDarkest} border-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade}`"
             >
                 <div class="mb-2 flex justify-between text-gray-600">
                     <div
-                        :class="`text-${store.getters.primaryThemeTextColour}`"
+                        :class="`text-${portfolioStore.primaryThemeTextColour}`"
                         class="font-bold"
                     >
                         <p
@@ -43,7 +44,7 @@ const store = useStore();
                     </div>
                 </div>
                 <p
-                    :class="`text-${store.getters.primaryThemeTextColour}`"
+                    :class="`text-${portfolioStore.primaryThemeTextColour}`"
                     v-html="event.body"
                 ></p>
             </div>
@@ -51,7 +52,7 @@ const store = useStore();
         <div class="flex w-1/5 justify-center">
             <font-awesome-icon
                 class="m-auto text-5xl"
-                :class="`text-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShade}`"
+                :class="`text-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade}`"
                 :icon="event.icon"
             >
             </font-awesome-icon>
@@ -64,7 +65,7 @@ const store = useStore();
         <div class="flex w-1/5 justify-center">
             <font-awesome-icon
                 class="m-auto text-5xl"
-                :class="`text-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShade}`"
+                :class="`text-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade}`"
                 :icon="event.icon"
             >
             </font-awesome-icon>
@@ -72,11 +73,11 @@ const store = useStore();
         <div class="w-4/5 px-2 py-10">
             <div
                 class="flex w-full flex-col border-b px-4 py-5 shadow"
-                :class="`bg-${store.getters.primaryThemeBgDarker} border-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShade}`"
+                :class="`bg-${portfolioStore.primaryThemeBgDarker} border-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade}`"
             >
                 <div class="mb-2 flex justify-between text-gray-600">
                     <div
-                        :class="`text-${store.getters.primaryThemeTextColour}`"
+                        :class="`text-${portfolioStore.primaryThemeTextColour}`"
                         class="font-bold"
                     >
                         <p class="mb-1 text-lg">{{ event.name }}</p>
@@ -84,7 +85,7 @@ const store = useStore();
                     </div>
                 </div>
                 <p
-                    :class="`text-${store.getters.primaryThemeTextColour}`"
+                    :class="`text-${portfolioStore.primaryThemeTextColour}`"
                     v-html="event.body"
                 ></p>
             </div>

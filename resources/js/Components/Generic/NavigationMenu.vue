@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { useStore } from 'vuex';
 import { ref } from 'vue';
+import { usePortfolioStore } from '@/Stores/index.ts';
 
-const store = useStore();
+const portfolioStore = usePortfolioStore();
 
 const open = ref<boolean>(false);
 
@@ -19,7 +19,7 @@ const closeMenu = () => {
     <div class="z-10 font-sans antialiased">
         <nav
             class="front-nav"
-            :class="`bg-${store.getters.primaryThemeBgDarker} border-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShade}`"
+            :class="`bg-${portfolioStore.primaryThemeBgDarker} border-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade}`"
         >
             <div class="flex-no-shrink mr-6 flex items-center text-white">
                 <svg
@@ -28,7 +28,7 @@ const closeMenu = () => {
                     viewBox="0 0 54 54"
                     class="mr-2 h-8 w-8 fill-current"
                     xmlns="http://www.w3.org/2000/svg"
-                    :class="`text-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShade}`"
+                    :class="`text-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade}`"
                 >
                     <path
                         d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"
@@ -43,7 +43,7 @@ const closeMenu = () => {
             <div class="block lg:hidden">
                 <button
                     class="flex items-center rounded border px-3 py-2"
-                    :class="`text-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShade} border-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShade} hover:bg-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShadeDarker} hover:border-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShadeDarker}`"
+                    :class="`text-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade} border-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade} hover:bg-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShadeDarker} hover:border-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShadeDarker}`"
                     @click="toggle"
                 >
                     <svg
@@ -64,7 +64,7 @@ const closeMenu = () => {
                     <a
                         v-scroll-to="'#about'"
                         class="front-nav-item lg:mt-0 lg:inline-block"
-                        :class="`text-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShade} hover:text-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShadeLighter}`"
+                        :class="`text-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade} hover:text-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShadeLighter}`"
                         @click="closeMenu"
                     >
                         About Me
@@ -72,7 +72,7 @@ const closeMenu = () => {
                     <a
                         v-scroll-to="'#projects'"
                         class="front-nav-item lg:mt-0 lg:inline-block"
-                        :class="`text-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShade} hover:text-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShadeLighter}`"
+                        :class="`text-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade} hover:text-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShadeLighter}`"
                         @click="closeMenu"
                     >
                         My Projects
@@ -80,7 +80,7 @@ const closeMenu = () => {
                     <a
                         v-scroll-to="'#experiance'"
                         class="front-nav-item lg:mt-0 lg:inline-block"
-                        :class="`text-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShade} hover:text-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShadeLighter}`"
+                        :class="`text-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade} hover:text-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShadeLighter}`"
                         @click="closeMenu"
                     >
                         What I've Been Up To
@@ -88,7 +88,7 @@ const closeMenu = () => {
                     <a
                         v-scroll-to="'#contact'"
                         class="front-nav-item lg:mt-0 lg:inline-block"
-                        :class="`text-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShade} hover:text-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShadeLighter}`"
+                        :class="`text-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade} hover:text-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShadeLighter}`"
                         @click="closeMenu"
                     >
                         Contact Me

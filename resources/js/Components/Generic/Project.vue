@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import { useStore } from 'vuex';
 import { PropType } from 'vue';
 import Tag from '@/Components/Generic/PortfolioTag.vue';
+import { usePortfolioStore } from '@/Stores/index.ts';
 
-const store = useStore();
+const portfolioStore = usePortfolioStore();
 
 defineProps({
     project: {
@@ -17,7 +17,7 @@ defineProps({
     <div
         :key="project.id"
         class="project"
-        :class="`bg-${store.getters.primaryThemeBgDarker} border-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShade}`"
+        :class="`bg-${portfolioStore.primaryThemeBgDarker} border-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade}`"
     >
         <a
             :href="project.link"
@@ -26,7 +26,7 @@ defineProps({
         >
             <img
                 :alt="project.name"
-                :class="`border-${store.getters.primaryThemeColour}-${store.getters.primaryThemeColourShade}`"
+                :class="`border-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade}`"
                 class="project-image"
                 :src="project.icon ? project.icon : '/images/projects/simple-shopping.png'"
             />
@@ -44,7 +44,7 @@ defineProps({
             </div>
             <p
                 class="text-base"
-                :class="`text-${store.getters.primaryThemeTextColour}`"
+                :class="`text-${portfolioStore.primaryThemeTextColour}`"
             >
                 {{ project.description }}
             </p>
