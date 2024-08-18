@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import ContactForm from '@/components/forms/ContactForm.vue';
+import ContactForm from '@/Components/Forms/ContactForm.vue';
 import { useStore } from 'vuex';
 
 const store = useStore();

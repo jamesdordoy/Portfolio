@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useStore } from 'vuex';
 import { PropType } from 'vue';
-import Project from '@/components/generic/Project.vue';
+import Project from '@/Components/Generic/Project.vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Navigation } from 'swiper/modules';
 

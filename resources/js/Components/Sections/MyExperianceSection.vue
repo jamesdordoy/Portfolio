@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useStore } from 'vuex';
 import { PropType } from 'vue';
-import TimelineEvent from '@/components/generic/TimelineEvent.vue';
+import TimelineEvent from '@/Components/Generic/TimelineEvent.vue';
 
 const store = useStore();
 

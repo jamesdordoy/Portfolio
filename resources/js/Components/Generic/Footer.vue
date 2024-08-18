@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { useStore } from 'vuex';
-import NewsletterForm from '@/components/forms/NewsletterForm.vue';
+import NewsletterForm from '@/Components/Forms/NewsletterForm.vue';
 
 const store = useStore();
 </script>

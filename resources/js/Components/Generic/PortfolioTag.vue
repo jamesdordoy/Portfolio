@@ -1,5 +1,5 @@
 <script setup>
-import BaseTag from '@/components/base/BaseTag.vue';
+import BaseTag from '@/Components/Base/BaseTag.vue';
 import { useStore } from 'vuex';
 
 const store = useStore();
