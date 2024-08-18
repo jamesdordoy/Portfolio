@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import { PropType } from 'vue';
+import BaseBookmark from '@/Components/Base/BaseBookmark.vue';
 import Game from '@/Components/Generic/Game.vue';
-
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Navigation } from 'swiper/modules';
-
 import { usePortfolioStore } from '@/Stores/index.ts';
 
 const portfolioStore = usePortfolioStore();
@@ -43,19 +42,18 @@ defineProps({
 </script>
 
 <template>
-    <div class="h-full">
-        <span
+    <section class="h-full">
+        <BaseBookmark
             id="games"
             class="jd-bookmark"
-        >
-        </span>
+        />
         <h2
             class="varela mb-8 text-center text-3xl"
             :class="`text-${portfolioStore.primaryThemeTextColour}`"
         >
             Game Clips
         </h2>
-        <section class="flex w-full flex-wrap overflow-hidden py-4 lg:pl-8">
+        <div class="flex w-full flex-wrap overflow-hidden py-4 lg:pl-8">
             <swiper
                 class="mt-2"
                 navigation
@@ -64,11 +62,11 @@ defineProps({
             >
                 <SwiperSlide
                     v-for="(clip, index) in gameClips"
-                    :key="index"
+                    :key="`game_${index}`"
                 >
                     <Game :clip="clip" />
                 </SwiperSlide>
             </swiper>
-        </section>
-    </div>
+        </div>
+    </section>
 </template>

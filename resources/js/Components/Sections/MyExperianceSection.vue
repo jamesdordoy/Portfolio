@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { PropType } from 'vue';
+import BaseBookmark from '@/Components/Base/BaseBookmark.vue';
 import TimelineEvent from '@/Components/Generic/TimelineEvent.vue';
 import { usePortfolioStore } from '@/Stores/index.ts';
 
@@ -14,12 +15,11 @@ defineProps({
 </script>
 
 <template>
-    <div>
-        <span
+    <section>
+        <BaseBookmark
             id="experiance"
             class="jd-bookmark"
-        >
-        </span>
+        />
         <h2
             class="varela mb-8 text-center text-3xl"
             :class="`text-${portfolioStore.primaryThemeTextColour}`"
@@ -45,5 +45,5 @@ defineProps({
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 </template>

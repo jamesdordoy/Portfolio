@@ -6,7 +6,7 @@ const portfolioStore = usePortfolioStore();
 
 defineProps({
     event: {
-        type: Object as PropType<App.Models.Data.TimelineEvent>,
+        type: Object as PropType<App.Dto.TimelineEvent>,
         required: true,
     },
 });
@@ -14,7 +14,7 @@ defineProps({
 </script>
 
 <template>
-    <div
+    <article
         v-if="event?.id & 1"
         class="flex w-full flex-row"
     >
@@ -57,8 +57,8 @@ defineProps({
             >
             </font-awesome-icon>
         </div>
-    </div>
-    <div
+    </article>
+    <article
         v-else
         class="flex w-full flex-row"
     >
@@ -90,5 +90,5 @@ defineProps({
                 ></p>
             </div>
         </div>
-    </div>
+    </article>
 </template>

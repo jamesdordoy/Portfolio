@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import ColourButton from '@/Components/Buttons/ColourButton.vue';
+import BaseColourButton from '@/Components/Base/BaseColourButton.vue';
 import RangeInput from '@/Components/Inputs/RangeInput.vue';
 import { usePortfolioStore } from '@/Stores/index.ts';
 
@@ -87,91 +87,91 @@ const props = defineProps({
             <div class="w-full">
                 <div class="flex flex-wrap">
                     <div class="w-1/6 p-1">
-                        <ColourButton
+                        <BaseColourButton
                             colour="blue"
                             @click="updatePrimaryThemeColour('blue')"
                         />
                     </div>
                     <div class="w-1/6 p-1">
-                        <ColourButton
+                        <BaseColourButton
                             colour="teal"
                             @click="updatePrimaryThemeColour('teal')"
                         />
                     </div>
                     <div class="w-1/6 p-1">
-                        <ColourButton
+                        <BaseColourButton
                             colour="purple"
                             @click="updatePrimaryThemeColour('purple')"
                         />
                     </div>
                     <div class="w-1/6 p-1">
-                        <ColourButton
+                        <BaseColourButton
                             colour="green"
                             @click="updatePrimaryThemeColour('green')"
                         />
                     </div>
                     <div class="w-1/6 p-1">
-                        <ColourButton
+                        <BaseColourButton
                             colour="red"
                             @click="updatePrimaryThemeColour('red')"
                         />
                     </div>
                     <div class="w-1/6 p-1">
-                        <ColourButton
+                        <BaseColourButton
                             colour="orange"
                             @click="updatePrimaryThemeColour('orange')"
                         />
                     </div>
                     <div class="w-1/6 p-1">
-                        <ColourButton
+                        <BaseColourButton
                             colour="yellow"
                             @click="updatePrimaryThemeColour('yellow')"
                         />
                     </div>
                     <div class="w-1/6 p-1">
-                        <ColourButton
+                        <BaseColourButton
                             colour="indigo"
                             @click="updatePrimaryThemeColour('indigo')"
                         />
                     </div>
                     <div class="w-1/6 p-1">
-                        <ColourButton
+                        <BaseColourButton
                             colour="pink"
                             @click="updatePrimaryThemeColour('pink')"
                         />
                     </div>
                     <div class="w-1/6 p-1">
-                        <ColourButton
+                        <BaseColourButton
                             colour="lime"
                             @click="updatePrimaryThemeColour('lime')"
                         />
                     </div>
                     <div class="w-1/6 p-1">
-                        <ColourButton
+                        <BaseColourButton
                             colour="sky"
                             @click="updatePrimaryThemeColour('sky')"
                         />
                     </div>
                     <div class="w-1/6 p-1">
-                        <ColourButton
+                        <BaseColourButton
                             colour="emerald"
                             @click="updatePrimaryThemeColour('emerald')"
                         />
                     </div>
                     <div class="w-1/6 p-1">
-                        <ColourButton
+                        <BaseColourButton
                             colour="stone"
                             @click="updatePrimaryThemeColour('stone')"
                         />
                     </div>
                     <div class="w-1/6 p-1">
-                        <ColourButton
+                        <BaseColourButton
                             colour="zinc"
                             @click="updatePrimaryThemeColour('zinc')"
                         />
                     </div>
                     <div class="w-1/6 p-1">
-                        <ColourButton
+                        <BaseColourButton
                             colour="slate"
                             @click="updatePrimaryThemeColour('slate')"
                         />

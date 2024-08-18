@@ -3,12 +3,10 @@ import axios from 'axios';
 import { notify } from 'notiwind';
 import { useForm } from 'laravel-precognition-vue-inertia';
 import { useReCaptcha } from 'vue-recaptcha-v3';
-
 import { route } from 'ziggy-js';
 import { usePortfolioStore } from '@/Stores/index.ts';
 
 const portfolioStore = usePortfolioStore();
-
 
 const contact: App.Dto.Contact = {
     name: '',

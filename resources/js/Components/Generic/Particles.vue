@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, computed, watch } from 'vue';
+import { ref, watch } from 'vue';
 import { usePortfolioStore } from '@/Stores/index.ts';
 
 const portfolioStore = usePortfolioStore();

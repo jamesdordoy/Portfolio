@@ -1,16 +1,16 @@
 <script lang="ts" setup>
 import { usePortfolioStore } from '@/Stores/index.ts';
+import BaseBookmark from '@/Components/Base/BaseBookmark.vue';
 
 const portfolioStore = usePortfolioStore();
 </script>
 
 <template>
-    <div>
-        <span
+    <section>
+        <BaseBookmark
             id="about"
             class="jd-bookmark"
-        >
-        </span>
+        />
         <h2
             class="varela mb-16 text-center text-4xl text-gray-400"
             :class="`text-${portfolioStore.primaryThemeTextColour}`"
@@ -52,5 +52,5 @@ const portfolioStore = usePortfolioStore();
             have always wanted to learn to play a musical instrument or make YouTube tutorials based on my programming
             knowledge but have never got around to it.
         </p>
-    </div>
+    </section>
 </template>

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { PropType } from 'vue';
+import BaseBookmark from '@/Components/Base/BaseBookmark.vue';
 import Project from '@/Components/Generic/Project.vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Navigation } from 'swiper/modules';
@@ -42,19 +43,18 @@ defineProps({
 </script>
 
 <template>
-    <div>
-        <span
+    <section>
+        <BaseBookmark
             id="projects"
             class="jd-bookmark"
-        >
-        </span>
+        />
         <h2
             class="varela mb-8 text-center text-3xl"
             :class="`text-${portfolioStore.primaryThemeTextColour}`"
         >
             Projects
         </h2>
-        <section class="flex flex-wrap">
+        <div class="flex flex-wrap">
             <Swiper
                 navigation
                 :modules="modules"
@@ -67,6 +67,6 @@ defineProps({
                     <Project :project="project" />
                 </SwiperSlide>
             </Swiper>
-        </section>
-    </div>
+        </div>
+    </section>
 </template>

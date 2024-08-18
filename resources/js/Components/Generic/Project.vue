@@ -14,7 +14,7 @@ defineProps({
 </script>
 
 <template>
-    <div
+    <article
         :key="project.id"
         class="project"
         :class="`bg-${portfolioStore.primaryThemeBgDarker} border-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade}`"
@@ -58,5 +58,5 @@ defineProps({
             >
             </tag>
         </div>
-    </div>
+    </article>
 </template>
