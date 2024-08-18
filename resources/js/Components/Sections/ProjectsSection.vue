@@ -32,8 +32,6 @@ const breakpoints = {
     },
 };
 
-
-
 defineProps({
     projects: {
         type: Array as PropType<App.Models.Data.Collection<App.Dto.Project>>,

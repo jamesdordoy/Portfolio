@@ -79,7 +79,10 @@ const submit = async () => {
                         @change="form.validate('name')"
                     />
                 </div>
-                <div v-if="form.invalid('name')" :class="`text-${portfolioStore.primaryThemeTextColour}`">
+                <div
+                    v-if="form.invalid('name')"
+                    :class="`text-${portfolioStore.primaryThemeTextColour}`"
+                >
                     {{ form.errors.name }}
                 </div>
             </div>
@@ -108,7 +111,10 @@ const submit = async () => {
                         @change="form.validate('email')"
                     />
                 </div>
-                <div v-if="form.invalid('email')" :class="`text-${portfolioStore.primaryThemeTextColour}`">
+                <div
+                    v-if="form.invalid('email')"
+                    :class="`text-${portfolioStore.primaryThemeTextColour}`"
+                >
                     {{ form.errors.email }}
                 </div>
             </div>
@@ -138,7 +144,10 @@ const submit = async () => {
                     >
                     </textarea>
                 </div>
-                <div v-if="form.invalid('message')" :class="`text-${portfolioStore.primaryThemeTextColour}`">
+                <div
+                    v-if="form.invalid('message')"
+                    :class="`text-${portfolioStore.primaryThemeTextColour}`"
+                >
                     {{ form.errors.message }}
                 </div>
             </div>

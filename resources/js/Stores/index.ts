@@ -8,9 +8,7 @@ export const usePortfolioStore = defineStore('portfolio', {
         primaryTheme: 'dark',
         acceptedGDRP: false,
         primaryThemeRouterAnimation: '',
-        particleOptions: {
-            
-        }
+        particleOptions: {},
     }),
 
     actions: {
@@ -31,7 +29,6 @@ export const usePortfolioStore = defineStore('portfolio', {
         primaryThemeHoverTextColour: (state) => (state.primaryTheme === 'light' ? 'white' : 'slate-900'),
         hasUserAcceptedGDPR: (state) => !!state.acceptedGDRP,
         getParticleOptions: (state) => {
-
             const bgThemeColour = state.primaryTheme === 'light' ? 'gray' : 'slate';
             const bgThemeShade = state.primaryTheme === 'light' ? '100' : '800';
 
@@ -118,9 +115,8 @@ export const usePortfolioStore = defineStore('portfolio', {
                     },
                 },
                 detectRetina: true,
-            }
-            
-        }
+            };
+        },
     },
     persist: true,
 });

@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-
 defineProps({
     id: {
         type: String,
@@ -7,12 +6,14 @@ defineProps({
     },
     class: {
         type: String,
-        default: 'bookmark'
+        default: 'bookmark',
     },
 });
-
 </script>
 
 <template>
-    <span :id="id" :class="class"></span>
+    <span
+        :id="id"
+        :class="class"
+    ></span>
 </template>

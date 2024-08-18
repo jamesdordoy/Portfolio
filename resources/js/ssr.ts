@@ -16,8 +16,6 @@ import { ZiggyVue } from 'ziggy';
 import { Ziggy } from './ziggy';
 import route from 'ziggy-js';
 
-
-
 createServer((page) =>
     createInertiaApp({
         page,

@@ -18,23 +18,24 @@ const portfolioStore = usePortfolioStore();
             About Me
         </h2>
         <p
-            class="about-me mb-8 text-center text-xl"
+            class="mb-8 text-center text-xl"
             :class="`text-${portfolioStore.primaryThemeTextColour}`"
         >
-            Hey, my name is James and im a Software Enginer living in Essex. I have been developing software for over
-            ten years now and i have a large range of experience from creating simple Android applications and Microsoft
-            Excel dashboards to working on large scale Sass, CMS and CRM systems.
+            Hey, my name is James and im a Software Enginer living in Essex. I have been developing software for fifteen
+            years now and i have a large range of experience from creating simple Android applications, static websites
+            and Microsoft Excel dashboards to working on larger scale SaSS, CMS and CRM applications using PHP, Inertia,
+            Laravel with Vue and Typescript.
         </p>
         <br />
         <p
-            class="about-me mb-8 text-center text-xl"
+            class="mb-8 text-center text-xl"
             :class="`text-${portfolioStore.primaryThemeTextColour}`"
         >
             Since leaving University, i have mainly been working with PHP &amp; Laravel. I also have a solid background
             in JavaScript &amp; Java but picking up a difference langauge isn't a problem. I am profitiant at writting
-            procedual, object orianted and functional code which provides many different techniques for cleaning up my work.
-            I am currently picking up TypeScript and enjoying the benifits as it enables me to write stricter
-            code to overcome some of the limitations that JavaScript present such as Type Inference.
+            procedual, object orianted and functional code which provides many different techniques for cleaning up my
+            work. I am currently picking up TypeScript and enjoying the benifits as it enables me to write stricter code
+            to overcome some of the limitations that JavaScript present such as Type Inference.
         </p>
         <div class="mb-8 flex items-center justify-center">
             <img
@@ -44,7 +45,7 @@ const portfolioStore = usePortfolioStore();
             />
         </div>
         <p
-            class="about-me text-center text-xl"
+            class="text-center text-xl"
             :class="`text-${portfolioStore.primaryThemeTextColour}`"
         >
             I am a huge Snooker fan and also enjoying playing competitive First Person Shooter games. I also like

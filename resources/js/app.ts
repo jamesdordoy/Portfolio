@@ -4,8 +4,8 @@ import 'swiper/css/navigation';
 
 import { createSSRApp, h } from 'vue';
 import Notifications from 'notiwind';
-import Particles from "@tsparticles/vue3";
-import { loadFull } from "tsparticles";
+import Particles from '@tsparticles/vue3';
+import { loadFull } from 'tsparticles';
 import VueScrollTo from 'vue-scrollto';
 import fontAwesomeLibrary from '@/font-awesome.js';
 import { createInertiaApp } from '@inertiajs/vue3';
@@ -14,14 +14,13 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { VueReCaptcha } from 'vue-recaptcha-v3';
 
 import { Ziggy } from './ziggy';
-import { route, ZiggyVue } from 'ziggy-js'
+import { route, ZiggyVue } from 'ziggy-js';
 
+import type { Engine } from 'tsparticles-engine';
 
-import type { Engine } from "tsparticles-engine"; 
-
-import { createPinia } from 'pinia'
-import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
-const pinia = createPinia()
+import { createPinia } from 'pinia';
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate';
+const pinia = createPinia();
 pinia.use(piniaPluginPersistedstate);
 
 const app = createInertiaApp({
@@ -44,7 +43,7 @@ const app = createInertiaApp({
             .use(Particles, {
                 init: async (engine: Engine) => {
                     await loadFull(engine);
-                }
+                },
             })
             .mixin({ methods: { route } })
             .use(ZiggyVue, Ziggy)
@@ -52,5 +51,3 @@ const app = createInertiaApp({
             .mount(el);
     },
 });
-
-

@@ -1,12 +1,10 @@
 <script lang="ts" setup>
-
 defineProps({
     colour: {
         type: String,
         default: 'blue',
     },
 });
-
 </script>
 
 <template>

@@ -2,8 +2,8 @@
 import { notify } from 'notiwind';
 import { useForm } from 'laravel-precognition-vue-inertia';
 import { useReCaptcha } from 'vue-recaptcha-v3';
-import checkRecapture from '@/checkRecapture.js';
-import { route } from 'ziggy-js'
+import checkRecapture from '@/checkRecapture.ts';
+import { route } from 'ziggy-js';
 import { usePortfolioStore } from '@/Stores/index.ts';
 
 const portfolioStore = usePortfolioStore();
@@ -70,7 +70,10 @@ const submit = async () => {
                     Sign Up
                 </button>
             </div>
-            <div v-if="form.invalid('email')" :class="`text-${portfolioStore.primaryThemeTextColour}`">
+            <div
+                v-if="form.invalid('email')"
+                :class="`text-${portfolioStore.primaryThemeTextColour}`"
+            >
                 {{ form.errors.email }}
             </div>
         </div>
