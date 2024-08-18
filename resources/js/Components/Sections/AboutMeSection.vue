@@ -1,4 +1,4 @@
-<script setup>
+<script lang="ts" setup>
 import { usePortfolioStore } from '@/Stores/index.ts';
 
 const portfolioStore = usePortfolioStore();

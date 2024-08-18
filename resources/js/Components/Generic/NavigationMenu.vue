@@ -16,7 +16,7 @@ const closeMenu = () => {
 </script>
 
 <template>
-    <div class="z-10 font-sans antialiased">
+    <header class="z-10 font-sans antialiased">
         <nav
             class="front-nav"
             :class="`bg-${portfolioStore.primaryThemeBgDarker} border-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade}`"
@@ -96,5 +96,5 @@ const closeMenu = () => {
                 </div>
             </div>
         </nav>
-    </div>
+    </header>
 </template>

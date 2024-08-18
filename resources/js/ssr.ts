@@ -5,11 +5,6 @@ import { createSSRApp, h } from 'vue';
 import '../css/app.css';
 import 'swiper/css';
 import 'swiper/css/navigation';
-
-import state from '@/Stores/Theme/state.js';
-import getters from '@/Stores/Theme/getters.js';
-import mutations from '@/Stores/Theme/mutations.js';
-import { createStore } from 'vuex';
 import Particles from 'particles.vue3';
 import VueScrollTo from 'vue-scrollto';
 import Notifications from 'notiwind';
@@ -21,14 +16,7 @@ import { ZiggyVue } from 'ziggy';
 import { Ziggy } from './ziggy';
 import route from 'ziggy-js';
 
-const store = createStore({
-    plugins: [],
-    state() {
-        return state;
-    },
-    mutations,
-    getters,
-});
+
 
 createServer((page) =>
     createInertiaApp({
@@ -44,7 +32,6 @@ createServer((page) =>
                 render: () => h(App, props),
             })
                 .use(plugin)
-                .use(store)
                 .use(Particles)
                 .use(VueScrollTo)
                 .use(Notifications)

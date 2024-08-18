@@ -6,7 +6,7 @@ const portfolioStore = usePortfolioStore();
 </script>
 
 <template>
-    <div
+    <footer
         class="flex flex-wrap border-t px-10 py-3 lg:p-10"
         :class="`bg-${portfolioStore.primaryThemeBgDarker} border-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade}`"
     >
@@ -110,5 +110,5 @@ const portfolioStore = usePortfolioStore();
                 <NewsletterForm />
             </div>
         </div>
-    </div>
+    </footer>
 </template>

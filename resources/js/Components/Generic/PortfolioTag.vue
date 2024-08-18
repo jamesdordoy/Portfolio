@@ -1,4 +1,4 @@
-<script setup>
+<script lang="ts" setup>
 import BaseTag from '@/Components/Base/BaseTag.vue';
 
 import { usePortfolioStore } from '@/Stores/index.ts';

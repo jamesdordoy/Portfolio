@@ -1,34 +1,25 @@
 <script lang="ts" setup>
 import ColourButton from '@/Components/Buttons/ColourButton.vue';
 import RangeInput from '@/Components/Inputs/RangeInput.vue';
-import { computed } from 'vue';
-
 import { usePortfolioStore } from '@/Stores/index.ts';
 
 const portfolioStore = usePortfolioStore();
 
 const emit = defineEmits(['toggle']);
 
-const getTheme = computed<string>(() => store.primaryTheme);
-
 const showSettings = () => {
     emit('toggle', false);
 };
 const updatePrimaryThemeColour = (colour: string) => {
-    console.log(colour);
-    // store.commit('setPrimaryThemeColor', colour);
     portfolioStore.primaryThemeColour = colour;
 };
 const updatePrimaryThemeColourShade = (event: Event) => {
-    // store.commit('setPrimaryThemeColorShade', );
     portfolioStore.primaryThemeColourShade = event?.target?.value;
 };
 const updateTheme = (event: Event) => {
-    // store.commit('setPrimaryTheme', event?.target?.value);
     portfolioStore.primaryTheme = event?.target?.value;
 };
 const updateThemeRouterAnimation = (event: Event) => {
-    // store.commit('setPrimaryThemeRouterAnimation', event?.target?.value);
     portfolioStore.primaryThemeRouterAnimation = event?.target?.value;
 };
 

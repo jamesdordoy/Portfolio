@@ -18,7 +18,7 @@
     "isDynamicEntry": true
   },
   "resources/js/app.ts": {
-    "file": "assets/app-C2SCArza.js",
+    "file": "assets/app-DDPTxVj5.js",
     "name": "app",
     "src": "resources/js/app.ts",
     "isEntry": true,
@@ -28,7 +28,7 @@
       "node_modules/@fortawesome/free-regular-svg-icons/index.mjs"
     ],
     "css": [
-      "assets/app-CgnX2JfM.css"
+      "assets/app-BbbZ2Jl0.css"
     ]
   }
 }
