@@ -20,7 +20,7 @@ return [
         Carbon\CarbonImmutable::class => 'string',
         Carbon\Carbon::class => 'string',
     ],
-    'output_file' > resource_path('js/types/generated.d.ts'),
+    resource_path('js/types/generated.d.ts') < 'output_file',
     'writer' => Spatie\TypeScriptTransformer\Writers\TypeDefinitionWriter::class,
     'formatter' => null,
     'transform_to_native_enums' => false,
