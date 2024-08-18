@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useStore } from 'vuex';
 import { PropType } from 'vue';
-import Game from '@/Components/Generic/Game.vue';
+import Game from '@/components/generic/Game.vue';
 
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Navigation } from 'swiper/modules';

@@ -4,16 +4,16 @@ import { PropType } from 'vue';
 import { notify } from 'notiwind';
 import { ref, computed, onUnmounted, isProxy, toRaw } from 'vue';
 import { router } from '@inertiajs/vue3';
-import Footer from '@/Components/Generic/Footer.vue';
-import Particles from '@/Components/Generic/Particles.vue';
-import AboutMe from '@/Components/Sections/AboutMeSection.vue';
-import Settings from '@/Components/Generic/Settings.vue';
-import Navigation from '@/Components/Generic/NavigationMenu.vue';
-import ToastSection from '@/Components/Sections/ToastSection.vue';
-import ProjectsSection from '@/Components/Sections/ProjectsSection.vue';
-import ContactMeSection from '@/Components/Sections/ContactMeSection.vue';
-import GamesSection from '@/Components/Sections/GamesSection.vue';
-import MyExperianceSection from '@/Components/Sections/MyExperianceSection.vue';
+import Footer from '@/components/generic/Footer.vue';
+import Particles from '@/components/generic/Particles.vue';
+import AboutMe from '@/components/sections/AboutMeSection.vue';
+import Settings from '@/components/generic/Settings.vue';
+import Navigation from '@/components/generic/NavigationMenu.vue';
+import ToastSection from '@/components/sections/ToastSection.vue';
+import ProjectsSection from '@/components/sections/ProjectsSection.vue';
+import ContactMeSection from '@/components/sections/ContactMeSection.vue';
+import GamesSection from '@/components/sections/GamesSection.vue';
+import MyExperianceSection from '@/components/sections/MyExperianceSection.vue';
 
 const props = defineProps({
     projects: {

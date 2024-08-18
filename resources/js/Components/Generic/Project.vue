@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { useStore } from 'vuex';
 import { PropType } from 'vue';
-import Tag from '@/Components/Generic/PortfolioTag.vue';
+import Tag from '@/components/generic/PortfolioTag.vue';
 
 const store = useStore();
 

@@ -1,6 +1,6 @@
 import { assert, describe, expect, it, vi, test } from 'vitest';
 import { config, shallowMount, mount } from '@vue/test-utils';
-import BaseButton from '@/Components/Base/BaseButton.vue';
+import BaseButton from '@/components/base/BaseButton.vue';
 
 describe('BaseButton', () => {
     it('renders', async () => {

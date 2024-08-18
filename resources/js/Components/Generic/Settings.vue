@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import ColourButton from '@/Components/Buttons/ColourButton.vue';
-import RangeInput from '@/Components/Inputs/RangeInput.vue';
+import ColourButton from '@/components/buttons/ColourButton.vue';
+import RangeInput from '@/components/inputs/RangeInput.vue';
 import { computed } from 'vue';
 
 import { useStore } from 'vuex';
