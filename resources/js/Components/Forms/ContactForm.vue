@@ -5,6 +5,7 @@ import { useForm } from 'laravel-precognition-vue-inertia';
 import { useReCaptcha } from 'vue-recaptcha-v3';
 import { route } from 'ziggy-js';
 import { usePortfolioStore } from '@/Stores/index.ts';
+import BaseFormInputError from '@/Components/Base/BaseFormInputError.vue';
 
 const portfolioStore = usePortfolioStore();
 
@@ -14,7 +15,7 @@ const contact: App.Dto.Contact = {
     message: '',
 };
 
-const form = useForm('post', route('contact.store'), contact);
+const form = useForm('post', '/contact', contact);
 
 const { executeRecaptcha, recaptchaLoaded } = useReCaptcha();
 
@@ -79,12 +80,11 @@ const submit = async () => {
                         @change="form.validate('name')"
                     />
                 </div>
-                <div
-                    v-if="form.invalid('name')"
+                <BaseFormInputError
+                    name="name"
+                    :form="form"
                     :class="`text-${portfolioStore.primaryThemeTextColour}`"
-                >
-                    {{ form.errors.name }}
-                </div>
+                />
             </div>
         </div>
         <div class="-mx-3 mb-6 flex flex-wrap">
@@ -112,7 +112,7 @@ const submit = async () => {
                     />
                 </div>
                 <div
-                    v-if="form.invalid('email')"
+                    v-show="form.invalid('email')"
                     :class="`text-${portfolioStore.primaryThemeTextColour}`"
                 >
                     {{ form.errors.email }}
@@ -145,7 +145,7 @@ const submit = async () => {
                     </textarea>
                 </div>
                 <div
-                    v-if="form.invalid('message')"
+                    v-show="form.invalid('message')"
                     :class="`text-${portfolioStore.primaryThemeTextColour}`"
                 >
                     {{ form.errors.message }}

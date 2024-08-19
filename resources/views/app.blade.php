@@ -17,12 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
-    @routes
-    @inertiaHead
-    @vite('resources/js/app.ts')
-
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154219567-1"></script>
-
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -32,9 +27,14 @@
         gtag('js', new Date());
         gtag('config', 'UA-154219567-1');
     </script>
+    
+    @inertiaHead
+    @routes
+    @vite('resources/js/app.ts')
 </head>
 
 <body class="font-sans antialiased">
+    
     @inertia
 </body>
 

@@ -1,21 +1,3 @@
-<template>
-    <select
-        :id="id"
-        :selected="value"
-        class="mt-1.5 w-full text-left"
-        :placeholder="placeholder"
-        @input="onInput"
-    >
-        <option
-            v-for="(option, index) in options"
-            :key="`tom_select_option_${index}`"
-            :value="option.value"
-        >
-            {{ option[label] }}
-        </option>
-    </select>
-</template>
-
 <script>
 import _ from 'lodash';
 import TomSelect from 'tom-select/dist/js/tom-select.complete.min';
@@ -73,5 +55,24 @@ export default {
     },
 };
 </script>
+
+<template>
+    <select
+        :id="id"
+        :selected="value"
+        class="mt-1.5 w-full text-left"
+        :placeholder="placeholder"
+        @input="onInput"
+    >
+        <option
+            v-for="(option, index) in options"
+            :key="`tom_select_option_${index}`"
+            :value="option.value"
+        >
+            {{ option[label] }}
+        </option>
+    </select>
+</template>
+
 
 <style scoped></style>

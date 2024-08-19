@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import _ from 'lodash';
 import { PropType } from 'vue';
 import { usePortfolioStore } from '@/Stores/index.ts';
 
@@ -14,7 +15,7 @@ defineProps({
 
 <template>
     <article
-        v-if="event?.id & 1"
+        v-show="event?.id & 1"
         class="flex w-full flex-row"
     >
         <div class="w-4/5 py-10">
@@ -58,7 +59,7 @@ defineProps({
         </div>
     </article>
     <article
-        v-else
+        v-show="~event?.id & 1"
         class="flex w-full flex-row"
     >
         <div class="flex w-1/5 justify-center">

@@ -1,20 +1,30 @@
-import createServer from '@inertiajs/vue3/server';
-import { renderToString } from '@vue/server-renderer';
-import { createSSRApp, h } from 'vue';
-
 import '../css/app.css';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import Particles from 'particles.vue3';
-import VueScrollTo from 'vue-scrollto';
-import Notifications from 'notiwind';
-import fontAwesomeLibrary from '@/font-awesome.js';
+
+import { createSSRApp, h } from 'vue';
 import { createInertiaApp } from '@inertiajs/vue3';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import createServer from '@inertiajs/vue3/server';
+import { renderToString } from '@vue/server-renderer';
+
+import { createPinia } from 'pinia';
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate';
+
+import Particles from '@tsparticles/vue3';
+import { loadFull } from 'tsparticles';
+import type { Engine } from 'tsparticles-engine';
+
+import VueScrollTo from 'vue-scrollto';
 import { VueReCaptcha } from 'vue-recaptcha-v3';
-import { ZiggyVue } from 'ziggy';
+
+import '@/font-awesome.js';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+
 import { Ziggy } from './ziggy';
-import route from 'ziggy-js';
+import { route, ZiggyVue } from 'ziggy-js';
+
+const pinia = createPinia();
+pinia.use(piniaPluginPersistedstate);
 
 createServer((page) =>
     createInertiaApp({
@@ -24,19 +34,25 @@ createServer((page) =>
             const pages = import.meta.glob('./Pages/**/*.vue', { eager: true });
             return pages[`./Pages/${name}.vue`];
         },
-        async setup({ App, props, plugin }) {
-            await fontAwesomeLibrary();
+        setup({ App, props, plugin }) {
             return createSSRApp({
                 render: () => h(App, props),
             })
+                .component('font-awesome-icon', FontAwesomeIcon)
                 .use(plugin)
-                .use(Particles)
+                .use(pinia)
                 .use(VueScrollTo)
-                .use(Notifications)
                 .use(VueReCaptcha, { siteKey: import.meta.env.VITE_RECAPTCHA_SITE_KEY })
+                .use(Particles, {
+                    init: async (engine: Engine) => {
+                        await loadFull(engine);
+                    },
+                    install: () => {
+
+                    }
+                })
                 .mixin({ methods: { route } })
-                .use(ZiggyVue, Ziggy)
-                .component('font-awesome-icon', FontAwesomeIcon);
+                .use(ZiggyVue, Ziggy);
         },
     })
 );

@@ -1,14 +1,11 @@
 <script lang="ts" setup>
 import { PropType } from 'vue';
-import { notify } from 'notiwind';
-import { ref, computed, onUnmounted, isProxy, toRaw } from 'vue';
-import { router } from '@inertiajs/vue3';
+import { ref } from 'vue';
 import Footer from '@/Components/Generic/Footer.vue';
 import Particles from '@/Components/Generic/Particles.vue';
 import AboutMe from '@/Components/Sections/AboutMeSection.vue';
 import Settings from '@/Components/Generic/Settings.vue';
 import Navigation from '@/Components/Generic/NavigationMenu.vue';
-import ToastSection from '@/Components/Sections/ToastSection.vue';
 import ProjectsSection from '@/Components/Sections/ProjectsSection.vue';
 import ContactMeSection from '@/Components/Sections/ContactMeSection.vue';
 import GamesSection from '@/Components/Sections/GamesSection.vue';
@@ -38,38 +35,12 @@ const props = defineProps({
 
 const displaySettings = ref<boolean>(false);
 
-const primaryThemeBg = computed<string>(() => portfolioStore.primaryThemeBg);
-
 const showSettings = () => {
     displaySettings.value = true;
 };
 const closeSettings = () => {
     displaySettings.value = false;
 };
-
-const removeFinishEventListener = router.on('finish', () => {
-    if (isProxy(props.errors)) {
-        const errors = toRaw(props.errors);
-
-        const keys = Object.keys(errors);
-
-        keys.reverse().forEach((key) => {
-            notify(
-                {
-                    group: 'toasts',
-                    title: 'Error',
-                    text: errors[key],
-                    colour: 'red',
-                },
-                4000
-            );
-        });
-    }
-});
-
-onUnmounted(() => {
-    removeFinishEventListener();
-});
 </script>
 
 <template>
@@ -77,7 +48,7 @@ onUnmounted(() => {
 
     <div
         id="settings-sidebar"
-        :class="`bg-${primaryThemeBg} border-${portfolioStore.primaryThemeColour}-${
+        :class="`bg-${portfolioStore.primaryThemeBg} border-${portfolioStore.primaryThemeColour}-${
             portfolioStore.primaryThemeColourShade
         } ${displaySettings ? '' : 'hidden'}`"
     >
@@ -99,8 +70,6 @@ onUnmounted(() => {
             <font-awesome-icon icon="cog" />
         </button>
     </div>
-
-    <Particles />
 
     <div class="items-top relative min-h-screen flex-auto sm:pt-0">
         <div class="py-18 relative min-h-screen w-full px-10">
@@ -152,7 +121,5 @@ onUnmounted(() => {
         </div>
 
         <Footer />
-
-        <ToastSection />
-    </div>
+    </div> 
 </template>

@@ -1,7 +1,3 @@
-<template>
-    <span> #{{ name }} </span>
-</template>
-
 <script lang="ts" setup>
 defineProps({
     name: {
@@ -10,3 +6,7 @@ defineProps({
     },
 });
 </script>
+
+<template>
+    <span> #{{ name }} </span>
+</template>

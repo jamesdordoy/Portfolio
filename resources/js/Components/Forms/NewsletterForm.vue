@@ -12,7 +12,7 @@ const newsletter: App.Dto.Newsletter = {
     email: '',
 };
 
-const form = useForm('post', route('newsletter.store'), newsletter);
+const form = useForm('post', '/newsletter', newsletter);
 
 const { executeRecaptcha, recaptchaLoaded } = useReCaptcha();
 
@@ -71,7 +71,7 @@ const submit = async () => {
                 </button>
             </div>
             <div
-                v-if="form.invalid('email')"
+                v-show="form.invalid('email')"
                 :class="`text-${portfolioStore.primaryThemeTextColour}`"
             >
                 {{ form.errors.email }}
