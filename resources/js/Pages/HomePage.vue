@@ -2,7 +2,7 @@
 import { PropType } from 'vue';
 import { ref } from 'vue';
 import Footer from '@/Components/Generic/Footer.vue';
-import Particles from '@/Components/Generic/Particles.vue';
+import RetroBackground from '@/Components/Generic/RetroBackground.vue';
 import AboutMe from '@/Components/Sections/AboutMeSection.vue';
 import Settings from '@/Components/Generic/Settings.vue';
 import Navigation from '@/Components/Generic/NavigationMenu.vue';
@@ -11,6 +11,7 @@ import ContactMeSection from '@/Components/Sections/ContactMeSection.vue';
 import GamesSection from '@/Components/Sections/GamesSection.vue';
 import MyExperianceSection from '@/Components/Sections/MyExperianceSection.vue';
 import { usePortfolioStore } from '@/Stores/index.ts';
+import { faCog } from '@fortawesome/free-solid-svg-icons';
 
 const portfolioStore = usePortfolioStore();
 
@@ -67,13 +68,13 @@ const closeSettings = () => {
             :class="`bg-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade}`"
             @click="showSettings"
         >
-            <font-awesome-icon icon="cog" />
+            <font-awesome-icon :icon="faCog" />
         </button>
     </div>
 
     <div class="items-top relative min-h-screen flex-auto sm:pt-0">
-        <div class="py-18 relative min-h-screen w-full px-10">
-            <Particles />
+        <div class="py-18 relative min-h-screen w-full">
+            <RetroBackground />
 
             <div class="absolute left-1/2 top-1/2 w-1/2 -translate-x-1/2 -translate-y-1/2 transform lg:w-1/3">
                 <div
@@ -121,5 +122,5 @@ const closeSettings = () => {
         </div>
 
         <Footer />
-    </div> 
+    </div>
 </template>

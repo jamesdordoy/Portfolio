@@ -1,23 +1,20 @@
-import { defineComponent, resolveComponent, unref, useSSRContext, mergeProps, ref, watch, resolveDirective, withCtx, createVNode, openBlock, createBlock, Fragment, renderList, createSSRApp, h } from "vue";
+import { defineComponent, resolveComponent, unref, useSSRContext, mergeProps, ref, resolveDirective, withCtx, createVNode, openBlock, createBlock, Fragment, renderList, computed, createSSRApp, h } from "vue";
 import { ssrRenderClass, ssrRenderComponent, ssrRenderAttr, ssrRenderStyle, ssrInterpolate, ssrRenderAttrs, ssrGetDirectiveProps, ssrRenderList, ssrIncludeBooleanAttr } from "vue/server-renderer";
 import "notiwind";
 import { useForm } from "laravel-precognition-vue-inertia";
 import { useReCaptcha, VueReCaptcha } from "vue-recaptcha-v3";
 import { defineStore, createPinia } from "pinia";
 import colours from "tailwindcss/colors.js";
+import { faNewspaper, faCheck, faTimes, faCode, faBuilding, faSchool, faCog } from "@fortawesome/free-solid-svg-icons";
+import { faFacebook, faTwitter, faLinkedin, faGithub, faJsfiddle } from "@fortawesome/free-brands-svg-icons";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Navigation } from "swiper/modules";
 import { createInertiaApp } from "@inertiajs/vue3";
 import createServer from "@inertiajs/vue3/server";
 import { renderToString } from "@vue/server-renderer";
 import piniaPluginPersistedstate from "pinia-plugin-persistedstate";
-import Particles from "@tsparticles/vue3";
-import { loadFull } from "tsparticles";
 import VueScrollTo from "vue-scrollto";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { fab } from "@fortawesome/free-brands-svg-icons";
-import { fas } from "@fortawesome/free-solid-svg-icons";
 import { route, ZiggyVue } from "ziggy-js";
 const usePortfolioStore = defineStore("portfolio", {
   state: () => ({
@@ -148,9 +145,9 @@ const _sfc_main$k = /* @__PURE__ */ defineComponent({
     return (_ctx, _push, _parent, _attrs) => {
       const _component_font_awesome_icon = resolveComponent("font-awesome-icon");
       _push(`<!--[--><div class="pt-2 md:flex md:items-center"><h4 class="${ssrRenderClass([`text-${unref(portfolioStore).primaryThemeTextColour}`, "mb-1 pr-4 md:mb-0 md:text-right"])}">`);
-      _push(ssrRenderComponent(_component_font_awesome_icon, { icon: ["fas", "newspaper"] }, null, _parent));
+      _push(ssrRenderComponent(_component_font_awesome_icon, { icon: unref(faNewspaper) }, null, _parent));
       _push(`  Newsletter Signup: </h4></div><div class="py-2 md:flex md:items-center"><div class="md:w-full"><div class="flex items-center pb-2"><input${ssrRenderAttr("value", unref(form).email)} type="email" placeholder="john@example.com" aria-label="Email Address" class="${ssrRenderClass([`text-${unref(portfolioStore).primaryThemeTextColour}`, "mr-3 w-full border-none border-transparent bg-transparent px-2 py-1 leading-tight focus:border-transparent focus:ring-0"])}"><button type="button" class="${ssrRenderClass([`border-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade} text-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade} hover:bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade} hover:text-${unref(portfolioStore).primaryThemeHoverTextColour}`, "flex-shrink-0 rounded border bg-transparent px-2 py-1 text-sm"])}">`);
-      _push(ssrRenderComponent(_component_font_awesome_icon, { icon: ["fas", "check"] }, null, _parent));
+      _push(ssrRenderComponent(_component_font_awesome_icon, { icon: unref(faCheck) }, null, _parent));
       _push(` Sign Up </button></div><div style="${ssrRenderStyle(unref(form).invalid("email") ? null : { display: "none" })}" class="${ssrRenderClass(`text-${unref(portfolioStore).primaryThemeTextColour}`)}">${ssrInterpolate(unref(form).errors.email)}</div></div></div><!--]-->`);
     };
   }
@@ -172,27 +169,27 @@ const _sfc_main$j = /* @__PURE__ */ defineComponent({
         class: ["flex flex-wrap border-t px-10 py-3 lg:p-10", `bg-${unref(portfolioStore).primaryThemeBgDarker} border-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`]
       }, _attrs))}><div class="${ssrRenderClass([`border-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "w-full border-b lg:w-1/3"])}"><p class="mt-2"><a aria-label="facebook" href="https://www.facebook.com/dordoy" rel="noreferrer" target="_blank">`);
       _push(ssrRenderComponent(_component_font_awesome_icon, {
-        icon: ["fab", "facebook"],
+        icon: unref(faFacebook),
         class: ["text-4xl hover:text-blue-700 lg:text-5xl", `text-${unref(portfolioStore).primaryThemeTextColour}`]
       }, null, _parent));
       _push(`</a><span class="${ssrRenderClass([`text-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "inline-block p-2"])}">-</span><a aria-label="twitter" href="https://twitter.com/JDordoy" rel="noreferrer" target="_blank">`);
       _push(ssrRenderComponent(_component_font_awesome_icon, {
-        icon: ["fab", "twitter"],
+        icon: unref(faTwitter),
         class: ["text-4xl hover:text-blue-400 lg:text-5xl", `text-${unref(portfolioStore).primaryThemeTextColour}`]
       }, null, _parent));
       _push(`</a><span class="${ssrRenderClass([`text-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "inline-block p-2"])}">-</span><a aria-label="linkedin" href="https://www.linkedin.com/in/james-dordoy-a80686110/" rel="noreferrer" target="_blank">`);
       _push(ssrRenderComponent(_component_font_awesome_icon, {
-        icon: ["fab", "linkedin"],
+        icon: unref(faLinkedin),
         class: ["text-4xl hover:text-blue-500 lg:text-5xl", `text-${unref(portfolioStore).primaryThemeTextColour}`]
       }, null, _parent));
       _push(`</a><span class="${ssrRenderClass([`text-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "inline-block p-2"])}">-</span><a aria-label="github" href="https://github.com/jamesdordoy" rel="noreferrer" target="_blank">`);
       _push(ssrRenderComponent(_component_font_awesome_icon, {
-        icon: ["fab", "github"],
+        icon: unref(faGithub),
         class: ["text-4xl hover:text-gray-500 lg:text-5xl", `text-${unref(portfolioStore).primaryThemeTextColour}`]
       }, null, _parent));
       _push(`</a><span class="${ssrRenderClass([`text-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "inline-block p-2"])}">-</span><a aria-label="jsfiddle" href="https://jsfiddle.net/user/JamesDordoy/fiddles/" rel="noreferrer" target="_blank">`);
       _push(ssrRenderComponent(_component_font_awesome_icon, {
-        icon: ["fab", "jsfiddle"],
+        icon: unref(faJsfiddle),
         class: ["text-4xl hover:text-yellow-500 lg:text-5xl", `text-${unref(portfolioStore).primaryThemeTextColour}`]
       }, null, _parent));
       _push(`</a></p></div><div class="varela w-full py-6 text-center text-gray-400 sm:text-left lg:w-1/3 lg:py-0 lg:pt-2 lg:text-center"><h3 class="${ssrRenderClass(`text-${unref(portfolioStore).primaryThemeTextColour}`)}">© James Dordoy</h3><p class="my-2">${ssrInterpolate((/* @__PURE__ */ new Date()).getFullYear())}</p></div><div class="w-full lg:w-1/3"><div id="newsletter" class="${ssrRenderClass([`border-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "border-b"])}">`);
@@ -208,37 +205,22 @@ _sfc_main$j.setup = (props, ctx) => {
   return _sfc_setup$j ? _sfc_setup$j(props, ctx) : void 0;
 };
 const _sfc_main$i = /* @__PURE__ */ defineComponent({
-  __name: "Particles",
+  __name: "RetroBackground",
   __ssrInlineRender: true,
   setup(__props) {
     const portfolioStore = usePortfolioStore();
-    let renderIndex = ref(0);
-    watch(
-      () => portfolioStore.primaryTheme,
-      function() {
-        renderIndex.value = renderIndex.value + 1;
-      }
-    );
-    watch(
-      () => portfolioStore.primaryThemeColour,
-      function() {
-        renderIndex.value = renderIndex.value + 1;
-      }
-    );
     return (_ctx, _push, _parent, _attrs) => {
-      const _component_vue_particles = resolveComponent("vue-particles");
-      _push(ssrRenderComponent(_component_vue_particles, mergeProps({
-        id: "portfolio-particles",
-        key: unref(renderIndex),
-        options: unref(portfolioStore).getParticleOptions
-      }, _attrs), null, _parent));
+      _push(`<div${ssrRenderAttrs(mergeProps({
+        id: "retrobg",
+        class: "min-h-screen"
+      }, _attrs))}><div id="retrobg-sky"><div id="retrobg-stars"><div class="retrobg-star" style="${ssrRenderStyle({ "left": "5%", "top": "55%", "transform": "scale(2)" })}"></div><div class="retrobg-star" style="${ssrRenderStyle({ "left": "7%", "top": "5%", "transform": "scale(2)" })}"></div><div class="retrobg-star" style="${ssrRenderStyle({ "left": "10%", "top": "45%", "transform": "scale(1)" })}"></div><div class="retrobg-star" style="${ssrRenderStyle({ "left": "12%", "top": "35%", "transform": "scale(1)" })}"></div><div class="retrobg-star" style="${ssrRenderStyle({ "left": "15%", "top": "39%", "transform": "scale(1)" })}"></div><div class="retrobg-star" style="${ssrRenderStyle({ "left": "20%", "top": "10%", "transform": "scale(1)" })}"></div><div class="retrobg-star" style="${ssrRenderStyle({ "left": "35%", "top": "50%", "transform": "scale(2)" })}"></div><div class="retrobg-star" style="${ssrRenderStyle({ "left": "40%", "top": "16%", "transform": "scale(2)" })}"></div><div class="retrobg-star" style="${ssrRenderStyle({ "left": "43%", "top": "28%", "transform": "scale(1)" })}"></div><div class="retrobg-star" style="${ssrRenderStyle({ "left": "45%", "top": "30%", "transform": "scale(3)" })}"></div><div class="retrobg-star" style="${ssrRenderStyle({ "left": "55%", "top": "18%", "transform": "scale(1)" })}"></div><div class="retrobg-star" style="${ssrRenderStyle({ "left": "60%", "top": "23%", "transform": "scale(1)" })}"></div><div class="retrobg-star" style="${ssrRenderStyle({ "left": "62%", "top": "44%", "transform": "scale(2)" })}"></div><div class="retrobg-star" style="${ssrRenderStyle({ "left": "67%", "top": "27%", "transform": "scale(1)" })}"></div><div class="retrobg-star" style="${ssrRenderStyle({ "left": "75%", "top": "10%", "transform": "scale(2)" })}"></div><div class="retrobg-star" style="${ssrRenderStyle({ "left": "80%", "top": "25%", "transform": "scale(1)" })}"></div><div class="retrobg-star" style="${ssrRenderStyle({ "left": "83%", "top": "57%", "transform": "scale(1)" })}"></div><div class="retrobg-star" style="${ssrRenderStyle({ "left": "90%", "top": "29%", "transform": "scale(2)" })}"></div><div class="retrobg-star" style="${ssrRenderStyle({ "left": "95%", "top": "5%", "transform": "scale(1)" })}"></div><div class="retrobg-star" style="${ssrRenderStyle({ "left": "96%", "top": "72%", "transform": "scale(1)" })}"></div><div class="retrobg-star" style="${ssrRenderStyle({ "left": "98%", "top": "70%", "transform": "scale(3)" })}"></div></div><div id="retrobg-sunWrap"><div id="retrobg-sun"></div></div><div id="retrobg-mountains"><div id="retrobg-mountains-left" class="retrobg-mountain"></div><div id="retrobg-mountains-right" class="retrobg-mountain"></div></div><div id="retrobg-cityWrap"><div id="retrobg-city"><div style="${ssrRenderStyle({ "left": "4%", "height": "20%", "width": "3%" })}" class="retrobg-building"></div><div style="${ssrRenderStyle({ "left": "6%", "height": "50%", "width": "1.5%" })}" class="retrobg-building"></div><div style="${ssrRenderStyle({ "left": "8%", "height": "25%", "width": "4%" })}" class="retrobg-building"></div><div style="${ssrRenderStyle({ "left": "12%", "height": "30%", "width": "3%" })}" class="retrobg-building"></div><div style="${ssrRenderStyle({ "left": "13%", "height": "55%", "width": "3%" })}" class="retrobg-building retrobg-antenna"></div><div style="${ssrRenderStyle({ "left": "17%", "height": "20%", "width": "4%" })}" class="retrobg-building"></div><div style="${ssrRenderStyle({ "left": "18.5%", "height": "70%", "width": "1.5%" })}" class="retrobg-building"></div><div style="${ssrRenderStyle({ "left": "20%", "height": "30%", "width": "4%" })}" class="retrobg-building"></div><div style="${ssrRenderStyle({ "left": "21.5%", "height": "80%", "width": "2%" })}" class="retrobg-building retrobg-antenna"></div><div style="${ssrRenderStyle({ "left": "25%", "height": "60%", "width": "4%" })}" class="retrobg-building"></div><div style="${ssrRenderStyle({ "left": "28%", "height": "40%", "width": "4%" })}" class="retrobg-building"></div><div style="${ssrRenderStyle({ "left": "30%", "height": "70%", "width": "4%" })}" class="retrobg-building"></div><div style="${ssrRenderStyle({ "left": "35%", "height": "65%", "width": "4%" })}" class="retrobg-building retrobg-antenna"></div><div style="${ssrRenderStyle({ "left": "38%", "height": "40%", "width": "3%" })}" class="retrobg-building"></div><div style="${ssrRenderStyle({ "left": "42%", "height": "60%", "width": "2%" })}" class="retrobg-building"></div><div style="${ssrRenderStyle({ "left": "43%", "height": "85%", "width": "4%" })}" class="retrobg-building retrobg-antenna"></div><div style="${ssrRenderStyle({ "left": "45%", "height": "40%", "width": "3%" })}" class="retrobg-building"></div><div style="${ssrRenderStyle({ "left": "48%", "height": "25%", "width": "3%" })}" class="retrobg-building"></div><div style="${ssrRenderStyle({ "left": "50%", "height": "80%", "width": "4%" })}" class="retrobg-building"></div><div style="${ssrRenderStyle({ "left": "52%", "height": "32%", "width": "5%" })}" class="retrobg-building"></div><div style="${ssrRenderStyle({ "left": "55%", "height": "55%", "width": "3%" })}" class="retrobg-building retrobg-antenna"></div><div style="${ssrRenderStyle({ "left": "58%", "height": "45%", "width": "4%" })}" class="retrobg-building"></div><div style="${ssrRenderStyle({ "left": "61%", "height": "90%", "width": "4%" })}" class="retrobg-building"></div><div style="${ssrRenderStyle({ "left": "66%", "height": "99%", "width": "4%" })}" class="retrobg-building retrobg-antenna"></div><div style="${ssrRenderStyle({ "left": "69%", "height": "30%", "width": "4%" })}" class="retrobg-building"></div><div style="${ssrRenderStyle({ "left": "73.5%", "height": "90%", "width": "2%" })}" class="retrobg-building"></div><div style="${ssrRenderStyle({ "left": "72%", "height": "70%", "width": "4%" })}" class="retrobg-building"></div><div style="${ssrRenderStyle({ "left": "75%", "height": "60%", "width": "4%" })}" class="retrobg-building"></div><div style="${ssrRenderStyle({ "left": "80%", "height": "40%", "width": "4%" })}" class="retrobg-building"></div><div style="${ssrRenderStyle({ "left": "83%", "height": "70%", "width": "4%" })}" class="retrobg-building retrobg-antenna"></div><div style="${ssrRenderStyle({ "left": "87%", "height": "60%", "width": "3%" })}" class="retrobg-building retrobg-antenna"></div><div style="${ssrRenderStyle({ "left": "93%", "height": "50%", "width": "3%" })}" class="retrobg-building"></div><div style="${ssrRenderStyle({ "left": "91%", "height": "30%", "width": "4%" })}" class="retrobg-building"></div><div style="${ssrRenderStyle({ "left": "94%", "height": "20%", "width": "3%" })}" class="retrobg-building"></div><div style="${ssrRenderStyle({ "left": "98%", "height": "35%", "width": "2%" })}" class="retrobg-building"></div></div></div></div><div class="${ssrRenderClass(`border-t border-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`)}" id="retrobg-ground"><div id="retrobg-linesWrap"><div id="retrobg-lines"><div id="retrobg-vlines"><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-vline"])}"></div></div><div id="retrobg-hlines"><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-hline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-hline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-hline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-hline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-hline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-hline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-hline"])}"></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "retrobg-hline"])}"></div></div></div></div><div id="retrobg-groundShadow"></div></div></div>`);
     };
   }
 });
 const _sfc_setup$i = _sfc_main$i.setup;
 _sfc_main$i.setup = (props, ctx) => {
   const ssrContext = useSSRContext();
-  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Components/Generic/Particles.vue");
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Components/Generic/RetroBackground.vue");
   return _sfc_setup$i ? _sfc_setup$i(props, ctx) : void 0;
 };
 const _sfc_main$h = /* @__PURE__ */ defineComponent({
@@ -359,8 +341,8 @@ const _sfc_main$d = /* @__PURE__ */ defineComponent({
     return (_ctx, _push, _parent, _attrs) => {
       const _component_font_awesome_icon = resolveComponent("font-awesome-icon");
       _push(`<div${ssrRenderAttrs(_attrs)}><div class="flex flex-wrap px-3 py-2"><div class="w-4/6"><h2 class="${ssrRenderClass([`text-${unref(portfolioStore).primaryThemeTextColour}`, "text-xl"])}"> Theme Settings </h2></div><div class="w-2/6"><button class="${ssrRenderClass([`text-${unref(portfolioStore).primaryThemeTextColour}`, "float-right mt-1"])}">`);
-      _push(ssrRenderComponent(_component_font_awesome_icon, { icon: ["fas", "times"] }, null, _parent));
-      _push(`</button></div></div><hr class="my-1"><div class="flex flex-wrap px-3 py-2"><div class="w-full"><h3 class="${ssrRenderClass([`text-${unref(portfolioStore).primaryThemeTextColour}`, "mb-2 text-lg"])}"> Theme Mode </h3></div><div class="w-full"><div class="relative block"><select${ssrRenderAttr("value", unref(portfolioStore).primaryTheme)} class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeBgLighter} text-${unref(portfolioStore).primaryThemeTextColour} focus:bg-${unref(portfolioStore).primaryThemeBgDarkest}`, "focus:shadow-outline block w-full appearance-none rounded px-4 py-2 pr-8 leading-tight shadow focus:outline-none"])}"><option value="light">Light</option><option value="dark">Dark</option></select></div><hr class="my-2"></div><div class="w-full"><h3 class="${ssrRenderClass([`text-${unref(portfolioStore).primaryThemeTextColour}`, "mb-2 text-lg"])}"> Theme Colour </h3></div><div class="w-full"><div class="flex flex-wrap"><div class="w-1/6 p-1">`);
+      _push(ssrRenderComponent(_component_font_awesome_icon, { icon: unref(faTimes) }, null, _parent));
+      _push(`</button></div></div><hr class="my-1"><div class="flex flex-wrap px-3 py-2"><div class="w-full"><h3 class="${ssrRenderClass([`text-${unref(portfolioStore).primaryThemeTextColour}`, "mb-2 text-lg"])}"> Theme Colour </h3></div><div class="w-full"><div class="flex flex-wrap"><div class="w-1/6 p-1">`);
       _push(ssrRenderComponent(_sfc_main$f, {
         colour: "blue",
         onClick: ($event) => updatePrimaryThemeColour("blue")
@@ -686,6 +668,12 @@ const _sfc_main$6 = /* @__PURE__ */ defineComponent({
     };
     const form = useForm("post", "/contact", contact);
     useReCaptcha();
+    computed(() => {
+      const bgClass = `bg-${portfolioStore.primaryThemeBgDarker}`;
+      const textClass = `text-${portfolioStore.primaryThemeTextColour}`;
+      const focusBgClass = `focus:bg-${portfolioStore.primaryThemeBgDarkest}`;
+      return `block w-full appearance-none border-none px-4 py-3 leading-tight focus:outline-none ${bgClass} ${textClass} ${focusBgClass}`;
+    });
     return (_ctx, _push, _parent, _attrs) => {
       const _component_font_awesome_icon = resolveComponent("font-awesome-icon");
       _push(`<form${ssrRenderAttrs(mergeProps({ class: "w-full" }, _attrs))}><div class="-mx-3 mb-6 flex flex-wrap"><div class="mb-6 w-full px-3 md:mb-0"><div class="${ssrRenderClass([`border-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "border-b"])}"><label for="contact_name" class="${ssrRenderClass([`text-${unref(portfolioStore).primaryThemeTextColour}`, "mb-2 block text-xs font-bold uppercase tracking-wide"])}"> Name: </label><input id="contact_name"${ssrRenderAttr("value", unref(form).name)} type="text" name="name" placeholder="John Smith" class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeBgDarker} text-${unref(portfolioStore).primaryThemeTextColour} focus:bg-${unref(portfolioStore).primaryThemeBgDarkest}`, "block w-full appearance-none border-none px-4 py-3 leading-tight focus:outline-none"])}"></div>`);
@@ -694,8 +682,13 @@ const _sfc_main$6 = /* @__PURE__ */ defineComponent({
         form: unref(form),
         class: `text-${unref(portfolioStore).primaryThemeTextColour}`
       }, null, _parent));
-      _push(`</div></div><div class="-mx-3 mb-6 flex flex-wrap"><div class="mb-6 w-full px-3 md:mb-0"><div class="${ssrRenderClass([`border-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "border-b"])}"><label for="contact_email" class="${ssrRenderClass([`text-${unref(portfolioStore).primaryThemeTextColour}`, "mb-2 block text-xs font-bold uppercase tracking-wide"])}"> Email: </label><input id="contact_email"${ssrRenderAttr("value", unref(form).email)} name="email" type="email" class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeBgDarker} text-${unref(portfolioStore).primaryThemeTextColour} focus:bg-${unref(portfolioStore).primaryThemeBgDarkest}`, "block w-full appearance-none border-none px-4 py-3 leading-tight focus:outline-none"])}" placeholder="john@example.com"></div><div style="${ssrRenderStyle(unref(form).invalid("email") ? null : { display: "none" })}" class="${ssrRenderClass(`text-${unref(portfolioStore).primaryThemeTextColour}`)}">${ssrInterpolate(unref(form).errors.email)}</div></div></div><div class="-mx-3 mb-6 flex flex-wrap"><div class="w-full px-3"><div class="${ssrRenderClass([`border-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "border-b"])}"><label for="contact_message" class="${ssrRenderClass([`text-${unref(portfolioStore).primaryThemeTextColour}`, "mb-2 block text-xs font-bold uppercase tracking-wide"])}"> Message: </label><textarea id="contact_message" rows="9" name="message" placeholder="Hello, World!" class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeBgDarker} text-${unref(portfolioStore).primaryThemeTextColour} focus:bg-${unref(portfolioStore).primaryThemeBgDarkest}`, "block w-full appearance-none border-none px-4 py-3 leading-tight focus:outline-none"])}">${ssrInterpolate(unref(form).message)}</textarea></div><div style="${ssrRenderStyle(unref(form).invalid("message") ? null : { display: "none" })}" class="${ssrRenderClass(`text-${unref(portfolioStore).primaryThemeTextColour}`)}">${ssrInterpolate(unref(form).errors.message)}</div></div></div><div class="-mx-3 flex flex-wrap pl-3"><button type="submit" class="${ssrRenderClass([`border-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade} text-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade} hover:bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade} hover:text-${unref(portfolioStore).primaryThemeHoverTextColour}`, "g-recaptcha flex-shrink-0 rounded border bg-transparent px-2 py-1 text-sm"])}"${ssrIncludeBooleanAttr(unref(form).processing) ? " disabled" : ""}>`);
-      _push(ssrRenderComponent(_component_font_awesome_icon, { icon: ["fas", "check"] }, null, _parent));
+      _push(`</div></div><div class="-mx-3 mb-6 flex flex-wrap"><div class="mb-6 w-full px-3 md:mb-0"><div class="${ssrRenderClass([`border-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "border-b"])}"><label for="contact_email" class="${ssrRenderClass([`text-${unref(portfolioStore).primaryThemeTextColour}`, "mb-2 block text-xs font-bold uppercase tracking-wide"])}"> Email: </label><input id="contact_email"${ssrRenderAttr("value", unref(form).email)} name="email" type="email" class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeBgDarker} text-${unref(portfolioStore).primaryThemeTextColour} focus:bg-${unref(portfolioStore).primaryThemeBgDarkest}`, "block w-full appearance-none border-none px-4 py-3 leading-tight focus:outline-none"])}" placeholder="john@example.com"></div><div style="${ssrRenderStyle(unref(form).invalid("email") ? null : { display: "none" })}" class="${ssrRenderClass(`text-${unref(portfolioStore).primaryThemeTextColour}`)}">${ssrInterpolate(unref(form).errors.email)}</div></div></div><div class="-mx-3 mb-6 flex flex-wrap"><div class="w-full px-3"><div class="${ssrRenderClass([`border-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "border-b"])}"><label for="contact_message" class="${ssrRenderClass([`text-${unref(portfolioStore).primaryThemeTextColour}`, "mb-2 block text-xs font-bold uppercase tracking-wide"])}"> Message: </label><textarea id="contact_message" class="${ssrRenderClass({
+        "block w-full appearance-none border-none px-4 py-3 leading-tight focus:outline-none": true,
+        [`bg-${unref(portfolioStore).primaryThemeBgDarker}`]: true,
+        [`text-${unref(portfolioStore).primaryThemeTextColour}`]: true,
+        [`focus:bg-${unref(portfolioStore).primaryThemeBgDarkest}`]: true
+      })}" rows="9" name="message" placeholder="Hello, World!">${ssrInterpolate(unref(form).message)}</textarea></div><div style="${ssrRenderStyle(unref(form).invalid("message") ? null : { display: "none" })}" class="${ssrRenderClass(`text-${unref(portfolioStore).primaryThemeTextColour}`)}">${ssrInterpolate(unref(form).errors.message)}</div></div></div><div class="-mx-3 flex flex-wrap pl-3"><button type="submit" class="${ssrRenderClass([`border-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade} text-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade} hover:bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade} hover:text-${unref(portfolioStore).primaryThemeHoverTextColour}`, "g-recaptcha flex-shrink-0 rounded border bg-transparent px-2 py-1 text-sm"])}"${ssrIncludeBooleanAttr(unref(form).processing) ? " disabled" : ""}>`);
+      _push(ssrRenderComponent(_component_font_awesome_icon, { icon: unref(faCheck) }, null, _parent));
       _push(` Submit </button></div></form>`);
     };
   }
@@ -861,21 +854,30 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
     }
   },
   setup(__props) {
+    const icons = {
+      code: faCode,
+      building: faBuilding,
+      school: faSchool
+    };
     const portfolioStore = usePortfolioStore();
     return (_ctx, _push, _parent, _attrs) => {
-      var _a, _b;
+      var _a;
       const _component_font_awesome_icon = resolveComponent("font-awesome-icon");
-      _push(`<!--[--><article style="${ssrRenderStyle(((_a = __props.event) == null ? void 0 : _a.id) & 1 ? null : { display: "none" })}" class="flex w-full flex-row"><div class="w-4/5 py-10"><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeBgDarkest} border-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "flex w-full flex-col border-b px-4 py-5 shadow"])}"><div class="mb-2 flex justify-between text-gray-600"><div class="${ssrRenderClass([`text-${unref(portfolioStore).primaryThemeTextColour}`, "font-bold"])}"><p class="mb-1 text-lg">${__props.event.name ?? ""}</p> ${ssrInterpolate(__props.event.title)}</div><div class="flex flex-row"><button class="mr-2 text-blue-500 transition duration-200 hover:text-blue-300"><i class="far fa-edit"></i></button><button class="text-red-500 transition duration-200 hover:text-red-300"><i class="far fa-trash-alt"></i></button></div></div><p class="${ssrRenderClass(`text-${unref(portfolioStore).primaryThemeTextColour}`)}">${__props.event.body ?? ""}</p></div></div><div class="flex w-1/5 justify-center">`);
-      _push(ssrRenderComponent(_component_font_awesome_icon, {
-        class: ["m-auto text-5xl", `text-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`],
-        icon: __props.event.icon
-      }, null, _parent));
-      _push(`</div></article><article style="${ssrRenderStyle(~((_b = __props.event) == null ? void 0 : _b.id) & 1 ? null : { display: "none" })}" class="flex w-full flex-row"><div class="flex w-1/5 justify-center">`);
-      _push(ssrRenderComponent(_component_font_awesome_icon, {
-        class: ["m-auto text-5xl", `text-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`],
-        icon: __props.event.icon
-      }, null, _parent));
-      _push(`</div><div class="w-4/5 px-2 py-10"><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeBgDarker} border-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "flex w-full flex-col border-b px-4 py-5 shadow"])}"><div class="mb-2 flex justify-between text-gray-600"><div class="${ssrRenderClass([`text-${unref(portfolioStore).primaryThemeTextColour}`, "font-bold"])}"><p class="mb-1 text-lg">${ssrInterpolate(__props.event.name)}</p> ${ssrInterpolate(__props.event.title)}</div></div><p class="${ssrRenderClass(`text-${unref(portfolioStore).primaryThemeTextColour}`)}">${__props.event.body ?? ""}</p></div></div></article><!--]-->`);
+      if (((_a = __props.event) == null ? void 0 : _a.id) & 1) {
+        _push(`<article${ssrRenderAttrs(mergeProps({ class: "flex w-full flex-row" }, _attrs))}><div class="w-4/5 py-10"><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeBgDarkest} border-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "flex w-full flex-col border-b px-4 py-5 shadow"])}"><div class="mb-2 flex justify-between text-gray-600"><div class="${ssrRenderClass([`text-${unref(portfolioStore).primaryThemeTextColour}`, "font-bold"])}"><p class="mb-1 text-lg">${__props.event.name ?? ""}</p> ${ssrInterpolate(__props.event.title)}</div><div class="flex flex-row"><button class="mr-2 text-blue-500 transition duration-200 hover:text-blue-300"><i class="far fa-edit"></i></button><button class="text-red-500 transition duration-200 hover:text-red-300"><i class="far fa-trash-alt"></i></button></div></div><p class="${ssrRenderClass(`text-${unref(portfolioStore).primaryThemeTextColour}`)}">${__props.event.body ?? ""}</p></div></div><div class="flex w-1/5 justify-center">`);
+        _push(ssrRenderComponent(_component_font_awesome_icon, {
+          class: ["m-auto text-5xl", `text-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`],
+          icon: icons[__props.event.icon]
+        }, null, _parent));
+        _push(`</div></article>`);
+      } else {
+        _push(`<article${ssrRenderAttrs(mergeProps({ class: "flex w-full flex-row" }, _attrs))}><div class="flex w-1/5 justify-center">`);
+        _push(ssrRenderComponent(_component_font_awesome_icon, {
+          class: ["m-auto text-5xl", `text-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`],
+          icon: icons[__props.event.icon]
+        }, null, _parent));
+        _push(`</div><div class="w-4/5 px-2 py-10"><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeBgDarker} border-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "flex w-full flex-col border-b px-4 py-5 shadow"])}"><div class="mb-2 flex justify-between text-gray-600"><div class="${ssrRenderClass([`text-${unref(portfolioStore).primaryThemeTextColour}`, "font-bold"])}"><p class="mb-1 text-lg">${ssrInterpolate(__props.event.name)}</p> ${ssrInterpolate(__props.event.title)}</div></div><p class="${ssrRenderClass(`text-${unref(portfolioStore).primaryThemeTextColour}`)}">${__props.event.body ?? ""}</p></div></div></article>`);
+      }
     };
   }
 });
@@ -952,8 +954,8 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       _push(`<div id="settings-sidebar" class="${ssrRenderClass(`bg-${unref(portfolioStore).primaryThemeBg} border-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade} ${displaySettings.value ? "" : "hidden"}`)}">`);
       _push(ssrRenderComponent(_sfc_main$d, { onToggle: closeSettings }, null, _parent));
       _push(`</div><div class="themeSettingsPanelToggleButton"><button aria-label="settings" class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "rounded-r p-2 text-lg text-white"])}">`);
-      _push(ssrRenderComponent(_component_font_awesome_icon, { icon: "cog" }, null, _parent));
-      _push(`</button></div><div class="items-top relative min-h-screen flex-auto sm:pt-0"><div class="py-18 relative min-h-screen w-full px-10">`);
+      _push(ssrRenderComponent(_component_font_awesome_icon, { icon: unref(faCog) }, null, _parent));
+      _push(`</button></div><div class="items-top relative min-h-screen flex-auto sm:pt-0"><div class="py-18 relative min-h-screen w-full">`);
       _push(ssrRenderComponent(_sfc_main$i, null, null, _parent));
       _push(`<div class="absolute left-1/2 top-1/2 w-1/2 -translate-x-1/2 -translate-y-1/2 transform lg:w-1/3"><div class="${ssrRenderClass([`border-${unref(portfolioStore).primaryThemeColour}-${unref(portfolioStore).primaryThemeColourShade}`, "front-into w-full md:mx-0 md:p-8"])}"><h1 class="varela text-2xl sm:text-3xl md:text-4xl">James Dordoy</h1><h2 class="varela sm:text-1xl text-lg md:text-2xl">Full Stack Developer</h2><p class="varela md:text-1xl sm:text-1xl">From Essex</p></div></div></div><div class="${ssrRenderClass([`bg-${unref(portfolioStore).primaryThemeBgDarker}`, "w-full px-10 py-24"])}">`);
       _push(ssrRenderComponent(_sfc_main$g, null, null, _parent));
@@ -981,8 +983,20 @@ const __vite_glob_0_0 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.def
   __proto__: null,
   default: _sfc_main
 }, Symbol.toStringTag, { value: "Module" }));
-library.add(fas, fab);
-const Ziggy = { "url": "http://portfolio.test", "port": null, "defaults": {}, "routes": { "ignition.healthCheck": { "uri": "_ignition/health-check", "methods": ["GET", "HEAD"] }, "ignition.executeSolution": { "uri": "_ignition/execute-solution", "methods": ["POST"] }, "ignition.updateConfig": { "uri": "_ignition/update-config", "methods": ["POST"] }, "home": { "uri": "/", "methods": ["GET", "HEAD"] }, "newsletter.destroy": { "uri": "newsletter/unsubscribe", "methods": ["GET", "HEAD"] }, "contact.store": { "uri": "contact", "methods": ["POST"] }, "newsletter.store": { "uri": "newsletter", "methods": ["POST"] } } };
+const Ziggy = {
+  url: "http://portfolio.test",
+  port: null,
+  defaults: {},
+  routes: {
+    "ignition.healthCheck": { uri: "_ignition/health-check", methods: ["GET", "HEAD"] },
+    "ignition.executeSolution": { uri: "_ignition/execute-solution", methods: ["POST"] },
+    "ignition.updateConfig": { uri: "_ignition/update-config", methods: ["POST"] },
+    home: { uri: "/", methods: ["GET", "HEAD"] },
+    "newsletter.destroy": { uri: "newsletter/unsubscribe", methods: ["GET", "HEAD"] },
+    "contact.store": { uri: "contact", methods: ["POST"] },
+    "newsletter.store": { uri: "newsletter", methods: ["POST"] }
+  }
+};
 if (typeof window !== "undefined" && typeof window.Ziggy !== "undefined") {
   Object.assign(Ziggy.routes, window.Ziggy.routes);
 }
@@ -999,13 +1013,7 @@ createServer(
     setup({ App, props, plugin }) {
       return createSSRApp({
         render: () => h(App, props)
-      }).component("font-awesome-icon", FontAwesomeIcon).use(plugin).use(pinia).use(VueScrollTo).use(VueReCaptcha, { siteKey: "6Lefr8YZAAAAAGORNbgShocEow3cSweBT04iMFFY" }).use(Particles, {
-        init: async (engine) => {
-          await loadFull(engine);
-        },
-        install: () => {
-        }
-      }).mixin({ methods: { route } }).use(ZiggyVue, Ziggy);
+      }).component("font-awesome-icon", FontAwesomeIcon).use(plugin).use(pinia).use(VueScrollTo).use(VueReCaptcha, { siteKey: "6Lefr8YZAAAAAGORNbgShocEow3cSweBT04iMFFY" }).mixin({ methods: { route } }).use(ZiggyVue, Ziggy);
     }
   })
 );

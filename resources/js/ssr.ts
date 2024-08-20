@@ -10,14 +10,9 @@ import { renderToString } from '@vue/server-renderer';
 import { createPinia } from 'pinia';
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate';
 
-import Particles from '@tsparticles/vue3';
-import { loadFull } from 'tsparticles';
-import type { Engine } from 'tsparticles-engine';
-
 import VueScrollTo from 'vue-scrollto';
 import { VueReCaptcha } from 'vue-recaptcha-v3';
 
-import '@/font-awesome.js';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 import { Ziggy } from './ziggy';
@@ -43,14 +38,6 @@ createServer((page) =>
                 .use(pinia)
                 .use(VueScrollTo)
                 .use(VueReCaptcha, { siteKey: import.meta.env.VITE_RECAPTCHA_SITE_KEY })
-                .use(Particles, {
-                    init: async (engine: Engine) => {
-                        await loadFull(engine);
-                    },
-                    install: () => {
-
-                    }
-                })
                 .mixin({ methods: { route } })
                 .use(ZiggyVue, Ziggy);
         },

@@ -20,12 +20,13 @@
   "resources/js/Components/Generic/Game.vue?vue&type=script&setup=true&lang.ts": [],
   "resources/js/Components/Generic/NavigationMenu.vue": [],
   "resources/js/Components/Generic/NavigationMenu.vue?vue&type=script&setup=true&lang.ts": [],
-  "resources/js/Components/Generic/Particles.vue": [],
-  "resources/js/Components/Generic/Particles.vue?vue&type=script&setup=true&lang.ts": [],
   "resources/js/Components/Generic/PortfolioTag.vue": [],
   "resources/js/Components/Generic/PortfolioTag.vue?vue&type=script&setup=true&lang.ts": [],
   "resources/js/Components/Generic/Project.vue": [],
   "resources/js/Components/Generic/Project.vue?vue&type=script&setup=true&lang.ts": [],
+  "resources/js/Components/Generic/RetroBackground.vue": [],
+  "resources/js/Components/Generic/RetroBackground.vue?vue&type=script&setup=true&lang.ts": [],
+  "resources/js/Components/Generic/RetroBackground.vue?vue&type=style&index=0&lang.css": [],
   "resources/js/Components/Generic/Settings.vue": [],
   "resources/js/Components/Generic/Settings.vue?vue&type=script&setup=true&lang.ts": [],
   "resources/js/Components/Generic/TimelineEvent.vue": [],
@@ -45,7 +46,6 @@
   "resources/js/Pages/HomePage.vue": [],
   "resources/js/Pages/HomePage.vue?vue&type=script&setup=true&lang.ts": [],
   "resources/js/Stores/index.ts": [],
-  "resources/js/font-awesome.ts": [],
   "resources/js/ssr.ts": [],
   "resources/js/ziggy.js": []
 }

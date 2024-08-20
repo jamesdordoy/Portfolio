@@ -1,11 +1,11 @@
 <script lang="ts" setup>
 import axios from 'axios';
-import { notify } from 'notiwind';
+import { computed } from 'vue';
 import { useForm } from 'laravel-precognition-vue-inertia';
 import { useReCaptcha } from 'vue-recaptcha-v3';
-import { route } from 'ziggy-js';
 import { usePortfolioStore } from '@/Stores/index.ts';
 import BaseFormInputError from '@/Components/Base/BaseFormInputError.vue';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
 const portfolioStore = usePortfolioStore();
 
@@ -18,6 +18,13 @@ const contact: App.Dto.Contact = {
 const form = useForm('post', '/contact', contact);
 
 const { executeRecaptcha, recaptchaLoaded } = useReCaptcha();
+
+const textareaClasses = computed(() => {
+    const bgClass = `bg-${portfolioStore.primaryThemeBgDarker}`;
+    const textClass = `text-${portfolioStore.primaryThemeTextColour}`;
+    const focusBgClass = `focus:bg-${portfolioStore.primaryThemeBgDarkest}`;
+    return `block w-full appearance-none border-none px-4 py-3 leading-tight focus:outline-none ${bgClass} ${textClass} ${focusBgClass}`;
+});
 
 const submit = async () => {
     await recaptchaLoaded();
@@ -34,16 +41,6 @@ const submit = async () => {
         form.submit({
             preserveScroll: (page) => !!Object.keys(page.props.errors).length,
             onSuccess: () => {
-                notify(
-                    {
-                        group: 'toasts',
-                        title: 'Success',
-                        text: `${form.email}, thanks for messaging me!`,
-                        colour: 'green',
-                    },
-                    4000
-                );
-
                 form.reset();
             },
         });
@@ -133,16 +130,19 @@ const submit = async () => {
                         Message:
                     </label>
                     <textarea
+                        v-cloak
                         id="contact_message"
                         v-model="form.message"
+                        :class="{
+                            'block w-full appearance-none border-none px-4 py-3 leading-tight focus:outline-none': true,
+                            [`bg-${portfolioStore.primaryThemeBgDarker}`]: true,
+                            [`text-${portfolioStore.primaryThemeTextColour}`]: true,
+                            [`focus:bg-${portfolioStore.primaryThemeBgDarkest}`]: true,
+                        }"
                         rows="9"
                         name="message"
                         placeholder="Hello, World!"
-                        class="block w-full appearance-none border-none px-4 py-3 leading-tight focus:outline-none"
-                        :class="`bg-${portfolioStore.primaryThemeBgDarker} text-${portfolioStore.primaryThemeTextColour} focus:bg-${portfolioStore.primaryThemeBgDarkest}`"
-                        @change="form.validate('message')"
-                    >
-                    </textarea>
+                    />
                 </div>
                 <div
                     v-show="form.invalid('message')"
@@ -159,7 +159,7 @@ const submit = async () => {
                 :class="`border-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade} text-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade} hover:bg-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade} hover:text-${portfolioStore.primaryThemeHoverTextColour}`"
                 :disabled="form.processing"
             >
-                <font-awesome-icon :icon="['fas', 'check']" />
+                <font-awesome-icon :icon="faCheck" />
                 Submit
             </button>
         </div>

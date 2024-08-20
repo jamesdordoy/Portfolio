@@ -12,9 +12,7 @@ defineProps({
 </script>
 
 <template>
-    <div
-        v-if="form.invalid(name)"
-    >
+    <div v-if="form.invalid(name)">
         {{ form.errors[name] }}
     </div>
 </template>

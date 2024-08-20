@@ -2,6 +2,7 @@
 import BaseColourButton from '@/Components/Base/BaseColourButton.vue';
 import RangeInput from '@/Components/Inputs/RangeInput.vue';
 import { usePortfolioStore } from '@/Stores/index.ts';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const portfolioStore = usePortfolioStore();
 
@@ -48,13 +49,13 @@ const props = defineProps({
                     class="float-right mt-1"
                     @click="showSettings"
                 >
-                    <font-awesome-icon :icon="['fas', 'times']" />
+                    <font-awesome-icon :icon="faTimes" />
                 </button>
             </div>
         </div>
         <hr class="my-1" />
         <div class="flex flex-wrap px-3 py-2">
-            <div class="w-full">
+            <!-- <div class="w-full">
                 <h3
                     class="mb-2 text-lg"
                     :class="`text-${portfolioStore.primaryThemeTextColour}`"
@@ -75,7 +76,7 @@ const props = defineProps({
                     </select>
                 </div>
                 <hr class="my-2" />
-            </div>
+            </div> -->
             <div class="w-full">
                 <h3
                     class="mb-2 text-lg"

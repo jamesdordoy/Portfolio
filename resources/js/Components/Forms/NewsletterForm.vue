@@ -5,6 +5,7 @@ import { useReCaptcha } from 'vue-recaptcha-v3';
 import checkRecapture from '@/checkRecapture.ts';
 import { route } from 'ziggy-js';
 import { usePortfolioStore } from '@/Stores/index.ts';
+import { faNewspaper, faCheck } from '@fortawesome/free-solid-svg-icons';
 
 const portfolioStore = usePortfolioStore();
 
@@ -44,7 +45,7 @@ const submit = async () => {
             class="mb-1 pr-4 md:mb-0 md:text-right"
             :class="`text-${portfolioStore.primaryThemeTextColour}`"
         >
-            <font-awesome-icon :icon="['fas', 'newspaper']" />
+            <font-awesome-icon :icon="faNewspaper" />
             &nbsp;Newsletter Signup:
         </h4>
     </div>
@@ -66,7 +67,7 @@ const submit = async () => {
                     :class="`border-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade} text-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade} hover:bg-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade} hover:text-${portfolioStore.primaryThemeHoverTextColour}`"
                     @click="submit"
                 >
-                    <font-awesome-icon :icon="['fas', 'check']" />
+                    <font-awesome-icon :icon="faCheck" />
                     Sign Up
                 </button>
             </div>

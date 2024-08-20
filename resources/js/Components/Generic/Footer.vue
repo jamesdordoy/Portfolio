@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import NewsletterForm from '@/Components/Forms/NewsletterForm.vue';
 import { usePortfolioStore } from '@/Stores/index.ts';
+import { faTwitter, faFacebook, faLinkedin, faGithub, faJsfiddle } from '@fortawesome/free-brands-svg-icons';
 
 const portfolioStore = usePortfolioStore();
 </script>
@@ -22,7 +23,7 @@ const portfolioStore = usePortfolioStore();
                     target="_blank"
                 >
                     <font-awesome-icon
-                        :icon="['fab', 'facebook']"
+                        :icon="faFacebook"
                         class="text-4xl hover:text-blue-700 lg:text-5xl"
                         :class="`text-${portfolioStore.primaryThemeTextColour}`"
                     />
@@ -39,7 +40,7 @@ const portfolioStore = usePortfolioStore();
                     target="_blank"
                 >
                     <font-awesome-icon
-                        :icon="['fab', 'twitter']"
+                        :icon="faTwitter"
                         class="text-4xl hover:text-blue-400 lg:text-5xl"
                         :class="`text-${portfolioStore.primaryThemeTextColour}`"
                     />
@@ -56,7 +57,7 @@ const portfolioStore = usePortfolioStore();
                     target="_blank"
                 >
                     <font-awesome-icon
-                        :icon="['fab', 'linkedin']"
+                        :icon="faLinkedin"
                         class="text-4xl hover:text-blue-500 lg:text-5xl"
                         :class="`text-${portfolioStore.primaryThemeTextColour}`"
                     />
@@ -73,7 +74,7 @@ const portfolioStore = usePortfolioStore();
                     target="_blank"
                 >
                     <font-awesome-icon
-                        :icon="['fab', 'github']"
+                        :icon="faGithub"
                         class="text-4xl hover:text-gray-500 lg:text-5xl"
                         :class="`text-${portfolioStore.primaryThemeTextColour}`"
                     />
@@ -90,7 +91,7 @@ const portfolioStore = usePortfolioStore();
                     target="_blank"
                 >
                     <font-awesome-icon
-                        :icon="['fab', 'jsfiddle']"
+                        :icon="faJsfiddle"
                         class="text-4xl hover:text-yellow-500 lg:text-5xl"
                         :class="`text-${portfolioStore.primaryThemeTextColour}`"
                     />

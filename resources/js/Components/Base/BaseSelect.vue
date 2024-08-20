@@ -74,5 +74,4 @@ export default {
     </select>
 </template>
 
-
 <style scoped></style>

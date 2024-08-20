@@ -2,6 +2,13 @@
 import _ from 'lodash';
 import { PropType } from 'vue';
 import { usePortfolioStore } from '@/Stores/index.ts';
+import { faCode, faBuilding, faSchool } from '@fortawesome/free-solid-svg-icons';
+
+const icons = {
+    code: faCode,
+    building: faBuilding,
+    school: faSchool,
+};
 
 const portfolioStore = usePortfolioStore();
 
@@ -15,7 +22,7 @@ defineProps({
 
 <template>
     <article
-        v-show="event?.id & 1"
+        v-if="event?.id & 1"
         class="flex w-full flex-row"
     >
         <div class="w-4/5 py-10">
@@ -53,20 +60,20 @@ defineProps({
             <font-awesome-icon
                 class="m-auto text-5xl"
                 :class="`text-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade}`"
-                :icon="event.icon"
+                :icon="icons[event.icon]"
             >
             </font-awesome-icon>
         </div>
     </article>
     <article
-        v-show="~event?.id & 1"
+        v-else
         class="flex w-full flex-row"
     >
         <div class="flex w-1/5 justify-center">
             <font-awesome-icon
                 class="m-auto text-5xl"
                 :class="`text-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade}`"
-                :icon="event.icon"
+                :icon="icons[event.icon]"
             >
             </font-awesome-icon>
         </div>
