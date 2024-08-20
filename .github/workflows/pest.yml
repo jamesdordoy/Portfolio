@@ -30,6 +30,9 @@ jobs:
     - name: Directory Permissions
       run: chmod -R 777 storage bootstrap/cache
 
+    - name: Install Bun
+      run: curl https://bun.sh/install | bash
+
     - name: Install Node Dependencies
       run: /home/runner/.bun/bin/bun install
     
