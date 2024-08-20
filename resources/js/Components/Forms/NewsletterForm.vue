@@ -1,9 +1,8 @@
 <script lang="ts" setup>
-import { notify } from 'notiwind';
+
 import { useForm } from 'laravel-precognition-vue-inertia';
 import { useReCaptcha } from 'vue-recaptcha-v3';
 import checkRecapture from '@/checkRecapture.ts';
-import { route } from 'ziggy-js';
 import { usePortfolioStore } from '@/Stores/index.ts';
 import { faNewspaper, faCheck } from '@fortawesome/free-solid-svg-icons';
 
@@ -22,16 +21,6 @@ const submit = async () => {
         form.submit({
             preserveScroll: (page): boolean => !!Object.keys(page.props.errors).length,
             onSuccess: (): void => {
-                notify(
-                    {
-                        group: 'toasts',
-                        title: 'Success',
-                        text: `${form.email}, thanks for signing up!`,
-                        colour: 'green',
-                    },
-                    4000
-                );
-
                 form.reset();
             },
         });

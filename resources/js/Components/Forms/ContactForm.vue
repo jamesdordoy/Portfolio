@@ -1,6 +1,6 @@
 <script lang="ts" setup>
+
 import axios from 'axios';
-import { computed } from 'vue';
 import { useForm } from 'laravel-precognition-vue-inertia';
 import { useReCaptcha } from 'vue-recaptcha-v3';
 import { usePortfolioStore } from '@/Stores/index.ts';
@@ -18,13 +18,6 @@ const contact: App.Dto.Contact = {
 const form = useForm('post', '/contact', contact);
 
 const { executeRecaptcha, recaptchaLoaded } = useReCaptcha();
-
-const textareaClasses = computed(() => {
-    const bgClass = `bg-${portfolioStore.primaryThemeBgDarker}`;
-    const textClass = `text-${portfolioStore.primaryThemeTextColour}`;
-    const focusBgClass = `focus:bg-${portfolioStore.primaryThemeBgDarkest}`;
-    return `block w-full appearance-none border-none px-4 py-3 leading-tight focus:outline-none ${bgClass} ${textClass} ${focusBgClass}`;
-});
 
 const submit = async () => {
     await recaptchaLoaded();
