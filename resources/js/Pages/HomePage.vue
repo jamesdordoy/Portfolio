@@ -47,7 +47,7 @@ const closeSettings = () => {
 <template>
     <Navigation />
 
-    <div
+    <!-- <div
         id="settings-sidebar"
         :class="`bg-${portfolioStore.primaryThemeBg} border-${portfolioStore.primaryThemeColour}-${
             portfolioStore.primaryThemeColourShade
@@ -121,6 +121,6 @@ const closeSettings = () => {
             </div>
         </div>
 
-        <Footer />
-    </div>
+        <Footer /> 
+    </div> -->
 </template>
