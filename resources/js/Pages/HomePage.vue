@@ -47,7 +47,7 @@ const closeSettings = () => {
 <template>
     <Navigation />
 
-    <!-- <div
+    <div
         id="settings-sidebar"
         :class="`bg-${portfolioStore.primaryThemeBg} border-${portfolioStore.primaryThemeColour}-${
             portfolioStore.primaryThemeColourShade
@@ -72,6 +72,7 @@ const closeSettings = () => {
         </button>
     </div>
 
+<!-- 
     <div class="items-top relative min-h-screen flex-auto sm:pt-0">
         <div class="py-18 relative min-h-screen w-full">
             <RetroBackground />
