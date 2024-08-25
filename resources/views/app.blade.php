@@ -26,13 +26,16 @@
 
 
     <script>
-        window.dataLayer = window.dataLayer || [];
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'UA-154219567-1');
+        window.addEventListener("DOMContentLoaded", (e) => {
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', 'UA-154219567-1');
+        });
     </script>
     
 </body>
