@@ -17,6 +17,14 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154219567-1"></script>
+   
+    @inertiaHead
+    @vite('resources/js/app.ts')
+</head>
+<body class="font-sans antialiased">
+    @inertia
+
+
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -27,10 +35,5 @@
         gtag('config', 'UA-154219567-1');
     </script>
     
-    @inertiaHead
-    @vite('resources/js/app.ts')
-</head>
-<body class="font-sans antialiased">
-    @inertia
 </body>
 </html>
