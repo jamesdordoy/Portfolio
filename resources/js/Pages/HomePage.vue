@@ -45,86 +45,82 @@ const closeSettings = () => {
 </script>
 
 <template>
-    <div>
-        
-        <Navigation />
+    <Navigation />
+
+    <div
+        id="settings-sidebar"
+        :class="`bg-${portfolioStore.primaryThemeBg} border-${portfolioStore.primaryThemeColour}-${
+            portfolioStore.primaryThemeColourShade
+        } ${displaySettings ? '' : 'hidden'}`"
+    >
+        <transition
+            mode="out-in"
+            :enter-active-class="`animated ${portfolioStore.primaryThemeRouterAnimation}`"
+        >
+            <Settings @toggle="closeSettings"></Settings>
+        </transition>
+    </div>
+
+    <div class="themeSettingsPanelToggleButton">
+        <button
+            aria-label="settings"
+            class="rounded-r p-2 text-lg text-white"
+            :class="`bg-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade}`"
+            @click="showSettings"
+        >
+            <font-awesome-icon :icon="faCog" />
+        </button>
+    </div>
+
+    <div class="items-top relative min-h-screen flex-auto sm:pt-0">
+        <div class="py-18 relative min-h-screen w-full">
+            <RetroBackground />
+
+            <div class="absolute left-1/2 top-1/2 w-1/2 -translate-x-1/2 -translate-y-1/2 transform lg:w-1/3">
+                <div
+                    class="front-into w-full md:mx-0 md:p-8"
+                    :class="`border-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade}`"
+                >
+                    <h1 class="varela text-2xl sm:text-3xl md:text-4xl">James Dordoy</h1>
+                    <h2 class="varela sm:text-1xl text-lg md:text-2xl">Full Stack Developer</h2>
+                    <p class="varela md:text-1xl sm:text-1xl">From Essex</p>
+                </div>
+            </div>
+        </div>
 
         <div
-            id="settings-sidebar"
-            :class="`bg-${portfolioStore.primaryThemeBg} border-${portfolioStore.primaryThemeColour}-${
-                portfolioStore.primaryThemeColourShade
-            } ${displaySettings ? '' : 'hidden'}`"
+            class="w-full px-10 py-24"
+            :class="`bg-${portfolioStore.primaryThemeBgDarker}`"
         >
-            <transition
-                mode="out-in"
-                :enter-active-class="`animated ${portfolioStore.primaryThemeRouterAnimation}`"
-            >
-                <Settings @toggle="closeSettings"></Settings>
-            </transition>
+            <AboutMe />
         </div>
 
-        <div class="themeSettingsPanelToggleButton">
-            <button
-                aria-label="settings"
-                class="rounded-r p-2 text-lg text-white"
-                :class="`bg-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade}`"
-                @click="showSettings"
-            >
-                <font-awesome-icon :icon="faCog" />
-            </button>
+        <div
+            class="w-full px-10 py-12"
+            :class="`bg-${portfolioStore.primaryThemeBg}`"
+        >
+            <ProjectsSection :projects="projects" />
         </div>
 
-        <div class="items-top relative min-h-screen flex-auto sm:pt-0">
-            <div class="py-18 relative min-h-screen w-full">
-                <RetroBackground />
-
-                <div class="absolute left-1/2 top-1/2 w-1/2 -translate-x-1/2 -translate-y-1/2 transform lg:w-1/3">
-                    <div
-                        class="front-into w-full md:mx-0 md:p-8"
-                        :class="`border-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade}`"
-                    >
-                        <h1 class="varela text-2xl sm:text-3xl md:text-4xl">James Dordoy</h1>
-                        <h2 class="varela sm:text-1xl text-lg md:text-2xl">Full Stack Developer</h2>
-                        <p class="varela md:text-1xl sm:text-1xl">From Essex</p>
-                    </div>
-                </div>
-            </div>
-
-            <div
-                class="w-full px-10 py-24"
-                :class="`bg-${portfolioStore.primaryThemeBgDarker}`"
-            >
-                <AboutMe />
-            </div>
-
-            <div
-                class="w-full px-10 py-12"
-                :class="`bg-${portfolioStore.primaryThemeBg}`"
-            >
-                <ProjectsSection :projects="projects" />
-            </div>
-
-            <div
-                class="w-full px-10 py-12"
-                :class="`bg-${portfolioStore.primaryThemeBgDarker}`"
-            >
-                <MyExperianceSection :timeline="timeline" />
-            </div>
-
-            <div
-                class="flex w-full flex-wrap px-10 py-12"
-                :class="`bg-${portfolioStore.primaryThemeBg}`"
-            >
-                <div class="w-full lg:w-1/2">
-                    <ContactMeSection />
-                </div>
-                <div class="w-full lg:w-1/2">
-                    <GamesSection :game-clips="gameClips" />
-                </div>
-            </div>
-
-            <Footer />
+        <div
+            class="w-full px-10 py-12"
+            :class="`bg-${portfolioStore.primaryThemeBgDarker}`"
+        >
+            <MyExperianceSection :timeline="timeline" />
         </div>
-    
+
+        <div
+            class="flex w-full flex-wrap px-10 py-12"
+            :class="`bg-${portfolioStore.primaryThemeBg}`"
+        >
+            <div class="w-full lg:w-1/2">
+                <ContactMeSection />
+            </div>
+            <div class="w-full lg:w-1/2">
+                <GamesSection :game-clips="gameClips" />
+            </div>
+        </div>
+
+        <Footer />
     </div>
 </template>

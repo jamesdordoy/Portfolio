@@ -29,7 +29,6 @@
     </script>
     
     @inertiaHead
-    @routes
     @vite('resources/js/app.ts')
 </head>
 
