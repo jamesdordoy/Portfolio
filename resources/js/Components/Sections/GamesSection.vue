@@ -54,7 +54,7 @@ defineProps({
             Game Clips
         </h2>
         <div class="flex w-full flex-wrap overflow-hidden py-4 lg:pl-8">
-            <swiper
+            <!-- <swiper
                 class="mt-2"
                 navigation
                 :modules="modules"
@@ -66,7 +66,7 @@ defineProps({
                 >
                     <Game :clip="clip" />
                 </SwiperSlide>
-            </swiper>
+            </swiper> -->
         </div>
     </section>
 </template>
