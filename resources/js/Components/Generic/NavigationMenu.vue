@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
-import { usePortfolioStore } from '@/Stores/index.ts';
+import { usePortfolioStore } from '@/Stores/index';
 
 const portfolioStore = usePortfolioStore();
 

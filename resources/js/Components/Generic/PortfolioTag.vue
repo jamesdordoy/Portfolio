@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import BaseTag from '@/Components/Base/BaseTag.vue';
-import { usePortfolioStore } from '@/Stores/index.ts';
+import { usePortfolioStore } from '@/Stores/index';
 
 const portfolioStore = usePortfolioStore();
 

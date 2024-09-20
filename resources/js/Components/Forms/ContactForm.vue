@@ -1,9 +1,8 @@
 <script lang="ts" setup>
-
 import axios from 'axios';
 import { useForm } from 'laravel-precognition-vue-inertia';
 import { useReCaptcha } from 'vue-recaptcha-v3';
-import { usePortfolioStore } from '@/Stores/index.ts';
+import { usePortfolioStore } from '@/Stores/index';
 import BaseFormInputError from '@/Components/Base/BaseFormInputError.vue';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 

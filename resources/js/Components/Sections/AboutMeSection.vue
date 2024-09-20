@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { usePortfolioStore } from '@/Stores/index.ts';
+import { usePortfolioStore } from '@/Stores/index';
 import BaseBookmark from '@/Components/Base/BaseBookmark.vue';
 
 const portfolioStore = usePortfolioStore();

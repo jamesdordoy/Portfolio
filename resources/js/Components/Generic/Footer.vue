@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import NewsletterForm from '@/Components/Forms/NewsletterForm.vue';
-import { usePortfolioStore } from '@/Stores/index.ts';
+import { usePortfolioStore } from '@/Stores/index';
 import { faTwitter, faFacebook, faLinkedin, faGithub, faJsfiddle } from '@fortawesome/free-brands-svg-icons';
 
 const portfolioStore = usePortfolioStore();

@@ -4,7 +4,7 @@ import BaseBookmark from '@/Components/Base/BaseBookmark.vue';
 import Game from '@/Components/Generic/Game.vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Navigation } from 'swiper/modules';
-import { usePortfolioStore } from '@/Stores/index.ts';
+import { usePortfolioStore } from '@/Stores/index';
 
 const portfolioStore = usePortfolioStore();
 

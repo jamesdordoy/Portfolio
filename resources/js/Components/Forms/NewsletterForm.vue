@@ -1,9 +1,8 @@
 <script lang="ts" setup>
-
 import { useForm } from 'laravel-precognition-vue-inertia';
 import { useReCaptcha } from 'vue-recaptcha-v3';
-import checkRecapture from '@/checkRecapture.ts';
-import { usePortfolioStore } from '@/Stores/index.ts';
+import checkRecapture from '@/checkRecapture';
+import { usePortfolioStore } from '@/Stores/index';
 import { faNewspaper, faCheck } from '@fortawesome/free-solid-svg-icons';
 
 const portfolioStore = usePortfolioStore();

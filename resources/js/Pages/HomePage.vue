@@ -10,7 +10,7 @@ import ProjectsSection from '@/Components/Sections/ProjectsSection.vue';
 import ContactMeSection from '@/Components/Sections/ContactMeSection.vue';
 import GamesSection from '@/Components/Sections/GamesSection.vue';
 import MyExperianceSection from '@/Components/Sections/MyExperianceSection.vue';
-import { usePortfolioStore } from '@/Stores/index.ts';
+import { usePortfolioStore } from '@/Stores/index';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
 
 const portfolioStore = usePortfolioStore();

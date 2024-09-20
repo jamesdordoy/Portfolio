@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import BaseColourButton from '@/Components/Base/BaseColourButton.vue';
 import RangeInput from '@/Components/Inputs/RangeInput.vue';
-import { usePortfolioStore } from '@/Stores/index.ts';
+import { usePortfolioStore } from '@/Stores/index';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const portfolioStore = usePortfolioStore();
@@ -24,7 +24,7 @@ const updateThemeRouterAnimation = (event: Event) => {
     portfolioStore.primaryThemeRouterAnimation = event?.target?.value;
 };
 
-const props = defineProps({
+defineProps({
     hidden: {
         type: Boolean,
         default: true,

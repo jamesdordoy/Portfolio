@@ -2,7 +2,7 @@
 import { PropType } from 'vue';
 import BaseBookmark from '@/Components/Base/BaseBookmark.vue';
 import TimelineEvent from '@/Components/Generic/TimelineEvent.vue';
-import { usePortfolioStore } from '@/Stores/index.ts';
+import { usePortfolioStore } from '@/Stores/index';
 
 const portfolioStore = usePortfolioStore();
 
