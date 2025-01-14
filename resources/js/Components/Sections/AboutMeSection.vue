@@ -21,10 +21,9 @@ const portfolioStore = usePortfolioStore();
             class="mb-8 text-center text-xl"
             :class="`text-${portfolioStore.primaryThemeTextColour}`"
         >
-            Hey, my name is James and im a Software Enginer living in Essex. I have been developing software for fifteen
-            years now and i have a large range of experience from creating simple Android applications, static websites
-            and Microsoft Excel dashboards to working on larger scale SaSS, CMS and CRM applications using PHP, Inertia,
-            Laravel with Vue and Typescript.
+            Hey, my name is James and im a Software Engineer living in Essex. I have been developing software for over a decand and a half and i have a large range of experience from creating simple Android applications, static websites
+            and Microsoft Excel dashboards to working on larger scale S.a.s.S., C.M.S. and C.R.M. applications using PHP, Inertia,
+            Laravel with Vue.js and Typescript.
         </p>
         <br />
         <p
@@ -32,9 +31,9 @@ const portfolioStore = usePortfolioStore();
             :class="`text-${portfolioStore.primaryThemeTextColour}`"
         >
             Since leaving University, i have mainly been working with PHP &amp; Laravel. I also have a solid background
-            in JavaScript &amp; Java but picking up a difference langauge isn't a problem. I am profitiant at writting
-            procedual, object orianted and functional code which provides many different techniques for cleaning up my
-            work. I am currently picking up TypeScript and enjoying the benifits as it enables me to write stricter code
+            in JavaScript &amp; Java but picking up a difference language isn't a problem. I am proficient at writing 
+            procedural, functional and object orianted code which provides many different techniques for cleaning up my
+            work. I am currently picking up TypeScript and enjoying the benefits as it enables me to write stricter code
             to overcome some of the limitations that JavaScript present such as Type Inference.
         </p>
         <div class="mb-8 flex items-center justify-center">

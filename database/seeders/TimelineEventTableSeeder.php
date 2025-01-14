@@ -26,7 +26,7 @@ class TimelineEventTableSeeder extends Seeder
             'icon' => 'building',
             'title' => 'Technical Support',
             'body' => 'Working for another local business, I provided technical support and managed websites and servers for Ghost Enterprises. During this time I helped with general operations, support requests and managing parts of IT and Essex Cricket.
-            <br><br>During this time I learned alot about manging WordPress sites using virtual private servers, running a local virtualization server locally called Proxmox and manging users and accounts with sharepoint.',
+            <br><br>During this time I learned alot about manging WordPress sites using virtual private servers, running a local virtualization server locally called Proxmox and manging users and accounts with Sharepoint.',
         ]);
 
         TimelineEvent::factory()->create([
@@ -46,7 +46,7 @@ class TimelineEventTableSeeder extends Seeder
             'icon' => 'school',
             'title' => 'BSc Software Engineering',
             'body' => 'Studying at Southampton Solent University gave me a chance to spend time homing in my programming skills.
-            <br><br>During this time, I became very familiar with PHP and Java. I also started dabbling with AI topics such as Forward Chaining and Nerual Networks and created some basic examples.
+            <br><br>During this time, I became very familiar with PHP and Java. I also started dabbling with AI topics such as Forward Chaining and Neural Networks and created some basic examples.
             <br><br>I ended up creating a simple social network in PHP for my disattation using no frameworks as an objective as the SNA was required to work on a SBC server.',
         ]);
 
