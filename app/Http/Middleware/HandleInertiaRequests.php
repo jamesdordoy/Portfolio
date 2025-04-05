@@ -17,10 +17,10 @@ class HandleInertiaRequests extends Middleware
 
     public function share(Request $request)
     {
-        $ziggy = new Ziggy($group = null, $request->url()); 
- 
+        $ziggy = new Ziggy($group = null, $request->url());
+
         return array_merge(parent::share($request), [
-            
+
         ]);
     }
 }

@@ -20,17 +20,19 @@ final class HomeController
     {
         return Inertia::render(
             self::INDEX,
-            new HomePage(
-                projects: ProjectData::collection(
-                    Project::with(Project::PUBLIC_RELATIONSHIPS)->public()->get()
-                ),
-                timeline: TimelineEventData::collection(
-                    TimelineEvent::get()
-                ),
-                gameClips: GameClipData::collection(
-                    GameClip::with(GameClip::PUBLIC_RELATIONSHIPS)->get()
-                ),
-            )
+            [
+                'homePage' => HomePage::from([
+                    'projects' => ProjectData::collect(
+                        Project::with(Project::PUBLIC_RELATIONSHIPS)->public()->get()
+                    ),
+                    'timeline' => TimelineEventData::collect(
+                        TimelineEvent::get()
+                    ),
+                    'gameClips' => GameClipData::collect(
+                        GameClip::with(GameClip::PUBLIC_RELATIONSHIPS)->get()
+                    ),
+                ])
+            ]
         );
     }
 }

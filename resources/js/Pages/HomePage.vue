@@ -16,16 +16,8 @@ import { faCog } from '@fortawesome/free-solid-svg-icons';
 const portfolioStore = usePortfolioStore();
 
 const props = defineProps({
-    projects: {
-        type: Array as PropType<App.Models.Data.Collection<App.Dto.Project>>,
-        required: true,
-    },
-    timeline: {
-        type: Array as PropType<App.Models.Data.Collection<App.Dto.TimelineEvent>>,
-        required: true,
-    },
-    gameClips: {
-        type: Array as PropType<App.Models.Data.Collection<App.Dto.GameClip>>,
+    homePage: {
+        type: Object as PropType<App.Dto.Pages.HomePage>,
         required: true,
     },
     errors: {
@@ -33,6 +25,8 @@ const props = defineProps({
         default: () => ({}),
     },
 });
+
+console.log(props.homePage);
 
 const displaySettings = ref<boolean>(false);
 
@@ -100,14 +94,14 @@ const closeSettings = () => {
                 class="w-full px-10 py-12"
                 :class="`bg-${portfolioStore.primaryThemeBg}`"
             >
-                <ProjectsSection :projects="projects" />
+                <ProjectsSection :projects="homePage.projects" />
             </div>
 
             <div
                 class="w-full px-10 py-12"
                 :class="`bg-${portfolioStore.primaryThemeBgDarker}`"
             >
-                <MyExperianceSection :timeline="timeline" />
+                <MyExperianceSection :timeline="homePage.timeline" />
             </div>
 
             <div
@@ -118,7 +112,7 @@ const closeSettings = () => {
                     <ContactMeSection />
                 </div>
                 <div class="w-full lg:w-1/2">
-                    <GamesSection :game-clips="gameClips" />
+                    <GamesSection :game-clips="homePage.gameClips" />
                 </div>
             </div>
 
