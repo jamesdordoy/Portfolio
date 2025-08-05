@@ -13,11 +13,6 @@ const toggle = () => {
 const closeMenu = () => {
     open.value = false;
 };
-
-const onClick = () => {
-    console.log(document);
-};
-
 </script>
 
 <template>
@@ -98,9 +93,6 @@ const onClick = () => {
                     >
                         Contact Me
                     </a>
-                    <button @click="onClick">
-                    Hello
-                    </button>
                 </div>
             </div>
         </nav>
