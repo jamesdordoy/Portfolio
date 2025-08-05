@@ -16,7 +16,8 @@
     ],
     "license": "MIT",
     "require": {
-        "php": "^8.4",
+        "php": "^8.3|^8.4",
+        "fakerphp/faker": "^v1.21.0",
         "guzzlehttp/guzzle": "^7.5.1",
         "inertiajs/inertia-laravel": "v2.0.1",
         "laravel/framework": "^v12.7.2",
@@ -29,7 +30,6 @@
         "tightenco/ziggy": "^v1.5.0"
     },
     "require-dev": {
-        "fakerphp/faker": "^v1.21.0",
         "laravel/pint": "^v1.9.0",
         "mockery/mockery": "^1.5.1",
         "nunomaduro/collision": "^v8.1",
