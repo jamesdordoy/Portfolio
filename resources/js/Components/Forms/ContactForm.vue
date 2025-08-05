@@ -23,19 +23,23 @@ const submit = async () => {
 
     const token = await executeRecaptcha('contact');
 
-    const response = await axios.get(`/recaptcha/validate`, {
-        params: {
-            token,
-        },
-    });
-
-    if (response.data.success) {
-        form.submit({
-            preserveScroll: (page) => !!Object.keys(page.props.errors).length,
-            onSuccess: () => {
-                form.reset();
+    try {
+        const response = await axios.get(`/recaptcha/validate`, {
+            params: {
+                token,
             },
         });
+
+        if (response.data.success) {
+            form.submit({
+                preserveScroll: (page) => !!Object.keys(page.props.errors).length,
+                onSuccess: () => {
+                    form.reset();
+                },
+            });
+        }
+    } catch (error) {
+        console.log(error)
     }
 };
 </script>
