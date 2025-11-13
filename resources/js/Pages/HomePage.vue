@@ -26,8 +26,6 @@ const props = defineProps({
     },
 });
 
-console.log(props.homePage);
-
 const displaySettings = ref<boolean>(false);
 
 const showSettings = () => {
