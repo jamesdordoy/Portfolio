@@ -4,13 +4,16 @@ import { cva } from 'class-variance-authority';
 
 type ButtonVariant = 'default' | 'primary' | 'secondary' | 'info' | 'success' | 'warning' | 'error';
 
-const props = withDefaults(defineProps<{
-    text?: string;
-    variant?: ButtonVariant;
-}>(), {
-    text: '',
-    variant: 'default',
-});
+const props = withDefaults(
+    defineProps<{
+        text?: string;
+        variant?: ButtonVariant;
+    }>(),
+    {
+        text: '',
+        variant: 'default',
+    }
+);
 
 const emit = defineEmits<{
     click: [];

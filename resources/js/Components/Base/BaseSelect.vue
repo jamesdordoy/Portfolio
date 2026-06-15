@@ -7,17 +7,20 @@ interface SelectOption {
     [key: string]: unknown;
 }
 
-const props = withDefaults(defineProps<{
-    options: SelectOption[];
-    id: string;
-    value?: string | number | null;
-    placeholder?: string;
-    label?: string;
-}>(), {
-    value: null,
-    placeholder: '',
-    label: 'name',
-});
+const props = withDefaults(
+    defineProps<{
+        options: SelectOption[];
+        id: string;
+        value?: string | number | null;
+        placeholder?: string;
+        label?: string;
+    }>(),
+    {
+        value: null,
+        placeholder: '',
+        label: 'name',
+    }
+);
 
 const emit = defineEmits<{
     input: [value: string];
@@ -25,11 +28,14 @@ const emit = defineEmits<{
 
 const instance = ref<TomSelect | null>(null);
 
-watch(() => props.value, (newVal) => {
-    if (newVal !== null && newVal !== undefined && instance.value) {
-        instance.value.setValue(String(newVal));
+watch(
+    () => props.value,
+    (newVal) => {
+        if (newVal !== null && newVal !== undefined && instance.value) {
+            instance.value.setValue(String(newVal));
+        }
     }
-});
+);
 
 onMounted(() => {
     if (instance.value === null) {

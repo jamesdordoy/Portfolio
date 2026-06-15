@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 interface FormLike {
-    invalid: (field: string) => boolean;
+    invalid: (_field: string) => boolean;
     errors: Record<string, string | undefined>;
 }
 

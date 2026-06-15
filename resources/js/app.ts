@@ -18,18 +18,22 @@ pinia.use(piniaPluginPersistedstate);
 
 createInertiaApp({
     resolve: (name: string): { default: DefineComponent } => {
-        const pages = import.meta.glob('./Pages/**/*.vue', { eager: true }) as Record<string, { default: DefineComponent }>;
+        const pages = import.meta.glob('./Pages/**/*.vue', { eager: true }) as Record<
+            string,
+            { default: DefineComponent }
+        >;
         return pages[`./Pages/${name}.vue`];
     },
     setup({ el, App, props, plugin }) {
-        return createSSRApp({ render: () => h(App, props) })
-            .component('font-awesome-icon', FontAwesomeIcon)
-            .use(plugin)
-            .use(pinia)
-            .use(VueScrollTo)
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            .use(VueReCaptcha, { siteKey: import.meta.env.VITE_RECAPTCHA_SITE_KEY } as any)
-            .mount(el);
+        return (
+            createSSRApp({ render: () => h(App, props) })
+                .component('font-awesome-icon', FontAwesomeIcon)
+                .use(plugin)
+                .use(pinia)
+                .use(VueScrollTo)
+                .use(VueReCaptcha, { siteKey: import.meta.env.VITE_RECAPTCHA_SITE_KEY } as any)
+                .mount(el)
+        );
     },
 });
 

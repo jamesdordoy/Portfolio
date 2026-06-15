@@ -7,17 +7,20 @@ const onInput = (event: InputEvent) => {
     emit('input', (event.target as HTMLInputElement).value);
 };
 
-withDefaults(defineProps<{
-    rows?: number;
-    placeholder?: string;
-    value?: string;
-    classes?: string;
-}>(), {
-    rows: 4,
-    placeholder: 'Enter Text',
-    value: '',
-    classes: '',
-});
+withDefaults(
+    defineProps<{
+        rows?: number;
+        placeholder?: string;
+        value?: string;
+        classes?: string;
+    }>(),
+    {
+        rows: 4,
+        placeholder: 'Enter Text',
+        value: '',
+        classes: '',
+    }
+);
 </script>
 
 <template>

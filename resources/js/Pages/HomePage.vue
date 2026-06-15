@@ -14,12 +14,15 @@ import { faCog } from '@fortawesome/free-solid-svg-icons';
 
 const portfolioStore = usePortfolioStore();
 
-withDefaults(defineProps<{
-    homePage: App.Dto.Pages.HomePage;
-    errors?: Record<string, string>;
-}>(), {
-    errors: () => ({}),
-});
+withDefaults(
+    defineProps<{
+        homePage: App.Dto.Pages.HomePage;
+        errors?: Record<string, string>;
+    }>(),
+    {
+        errors: () => ({}),
+    }
+);
 
 const displaySettings = ref<boolean>(false);
 

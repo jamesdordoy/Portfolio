@@ -1,9 +1,12 @@
 <script lang="ts" setup>
-withDefaults(defineProps<{
-    name?: string;
-}>(), {
-    name: '',
-});
+withDefaults(
+    defineProps<{
+        name?: string;
+    }>(),
+    {
+        name: '',
+    }
+);
 </script>
 
 <template>

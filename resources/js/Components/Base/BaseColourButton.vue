@@ -1,9 +1,12 @@
 <script lang="ts" setup>
-withDefaults(defineProps<{
-    colour?: string;
-}>(), {
-    colour: 'blue',
-});
+withDefaults(
+    defineProps<{
+        colour?: string;
+    }>(),
+    {
+        colour: 'blue',
+    }
+);
 </script>
 
 <template>

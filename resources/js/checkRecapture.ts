@@ -1,11 +1,11 @@
 import axios from 'axios';
 
-type ExecuteRecaptcha = (action?: string) => Promise<string>;
+type ExecuteRecaptcha = (_action?: string) => Promise<string>;
 type RecaptchaLoaded = () => Promise<boolean>;
 
 export default async function checkRecapture(
     executeRecaptcha: ExecuteRecaptcha,
-    recaptchaLoaded: RecaptchaLoaded,
+    recaptchaLoaded: RecaptchaLoaded
 ): Promise<boolean> {
     await recaptchaLoaded();
 

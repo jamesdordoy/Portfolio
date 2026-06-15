@@ -4,9 +4,7 @@ type ThemeMode = 'light' | 'dark';
 
 const getTailwindColor = (name: string, shade: string | number): string => {
     if (typeof document === 'undefined') return '';
-    return getComputedStyle(document.documentElement)
-        .getPropertyValue(`--color-${name}-${shade}`)
-        .trim();
+    return getComputedStyle(document.documentElement).getPropertyValue(`--color-${name}-${shade}`).trim();
 };
 
 export const usePortfolioStore = defineStore('portfolio', {

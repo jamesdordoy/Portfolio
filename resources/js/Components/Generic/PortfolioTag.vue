@@ -4,11 +4,14 @@ import { usePortfolioStore } from '@/Stores/index';
 
 const portfolioStore = usePortfolioStore();
 
-withDefaults(defineProps<{
-    name?: string;
-}>(), {
-    name: 'tag',
-});
+withDefaults(
+    defineProps<{
+        name?: string;
+    }>(),
+    {
+        name: 'tag',
+    }
+);
 </script>
 
 <template>

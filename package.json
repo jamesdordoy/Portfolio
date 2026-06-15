@@ -6,7 +6,7 @@
         "build": "vite build && vite build --ssr",
         "type-check": "vue-tsc -noEmit",
         "lint": "eslint \"resources/**\"",
-        "format": "prettier \"resources/**/*.{js,ts,vue}\" -write",
+        "format": "prettier \"resources/**/*.{js,ts,vue}\" --write",
         "test": "vitest",
         "coverage": "vitest run --coverage"
     },
@@ -44,6 +44,20 @@
         "vitest": "^4.1.9",
         "vue-loader": "^17.4.2",
         "vue-tsc": "^3.3.5"
+    },
+    "prettier": {
+        "arrowParens": "always",
+        "bracketSpacing": true,
+        "endOfLine": "lf",
+        "printWidth": 120,
+        "proseWrap": "preserve",
+        "semi": true,
+        "singleQuote": true,
+        "tabWidth": 4,
+        "trailingComma": "es5",
+        "useTabs": false,
+        "singleAttributePerLine": true,
+        "vueIndentScriptAndStyle": false
     },
     "dependencies": {
         "@inertiajs/vite": "^3.4.0",

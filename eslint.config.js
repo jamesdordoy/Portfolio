@@ -12,6 +12,12 @@ export default [
     js.configs.recommended,
     // Disable eslint rules superseded by the TypeScript compiler for *.ts files
     tsPlugin.configs['flat/eslint-recommended'],
+    // Ignore _-prefixed args (type signatures, intentionally unused params)
+    {
+        rules: {
+            'no-unused-vars': ['error', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
+        },
+    },
     // TypeScript parser for .ts/.d.ts files
     {
         files: ['**/*.ts'],

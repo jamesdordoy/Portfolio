@@ -255,8 +255,8 @@ const portfolioStore = usePortfolioStore();
             </div>
         </div>
         <div
-            :class="`border-t border-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade}`"
             id="retrobg-ground"
+            :class="`border-t border-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade}`"
         >
             <div id="retrobg-linesWrap">
                 <div id="retrobg-lines">

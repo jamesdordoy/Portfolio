@@ -10,11 +10,14 @@ const emit = defineEmits<{
     toggle: [value: boolean];
 }>();
 
-withDefaults(defineProps<{
-    hidden?: boolean;
-}>(), {
-    hidden: true,
-});
+withDefaults(
+    defineProps<{
+        hidden?: boolean;
+    }>(),
+    {
+        hidden: true,
+    }
+);
 
 const showSettings = () => {
     emit('toggle', false);
