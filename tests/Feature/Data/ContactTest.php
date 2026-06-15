@@ -1,7 +1,6 @@
 <?php
 
 use App\Dto\Contact;
-use Spatie\LaravelData\Attributes\Validation;
 
 test('test_contact_data_object_name', function () {
     $contact = Contact::from([
@@ -14,17 +13,17 @@ test('test_contact_data_object_name', function () {
 });
 
 test('test_contact_data_rules', function () {
-    $rules = Contact::rules();
+    $rules = Contact::getValidationRules([]);
 
     $this->assertTrue(array_key_exists('name', $rules));
     $this->assertTrue(array_key_exists('email', $rules));
     $this->assertTrue(array_key_exists('message', $rules));
 
-    $this->assertTrue($rules['name'][0] instanceof Validation\Required);
-    $this->assertTrue($rules['email'][0] instanceof Validation\Required);
-    $this->assertTrue($rules['message'][0] instanceof Validation\Required);
+    $this->assertContains('required', $rules['name']);
+    $this->assertContains('required', $rules['email']);
+    $this->assertContains('required', $rules['message']);
 
-    $this->assertTrue($rules['name'][1] instanceof Validation\Min);
-    $this->assertTrue($rules['email'][1] instanceof Validation\Email);
-    $this->assertTrue($rules['message'][1] instanceof Validation\Min);
+    $this->assertContains('min:3', $rules['name']);
+    $this->assertContains('email:rfc', $rules['email']);
+    $this->assertContains('min:3', $rules['message']);
 });

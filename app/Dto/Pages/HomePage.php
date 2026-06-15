@@ -12,10 +12,13 @@ use Spatie\LaravelData\DataCollection;
 class HomePage extends Data
 {
     public function __construct(
+        //
         #[DataCollectionOf(Project::class)]
         public DataCollection $projects,
+        //
         #[DataCollectionOf(TimelineEvent::class)]
         public DataCollection $timeline,
+        //
         #[DataCollectionOf(GameClip::class)]
         public DataCollection $gameClips,
     ) {}

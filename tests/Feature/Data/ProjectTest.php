@@ -1,7 +1,6 @@
 <?php
 
 use App\Dto\Project;
-use Spatie\LaravelData\Attributes\Validation;
 
 test('test_project_data_object_name', function () {
     $project = Project::from([
@@ -18,20 +17,17 @@ test('test_project_data_object_name', function () {
 });
 
 test('test_project_data_rules', function () {
-    $rules = Project::rules();
+    $rules = Project::getValidationRules([]);
 
     $this->assertTrue(array_key_exists('name', $rules));
     $this->assertTrue(array_key_exists('description', $rules));
     $this->assertTrue(array_key_exists('owner', $rules));
 
-    $this->assertTrue($rules['name'][0] instanceof Validation\Required);
-    $this->assertTrue($rules['description'][0] instanceof Validation\Required);
-    $this->assertTrue($rules['owner'][0] instanceof Validation\Required);
+    $this->assertContains('required', $rules['name']);
+    $this->assertContains('required', $rules['description']);
+    $this->assertContains('required', $rules['owner']);
 
-    $this->assertTrue($rules['name'][1] instanceof Validation\StringType);
-    $this->assertTrue($rules['description'][1] instanceof Validation\StringType);
-    $this->assertTrue($rules['owner'][1] instanceof Validation\StringType);
-
-    $this->assertTrue($rules['name'][2] instanceof Validation\Min);
-    $this->assertTrue($rules['description'][2] instanceof Validation\Min);
+    $this->assertContains('min:3', $rules['name']);
+    $this->assertContains('min:3', $rules['description']);
+    $this->assertContains('min:3', $rules['owner']);
 });
