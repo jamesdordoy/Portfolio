@@ -24,7 +24,7 @@ test('test_languages_can_be_ordered', function () {
     $languageB = Language::factory()->create();
     $languageC = Language::factory()->create();
 
-    $languages = Language::ordered()->get();
+    $languages = Language::query()->ordered()->get();
 
     $this->assertTrue($languages->first()->is($languageA));
 });

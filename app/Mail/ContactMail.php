@@ -13,11 +13,9 @@ class ContactMail extends Mailable
     use Queueable;
     use SerializesModels;
 
-    protected $contact;
-
-    public function __construct(Contact $contact)
+    public function __construct(protected Contact $contact)
     {
-        $this->contact = $contact;
+        //
     }
 
     public function content(): Content

@@ -2,9 +2,12 @@
 
 namespace App\Models;
 
+use Database\Factories\GameClipFactory;
+use Illuminate\Database\Eloquent\Attributes\UseFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
+#[UseFactory(GameClipFactory::class)]
 class GameClip extends EloquentModel
 {
     use HasFactory;

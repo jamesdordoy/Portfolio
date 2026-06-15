@@ -8,8 +8,6 @@ class TimelineEvent extends EloquentModel
 {
     use HasFactory;
 
-    protected $table = 'timeline_events';
-
     protected $casts = [
         'from' => 'datetime',
         'to' => 'datetime',
