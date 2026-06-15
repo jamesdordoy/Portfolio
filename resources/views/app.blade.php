@@ -10,23 +10,21 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="msapplication-starturl" content="/">
 
-    <title inertia>{{ config('app.name', 'James Dordoy - Portfolio') }}</title>
-
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154219567-1"></script>
-   
-    @inertiaHead
+
     @vite('resources/js/app.ts')
+    <x-inertia::head>
+        <title data-inertia>{{ config('app.name', 'James Dordoy - Portfolio') }}</title>
+    </x-inertia::head>
 </head>
 <body class="font-sans antialiased">
-    @inertia
-
+    <x-inertia::app />
 
     <script>
-
         window.addEventListener("DOMContentLoaded", (e) => {
             window.dataLayer = window.dataLayer || [];
 
@@ -37,6 +35,5 @@
             gtag('config', 'UA-154219567-1');
         });
     </script>
-    
 </body>
 </html>

@@ -17,9 +17,6 @@ const pinia = createPinia();
 pinia.use(piniaPluginPersistedstate);
 
 createInertiaApp({
-    progress: {
-        color: '#4B5563',
-    },
     resolve: (name) => {
         const pages = import.meta.glob('./Pages/**/*.vue', { eager: true });
         return pages[`./Pages/${name}.vue`];

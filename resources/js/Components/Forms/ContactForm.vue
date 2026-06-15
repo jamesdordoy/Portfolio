@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import axios from 'axios';
-import { useForm } from 'laravel-precognition-vue-inertia';
+import { useForm } from '@inertiajs/vue3';
 import { useReCaptcha } from 'vue-recaptcha-v3';
 import { usePortfolioStore } from '@/Stores/index';
 import BaseFormInputError from '@/Components/Base/BaseFormInputError.vue';
@@ -8,51 +8,28 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
 const portfolioStore = usePortfolioStore();
 
-const contact: App.Dto.Contact = {
+const form = useForm('post', '/contact', {
     name: '',
     email: '',
     message: '',
-};
-
-const form = useForm('post', '/contact', contact);
+} as App.Dto.Contact);
 
 const { executeRecaptcha, recaptchaLoaded } = useReCaptcha();
 
 const submit = async () => {
-    
-    console.log('hit')
     await recaptchaLoaded();
-
     const token = await executeRecaptcha('contact');
 
     try {
-        const response = await axios.get(`/recaptcha/validate`, {
-            params: {
-                token,
-            },
-        });
-
-        console.log(response)
+        const response = await axios.get('/recaptcha/validate', { params: { token } });
 
         if (response.data.success) {
-            
-            axios.post('/contact', form.data()).then(response => {
-                console.log(response)
-            }).catch(error => {
-                console.log(error)
-            })
-            
-            // let thing = form.submit({
-            //     // preserveScroll: (page) => !!Object.keys(page.props.errors).length,
-            //     // onSuccess: () => {
-            //     //     form.reset();
-            //     // },
-            // });
-
-            // console.log(thing)
+            form.post('/contact', {
+                onSuccess: () => form.reset(),
+            });
         }
     } catch (error) {
-        console.log(error)
+        console.error(error);
     }
 };
 </script>

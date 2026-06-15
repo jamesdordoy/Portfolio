@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useForm } from 'laravel-precognition-vue-inertia';
+import { useForm } from '@inertiajs/vue3';
 import { useReCaptcha } from 'vue-recaptcha-v3';
 import checkRecapture from '@/checkRecapture';
 import { usePortfolioStore } from '@/Stores/index';
@@ -7,17 +7,15 @@ import { faNewspaper, faCheck } from '@fortawesome/free-solid-svg-icons';
 
 const portfolioStore = usePortfolioStore();
 
-const newsletter: App.Dto.Newsletter = {
+const form = useForm('post', '/newsletter', {
     email: '',
-};
-
-const form = useForm('post', '/newsletter', newsletter);
+} as App.Dto.Newsletter);
 
 const { executeRecaptcha, recaptchaLoaded } = useReCaptcha();
 
 const submit = async () => {
-    if (checkRecapture(executeRecaptcha, recaptchaLoaded)) {
-        form.submit({
+    if (await checkRecapture(executeRecaptcha, recaptchaLoaded)) {
+        form.post('/newsletter', {
             preserveScroll: (page): boolean => !!Object.keys(page.props.errors).length,
             onSuccess: (): void => {
                 form.reset();
