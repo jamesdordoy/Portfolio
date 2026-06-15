@@ -1,37 +1,9 @@
 <script setup lang="ts">
 import { PropType } from 'vue';
 import BaseBookmark from '@/Components/Base/BaseBookmark.vue';
-import Game from '@/Components/Generic/Game.vue';
-import { Swiper, SwiperSlide } from 'swiper/vue';
-import { Navigation } from 'swiper/modules';
 import { usePortfolioStore } from '@/Stores/index';
 
 const portfolioStore = usePortfolioStore();
-
-const modules = [Navigation];
-
-const breakpoints = {
-    640: {
-        slidesPerView: 1,
-        spaceBetween: 14,
-    },
-    768: {
-        slidesPerView: 1,
-        spaceBetween: 14,
-    },
-    1024: {
-        slidesPerView: 1,
-        spaceBetween: 14,
-    },
-    1280: {
-        slidesPerView: 1,
-        spaceBetween: 14,
-    },
-    1536: {
-        slidesPerView: 1,
-        spaceBetween: 14,
-    },
-};
 
 defineProps({
     gameClips: {

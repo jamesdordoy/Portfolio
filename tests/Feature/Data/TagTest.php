@@ -2,6 +2,7 @@
 
 use App\Dto\Tag;
 use App\Dto\Taggable;
+use App\Models\Language;
 
 test('test_tag_data_object_name', function () {
     $taggable = Taggable::from([
@@ -11,7 +12,7 @@ test('test_tag_data_object_name', function () {
 
     $tag = Tag::from([
         'taggable_id' => '1',
-        'taggable_type' => App\Models\Language::class,
+        'taggable_type' => Language::class,
         'taggable' => $taggable,
     ]);
 

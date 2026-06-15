@@ -17,12 +17,6 @@ const updatePrimaryThemeColour = (colour: string) => {
 const updatePrimaryThemeColourShade = (event: Event) => {
     portfolioStore.primaryThemeColourShade = event?.target?.value;
 };
-const updateTheme = (event: Event) => {
-    portfolioStore.primaryTheme = event?.target?.value;
-};
-const updateThemeRouterAnimation = (event: Event) => {
-    portfolioStore.primaryThemeRouterAnimation = event?.target?.value;
-};
 
 defineProps({
     hidden: {

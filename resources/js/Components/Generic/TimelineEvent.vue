@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import _ from 'lodash';
 import { PropType } from 'vue';
 import { usePortfolioStore } from '@/Stores/index';
 import { faCode, faBuilding, faSchool } from '@fortawesome/free-solid-svg-icons';

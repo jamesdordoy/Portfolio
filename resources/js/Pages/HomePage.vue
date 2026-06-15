@@ -15,7 +15,7 @@ import { faCog } from '@fortawesome/free-solid-svg-icons';
 
 const portfolioStore = usePortfolioStore();
 
-const props = defineProps({
+defineProps({
     homePage: {
         type: Object as PropType<App.Dto.Pages.HomePage>,
         required: true,
