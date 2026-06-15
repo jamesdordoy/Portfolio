@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { PropType } from 'vue';
 import { ref } from 'vue';
 import Footer from '@/Components/Generic/Footer.vue';
 import RetroBackground from '@/Components/Generic/RetroBackground.vue';
@@ -15,15 +14,11 @@ import { faCog } from '@fortawesome/free-solid-svg-icons';
 
 const portfolioStore = usePortfolioStore();
 
-defineProps({
-    homePage: {
-        type: Object as PropType<App.Dto.Pages.HomePage>,
-        required: true,
-    },
-    errors: {
-        type: Object,
-        default: () => ({}),
-    },
+withDefaults(defineProps<{
+    homePage: App.Dto.Pages.HomePage;
+    errors?: Record<string, string>;
+}>(), {
+    errors: () => ({}),
 });
 
 const displaySettings = ref<boolean>(false);

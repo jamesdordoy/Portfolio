@@ -1,44 +1,29 @@
 <script lang="ts" setup>
-defineProps({
-    classes: {
-        type: String,
-        default: '',
-    },
-    placeholder: {
-        type: String,
-        default: '',
-    },
-    type: {
-        type: String,
-        default: '',
-    },
-    value: {
-        type: String,
-        default: '',
-    },
-    name: {
-        type: String,
-        default: '',
-    },
-    disabled: {
-        type: Boolean,
-        default: false,
-    },
-    min: {
-        type: Number,
-        default: 0,
-    },
-    max: {
-        type: Number,
-        default: 0,
-    },
-    step: {
-        type: Number,
-        default: 1,
-    },
+withDefaults(defineProps<{
+    classes?: string;
+    placeholder?: string;
+    type?: string;
+    value?: string;
+    name?: string;
+    disabled?: boolean;
+    min?: number;
+    max?: number;
+    step?: number;
+}>(), {
+    classes: '',
+    placeholder: '',
+    type: '',
+    value: '',
+    name: '',
+    disabled: false,
+    min: 0,
+    max: 0,
+    step: 1,
 });
 
-const emit = defineEmits(['input']);
+const emit = defineEmits<{
+    input: [value: string];
+}>();
 
 const onInput = (event: InputEvent) => {
     emit('input', (event.target as HTMLInputElement).value);

@@ -5,10 +5,13 @@ import { useReCaptcha } from 'vue-recaptcha-v3';
 import { usePortfolioStore } from '@/Stores/index';
 import BaseFormInputError from '@/Components/Base/BaseFormInputError.vue';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { store as contactRoute } from '@/routes/contact';
 
 const portfolioStore = usePortfolioStore();
 
-const form = useForm('post', '/contact', {
+const route = contactRoute();
+
+const form = useForm(route.method, route.url, {
     name: '',
     email: '',
     message: '',
@@ -24,7 +27,7 @@ const submit = async () => {
         const response = await axios.get('/recaptcha/validate', { params: { token } });
 
         if (response.data.success) {
-            form.post('/contact', {
+            form.post(route.url, {
                 onSuccess: () => form.reset(),
             });
         }

@@ -1,14 +1,13 @@
 <script lang="ts" setup>
-defineProps({
-    name: {
-        type: String,
-        required: true,
-    },
-    form: {
-        type: Object,
-        required: true,
-    },
-});
+interface FormLike {
+    invalid: (field: string) => boolean;
+    errors: Record<string, string | undefined>;
+}
+
+defineProps<{
+    name: string;
+    form: FormLike;
+}>();
 </script>
 
 <template>

@@ -6,7 +6,15 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const portfolioStore = usePortfolioStore();
 
-const emit = defineEmits(['toggle']);
+const emit = defineEmits<{
+    toggle: [value: boolean];
+}>();
+
+withDefaults(defineProps<{
+    hidden?: boolean;
+}>(), {
+    hidden: true,
+});
 
 const showSettings = () => {
     emit('toggle', false);
@@ -15,15 +23,8 @@ const updatePrimaryThemeColour = (colour: string) => {
     portfolioStore.primaryThemeColour = colour;
 };
 const updatePrimaryThemeColourShade = (event: Event) => {
-    portfolioStore.primaryThemeColourShade = event?.target?.value;
+    portfolioStore.primaryThemeColourShade = Number((event.target as HTMLInputElement).value);
 };
-
-defineProps({
-    hidden: {
-        type: Boolean,
-        default: true,
-    },
-});
 </script>
 
 <template>

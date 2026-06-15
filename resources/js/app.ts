@@ -2,7 +2,7 @@ import '../css/app.css';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-import { createSSRApp, h } from 'vue';
+import { createSSRApp, h, type DefineComponent } from 'vue';
 import { createInertiaApp } from '@inertiajs/vue3';
 
 import { createPinia } from 'pinia';
@@ -17,8 +17,8 @@ const pinia = createPinia();
 pinia.use(piniaPluginPersistedstate);
 
 createInertiaApp({
-    resolve: (name) => {
-        const pages = import.meta.glob('./Pages/**/*.vue', { eager: true });
+    resolve: (name: string): { default: DefineComponent } => {
+        const pages = import.meta.glob('./Pages/**/*.vue', { eager: true }) as Record<string, { default: DefineComponent }>;
         return pages[`./Pages/${name}.vue`];
     },
     setup({ el, App, props, plugin }) {
@@ -27,18 +27,19 @@ createInertiaApp({
             .use(plugin)
             .use(pinia)
             .use(VueScrollTo)
-            .use(VueReCaptcha, { siteKey: import.meta.env.VITE_RECAPTCHA_SITE_KEY })
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            .use(VueReCaptcha, { siteKey: import.meta.env.VITE_RECAPTCHA_SITE_KEY } as any)
             .mount(el);
     },
 });
 
-
-window.addEventListener("DOMContentLoaded", (e) => {
+window.addEventListener('DOMContentLoaded', () => {
     window.dataLayer = window.dataLayer || [];
 
-    function gtag() {
-        dataLayer.push(arguments);
+    function gtag(...args: unknown[]): void {
+        window.dataLayer.push(args);
     }
+
     gtag('js', new Date());
     gtag('config', 'UA-154219567-1');
 });

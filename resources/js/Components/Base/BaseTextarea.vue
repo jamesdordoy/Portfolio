@@ -1,27 +1,22 @@
 <script lang="ts" setup>
-const emit = defineEmits(['input']);
+const emit = defineEmits<{
+    input: [value: string];
+}>();
 
 const onInput = (event: InputEvent) => {
     emit('input', (event.target as HTMLInputElement).value);
 };
 
-defineProps({
-    rows: {
-        type: Number,
-        default: 4,
-    },
-    placeholder: {
-        type: String,
-        default: 'Enter Text',
-    },
-    value: {
-        type: String,
-        default: '',
-    },
-    classes: {
-        type: String,
-        default: '',
-    },
+withDefaults(defineProps<{
+    rows?: number;
+    placeholder?: string;
+    value?: string;
+    classes?: string;
+}>(), {
+    rows: 4,
+    placeholder: 'Enter Text',
+    value: '',
+    classes: '',
 });
 </script>
 

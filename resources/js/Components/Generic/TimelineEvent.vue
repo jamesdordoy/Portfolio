@@ -1,9 +1,10 @@
 <script lang="ts" setup>
-import { PropType } from 'vue';
 import { usePortfolioStore } from '@/Stores/index';
-import { faCode, faBuilding, faSchool } from '@fortawesome/free-solid-svg-icons';
+import { faCode, faBuilding, faSchool, type IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
-const icons = {
+type IconKey = 'code' | 'building' | 'school';
+
+const icons: Record<IconKey, IconDefinition> = {
     code: faCode,
     building: faBuilding,
     school: faSchool,
@@ -11,17 +12,14 @@ const icons = {
 
 const portfolioStore = usePortfolioStore();
 
-defineProps({
-    event: {
-        type: Object as PropType<App.Dto.TimelineEvent>,
-        required: true,
-    },
-});
+defineProps<{
+    event: App.Dto.TimelineEvent;
+}>();
 </script>
 
 <template>
     <article
-        v-if="event?.id & 1"
+        v-if="event?.id && event.id % 2 !== 0"
         class="flex w-full flex-row"
     >
         <div class="w-4/5 py-10">
@@ -59,7 +57,7 @@ defineProps({
             <font-awesome-icon
                 class="m-auto text-5xl"
                 :class="`text-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade}`"
-                :icon="icons[event.icon]"
+                :icon="icons[event.icon as IconKey]"
             >
             </font-awesome-icon>
         </div>
@@ -72,7 +70,7 @@ defineProps({
             <font-awesome-icon
                 class="m-auto text-5xl"
                 :class="`text-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade}`"
-                :icon="icons[event.icon]"
+                :icon="icons[event.icon as IconKey]"
             >
             </font-awesome-icon>
         </div>

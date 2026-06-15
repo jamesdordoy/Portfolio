@@ -1,58 +1,47 @@
-<script>
-import _ from 'lodash';
-import TomSelect from 'tom-select/dist/js/tom-select.complete.min';
+<script lang="ts" setup>
+import { ref, watch, onMounted } from 'vue';
+import TomSelect from 'tom-select';
 
-export default {
-    name: 'TomSelect',
-    props: {
-        options: {
-            type: Array,
-            required: true,
-        },
-        id: {
-            type: String,
-            required: true,
-        },
-        value: {
-            default: null,
-        },
-        placeholder: {
-            type: String,
-            default: '',
-        },
-        label: {
-            type: String,
-            default: 'name',
-        },
-    },
-    data() {
-        return {
-            instance: null,
-        };
-    },
-    watch: {
-        value: {
-            handler(newVal) {
-                if (!_.isNull(this.value)) {
-                    this.instance.setValue(newVal);
-                }
-            },
-        },
-    },
-    mounted() {
-        if (_.isNull(this.instance)) {
-            this.instance = new TomSelect(`#${this.id}`, this.options);
-        }
+interface SelectOption {
+    value: string | number;
+    [key: string]: unknown;
+}
 
-        if (!_.isNull(this.value)) {
-            this.instance.setValue(this.value);
-        }
-    },
-    methods: {
-        onInput(e) {
-            this.$emit('input', e.target.value);
-        },
-    },
+const props = withDefaults(defineProps<{
+    options: SelectOption[];
+    id: string;
+    value?: string | number | null;
+    placeholder?: string;
+    label?: string;
+}>(), {
+    value: null,
+    placeholder: '',
+    label: 'name',
+});
+
+const emit = defineEmits<{
+    input: [value: string];
+}>();
+
+const instance = ref<TomSelect | null>(null);
+
+watch(() => props.value, (newVal) => {
+    if (newVal !== null && newVal !== undefined && instance.value) {
+        instance.value.setValue(String(newVal));
+    }
+});
+
+onMounted(() => {
+    if (instance.value === null) {
+        instance.value = new TomSelect(`#${props.id}`, {});
+    }
+    if (props.value !== null && props.value !== undefined && instance.value) {
+        instance.value.setValue(String(props.value));
+    }
+});
+
+const onInput = (e: Event) => {
+    emit('input', (e.target as HTMLSelectElement).value);
 };
 </script>
 

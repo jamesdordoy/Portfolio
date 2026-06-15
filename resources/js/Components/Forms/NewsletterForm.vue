@@ -4,10 +4,13 @@ import { useReCaptcha } from 'vue-recaptcha-v3';
 import checkRecapture from '@/checkRecapture';
 import { usePortfolioStore } from '@/Stores/index';
 import { faNewspaper, faCheck } from '@fortawesome/free-solid-svg-icons';
+import { store as newsletterRoute } from '@/routes/newsletter';
 
 const portfolioStore = usePortfolioStore();
 
-const form = useForm('post', '/newsletter', {
+const route = newsletterRoute();
+
+const form = useForm(route.method, route.url, {
     email: '',
 } as App.Dto.Newsletter);
 
@@ -15,7 +18,7 @@ const { executeRecaptcha, recaptchaLoaded } = useReCaptcha();
 
 const submit = async () => {
     if (await checkRecapture(executeRecaptcha, recaptchaLoaded)) {
-        form.post('/newsletter', {
+        form.post(route.url, {
             preserveScroll: (page): boolean => !!Object.keys(page.props.errors).length,
             onSuccess: (): void => {
                 form.reset();

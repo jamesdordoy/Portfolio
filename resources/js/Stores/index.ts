@@ -1,5 +1,7 @@
 import { defineStore } from 'pinia';
 
+type ThemeMode = 'light' | 'dark';
+
 const getTailwindColor = (name: string, shade: string | number): string => {
     if (typeof document === 'undefined') return '';
     return getComputedStyle(document.documentElement)
@@ -11,15 +13,14 @@ export const usePortfolioStore = defineStore('portfolio', {
     state: () => ({
         primaryThemeColour: 'blue',
         primaryThemeColourShade: 500,
-        primaryTheme: 'dark',
+        primaryTheme: 'dark' as ThemeMode,
         acceptedGDRP: false,
         primaryThemeRouterAnimation: '',
-        particleOptions: {},
     }),
 
     actions: {
-        userAcceptedGDRP(state): void {
-            state.acceptedGDRP = true;
+        userAcceptedGDRP(): void {
+            this.acceptedGDRP = true;
         },
     },
     getters: {

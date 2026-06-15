@@ -1,16 +1,12 @@
 <script setup lang="ts">
-import { PropType } from 'vue';
 import BaseBookmark from '@/Components/Base/BaseBookmark.vue';
 import { usePortfolioStore } from '@/Stores/index';
 
 const portfolioStore = usePortfolioStore();
 
-defineProps({
-    gameClips: {
-        type: Array as PropType<App.Models.Data.Collection<App.Dto.GameClip>>,
-        required: true,
-    },
-});
+defineProps<{
+    gameClips: App.Dto.GameClip[];
+}>();
 </script>
 
 <template>

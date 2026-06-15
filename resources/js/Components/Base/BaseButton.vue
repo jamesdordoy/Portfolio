@@ -2,18 +2,14 @@
 import { computed } from 'vue';
 import { cva } from 'class-variance-authority';
 
-const props = defineProps({
-    text: {
-        type: String,
-        default: '',
-    },
-    variant: {
-        type: String,
-        default: 'default',
-        validator(value: string) {
-            return ['default', 'primary', 'secondary', 'info', 'success', 'warning', 'error'].includes(value);
-        },
-    },
+type ButtonVariant = 'default' | 'primary' | 'secondary' | 'info' | 'success' | 'warning' | 'error';
+
+const props = withDefaults(defineProps<{
+    text?: string;
+    variant?: ButtonVariant;
+}>(), {
+    text: '',
+    variant: 'default',
 });
 
 const emit = defineEmits<{

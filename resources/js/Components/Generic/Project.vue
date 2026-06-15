@@ -1,16 +1,12 @@
 <script lang="ts" setup>
-import { PropType } from 'vue';
 import Tag from '@/Components/Generic/PortfolioTag.vue';
 import { usePortfolioStore } from '@/Stores/index';
 
 const portfolioStore = usePortfolioStore();
 
-defineProps({
-    project: {
-        type: Object as PropType<App.Models.Data.Project>,
-        required: true,
-    },
-});
+defineProps<{
+    project: App.Dto.Project;
+}>();
 </script>
 
 <template>
