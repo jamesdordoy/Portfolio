@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
 use Database\Factories\ProjectFactory;
@@ -9,6 +11,19 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 
+/**
+ * @property int                                                       $id
+ * @property string                                                    $name
+ * @property string                                                    $description
+ * @property string                                                    $owner
+ * @property string|null                                               $link
+ * @property string|null                                               $icon
+ * @property bool                                                      $complete
+ * @property bool                                                      $private
+ * @property \Illuminate\Support\Carbon                                $created_at
+ * @property \Illuminate\Support\Carbon                                $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, Tag>   $tags
+ */
 #[UseFactory(ProjectFactory::class)]
 class Project extends EloquentModel
 {
@@ -21,12 +36,14 @@ class Project extends EloquentModel
         'updated_at' => 'datetime',
     ];
 
+    /** @return MorphToMany<Tag, $this> */
     public function tags(): MorphToMany
     {
         return $this->morphToMany(Tag::class, 'taggable');
     }
 
     #[Scope]
+    /** @param Builder<Project> $query */
     public function public(Builder $query): Builder
     {
         return $query->where('private', 0)->with('tags')->latest();

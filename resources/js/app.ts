@@ -25,15 +25,13 @@ createInertiaApp({
         return pages[`./Pages/${name}.vue`];
     },
     setup({ el, App, props, plugin }) {
-        return (
-            createSSRApp({ render: () => h(App, props) })
-                .component('font-awesome-icon', FontAwesomeIcon)
-                .use(plugin)
-                .use(pinia)
-                .use(VueScrollTo)
-                .use(VueReCaptcha, { siteKey: import.meta.env.VITE_RECAPTCHA_SITE_KEY } as any)
-                .mount(el)
-        );
+        return createSSRApp({ render: () => h(App, props) })
+            .component('font-awesome-icon', FontAwesomeIcon)
+            .use(plugin)
+            .use(pinia)
+            .use(VueScrollTo)
+            .use(VueReCaptcha, { siteKey: import.meta.env.VITE_RECAPTCHA_SITE_KEY } as any)
+            .mount(el);
     },
 });
 

@@ -18,6 +18,7 @@ defineProps<{
 </script>
 
 <template>
+    <!-- eslint-disable vue/no-v-html -->
     <article
         v-if="event?.id && event.id % 2 !== 0"
         class="flex w-full flex-row"

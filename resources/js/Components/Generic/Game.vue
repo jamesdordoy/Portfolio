@@ -1,12 +1,7 @@
 <script lang="ts" setup>
-import { PropType } from 'vue';
-
-defineProps({
-    clip: {
-        type: Object as PropType<App.Dto.GameClip>,
-        required: true,
-    },
-});
+defineProps<{
+    clip: App.Dto.GameClip;
+}>();
 </script>
 
 <template>

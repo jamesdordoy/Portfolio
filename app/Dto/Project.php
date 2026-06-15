@@ -18,6 +18,9 @@ class Project extends Data
 {
     public const COLLECTION_NAME = 'projects';
 
+    /**
+     * @param Tag[]|null $tags
+     */
     public function __construct(
         public ?int $id,
 
