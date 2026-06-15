@@ -10,12 +10,7 @@ class CreateLanguage implements CreateLanguageContract
 {
     public function create(LanguageData $data): Language
     {
-        return Language::create(
-            [
-                'name' => $data->name,
-                'description' => $data->description,
-            ]
-        );
+        return Language::create($data->toArray());
     }
 
     public function redirectTo(): string

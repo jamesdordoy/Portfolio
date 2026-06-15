@@ -9,9 +9,9 @@ use Illuminate\Support\Facades\Mail;
 
 class SendContactEmail
 {
-    public function __invoke(Contact $contact)
+    public function __invoke(Contact $contact): Contact
     {
-        $this->handle($contact, fn () => null);
+        return $this->handle($contact, fn ($contact) => $contact);
     }
 
     public function handle(Contact $contact, Closure $next)
@@ -19,6 +19,9 @@ class SendContactEmail
         Mail::to($contact->email)
             ->queue(new ContactMail($contact));
 
-        return $next($contact);
+        return tap(
+            $contact->refresh(),
+            fn (Contact $contact) => $next($contact)
+        );
     }
 }
