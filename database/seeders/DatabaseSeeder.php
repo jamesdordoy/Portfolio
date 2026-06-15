@@ -12,7 +12,6 @@ class DatabaseSeeder extends Seeder
         ProjectTableSeeder::class,
         LanguageTableSeeder::class,
         TimelineEventTableSeeder::class,
-        PostTableSeeder::class,
         GameTableSeeder::class,
         GameClipTableSeeder::class,
     ];

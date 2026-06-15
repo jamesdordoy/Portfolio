@@ -29,7 +29,7 @@ return [
         CarbonImmutable::class => 'string',
         Carbon\Carbon::class => 'string',
     ],
-    resource_path('js/types/generated.d.ts') < 'output_file',
+    'output_file' => resource_path('js/types/generated.d.ts'),
     'writer' => TypeDefinitionWriter::class,
     'formatter' => null,
     'transform_to_native_enums' => false,

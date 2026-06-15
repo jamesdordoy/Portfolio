@@ -17,7 +17,6 @@
     "license": "MIT",
     "require": {
         "php": "^8.3|^8.4",
-        "fakerphp/faker": "^1.24.1",
         "guzzlehttp/guzzle": "^7.11.1",
         "inertiajs/inertia-laravel": "^3.0",
         "laravel/framework": "^13.15.0",
@@ -30,6 +29,7 @@
         "spatie/laravel-typescript-transformer": "^3.2.0"
     },
     "require-dev": {
+        "fakerphp/faker": "^1.24.1",
         "laravel/pint": "^1.29.1",
         "mockery/mockery": "^1.6.12",
         "nunomaduro/collision": "^8.9.4",
@@ -70,7 +70,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "11.x-dev"
+            "dev-master": "13.x-dev"
         },
         "laravel": {
             "dont-discover": []
