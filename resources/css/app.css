@@ -1,58 +1,93 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@layer theme, base, components, utilities;
+@import 'tailwindcss';
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/typography";
 
-.themeSettingsPanelToggleButton {
-    @apply fixed left-0 z-10 top-[50%];
+@source "../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php";
+@source "../../vendor/laravel/jetstream/**/*.blade.php";
+@source "../../storage/framework/views/*.php";
+@source "../../resources/views/**/*.blade.php";
+@source "../../node_modules/@protonemedia/inertiajs-tables-laravel-query-builder";
+
+@source inline("{bg,text,border}-{red,orange,yellow,green,gray,teal,blue,purple,indigo,pink,lime,emerald,stone,zinc,slate,sky}-{100,200,300,400,500,600,700,800,900}");
+@source inline("hover:{bg,text,border}-{red,orange,yellow,green,gray,teal,blue,purple,indigo,pink,lime,emerald,stone,zinc,slate,sky}-{100,200,300,400,500,600,700,800,900}");
+@source inline("focus:{bg,text,border}-{red,orange,yellow,green,gray,teal,blue,purple,indigo,pink,lime,emerald,stone,zinc,slate,sky}-{100,200,300,400,500,600,700,800,900}");
+
+@theme {
+    --font-sans: 'Nunito', ui-sans-serif, system-ui, sans-serif;
+    --color-primary: #3a4145;
 }
 
-#settings-sidebar {
-    @apply left-0 z-20 fixed top-[56px] min-h-full w-full border-r border-t py-2 shadow lg:top-[76px] lg:w-1/4;
+@layer base {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentColor);
+    }
 }
 
-.front-nav-item {
-    @apply mr-4 block cursor-pointer py-4 uppercase no-underline;
-}
+@layer components {
+    .themeSettingsPanelToggleButton {
+        @apply fixed left-0 z-10 top-[50%];
+    }
 
-.front-nav {
-    @apply fixed top-0 right-0 left-0 flex flex-wrap items-center justify-between py-3 px-4 z-10 border-b lg:px-10;
-}
+    #settings-sidebar {
+        @apply left-0 z-20 fixed top-[56px] min-h-full w-full border-r border-t py-2 shadow-sm lg:top-[76px] lg:w-1/4;
+    }
 
-.front-into {
-    @apply rounded border p-4 text-center text-white;
+    .front-nav-item {
+        display: block;
+        @apply mr-4 cursor-pointer py-4 uppercase no-underline;
+    }
 
-    background: rgba(0, 0, 0, 0.4);
-    text-shadow: 0px 0px 2px #131415;
-}
+    @media (min-width: 1024px) {
+        .front-nav-item {
+            display: inline-block;
+        }
+    }
 
-.jd-bookmark {
-    @apply block invisible relative top-[-100px];
-}
+    .front-nav {
+        @apply fixed top-0 right-0 left-0 flex flex-wrap items-center justify-between py-3 px-4 z-10 border-b lg:px-10;
+    }
 
-.grecaptcha-logo {
-    @apply z-50;
-}
+    .front-into {
+        @apply rounded-sm border p-4 text-center text-white;
 
-#portfolio-particles {
-    @apply absolute top-0 left-0 bottom-0 right-0 p-0 m-0 z-0;
-}
+        background: rgba(0, 0, 0, 0.4);
+        text-shadow: 0px 0px 2px #131415;
+    }
 
-.project {
-    @apply h-full border sm:w-full;
-}
+    .jd-bookmark {
+        @apply block invisible relative top-[-100px];
+    }
 
-.project-image {
-    @apply w-full border-b h-80;
-}
+    .grecaptcha-logo {
+        @apply z-50;
+    }
 
-.project-name {
-    @apply text-blue-500 underline hover:no-underline;
-}
+    #portfolio-particles {
+        @apply absolute top-0 left-0 bottom-0 right-0 p-0 m-0 z-0;
+    }
 
-.game {
-    @apply h-96 w-full;
-}
+    .project {
+        @apply h-full border sm:w-full;
+    }
 
-.tag {
-    @apply mr-2 inline-block rounded border border-blue-500 py-1 px-2 text-xs;
+    .project-image {
+        @apply w-full border-b h-80;
+    }
+
+    .project-name {
+        @apply text-blue-500 underline hover:no-underline;
+    }
+
+    .game {
+        @apply h-96 w-full;
+    }
+
+    .tag {
+        @apply mr-2 inline-block rounded-sm border border-blue-500 py-1 px-2 text-xs;
+    }
 }

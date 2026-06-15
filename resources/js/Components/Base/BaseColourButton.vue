@@ -8,5 +8,5 @@ defineProps({
 </script>
 
 <template>
-    <button :class="`p-5 bg-${colour}-500 rounded`"></button>
+    <button :class="`p-5 bg-${colour}-500 rounded-sm`"></button>
 </template>

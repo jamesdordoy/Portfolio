@@ -9,12 +9,12 @@ My personal portfolio built with Laravel, Vue & Tailwind.
 
 ## Deps
 
-* [PHP](https://www.php.net/releases/8.2/en.php) 8.2+
+* [PHP](https://www.php.net/releases/8.3/en.php) 8.3+
 * [Vue.js](https://vuejs.org/) 3.x
-* [TypeScript](https://www.typescriptlang.org/) 5.x
-* [Laravel](http://laravel.com/docs/) 11.x
-* [Inertiajs](https://inertiajs.com/) 1.x
-* [Tailwind](https://tailwindcss.com/) 3.x
+* [TypeScript](https://www.typescriptlang.org/) 6.x
+* [Laravel](http://laravel.com/docs/) 13.x
+* [Inertiajs](https://inertiajs.com/) 3.x
+* [Tailwind](https://tailwindcss.com/) 4.x
 * [Redis](https://redis.io/)
 * [Vite](https://vitejs.dev/)
 

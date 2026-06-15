@@ -48,7 +48,7 @@ const submit = async () => {
                     @change="form.validate('email')"
                 />
                 <button
-                    class="flex-shrink-0 rounded border bg-transparent px-2 py-1 text-sm"
+                    class="shrink-0 rounded-sm border bg-transparent px-2 py-1 text-sm"
                     type="button"
                     :class="`border-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade} text-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade} hover:bg-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade} hover:text-${portfolioStore.primaryThemeHoverTextColour}`"
                     @click="submit"

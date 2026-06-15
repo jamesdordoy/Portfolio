@@ -12,6 +12,7 @@
         "skipLibCheck": true,
         "types": ["vite/client", "node"],
         "allowJs": true,
+        "ignoreDeprecations": "6.0",
         "baseUrl": ".",
         "paths": {
             "@/*": ["resources/js/*"]

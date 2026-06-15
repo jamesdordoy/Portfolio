@@ -66,7 +66,7 @@ const closeSettings = () => {
         </div>
 
         <div class="items-top relative min-h-screen flex-auto sm:pt-0">
-            <div class="py-18 relative min-h-screen w-full">
+            <div class="lg:pt-18 relative min-h-screen w-full">
                 <RetroBackground />
 
                 <div class="absolute left-1/2 top-1/2 w-1/2 -translate-x-1/2 -translate-y-1/2 transform lg:w-1/3">

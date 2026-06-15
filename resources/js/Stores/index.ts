@@ -1,5 +1,11 @@
 import { defineStore } from 'pinia';
-import colours from 'tailwindcss/colors';
+
+const getTailwindColor = (name: string, shade: string | number): string => {
+    if (typeof document === 'undefined') return '';
+    return getComputedStyle(document.documentElement)
+        .getPropertyValue(`--color-${name}-${shade}`)
+        .trim();
+};
 
 export const usePortfolioStore = defineStore('portfolio', {
     state: () => ({
@@ -38,7 +44,7 @@ export const usePortfolioStore = defineStore('portfolio', {
             return {
                 background: {
                     color: {
-                        value: colours[bgThemeColour][bgThemeShade],
+                        value: getTailwindColor(bgThemeColour, bgThemeShade),
                     },
                 },
                 fullScreen: {
@@ -76,10 +82,10 @@ export const usePortfolioStore = defineStore('portfolio', {
                 },
                 particles: {
                     color: {
-                        value: colours[themeColour][themeShade],
+                        value: getTailwindColor(themeColour, themeShade),
                     },
                     links: {
-                        color: colours[themeColour][themeShade],
+                        color: getTailwindColor(themeColour, themeShade),
                         distance: 150,
                         enable: true,
                         opacity: 0.5,

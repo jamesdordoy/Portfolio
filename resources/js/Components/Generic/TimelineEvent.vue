@@ -26,7 +26,7 @@ defineProps({
     >
         <div class="w-4/5 py-10">
             <div
-                class="flex w-full flex-col border-b px-4 py-5 shadow"
+                class="flex w-full flex-col border-b px-4 py-5 shadow-sm"
                 :class="`bg-${portfolioStore.primaryThemeBgDarkest} border-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade}`"
             >
                 <div class="mb-2 flex justify-between text-gray-600">
@@ -78,7 +78,7 @@ defineProps({
         </div>
         <div class="w-4/5 px-2 py-10">
             <div
-                class="flex w-full flex-col border-b px-4 py-5 shadow"
+                class="flex w-full flex-col border-b px-4 py-5 shadow-sm"
                 :class="`bg-${portfolioStore.primaryThemeBgDarker} border-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade}`"
             >
                 <div class="mb-2 flex justify-between text-gray-600">

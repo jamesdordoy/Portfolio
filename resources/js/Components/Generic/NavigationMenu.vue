@@ -42,7 +42,7 @@ const closeMenu = () => {
             </div>
             <div class="block lg:hidden">
                 <button
-                    class="flex items-center rounded border px-3 py-2"
+                    class="flex items-center rounded-sm border px-3 py-2"
                     :class="`text-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade} border-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade} hover:bg-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShadeDarker} hover:border-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShadeDarker}`"
                     @click="toggle"
                 >

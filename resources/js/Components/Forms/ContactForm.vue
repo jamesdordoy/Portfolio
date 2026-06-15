@@ -59,7 +59,7 @@ const submit = async () => {
                         name="name"
                         placeholder="John Smith"
                         :class="`bg-${portfolioStore.primaryThemeBgDarker} text-${portfolioStore.primaryThemeTextColour} focus:bg-${portfolioStore.primaryThemeBgDarkest}`"
-                        class="block w-full appearance-none border-none px-4 py-3 leading-tight focus:outline-none"
+                        class="block w-full appearance-none border-none px-4 py-3 leading-tight focus:outline-hidden"
                         @change="form.validate('name')"
                     />
                 </div>
@@ -88,7 +88,7 @@ const submit = async () => {
                         v-model="form.email"
                         name="email"
                         type="email"
-                        class="block w-full appearance-none border-none px-4 py-3 leading-tight focus:outline-none"
+                        class="block w-full appearance-none border-none px-4 py-3 leading-tight focus:outline-hidden"
                         :class="`bg-${portfolioStore.primaryThemeBgDarker} text-${portfolioStore.primaryThemeTextColour} focus:bg-${portfolioStore.primaryThemeBgDarkest}`"
                         placeholder="john@example.com"
                         @change="form.validate('email')"
@@ -120,7 +120,7 @@ const submit = async () => {
                         id="contact_message"
                         v-model="form.message"
                         :class="{
-                            'block w-full appearance-none border-none px-4 py-3 leading-tight focus:outline-none': true,
+                            'block w-full appearance-none border-none px-4 py-3 leading-tight focus:outline-hidden': true,
                             [`bg-${portfolioStore.primaryThemeBgDarker}`]: true,
                             [`text-${portfolioStore.primaryThemeTextColour}`]: true,
                             [`focus:bg-${portfolioStore.primaryThemeBgDarkest}`]: true,
@@ -141,7 +141,7 @@ const submit = async () => {
         <div class="-mx-3 flex flex-wrap pl-3">
             <button
                 type="submit"
-                class="g-recaptcha flex-shrink-0 rounded border bg-transparent px-2 py-1 text-sm"
+                class="g-recaptcha shrink-0 rounded-sm border bg-transparent px-2 py-1 text-sm"
                 :class="`border-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade} text-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade} hover:bg-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade} hover:text-${portfolioStore.primaryThemeHoverTextColour}`"
                 :disabled="form.processing"
             >
