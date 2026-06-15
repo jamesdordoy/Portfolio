@@ -9,7 +9,7 @@ test('A language can be created', function () {
         'description' => 'Markup Language',
     ]);
 
-    $action = new CreateLanguage();
+    $action = new CreateLanguage;
 
     $language = $action->create($data);
 
@@ -17,7 +17,7 @@ test('A language can be created', function () {
 });
 
 test('A language redirects back to the listing', function () {
-    $action = new CreateLanguage();
+    $action = new CreateLanguage;
 
     $this->assertEquals($action->redirectTo(), route('home'));
 });

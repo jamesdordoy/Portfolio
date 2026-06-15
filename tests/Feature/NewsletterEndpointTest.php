@@ -10,23 +10,19 @@ beforeEach(function () {
 });
 
 test('Newsletter end point fails with no email', function () {
-    $this->followingRedirects()
-        ->post(route('newsletter.store'), ['email' => ''])
-        ->assertInertia(fn (Assert $page) => $page
-            ->component(HomeController::INDEX)
-            ->has(
-                'errors.email'
-            ));
-});
+    $response = $this
+        ->post(route('newsletter.store'), ['email' => '']);
 
-test('Newsletter end point fails with an invalid email', function () {
-    $this->followingRedirects()
-        ->post(route('newsletter.store'), ['email' => 'invalid'])
-        ->assertInertia(fn (Assert $page) => $page
-            ->component(HomeController::INDEX)
-            ->has(
-                'errors.email'
-            ));
+    $response->assertRedirect(route('home'));
+
+    $response->assertSessionHasErrors([
+        'email' => 'The email field is required.',
+    ]);
+
+    $this->assertSame(
+        'The email field is required.',
+        session()->get('errors')->getBag('default')->first('email')
+    );
 });
 
 test('Newsletter end point success with a valid email', function () {

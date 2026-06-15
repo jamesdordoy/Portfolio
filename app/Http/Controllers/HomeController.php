@@ -31,7 +31,7 @@ final class HomeController
                     'gameClips' => GameClipData::collect(
                         GameClip::with(GameClip::PUBLIC_RELATIONSHIPS)->get()
                     ),
-                ])
+                ]),
             ]
         );
     }

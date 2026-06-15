@@ -12,16 +12,16 @@ beforeEach(function () {
 });
 
 test('Contact end point fails with no name', function () {
-    $this->followingRedirects()
+    $response = $this->followingRedirects()
+        ->from(route('home'))
         ->post(route('contact.store'), [
             'email' => 'test@test.com',
             'message' => 'message',
-        ])
-        ->assertInertia(fn (Assert $page) => $page
-            ->component(HomeController::INDEX)
-            ->has(
-                'errors.name'
-            ));
+        ]);
+
+    $response->assertInertia(fn (Assert $page) => $page
+        ->component(HomeController::INDEX)
+        ->has('errors.name'));
 });
 
 test('Contact end point fails with no email', function () {

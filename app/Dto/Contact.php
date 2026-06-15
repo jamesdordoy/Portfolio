@@ -16,22 +16,21 @@ class Contact extends Data
         public string $message,
         public DateTime|Optional $created_at,
         public DateTime|Optional $updated_at,
-    ) {
-    }
+    ) {}
 
     public static function rules(): array
     {
         return [
             'name' => [
-                new Validation\Required(),
+                new Validation\Required,
                 new Validation\Min(3),
             ],
             'email' => [
-                new Validation\Required(),
-                new Validation\Email(),
+                new Validation\Required,
+                new Validation\Email,
             ],
             'message' => [
-                new Validation\Required(),
+                new Validation\Required,
                 new Validation\Min(5),
             ],
         ];

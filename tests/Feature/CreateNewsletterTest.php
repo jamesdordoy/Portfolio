@@ -13,7 +13,7 @@ test('A newsletter can be created', function () {
 });
 
 test('A newsletter redirects back to the listing', function () {
-    $action = new CreateNewsletter();
+    $action = new CreateNewsletter;
 
     $this->assertEquals($action->redirectTo(), route('home'));
 });

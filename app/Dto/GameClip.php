@@ -15,6 +15,5 @@ class GameClip extends Data
         public ?DateTime $created_at,
         public ?DateTime $updated_at,
         public ?Game $game,
-    ) {
-    }
+    ) {}
 }

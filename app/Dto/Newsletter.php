@@ -15,18 +15,17 @@ class Newsletter extends Data
         public string $email,
         public DateTime|Optional $created_at,
         public DateTime|Optional $updated_at,
-    ) {
-    }
+    ) {}
 
     public static function rules(): array
     {
         return [
             'email' => [
-                new Validation\Required(),
+                new Validation\Required,
                 new Validation\Unique(
                     table: NewsletterModel::class
                 ),
-                new Validation\Email(),
+                new Validation\Email,
             ],
         ];
     }

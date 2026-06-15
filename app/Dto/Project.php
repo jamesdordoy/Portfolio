@@ -25,25 +25,24 @@ class Project extends Data
         public ?DateTime $updated_at,
         #[DataCollectionOf(Tag::class)]
         public ?DataCollection $tags,
-    ) {
-    }
+    ) {}
 
     public static function rules(): array
     {
         return [
             'name' => [
-                new Validation\Required(),
-                new Validation\StringType(),
+                new Validation\Required,
+                new Validation\StringType,
                 new Validation\Min(3),
             ],
             'description' => [
-                new Validation\Required(),
-                new Validation\StringType(),
+                new Validation\Required,
+                new Validation\StringType,
                 new Validation\Min(3),
             ],
             'owner' => [
-                new Validation\Required(),
-                new Validation\StringType(),
+                new Validation\Required,
+                new Validation\StringType,
             ],
         ];
     }

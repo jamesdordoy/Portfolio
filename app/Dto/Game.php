@@ -23,6 +23,5 @@ class Game extends Data
         public ?DateTime $updated_at,
         #[DataCollectionOf(GameClip::class)]
         public ?DataCollection $clips,
-    ) {
-    }
+    ) {}
 }

@@ -19,6 +19,8 @@ const form = useForm('post', '/contact', contact);
 const { executeRecaptcha, recaptchaLoaded } = useReCaptcha();
 
 const submit = async () => {
+    
+    console.log('hit')
     await recaptchaLoaded();
 
     const token = await executeRecaptcha('contact');
@@ -30,13 +32,24 @@ const submit = async () => {
             },
         });
 
+        console.log(response)
+
         if (response.data.success) {
-            form.submit({
-                preserveScroll: (page) => !!Object.keys(page.props.errors).length,
-                onSuccess: () => {
-                    form.reset();
-                },
-            });
+            
+            axios.post('/contact', form.data()).then(response => {
+                console.log(response)
+            }).catch(error => {
+                console.log(error)
+            })
+            
+            // let thing = form.submit({
+            //     // preserveScroll: (page) => !!Object.keys(page.props.errors).length,
+            //     // onSuccess: () => {
+            //     //     form.reset();
+            //     // },
+            // });
+
+            // console.log(thing)
         }
     } catch (error) {
         console.log(error)

@@ -3,8 +3,8 @@
 use App\Dto\TimelineEvent;
 
 test('test_timeline_event_data_object_name', function () {
-    $to = new DateTime();
-    $from = new DateTime();
+    $to = new DateTime;
+    $from = new DateTime;
 
     $timelineEvent = TimelineEvent::from([
         'from' => $from,
