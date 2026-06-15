@@ -15,9 +15,6 @@ import { VueReCaptcha } from 'vue-recaptcha-v3';
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
-import { Ziggy } from './ziggy';
-import { route, ZiggyVue } from 'ziggy-js';
-
 const pinia = createPinia();
 pinia.use(piniaPluginPersistedstate);
 
@@ -37,9 +34,7 @@ createServer((page) =>
                 .use(plugin)
                 .use(pinia)
                 .use(VueScrollTo)
-                .use(VueReCaptcha, { siteKey: import.meta.env.VITE_RECAPTCHA_SITE_KEY })
-                .mixin({ methods: { route } })
-                .use(ZiggyVue, Ziggy);
+                .use(VueReCaptcha, { siteKey: import.meta.env.VITE_RECAPTCHA_SITE_KEY });
         },
     })
 );
