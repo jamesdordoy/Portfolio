@@ -16,7 +16,7 @@ class TimelineEvent extends Data
 
     public function __construct(
         //
-        public int|Optional $id,
+        public ?int $id,
         //
         #[
             WithCast(DateTimeInterfaceCast::class, format: DATE_ATOM),

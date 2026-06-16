@@ -17,7 +17,7 @@ class Contact extends Data
 {
     public function __construct(
         //
-        public int|Optional $id,
+        public ?int $id,
         //
         #[
             Required,

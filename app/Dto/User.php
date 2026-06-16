@@ -13,7 +13,7 @@ use Spatie\LaravelData\Transformers\DateTimeInterfaceTransformer;
 class User extends Data
 {
     public function __construct(
-        public int|Optional $id,
+        public ?int $id,
         public string $name,
         public string $email,
         //

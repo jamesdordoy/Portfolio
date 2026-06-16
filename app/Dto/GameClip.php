@@ -14,7 +14,9 @@ class GameClip extends Data
     public const COLLECTION_NAME = 'gameClips';
 
     public function __construct(
+        //
         public ?int $id,
+        //
         public string $url,
         //
         #[

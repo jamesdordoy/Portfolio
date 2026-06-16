@@ -11,7 +11,7 @@ use Spatie\LaravelData\Optional;
 class Newsletter extends Data
 {
     public function __construct(
-        public int|Optional $id,
+        public ?int $id,
         public string $email,
         public DateTime|Optional $created_at,
         public DateTime|Optional $updated_at,

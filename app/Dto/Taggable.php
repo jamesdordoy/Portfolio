@@ -9,7 +9,7 @@ use Spatie\LaravelData\Optional;
 class Taggable extends Data
 {
     public function __construct(
-        public int|Optional $id,
+        public ?int $id,
         public string $name,
         public string $description,
         public DateTime|Optional $created_at,
