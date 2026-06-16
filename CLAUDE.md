@@ -21,7 +21,6 @@ Deployed via Laravel Forge. CI: Pest (PHP) + Vitest (frontend).
 | CSS | Tailwind 4 |
 | Data / DTOs | `spatie/laravel-data` 4.x |
 | TypeScript generation | `spatie/laravel-typescript-transformer` 3.x |
-| Query building | `spatie/laravel-query-builder` 7.x |
 | Routing (frontend) | `laravel/wayfinder` |
 | Testing (PHP) | Pest |
 | Testing (JS) | Vitest |
@@ -70,12 +69,12 @@ final class ContactController
 }
 ```
 
-### DTOs (Data objects)
-- Every DTO extends `Spatie\LaravelData\Data`.
-- All DTOs live in `app/Data/` (subdirectories allowed, e.g. `app/Data/Pages/`).
-- Every DTO is the single source of truth for request data — never use `$request->only(...)` or `$request->all()` directly outside of `Data::from(...)`.
-- Actions **only** accept a DTO for model data — never a raw array or `Request`.
-- DTOs are automatically picked up by the TypeScript transformer (`DataClassTransformer`) — no `#[TypeScript]` attribute needed.
+### Data objects
+- Every data class extends `Spatie\LaravelData\Data`.
+- All data classes live in `app/Data/` (subdirectories allowed, e.g. `app/Data/Pages/`).
+- Every data class is the single source of truth for request data — never use `$request->only(...)` or `$request->all()` directly outside of `Data::from(...)`.
+- Actions **only** accept a data object for model data — never a raw array or `Request`.
+- Data classes are automatically picked up by the TypeScript transformer — no `#[TypeScript]` attribute needed.
 
 ```php
 // Good
@@ -93,17 +92,20 @@ class CreateContact
 
 ### Actions
 - Live in `app/Actions/{Domain}/`.
-- Accept only a DTO for model data.
-- Expose a `handle(DTO $data, Closure $next)` for pipeline usage and an `__invoke` for standalone usage.
+- Accept only a data object for model data.
+- Expose a `handle(Data $data, Closure $next)` for pipeline usage and an `__invoke` for standalone usage.
 - Static `redirectTo()` helper when relevant.
+
+### Contracts
+- Interfaces for actions live in `app/Contracts/Actions/{Domain}/`.
+- Name them `{ActionName}Contract`.
 
 ### Pipelines
 - Compose Actions with `app(Pipeline::class)->send(...)->through([...])->then(...)`.
 - Keeps each Action independently testable.
 
-### Query builders
-- Use `spatie/laravel-query-builder` — never raw Eloquent query chains on the controller or service level.
-- Follow the existing pattern in `app/QueryBuilder/` (e.g. `UserQuery.php`).
+### Models
+- All models extend `App\Models\EloquentModel` (guards the primary key from mass-assignment via `$guarded = ['id']`).
 
 ### Error handling
 - Use Laravel's exception handler.
@@ -111,8 +113,8 @@ class CreateContact
 - Use `try/catch` only for genuinely expected exceptions.
 
 ### Validation
-- Use `Spatie\LaravelData` rule attributes on DTO constructor properties for validation.
-- Use Laravel Form Requests only when a DTO is not appropriate.
+- Use `Spatie\LaravelData` rule attributes on data class constructor properties for validation.
+- Use Laravel Form Requests only when a data class is not appropriate.
 
 ### Routes
 - Always named, always resourceful.
@@ -124,9 +126,9 @@ class CreateContact
 ## TypeScript / Frontend conventions
 
 ### Type generation
-- Generated types live in `resources/js/generated/generated.d.ts` (namespace `App.Data.*`).
-- Regenerate after any DTO change: `php artisan typescript:transform`.
-- **Always use generated types for Inertia props** — never hand-write DTO shapes.
+- Generated types live in `resources/types/generated.d.ts` (namespace `App.Data.*`).
+- Regenerate after any data class change: `php artisan typescript:transform`.
+- **Always use generated types for Inertia props** — never hand-write data class shapes.
 
 ### Vue components
 - `<script lang="ts" setup>` — always.
@@ -144,23 +146,31 @@ withDefaults(
 );
 ```
 
+### Composables
+- Live in `resources/js/composables/`.
+- Standard Vue composition API — `ref`, `onMounted`, etc.
+
 ### Component structure
 ```
-resources/js/
-  Components/
-    Base/        # Primitive/reusable UI
-    Forms/       # Form components
-    Generic/     # Layout-level (Nav, Footer, etc.)
-    Inputs/      # Input primitives
-    Sections/    # Page sections
-  Pages/         # Inertia page components (one per route)
-  actions/       # Frontend action helpers
-  types/         # Hand-written ambient types (not generated)
-  generated/     # Auto-generated — never edit by hand
+resources/
+  types/           # Auto-generated TypeScript types (never edit by hand)
+  js/
+    actions/       # Wayfinder-generated action helpers (never edit by hand)
+    components/
+      base/        # Primitive/reusable UI
+      forms/       # Form components
+      generic/     # Shared layout components (Nav, Footer, etc.)
+      inputs/      # Input primitives
+      sections/    # Page sections
+    composables/   # Vue composables
+    pages/         # Inertia page components (one per route)
+    routes/        # Wayfinder-generated route definitions (never edit by hand)
+    tests/         # Component and unit tests
+    wayfinder/     # Wayfinder core (never edit by hand)
 ```
 
 ### Routing (frontend)
-- Use `laravel/wayfinder` generated helpers — never hard-code URL strings.
+- Use `laravel/wayfinder` generated helpers from `resources/js/routes/` — never hard-code URL strings.
 
 ### Styling
 - Tailwind 4 utility classes only.
@@ -173,11 +183,11 @@ resources/js/
 
 ### PHP — Pest
 - All tests written with Pest.
-- Test Actions in isolation — pass a DTO directly, mock nothing except external I/O.
+- Test Actions in isolation — pass a data object directly, mock nothing except external I/O.
 - Pipeline integration tests go in `Feature/`.
 
 ### JS — Vitest
-- Component tests in `resources/js/Tests/`.
+- Component tests in `resources/js/tests/`.
 - Use `@vue/test-utils` + `happy-dom`.
 - Run: `npm test` / `npm run coverage`.
 
@@ -188,6 +198,9 @@ resources/js/
 ```bash
 # TypeScript type generation
 php artisan typescript:transform
+
+# Wayfinder route generation
+php artisan wayfinder:generate
 
 # Dev server
 npm run dev
