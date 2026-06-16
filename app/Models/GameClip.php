@@ -20,6 +20,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 #[UseFactory(GameClipFactory::class)]
 class GameClip extends EloquentModel
 {
+    /** @use HasFactory<\Database\Factories\GameClipFactory> */
     use HasFactory;
 
     public const PUBLIC_RELATIONSHIPS = ['game'];

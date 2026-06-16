@@ -20,6 +20,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  */
 class TimelineEvent extends EloquentModel
 {
+    /** @use HasFactory<\Database\Factories\TimelineEventFactory> */
     use HasFactory;
 
     protected $casts = [

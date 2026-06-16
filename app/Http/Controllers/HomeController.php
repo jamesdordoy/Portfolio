@@ -23,7 +23,7 @@ final class HomeController
             [
                 'homePage' => HomePage::from([
                     'projects' => ProjectData::collect(
-                        Project::with(Project::PUBLIC_RELATIONSHIPS)->public()->get()
+                        Project::with(Project::PUBLIC_RELATIONSHIPS)->visible()->get()
                     ),
                     'timeline' => TimelineEventData::collect(
                         TimelineEvent::get()

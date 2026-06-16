@@ -24,6 +24,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 #[UseFactory(GameFactory::class)]
 class Game extends EloquentModel
 {
+    /** @use HasFactory<\Database\Factories\GameFactory> */
     use HasFactory;
 
     protected $casts = [

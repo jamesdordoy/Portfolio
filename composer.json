@@ -30,12 +30,15 @@
     },
     "require-dev": {
         "fakerphp/faker": "^1.24.1",
+        "larastan/larastan": "^3.10",
         "laravel/pint": "^1.29.1",
         "mockery/mockery": "^1.6.12",
         "nunomaduro/collision": "^8.9.4",
         "pestphp/pest": "^4.7.3",
         "pestphp/pest-plugin": "^4.0.0",
         "pestphp/pest-plugin-laravel": "^4.1.0",
+        "phpstan/phpstan": "^2.2",
+        "phpstan/phpstan-deprecation-rules": "^2.0",
         "phpunit/phpunit": "^12.5.29",
         "spatie/laravel-ignition": "^2.12.0"
     },
@@ -66,6 +69,9 @@
             "@php artisan key:generate --ansi",
             "@php -r \"file_exists('database/database.sqlite') || touch('database/database.sqlite');\"",
             "@php artisan migrate --ansi"
+        ],
+        "analyse": [
+            "@php vendor/bin/phpstan analyse --memory-limit=512M"
         ]
     },
     "extra": {

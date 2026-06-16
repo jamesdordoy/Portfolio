@@ -17,6 +17,7 @@ class Newsletter extends Data
         public DateTime|Optional $updated_at,
     ) {}
 
+    /** @return array<string, mixed> */
     public static function rules(): array
     {
         return [

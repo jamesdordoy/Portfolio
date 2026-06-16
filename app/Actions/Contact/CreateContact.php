@@ -13,7 +13,7 @@ class CreateContact
         return $this->handle($data, fn (Contact $contact) => $contact);
     }
 
-    public function handle(ContactData $data, Closure $next)
+    public function handle(ContactData $data, Closure $next): Contact
     {
         return tap(
             Contact::create($data->all()),

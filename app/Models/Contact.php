@@ -19,6 +19,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 #[UseFactory(ContactFactory::class)]
 class Contact extends EloquentModel
 {
+    /** @use HasFactory<\Database\Factories\ContactFactory> */
     use HasFactory;
 
     protected $casts = [

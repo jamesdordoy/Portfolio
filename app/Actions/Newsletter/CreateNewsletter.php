@@ -13,7 +13,7 @@ class CreateNewsletter
         return $this->handle($data, fn (Newsletter $newsletter) => $newsletter);
     }
 
-    public function handle(NewsletterData $data, Closure $next)
+    public function handle(NewsletterData $data, Closure $next): Newsletter
     {
         return tap(
             Newsletter::create($data->all()),

@@ -17,6 +17,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 #[UseFactory(NewsletterFactory::class)]
 class Newsletter extends EloquentModel
 {
+    /** @use HasFactory<\Database\Factories\NewsletterFactory> */
     use HasFactory;
 
     protected $casts = [

@@ -14,7 +14,7 @@ class SendContactEmail
         return $this->handle($contact, fn ($contact) => $contact);
     }
 
-    public function handle(Contact $contact, Closure $next)
+    public function handle(Contact $contact, Closure $next): Contact
     {
         Mail::to($contact->email)
             ->queue(new ContactMail($contact));

@@ -20,6 +20,7 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 #[UseFactory(TagFactory::class)]
 class Tag extends EloquentModel
 {
+    /** @use HasFactory<\Database\Factories\TagFactory> */
     use HasFactory;
 
     protected $casts = [

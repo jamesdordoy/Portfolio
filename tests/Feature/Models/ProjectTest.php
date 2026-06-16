@@ -30,7 +30,7 @@ test('test_a_project_is_public', function () {
         'private' => 1,
     ]);
 
-    $projects = Project::query()->public()->get();
+    $projects = Project::query()->visible()->get();
 
     $this->assertTrue($projects->first()->is($projectA));
     $this->assertTrue($projects->last()->is($projectA));

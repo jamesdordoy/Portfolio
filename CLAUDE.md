@@ -212,6 +212,9 @@ npm run format
 # PHP tests
 ./vendor/bin/pest
 
+# PHP static analysis
+composer analyse
+
 # JS tests
 npm test
 ```

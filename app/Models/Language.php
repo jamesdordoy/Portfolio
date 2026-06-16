@@ -18,10 +18,12 @@ use Illuminate\Database\Eloquent\Relations\MorphToMany;
  * @property \Illuminate\Support\Carbon                                $created_at
  * @property \Illuminate\Support\Carbon                                $updated_at
  * @property-read \Illuminate\Database\Eloquent\Collection<int, Tag>   $tags
+ * @method static Builder<static> ordered()
  */
 #[UseFactory(LanguageFactory::class)]
 class Language extends EloquentModel
 {
+    /** @use HasFactory<\Database\Factories\LanguageFactory> */
     use HasFactory;
 
     protected $casts = [
@@ -35,10 +37,13 @@ class Language extends EloquentModel
         return $this->morphToMany(Tag::class, 'taggable');
     }
 
+    /**
+     * @param Builder<Language> $query
+     * @return Builder<Language>
+     */
     #[Scope]
-    /** @param Builder<Language> $query */
-    public function ordered(Builder $query): Builder
+    protected function ordered(Builder $query): Builder
     {
-        return $query->orderBy('id', 'ASC');
+        return $query->orderBy('id', 'asc');
     }
 }

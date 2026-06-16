@@ -23,10 +23,12 @@ use Illuminate\Database\Eloquent\Relations\MorphToMany;
  * @property \Illuminate\Support\Carbon                                $created_at
  * @property \Illuminate\Support\Carbon                                $updated_at
  * @property-read \Illuminate\Database\Eloquent\Collection<int, Tag>   $tags
+ * @method static Builder<static> visible()
  */
 #[UseFactory(ProjectFactory::class)]
 class Project extends EloquentModel
 {
+    /** @use HasFactory<\Database\Factories\ProjectFactory> */
     use HasFactory;
 
     public const PUBLIC_RELATIONSHIPS = ['tags.taggable'];
@@ -42,9 +44,12 @@ class Project extends EloquentModel
         return $this->morphToMany(Tag::class, 'taggable');
     }
 
+    /**
+     * @param Builder<Project> $query
+     * @return Builder<Project>
+     */
     #[Scope]
-    /** @param Builder<Project> $query */
-    public function public(Builder $query): Builder
+    protected function visible(Builder $query): Builder
     {
         return $query->where('private', 0)->with('tags')->latest();
     }
