@@ -3,7 +3,7 @@ import { mount } from '@vue/test-utils';
 import { createPinia } from 'pinia';
 import MyExperianceSection from '@/components/sections/MyExperianceSection.vue';
 
-const makeEvent = (id: number): App.Dto.TimelineEvent => ({
+const makeEvent = (id: number): App.Data.TimelineEvent => ({
     id,
     from: '2020-01-01',
     to: '2022-01-01',

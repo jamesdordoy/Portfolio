@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Dto\Pages;
+namespace App\Data\Pages;
 
-use App\Dto\GameClip;
-use App\Dto\Project;
-use App\Dto\TimelineEvent;
+use App\Data\GameClip;
+use App\Data\Project;
+use App\Data\TimelineEvent;
 use Spatie\LaravelData\Attributes\DataCollectionOf;
 use Spatie\LaravelData\Data;
 use Spatie\LaravelData\DataCollection;

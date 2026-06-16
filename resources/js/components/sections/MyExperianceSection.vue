@@ -3,7 +3,7 @@ import TimelineEvent from '@/components/generic/TimelineEvent.vue';
 import SectionHeader from '@/components/base/SectionHeader.vue';
 
 defineProps<{
-    timeline: App.Dto.TimelineEvent[];
+    timeline: App.Data.TimelineEvent[];
 }>();
 </script>
 

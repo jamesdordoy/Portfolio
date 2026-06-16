@@ -1,6 +1,6 @@
 <?php
 
-use App\Dto\Contact;
+use App\Data\Contact;
 
 test('test_contact_data_object_name', function () {
     $contact = Contact::from([

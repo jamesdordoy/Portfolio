@@ -1,7 +1,7 @@
 <?php
 
 use App\Actions\Newsletter\CreateNewsletter;
-use App\Dto\Newsletter as NewsletterData;
+use App\Data\Newsletter as NewsletterData;
 use App\Models\Newsletter;
 
 test('A newsletter can be created', function () {

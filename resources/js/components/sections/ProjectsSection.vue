@@ -14,7 +14,7 @@ const breakpoints = {
 };
 
 defineProps<{
-    projects: App.Dto.Project[];
+    projects: App.Data.Project[];
 }>();
 </script>
 

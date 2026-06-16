@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Dto\GameClip as GameClipData;
-use App\Dto\Pages\HomePage;
-use App\Dto\Project as ProjectData;
-use App\Dto\TimelineEvent as TimelineEventData;
+use App\Data\GameClip as GameClipData;
+use App\Data\Pages\HomePage;
+use App\Data\Project as ProjectData;
+use App\Data\TimelineEvent as TimelineEventData;
 use App\Models\GameClip;
 use App\Models\Project;
 use App\Models\TimelineEvent;

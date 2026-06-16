@@ -72,7 +72,7 @@ final class ContactController
 
 ### DTOs (Data objects)
 - Every DTO extends `Spatie\LaravelData\Data`.
-- All DTOs live in `app/Dto/` (subdirectories allowed, e.g. `app/Dto/Pages/`).
+- All DTOs live in `app/Data/` (subdirectories allowed, e.g. `app/Data/Pages/`).
 - Every DTO is the single source of truth for request data — never use `$request->only(...)` or `$request->all()` directly outside of `Data::from(...)`.
 - Actions **only** accept a DTO for model data — never a raw array or `Request`.
 - DTOs are automatically picked up by the TypeScript transformer (`DataClassTransformer`) — no `#[TypeScript]` attribute needed.
@@ -124,20 +124,20 @@ class CreateContact
 ## TypeScript / Frontend conventions
 
 ### Type generation
-- Generated types live in `resources/js/generated/generated.d.ts` (namespace `App.Dto.*`).
+- Generated types live in `resources/js/generated/generated.d.ts` (namespace `App.Data.*`).
 - Regenerate after any DTO change: `php artisan typescript:transform`.
 - **Always use generated types for Inertia props** — never hand-write DTO shapes.
 
 ### Vue components
 - `<script lang="ts" setup>` — always.
 - Props typed with `defineProps<{}>()` / `withDefaults(defineProps<{}>(), {})`.
-- Inertia page props use the generated `App.Dto.*` namespace directly.
+- Inertia page props use the generated `App.Data.*` namespace directly.
 
 ```ts
 // Good
 withDefaults(
     defineProps<{
-        homePage: App.Dto.Pages.HomePage;
+        homePage: App.Data.Pages.HomePage;
         errors?: Record<string, string>;
     }>(),
     { errors: () => ({}) }
@@ -154,15 +154,10 @@ resources/js/
     Inputs/      # Input primitives
     Sections/    # Page sections
   Pages/         # Inertia page components (one per route)
-  Stores/        # Pinia stores
   actions/       # Frontend action helpers
   types/         # Hand-written ambient types (not generated)
   generated/     # Auto-generated — never edit by hand
 ```
-
-### Stores
-- Use Pinia.
-- Persist with `pinia-plugin-persistedstate` where appropriate.
 
 ### Routing (frontend)
 - Use `laravel/wayfinder` generated helpers — never hard-code URL strings.

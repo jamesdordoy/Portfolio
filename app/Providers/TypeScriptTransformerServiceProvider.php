@@ -14,7 +14,7 @@ class TypeScriptTransformerServiceProvider extends BaseTypeScriptTransformerServ
     protected function configure(TypeScriptTransformerConfigFactory $config): void
     {
         $config
-            ->transformDirectories(app_path('Dto'))
+            ->transformDirectories(app_path('Data'))
             ->outputDirectory(resource_path('types'))
             ->replaceType(DateTime::class, 'string')
             ->extension(new LaravelTypeScriptTransformerExtension)

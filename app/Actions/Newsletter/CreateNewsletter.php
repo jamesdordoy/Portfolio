@@ -2,7 +2,7 @@
 
 namespace App\Actions\Newsletter;
 
-use App\Dto\Newsletter as NewsletterData;
+use App\Data\Newsletter as NewsletterData;
 use App\Models\Newsletter;
 use Closure;
 

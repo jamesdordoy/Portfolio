@@ -10,7 +10,7 @@ import Footer from '@/components/generic/Footer.vue';
 
 withDefaults(
     defineProps<{
-        homePage: App.Dto.Pages.HomePage;
+        homePage: App.Data.Pages.HomePage;
         errors?: Record<string, string>;
     }>(),
     { errors: () => ({}) }

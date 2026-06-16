@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { mount } from '@vue/test-utils';
 import ProjectsSection from '@/components/sections/ProjectsSection.vue';
 
-const makeProject = (id: number, name: string): App.Dto.Project => ({
+const makeProject = (id: number, name: string): App.Data.Project => ({
     id,
     name,
     description: `Description for ${name}`,

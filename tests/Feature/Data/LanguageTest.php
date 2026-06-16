@@ -1,6 +1,6 @@
 <?php
 
-use App\Dto\Language;
+use App\Data\Language;
 
 test('test_language_data_object_name', function () {
     $language = Language::from([

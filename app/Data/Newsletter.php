@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Dto;
+namespace App\Data;
 
 use App\Models\Newsletter as NewsletterModel;
 use DateTime;

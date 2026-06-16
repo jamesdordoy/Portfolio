@@ -1,44 +1,52 @@
 <?php
 
-namespace App\Dto;
+namespace App\Data;
 
 use DateTime;
-use Spatie\LaravelData\Attributes\DataCollectionOf;
+use Spatie\LaravelData\Attributes\Validation\Email;
+use Spatie\LaravelData\Attributes\Validation\Min;
+use Spatie\LaravelData\Attributes\Validation\Required;
 use Spatie\LaravelData\Attributes\WithCast;
 use Spatie\LaravelData\Attributes\WithTransformer;
 use Spatie\LaravelData\Casts\DateTimeInterfaceCast;
 use Spatie\LaravelData\Data;
-use Spatie\LaravelData\DataCollection;
+use Spatie\LaravelData\Optional;
 use Spatie\LaravelData\Transformers\DateTimeInterfaceTransformer;
 
-class Game extends Data
+class Contact extends Data
 {
-    public const COLLECTION_NAME = 'games';
-
-    /**
-     * @param  DataCollection<int, GameClip>|null  $clips
-     */
     public function __construct(
+        //
         public ?int $id,
+        //
+        #[
+            Required,
+            Min(3)
+        ]
         public string $name,
-        public string $description,
-        public string $link,
-        public string $icon,
-        public bool $complete,
-        public bool $private,
+        //
+        #[
+            Required,
+            Email
+        ]
+        public string $email,
+        //
+        #[
+            Required,
+            Min(3)
+        ]
+        public string $message,
         //
         #[
             WithCast(DateTimeInterfaceCast::class, format: DATE_ATOM),
             WithTransformer(DateTimeInterfaceTransformer::class, format: DATE_ATOM)
         ]
-        public ?DateTime $created_at,
+        public DateTime|Optional $created_at,
         //
         #[
             WithCast(DateTimeInterfaceCast::class, format: DATE_ATOM),
             WithTransformer(DateTimeInterfaceTransformer::class, format: DATE_ATOM)
         ]
-        public ?DateTime $updated_at,
-        #[DataCollectionOf(GameClip::class)]
-        public ?DataCollection $clips,
+        public DateTime|Optional $updated_at,
     ) {}
 }

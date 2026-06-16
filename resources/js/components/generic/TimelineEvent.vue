@@ -10,7 +10,7 @@ const icons: Record<IconKey, IconDefinition> = {
 };
 
 defineProps<{
-    event: App.Dto.TimelineEvent;
+    event: App.Data.TimelineEvent;
     index: number;
 }>();
 

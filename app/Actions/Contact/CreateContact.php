@@ -2,7 +2,7 @@
 
 namespace App\Actions\Contact;
 
-use App\Dto\Contact as ContactData;
+use App\Data\Contact as ContactData;
 use App\Models\Contact;
 use Closure;
 

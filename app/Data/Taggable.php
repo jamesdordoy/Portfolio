@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Dto;
+namespace App\Data;
 
 use DateTime;
 use Spatie\LaravelData\Data;

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Actions\Newsletter\CreateNewsletter;
-use App\Dto\Newsletter as NewsletterData;
+use App\Data\Newsletter as NewsletterData;
 use App\Models\Newsletter;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Pipeline\Pipeline;

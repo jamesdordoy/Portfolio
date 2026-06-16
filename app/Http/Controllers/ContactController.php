@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Actions\Contact\CreateContact;
-use App\Dto\Contact as ContactData;
+use App\Data\Contact as ContactData;
 use App\Models\Contact;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Pipeline\Pipeline;

@@ -1,7 +1,7 @@
 <?php
 
-use App\Dto\Tag;
-use App\Dto\Taggable;
+use App\Data\Tag;
+use App\Data\Taggable;
 use App\Models\Language;
 
 test('test_tag_data_object_name', function () {

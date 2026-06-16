@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 library.add(faCode, faBuilding, faSchool);
 
-const makeEvent = (overrides: Partial<App.Dto.TimelineEvent> = {}): App.Dto.TimelineEvent => ({
+const makeEvent = (overrides: Partial<App.Data.TimelineEvent> = {}): App.Data.TimelineEvent => ({
     id: 1,
     from: '2020-01-01',
     to: '2022-01-01',

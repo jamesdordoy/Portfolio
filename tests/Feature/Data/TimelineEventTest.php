@@ -1,6 +1,6 @@
 <?php
 
-use App\Dto\TimelineEvent;
+use App\Data\TimelineEvent;
 
 test('test_timeline_event_data_object_name', function () {
     $to = new DateTime;

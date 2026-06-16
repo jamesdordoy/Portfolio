@@ -1,6 +1,6 @@
 <?php
 
-use App\Dto\Taggable;
+use App\Data\Taggable;
 
 test('test_tag_data_object_name', function () {
     $taggable = Taggable::from([

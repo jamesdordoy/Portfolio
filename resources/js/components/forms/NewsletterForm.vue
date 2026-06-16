@@ -11,7 +11,7 @@ const route = newsletterRoute();
 
 const form = useForm(route.method, route.url, {
     email: '',
-} as App.Dto.Newsletter);
+} as App.Data.Newsletter);
 
 const { executeRecaptcha, recaptchaLoaded } = useReCaptcha();
 

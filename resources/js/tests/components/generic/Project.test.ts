@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { mount } from '@vue/test-utils';
 import Project from '@/components/generic/Project.vue';
 
-const makeProject = (overrides: Partial<App.Dto.Project> = {}): App.Dto.Project => ({
+const makeProject = (overrides: Partial<App.Data.Project> = {}): App.Data.Project => ({
     id: 1,
     name: 'Portfolio',
     description: 'My personal portfolio site',

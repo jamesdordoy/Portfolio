@@ -15,7 +15,7 @@ const form = useForm(route.method, route.url, {
     name: '',
     email: '',
     message: '',
-} as App.Dto.Contact);
+} as App.Data.Contact);
 
 const { executeRecaptcha, recaptchaLoaded } = useReCaptcha();
 

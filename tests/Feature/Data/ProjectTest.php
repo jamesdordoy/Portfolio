@@ -1,6 +1,6 @@
 <?php
 
-use App\Dto\Project;
+use App\Data\Project;
 
 test('test_project_data_object_name', function () {
     $project = Project::from([

@@ -4,7 +4,7 @@
 
 use App\Actions\Contact\CreateContact;
 use App\Actions\Contact\SendContactEmail;
-use App\Dto\Contact as ContactData;
+use App\Data\Contact as ContactData;
 use App\Mail\ContactMail;
 use App\Models\Contact;
 use Illuminate\Pipeline\Pipeline;

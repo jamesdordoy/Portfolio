@@ -3,7 +3,7 @@ import PortfolioTag from '@/components/generic/PortfolioTag.vue';
 import ExternalLink from '@/components/base/ExternalLink.vue';
 
 defineProps<{
-    project: App.Dto.Project;
+    project: App.Data.Project;
 }>();
 </script>
 
