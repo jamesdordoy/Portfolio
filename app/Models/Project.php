@@ -8,27 +8,30 @@ use Database\Factories\ProjectFactory;
 use Illuminate\Database\Eloquent\Attributes\Scope;
 use Illuminate\Database\Eloquent\Attributes\UseFactory;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
+use Illuminate\Support\Carbon;
 
 /**
- * @property int                                                       $id
- * @property string                                                    $name
- * @property string                                                    $description
- * @property string                                                    $owner
- * @property string|null                                               $link
- * @property string|null                                               $icon
- * @property bool                                                      $complete
- * @property bool                                                      $private
- * @property \Illuminate\Support\Carbon                                $created_at
- * @property \Illuminate\Support\Carbon                                $updated_at
- * @property-read \Illuminate\Database\Eloquent\Collection<int, Tag>   $tags
+ * @property int $id
+ * @property string $name
+ * @property string $description
+ * @property string $owner
+ * @property string|null $link
+ * @property string|null $icon
+ * @property bool $complete
+ * @property bool $private
+ * @property Carbon $created_at
+ * @property Carbon $updated_at
+ * @property-read Collection<int, Tag>   $tags
+ *
  * @method static Builder<static> visible()
  */
 #[UseFactory(ProjectFactory::class)]
 class Project extends EloquentModel
 {
-    /** @use HasFactory<\Database\Factories\ProjectFactory> */
+    /** @use HasFactory<ProjectFactory> */
     use HasFactory;
 
     public const PUBLIC_RELATIONSHIPS = ['tags.taggable'];
@@ -45,7 +48,7 @@ class Project extends EloquentModel
     }
 
     /**
-     * @param Builder<Project> $query
+     * @param  Builder<Project>  $query
      * @return Builder<Project>
      */
     #[Scope]

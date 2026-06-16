@@ -28,6 +28,7 @@ const submit = async () => {
 
         if (response.data.success) {
             form.post(route.url, {
+                preserveScroll: (page): boolean => !!Object.keys(page.props.errors).length,
                 onSuccess: () => form.reset(),
             });
         }

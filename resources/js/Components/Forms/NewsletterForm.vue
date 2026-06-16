@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useForm } from '@inertiajs/vue3';
+import { Form, useForm } from '@inertiajs/vue3';
 import { useReCaptcha } from 'vue-recaptcha-v3';
 import checkRecapture from '@/checkRecapture';
 import { usePortfolioStore } from '@/Stores/index';
@@ -40,32 +40,37 @@ const submit = async () => {
     </div>
     <div class="py-2 md:flex md:items-center">
         <div class="md:w-full">
-            <div class="flex items-center pb-2">
-                <input
-                    v-model="form.email"
-                    type="email"
-                    placeholder="john@example.com"
-                    aria-label="Email Address"
-                    class="mr-3 w-full border-none border-transparent bg-transparent px-2 py-1 leading-tight focus:border-transparent focus:ring-0"
+
+
+            <Form>
+                <div class="flex items-center pb-2">
+                    <input
+                        v-model="form.email"
+                        type="email"
+                        placeholder="john@example.com"
+                        aria-label="Email Address"
+                        class="mr-3 w-full border-none border-transparent bg-transparent px-2 py-1 leading-tight focus:border-transparent focus:ring-0"
+                        :class="`text-${portfolioStore.primaryThemeTextColour}`"
+                        @change="form.validate('email')"
+                    />
+                    <button
+                        class="shrink-0 rounded-sm border bg-transparent px-2 py-1 text-sm"
+                        type="button"
+                        :class="`border-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade} text-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade} hover:bg-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade} hover:text-${portfolioStore.primaryThemeHoverTextColour}`"
+                        @click="submit"
+                    >
+                        <font-awesome-icon :icon="faCheck" />
+                        Sign Up
+                    </button>
+                </div>
+                <div
+                    v-show="form.invalid('email')"
                     :class="`text-${portfolioStore.primaryThemeTextColour}`"
-                    @change="form.validate('email')"
-                />
-                <button
-                    class="shrink-0 rounded-sm border bg-transparent px-2 py-1 text-sm"
-                    type="button"
-                    :class="`border-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade} text-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade} hover:bg-${portfolioStore.primaryThemeColour}-${portfolioStore.primaryThemeColourShade} hover:text-${portfolioStore.primaryThemeHoverTextColour}`"
-                    @click="submit"
                 >
-                    <font-awesome-icon :icon="faCheck" />
-                    Sign Up
-                </button>
-            </div>
-            <div
-                v-show="form.invalid('email')"
-                :class="`text-${portfolioStore.primaryThemeTextColour}`"
-            >
-                {{ form.errors.email }}
-            </div>
+                    {{ form.errors.email }}
+                </div>
+            </Form>
+            
         </div>
     </div>
 </template>

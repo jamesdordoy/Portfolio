@@ -12,9 +12,9 @@ use Spatie\LaravelData\DataCollection;
 class HomePage extends Data
 {
     /**
-     * @param DataCollection<int, Project> $projects
-     * @param DataCollection<int, TimelineEvent> $timeline
-     * @param DataCollection<int, GameClip> $gameClips
+     * @param  DataCollection<int, Project>  $projects
+     * @param  DataCollection<int, TimelineEvent>  $timeline
+     * @param  DataCollection<int, GameClip>  $gameClips
      */
     public function __construct(
         //

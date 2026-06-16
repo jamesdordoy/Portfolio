@@ -6,7 +6,6 @@ import { createSSRApp, h, type DefineComponent } from 'vue';
 import { createInertiaApp } from '@inertiajs/vue3';
 
 import { createPinia } from 'pinia';
-import piniaPluginPersistedstate from 'pinia-plugin-persistedstate';
 
 import VueScrollTo from 'vue-scrollto';
 import { VueReCaptcha } from 'vue-recaptcha-v3';
@@ -14,7 +13,6 @@ import { VueReCaptcha } from 'vue-recaptcha-v3';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 const pinia = createPinia();
-pinia.use(piniaPluginPersistedstate);
 
 createInertiaApp({
     resolve: (name: string): { default: DefineComponent } => {

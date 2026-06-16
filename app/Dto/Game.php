@@ -16,7 +16,7 @@ class Game extends Data
     public const COLLECTION_NAME = 'games';
 
     /**
-     * @param DataCollection<int, GameClip>|null $clips
+     * @param  DataCollection<int, GameClip>|null  $clips
      */
     public function __construct(
         public ?int $id,
