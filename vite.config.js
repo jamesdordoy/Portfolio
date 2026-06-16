@@ -29,7 +29,7 @@ export default defineConfig({
     },
     test: {
         globals: true,
-        setupFiles: ['resources/js/Tests/setup.ts'],
+        setupFiles: ['resources/js/tests/setup.ts'],
         coverage: {
             reportsDirectory: './storage/coverage',
         },

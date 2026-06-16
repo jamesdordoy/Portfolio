@@ -3,22 +3,22 @@
 @plugin "@tailwindcss/forms";
 @plugin "@tailwindcss/typography";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @source "../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php";
 @source "../../vendor/laravel/jetstream/**/*.blade.php";
 @source "../../storage/framework/views/*.php";
 @source "../../resources/views/**/*.blade.php";
 @source "../../node_modules/@protonemedia/inertiajs-tables-laravel-query-builder";
 
-@source inline("{bg,text,border}-{red,orange,yellow,green,gray,teal,blue,purple,indigo,pink,lime,emerald,stone,zinc,slate,sky}-{100,200,300,400,500,600,700,800,900}");
-@source inline("hover:{bg,text,border}-{red,orange,yellow,green,gray,teal,blue,purple,indigo,pink,lime,emerald,stone,zinc,slate,sky}-{100,200,300,400,500,600,700,800,900}");
-@source inline("focus:{bg,text,border}-{red,orange,yellow,green,gray,teal,blue,purple,indigo,pink,lime,emerald,stone,zinc,slate,sky}-{100,200,300,400,500,600,700,800,900}");
-
 @theme {
-    --font-sans: 'Nunito', ui-sans-serif, system-ui, sans-serif;
-    --color-primary: #3a4145;
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
+    html {
+        scroll-behavior: smooth;
+    }
     *,
     ::after,
     ::before,
@@ -26,68 +26,38 @@
     ::file-selector-button {
         border-color: var(--color-gray-200, currentColor);
     }
+    .dark *,
+    .dark ::after,
+    .dark ::before {
+        border-color: var(--color-zinc-800, currentColor);
+    }
 }
 
 @layer components {
-    .themeSettingsPanelToggleButton {
-        @apply fixed left-0 z-10 top-[50%];
+    .section-heading {
+        @apply mb-3 text-xs font-semibold uppercase tracking-widest text-cyan-600 dark:text-cyan-400;
     }
-
-    #settings-sidebar {
-        @apply left-0 z-20 fixed top-[56px] min-h-full w-full border-r border-t py-2 shadow-sm lg:top-[76px] lg:w-1/4;
+    .section-title {
+        @apply mb-10 text-3xl font-bold text-slate-900 dark:text-zinc-100 lg:text-4xl;
     }
-
-    .front-nav-item {
-        display: block;
-        @apply mr-4 cursor-pointer py-4 uppercase no-underline;
+    .card {
+        @apply rounded-xl border border-gray-200 bg-gray-50 dark:border-zinc-800 dark:bg-zinc-900;
     }
-
-    @media (min-width: 1024px) {
-        .front-nav-item {
-            display: inline-block;
-        }
-    }
-
-    .front-nav {
-        @apply fixed top-0 right-0 left-0 flex flex-wrap items-center justify-between py-3 px-4 z-10 border-b lg:px-10;
-    }
-
-    .front-into {
-        @apply rounded-sm border p-4 text-center text-white;
-
-        background: rgba(0, 0, 0, 0.4);
-        text-shadow: 0px 0px 2px #131415;
-    }
-
     .jd-bookmark {
-        @apply block invisible relative top-[-100px];
+        @apply invisible relative block;
+        top: -80px;
     }
-
+    .tag {
+        @apply inline-block rounded-full border border-cyan-600/30 bg-cyan-50 px-2.5 py-0.5 text-xs font-medium text-cyan-700 dark:border-cyan-400/20 dark:bg-cyan-400/10 dark:text-cyan-300;
+    }
     .grecaptcha-logo {
         @apply z-50;
     }
-
-    #portfolio-particles {
-        @apply absolute top-0 left-0 bottom-0 right-0 p-0 m-0 z-0;
+    /* Equal-height Swiper cards — override Swiper's height:100% so flex-stretch takes effect */
+    .swiper-wrapper {
+        align-items: stretch;
     }
-
-    .project {
-        @apply h-full border sm:w-full;
-    }
-
-    .project-image {
-        @apply w-full border-b h-80;
-    }
-
-    .project-name {
-        @apply text-blue-500 underline hover:no-underline;
-    }
-
-    .game {
-        @apply h-96 w-full;
-    }
-
-    .tag {
-        @apply mr-2 inline-block rounded-sm border border-blue-500 py-1 px-2 text-xs;
+    .swiper-slide {
+        height: auto;
     }
 }

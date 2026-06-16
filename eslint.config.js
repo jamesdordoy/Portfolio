@@ -60,10 +60,10 @@ export default [
     {
         files: ['resources/**/*.vue'],
         rules: {
-            // These single-word component names are intentional in this project
             'vue/multi-word-component-names': ['error', {
                 ignores: ['Footer', 'Game', 'Project', 'Settings'],
             }],
+            'vue/no-v-html': 'off',
         },
     },
     // Must be last — disables formatting rules handled by Prettier

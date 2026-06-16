@@ -10,11 +10,22 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="msapplication-starturl" content="/">
 
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154219567-1"></script>
+
+        <script>
+            (function () {
+                var theme = localStorage.getItem('theme') || 'dark';
+                if (theme === 'dark') {
+                    document.documentElement.classList.add('dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                }
+            })();
+        </script>
 
         @vite('resources/js/app.ts')
         <x-inertia::head>

@@ -4,25 +4,22 @@ import 'swiper/css/navigation';
 
 import { createSSRApp, h, type DefineComponent } from 'vue';
 import { createInertiaApp } from '@inertiajs/vue3';
-
 import { createPinia } from 'pinia';
-
 import VueScrollTo from 'vue-scrollto';
 import { VueReCaptcha } from 'vue-recaptcha-v3';
-
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-
-const pinia = createPinia();
 
 createInertiaApp({
     resolve: (name: string): { default: DefineComponent } => {
-        const pages = import.meta.glob('./Pages/**/*.vue', { eager: true }) as Record<
+        const pages = import.meta.glob('./pages/**/*.vue', { eager: true }) as Record<
             string,
             { default: DefineComponent }
         >;
-        return pages[`./Pages/${name}.vue`];
+        return pages[`./pages/${name}.vue`];
     },
     setup({ App, props, plugin }) {
+        const pinia = createPinia();
+
         return createSSRApp({ render: () => h(App, props) })
             .component('font-awesome-icon', FontAwesomeIcon)
             .use(plugin)
