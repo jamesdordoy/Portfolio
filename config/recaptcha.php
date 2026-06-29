@@ -5,6 +5,7 @@ return [
     'api_secret_key' => env('RECAPTCHA_SECRET_KEY', ''),
     'version' => 'v3',
     'curl_timeout' => 10,
+    'google_site_verify_url' => 'https://www.google.com/recaptcha/api/siteverify',
     'skip_ip' => env('RECAPTCHA_SKIP_IP', []),
     'default_validation_route' => 'recaptcha/validate',
     'default_token_parameter_name' => 'token',
