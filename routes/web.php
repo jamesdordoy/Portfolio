@@ -16,10 +16,14 @@ Route::middleware([HandlePrecognitiveRequests::class])->group(function () {
 });
 
 Route::get('/recaptcha/validate', function (Request $request) {
-    $response = Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
-        'secret' => env('RECAPTCHA_SECRET_KEY'),
+    $response = Http::timeout(5)->asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
+        'secret' => config('recaptcha.api_secret_key'),
         'response' => $request->input('token'),
     ]);
+
+    if ($response->failed()) {
+        return response()->json(['success' => false, 'error' => 'verification-unavailable'], 502);
+    }
 
     return $response->json();
 });
