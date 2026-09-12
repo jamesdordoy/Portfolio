@@ -23,7 +23,7 @@ const skills = ['Laravel', 'Vue.js', 'TypeScript', 'PHP', 'Inertia.js', 'Tailwin
                 </p>
                 <p>
                     Outside of code, I'm a huge Snooker fan, enjoy competitive FPS gaming, and have a growing interest
-                    in hardware and electronics.
+                    in hardware and electronics and using AI for development, server administration and MCP servers.
                 </p>
             </div>
             <div class="mt-8 flex flex-wrap gap-3">
