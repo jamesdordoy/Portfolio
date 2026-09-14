@@ -12,10 +12,6 @@
     },
     "devDependencies": {
         "@eslint/js": "^10.0.0",
-        "@fortawesome/fontawesome-svg-core": "^7.2.0",
-        "@fortawesome/free-brands-svg-icons": "^7.2.0",
-        "@fortawesome/free-solid-svg-icons": "^7.2.0",
-        "@fortawesome/vue-fontawesome": "^3.2.0",
         "@tailwindcss/forms": "^0.5.11",
         "@tailwindcss/typography": "^0.5.20",
         "@tailwindcss/vite": "^4.3.1",
@@ -55,6 +51,10 @@
         "vueIndentScriptAndStyle": false
     },
     "dependencies": {
+        "@fortawesome/fontawesome-svg-core": "^7.2.0",
+        "@fortawesome/free-brands-svg-icons": "^7.2.0",
+        "@fortawesome/free-solid-svg-icons": "^7.2.0",
+        "@fortawesome/vue-fontawesome": "^3.2.0",
         "@inertiajs/vite": "^3.4.0",
         "@inertiajs/vue3": "^3.4.0",
         "@vue/server-renderer": "^3.5.0",
