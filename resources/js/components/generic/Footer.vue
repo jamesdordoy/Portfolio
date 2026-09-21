@@ -2,12 +2,11 @@
 import NewsletterForm from '@/components/forms/NewsletterForm.vue';
 import AppLogo from '@/components/generic/AppLogo.vue';
 import SocialIconLink from '@/components/base/SocialIconLink.vue';
-import { faTwitter, faFacebook, faLinkedin, faGithub, faJsfiddle } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faLinkedin, faGithub, faJsfiddle } from '@fortawesome/free-brands-svg-icons';
 
 const socials = [
     { icon: faGithub, href: 'https://github.com/jamesdordoy', label: 'GitHub' },
     { icon: faLinkedin, href: 'https://www.linkedin.com/in/james-dordoy-a80686110/', label: 'LinkedIn' },
-    { icon: faTwitter, href: 'https://twitter.com/JDordoy', label: 'Twitter' },
     { icon: faFacebook, href: 'https://www.facebook.com/dordoy', label: 'Facebook' },
     { icon: faJsfiddle, href: 'https://jsfiddle.net/user/JamesDordoy/fiddles/', label: 'JSFiddle' },
 ];
