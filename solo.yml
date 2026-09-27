@@ -1,0 +1,25 @@
+# Visit https://soloterm.com to learn more
+name: portfolio
+icon: null
+processes:
+  Serve:
+    command: php artisan serve
+    working_dir: null
+    auto_start: true
+    auto_restart: true
+    restart_when_changed: []
+    env: {}
+  Queue:
+    command: php artisan queue:listen
+    working_dir: null
+    auto_start: false
+    auto_restart: true
+    restart_when_changed: []
+    env: {}
+  npm:dev:
+    command: npm run dev
+    working_dir: null
+    auto_start: true
+    auto_restart: false
+    restart_when_changed: []
+    env: {}
