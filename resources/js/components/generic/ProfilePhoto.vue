@@ -1,7 +1,9 @@
 <template>
     <div class="flex items-center justify-center lg:justify-end">
         <div class="relative">
-            <div class="absolute -inset-1 rounded-2xl bg-gradient-to-br from-cyan-600 to-blue-600 opacity-20 blur-lg dark:from-cyan-400 dark:to-blue-400 dark:opacity-30" />
+            <div
+                class="absolute -inset-1 rounded-2xl bg-gradient-to-br from-cyan-600 to-blue-600 opacity-20 blur-lg dark:from-cyan-400 dark:to-blue-400 dark:opacity-30"
+            />
             <img
                 src="/storage/images/me.jpeg"
                 alt="James Dordoy"

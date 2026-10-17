@@ -19,7 +19,9 @@ const navLinks = [
 
 <template>
     <header class="fixed inset-x-0 top-0 z-50">
-        <nav class="border-b border-gray-200/60 bg-white/80 backdrop-blur-md dark:border-zinc-800/60 dark:bg-zinc-950/80">
+        <nav
+            class="border-b border-gray-200/60 bg-white/80 backdrop-blur-md dark:border-zinc-800/60 dark:bg-zinc-950/80"
+        >
             <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 lg:px-8">
                 <a href="/"><AppLogo /></a>
 
@@ -38,7 +40,10 @@ const navLinks = [
                         class="hover:text-slate-900 dark:hover:text-zinc-100"
                         @click="toggle"
                     >
-                        <font-awesome-icon :icon="isDark ? faSun : faMoon" class="text-sm" />
+                        <font-awesome-icon
+                            :icon="isDark ? faSun : faMoon"
+                            class="text-sm"
+                        />
                     </NavIconButton>
 
                     <NavIconButton
@@ -46,12 +51,18 @@ const navLinks = [
                         class="lg:hidden"
                         @click="mobileOpen = !mobileOpen"
                     >
-                        <font-awesome-icon :icon="mobileOpen ? faXmark : faBars" class="text-sm" />
+                        <font-awesome-icon
+                            :icon="mobileOpen ? faXmark : faBars"
+                            class="text-sm"
+                        />
                     </NavIconButton>
                 </div>
             </div>
 
-            <div v-show="mobileOpen" class="border-t border-gray-200 dark:border-zinc-800 lg:hidden">
+            <div
+                v-show="mobileOpen"
+                class="border-t border-gray-200 dark:border-zinc-800 lg:hidden"
+            >
                 <div class="flex flex-col gap-1 px-4 py-3">
                     <NavLink
                         v-for="link in navLinks"

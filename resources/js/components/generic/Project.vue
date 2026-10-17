@@ -8,8 +8,13 @@ defineProps<{
 </script>
 
 <template>
-    <article class="card group flex h-full flex-col overflow-hidden transition-all duration-200 hover:-translate-y-1 hover:shadow-lg hover:shadow-cyan-500/5">
-        <ExternalLink :href="project.link" class="block overflow-hidden">
+    <article
+        class="card group flex h-full flex-col overflow-hidden transition-all duration-200 hover:-translate-y-1 hover:shadow-lg hover:shadow-cyan-500/5"
+    >
+        <ExternalLink
+            :href="project.link"
+            class="block overflow-hidden"
+        >
             <img
                 :alt="project.name"
                 :src="project.icon || '/images/projects/simple-shopping.png'"
@@ -28,7 +33,10 @@ defineProps<{
             <p class="mb-4 flex-1 text-sm leading-relaxed text-slate-500 dark:text-zinc-400">
                 {{ project.description }}
             </p>
-            <div v-if="project.tags" class="flex flex-wrap gap-1.5">
+            <div
+                v-if="project.tags"
+                class="flex flex-wrap gap-1.5"
+            >
                 <PortfolioTag
                     v-for="tag in project.tags"
                     :key="tag.id"

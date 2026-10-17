@@ -16,13 +16,18 @@ const socials = [
         <HeroBackground />
 
         <div class="relative z-10 mx-auto max-w-4xl px-4 text-center">
-            <div class="mb-4 inline-flex items-center gap-2 rounded-full border border-cyan-600/20 bg-cyan-50 px-3 py-1 text-xs font-medium text-cyan-700 dark:border-cyan-400/20 dark:bg-cyan-400/10 dark:text-cyan-300">
+            <div
+                class="mb-4 inline-flex items-center gap-2 rounded-full border border-cyan-600/20 bg-cyan-50 px-3 py-1 text-xs font-medium text-cyan-700 dark:border-cyan-400/20 dark:bg-cyan-400/10 dark:text-cyan-300"
+            >
                 <span class="h-1.5 w-1.5 rounded-full bg-cyan-500 dark:bg-cyan-400" />
                 Available for opportunities
             </div>
 
             <h1 class="mb-6 text-5xl font-bold tracking-tight text-slate-900 dark:text-zinc-50 sm:text-6xl lg:text-7xl">
-                James&nbsp;<span class="bg-linear-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent dark:from-cyan-400 dark:to-blue-400">Dordoy</span>
+                James&nbsp;<span
+                    class="bg-linear-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent dark:from-cyan-400 dark:to-blue-400"
+                    >Dordoy</span
+                >
             </h1>
 
             <p class="mb-4 text-xl font-medium text-slate-600 dark:text-zinc-400 sm:text-2xl">Full Stack Developer</p>
@@ -33,10 +38,19 @@ const socials = [
             <div class="flex flex-wrap items-center justify-center gap-4">
                 <AppButton href="#projects">
                     View Projects
-                    <font-awesome-icon :icon="faArrowDown" class="text-xs" />
+                    <font-awesome-icon
+                        :icon="faArrowDown"
+                        class="text-xs"
+                    />
                 </AppButton>
-                <AppButton variant="secondary" href="#contact">
-                    <font-awesome-icon :icon="faEnvelope" class="text-xs" />
+                <AppButton
+                    variant="secondary"
+                    href="#contact"
+                >
+                    <font-awesome-icon
+                        :icon="faEnvelope"
+                        class="text-xs"
+                    />
                     Get in Touch
                 </AppButton>
             </div>
@@ -54,7 +68,10 @@ const socials = [
         </div>
 
         <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-            <font-awesome-icon :icon="faArrowDown" class="text-slate-400 dark:text-zinc-600" />
+            <font-awesome-icon
+                :icon="faArrowDown"
+                class="text-slate-400 dark:text-zinc-600"
+            />
         </div>
     </section>
 </template>

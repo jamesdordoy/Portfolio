@@ -3,13 +3,25 @@ import SectionHeader from '@/components/base/SectionHeader.vue';
 import PortfolioTag from '@/components/generic/PortfolioTag.vue';
 import ProfilePhoto from '@/components/generic/ProfilePhoto.vue';
 
-const skills = ['Laravel', 'Vue.js', 'TypeScript', 'PHP', 'Inertia.js', 'Tailwind CSS', 'Statamic', 'Relational Databases'];
+const skills = [
+    'Laravel',
+    'Vue.js',
+    'TypeScript',
+    'PHP',
+    'Inertia.js',
+    'Tailwind CSS',
+    'Statamic',
+    'Relational Databases',
+];
 </script>
 
 <template>
     <div class="grid gap-16 lg:grid-cols-2 lg:gap-24">
         <div>
-            <SectionHeader eyebrow="About Me" title="Software Engineer based in Essex" />
+            <SectionHeader
+                eyebrow="About Me"
+                title="Software Engineer based in Essex"
+            />
             <div class="space-y-4 text-base leading-relaxed text-slate-600 dark:text-zinc-400">
                 <p>
                     Hey, I'm James — a software engineer with over a decade and a half of experience building web
@@ -27,7 +39,11 @@ const skills = ['Laravel', 'Vue.js', 'TypeScript', 'PHP', 'Inertia.js', 'Tailwin
                 </p>
             </div>
             <div class="mt-8 flex flex-wrap gap-3">
-                <PortfolioTag v-for="skill in skills" :key="skill" :name="skill" />
+                <PortfolioTag
+                    v-for="skill in skills"
+                    :key="skill"
+                    :name="skill"
+                />
             </div>
         </div>
         <ProfilePhoto />
