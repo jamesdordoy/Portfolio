@@ -3,7 +3,7 @@
 ## Project overview
 
 Personal portfolio built with Laravel 13, Vue 3, Inertia.js 3, TypeScript 6, and Tailwind 4.
-Deployed via Laravel Forge. CI: Pest (PHP) + Vitest (frontend).
+Deployed with Docker on a private VPS. CI: Pest (PHP) + Vitest (frontend).
 
 **Before touching any package, read its `readme.md` first.**
 

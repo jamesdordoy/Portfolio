@@ -2,7 +2,7 @@ export type QueryParams = {
     [key: string]: string | number | boolean | (string | number)[] | null | undefined | QueryParams;
 };
 
-type Method = 'get' | 'post' | 'put' | 'delete' | 'patch' | 'head' | 'options';
+type Method = 'get' | 'post' | 'put' | 'delete' | 'patch' | 'head' | 'options' | 'query';
 type UrlDefaults = Record<string, unknown>;
 
 let urlDefaults: () => UrlDefaults = () => ({});
