@@ -13,7 +13,7 @@ Deployed with Docker on a private VPS. CI: Pest (PHP) + Vitest (frontend).
 
 | Layer | Package / version |
 |---|---|
-| PHP | 8.3+ |
+| PHP | 8.5+ |
 | Framework | Laravel 13 |
 | Frontend bridge | Inertia.js 3 + `inertiajs/inertia-laravel` |
 | Vue | 3.x |
