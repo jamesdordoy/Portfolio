@@ -24,7 +24,8 @@ My personal portfolio built with Laravel, Vue & Tailwind.
 
 `compose.yaml` runs the full stack: `web` (FrankenPHP), `worker` (queue), `ssr` (Inertia SSR), `mysql` and `redis`.
 Migrations run automatically (`migrate` service) before the web and worker containers start.
-The site listens on plain HTTP (`127.0.0.1:8080` by default) for a Cloudflare Tunnel to point at.
+The site listens on plain HTTP (`127.0.0.1:8080` by default). With `COMPOSE_PROFILES=tunnel` the `tunnel` service runs the
+Cloudflare Tunnel connector, whose public hostname points at `http://web:8080`. MySQL, Redis and SSR sit on an internal-only network.
 
 ```bash
 cp .env.production.example .env   # then fill it in

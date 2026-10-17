@@ -49,6 +49,7 @@ services:
         condition: service_healthy
       redis:
         condition: service_healthy
+    networks: [default, backend]
 
   worker:
     <<: *app
@@ -63,6 +64,8 @@ services:
         condition: service_completed_successfully
       redis:
         condition: service_healthy
+    # Jobs send mail and Discord alerts, so it needs a route out
+    networks: [default, backend]
 
   migrate:
     <<: *app
@@ -76,6 +79,7 @@ services:
         condition: service_healthy
       redis:
         condition: service_healthy
+    networks: [backend]
 
   ssr:
     image: portfolio-ssr:latest
@@ -92,6 +96,7 @@ services:
     cap_drop:
       - ALL
     logging: *logging
+    networks: [backend]
 
   mysql:
     image: mysql:8.4
@@ -113,6 +118,7 @@ services:
     security_opt:
       - no-new-privileges:true
     logging: *logging
+    networks: [backend]
 
   redis:
     image: redis:8-alpine
@@ -129,7 +135,35 @@ services:
     security_opt:
       - no-new-privileges:true
     logging: *logging
+    networks: [backend]
+
+  # Cloudflare Tunnel connector. Opt in with COMPOSE_PROFILES=tunnel (or --profile tunnel);
+  # the public hostname's service in the Cloudflare dashboard is http://web:8080.
+  tunnel:
+    image: cloudflare/cloudflared:2026.9.3
+    command: ["tunnel", "--no-autoupdate", "run"]
+    environment:
+      TUNNEL_TOKEN: ${CLOUDFLARE_TUNNEL_TOKEN:-}
+    restart: unless-stopped
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    logging: *logging
+    depends_on:
+      web:
+        condition: service_healthy
+    profiles: [tunnel]
+
+networks:
+  default:
+  # No route out of the host: MySQL, Redis and SSR can't reach the internet
+  backend:
+    internal: true
 
 volumes:
   mysql-data:
+    # Fixed name so the data survives a project rename (and matches the existing deployment)
+    name: portfolio_db_data
   redis-data:
