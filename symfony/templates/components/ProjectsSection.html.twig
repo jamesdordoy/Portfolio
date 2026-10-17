@@ -1,0 +1,14 @@
+{% props projects = [] %}
+
+<div>
+    <p class="section-heading">Work</p>
+    <h2 class="section-title">Projects</h2>
+
+    <div class="grid gap-6 sm:grid-cols-1 lg:grid-cols-3">
+        {% for project in projects %}
+            <twig:ProjectCard :project="project" />
+        {% else %}
+            <p class="text-sm text-slate-500 dark:text-zinc-500">No public projects yet — check back soon.</p>
+        {% endfor %}
+    </div>
+</div>

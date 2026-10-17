@@ -1,0 +1,24 @@
+# Enable stateless CSRF protection for forms and logins/logouts
+framework:
+    form:
+        csrf_protection:
+            token_id: submit
+
+    csrf_protection:
+        stateless_token_ids:
+            - submit
+            - authenticate
+            - logout
+
+# The stateless double-submit-cookie CSRF token is only completed by the
+# csrf-protection Stimulus controller running in a real browser (see
+# assets/controllers/csrf_protection_controller.js). Functional tests use
+# Symfony's BrowserKit test client, which doesn't execute JavaScript, so
+# CSRF protection is disabled for the test environment rather than faked.
+when@test:
+    framework:
+        csrf_protection:
+            enabled: false
+        form:
+            csrf_protection:
+                enabled: false

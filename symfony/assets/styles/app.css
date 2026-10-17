@@ -1,0 +1,49 @@
+@layer theme, base, components, utilities;
+@import "tailwindcss";
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@source "../../templates/**/*.html.twig";
+
+@theme {
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentColor);
+    }
+    .dark *,
+    .dark ::after,
+    .dark ::before {
+        border-color: var(--color-zinc-800, currentColor);
+    }
+}
+
+@layer components {
+    .section-heading {
+        @apply mb-3 text-xs font-semibold uppercase tracking-widest text-cyan-600 dark:text-cyan-400;
+    }
+    .section-title {
+        @apply mb-10 text-3xl font-bold text-slate-900 dark:text-zinc-100 lg:text-4xl;
+    }
+    .card {
+        @apply rounded-xl border border-gray-200 bg-gray-50 dark:border-zinc-800 dark:bg-zinc-900;
+    }
+    .jd-bookmark {
+        @apply invisible relative block;
+        top: -80px;
+    }
+    .tag {
+        @apply inline-block rounded-full border border-cyan-600/30 bg-cyan-50 px-2.5 py-0.5 text-xs font-medium text-cyan-700 dark:border-cyan-400/20 dark:bg-cyan-400/10 dark:text-cyan-300;
+    }
+}

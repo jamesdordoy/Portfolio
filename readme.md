@@ -20,3 +20,10 @@ My personal portfolio built with Laravel, Vue & Tailwind.
 
 ## Live URL
 [https://jamesdordoy.co.uk/](https://jamesdordoy.co.uk/)
+
+## Symfony rewrite (learning exercise)
+
+The `symfony-rewrite` branch contains a from-scratch Symfony 8 + Doctrine + Twig rewrite of this
+app, built purely to compare the two frameworks. It lives entirely under `symfony/` alongside this
+Laravel app and is not deployed. See [`symfony/README.md`](symfony/README.md) for what was built
+and how it maps back to the Laravel/Vue original.

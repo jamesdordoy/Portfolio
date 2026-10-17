@@ -1,0 +1,51 @@
+{% props newsletter_form %}
+
+{% set socials = [
+    { label: 'GitHub', href: 'https://github.com/jamesdordoy' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/james-dordoy-a80686110/' },
+    { label: 'Facebook', href: 'https://www.facebook.com/dordoy' },
+    { label: 'JSFiddle', href: 'https://jsfiddle.net/user/JamesDordoy/fiddles/' },
+] %}
+
+<footer class="border-t border-gray-200 bg-gray-50 dark:border-zinc-800 dark:bg-zinc-900">
+    <div class="mx-auto max-w-6xl px-4 py-12 lg:px-8">
+        <div class="grid gap-10 lg:grid-cols-3">
+            <div>
+                <div class="mb-4 text-lg font-bold tracking-tight text-slate-900 dark:text-zinc-50">
+                    JD<span class="text-cyan-600 dark:text-cyan-400">.</span>
+                </div>
+                <p class="mb-4 text-sm text-slate-500 dark:text-zinc-500">Full Stack Developer based in Essex.</p>
+                <div class="flex flex-wrap gap-4">
+                    {% for social in socials %}
+                        <a href="{{ social.href }}" target="_blank" rel="noopener" aria-label="{{ social.label }}"
+                           class="text-sm font-medium text-slate-500 transition hover:text-slate-900 dark:text-zinc-500 dark:hover:text-zinc-100">
+                            {{ social.label }}
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="flex items-center justify-center text-sm text-slate-500 dark:text-zinc-500">
+                &copy; {{ 'now'|date('Y') }} James Dordoy. All rights reserved.
+            </div>
+
+            <div>
+                <h4 class="mb-3 text-sm font-semibold text-slate-900 dark:text-zinc-100">Newsletter</h4>
+                <p class="mb-4 text-sm text-slate-500 dark:text-zinc-500">Get notified when I post something new.</p>
+
+                {% for _ in app.flashes('newsletter_sent') %}
+                    <p class="mb-3 text-sm text-cyan-600 dark:text-cyan-400">Thanks — you're on the list!</p>
+                {% endfor %}
+
+                {{ form_start(newsletter_form, { attr: { class: 'flex gap-2' } }) }}
+                    {{ form_widget(newsletter_form.email, { attr: { class: 'w-full flex-1 rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm text-slate-900 placeholder-slate-400 transition-colors focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100 dark:placeholder-zinc-500 dark:focus:border-cyan-400 dark:focus:ring-cyan-400', placeholder: 'your@email.com', 'aria-label': 'Email Address' } }) }}
+                    {{ form_rest(newsletter_form) }}
+                    <button type="submit" class="inline-flex cursor-pointer items-center gap-2 rounded-lg bg-cyan-600 px-3 py-2 text-sm font-semibold text-white transition-colors hover:bg-cyan-500 dark:bg-cyan-500 dark:hover:bg-cyan-400">
+                        →
+                    </button>
+                {{ form_end(newsletter_form) }}
+                {{ form_errors(newsletter_form.email) }}
+            </div>
+        </div>
+    </div>
+</footer>

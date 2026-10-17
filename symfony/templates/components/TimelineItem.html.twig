@@ -1,0 +1,22 @@
+{% props event, index = 0 %}
+
+{% set icons = { code: '💻', building: '🏢', school: '🎓' } %}
+
+<div class="relative flex items-start gap-6 pl-12 lg:pl-0 {{ index % 2 == 0 ? 'lg:flex-row' : 'lg:flex-row-reverse' }}">
+    <div class="absolute left-0 flex h-8 w-8 items-center justify-center rounded-full border border-cyan-600/30 bg-cyan-50 text-sm text-cyan-600 dark:border-cyan-400/20 dark:bg-cyan-400/10 dark:text-cyan-400 lg:left-[calc(50%-1rem)]">
+        {{ icons[event.icon] ?? '📌' }}
+    </div>
+
+    <div class="hidden flex-1 lg:block"></div>
+
+    <div class="flex-1 lg:max-w-[calc(50%-2rem)]">
+        <div class="card p-5">
+            <div class="mb-1 text-xs font-medium text-cyan-600 dark:text-cyan-400">
+                {{ event.from|date('d/m/Y') }} – {{ event.to|date('d/m/Y') }}
+            </div>
+            <h3 class="mb-0.5 font-semibold text-slate-900 dark:text-zinc-100">{{ event.name|raw }}</h3>
+            <p class="mb-3 text-sm text-slate-500 dark:text-zinc-400">{{ event.title }}</p>
+            <div class="text-sm leading-relaxed text-slate-600 dark:text-zinc-400">{{ event.body|raw }}</div>
+        </div>
+    </div>
+</div>

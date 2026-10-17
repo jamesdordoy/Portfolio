@@ -1,0 +1,15 @@
+{% props timeline = [] %}
+
+<div>
+    <p class="section-heading">Career</p>
+    <h2 class="section-title">My Experience</h2>
+
+    <div class="relative">
+        <div class="absolute left-4 top-0 h-full w-px bg-gray-200 dark:bg-zinc-800 lg:left-1/2"></div>
+        <div class="space-y-8">
+            {% for event in timeline %}
+                <twig:TimelineItem :event="event" :index="loop.index0" />
+            {% endfor %}
+        </div>
+    </div>
+</div>
