@@ -1,0 +1,49 @@
+# VCS / editors / CI
+.git
+.github
+.idea
+.vscode
+.fleet
+.zed
+.nova
+.DS_Store
+
+# Dependencies and build output — rebuilt inside the image
+node_modules
+vendor
+public/build
+public/hot
+public/storage
+bootstrap/ssr
+bootstrap/cache/*.php
+
+# Runtime state
+storage/logs/*
+storage/framework/cache/data/*
+storage/framework/sessions/*
+storage/framework/testing/*
+storage/framework/views/*
+storage/coverage
+storage/pail
+*.log
+
+# Secrets — passed in at runtime via env_file
+.env
+.env.*
+auth.json
+
+# Tests and tooling not needed at runtime
+tests
+resources/js/tests
+.phpunit.cache
+.phpunit.result.cache
+coverage
+phpunit.xml
+phpstan.neon
+eslint.config.js
+solo.yml
+
+# Docker files themselves
+Dockerfile
+.dockerignore
+compose.yaml

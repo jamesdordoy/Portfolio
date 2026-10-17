@@ -1,0 +1,169 @@
+name: portfolio
+
+# Shared settings for every container that runs the Laravel image
+x-app: &app
+  image: portfolio-app:latest
+  env_file: .env
+  environment:
+    APP_ENV: production
+    APP_DEBUG: "false"
+    LOG_CHANNEL: stderr
+    DB_CONNECTION: mysql
+    DB_HOST: mysql
+    DB_PORT: "3306"
+    REDIS_CLIENT: predis
+    REDIS_HOST: redis
+    REDIS_PORT: "6379"
+    CACHE_STORE: redis
+    QUEUE_CONNECTION: redis
+    SESSION_SECURE_COOKIE: "true"
+    INERTIA_SSR_ENABLED: "true"
+    INERTIA_SSR_URL: http://ssr:13714
+  restart: unless-stopped
+  security_opt:
+    - no-new-privileges:true
+  cap_drop:
+    - ALL
+  logging: &logging
+    driver: json-file
+    options:
+      max-size: 10m
+      max-file: "3"
+
+services:
+  web:
+    <<: *app
+    build:
+      context: .
+      target: app
+      args:
+        VITE_RECAPTCHA_SITE_KEY: ${VITE_RECAPTCHA_SITE_KEY:-}
+    # Point the Cloudflare Tunnel at this port. Defaults to localhost only;
+    # set APP_BIND=0.0.0.0 if cloudflared runs on another machine.
+    ports:
+      - "${APP_BIND:-127.0.0.1}:${APP_PORT:-8080}:8080"
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+      ssr:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks: [default, backend]
+
+  worker:
+    <<: *app
+    pull_policy: never
+    command: ["php", "artisan", "queue:work", "--sleep=3", "--tries=3", "--timeout=60", "--max-time=3600"]
+    # Longer than --timeout so an in-flight job can finish on shutdown
+    stop_grace_period: 75s
+    healthcheck:
+      disable: true
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+      redis:
+        condition: service_healthy
+    # Jobs send mail and Discord alerts, so it needs a route out
+    networks: [default, backend]
+
+  migrate:
+    <<: *app
+    pull_policy: never
+    command: ["php", "artisan", "migrate", "--force", "--isolated"]
+    restart: "no"
+    healthcheck:
+      disable: true
+    depends_on:
+      mysql:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks: [backend]
+
+  ssr:
+    image: portfolio-ssr:latest
+    build:
+      context: .
+      target: ssr
+      args:
+        VITE_RECAPTCHA_SITE_KEY: ${VITE_RECAPTCHA_SITE_KEY:-}
+    init: true
+    read_only: true
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    logging: *logging
+    networks: [backend]
+
+  mysql:
+    image: mysql:8.4
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE:?DB_DATABASE must be set in .env}
+      MYSQL_USER: ${DB_USERNAME:?DB_USERNAME must be set in .env (not root)}
+      MYSQL_PASSWORD: ${DB_PASSWORD:?DB_PASSWORD must be set in .env}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:?DB_ROOT_PASSWORD must be set in .env}
+    volumes:
+      - mysql-data:/var/lib/mysql
+    healthcheck:
+      # 127.0.0.1 forces TCP, which only answers once first-run initialisation has finished
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "--silent"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+    security_opt:
+      - no-new-privileges:true
+    logging: *logging
+    networks: [backend]
+
+  redis:
+    image: redis:8-alpine
+    restart: unless-stopped
+    # Append-only file so queued jobs survive a restart
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    security_opt:
+      - no-new-privileges:true
+    logging: *logging
+    networks: [backend]
+
+  # Cloudflare Tunnel connector. Opt in with COMPOSE_PROFILES=tunnel (or --profile tunnel);
+  # the public hostname's service in the Cloudflare dashboard is http://web:8080.
+  tunnel:
+    image: cloudflare/cloudflared:2026.9.3
+    command: ["tunnel", "--no-autoupdate", "run"]
+    environment:
+      TUNNEL_TOKEN: ${CLOUDFLARE_TUNNEL_TOKEN:-}
+    restart: unless-stopped
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    logging: *logging
+    depends_on:
+      web:
+        condition: service_healthy
+    profiles: [tunnel]
+
+networks:
+  default:
+  # No route out of the host: MySQL, Redis and SSR can't reach the internet
+  backend:
+    internal: true
+
+volumes:
+  mysql-data:
+    # Fixed name so the data survives a project rename (and matches the existing deployment)
+    name: portfolio_db_data
+  redis-data:

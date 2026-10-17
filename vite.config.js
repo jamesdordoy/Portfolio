@@ -27,6 +27,10 @@ export default defineConfig({
             '@': '/resources/js',
         },
     },
+    // Bundle all dependencies into bootstrap/ssr/ssr.js so the SSR container needs no node_modules
+    ssr: {
+        noExternal: true,
+    },
     test: {
         globals: true,
         setupFiles: ['resources/js/tests/setup.ts'],

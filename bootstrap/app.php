@@ -12,6 +12,8 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
+        // Production sits behind a Cloudflare Tunnel; trust its X-Forwarded-* headers so URLs and redirects use https
+        $middleware->trustProxies(at: '*');
         $middleware->encryptCookies(except: ['portfolio']);
         $middleware->web(append: [
             HandleInertiaRequests::class,
